@@ -50,7 +50,7 @@ class ThemeUpdateChecker {
 	 * @return void
 	 */
 	public function installHooks(){
-		//Check for updates when WordPress does. We can detect when that happens by tracking
+		//Check for updates when ClassicPress does. We can detect when that happens by tracking
 		//updates to the "update_themes" transient, which only happen in wp_update_themes().
 		if ( $this->enableAutomaticChecking ){
 			add_filter('pre_set_site_transient_update_themes', array($this, 'onTransientUpdate'));
@@ -282,7 +282,7 @@ class ThemeUpdate {
 	}
 	
 	/**
-	 * Transform the update into the format expected by the WordPress core.
+	 * Transform the update into the format expected by the ClassicPress core.
 	 * 
 	 * @return array
 	 */

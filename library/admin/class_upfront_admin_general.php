@@ -256,9 +256,11 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 				<h2 class="title"><?php esc_html_e("Änderungsprotokoll", Upfront::TextDomain) ?></h2>
 				<div class="inside changelog">
 				<?php
-					reset($changelog);
-				 	$current = each($changelog);
-					//foreach($changelog as $current){
+					//reset($changelog);
+				 	//$current = each($changelog);
+					 foreach ($changelog as $current['key'] => $current['value']) {
+						$changelog = $current;
+				   }
 				?>
 					<div class="current">
 						<dl>

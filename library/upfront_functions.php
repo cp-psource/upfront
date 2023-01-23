@@ -277,7 +277,7 @@ function upfront_add_layout_editor_entity ($name, $path) {
 }
 
 /**
- * Register AJAX action to WordPress, additionally, also register upfront_ajax_init
+ * Register AJAX action to ClassicPress, additionally, also register upfront_ajax_init
  *
  * @param string $action AJAX action to register
  * @param callable $callback Callback to register for action

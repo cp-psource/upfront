@@ -88,7 +88,7 @@ class Upfront_PostData_L10n_Server implements IUpfront_Server {
 				'content_part_title' => __('Inhalt', 'upfront'),
 
 				'date_format' => __('Datumsformat', 'upfront'),
-				'wp_date' => __('WordPress Datum', 'upfront'),
+				'wp_date' => __('ClassicPress Datum', 'upfront'),
 				'dMY' => __('30 Jan 2015', 'upfront'),
 				'MdY' => __('Jan 30 2015', 'upfront'),
 				'dmY' => __('30 01 2015', 'upfront'),

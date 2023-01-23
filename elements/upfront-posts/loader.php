@@ -79,7 +79,7 @@ class Upfront_Posts extends Upfront_Server {
 	 * The default query global will use whatever instead, and will 404 if its limit
 	 * value is higher than our posts element
 	 *
-	 * @param WP $wp WordPress object
+	 * @param WP $wp ClassicPress object
 	 */
 	public function force_wp_archive_limit ($wp) {
 		// Let WooCommerce handle stuff if we are dealing with products, since in that case we just

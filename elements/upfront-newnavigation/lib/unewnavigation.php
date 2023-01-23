@@ -64,7 +64,7 @@ class Upfront_UnewnavigationView extends Upfront_Object {
 				$higher_name = $name;
 
 				/** if breakpoint has menu_style set to burger, but no
-					burger_alignment is defined, set it to default
+				*	burger_alignment is defined, set it to default
 				**/
 				if(isset($breakpoint_data['preset'][$name]) && isset($breakpoint_data['preset'][$name]['menu_style']) && $breakpoint_data['preset'][$name]['menu_style'] && !isset($breakpoint_data['preset'][$name]['burger_alignment']) ) {
 					$breakpoint_data['preset'][$name]['burger_alignment'] = 'left';
@@ -225,22 +225,22 @@ class Upfront_UnewnavigationView extends Upfront_Object {
 
 	public static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Menu', 'upfront'),
-			'select_menu' => __('Please select menu in settings', 'upfront'),
-			'not_found' => __('Menu not found', 'upfront'),
-			'cant_update' => __('Cannot update menu', 'upfront'),
-			'cant_create' => __('Cannot create menu', 'upfront'),
-			'delete_success' => __('The menu item has been successfully deleted', 'upfront'),
-			'cant_delete' => __('Cannot delete menu', 'upfront'),
-			'cant_update_auto' => __('Cannot update menu auto add pages', 'upfront'),
-			'visit_url' => __('Visit URL', 'upfront'),
-			'edit_url' => __('Edit URL', 'upfront'),
-			'edit_label' => __('Edit label', 'upfront'),
-			'remove_link' => __('Remove link', 'upfront'),
-			'link_label' => __('Link label', 'upfront'),
-			'create_dropdown' => __('Create Drop-Down', 'upfront'),
-			'choose_existing_menu' => __('Choose existing menu', 'upfront'),
-			'are_you_sure_nag' => __('Are you sure to delete this menu?', 'upfront'),
+			'element_name' => __('Menü', 'upfront'),
+			'select_menu' => __('Bitte wähle das Menü in den Einstellungen', 'upfront'),
+			'not_found' => __('Menü nicht gefunden', 'upfront'),
+			'cant_update' => __('Menü kann nicht aktualisiert werden', 'upfront'),
+			'cant_create' => __('Menü kann nicht erstellt werden', 'upfront'),
+			'delete_success' => __('Der Menüpunkt wurde erfolgreich gelöscht', 'upfront'),
+			'cant_delete' => __('Menü kann nicht gelöscht werden', 'upfront'),
+			'cant_update_auto' => __('Seiten zum automatischen Hinzufügen zu Menüs können nicht aktualisiert werden', 'upfront'),
+			'visit_url' => __('Besuche URL', 'upfront'),
+			'edit_url' => __('Bearbeite URL', 'upfront'),
+			'edit_label' => __('Label bearbeiten', 'upfront'),
+			'remove_link' => __('Link entfernen', 'upfront'),
+			'link_label' => __('Link Label', 'upfront'),
+			'create_dropdown' => __('Dropdown erstellen', 'upfront'),
+			'choose_existing_menu' => __('Vorhandenes Menü auswählen', 'upfront'),
+			'are_you_sure_nag' => __('Möchtest Du dieses Menü wirklich löschen?', 'upfront'),
 			'css' => array(
 				'bar_label' => __('Menu Bar', 'upfront'),
 				'bar_info' => __('Menu Bar', 'upfront'),

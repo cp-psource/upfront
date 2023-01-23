@@ -503,7 +503,7 @@ class Upfront_EditorL10n_Server implements IUpfront_Server {
 				'publish_first_nag' => __('Bitte veröffentliche Deine Inhalte<br>bevor Du das Layout änderst.', 'upfront'),
 				'posts_pages_comments' => __('Beiträge/Seiten/Kommentare', 'upfront'),
 				'posts_pages' => __('Beiträge/Seiten', 'upfront'),
-				'popup_preloader' => __('Bitte hör auf...', 'upfront'),
+				'popup_preloader' => __('Bitte warte einen Moment...', 'upfront'),
 				'posts' => __('Beiträge', 'upfront'),
 				'pages' => __('Seite', 'upfront'),
 				'cpts' => __('CPTs', 'upfront'),

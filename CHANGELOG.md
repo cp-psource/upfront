@@ -223,7 +223,7 @@ Change Log
 - Fix: Fehlerkorrekturen und Verbesserungen in den Regionseinstellungen
 - Fix: Abschaltung der Farbauswahl in den Seitenleisteneinstellungen
 - Fix: Definieren Sie die Groß- und Kleinschreibung der Schalter und das HHVM-Problem
-– Fix: Shortcode-Erweiterung auf WordPress-Codec-Implementierung umgestalten
+– Fix: Shortcode-Erweiterung auf ClassicPress-Codec-Implementierung umgestalten
 - Fix: Drag-and-Drop-Fehler, wenn sich keine Elemente im Layout befinden
 - Fix: PSeCommerce-Kompatibilitätsproblem mit Plugin von Drittanbietern
 

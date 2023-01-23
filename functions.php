@@ -231,7 +231,7 @@ class Upfront {
 		if (!empty($nodes) && is_array($nodes)) {
 			foreach ($nodes as $node) {
 				if (!empty($node->href) && preg_match('/customize\.php/', $node->href)) {
-					$node->href = !empty($node->id) && 'customize-themes' === $node->id // WordPress verdoppelt auch den Customizer-Endpunkt für die Themenliste ...
+					$node->href = !empty($node->id) && 'customize-themes' === $node->id // ClassicPress verdoppelt auch den Customizer-Endpunkt für die Themenliste ...
 						? admin_url('themes.php') // ... wird nicht passieren
 						: home_url('?editmode=true')
 					;

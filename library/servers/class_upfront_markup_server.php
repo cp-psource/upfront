@@ -120,7 +120,7 @@ class Upfront_Server_MarkupServer extends Upfront_Server {
 
 	private function _get_l10n ($key=false) {
 		$l10n = array(
-			self::ORIGIN_INTERNAL => __('WordPress internal', 'upfront'),
+			self::ORIGIN_INTERNAL => __('ClassicPress internal', 'upfront'),
 			self::ORIGIN_PLUGIN => __('Unknown plugin', 'upfront'),
 			self::ORIGIN_THEME => __('Unknown theme', 'upfront'),
 			'done' => __('Done', 'upfront'),

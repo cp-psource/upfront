@@ -343,7 +343,7 @@ class Upfront_Permissions {
 	}
 
 	/**
-	 * Resolves Upfront access level to an actual WordPress capability
+	 * Resolves Upfront access level to an actual ClassicPress capability
 	 *
 	 * @param string $level Access level to resolve
 	 *
@@ -420,7 +420,7 @@ class Upfront_Permissions {
 	/**
 	 * Checks if a certain user role is able to perform a certain Upfront action
 	 *
-	 * @param string $role_id WordPress role ID
+	 * @param string $role_id ClassicPress role ID
 	 * @param string $level Upfront action level to check
 	 *
 	 * @return bool
