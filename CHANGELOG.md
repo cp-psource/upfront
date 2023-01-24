@@ -3,21 +3,18 @@ Change Log
 
 1.9.5 - 2023-01-16
 -------------------------------------------------------------------------------
-
 - HINWEIS: Nun PSOURCE!
-
 - Angepasst: Auf Deutsch übersetzt inkl. Quellcode
-
 - Hinzugefügt: PSource Updater
 - Hinzugefügt: Aktuelle Hilfequellen, Tutorials und Links auf Deutsch
-
 - Fix: Veraltetes .click() jQuery
 - Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
+- Fix: Securityfix Dashboard-Changelog (fopen)
+- Fix: Veraltete each() Funktion Dashboard-Changelog
 
 1.9.4 - 2017-10-16
 -------------------------------------------------------------------------------
 - Hinzugefügt: Aufräumen von PHP-Funktionsaufrufen
-
 - Fix: Akkordeon-Element-UI-Schaltflächen überlappen sich
 - Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
 - Fix: Das Posts/Pages-Popup wird auf Subsites manchmal nicht richtig geladen

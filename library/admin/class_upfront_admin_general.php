@@ -251,33 +251,30 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 		$changelog = $this->_get_changelog();
 		if (empty($changelog)) return false;
 		?>
-		<div class="postbox-container changelog">
-			<div class='postbox'>
-				<h2 class="title"><?php esc_html_e("Änderungsprotokoll", Upfront::TextDomain) ?></h2>
-				<div class="inside changelog">
-				<?php
-					//reset($changelog);
-				 	//$current = each($changelog);
-					 foreach ($changelog as $current['key'] => $current['value']) {
-						$changelog = $current;
-				   }
-				?>
+			<div class="postbox-container changelog">
+				<div class='postbox'>
+					<h2 class="title"><?php esc_html_e("Änderungsprotokoll", Upfront::TextDomain) ?></h2>
+					<div class="inside changelog">
+					<?php
+						reset($changelog);
+						$current = array_keys($changelog)[0];
+					?>
 					<div class="current">
 						<dl>
-							<dt><?php echo $current['key']; ?></dt>
-							<dd><?php echo $current['value']; ?></dd>
+							<dt><?php echo $current; ?></dt>
+							<dd><?php echo $changelog[$current]; ?></dd>
 						</dl>
 					</div>
-					
+
 					<div class="changelog navigation">
 						<a href="#more"><?php esc_html_e('Vorherige Einträge', 'upfront'); ?></a>
 					</div>
 
 					<div class="previous">
 						<dl>
-						<?php while (false !== ($changeset = each($changelog))) { ?>
-							<dt><?php echo $changeset['key']; ?></dt>
-							<dd><?php echo $changeset['value']; ?></dd>
+						<?php foreach (array_slice($changelog, 1) as $version => $change) { ?>
+							<dt><?php echo $version; ?></dt>
+							<dd><?php echo $change; ?></dd>
 						<?php } ?>
 						</dl>
 					</div>
@@ -286,32 +283,32 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 		<?php
 	}
 
+
 	/**
 	 * Ruft die rohen Changelog-Einträge aus der Datei ab
 	 *
 	 * @return array
 	 */
 	private function _get_raw_changelog_entries () {
-
 		$path = trailingslashit(wp_normalize_path(Upfront::get_root_dir())) . 'CHANGELOG.md';
 		$entries = array();
 		if (!file_exists($path) || !is_readable($path)) return $entries;
-
-		$fp = fopen($path, 'r');
+	
+		$file = file_get_contents($path);
+		$lines = explode("\n", $file);
 		$idx = '';
-		while (false !== ($line = fgets($fp, 4096))) {
+		foreach ($lines as $line) {
 			if (preg_match('/-{3,}/', $line)) continue; // Dropline-Müll
 			if (preg_match('/^\d\.\d.*?-\s\d{4}/', $line)) {
 				$idx = $line;
 				continue;
 			}
 			if (empty($idx)) continue; // Plausibilitätsprüfung, Header-Müll
-
+	
 			if (empty($entries[$idx])) $entries[$idx] = array();
 			$entries[$idx][] = $line;
 		}
-		fclose($fp);
-
+	
 		return $entries;
 	}
 
