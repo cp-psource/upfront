@@ -251,9 +251,21 @@ class Upfront_UcontactView extends Upfront_Object {
 			} else if (!empty($emailto)) {
 				
 				// Let's first force mail callbacks
-				if (!empty($name)) {
+				/*if (!empty($name)) {
 					$email_callback = create_function('$email', "return '{$email}';");
 					$name_callback = create_function('$name', "return '{$name}';");
+					add_filter('wp_mail_from', $email_callback, 99);
+					add_filter('wp_mail_from_name', $name_callback, 99);
+				}*/
+				if (!empty($name)) {
+					// Create a closure using anonymous function
+					$email_callback = function($email) use ($name) {
+						return $name;
+					};
+				
+					$name_callback = function($name) use ($name) {
+						return $name;
+					};
 					add_filter('wp_mail_from', $email_callback, 99);
 					add_filter('wp_mail_from_name', $name_callback, 99);
 				}
