@@ -158,7 +158,7 @@ class Upfront_UsliderView extends Upfront_Object {
 		$l10n = array(
 			'element_name' => __('Slider', 'upfront'),
 			'css' => array(
-				'images_label' => __('Images', 'upfront'),
+				'images_label' => __('Bilder', 'upfront'),
 				'images_info' => __('Slider\'s images', 'upfront'),
 				'captions_label' => __('Captions', 'upfront'),
 				'captions_info' => __('Slides\' captions', 'upfront'),
