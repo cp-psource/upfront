@@ -263,7 +263,7 @@ class Upfront_UcontactView extends Upfront_Object {
 						return $name;
 					};
 				
-					$name_callback = function($name) use ($name) {
+					$name_callback = function($name_param) use ($name) {
 						return $name;
 					};
 					add_filter('wp_mail_from', $email_callback, 99);

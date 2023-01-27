@@ -9,7 +9,7 @@ $right_sidebar = !empty($right_sidebar) ? $right_sidebar : false;
 
 $main = upfront_create_region(array(
 	'name' => "main",
-	'title' => __("Main Area"),
+	'title' => __("Hauptbereich", 'upfront'),
 	'scope' => "local",
 	'type' => $type,
 	'default' => true,
@@ -396,7 +396,7 @@ $main->add_element("PostData", array (
 if ( $left_sidebar ){
 	$left = upfront_create_region(array(
 		'name' => "left-sidebar",
-		'title' => __("Left Sidebar"),
+		'title' => __("Linke Seitenleiste", 'upfront'),
 		'scope' => "local",
 	), array(
 		'col' => 6,
@@ -412,7 +412,7 @@ if ( $left_sidebar ){
 		'margin_left' => 1,
 		'new_line' => false,
 		'options' => array(
-			'content' => "Text element on left sidebar",
+			'content' => "Textelement in der linken Seitenleiste",
 			"class" => "c24 upfront-plain_txt",
 		)
 	));
@@ -423,7 +423,7 @@ if ( $left_sidebar ){
 if ( $right_sidebar ){
 	$right = upfront_create_region(array(
 		'name' => "right-sidebar",
-		'title' => __("Right Sidebar"),
+		'title' => __("Rechte Seitenleiste", 'upfront'),
 		'scope' => "local",
 	), array(
 		'col' => 6,
@@ -439,7 +439,7 @@ if ( $right_sidebar ){
 		'margin_left' => 1,
 		'new_line' => false,
 		'options' => array(
-			'content' => "Text element on right sidebar",
+			'content' => "Textelement in der rechten Seitenleiste",
 			"class" => "c24 upfront-plain_txt",
 		)
 	));
