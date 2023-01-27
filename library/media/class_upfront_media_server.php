@@ -98,74 +98,74 @@ class Upfront_MediaServer extends Upfront_Server {
 			'copy_url' => __("Datei-URL kopieren", 'upfront'),
 			'add_labels' => __("Etikett(en) hinzufügen", 'upfront'),
 			'media_labels' => __("Medienetiketten", 'upfront'),
-			'current_labels' => __("Current Label(s)", 'upfront'),
-			'additional_sizes' => __("Additional sizes", 'upfront'),
+			'current_labels' => __("Aktuelle(s) Label(s)", 'upfront'),
+			'additional_sizes' => __("Zusätzliche Größen", 'upfront'),
 			'url' => __("URL", 'upfront'),
-			'add' => __("+Add", 'upfront'),
-			'search' => __("Search", 'upfront'),
-			'search_media' => __("Search media", 'upfront'),
-			'search_placeholder' => __("Type here...", 'upfront'),
-			'clear_search' => __("Clear search", 'upfront'),
-			'showing_total_results' => __("Showing {{total}} results for", 'upfront'),
-			'active_filters' => __("Active filters", 'upfront'),
-			'filter_label' => __("Filter Media", 'upfront'),
-			'by_type' => __("By type", 'upfront'),
-			'by_labels' => __("By labels", 'upfront'),
-			'select_filter' => __("Select Filter", 'upfront'),
-			'media_type' => __("Media type", 'upfront'),
-			'date' => __("Date", 'upfront'),
-			'file_name' => __("File Name", 'upfront'),
-			'recent' => __("Recent", 'upfront'),
+			'add' => __("+Hinzu", 'upfront'),
+			'search' => __("Suche", 'upfront'),
+			'search_media' => __("Medien suchen", 'upfront'),
+			'search_placeholder' => __("Gib hier ein...", 'upfront'),
+			'clear_search' => __("Zurücksetzen", 'upfront'),
+			'showing_total_results' => __("Zeige {{total}} Ergebnisse für", 'upfront'),
+			'active_filters' => __("Aktive Filter", 'upfront'),
+			'filter_label' => __("Filtere Medien", 'upfront'),
+			'by_type' => __("Nach Typ", 'upfront'),
+			'by_labels' => __("Nach Labels", 'upfront'),
+			'select_filter' => __("Wähle Filter aus", 'upfront'),
+			'media_type' => __("Medientyp", 'upfront'),
+			'date' => __("Datum", 'upfront'),
+			'file_name' => __("Dateiname", 'upfront'),
+			'recent' => __("Kürzlich", 'upfront'),
 			'labels' => __("Labels", 'upfront'),
-			'please_select_labels' => __("Please, select labels...", 'upfront'), // remove
-			'filter_by_labels' => __("Filtering by labels:", 'upfront'),
-			'type_labels' => __("Type labels here...", 'upfront'),
-			'type_labels_pick' => __("Type to pick label(s)", 'upfront'),
-			'type_labels_add' => __("Type to create label", 'upfront'),
-			'assigned_labels' => __("Assigned labels", 'upfront'),
-			'create_new_label' => __("Create new label", 'upfront'),
-			'library' => __("Library", 'upfront'),
-			'embed' => __("Embed", 'upfront'),
-			'upload' => __("Upload Media", 'upfront'),
-			'insertion_question' => __('How would you like to insert those images?', 'upfront'),
-			'plain_images' => __('plain images', 'upfront'),
-			'image_slider' => __('image slider', 'upfront'),
-			'image_gallery' => __('image gallery', 'upfront'),
+			'please_select_labels' => __("Bitte Labels auswählen...", 'upfront'), // remove
+			'filter_by_labels' => __("Filtern nach Labels:", 'upfront'),
+			'type_labels' => __("Label eingeben...", 'upfront'),
+			'type_labels_pick' => __("Eingabe um Label(s) auszuwählen", 'upfront'),
+			'type_labels_add' => __("Eingabe um Label zu erstellen", 'upfront'),
+			'assigned_labels' => __("Zugewiesene Labels", 'upfront'),
+			'create_new_label' => __("Neues Etikett erstellen", 'upfront'),
+			'library' => __("Bibliothek", 'upfront'),
+			'embed' => __("Einbetten", 'upfront'),
+			'upload' => __("Medien hochladen", 'upfront'),
+			'insertion_question' => __('Wie möchtest Du diese Bilder einfügen?', 'upfront'),
+			'plain_images' => __('Schlichte Bilder', 'upfront'),
+			'image_slider' => __('Bildslider', 'upfront'),
+			'image_gallery' => __('Bildergalerie', 'upfront'),
 			'ok' => __('OK', 'upfront'),
-			'insert_media_file' => __('Insert Media File', 'upfront'),
-			'insert_media_files' => __('Insert Media Files', 'upfront'),
-			'loading_embeddable_preview' => __('Loading embeddable preview...', 'upfront'),
-			'loading_media_files' => __('Loading media files...', 'upfront'),
-			'applied_labels' => __('Applied labels:', 'upfront'),
-			'video_recommendation_nag' => __('We recommend using services like YouTube, Vimeo or Soundcloud to store rich media files. You can then embed it easily into your site. Find out more here.', 'upfront'),
-			'keep_file' => __('Keep file', 'upfront'),
-			'remove_file' => __('Remove file', 'upfront'),
-			'media_url' => __('URL of the media', 'upfront'),
-			'image_title' => __('Image Title', 'upfront'),
-			'your_image_title' => __('Your image title', 'upfront'),
-			'n_of_x' => _x("of", "N of X", 'upfront'),
-			'entity_list_info' => __('{{items}} Media', 'upfront'),
+			'insert_media_file' => __('Mediendatei einfügen', 'upfront'),
+			'insert_media_files' => __('Mediendateien einfügen', 'upfront'),
+			'loading_embeddable_preview' => __('Einbettbare Vorschau wird geladen...', 'upfront'),
+			'loading_media_files' => __('Mediendateien werden geladen...', 'upfront'),
+			'applied_labels' => __('Zugewiesene Labels:', 'upfront'),
+			'video_recommendation_nag' => __('Wir empfehlen die Nutzung von Diensten wie YouTube, Vimeo oder Soundcloud zum Speichern von Rich-Media-Dateien. Du kannst es dann einfach in Deine Webseite einbetten. Erfahre hier mehr.', 'upfront'),
+			'keep_file' => __('Datei behalten', 'upfront'),
+			'remove_file' => __('Datei entfernen', 'upfront'),
+			'media_url' => __('URL des Mediums', 'upfront'),
+			'image_title' => __('Bildtitel', 'upfront'),
+			'your_image_title' => __('Dein Bildtitel', 'upfront'),
+			'n_of_x' => _x("von", "N von X", 'upfront'),
+			'entity_list_info' => __('{{items}} Medium', 'upfront'),
 			'filter' => array(
-				'images' => __('Images', 'upfront'),
+				'images' => __('Bilder', 'upfront'),
 				'videos' => __('Videos', 'upfront'),
 				'audios' => __('Audios', 'upfront'),
-				'all' => __('All', 'upfront'),
-				'newest' => __('Newest', 'upfront'),
-				'oldest' => __('Oldest', 'upfront'),
+				'all' => __('Alle', 'upfront'),
+				'newest' => __('Neueste', 'upfront'),
+				'oldest' => __('Älteste', 'upfront'),
 				'a_z' => __('A » Z', 'upfront'),
 				'z_a' => __('Z » A', 'upfront'),
 			),
-			'media_labels' => __('Media Labels', 'upfront'),
-			'media_label' => __('Media Label', 'upfront'),
-			'disabled' => __('This functionality has been disabled', 'upfront'),
-			'insert_options' => __('Insert Options', 'upfront'),
-			'image_inserts' => __('Image Inserts', 'upfront'),
-			'wp_default' => __('WP Default', 'upfront'),
-			'confirm_delete_items' => __("Are you sure you want to delete selected items?", 'upfront'),
-			'on_this_page' => __("on this page", 'upfront'),
-			'display' => __('Display', 'upfront'),
+			'media_labels' => __('Medienlabels', 'upfront'),
+			'media_label' => __('Medienlabel', 'upfront'),
+			'disabled' => __('Diese Funktionalität wurde deaktiviert', 'upfront'),
+			'insert_options' => __('Optionen einfügen', 'upfront'),
+			'image_inserts' => __('Bildeinsätze', 'upfront'),
+			'wp_default' => __('CP Standard', 'upfront'),
+			'confirm_delete_items' => __("Möchtest Du die ausgewählten Elemente wirklich löschen?", 'upfront'),
+			'on_this_page' => __("auf dieser Seite", 'upfront'),
+			'display' => __('Anzeige', 'upfront'),
 			'info' => __('Info', 'upfront'),
-			'full_size' => __('Full size', 'upfront')
+			'full_size' => __('Volle Größe', 'upfront')
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)
@@ -669,7 +669,7 @@ class Upfront_MediaServer extends Upfront_Server {
 		if (!$this->_check_valid_request_level(Upfront_Permissions::UPLOAD)) $this->_out(new Upfront_JsonResponse_Error("You can't do this."));
 		$upload = new Upfront_UploadHandler;
 		$result = $upload->handle();
-		if (empty($result['media'])) $this->_out(new Upfront_JsonResponse_Error(__("Error uploading the media item", 'upfront')));
+		if (empty($result['media'])) $this->_out(new Upfront_JsonResponse_Error(__("Fehler beim Hochladen des Medienelements", 'upfront')));
 
 		if (!function_exists('wp_generate_attachment_metadata')) require_once(ABSPATH . 'wp-admin/includes/image.php');
 		$wp_upload_dir = wp_upload_dir();
@@ -690,7 +690,7 @@ class Upfront_MediaServer extends Upfront_Server {
 			if (!empty($media->error)) {
 				// We have an error happening!
 				@unlink("{$pfx}{$filename}");
-				$this->_out(new Upfront_JsonResponse_Error(sprintf(__("Error uploading the media item: %s", 'upfront'), $media->error)));
+				$this->_out(new Upfront_JsonResponse_Error(sprintf(__("Fehler beim Hochladen des Medienelements: %s", 'upfront'), $media->error)));
 			}
 
 			$filename = $media->name;
@@ -703,13 +703,13 @@ class Upfront_MediaServer extends Upfront_Server {
 			if ($space_allowed && $file_size && $file_size + $space_used > $space_allowed && !get_site_option('upload_space_check_disabled')) {
 				// Upload quota exceeded
 				@unlink("{$pfx}{$filename}");
-				$this->_out(new Upfront_JsonResponse_Error(__("Error uploading the media item: allocated space quota exceeded", 'upfront')));
+				$this->_out(new Upfront_JsonResponse_Error(__("Fehler beim Hochladen des Medienelements: zugewiesener Speicherplatz überschritten", 'upfront')));
 			}
 
 			if(!preg_match('/\.(jpg|jpeg|gif|svg|png|mp4|webm)$/i', $filename)) {
 				// We have an error happening!
 				@unlink("{$pfx}{$filename}");
-				$this->_out(new Upfront_JsonResponse_Error(__("Sorry, this file type is not permitted for security reasons.", 'upfront')));
+				$this->_out(new Upfront_JsonResponse_Error(__("Entschuldigung, dieser Dateityp ist aus Sicherheitsgründen nicht erlaubt.", 'upfront')));
 			}
 
 			// Clean up the file name
