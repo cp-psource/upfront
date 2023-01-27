@@ -82,7 +82,8 @@ class Upfront_Server_MarkupServer extends Upfront_Server {
 
 		if (empty($path_prefix)) return  $this->_get_l10n(self::ORIGIN_INTERNAL); // Not a pugin, mu-plugin or a theme
 
-		$clean_path = explode('/', ltrim(preg_replace('/^' . $path_prefix . '/', '', $file), '/'));
+		//$clean_path = explode('/', ltrim(preg_replace('/^' . $path_prefix . '/', '', $file), '/'));
+		$clean_path = explode('/', trim(preg_replace('/^' . $path_prefix . '/', '', $file), '/'));
 		$basename = !empty($clean_path[0]) ? $clean_path[0] : false;
 		if (empty($basename)) return  $this->_get_l10n(self::ORIGIN_INTERNAL); // We had an issue along the way and can't figure it out further
 
