@@ -12,7 +12,7 @@
 				this.$el.html(l10n.help_and_support);
 			},
 			on_click: function () {
-				var url = 'https://premium.wpmudev.org/upfront-documentation',
+				var url = 'https://upfront.n3rds.work/upfront-documentation',
 					win = window.open(url, "_blank")
 				;
 				win.focus();

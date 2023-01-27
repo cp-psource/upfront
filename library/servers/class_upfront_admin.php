@@ -43,7 +43,7 @@ class Upfront_Server_Admin implements IUpfront_Server {
 	}
 
 	public function dashboard_notice () {
-		$path = wp_normalize_path(Upfront::get_root_dir() . '/library/external/dashboard-notice/wpmudev-dash-notification.php');
+		$path = wp_normalize_path(Upfront::get_root_dir() . '/library/external/dashboard-notice/psource-dash-notification.php');
 		if (!file_exists($path)) return false;
 
 		require_once($path);

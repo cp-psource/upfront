@@ -52,25 +52,25 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 						<h2 class="title"><?php esc_html_e("Hilfreiche Ressourcen", Upfront::TextDomain) ?></h2>
 						<div class="inside">
 							<div class="upfront-debug-block">
-								<a target="_blank" href="https://premium.wpmudev.org/upfront-documentation/" class="documentation">UpFront-Dokumentation</a> <a target="_blank" href="https://premium.wpmudev.org/upfront-documentation/upfront-builder/" class="documentation">Erstellen von UpFront-Themes</a>
+								<a target="_blank" href="https://upfront.n3rds.work/upfront-documentation/" class="documentation">UpFront-Dokumentation</a> <a target="_blank" href="https://upfront.n3rds.work/upfront-builder/" class="documentation">Erstellen von UpFront-Themes</a>
 							</div>
 							<div class="upfront-debug-block">
 								<h4><?php esc_html_e("Online Artikel", Upfront::TextDomain) ?></h4>
 								<ul>
 
-									<li><a href='https://premium.wpmudev.org/blog/upfront-1-0/' target="_blank"><?php esc_html_e("Upfront 1.0", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-basics/' target="_blank"><?php esc_html_e("Upfront Part 1: The Basics, Theme Colors and Typography", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-regions/' target="_blank"><?php esc_html_e("Upfront Part 2: Structuring Your Site with Regions", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-elements/' target="_blank"><?php esc_html_e("Upfront Part 3: Laying Out Your Site with Elements", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-custom-css/' target="_blank"><?php esc_html_e("Upfront Part 4: Tweaking Elements with Custom Code", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-plugins/' target="_blank"><?php esc_html_e("Upfront Part 5: Adding Plugins and Styling Gravity Forms", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-responsive/' target="_blank"><?php esc_html_e("Upfront Part 6: Creating Responsive Websites", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://premium.wpmudev.org/blog/upfront-pages-posts/' target="_blank"><?php esc_html_e("Upfront Part 7: Working With Pages and Posts", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/' target="_blank"><?php esc_html_e("Upfront 1.0", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-1/' target="_blank"><?php esc_html_e("Upfront Part 1: The Basics, Theme Colors and Typography", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-2/' target="_blank"><?php esc_html_e("Upfront Part 2: Structuring Your Site with Regions", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-3/' target="_blank"><?php esc_html_e("Upfront Part 3: Laying Out Your Site with Elements", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-4/' target="_blank"><?php esc_html_e("Upfront Part 4: Tweaking Elements with Custom Code", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-5/' target="_blank"><?php esc_html_e("Upfront Part 5: Adding Plugins and Styling Gravity Forms", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-6/' target="_blank"><?php esc_html_e("Upfront Part 6: Creating Responsive Websites", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-7/' target="_blank"><?php esc_html_e("Upfront Part 7: Working With Pages and Posts", Upfront::TextDomain) ?></a></li>
 								</ul>
 							</div>
 							<div class="upfront-debug-block">
 								<h4><?php _e("Hilfe &amp; Support", Upfront::TextDomain) ?></h4>
-								<a class="upfront_button visit-forum" href="http://premium.wpmudev.org/support/" target="_blank"><?php esc_html_e("Visit Forums", Upfront::TextDomain) ?></a> <a class="upfront_button" href="http://premium.wpmudev.org/forums/forum/support#question" target="_blank"><?php esc_html_e("Ask a Question", Upfront::TextDomain) ?></a>
+								<a class="upfront_button visit-forum" href="https://upfront.n3rds.work/support/" target="_blank"><?php esc_html_e("Visit Forums", Upfront::TextDomain) ?></a> <a class="upfront_button" href="https://upfront.n3rds.work/forums/forum/support#question" target="_blank"><?php esc_html_e("Ask a Question", Upfront::TextDomain) ?></a>
 							</div>
 						</div>
 					</div>

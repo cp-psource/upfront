@@ -14,7 +14,7 @@ class Upfront_Compat implements IUpfront_Server {
 	 * @return bool
 	 */
 	public static function has_dashboard () {
-		return class_exists('WPMUDEV_Dashboard');
+		return class_exists('PSOURCE_Dashboard');
 	}
 
 

@@ -32,7 +32,7 @@ class Upfront_Compat_Backup_Info {
 	 * @return bool
 	 */
 	public function is_plugin_active () {
-		return class_exists('WPMUDEVSnapshot') && is_callable(array('WPMUDEVSnapshot', 'instance'));
+		return class_exists('PSOURCESnapshot') && is_callable(array('PSOURCESnapshot', 'instance'));
 	}
 
 	/**
@@ -94,8 +94,8 @@ class Upfront_Compat_Backup_Info {
 	private function _has_dashboard () {
 		if (false === Upfront_Compat::has_dashboard()) return false;
 
-		if (!empty(WPMUDEV_Dashboard::$site) && is_callable(array(WPMUDEV_Dashboard::$site, 'allowed_user'))) {
-			return WPMUDEV_Dashboard::$site->allowed_user();
+		if (!empty(PSOURCE_Dashboard::$site) && is_callable(array(PSOURCE_Dashboard::$site, 'allowed_user'))) {
+			return PSOURCE_Dashboard::$site->allowed_user();
 		}
 
 		return false;
@@ -106,9 +106,9 @@ class Upfront_Compat_Backup_Info {
 	 *
 	 * @return string
 	 */
-	private function _get_dashboard_url () {
-		return admin_url('admin.php?page=wpmudev-plugins#pid=257');
-	}
+	/*private function _get_dashboard_url () {
+		return admin_url('admin.php?page=psource-plugins#pid=257');
+	}*/
 
 	/**
 	 * Gets project page URL
@@ -116,7 +116,7 @@ class Upfront_Compat_Backup_Info {
 	 * @return string
 	 */
 	private function _get_project_url () {
-		return 'https://premium.wpmudev.org/project/snapshot/';
+		return 'https://upfront.n3rds.work/project/snapshot/';
 	}
 
 	/**

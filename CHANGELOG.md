@@ -11,6 +11,7 @@ Change Log
 - Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
 - Fix: Securityfix Dashboard-Changelog (fopen)
 - Fix: Veraltete each() Funktion Dashboard-Changelog
+- Fix: Deprecated create_function
 
 1.9.4 - 2017-10-16
 -------------------------------------------------------------------------------
