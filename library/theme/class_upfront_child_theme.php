@@ -226,7 +226,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		}
 	}
 
-	protected function up_update_nav_menu_item($menu_id, $db_id, $menu_items, $args = array(), $parent_id = 0) {
+	/*protected function up_update_nav_menu_item($menu_id, $db_id, $menu_items, $args = array(), $parent_id = 0) {
 		if (is_wp_error($menu_id)) return false; // Prevent notice if we received an error instead of an ID
 		$id = wp_update_nav_menu_item($menu_id, $db_id, array(
 						'menu-item-parent-id' => $parent_id,
@@ -239,6 +239,26 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 		if(isset($menu_items[$args['db_id']])) {
 
+			foreach($menu_items[$args['db_id']] as $menu_item) {
+				$this->up_update_nav_menu_item( $menu_id, 0, $menu_item, $menu_items, $id);
+			}
+		}
+	}*/
+
+	protected function up_update_nav_menu_item($menu_id, $db_id, $menu_items, $args = array(), $parent_id = 0) {
+		if (is_wp_error($menu_id)) return false; // Prevent notice if we received an error instead of an ID
+		$url = isset($args['url']) ? $args['url'] : ''; // set default value if 'url' is not set
+		$id = wp_update_nav_menu_item($menu_id, $db_id, array(
+					'menu-item-parent-id' => $parent_id,
+					'menu-item-url' => $url,
+					'menu-item-title' => $args['title'],
+					'menu-item-position' => $args['menu_order'],
+					'menu-item-status' => 'publish'
+				));
+		//add child items
+	
+		if(isset($menu_items[$args['db_id']])) {
+	
 			foreach($menu_items[$args['db_id']] as $menu_item) {
 				$this->up_update_nav_menu_item( $menu_id, 0, $menu_item, $menu_items, $id);
 			}

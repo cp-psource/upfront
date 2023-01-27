@@ -280,7 +280,7 @@ class Upfront_Server_Admin implements IUpfront_Server {
 		if( !isset($pagenow) || $pagenow !== "widgets.php" ) return;
 
 		return sprintf(
-				__('To make use of your widgets, add Widget element to your layouts. You can do so <a href="%s">here</a>', 'upfront'),
+				__('Um Deine Widgets zu nutzen, füge Deinen UpFront-Layouts Widget-Elemente hinzu. Du kannst dies <a href="%s">hier tun</a>', 'upfront'),
 				get_home_url() . "?editmode=true"
 			);
 	}
