@@ -59,13 +59,13 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 								<ul>
 
 									<li><a href='https://upfront.n3rds.work/upfront-framework/' target="_blank"><?php esc_html_e("Upfront 1.0", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-1/' target="_blank"><?php esc_html_e("Upfront Part 1: The Basics, Theme Colors and Typography", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-2/' target="_blank"><?php esc_html_e("Upfront Part 2: Structuring Your Site with Regions", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-3/' target="_blank"><?php esc_html_e("Upfront Part 3: Laying Out Your Site with Elements", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-4/' target="_blank"><?php esc_html_e("Upfront Part 4: Tweaking Elements with Custom Code", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-5/' target="_blank"><?php esc_html_e("Upfront Part 5: Adding Plugins and Styling Gravity Forms", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-6/' target="_blank"><?php esc_html_e("Upfront Part 6: Creating Responsive Websites", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-7/' target="_blank"><?php esc_html_e("Upfront Part 7: Working With Pages and Posts", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-1/' target="_blank"><?php esc_html_e("Upfront Teil 1: Die Grundlagen, Themenfarben und Typografie", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-2/' target="_blank"><?php esc_html_e("Upfront Teil 2: Strukturieren Deiner Webseite mit Regionen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-3/' target="_blank"><?php esc_html_e("Upfront Teil 3: Gestalten der Webseite mit Elementen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-4/' target="_blank"><?php esc_html_e("Upfront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-5/' target="_blank"><?php esc_html_e("Upfront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-6/' target="_blank"><?php esc_html_e("Upfront Teil 6: Erstellen von responsiven Webseiten", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-7/' target="_blank"><?php esc_html_e("Upfront Teil 7: Arbeiten mit Seiten und Beiträgen", Upfront::TextDomain) ?></a></li>
 								</ul>
 							</div>
 							<div class="upfront-debug-block">

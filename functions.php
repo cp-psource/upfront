@@ -1,9 +1,11 @@
 <?php
 
-require 'psource/theme-updates/theme-update-checker.php';
-$MyThemeUpdateChecker = new ThemeUpdateChecker(
-	'upfront', 
-	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=upfront' 
+require 'psource/psource-plugin-update/psource-plugin-updater.php';
+use Psource\PluginUpdateChecker\v5\PucFactory;
+$MyUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=upfront',
+	__FILE__, 
+	'upfront'
 );
 
 /**
