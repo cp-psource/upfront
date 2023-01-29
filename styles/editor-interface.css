@@ -2340,7 +2340,7 @@ input.upfront-field-text:hover,
   z-index: 99; }
 
 .upfront-field-wrap-color .upfront-color-field-right {
-  width: 60%;
+  width: 85%;
   display: block;
   float: left; }
 
@@ -4249,7 +4249,7 @@ a.upfront-region-name-edit-trigger {
   display: none;
   border: 1px solid #a8a8a8;
   border-radius: 2px;
-  width: 52px;
+  width: 80px;
   height: 20px;
   background: #fff;
   color: #212121;
@@ -20216,7 +20216,7 @@ div.preset-manager-panel .upfront-settings-css {
 /* Default overlay */
 div.preset-manager-panel .default-overlay-wrapper {
   position: relative;
-  min-height: 300px; }
+  min-height: 330px; }
 
 div.preset-manager-panel .default-overlay {
   position: absolute;
