@@ -38,19 +38,19 @@
 			<span style="display:none" class="date updated">46</span>
 			<div class="mp_product_meta">
 				<h1 itemprop="name" class="mp_product_name entry-title">
-					<a href="#">Example Product</a>
+					<a href="#">Beispielprodukt</a>
 				</h1>
 				<!-- MP Product Price -->
 				<div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers">
-					<span class="mp_product_price-normal" itemprop="price">$234.00<span class="exclusive_tax"> (tax incl.)</span></span>
+					<span class="mp_product_price-normal" itemprop="price">$234.00<span class="exclusive_tax"> (Steuer inkl.)</span></span>
 				</div>
 				<!-- end mp_product_price -->
 				<div class="mp_product_excerpt">
-					<p>Some product description.</p>
+					<p>Einige Produktbeschreibungen.</p>
 				</div>
 				<!-- end mp_product_excerpt -->
 				<div class="mp_product_categories">
-					Categorized in <a href="#" rel="tag">alpha</a>
+					Kategorisiert in <a href="#" rel="tag">alpha</a>
 				</div>
 			</div>
 			<!-- end mp_product_meta-->
@@ -59,20 +59,20 @@
 					<input type="hidden" name="product_id" value="46">
 					<div class="mp_product_options_atts">
 						<div class="mp_product_options_att">
-							<strong class="mp_product_options_att_label">Quantity</strong>
+							<strong class="mp_product_options_att_label">Menge</strong>
 							<div class="mp_form_field mp_product_options_att_field">
-								<input id="mp_product_options_att_quantity" class="mp_form_input mp_form_input-qty required digits" min="1" max="98" data-msg-max="This product has an order limit of 100. You can only add {0} to cart." type="number" name="product_quantity" value="1" aria-required="true">
+								<input id="mp_product_options_att_quantity" class="mp_form_input mp_form_input-qty required digits" min="1" max="98" data-msg-max="Dieses Produkt hat ein Bestelllimit von 100. Du kannst nur {0} zum Warenkorb hinzufügen." type="number" name="product_quantity" value="1" aria-required="true">
 							</div>
 							<!-- end mp_product_options_att_field -->
 						</div>
 						<!-- end mp_product_options_att -->
 					</div>
 					<!-- end mp_product_options_atts -->
-					<button class="mp_button mp_button-addcart" type="submit" name="addcart">Add To Cart</button>
+					<button class="mp_button mp_button-addcart" type="submit" name="addcart">In den Warenkorb</button>
 				</form>
 				<!-- end mp-buy-product-form -->
 				<div class="mp_product_tags">
-					Tagged in <a href="#" rel="tag">one</a>, <a href="#" rel="tag">three</a>,
+					Markiert als <a href="#" rel="tag">eins</a>, <a href="#" rel="tag">drei</a>,
 					<a href="#" rel="tag">two</a>
 				</div>
 			</div>
@@ -83,13 +83,13 @@
 		<!-- end mp_single_product_details-->
 		<div class="mp_single_product_extra">
 			<ul class="mp_product_tab_labels">
-				<li class="mp_product_tab_label current"><a class="mp_product_tab_label_link mp-product-overview" href="#mp-product-overview-46">Description</a></li>
-				<li class="mp_product_tab_label"><a class="mp_product_tab_label_link mp-related-products" href="#mp-related-products-46">Related Products</a></li>
+				<li class="mp_product_tab_label current"><a class="mp_product_tab_label_link mp-product-overview" href="#mp-product-overview-46">Beschreibung</a></li>
+				<li class="mp_product_tab_label"><a class="mp_product_tab_label_link mp-related-products" href="#mp-related-products-46">Empfohlene Produkte</a></li>
 			</ul>
 			<!-- end mp_product_tab_labels -->
 			<div id="mp-product-overview-46" class="mp_product_tab_content mp_product_tab_content-overview mp_product_tab_content-current">
 				<div itemprop="description" class="mp_product_tab_content_text">
-					<p>Some product description.Some product description.Some product description.Some product description.Some product description.Some product description. Some product description. </p>
+					<p>Einige Produktbeschreibungen.Einige Produktbeschreibungen.Einige Produktbeschreibungen.Einige Produktbeschreibungen.Einige Produktbeschreibungen.Einige Produktbeschreibungen. Einige Produktbeschreibungen. </p>
 				</div>
 				<!-- end mp_product_tab_content_text -->
 			</div>
@@ -104,7 +104,7 @@
 										<span class="fn"></span>
 									</div>
 									<a rel="enclosure" id="mp-product-image-104" class="mp_product_img_link" href="#">
-									<img src="<?php echo get_theme_root_uri() ?>/upfront/img/placeholder-image.png" itemprop="image" class="mp_product_image_list photo" title="Example Product">
+									<img src="<?php echo get_theme_root_uri() ?>/upfront/img/placeholder-image.png" itemprop="image" class="mp_product_image_list photo" title="Beispielprodukt">
 									</a>
 								</div>
 							</div>
@@ -112,10 +112,10 @@
 							<div class="mp_product_details">
 								<div class="mp_product_meta">
 									<h3 class="mp_product_name entry-title" itemprop="name">
-										<a href="#">Example Product</a>
+										<a href="#">Beispielprodukt</a>
 									</h3>
 									<!-- MP Product Price -->
-									<div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers"><span class="mp_product_price-normal" itemprop="price">$111.00<span class="exclusive_tax"> (tax incl.)</span></span></div>
+									<div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers"><span class="mp_product_price-normal" itemprop="price">€111.00<span class="exclusive_tax"> (Steuer inkl.)</span></span></div>
 									<!-- end mp_product_price -->
 									<div class="mp_social_shares">
 									</div>
@@ -123,16 +123,16 @@
 								</div>
 								<!-- end mp_product_meta -->
 								<div class="mp_product_callout">
-									<form id="mp-buy-product-104-form" class="mp_form mp_form-buy-product mp_no_single " method="post" data-ajax-url="http://local.woo-compat.dev/wp-admin/admin-ajax.php?action=mp_update_cart" action="http://local.woo-compat.dev/store/cart/" novalidate="novalidate"><input type="hidden" name="product_id" value="104"><button class="mp_button mp_button-addcart" type="submit" name="addcart">Add To Cart</button></form>
+									<form id="mp-buy-product-104-form" class="mp_form mp_form-buy-product mp_no_single " method="post" data-ajax-url="http://local.woo-compat.dev/wp-admin/admin-ajax.php?action=mp_update_cart" action="http://local.woo-compat.dev/store/cart/" novalidate="novalidate"><input type="hidden" name="product_id" value="104"><button class="mp_button mp_button-addcart" type="submit" name="addcart">In den Warenkorb</button></form>
 									<!-- end mp-buy-product-form -->
 								</div>
 								<!-- end mp_product_callout -->
 							</div>
 							<!-- end mp_product_details -->
 							<div style="display:none">
-								<span class="entry-title">Example Product</span> was last modified:
-								<time class="updated">2016-11-07T10:58</time> by
-								<span class="author vcard"><span class="fn">admin</span></span>
+								<span class="entry-title">Beispielprodukt</span> wurde zuletzt geändert:
+								<time class="updated">2022-11-07T10:58</time> von
+								<span class="author vcard"><span class="fn">Admin</span></span>
 							</div>
 						</div>
 						<!-- end mp_product -->

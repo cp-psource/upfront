@@ -3,10 +3,10 @@
 		<div class="mp_cart_item">
 			<div class="mp_cart_item_content mp_cart_item_content-thumb"><img src="<?php echo get_theme_root_uri() ?>/upfront/img/placeholder-image.png" width="75" height="75"> </div>
 			<div class="mp_cart_item_content mp_cart_item_content-title">
-				<h2 class="mp_cart_item_title"><a href="#">some other product</a></h2>
+				<h2 class="mp_cart_item_title"><a href="#">ein anderes Produkt</a></h2>
 			</div>
 			<div class="mp_cart_item_content mp_cart_item_content-price">
-				<div class="mp_product_price"><span class="mp_product_price-extended">$192.00<span class="exclusive_tax"> (tax incl.)</span></span><span class="mp_product_price-each" itemprop="price">($32.00 each) <span class="exclusive_tax"> (tax incl.)</span></span></div>
+				<div class="mp_product_price"><span class="mp_product_price-extended">€192.00<span class="exclusive_tax"> (Steuer inkl.)</span></span><span class="mp_product_price-each" itemprop="price">(€32,00 pro) <span class="exclusive_tax"> (Steuer inkl.)</span></span></div>
 				<!-- end mp_product_price -->
 			</div>
 			<!-- end mp_cart_item_content -->
@@ -30,15 +30,15 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-				<a class="mp_cart_item_remove_item" href="#">Remove</a>
+				<a class="mp_cart_item_remove_item" href="#">Entfernen</a>
 			</div>
 			<!-- end mp_cart_item_content -->
 		</div>
 		<!-- end mp_cart_item -->
 	</section>
-	<!-- end mp_cart --> <!-- MP Cart Meta -->
+	<!-- end mp_cart --> <!-- MP Warenkorb Meta -->
 	<section id="mp-cart-meta" class="mp_cart_meta">
-		<!-- MP Cart Resume -->
+		<!-- MP Warenkorb Resume -->
 		<div id="mp-cart-resume" class="mp_cart_resume">
 			<div class="mp_cart_resume_head">
 				<h3 class="mp_sub_title">Gesamtbetrag</h3>
@@ -50,7 +50,7 @@
 		</div>
 		<!-- end mp_cart-resume --> <a href="#" class="mp_button mp_button-continue-shopping mp_button-large">Mit dem Einkaufen fortfahren?</a> <a class="mp_button mp_button-checkout mp_button-padlock mp_button-large mp_tooltip" href="#">Kasse</a>
 		<div class="mp_tooltip_content">
-			<p class="mp-secure-checkout-tooltip-text"><strong>Sichere Kasse</strong><br>Shopping ist immer sicher und geschützte.</p>
+			<p class="mp-secure-checkout-tooltip-text"><strong>Sicheres Bezahlen</strong><br>Shopping ist immer sicher und geschützte.</p>
 		</div>
 	</section>
 	<!-- end mp_cart_meta -->

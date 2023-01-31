@@ -351,7 +351,7 @@ class Upfront_Compat_WooCommerce {
 		}
 
 		if ($specificity === 'single-page-woocart' || $specificity === 'woocart') {
-			return __('WooCommerce Cart Page', 'upfront');
+			return __('WooCommerce Warenkorb Page', 'upfront');
 		}
 
 		if ($specificity === 'single-page-woomyaccount' || $specificity === 'woomyaccount') {
@@ -363,7 +363,7 @@ class Upfront_Compat_WooCommerce {
 		}
 
 		if ($specificity === 'archive-product_cat') {
-			return __('WooCommerce Product Category', 'upfront');
+			return __('WooCommerce Produktkategorie', 'upfront');
 		}
 
 		if ($specificity === 'archive-product_tag') {

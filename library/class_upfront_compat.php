@@ -97,7 +97,7 @@ class Upfront_Compat implements IUpfront_Server {
 	}
 
 	/**
-	 * Suppresses Upfront child themes update notices in regular WP areas
+	 * Suppresses Upfront child themes update notices in regular CP areas
 	 *
 	 * @param mixed $raw Transient content - theme updates response
 	 *

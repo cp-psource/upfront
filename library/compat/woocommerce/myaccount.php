@@ -54,14 +54,14 @@
 		<div class="u-columns woocommerce-Addresses col2-set addresses">
 			<div class="u-column1 col-1 woocommerce-Address">
 				<header class="woocommerce-Address-title title">
-					<h3>Billing Address</h3>
+					<h3>Rechnungsadresse</h3>
 					<a href="#" class="edit">Edit</a>
 				</header>
 				<address> Name Surname<br>Some Street 10<br>Some City<br>Country<br>21000</address>
 			</div>
 			<div class="u-column2 col-2 woocommerce-Address">
 				<header class="woocommerce-Address-title title">
-					<h3>Shipping Address</h3>
+					<h3>Versand Addresse</h3>
 					<a href="#" class="edit">Edit</a>
 				</header>
 				<address> You have not set up this type of address yet.</address>

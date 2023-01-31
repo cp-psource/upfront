@@ -236,7 +236,7 @@ class Upfront_Compat_PSeCommerce {
 		}
 
 		if ($specificity === 'single-page-mpcart' || $specificity === 'mpcart') {
-			return __('PSeCommerce Cart Page', 'upfront');
+			return __('PSeCommerce Warenkorb Page', 'upfront');
 		}
 
 		if ($specificity === 'single-page-mpstore' || $specificity === 'mpstore') {
@@ -276,7 +276,7 @@ class Upfront_Compat_PSeCommerce {
 			'layout' => array(
 				'type' => 'single',
 				'item' => 'single-page',
-				'specificity' => 'single-page-mwarenkorb'
+				'specificity' => 'single-page-mpcart'
 			)
 		);
 		$layouts[] = array(

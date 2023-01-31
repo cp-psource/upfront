@@ -506,3 +506,14 @@ function uf_add_woocommerce_support() {
 	add_theme_support('woocommerce');
 }
 add_action('after_setup_theme', 'uf_add_woocommerce_support');
+
+/**
+ * TODO: Abhängigkeiten von Terminmanager
+ * Wenn PS-Terminmanager aktiv
+ * Abhängigkeiten laden auch im Child
+ */
+/*function upfront_force_load_dependencies () {
+	globale $appointments;
+	$appointments->load_scripts_styles();
+}
+add_action('wp_footer', 'upfront_force_load_dependencies', 1);*/

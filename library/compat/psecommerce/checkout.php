@@ -1,64 +1,64 @@
 <section id="mp-checkout" class="mp_checkout">
-  <noscript>Javascript is required in order to checkout. Please enable Javascript in your browser and then refresh this page.</noscript>
+  <noscript>Javascript ist erforderlich, um zur Kasse zu gehen. Bitte aktiviere Javascript in Deinem Browser und aktualisiere dann diese Seite.</noscript>
   <form id="mp-checkout-form" class="mp_form mp_form-checkout" method="post" style="" novalidate="novalidate" _lpchecked="1">
     <input type="hidden" id="mp_checkout_nonce" name="mp_checkout_nonce" value="283bfb4784"><input type="hidden" name="_wp_http_referer" value="/store/checkout/">
     <div id="mp-checkout-section-billing-shipping-address" class="mp_checkout_section mp_checkout_section-billing-shipping-address current">
       <h2 class="mp_checkout_section_heading">
         <span class="mp_checkout_step_num">1</span>
-        <a href="#" class="mp_checkout_section_heading-link">Billing/Shipping Address</a>
+        <a href="#" class="mp_checkout_section_heading-link">Rechnungs-/Lieferadresse</a>
       </h2>
       <div class="mp_checkout_section_errors">
-        <h4 class="mp_sub_title">Oops! An error occurred while processing your payment.</h4>
+        <h4 class="mp_sub_title">Hoppla! Bei der Verarbeitung Deiner Zahlung ist ein Fehler aufgetreten.</h4>
         <ul>
         </ul>
       </div>
       <!-- end mp_checkout_section_errors -->
       <div class="mp_checkout_section_content" style="display: block;">
         <div id="mp-checkout-column-billing-info" class="mp_checkout_column">
-          <h3 class="mp_sub_title">Billing</h3>
+          <h3 class="mp_sub_title">Abrechnung</h3>
           <div class="mp_checkout_field">
             <label class="mp_form_label">Name <span class="mp_field_required">*</span></label>
             <div class="mp_checkout_fields">
               <div class="mp_checkout_column mp_checkout_field">
                 <input name="billing[first_name]" type="text" value="First" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d18752" aria-required="true" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" aria-invalid="false">
-                <span class="mp_form_help-text">First</span>
+                <span class="mp_form_help-text">Vorname</span>
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
               <div class="mp_checkout_column mp_checkout_field">
                 <input name="billing[last_name]" type="text" value="Last" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d187f2" aria-required="true" aria-invalid="false">
-                <span class="mp_form_help-text">Last</span>
+                <span class="mp_form_help-text">Nachname</span>
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
             </div>
             <!-- end mp_checkout_fields -->
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Email Address <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">E-Mail-Addresse <span class="mp_field_required">*</span></label>
             <input name="billing[email]" type="text" value="example@example.com" data-rule-required="true" data-rule-email="true" class="mp_form_input" id="mp-checkout-field-15820dd5d18890" aria-required="true" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Company</label>
+            <label class="mp_form_label">Unternehmen</label>
             <input name="billing[company_name]" type="text" value="" class="mp_form_input" id="mp-checkout-field-15820dd5d18927" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Address Line 1 <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">Anschrift 1 <span class="mp_field_required">*</span></label>
             <input name="billing[address1]" type="text" value="" data-rule-required="true" placeholder="Street address, P.O. box, company name, c/o" class="mp_form_input" id="mp-checkout-field-15820dd5d189bd" aria-required="true" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Address Line 2</label>
+            <label class="mp_form_label">Anschrift 2</label>
             <input name="billing[address2]" type="text" value="" placeholder="Apartment, suite, unit, building, floor, etc" class="mp_form_input" id="mp-checkout-field-15820dd5d18a4f" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Town/City <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">Ort/Stadt <span class="mp_field_required">*</span></label>
             <input name="billing[city]" type="text" value="" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d18aef" aria-required="true" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
             <div class="mp_checkout_fields" style="display: block;">
               <div class="mp_checkout_column mp_checkout_field" style="">
-                <label class="mp_form_label">State/Province <span class="mp_field_required">*</span></label>
+                <label class="mp_form_label">Staat/Provinz <span class="mp_field_required">*</span></label>
                 <div class="select2-container mp_select2_search" id="s2id_mp-checkout-field-15820dd5d18c06"><a href="#" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-1">Down</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1"></div>
                 <select name="billing[state]" data-rule-required="true" class="mp_select2_search select2-offscreen" id="mp-checkout-field-15820dd5d18c06" autocomplete="off" tabindex="-1" title="" aria-required="true">
-                  <option value="">Select One</option>
+                  <option value="">Wähle eins</option>
                   <option value="Aberdeenshire">Aberdeenshire</option>
                   <option value="Angus/Forfarshire">Angus/Forfarshire</option>
                   <option value="Antrim">Antrim</option>
@@ -169,7 +169,7 @@
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
               <div class="mp_checkout_column mp_checkout_field">
-                <label class="mp_form_label">Zip Code <span class="mp_field_required">*</span></label>
+                <label class="mp_form_label">Postleitzahl <span class="mp_field_required">*</span></label>
                 <input name="billing[zip]" type="text" value="" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d18cab" aria-required="true" aria-invalid="false">
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
@@ -177,10 +177,10 @@
             <!-- end mp_checkout_fields -->
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Country <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">Land <span class="mp_field_required">*</span></label>
             <div class="select2-container mp_select2_search" id="s2id_mp-checkout-field-15820dd5d18d45"><a href="#" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2">United Kingdom</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"></div>
             <select name="billing[country]" data-rule-required="true" class="mp_select2_search select2-offscreen" id="mp-checkout-field-15820dd5d18d45" autocomplete="off" tabindex="-1" title="" aria-required="true">
-              <option value="" selected="selected">Select One</option>
+              <option value="" selected="selected">Einen auswählen</option>
               <option value="AF">Afghanistan</option>
               <option value="AL">Albania</option>
               <option value="DZ">Algeria</option>
@@ -427,60 +427,60 @@
             </select>
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Phone</label>
+            <label class="mp_form_label">Telefon</label>
             <input name="billing[phone]" type="text" value="" class="mp_form_input" id="mp-checkout-field-15820dd5d1a700" aria-invalid="false">
           </div>
           <div class="mp_checkout_field mp_checkout_checkbox">
-            <label class="mp_form_label"><input type="checkbox" class="mp_form_checkbox" name="enable_shipping_address" value="1" autocomplete="off"> <span>Shipping address different than billing?</span></label>
+            <label class="mp_form_label"><input type="checkbox" class="mp_form_checkbox" name="enable_shipping_address" value="1" autocomplete="off"> <span>Lieferadresse anders als Rechnungsadresse?</span></label>
           </div>
           <!-- end mp_checkout_field/mp_checkout_checkbox -->
         </div>
         <!-- end mp-checkout-column-billing-info -->
         <div id="mp-checkout-column-shipping-info" class="mp_checkout_column" style="display: block;">
-          <h3 class="mp_sub_title">Shipping</h3>
+          <h3 class="mp_sub_title">Versand</h3>
           <div class="mp_checkout_field">
             <label class="mp_form_label">Name <span class="mp_field_required">*</span></label>
             <div class="mp_checkout_fields">
               <div class="mp_checkout_column mp_checkout_field">
                 <input name="shipping[first_name]" type="text" value="First" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d1b055" aria-required="true" aria-invalid="false">
-                <span class="mp_form_help-text">First</span>
+                <span class="mp_form_help-text">Vorname</span>
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
               <div class="mp_checkout_column mp_checkout_field">
                 <input name="shipping[last_name]" type="text" value="Last" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d1b0f4" aria-required="true" aria-invalid="false">
-                <span class="mp_form_help-text">Last</span>
+                <span class="mp_form_help-text">Nachname</span>
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
             </div>
             <!-- end mp_checkout_fields -->
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Email Address <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">E-Mail-Addresse <span class="mp_field_required">*</span></label>
             <input name="shipping[email]" type="text" value="example@example.com" data-rule-required="true" data-rule-email="true" class="mp_form_input" id="mp-checkout-field-15820dd5d1b192" aria-required="true" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Company</label>
+            <label class="mp_form_label">Unternehmen</label>
             <input name="shipping[company_name]" type="text" value="" class="mp_form_input" id="mp-checkout-field-15820dd5d1b22f" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Address Line 1 <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">Anschrift 1 <span class="mp_field_required">*</span></label>
             <input name="shipping[address1]" type="text" value="" data-rule-required="true" placeholder="Street address, P.O. box, company name, c/o" class="mp_form_input" id="mp-checkout-field-15820dd5d1b2c8" aria-required="true" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Address Line 2</label>
+            <label class="mp_form_label">Anschrift 2</label>
             <input name="shipping[address2]" type="text" value="" placeholder="Apartment, suite, unit, building, floor, etc" class="mp_form_input" id="mp-checkout-field-15820dd5d1b364">
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Town/City <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">Ort/Stadt <span class="mp_field_required">*</span></label>
             <input name="shipping[city]" type="text" value="" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d1b411" aria-required="true" aria-invalid="false">
           </div>
           <div class="mp_checkout_field">
             <div class="mp_checkout_fields" style="display: block;">
               <div class="mp_checkout_column mp_checkout_field" style="">
-                <label class="mp_form_label">State/Province <span class="mp_field_required">*</span></label>
+                <label class="mp_form_label">Staat/Provinz <span class="mp_field_required">*</span></label>
                 <div class="select2-container mp_select2_search" id="s2id_mp-checkout-field-15820dd5d1b547"><a href="#" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-3">Down</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen3" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-3" id="s2id_autogen3"></div>
                 <select name="shipping[state]" data-rule-required="true" class="mp_select2_search select2-offscreen" id="mp-checkout-field-15820dd5d1b547" autocomplete="off" tabindex="-1" title="" aria-required="true">
-                  <option value="">Select One</option>
+                  <option value="">Einen auswählen</option>
                   <option value="Aberdeenshire">Aberdeenshire</option>
                   <option value="Angus/Forfarshire">Angus/Forfarshire</option>
                   <option value="Antrim">Antrim</option>
@@ -591,7 +591,7 @@
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
               <div class="mp_checkout_column mp_checkout_field">
-                <label class="mp_form_label">Zip Code <span class="mp_field_required">*</span></label>
+                <label class="mp_form_label">Postleitzahl <span class="mp_field_required">*</span></label>
                 <input name="shipping[zip]" type="text" value="" data-rule-required="true" class="mp_form_input" id="mp-checkout-field-15820dd5d1b604" aria-required="true" aria-invalid="false">
               </div>
               <!-- end mp_checkout_column/mp_checkout_field -->
@@ -599,10 +599,10 @@
             <!-- end mp_checkout_fields -->
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Country <span class="mp_field_required">*</span></label>
+            <label class="mp_form_label">Land <span class="mp_field_required">*</span></label>
             <div class="select2-container mp_select2_search" id="s2id_mp-checkout-field-15820dd5d1b6bf"><a href="#" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-4">United Kingdom</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen4" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-4" id="s2id_autogen4"></div>
             <select name="shipping[country]" data-rule-required="true" class="mp_select2_search select2-offscreen" id="mp-checkout-field-15820dd5d1b6bf" autocomplete="off" tabindex="-1" title="" aria-required="true">
-              <option value="" selected="selected">Select One</option>
+              <option value="" selected="selected">Einen auswählen</option>
               <option value="AF">Afghanistan</option>
               <option value="AL">Albania</option>
               <option value="DZ">Algeria</option>
@@ -849,12 +849,12 @@
             </select>
           </div>
           <div class="mp_checkout_field">
-            <label class="mp_form_label">Phone</label>
+            <label class="mp_form_label">Telefon</label>
             <input name="shipping[phone]" type="text" value="" class="mp_form_input" id="mp-checkout-field-15820dd5d1c977" aria-invalid="false">
           </div>
         </div>
         <!-- end mp-checkout-column-shipping-info -->
-        <div class="mp_checkout_buttons"><button class="mp_button mp_button-checkout-next-step mp_button-medium" type="submit">Next Step »</button>
+        <div class="mp_checkout_buttons"><button class="mp_button mp_button-checkout-next-step mp_button-medium" type="submit">Nächster Schritt »</button>
         </div>
         <!-- end mp_checkout_buttons -->
       </div>
@@ -863,17 +863,17 @@
     <div id="mp-checkout-section-order-review-payment" class="mp_checkout_section mp_checkout_section-order-review-payment">
       <h2 class="mp_checkout_section_heading">
         <span class="mp_checkout_step_num">2</span>
-        <a href="#" class="mp_checkout_section_heading-link">Review Order/Payment</a>
+        <a href="#" class="mp_checkout_section_heading-link">Bestellung/Zahlung überprüfen</a>
       </h2>
       <div class="mp_checkout_section_errors">
-        <h4 class="mp_sub_title">Oops! An error occurred while processing your payment.</h4>
+        <h4 class="mp_sub_title">Hoppla! Bei der Verarbeitung Deiner Zahlung ist ein Fehler aufgetreten.</h4>
         <ul>
         </ul>
       </div>
       <!-- end mp_checkout_section_errors -->
       <div class="mp_checkout_section_content" style="display: block;">
         <div class="mp_checkout_column">
-          <h3 class="mp_sub_title">Billing Address</h3>
+          <h3 class="mp_sub_title">Rechnungsadresse</h3>
           <div class="mp_checkout_field">
             <div class="mp_checkout_fields">
               <div class="mp_checkout_column mp_checkout_field">admin
@@ -906,7 +906,7 @@
         </div>
         <!-- end mp_checkout_column -->
         <div class="mp_checkout_column">
-          <h3 class="mp_sub_title">Shipping Address</h3>
+          <h3 class="mp_sub_title">Versand Addresse</h3>
           <div class="mp_checkout_field">
             <div class="mp_checkout_fields">
               <div class="mp_checkout_column mp_checkout_field">admin
@@ -934,25 +934,25 @@
             </div>
             <!-- end mp_checkout_fields -->
           </div>
-          <div class="mp_checkout_field">Serbia</div>
+          <div class="mp_checkout_field">Austria</div>
           <div class="mp_checkout_field"></div>
         </div>
         <!-- end mp_checkout_column -->
-        <h3 class="mp_sub_title">Cart</h3>
+        <h3 class="mp_sub_title">Warenkorb</h3>
         <div id="mp-cart-form" class="mp_form mp_form-cart">
-          <!-- MP Cart -->
+          <!-- MP Warenkorb -->
           <section id="mp-cart" class="mp_cart mp_cart-default  mp_cart-readonly">
             <div class="mp_cart_item" id="mp-cart-item-46">
 						<div class="mp_cart_item_content mp_cart_item_content-thumb"><img src="<?php echo get_theme_root_uri() ?>/upfront/img/placeholder-image.png" width="75" height="75">
               </div>
               <!-- end mp_cart_item_content -->
               <div class="mp_cart_item_content mp_cart_item_content-title">
-                <h2 class="mp_cart_item_title"><a href="#">Example Product</a></h2>
+                <h2 class="mp_cart_item_title"><a href="#">Beispielprodukt</a></h2>
               </div>
               <!-- end mp_cart_item_content -->
               <div class="mp_cart_item_content mp_cart_item_content-price">
                 <!-- MP Product Price -->
-                <div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers"><span class="mp_product_price-extended">$0.00<span class="exclusive_tax"> (tax incl.)</span></span><span class="mp_product_price-each" itemprop="price">($0.00 each) <span class="exclusive_tax"> (tax incl.)</span></span></div>
+                <div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers"><span class="mp_product_price-extended">€0.00<span class="exclusive_tax"> (Steuer inkl.)</span></span><span class="mp_product_price-each" itemprop="price">(€0.00 pro) <span class="exclusive_tax"> (Steuer inkl.)</span></span></div>
                 <!-- end mp_product_price -->
               </div>
               <!-- end mp_cart_item_content -->
@@ -966,12 +966,12 @@
               </div>
               <!-- end mp_cart_item_content -->
               <div class="mp_cart_item_content mp_cart_item_content-title">
-                <h2 class="mp_cart_item_title"><a href="#">Example Product</a></h2>
+                <h2 class="mp_cart_item_title"><a href="#">Beispielprodukt</a></h2>
               </div>
               <!-- end mp_cart_item_content -->
               <div class="mp_cart_item_content mp_cart_item_content-price">
                 <!-- MP Product Price -->
-                <div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers"><span class="mp_product_price-extended">$444.00<span class="exclusive_tax"> (tax incl.)</span></span><span class="mp_product_price-each" itemprop="price">($111.00 each) <span class="exclusive_tax"> (tax incl.)</span></span></div>
+                <div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers"><span class="mp_product_price-extended">€444.00<span class="exclusive_tax"> (Steuer inkl.)</span></span><span class="mp_product_price-each" itemprop="price">(€111.00 pro) <span class="exclusive_tax"> (Steuer inkl.)</span></span></div>
                 <!-- end mp_product_price -->
               </div>
               <!-- end mp_cart_item_content -->
@@ -982,15 +982,15 @@
             <!-- end mp_cart_item -->
           </section>
           <!-- end mp_cart -->
-          <!-- MP Cart After -->
+          <!-- MP Warenkorb After -->
           <section id="mp-cart-after" class="mp_cart_after">
             <div id="mp-checkout-payment-form">
-              <h3 class="mp_sub_title">Payment</h3>
+              <h3 class="mp_sub_title">Zahlung</h3>
               <div id="mp-checkout-payment-form-errors"></div>
               <div id="mp-payment-options-list">
                 <label class="mp_form_label mp_form_label-checkout-option" for="mp-gateway-option-manual_payments" style="display:none">
                 <input data-mp-use-confirmation-step="false" id="mp-gateway-option-manual_payments" type="radio" name="payment_method" value="manual_payments" checked="" autocomplete="off">
-                <span></span>Manual Payment
+                <span></span>Manuelle Zahlung
                 </label>
               </div>
               <!-- end mp-payment-options-list -->
@@ -1000,26 +1000,26 @@
             <!-- end mp-checkout-payment-form -->
           </section>
           <!-- end mp_cart_after -->
-          <!-- MP Cart Meta -->
+          <!-- MP Warenkorb Meta -->
           <section id="mp-cart-meta" class="mp_cart_meta">
-            <!-- MP Cart Resume -->
+            <!-- MP Warenkorb Resume -->
             <div id="mp-cart-resume" class="mp_cart_resume">
               <div class="mp_cart_resume_item mp_cart_resume_item-product-total">
-                <span class="mp_cart_resume_item_label">Product Total</span>
-                <span class="mp_cart_resume_item_amount">$444.00</span>
+                <span class="mp_cart_resume_item_label">Produkt Summe</span>
+                <span class="mp_cart_resume_item_amount">€444.00</span>
               </div>
               <!-- end mp_cart_resume_item_product-total -->
               <div class="mp_cart_resume_item mp_cart_resume_item-order-total">
-                <span class="mp_cart_resume_item_label">Order Total</span>
-                <span class="mp_cart_resume_item_amount">$444.00</span>
+                <span class="mp_cart_resume_item_label">Gesamtbetrag</span>
+                <span class="mp_cart_resume_item_amount">€444.00</span>
               </div>
               <!-- end mp_cart_resume_item-order-total -->
             </div>
             <!-- end mp_cart-resume -->
-            <a href="#" class="mp_button mp_button-continue-shopping mp_button-large">Continue Shopping?</a>
-            <button class="mp_button mp_button-checkout mp_button-large" type="submit" data-mp-alt-html="Continue »">Submit Order</button>
+            <a href="#" class="mp_button mp_button-continue-shopping mp_button-large">Mit dem Einkaufen fortfahren?</a>
+            <button class="mp_button mp_button-checkout mp_button-large" type="submit" data-mp-alt-html="Continue »">Bestellung abschicken</button>
             <div class="mp_tooltip_content">
-              <p><strong>Secure Checkout</strong><br>Shopping is always safe and secure.</p>
+              <p><strong>Sicheres Bezahlen</strong><br>Einkaufen ist immer verschlüsselt und sicher.</p>
             </div>
           </section>
           <!-- end mp_cart_meta -->

@@ -1,7 +1,7 @@
 </p><form id="mp-order-lookup-form" class="mp_form mp_form-order-lookup" method="post" action="http://local.woo-compat.dev/wp-admin/admin-ajax.php?action=mp_lookup_order">
 	<div class="mp_form_content"><br>
-		<h2>Order Search</h2>
-		<p>If you have your order ID you can look it up using the form below.</p>
+		<h2>Bestellsuche</h2>
+		<p>Wenn Du Deine Bestell-ID hast, kannst Du sie mit dem unten stehenden Formular nachschlagen.</p>
 		<p></p></div>
 	<div class="mp_form_group">
 		<div class="mp_form_group_input">
@@ -14,22 +14,22 @@
 </form><!-- end mp-order-lookup-form -->
 <!-- Order History -->
 <section id="mp-order-history" class="mp_orders mp_orders-list">
-	<h2 class="mp_title">Order History</h2><div class="mp_order_details"><div class="mp_order">
-	<h3 class="mp_order_head">Order # <a href="#">c48f18c56862</a></h3>
+	<h2 class="mp_title">Deine Käufe</h2><div class="mp_order_details"><div class="mp_order">
+	<h3 class="mp_order_head">Bestellung # <a href="#">c48f18c56862</a></h3>
 	<div class="mp_order_detail" id="mp-order-detail-126">
-	<div class="mp_order_detail_item"><h5>Order Received</h5> <span>November 8, 2016</span></div><!-- end mp_order_detail_item -->
-	<div class="mp_order_detail_item"><h5>Current Status</h5> <span>Received</span></div><!-- end mp_order_detail_item -->
+	<div class="mp_order_detail_item"><h5>Bestellung erhalten</h5> <span>November 8, 2022</span></div><!-- end mp_order_detail_item -->
+	<div class="mp_order_detail_item"><h5>Aktueller Status</h5> <span>Eingegangen</span></div><!-- end mp_order_detail_item -->
 	<div class="mp_order_detail_item">
 		<h5>Total</h5>
-		<a href="#" class="mp_tooltip">$444.00</a>
+		<a href="#" class="mp_tooltip">€444.00</a>
 		<div class="mp_tooltip_content">
 
 	<div class="mp_tooltip_content_item">
-		<div class="mp_tooltip_content_item_label">Taxes:</div><!-- end mp_tooltip_content_item_label -->
-		<div class="mp_tooltip_content_item_value">$0.00</div><!-- end mp_tooltip_content_item_value -->
+		<div class="mp_tooltip_content_item_label">Steuern:</div><!-- end mp_tooltip_content_item_label -->
+		<div class="mp_tooltip_content_item_value">€0.00</div><!-- end mp_tooltip_content_item_value -->
 	</div><!-- end mp_tooltip_content_item -->
 		<div class="mp_tooltip_content_item">
-			<div class="mp_tooltip_content_item_label">Shipping:</div><!-- end mp_tooltip_content_item_label -->
+			<div class="mp_tooltip_content_item_label">Versand:</div><!-- end mp_tooltip_content_item_label -->
 			<div class="mp_tooltip_content_item_value">—</div><!-- end mp_tooltip_content_item_value -->
 		</div><!-- end mp_tooltip_content_item -->
 
@@ -44,21 +44,21 @@
 			</p><section id="mp-single-order-details" class="mp_orders">
 				<div class="mp_order_details">
 					<div class="mp_order">
-			<h3 class="mp_order_head">Order # c48f18c56862</h3>
+			<h3 class="mp_order_head">Bestellung # c48f18c56862</h3>
 			<div class="mp_order_detail" id="mp-order-detail-126">
-			<div class="mp_order_detail_item"><h5>Order Received</h5> <span>November 8, 2016</span></div><!-- end mp_order_detail_item -->
-			<div class="mp_order_detail_item"><h5>Current Status</h5> <span>Received</span></div><!-- end mp_order_detail_item -->
+			<div class="mp_order_detail_item"><h5>Bestellung erhalten</h5> <span>November 8, 2022</span></div><!-- end mp_order_detail_item -->
+			<div class="mp_order_detail_item"><h5>Aktueller Status</h5> <span>Eingegangen</span></div><!-- end mp_order_detail_item -->
 			<div class="mp_order_detail_item">
 				<h5>Total</h5>
-				<a href="#" class="mp_tooltip">$444.00</a>
+				<a href="#" class="mp_tooltip">€444.00</a>
 				<div class="mp_tooltip_content">
 
 			<div class="mp_tooltip_content_item">
-				<div class="mp_tooltip_content_item_label">Taxes:</div><!-- end mp_tooltip_content_item_label -->
-				<div class="mp_tooltip_content_item_value">$0.00</div><!-- end mp_tooltip_content_item_value -->
+				<div class="mp_tooltip_content_item_label">Steuern:</div><!-- end mp_tooltip_content_item_label -->
+				<div class="mp_tooltip_content_item_value">€0.00</div><!-- end mp_tooltip_content_item_value -->
 			</div><!-- end mp_tooltip_content_item -->
 				<div class="mp_tooltip_content_item">
-					<div class="mp_tooltip_content_item_label">Shipping:</div><!-- end mp_tooltip_content_item_label -->
+					<div class="mp_tooltip_content_item_label">Versand:</div><!-- end mp_tooltip_content_item_label -->
 					<div class="mp_tooltip_content_item_value">—</div><!-- end mp_tooltip_content_item_value -->
 				</div><!-- end mp_tooltip_content_item -->
 
@@ -71,7 +71,7 @@
 						<!-- end mp_cart_item_content -->
 						<div class="mp_cart_item_content mp_cart_item_content-title">
 							<h2 class="mp_cart_item_title">
-								<a href="#">Example Product</a>
+								<a href="#">Beispielprodukt</a>
 							</h2>
 													</div>
 						<!-- end mp_cart_item_content -->
@@ -90,13 +90,13 @@
 						<!-- end mp_cart_item_content -->
 						<div class="mp_cart_item_content mp_cart_item_content-title">
 							<h2 class="mp_cart_item_title">
-								<a href="#">Example Product</a>
+								<a href="#">Beispielprodukt</a>
 							</h2>
 													</div>
 						<!-- end mp_cart_item_content -->
 						<div class="mp_cart_item_content mp_cart_item_content-price"><!-- MP Product Price -->
 							<div class="mp_product_price" itemtype="http://schema.org/Offer" itemscope="" itemprop="offers">
-									<span class="mp_product_price-normal" itemprop="price">$111.00</span>
+									<span class="mp_product_price-normal" itemprop="price">€111.00</span>
 							</div>
 							<!-- end mp_product_price -->
 						</div>
@@ -107,10 +107,10 @@
 					</div><!-- end mp_order_cart -->
 					<div class="mp_order_address"><div class="mp_customer_address">
 				<div class="mp_content_col mp_content_col-one-half">
-					<h4 class="mp_sub_title">Billing Address</h4>First Last<br>Some Street<br>City, 22222<br>Country<br>123123123<br><a href="#">example@example.com</a><br>
+					<h4 class="mp_sub_title">Rechnungsadresse</h4>Max Mustermann<br>Musterstrasse<br>Mussterstadt, 22222<br>Country<br>123123123<br><a href="#">example@example.com</a><br>
 					</div>
 				<div class="mp_content_col mp_content_col-one-half">
-					<h4 class="mp_sub_title">Shipping Address</h4>First Last<br>Some Street<br>City, 22222<br>Country<br>123123123<br><a href="#">example@example.com</a><br>
+					<h4 class="mp_sub_title">Versand Addresse</h4>Max Mustermann<br>Musterstrasse<br>Musterstadt, 22222<br>Country<br>123123123<br><a href="#">example@example.com</a><br>
 				</div>
 		</div><!-- end mp_customer_address -->
 					</div><!-- end mp_order_address -->
