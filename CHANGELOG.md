@@ -126,7 +126,7 @@ Change Log
 1.8 - 2017-03-29
 -------------------------------------------------------------------------------
 - Hinzugefügt: Neugestaltung des Medienmanagers
-- Hinzugefügt: CoursePress-Kompatibilität
+- Hinzugefügt: BrainPress-Kompatibilität
 - Hinzugefügt: Optionen zur Unterstützung der Barrierefreiheit
 - Hinzugefügt: Hierarchiedaten zum späteren Einrücken
 - Hinzugefügt: Option zum Schieben mit den Pfeiltasten

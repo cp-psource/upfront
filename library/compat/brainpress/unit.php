@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<div class="submenu-main-container cp-submenu">
 		<ul id="submenu-main" class="submenu nav-submenu">
 			<li class="submenu-item submenu-units "><a href="#" class="course-units-link">Units</a></li>
@@ -65,7 +65,7 @@
 							<p class="form-submit">
 								<input name="submit" type="submit" id="submit" class="submit cp-comment-submit" value="Post">
 								<span class="comment-notification">
-									<select name="coursepress_subscribe">
+									<select name="brainpress_subscribe">
 										<option value="subscribe-reactions" selected="selected">Notify me of new posts in this thread</option>
 										<option value="do-not-subscribe">Do not notify me of new posts</option>
 										<option value="subscribe-all">Notify me of all new posts</option>

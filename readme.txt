@@ -5,7 +5,7 @@ Theme URI: https://n3rds.work
 Tags: classicpress, theme, builder, framework
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.9.4
+Stable tag: 1.9.5
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -79,7 +79,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
-= 1.9.4 Jan23 DerN3rd =
+= 1.9.5 Jan23 DerN3rd =
 
 * HINWEIS: Nun PSOURCE!
 * Angepasst: Auf Deutsch übersetzt inkl. Quellcode

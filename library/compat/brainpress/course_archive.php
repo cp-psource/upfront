@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<div class="course course_list_box_item course_376  course-list-box course-available student-enrolled has-thumbnail" itemscope="" itemtype="http://schema.org/Product">
 		<div class="course-thumbnail course-featured-media course-featured-media-376 ">
 			<figure style="width:235px;height:235px;"><img src="<?php echo get_theme_root_uri() ?>/upfront/img/placeholder-image.png" class="course-media-img"></figure>

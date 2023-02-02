@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<div class="cp-instructor-page">
 		<div class="instructor-wrapper" itemscope="" itemtype="http://schema.org/Person">
 			<div class="instructor-avatar">
@@ -15,7 +15,7 @@
 				<div class="course-information">
 					<a href="#" rel="bookmark">
 						<br>
-						<h3 class="course-title course-title-376 "><span itemprop="name">Example Course No.1</span></h3>
+						<h3 class="course-title course-title-376 "><span itemprop="name">Beispielkurs Nr.1</span></h3>
 					</a>
 					<p><a href="#" rel="bookmark"></a></p>
 					<div class="course-summary course-summary-376 ">
