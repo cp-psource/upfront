@@ -508,25 +508,13 @@ function uf_add_woocommerce_support() {
 add_action('after_setup_theme', 'uf_add_woocommerce_support');
 
 /**
- * TODO: Abhängigkeiten von Terminmanager
+ * Abhängigkeiten von Terminmanager laden
  * Wenn PS-Terminmanager aktiv
- * Abhängigkeiten laden auch im Child
  */
-function upfront_force_load_dependencies () {
+function upfront_force_load_deps_ap () {
 	if ( class_exists( 'Appointments' ) ) {
 		global $appointments;
 		$appointments->load_scripts_styles();
 	}
 }
-add_action('wp_footer', 'upfront_force_load_dependencies', 1);
-
-/**
- * TODO: Abhängigkeiten von PS-QA
- * Wenn PS-QA aktiv
- * Abhängigkeiten laden auch im Child
- */
-function load_qa_dependencies() {
-    wp_enqueue_style( 'qa_style' );
-    wp_enqueue_script( 'qa_script' );
-}
-add_action( 'wp_enqueue_scripts', 'load_qa_dependencies' );
+add_action('wp_footer', 'upfront_force_load_deps_ap', 1);
