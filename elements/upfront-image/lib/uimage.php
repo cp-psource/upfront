@@ -86,7 +86,6 @@ class Upfront_UimageView extends Upfront_Object {
 		* If this functionallity is needed, we will restore it
 		*
 		if ($data['caption_position'] === 'below_image') $data['captionBackground'] = false;
-
 		*/
 		$data['link_target'] = $link['target'];
 
