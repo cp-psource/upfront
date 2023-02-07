@@ -171,7 +171,7 @@ abstract class Upfront_Logger {
 			0 => __('None', 'upfront'),
 			self::LVL_ERROR => __('Error', 'upfront'),
 			self::LVL_WARNING => __('Warning', 'upfront'),
-			self::LVL_NOTICE => __('Notice', 'upfront'),
+			self::LVL_NOTICE => __('Hinweis', 'upfront'),
 			self::LVL_INFO => __('Info', 'upfront'),
 		);
 	}

@@ -347,11 +347,11 @@ class Upfront_Compat_WooCommerce {
 
 	public function layout_to_name($layout_name, $type, $item, $specificity) {
 		if ($specificity === 'archive-product' && $item === 'product') {
-			return __('WooCommerce Shop Page', 'upfront');
+			return __('Classic-Commerce Shop-Seite', 'upfront');
 		}
 
 		if ($specificity === 'single-page-woocart' || $specificity === 'woocart') {
-			return __('WooCommerce Warenkorb Page', 'upfront');
+			return __('Classic-Commerce Warenkorb-Seite', 'upfront');
 		}
 
 		if ($specificity === 'single-page-woomyaccount' || $specificity === 'woomyaccount') {

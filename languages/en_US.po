@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UpFront\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-02 22:32+0000\n"
-"PO-Revision-Date: 2023-02-07 19:33+0000\n"
+"PO-Revision-Date: 2023-02-07 21:41+0000\n"
 "Last-Translator: DerN3rd\n"
 "Language-Team: English (United States)\n"
 "Language: en-US\n"
@@ -3236,7 +3236,7 @@ msgstr "Send form content to:"
 
 #: elements/upfront-contact-form/lib/contact_form.php:521
 msgid "Formulartitel verwenden"
-msgstr ""
+msgstr "Use form title"
 
 #: elements/upfront-contact-form/lib/contact_form.php:525
 msgid "Formularvalidierung"
@@ -4791,7 +4791,7 @@ msgid "Main Area"
 msgstr "Main Area"
 
 #: library/models/class_upfront_entity_resolver.php:191
-msgid "Maintenance Mode"
+msgid "Wartungsmodus"
 msgstr "Maintenance Mode"
 
 #: library/servers/class_upfront_editor_l10n_server.php:558
@@ -5003,7 +5003,7 @@ msgstr "Alignment menu item"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:248
 msgid "Menüpunkt der obersten Ebene"
-msgstr ""
+msgstr "Top-level menu item"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:305
 msgid "Menüpunkt hinzufügen"
@@ -5153,7 +5153,7 @@ msgstr "Garbage"
 #: library/media/class_upfront_media_server.php:146
 msgctxt "N von X"
 msgid "von"
-msgstr ""
+msgstr "from"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:35
 msgid "Nach &amp; Vorname"
@@ -5375,7 +5375,7 @@ msgid "None"
 msgstr "None"
 
 #: library/class_upfront_logger.php:174
-msgid "Notice"
+msgid "Hinweis"
 msgstr "Notice"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:165
@@ -7247,266 +7247,266 @@ msgstr "maintain relationship"
 
 #: library/servers/class_upfront_editor_l10n_server.php:461
 msgid "Verlasse Responsiv"
-msgstr ""
+msgstr "Exit Responsive"
 
 #: library/servers/class_upfront_editor_l10n_server.php:413
 msgid "Verlasse UpFront..."
-msgstr ""
+msgstr "Exit UpFront..."
 
 #: elements/upfront-comment/lib/upfront_comment.php:267
 msgid ""
 "Versuche alle Blogs, die mit dem Artikel verlinkt sind, zu benachrichtigen"
-msgstr ""
+msgstr "Try to notify any blogs linked to the article"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:283
 msgid "Vertikal"
-msgstr ""
+msgstr "Vertical"
 
 #: library/servers/class_upfront_editor_l10n_server.php:615
 msgid "Verwende Desktop-Einstellungen"
-msgstr ""
+msgstr "Use desktop settings"
 
 #: library/servers/class_upfront_editor_l10n_server.php:528
 msgid "Verwende die Auf- und Ab-Tasten, um die obere Polsterung zu ändern"
-msgstr ""
+msgstr "Use the up and down buttons to change the top padding"
 
 #: library/servers/class_upfront_editor_l10n_server.php:700
 msgid "Verwende diese Farbe"
-msgstr ""
+msgstr "Use this color"
 
 #: library/servers/class_upfront_editor_l10n_server.php:630
 msgid "Verwende diesen Bereich als globale Themenfußzeile"
-msgstr ""
+msgstr "Use this space as a global topic footer"
 
 #: library/servers/class_upfront_editor_l10n_server.php:629
 msgid "Verwende diesen Bereich als globale Themenüberschrift"
-msgstr ""
+msgstr "Use this area as a global topic heading"
 
 #: library/servers/class_upfront_editor_l10n_server.php:701
 msgid "Verwende dieses Bild"
-msgstr ""
+msgstr "Use this image"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:77
 msgid "Verwende Farbe"
-msgstr ""
+msgstr "use color"
 
 #: library/servers/class_upfront_editor_l10n_server.php:835
 msgid ""
 "Verwende für beste Kompatibilität mindestens die Formate WOFF und WOFF2."
-msgstr ""
+msgstr "For best compatibility, use at least WOFF and WOFF2 formats."
 
 #: elements/upfront-image/lib/uimage.php:256
 msgid "Verwende kein Theme-Padding"
-msgstr ""
+msgstr "Don't use theme padding"
 
 #: elements/upfront-like-box/lib/upfront-like-box.php:121
 msgid "Verwende kleine Kopfzeile"
-msgstr ""
+msgstr "Use small header"
 
 #: library/servers/class_upfront_editor_l10n_server.php:676
 msgid "Verwende Themenpolsterung für BG"
-msgstr ""
+msgstr "Use theme padding for BG"
 
 #: library/servers/class_upfront_editor_l10n_server.php:74
 msgid "Verzeichnis"
-msgstr ""
+msgstr "directory"
 
 #: library/servers/class_upfront_editor_l10n_server.php:103
 msgid "Verzögerung vor dem Ziehen:"
-msgstr ""
+msgstr "Delay before dragging:"
 
 #: library/servers/class_upfront_editor_l10n_server.php:104
 msgid "Verzögerung vor Positionswechsel:"
-msgstr ""
+msgstr "Delay before position change:"
 
 #: library/servers/class_upfront_editor_l10n_server.php:160
 msgid "Veröffentlichen"
-msgstr ""
+msgstr "Publish"
 
 #: library/servers/class_upfront_editor_l10n_server.php:162
 msgid "Veröffentlichen am"
-msgstr ""
+msgstr "Publish on"
 
 #: library/servers/class_upfront_editor_l10n_server.php:129
 #, php-format
 msgid "Veröffentlichen von %s..."
-msgstr ""
+msgstr "Publishing %s..."
 
 #: library/servers/class_upfront_editor_l10n_server.php:142
 msgid "Veröffentlicht"
-msgstr ""
+msgstr "Published"
 
 #: library/servers/class_upfront_editor_l10n_server.php:163
 msgid "Veröffentlicht am"
-msgstr ""
+msgstr "Published on"
 
 #: elements/upfront-post-data/tpl/parts/post-data-date_posted.php:2
 msgid "Veröffentlicht am <span class=\"date\">{{date}}</span>"
-msgstr ""
+msgstr "Published on <span class=\"date\">{{date}}</span>"
 
 #: elements/upfront-posts/tpl/parts/posts-date_posted.php:2
 msgid "Veröffentlicht am <span class=\"datetime\">{{datetime}}</span>"
-msgstr ""
+msgstr "Published on <span class=\"datetime\">{{datetime}}</span>"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:251
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:189
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:211
 msgid "Veröffentlichungsdatum"
-msgstr ""
+msgstr "release date"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:190
 msgid "Veröffentlichungsdatum-Element"
-msgstr ""
+msgstr "Release Date Element"
 
 #: elements/upfront-youtube/lib/uyoutube.php:125
 msgid "VIDEO"
-msgstr ""
+msgstr "VIDEO"
 
 #: library/servers/class_upfront_editor_l10n_server.php:617
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: elements/upfront-youtube/lib/uyoutube.php:126
 msgid "Video 1 URL"
-msgstr ""
+msgstr "Video 1 URL"
 
 #: library/servers/class_upfront_editor_l10n_server.php:689
 msgid "Video auswählen"
-msgstr ""
+msgstr "select video"
 
 #: elements/upfront-youtube/lib/uyoutube.php:120
 msgid "Video beim Laden der Seite abspielen"
-msgstr ""
+msgstr "Play video on page load"
 
 #: library/servers/class_upfront_editor_l10n_server.php:618
 msgid "Video Quelle"
-msgstr ""
+msgstr "video source"
 
 #: library/servers/class_upfront_editor_l10n_server.php:619
 msgid "Video Service"
-msgstr ""
+msgstr "video services"
 
 #: library/servers/class_upfront_editor_l10n_server.php:733
 msgid "Video stummschalten"
-msgstr ""
+msgstr "mute video"
 
 #: library/servers/class_upfront_editor_l10n_server.php:732
 msgid "Video URL"
-msgstr ""
+msgstr "Video URL"
 
 #: library/servers/class_upfront_editor_l10n_server.php:736
 msgid "Video URL (YouTube, Vimeo oder Wistia)"
-msgstr ""
+msgstr "Video URL (YouTube, Vimeo or Wistia)"
 
 #: library/servers/class_upfront_editor_l10n_server.php:691
 msgid "Video vorbereiten"
-msgstr ""
+msgstr "prepare video"
 
 #: library/media/class_upfront_media_server.php:150
 #: elements/upfront-youtube/lib/uyoutube.php:133
 msgid "Videos"
-msgstr ""
+msgstr "Videos"
 
 #: elements/upfront-youtube/lib/uyoutube.php:114
 msgid "Videotitel beschränken auf"
-msgstr ""
+msgstr "Limit video titles to"
 
 #: elements/upfront-tabs/lib/utabs.php:116
 msgid "Viel Spaß mit Registerkarten."
-msgstr ""
+msgstr "Have fun with tabs."
 
 #: library/servers/class_upfront_editor_l10n_server.php:628
 msgid "Vollbild"
-msgstr ""
+msgstr "full screen"
 
 #: library/media/class_upfront_media_server.php:86
 #: library/media/class_upfront_media_server.php:168
 msgid "Volle Größe"
-msgstr ""
+msgstr "full size"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:168
 msgid "Vollständig"
-msgstr ""
+msgstr "Complete"
 
 #: library/servers/class_upfront_editor_l10n_server.php:275
 msgid "von"
-msgstr ""
+msgstr "from"
 
 #: elements/upfront-contact-form/lib/contact_form.php:567
 msgid "Von (Email)"
-msgstr ""
+msgstr "From (email)"
 
 #: elements/upfront-contact-form/lib/contact_form.php:568
 msgid "Von (Name)"
-msgstr ""
+msgstr "From (name)"
 
 #: elements/upfront-post-data/tpl/parts/post-data-author.php:2
 msgid "Von <a href=\"{{url}}\" {{target}}>{{name}}</a>"
-msgstr ""
+msgstr "From <a href=\"{{url}}\" {{target}}>{{name}}</a>"
 
 #: elements/upfront-posts/tpl/parts/posts-author.php:2
 msgid "Von <a href=\"{{url}}\">{{name}}</a>"
-msgstr ""
+msgstr "From <a href=\"{{url}}\">{{name}}</a>"
 
 #: library/servers/class_upfront_editor_l10n_server.php:812
 #: elements/upfront-maps/lib/upfront_maps.php:119
 msgid "Von Apps wie Snazzy Maps generierter Code"
-msgstr ""
+msgstr "Code generated by apps like Snazzy Maps"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:34
 msgid "Vor &amp; Nachname"
-msgstr ""
+msgstr "Before &amp; Last name"
 
 #: elements/upfront-contact-form/lib/contact_form.php:527
 msgid "Vor dem Senden"
-msgstr ""
+msgstr "Before sending"
 
 #: library/servers/class_upfront_presets_server.php:662
 msgid "Voreingestelltes CSS bearbeiten"
-msgstr ""
+msgstr "Edit default CSS"
 
 #: library/servers/class_upfront_presets_server.php:598
 msgid "Voreinstellung"
-msgstr ""
+msgstr "preset"
 
 #: library/servers/class_upfront_presets_server.php:670
 #, php-format
 msgid "Voreinstellung %s erfolgreich erstellt!"
-msgstr ""
+msgstr "Preset %s created successfully!"
 
 #: library/servers/class_upfront_presets_server.php:671
 #, php-format
 msgid "Voreinstellung %s wurde zurückgesetzt!"
-msgstr ""
+msgstr "Default %s has been reset!"
 
 #: library/servers/class_upfront_presets_server.php:597
 msgid "Voreinstellung auswählen"
-msgstr ""
+msgstr "Select preset"
 
 #: library/servers/class_upfront_presets_server.php:599
 msgid "Voreinstellung auswählen oder erstellen:"
-msgstr ""
+msgstr "Select or create preset:"
 
 #: library/servers/class_upfront_presets_server.php:668
 #, php-format
 msgid "Voreinstellung geändert zu %s"
-msgstr ""
+msgstr "Default changed to %s"
 
 #: library/servers/class_upfront_presets_server.php:609
 msgid "Voreinstellung hinzufügen"
-msgstr ""
+msgstr "Add preset"
 
 #: library/servers/class_upfront_editor_l10n_server.php:355
 msgid "Vorformatiert"
-msgstr ""
+msgstr "Preformatted"
 
 #: library/servers/class_upfront_editor_l10n_server.php:483
 msgid "Vorformatiert (PRE)"
-msgstr ""
+msgstr "Preformatted (PRE)"
 
 #: elements/upfront-this-post/lib/this_post.php:674
 msgid "Vorgestellte Bildoption"
-msgstr ""
+msgstr "Featured image option"
 
 #: library/servers/class_upfront_editor_l10n_server.php:178
 #: library/servers/class_upfront_editor_l10n_server.php:578
@@ -7516,91 +7516,93 @@ msgstr ""
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:261
 #: elements/upfront-this-post/lib/this_post.php:670
 msgid "Vorgestelltes Bild"
-msgstr ""
+msgstr "Featured Image"
 
 #: elements/upfront-this-post/lib/this_post.php:675
 msgid "Vorgestelltes Bild ausblenden"
-msgstr ""
+msgstr "Hide featured image"
 
 #: library/servers/class_upfront_presets_server.php:666
 msgid "Vorhandene Voreinstellung auswählen (<strong>empfohlen</strong>):"
-msgstr ""
+msgstr "Choose an existing preset (<strong>recommended</strong>):"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:242
 msgid "Vorhandenes Menü auswählen"
-msgstr ""
+msgstr "Select existing menu"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:172
 msgid "Vorher. / Nächste Seite"
-msgstr ""
+msgstr "Beforehand. / Next page"
 
 #: library/admin/class_upfront_admin_general.php:270
 msgid "Vorherige Einträge"
-msgstr ""
+msgstr "Previous Entries"
 
 #: elements/upfront-slider/lib/upfront_slider.php:176
 msgid "Vorherige Schaltfläche der Navigation"
-msgstr ""
+msgstr "Previous button of the navigation"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:276
 msgid "Vorlage bearbeiten"
-msgstr ""
+msgstr "Edit template"
 
 #: library/servers/class_upfront_editor_l10n_server.php:302
 msgid "Vorlage löschen"
-msgstr ""
+msgstr "Delete template"
 
 #: library/servers/class_upfront_editor_l10n_server.php:306
 msgid ""
 "Vorlage wurde aktualisiert. Alle neuen Seiten, die mit dieser Vorlage "
 "erstellt werden, verwenden das aktualisierte Design."
 msgstr ""
+"Template has been updated. All new pages created using this template will "
+"use the updated theme."
 
 #: library/servers/class_upfront_editor_l10n_server.php:299
 msgid "Vorlage überschreiben"
-msgstr ""
+msgstr "Overwrite template"
 
 #: library/servers/class_upfront_editor_l10n_server.php:866
 msgid "Vorlagen"
-msgstr ""
+msgstr "templates"
 
 #: library/servers/class_upfront_editor_l10n_server.php:869
 msgid "Vorlagen anzeigen für"
-msgstr ""
+msgstr "View templates for"
 
 #: library/servers/class_upfront_editor_l10n_server.php:141
 #: library/servers/class_upfront_editor_l10n_server.php:432
 #: elements/upfront-login/lib/upfront_login.php:211
 msgid "Vorschau"
-msgstr ""
+msgstr "preview"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:148
 msgid "Vorschaubild"
-msgstr ""
+msgstr "thumbnail"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:188
 msgid "Vorschaubild Bild"
-msgstr ""
+msgstr "Thumbnail image"
 
 #: elements/upfront-gallery/lib/ugallery.php:360
 msgid "Vorschaubild zuschneiden"
-msgstr ""
+msgstr "Crop thumbnail"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:186
 msgid "Vorschaubild-Wrapper"
-msgstr ""
+msgstr "Thumbnail Wrapper"
 
 #: library/servers/class_upfront_editor_l10n_server.php:113
 msgid "Vorschaugröße"
-msgstr ""
+msgstr "preview size"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:102
 msgid "Wandel 3 Absätze in Teiler um"
-msgstr ""
+msgstr "Convert 3 paragraphs to dividers"
 
 #: library/class_upfront_logger.php:173
 msgid "Warning"
-msgstr ""
+msgstr "Warning"
 
 #: library/servers/class_upfront_admin.php:41
 msgid ""
@@ -7608,56 +7610,58 @@ msgid ""
 "Inhalte oder Änderungen, die Du mit dem Drag-and-Drop-Upfront-Editor "
 "vorgenommen hast, verloren."
 msgstr ""
+"WARNING: If you change the template associated with this post, any content "
+"or changes you made using the drag-and-drop Upfront editor will be lost."
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:159
 msgid "Was soll das Element anzeigen?"
-msgstr ""
+msgstr "What should the element show?"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:39
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:255
 msgid "Webseite"
-msgstr ""
+msgstr "website"
 
 #: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_author.php:132
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: library/servers/class_upfront_presets_server.php:624
 msgid "Weight/Style:"
-msgstr ""
+msgstr "Weight/Style:"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:144
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:264
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:201
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:218
 msgid "Weiterlesen"
-msgstr ""
+msgstr "Weight/Style:"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:202
 msgid "Weiterlesen-Element"
-msgstr ""
+msgstr "Read more element"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:145
 msgid "Weiterlesen-Schaltflächenelement"
-msgstr ""
+msgstr "Read more button element"
 
 #: library/servers/class_upfront_editor_l10n_server.php:303
 msgid "Weitermachen"
-msgstr ""
+msgstr "Keep going"
 
 #: elements/upfront-gallery/lib/ugallery.php:372
 msgid "Wenn auf ein Galerie-Thumbnail geklickt wird"
-msgstr ""
+msgstr "When a gallery thumbnail is clicked"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:75
 msgid "Wenn Beitrag kein Bild hat."
-msgstr ""
+msgstr "If post has no image."
 
 #: library/servers/class_upfront_editor_l10n_server.php:768
 msgid ""
 "Wenn die Sperre aufgehoben ist, kannst Du im Kopf- und Fußzeilenbereich "
 "Elemente darin platzieren."
-msgstr ""
+msgstr "When unlocked, you can place elements in the header and footer area."
 
 #: library/servers/class_upfront_editor_l10n_server.php:264
 msgid ""
@@ -7665,6 +7669,8 @@ msgid ""
 "Deine aktuellen Änderungen entfernt und die <span class=\"template_name\">"
 "Standardvorlage</span> geladen."
 msgstr ""
+"Clicking <strong>Reset Changes</strong> will remove all your current changes "
+"and load the <span class=\"template_name\">default template</span>."
 
 #: library/servers/class_upfront_editor_l10n_server.php:602
 #, php-format
@@ -7672,6 +7678,8 @@ msgid ""
 "Wenn Du den „%s“-Stil löschen, werden alle Elemente mit ihm ungestylt. Bist "
 "du sicher?"
 msgstr ""
+"If you delete the \"%s\" style, all elements will be unstyled with it. Are "
+"you sure?"
 
 #: elements/upfront-comment/lib/upfront_comment.php:294
 msgid ""
@@ -7680,6 +7688,9 @@ msgid ""
 "wird innerhalb von Wörtern übereinstimmen, also wird „press“ mit "
 "„ClassicPress“ übereinstimmen."
 msgstr ""
+"If a comment contains any of these words in its content, name, URL, email, "
+"or IP, it will be marked as spam. One word or IP per line. It will match "
+"within words, so \"press\" will match \"ClassicPress\"."
 
 #: elements/upfront-comment/lib/upfront_comment.php:293
 msgid ""
@@ -7688,10 +7699,13 @@ msgid ""
 "oder IP pro Zeile. Es wird innerhalb von Wörtern übereinstimmen, also wird "
 "„press“ mit „ClassicPress“ übereinstimmen."
 msgstr ""
+"If a comment contains any of these words in its content, name, URL, email, "
+"or IP, it will be held in the moderation queue. One word or IP per line. It "
+"will match within words, so \"press\" will match \"ClassicPress\"."
 
 #: library/servers/class_upfront_editor_l10n_server.php:699
 msgid "Wenn kein Feature-Bild"
-msgstr ""
+msgstr "If no feature picture"
 
 #: library/class_upfront_compat.php:310
 msgid ""
@@ -7701,46 +7715,51 @@ msgid ""
 "to make a full backup of your site with <b>Snapshot</b> before proceeding to "
 "edit your site. "
 msgstr ""
+"We’ve put a lot of time into getting the migration process right, however "
+"given the variety of layouts that can be achieved with Upfront and the "
+"amazing improvements we’ve added in version 1.0, we strongly advise that you "
+"to make a full backup of your site with <b>Snapshot</b> before proceeding to "
+"edit your site. "
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:223
 msgid "What an awesome stuff! "
-msgstr ""
+msgstr "What an awesome stuff! "
 
 #: library/servers/class_upfront_editor_l10n_server.php:570
 #: library/servers/class_upfront_presets_server.php:654
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:86
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:89
 msgid "Widget"
-msgstr ""
+msgstr "Widget"
 
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:90
 msgid "Widget Einstellungen"
-msgstr ""
+msgstr "Widget settings"
 
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:98
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:99
 msgid "Widget Links"
-msgstr ""
+msgstr "Widget Links"
 
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:96
 msgid "Widget-Container"
-msgstr ""
+msgstr "Widget Links"
 
 #: library/media/class_upfront_media_server.php:130
 msgid "Wie möchtest Du diese Bilder einfügen?"
-msgstr ""
+msgstr "How would you like to insert these images?"
 
 #: library/servers/class_upfront_editor_l10n_server.php:193
 msgid "Wiederherstellen"
-msgstr ""
+msgstr "Restore"
 
 #: library/servers/class_upfront_editor_l10n_server.php:437
 msgid "Wiederholen"
-msgstr ""
+msgstr "Repeat"
 
 #: library/servers/class_upfront_editor_l10n_server.php:438
 msgid "Wiederholen..."
-msgstr ""
+msgstr "Repeat..."
 
 #: library/media/class_upfront_media_server.php:140
 msgid ""
@@ -7748,27 +7767,32 @@ msgid ""
 "zum Speichern von Rich-Media-Dateien. Du kannst es dann einfach in Deine "
 "Webseite einbetten. Erfahre hier mehr."
 msgstr ""
+"We recommend using services like YouTube, Vimeo or Soundcloud for storing "
+"rich media files. You can then simply embed it into your website. Learn more "
+"here."
 
 #: elements/upfront-maps/lib/upfront_maps.php:122
 msgid "Wir konnten Deinen aktuellen Standort nicht automatisch ermitteln."
-msgstr ""
+msgstr "We could not automatically determine your current location."
 
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:103
 msgid ""
 "Wir konnten keine Felder für das ausgewählte Widget finden. Etwas könnte "
 "falsch sein."
 msgstr ""
+"We could not find any fields for the selected widget. Something could be "
+"wrong."
 
 #: library/servers/class_upfront_editor_l10n_server.php:608
 #: elements/upfront-comment/lib/upfront_comment.php:246
 msgid "Wird geladen"
-msgstr ""
+msgstr "Loading"
 
 #: library/servers/class_upfront_editor_l10n_server.php:60
 #: library/servers/class_upfront_editor_l10n_server.php:128
 #: elements/upfront-gallery/lib/ugallery.php:367
 msgid "Wird geladen..."
-msgstr ""
+msgstr "Loading..."
 
 #: library/compat/class_upfront_compat_classiccommerce.php:362
 msgid "ClassicCommerce Checkout Page"
@@ -7797,305 +7821,305 @@ msgstr "ClassicCommerce Cart Page"
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:282
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:229
 msgid "Worte einschränken"
-msgstr ""
+msgstr "limit words"
 
 #: library/servers/class_upfront_editor_l10n_server.php:414
 #: library/servers/class_upfront_editor_l10n_server.php:419
 #: elements/upfront-gallery/lib/ugallery.php:376
 msgid "Wow, die sind cool!"
-msgstr ""
+msgstr "Wow, these are cool!"
 
 #: elements/upfront-accordion/lib/uaccordion.php:129
 msgid "Wrapper des ersten Panels."
-msgstr ""
+msgstr "First panel wrapper."
 
 #: elements/upfront-accordion/lib/uaccordion.php:131
 msgid "Wrapper des letzten Panels."
-msgstr ""
+msgstr "Last panel wrapper."
 
 #: elements/upfront-slider/lib/upfront_slider.php:169
 msgid "Wrapper für Navigationspunkte"
-msgstr ""
+msgstr "Navigation point wrapper"
 
 #: elements/upfront-accordion/lib/uaccordion.php:135
 msgid "Wrapper von geraden Paneelen."
-msgstr ""
+msgstr "Straight panel wrapper."
 
 #: elements/upfront-accordion/lib/uaccordion.php:133
 msgid "Wrapper von ungeraden Paneelen."
-msgstr ""
+msgstr "Wrapper of odd panels."
 
 #: elements/upfront-login/lib/upfront_login.php:230
 msgid "Wrapper-Hintergrund"
-msgstr ""
+msgstr "wrapper background"
 
 #: elements/upfront-login/lib/upfront_login.php:173
 msgid "Wrapper-Layer für jedes Feld"
-msgstr ""
+msgstr "Wrapper layer for each field"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:120
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:174
 msgid "Wähle anzuzeigende Beitragsteile aus"
-msgstr ""
+msgstr "Select post parts to display"
 
 #: library/servers/class_upfront_editor_l10n_server.php:612
 msgid "Wähle aus globalen Regionen"
-msgstr ""
+msgstr "Choose from global regions"
 
 #: library/servers/class_upfront_editor_l10n_server.php:297
 #, php-format
 msgid "Wähle aus zuvor verwendeten %s"
-msgstr ""
+msgstr "Choose from previously used %s"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:176
 msgid "Wähle benutzerdefinierten Beitrag"
-msgstr ""
+msgstr "Choose custom post"
 
 #: elements/upfront-slider/lib/upfront_slider.php:238
 msgid "Wähle Bilder"
-msgstr ""
+msgstr "Choose pictures"
 
 #: elements/upfront-slider/lib/upfront_slider.php:230
 msgid "Wähle den Slider-Typ aus"
-msgstr ""
+msgstr "Select the slider type"
 
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:92
 msgid "Wähle ein Widget aus"
-msgstr ""
+msgstr "Choose a widget"
 
 #: library/servers/class_upfront_editor_l10n_server.php:833
 msgid "Wähle einen Beitragstyp aus:"
-msgstr ""
+msgstr "Choose a post type:"
 
 #: library/servers/class_upfront_editor_l10n_server.php:607
 msgid "Wähle einen Inhalt zum Verlinken aus"
-msgstr ""
+msgstr "Select content to link to"
 
 #: library/media/class_upfront_media_server.php:114
 msgid "Wähle Filter aus"
-msgstr ""
+msgstr "Select filters"
 
 #: library/servers/class_upfront_editor_l10n_server.php:614
 msgid "Wähle Globale Region aus"
-msgstr ""
+msgstr "Select Global Region"
 
 #: library/servers/class_upfront_editor_l10n_server.php:239
 msgid "Wähle Lightbox"
-msgstr ""
+msgstr "Choose lightbox"
 
 #: library/servers/class_upfront_editor_l10n_server.php:547
 msgid "Wähle mindestens eine Schriftstärke aus."
-msgstr ""
+msgstr "Choose at least one font weight."
 
 #: library/servers/class_upfront_editor_l10n_server.php:444
 msgid "Wähle Modus aus"
-msgstr ""
+msgstr "Choose mode off"
 
 #: library/servers/class_upfront_editor_l10n_server.php:443
 msgid "Wähle Modus ein"
-msgstr ""
+msgstr "Choose mode on"
 
 #: library/servers/class_upfront_editor_l10n_server.php:213
 msgid "Wähle oben Schriftart, um eine Vorschau der Schriftstile anzuzeigen"
-msgstr ""
+msgstr "Select Font above to preview font styles"
 
 #: library/servers/class_upfront_editor_l10n_server.php:228
 msgid "Wähle Rufnummer"
-msgstr ""
+msgstr "Dial phone number"
 
 #: library/servers/class_upfront_editor_l10n_server.php:546
 msgid "Wähle Schriftfamilie und -stärke aus."
-msgstr ""
+msgstr "Select font family and weight."
 
 #: library/servers/class_upfront_editor_l10n_server.php:124
 #: library/servers/class_upfront_editor_l10n_server.php:126
 msgid "Wähle Tag"
-msgstr ""
+msgstr "choose day"
 
 #: library/servers/class_upfront_editor_l10n_server.php:448
 msgid "Wähle Theme"
-msgstr ""
+msgstr "Choose Theme"
 
 #: library/servers/class_upfront_editor_l10n_server.php:217
 msgid "Wähle zu verwendende Symbolschrift:"
-msgstr ""
+msgstr "Choose symbol font to use:"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:271
 msgid "Wähle zu verwendendes Menü"
-msgstr ""
+msgstr "Choose menu to use"
 
 #: library/media/class_upfront_media_server.php:84
 #: library/servers/class_upfront_editor_l10n_server.php:288
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:80
 msgid "Wählen"
-msgstr ""
+msgstr "Choose"
 
 #: library/servers/class_upfront_editor_l10n_server.php:571
 #: library/servers/class_upfront_presets_server.php:655
 #: elements/upfront-youtube/lib/uyoutube.php:108
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:220
 msgid "Youtube box"
-msgstr ""
+msgstr "Youtube box"
 
 #: elements/upfront-youtube/lib/uyoutube.php:112
 msgid "YouTube Einstellungen"
-msgstr ""
+msgstr "YouTube settings"
 
 #: elements/upfront-youtube/lib/uyoutube.php:110
 msgid "YouTube URL"
-msgstr ""
+msgstr "YouTube URL"
 
 #: elements/upfront-youtube/lib/uyoutube.php:127
 #: elements/upfront-youtube/lib/uyoutube.php:135
 msgid "YouTube Video URL"
-msgstr ""
+msgstr "YouTube Video URL"
 
 #: library/media/class_upfront_media_server.php:156
 msgid "Z » A"
-msgstr ""
+msgstr "Z » A"
 
 #: elements/upfront-youtube/lib/uyoutube.php:115
 msgid "Zeichen."
-msgstr ""
+msgstr "Sign."
 
 #: elements/upfront-this-post/lib/this_post.php:671
 msgid "Zeige die folgenden Beitragsdaten:"
-msgstr ""
+msgstr "Show the following post data:"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:277
 msgid "Zeige die Position des Klickmenüs an:"
-msgstr ""
+msgstr "Show the position of the click menu:"
 
 #: elements/upfront-like-box/lib/upfront-like-box.php:120
 msgid "Zeige Gesichter von Freunden"
-msgstr ""
+msgstr "Show faces of friends"
 
 #: library/admin/class_upfront_admin_general.php:356
 msgid "Zeige mehr"
-msgstr ""
+msgstr "Show more"
 
 #: library/admin/class_upfront_admin_general.php:356
 msgid "Zeige weniger"
-msgstr ""
+msgstr "Show less"
 
 #: library/media/class_upfront_media_server.php:109
 msgid "Zeige {{total}} Ergebnisse für"
-msgstr ""
+msgstr "Showing {{total}} results for"
 
 #: library/servers/class_upfront_editor_l10n_server.php:493
 msgid "Zeilenhöhe"
-msgstr ""
+msgstr "row height"
 
 #: library/servers/class_upfront_presets_server.php:626
 msgid "Zeilenhöhe:"
-msgstr ""
+msgstr "row height:"
 
 #: library/servers/class_upfront_editor_l10n_server.php:165
 msgid "Zeitplan"
-msgstr ""
+msgstr "Time schedule"
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:292
 msgid "Zentriert"
-msgstr ""
+msgstr "centered"
 
 #: library/servers/class_upfront_editor_l10n_server.php:445
 msgid "Zerstöre das Layout und räume alles auf"
-msgstr ""
+msgstr "Destroy the layout and clean everything up"
 
 #: library/servers/class_upfront_editor_l10n_server.php:466
 msgid "Ziehbare Elemente"
-msgstr ""
+msgstr "Draggable items"
 
 #: elements/upfront-maps/lib/upfront_maps.php:116
 msgid "Ziehbare Karte"
-msgstr ""
+msgstr "Draggable map"
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:121
 msgid "Ziehe die Beitragsteile ab zum anordnen"
-msgstr ""
+msgstr "Peel off post parts to arrange"
 
 #: elements/upfront-image/lib/uimage.php:288
 msgid "Ziehe die Dateien hier hin, um sie hochzuladen"
-msgstr ""
+msgstr "Drag files here to upload them"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:175
 msgid "Ziehen um Beitragselemente neu anzuordnen"
-msgstr ""
+msgstr "Drag to rearrange post elements"
 
 #: library/servers/class_upfront_editor_l10n_server.php:293
 msgid "Ziel:"
-msgstr ""
+msgstr "Goal:"
 
 #: library/servers/class_upfront_editor_l10n_server.php:717
 #: elements/upfront-maps/lib/upfront_maps.php:107
 msgid "Zoom"
-msgstr ""
+msgstr "Zoom"
 
 #: library/media/class_upfront_media_server.php:125
 msgid "Zugewiesene Labels"
-msgstr ""
+msgstr "Assigned labels"
 
 #: library/media/class_upfront_media_server.php:139
 msgid "Zugewiesene Labels:"
-msgstr ""
+msgstr "Assigned labels:"
 
 #: elements/upfront-gallery/lib/ugallery.php:374
 msgid "zur verlinkten Seite gehen"
-msgstr ""
+msgstr "go to the linked page"
 
 #: library/servers/class_upfront_editor_l10n_server.php:309
 #: elements/upfront-slider/lib/upfront_slider.php:187
 msgid "Zurück"
-msgstr ""
+msgstr "Return"
 
 #: library/servers/class_upfront_editor_l10n_server.php:762
 msgid "Zurück nach oben"
-msgstr ""
+msgstr "Back to top"
 
 #: elements/upfront-like-box/lib/upfront-like-box.php:118
 msgid "Zurück zu Deinem"
-msgstr ""
+msgstr "Back to yours"
 
 #: library/media/class_upfront_media_server.php:108
 msgid "Zurücksetzen"
-msgstr ""
+msgstr "Reset to default"
 
 #: library/servers/class_upfront_presets_server.php:630
 msgid "Zustandsänderungen animieren"
-msgstr ""
+msgstr "Animate state changes"
 
 #: library/media/class_upfront_media_server.php:102
 msgid "Zusätzliche Größen"
-msgstr ""
+msgstr "Additional sizes"
 
 #: elements/upfront-text/lib/upfront_text.php:155
 msgid "Zusätzliche Polsterung"
-msgstr ""
+msgstr "Additional padding"
 
 #: elements/upfront-text/lib/upfront_text.php:156
 msgid ""
 "Zusätzliche Polsterung ist praktisch, wenn Du einen Rahmen oder ein BG-"
 "Farbset hast."
-msgstr ""
+msgstr "Extra padding comes in handy if you have a frame or BG color set."
 
 #: library/servers/class_upfront_editor_l10n_server.php:101
 msgid "Zusätzliche Typauffüllung"
-msgstr ""
+msgstr "Additional type padding"
 
 #: library/admin/class_upfront_admin_experimental.php:141
 msgid "Zwei Minuten (Debug)"
-msgstr ""
+msgstr "Two minutes (debug)"
 
 #: library/admin/class_upfront_admin_experimental.php:144
 msgid "Zwei Tage"
-msgstr ""
+msgstr "Two days"
 
 #: library/admin/class_upfront_admin_experimental.php:147
 msgid "Zwei Wochen"
-msgstr ""
+msgstr "Two weeks"
 
 #: library/media/class_upfront_media_server.php:147
 msgid "{{items}} Medium"

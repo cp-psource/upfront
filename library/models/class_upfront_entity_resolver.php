@@ -188,7 +188,7 @@ abstract class Upfront_EntityResolver {
 			}
 			if ('maintenance' === $item || 'single-maintenance-mode_page' === $specificity) {
 				// maintenance mode page layout
-				return __('Maintenance Mode', 'upfront');
+				return __('Wartungsmodus', 'upfront');
 			}
 
 			if (empty($item) && empty($specificity)) return __('Single Generic', 'upfront');

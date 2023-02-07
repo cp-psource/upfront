@@ -68,9 +68,9 @@ class Upfront_CompressionBehavior {
 	 */
 	public function get_known_compression_levels () {
 		return array(
-			self::LEVEL_LOW => __('Low', Upfront::TextDomain),
-			self::LEVEL_DEFAULT => __('Default', Upfront::TextDomain),
-			self::LEVEL_AGGRESSIVE => __('Aggressive', Upfront::TextDomain),
+			self::LEVEL_LOW => __('Niedrig', Upfront::TextDomain),
+			self::LEVEL_DEFAULT => __('Standard', Upfront::TextDomain),
+			self::LEVEL_AGGRESSIVE => __('Aggressiv', Upfront::TextDomain),
 			self::LEVEL_HARDCORE => __('Hardcore', Upfront::TextDomain),
 		);
 	}
