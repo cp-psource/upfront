@@ -13,9 +13,9 @@ class Upfront_Compat implements IUpfront_Server {
 	 *
 	 * @return bool
 	 */
-	public static function has_dashboard () {
+	/*public static function has_dashboard () {
 		return class_exists('PSOURCE_Dashboard');
-	}
+	}*/
 
 
 	/**
@@ -107,7 +107,7 @@ class Upfront_Compat implements IUpfront_Server {
 		if (defined('DOING_AJAX') && DOING_AJAX) return $raw; // Presumably we know what we're doing there
 		// Only ever kick in when there's no WPMU DEV Dashboard around.
 		// Otherwise, trust it'll do the right thing on its own.
-		if (Upfront_Compat::has_dashboard()) return $raw;
+		//if (Upfront_Compat::has_dashboard()) return $raw;
 
 		if (empty($raw) || empty($raw->response)) return $raw; // So nothing new here, carry on
 
@@ -328,8 +328,8 @@ class Upfront_Compat implements IUpfront_Server {
 	}
 
 	private function enable_wc_compat() {
-		if (class_exists('Upfront_Compat_WooCommerce')) {
-			new Upfront_Compat_WooCommerce();
+		if (class_exists('Upfront_Compat_ClassicCommerce')) {
+			new Upfront_Compat_ClassicCommerce();
 		}
 	}
 

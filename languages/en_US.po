@@ -7666,28 +7666,28 @@ msgstr ""
 msgid "Wird geladen..."
 msgstr ""
 
-#: library/compat/class_upfront_compat_woocommerce.php:362
-msgid "WooCommerce Checkout Page"
+#: library/compat/class_upfront_compat_classiccommerce.php:362
+msgid "ClassicCommerce Checkout Page"
 msgstr ""
 
-#: library/compat/class_upfront_compat_woocommerce.php:358
-msgid "WooCommerce My Account Page"
+#: library/compat/class_upfront_compat_classiccommerce.php:358
+msgid "ClassicCommerce My Account Page"
 msgstr ""
 
-#: library/compat/class_upfront_compat_woocommerce.php:370
-msgid "WooCommerce Product Tag"
+#: library/compat/class_upfront_compat_classiccommerce.php:370
+msgid "ClassicCommerce Product Tag"
 msgstr ""
 
-#: library/compat/class_upfront_compat_woocommerce.php:366
-msgid "WooCommerce Produktkategorie"
+#: library/compat/class_upfront_compat_classiccommerce.php:366
+msgid "ClassicCommerce Produktkategorie"
 msgstr ""
 
-#: library/compat/class_upfront_compat_woocommerce.php:350
-msgid "WooCommerce Shop Page"
+#: library/compat/class_upfront_compat_classiccommerce.php:350
+msgid "ClassicCommerce Shop Page"
 msgstr ""
 
-#: library/compat/class_upfront_compat_woocommerce.php:354
-msgid "WooCommerce Warenkorb Page"
+#: library/compat/class_upfront_compat_classiccommerce.php:354
+msgid "ClassicCommerce Warenkorb Page"
 msgstr ""
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:282

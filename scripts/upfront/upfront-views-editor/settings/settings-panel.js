@@ -589,7 +589,7 @@
 
                 var me = this;
                 this.settings.each(function (setting) {
-                    if ( (setting.fields || setting.settings).size() > 0 ) {
+                    if ( (setting.fields || setting.settings).length > 0 ) {
                         setting.save_fields();
                     } else {
                         var value = me.model.get_property_value_by_name(setting.get_name());

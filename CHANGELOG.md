@@ -7,11 +7,14 @@ Change Log
 - Angepasst: Auf Deutsch übersetzt inkl. Quellcode
 - Hinzugefügt: PSource Updater
 - Hinzugefügt: Aktuelle Hilfequellen, Tutorials und Links auf Deutsch
+- Hinzugefügt: Unterstützung für Terminmanager
 - Fix: Veraltetes .click() jQuery
 - Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
 - Fix: Securityfix Dashboard-Changelog (fopen)
 - Fix: Veraltete each() Funktion Dashboard-Changelog
 - Fix: Deprecated create_function
+- Fix: PhP8.1 Inkompatibilitäten
+
 
 1.9.4 - 2017-10-16
 -------------------------------------------------------------------------------
@@ -20,7 +23,7 @@ Change Log
 - Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
 - Fix: Das Posts/Pages-Popup wird auf Subsites manchmal nicht richtig geladen
 - Fix: Das Umbenennen der Seite in der Seitenleiste funktioniert nicht
-- Fix: WooCommerce-Produktseite zeigt Beiträge statt Produkte
+- Fix: ClassicCommerce-Produktseite zeigt Beiträge statt Produkte
 - Fix: Videoelement "Erstes Video zu Thumbnails hinzufügen" kann nicht deaktiviert werden
 - Fix: Undo/Redo-Befehle sollten im Responsive-Modus nicht sichtbar sein
 - Fix: Sichtbarkeitsoption "Sticky" in den Seiteneinstellungen kann nicht gespeichert werden
@@ -243,7 +246,7 @@ Change Log
 
 1.5 - 2016-10-24
 -------------------------------------------------------------------------------
-- Hinzugefügt: WooCommerce-Unterstützung
+- Hinzugefügt: ClassicCommerce-Unterstützung
 - Hinzugefügt: Polsterungseinstellung für einzelne Post-Teile auf Post-Datenelementen
 - Hinzugefügt: Regionseinstellungen in die Seitenleiste verschoben
 - Hinzugefügt: Umschalten zum Zurücksetzen der globalen Region, um den Optionsbereich im Admin zurückzusetzen
