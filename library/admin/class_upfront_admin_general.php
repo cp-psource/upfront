@@ -58,19 +58,19 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 								<h4><?php esc_html_e("Online Artikel", Upfront::TextDomain) ?></h4>
 								<ul>
 
-									<li><a href='https://upfront.n3rds.work/upfront-framework/' target="_blank"><?php esc_html_e("Upfront 1.0", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-1/' target="_blank"><?php esc_html_e("Upfront Teil 1: Die Grundlagen, Themenfarben und Typografie", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-2/' target="_blank"><?php esc_html_e("Upfront Teil 2: Strukturieren Deiner Webseite mit Regionen", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-3/' target="_blank"><?php esc_html_e("Upfront Teil 3: Gestalten der Webseite mit Elementen", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-4/' target="_blank"><?php esc_html_e("Upfront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-5/' target="_blank"><?php esc_html_e("Upfront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-6/' target="_blank"><?php esc_html_e("Upfront Teil 6: Erstellen von responsiven Webseiten", Upfront::TextDomain) ?></a></li>
-									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-7/' target="_blank"><?php esc_html_e("Upfront Teil 7: Arbeiten mit Seiten und Beiträgen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/' target="_blank"><?php esc_html_e("UpFront 1.0", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-1/' target="_blank"><?php esc_html_e("UpFront Teil 1: Die Grundlagen, Themenfarben und Typografie", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-2/' target="_blank"><?php esc_html_e("UpFront Teil 2: Strukturieren Deiner Webseite mit Regionen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-3/' target="_blank"><?php esc_html_e("UpFront Teil 3: Gestalten der Webseite mit Elementen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-4/' target="_blank"><?php esc_html_e("UpFront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-5/' target="_blank"><?php esc_html_e("UpFront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-6/' target="_blank"><?php esc_html_e("UpFront Teil 6: Erstellen von responsiven Webseiten", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://upfront.n3rds.work/upfront-framework/upfront-7/' target="_blank"><?php esc_html_e("UpFront Teil 7: Arbeiten mit Seiten und Beiträgen", Upfront::TextDomain) ?></a></li>
 								</ul>
 							</div>
 							<div class="upfront-debug-block">
 								<h4><?php _e("Hilfe &amp; Support", Upfront::TextDomain) ?></h4>
-								<a class="upfront_button visit-forum" href="https://upfront.n3rds.work/support/" target="_blank"><?php esc_html_e("Visit Forums", Upfront::TextDomain) ?></a> <a class="upfront_button" href="https://upfront.n3rds.work/forums/forum/support#question" target="_blank"><?php esc_html_e("Ask a Question", Upfront::TextDomain) ?></a>
+								<a class="upfront_button visit-forum" href="https://upfront.n3rds.work/uf_forum/upfront-framework-forum/" target="_blank"><?php esc_html_e("Besuche das UpFront Forum", Upfront::TextDomain) ?></a> <a class="upfront_button" href="https://upfront.n3rds.work/uf_snippets/upfront-theme-snippets/" target="_blank"><?php esc_html_e("Lasse Dich Inspirieren mit Snippets", Upfront::TextDomain) ?></a>
 							</div>
 						</div>
 					</div>
@@ -160,8 +160,8 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 						<p><?php printf( __('Hier findest Du verschiedene Debug-Helfer, die Du ausprobieren kannst, wenn etwas schief geht. Bevor Du einen der folgenden Schritte ausprobierst, vergewissere Dich bitte, dass Du erst den <a target="_blank" href="%s"><strong>Cache leerst &amp; Deine Browserseite aktualisierst</strong></a>, das behebt normalerweise die meisten Probleme.', Upfront::TextDomain ), "https://refreshyourcache.com/en/home/"); ?> </p>
 					</div>
 					<div class="upfront-debug-block">
-						<p class="left"><?php esc_html_e("Kann nach Core-Upgrades hilfreich sein", Upfront::TextDomain) ?></p>
-						<button id="upfront_reset_cache"><?php esc_html_e("Upfront-Cache zurücksetzen", Upfront::TextDomain) ?></button>
+						<p class="left"><?php esc_html_e("Kann nach Framework-Upgrades hilfreich sein", Upfront::TextDomain) ?></p>
+						<button id="upfront_reset_cache"><?php esc_html_e("UpFront-Cache zurücksetzen", Upfront::TextDomain) ?></button>
 					</div>
 					<div class="upfront-debug-block lightgrey">
 						<p class="left">
@@ -195,7 +195,7 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 					</div>
 					<div class="upfront-debug-block">
 						<p class="left"><?php esc_html_e("Theme auf Standardzustand zurücksetzen", Upfront::TextDomain) ?></p>
-						<p class="left"><?php _e('<small><strong class="warning-text">&#x26A0; WARNUNG:</strong> Dadurch wird Dein aktives Design in den Zustand zurückversetzt, in dem es sich bei der Erstinstallation befand. Dies kann nicht rückgängig gemacht werden, also sichere es bitte, bevor Du fortfährst</small>', Upfront::TextDomain); ?></p>
+						<p class="left"><?php _e('<small><strong class="warning-text">&#x26A0; WARNUNG:</strong> Dadurch wird Dein aktives Design in den Zustand zurückversetzt, in dem es sich bei der Erstinstallation befand. Dies kann nicht rückgängig gemacht werden, also sichere es bitte, bevor Du fortfährst</small>.', Upfront::TextDomain); ?></p>
 						<button class="warning" id="upfront_reset_theme"><?php esc_html_e("Design zurücksetzen", Upfront::TextDomain) ?></button>
 					</div>
 				</div>

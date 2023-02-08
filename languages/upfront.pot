@@ -8364,17 +8364,17 @@ msgid "Bitte gib eine gültige Email-Adresse ein"
 msgstr ""
 
 #: library/class_upfront_behavior.php:71
-msgid "Niedrig
+msgid "Niedrig"
 msgstr ""
 
-#: library/admin/class_upfront_admin_experimental.php:113
+#: library/admin/class_upfront_admin_experimental.php:114
 #: library/class_upfront_behavior.php:74
-msgid "Hardcore"
+msgid "&#x2622; Hardcore"
 msgstr ""
 
-#: library/admin/class_upfront_admin_experimental.php:103
+#: library/admin/class_upfront_admin_experimental.php:104
 #: library/class_upfront_behavior.php:73
-msgid "Aggressiv"
+msgid "&#x1F680; Aggressiv"
 msgstr ""
 
 #: library/class_upfront_admin.php:47
@@ -8395,6 +8395,11 @@ msgstr ""
 msgid "Benutzereinschränkungen"
 msgstr ""
 
+#: library/admin/class_upfront_admin_experimental.php:166
+#: library/admin/class_upfront_admin_restrictions.php:128
+msgid "Änderungen speichern"
+msgstr ""
+
 #: library/admin/class_upfront_admin_restrictions.php:49
 msgid "Funktionalität"
 msgstr ""
@@ -8404,140 +8409,222 @@ msgid "Kein Label für &quot;%s&quot;"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:30
-msgid "Version Info"
+msgid "Versions Information"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:36
-msgid "%s (Active Theme)"
+msgid "%s (Aktives Theme)"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:52
-msgid "Helpful Resources"
+msgid "Hilfreiche Ressourcen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:58
-msgid "Online Articles"
+msgid "Online Artikel"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:61
-msgid "Upfront 1.0"
+msgid "UpFront 1.0"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:62
-msgid "Upfront Part 1: The Basics, Theme Colors and Typography"
+msgid "UpFront Teil 1: Die Grundlagen, Themenfarben und Typografie"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:63
-msgid "Upfront Part 2: Structuring Your Site with Regions"
+msgid "UpFront Teil 2: Strukturieren Deiner Webseite mit Regionen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:64
-msgid "Upfront Part 3: Laying Out Your Site with Elements"
+msgid "UpFront Teil 3: Gestalten der Webseite mit Elementen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:65
-msgid "Upfront Part 4: Tweaking Elements with Custom Code"
+msgid "UpFront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:66
-msgid "Upfront Part 5: Adding Plugins and Styling Gravity Forms"
+msgid "UpFront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:67
-msgid "Upfront Part 6: Creating Responsive Websites"
+msgid "UpFront Teil 6: Erstellen von responsiven Webseiten"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:68
-msgid "Upfront Part 7: Working With Pages and Posts"
+msgid "UpFront Teil 7: Arbeiten mit Seiten und Beiträgen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:72
-msgid "WPMUDEV Help"
+msgid "Hilfe &amp; Support"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:73
-msgid "Visit Forums"
+msgid "Besuche das UpFront Forum"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:73
-msgid "Ask a Question"
+msgid "Lasse Dich Inspirieren mit Snippets"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:97
-msgid "API Keys"
+msgid "API Schlüssel"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:130
-msgid "Request queueing and caching strategy"
+msgid "Anforderungswarteschlangen- und Caching-Strategie"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:157
-msgid "Debug Options"
+msgid "Debug Optionen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:160
 msgid ""
-"Here you will find various Debug helpers that you might want to try if "
-"something goes wrong. Prior to trying any of the below, please make sure "
-"you have performed an <a target=\"_blank\" href=\"%s\"><strong>Empty Cache "
-"&amp; Hard Reload</strong></a>, that usually resolves most issue."
+"Hier findest Du verschiedene Debug-Helfer, die Du ausprobieren kannst, wenn etwas schief geht. "
+"Bevor Du einen der folgenden Schritte ausprobierst, vergewissere Dich bitte, dass Du erst "
+"den <a target=\"_blank\" href=\"%s\"><strong>Cache leerst &amp; Deine Browserseite "
+"aktualisierst</strong></a>, das behebt normalerweise die meisten Probleme."
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:163
-msgid "Can be helpful after core upgrades"
+msgid "Kann nach Framework-Upgrades hilfreich sein"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:164
-msgid "Reset Upfront Cache"
+msgid "UpFront-Cache zurücksetzen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:168
-msgid "Resets layout to default look, be careful"
+msgid "&#x26A0; Setzt das Layout auf die Standardansicht zurück, sei vorsichtig"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:175
-msgid "Please select layout to reset"
+msgid "Bitte wähle das Layout zum Zurücksetzen aus"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:188
-msgid "Include Global Regions"
+msgid "Globale Regionen einschließen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:191
-msgid "You have no saved layout to reset"
+msgid "Du hast kein gespeichertes Layout zum Zurücksetzen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:194
-msgid "Reset Layout"
+msgid "Layout zurücksetzen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:197
-msgid "Reset Theme to Default State"
+msgid "Theme auf Standardzustand zurücksetzen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:198
 msgid ""
-"<small><strong class=\"warning-text\">WARNING:</strong> This will return "
-"your active theme to the same state it was when you first installed it. "
-"This can not be undone, so please back-up before proceeding</small>"
+"<small><strong class=\"warning-text\">&#x26A0; WARNUNG:</strong> Dadurch wird "
+"Dein aktives Design in den Zustand zurückversetzt, in dem es sich bei der Erstinstallation "
+"befand. Dies kann nicht rückgängig gemacht werden, also sichere es bitte, bevor Du fortfährst</small>."
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:199
-msgid "Reset Theme"
+msgid "Design zurücksetzen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:222
-msgid "Site Maintenance"
+msgid "Webseiten-Wartung"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:224
-msgid "Enable site maintenance mode"
+msgid "Aktiviere den Webseiten-Wartungsmodus"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:235
-msgid "You can edit the maintenance page <a href=\"%s\" target=\"_blank\">here</a>"
+msgid "Du kannst die Wartungsseite <a href=\"%s\" target=\"_blank\">hier</a> bearbeiten"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:256
-msgid "Changelog"
+msgid "Änderungsprotokoll"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:160
+msgid "Upfront Kompression aktivieren (GZip)"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:161
+msgid "Wendet die GZip-Komprimierung auf alle von Upfront generierten Antworten an (AJAX)"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:11
+#: library/admin/class_upfront_admin_experimental.php:63
+msgid "Experimentelle Funktionen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:11
+msgid "Experimental"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:66
+msgid ""
+"Dies sind verschiedene experimentelle Funktionen, die UpFront zur Verfügung stehen. "
+"Bitte sei vorsichtig, einige dieser Einstellungen könnten Plugins stören."
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:71
+msgid "Leistungsoptimierungen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:75
+msgid "Leistungsverbessernde Verhaltensänderungen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:82
+msgid "&#x1F40C; Keine Optimierung"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:83
+msgid "Deaktiviert Standardoptimierung - Keine Optimierungen für Hohe Kompatibilität (Langsam)"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:91
+msgid "&#x1F407; Standard-Optimierung"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:92
+msgid "Aktiviert Standardoptimierung - Leichte Optimierungen für Hohe Kompatibilität (Flott)"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:105
+msgid "Entprellt verwendete ClassicPress-integrierte Skripte und lädt sie asynchron (Schnell)"
+msgstr ""
+
+
+#: library/admin/class_upfront_admin_experimental.php:114
+msgid ""
+"All built-in dependencies as well as jQuery are debounced & moved to "
+"footer. (This mode is very likely to break plugins, please use with "
+"caution)."
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:119
+msgid "Assets caching (freeze mode)"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:130
+msgid "Cache frozen assets"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:131
+msgid ""
+"Freeze all assets in their current state and serve them cached. This option "
+"will improve performance and is best used once you're done making changes "
+"to your site."
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:136
+msgid "Freeze time"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:137
+msgid "How long to wait before refreshing the frozen assets cache"
 msgstr ""
