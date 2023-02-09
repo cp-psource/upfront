@@ -1,6 +1,12 @@
 Change Log
 ============
 
+1.9.6 - 2023-02-09
+-------------------------------------------------------------------------------
+- Hinzugefügt: Englische Sprachfiles
+- Fix: Weitere PhP8 Kompatibilität
+- Fix: Einige Textpassagen verbessert
+
 1.9.5 - 2023-01-16
 -------------------------------------------------------------------------------
 - HINWEIS: Nun PSOURCE!

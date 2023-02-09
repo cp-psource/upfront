@@ -251,7 +251,7 @@ class Upfront_SocialMediaView extends Upfront_Object {
 				'after_title' => __('After Post Title', 'upfront'),
 				'aligned' => __('Aligned', 'upfront'),
 				'after_content' => __('After Post Content', 'upfront'),
-				'counter_style' => __('Social Counter style:', 'upfront'),
+				'counter_style' => __('Social Counter-Stil:', 'upfront'),
 			),
 		);
 		return !empty($key)

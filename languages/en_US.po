@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UpFront\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-02 22:32+0000\n"
-"PO-Revision-Date: 2023-02-07 23:57+0000\n"
+"PO-Revision-Date: 2023-02-08 01:13+0000\n"
 "Last-Translator: DerN3rd\n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -43,7 +43,7 @@ msgid "%d Schriftstile ausgewählt"
 msgstr "%d font styles selected"
 
 #: library/admin/class_upfront_admin_general.php:36
-msgid "%s (Active Theme)"
+msgid "%s (Aktives Theme)"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:132
@@ -90,6 +90,29 @@ msgstr "%s is being saved..."
 #, php-format
 msgid "%s wurde gelöscht."
 msgstr "%s has been deleted."
+
+#: library/admin/class_upfront_admin_experimental.php:91
+msgid "&#x1F407; Standard-Optimierung"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:82
+msgid "&#x1F40C; Keine Optimierung"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:104
+#: library/class_upfront_behavior.php:73
+msgid "&#x1F680; Aggressiv"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:114
+#: library/class_upfront_behavior.php:74
+msgid "&#x2622; Hardcore"
+msgstr ""
+
+#: library/admin/class_upfront_admin_general.php:168
+msgid ""
+"&#x26A0; Setzt das Layout auf die Standardansicht zurück, sei vorsichtig"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:514
 msgid "&laquo; Zurück zu den Beiträgen"
@@ -208,9 +231,10 @@ msgstr "<p>Text element with no background color applied<p>"
 
 #: library/admin/class_upfront_admin_general.php:198
 msgid ""
-"<small><strong class=\"warning-text\">WARNING:</strong> This will return "
-"your active theme to the same state it was when you first installed it. This "
-"can not be undone, so please back-up before proceeding</small>"
+"<small><strong class=\"warning-text\">&#x26A0; WARNUNG:</strong> Dadurch "
+"wird Dein aktives Design in den Zustand zurückversetzt, in dem es sich bei "
+"der Erstinstallation befand. Dies kann nicht rückgängig gemacht werden, also "
+"sichere es bitte, bevor Du fortfährst</small>."
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:808
@@ -288,11 +312,6 @@ msgstr "After Post Content"
 msgid "After Post Title"
 msgstr "After Post Title"
 
-#: library/admin/class_upfront_admin_experimental.php:103
-#: library/class_upfront_behavior.php:73
-msgid "Aggressiv"
-msgstr ""
-
 #: library/servers/class_upfront_editor_l10n_server.php:551
 #: library/servers/class_upfront_presets_server.php:637
 #: elements/upfront-accordion/lib/uaccordion.php:116
@@ -320,6 +339,10 @@ msgstr "Active Tab Content"
 msgid "Aktiver Bereich BG"
 msgstr "Active area BG"
 
+#: library/admin/class_upfront_admin_general.php:224
+msgid "Aktiviere den Webseiten-Wartungsmodus"
+msgstr ""
+
 #: elements/upfront-gallery/lib/ugallery.php:440
 msgid ""
 "Aktiviere Label-Sortierung in den Einstellungen, um Galerie-Labels "
@@ -341,6 +364,12 @@ msgstr "Enable SMTP authentication"
 #: elements/upfront-comment/lib/upfront_comment.php:278
 msgid "Aktiviere Thread-Kommentare (verschachtelte) {{subfield}} Ebenen tief"
 msgstr "Enable thread comments (nested) {{subfield}} levels deep"
+
+#: library/admin/class_upfront_admin_experimental.php:92
+msgid ""
+"Aktiviert Standardoptimierung - Leichte Optimierungen für Hohe "
+"Kompatibilität (Flott)"
+msgstr ""
 
 #: elements/upfront-this-post/lib/this_post.php:663
 msgid "Aktualisiere Beitrag..."
@@ -378,6 +407,12 @@ msgstr "Current navigation point"
 #: elements/upfront-social-media/lib/upfront-social-media.php:252
 msgid "Aligned"
 msgstr "Aligned"
+
+#: library/admin/class_upfront_admin_experimental.php:114
+msgid ""
+"All built-in dependencies as well as jQuery are debounced & moved to footer. "
+"(This mode is very likely to break plugins, please use with caution)."
+msgstr ""
 
 #: library/media/class_upfront_media_server.php:82
 #: library/media/class_upfront_media_server.php:152
@@ -536,6 +571,10 @@ msgstr ""
 "Request queue with response caching in canister. Cached replies persist "
 "across page reloads, but do not survive window/tab closures."
 
+#: library/admin/class_upfront_admin_general.php:130
+msgid "Anforderungswarteschlangen- und Caching-Strategie"
+msgstr ""
+
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:178
 msgid "Angegebenes Bild an Containergröße anpassen"
 msgstr "Fit specified image to container size"
@@ -657,7 +696,7 @@ msgid "Anzeigeverhalten"
 msgstr "display behavior"
 
 #: library/admin/class_upfront_admin_general.php:97
-msgid "API Keys"
+msgid "API Schlüssel"
 msgstr ""
 
 #: build/upfront/upfront-data.php:22 scripts/upfront/upfront-data.php:22
@@ -672,8 +711,8 @@ msgstr "area type"
 msgid "Aria Landmark-Rollen"
 msgstr "Aria Landmark roles"
 
-#: library/admin/class_upfront_admin_general.php:73
-msgid "Ask a Question"
+#: library/admin/class_upfront_admin_experimental.php:119
+msgid "Assets caching (freeze mode)"
 msgstr ""
 
 #: library/media/class_upfront_media_server.php:151
@@ -1245,6 +1284,10 @@ msgstr "caption text"
 msgid "Beschränken auf"
 msgstr "Limit to"
 
+#: library/admin/class_upfront_admin_general.php:73
+msgid "Besuche das UpFront Forum"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:383
 msgid "Besuche Link"
 msgstr "Visit link"
@@ -1660,6 +1703,10 @@ msgstr "Please select a widget"
 msgid "Bitte wähle aus"
 msgstr "Please select"
 
+#: library/admin/class_upfront_admin_general.php:175
+msgid "Bitte wähle das Layout zum Zurücksetzen aus"
+msgstr ""
+
 #: elements/upfront-newnavigation/lib/unewnavigation.php:229
 msgid "Bitte wähle das Menü in den Einstellungen"
 msgstr "Please select the menu in the settings"
@@ -1757,13 +1804,13 @@ msgstr "Button presets could not be saved."
 msgid "by Term"
 msgstr "by Term"
 
+#: library/admin/class_upfront_admin_experimental.php:130
+msgid "Cache frozen assets"
+msgstr ""
+
 #: elements/upfront-social-media/lib/upfront-social-media.php:231
 msgid "Call to action icon"
 msgstr "Call to action icon"
-
-#: library/admin/class_upfront_admin_general.php:163
-msgid "Can be helpful after core upgrades"
-msgstr ""
 
 #: elements/upfront-contact-form/lib/contact_form.php:536
 msgid "CAPTCHA"
@@ -1772,10 +1819,6 @@ msgstr "CAPTCHA"
 #: elements/upfront-contact-form/lib/contact_form.php:490
 msgid "CAPTCHA:"
 msgstr "CAPTCHA:"
-
-#: library/admin/class_upfront_admin_general.php:256
-msgid "Changelog"
-msgstr ""
 
 #: library/compat/class_upfront_compat_classiccommerce.php:362
 msgid "ClassicCommerce Checkout Page"
@@ -2008,8 +2051,14 @@ msgstr "date format"
 msgid "Dauerhaft"
 msgstr "Continuous"
 
+#: library/admin/class_upfront_admin_experimental.php:83
+msgid ""
+"Deaktiviert Standardoptimierung - Keine Optimierungen für Hohe "
+"Kompatibilität (Langsam)"
+msgstr ""
+
 #: library/admin/class_upfront_admin_general.php:157
-msgid "Debug Options"
+msgid "Debug Optionen"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:105
@@ -2210,6 +2259,10 @@ msgstr "The wrapper of each panel."
 #. Author of the theme
 msgid "DerN3rd"
 msgstr "DerN3rd"
+
+#: library/admin/class_upfront_admin_general.php:199
+msgid "Design zurücksetzen"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:540
 msgid "Designschriftarten konnten nicht gespeichert werden."
@@ -2465,6 +2518,13 @@ msgstr ""
 msgid "Dies kann später über das Einstellungsfeld geändert werden"
 msgstr "This can be changed later via the settings panel"
 
+#: library/admin/class_upfront_admin_experimental.php:66
+msgid ""
+"Dies sind verschiedene experimentelle Funktionen, die UpFront zur Verfügung "
+"stehen. Bitte sei vorsichtig, einige dieser Einstellungen könnten Plugins "
+"stören."
+msgstr ""
+
 #: elements/upfront-this-page/lib/this_page.php:51
 #, php-format
 msgid ""
@@ -2614,6 +2674,10 @@ msgid ""
 msgstr ""
 "You changed the desktop wallpaper for %s. Would you like to update tablet "
 "and mobile breakpoints to use this background as well?"
+
+#: library/admin/class_upfront_admin_general.php:191
+msgid "Du hast kein gespeichertes Layout zum Zurücksetzen"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:304
 msgid ""
@@ -2950,13 +3014,15 @@ msgstr "Email:"
 msgid "Empfohlene Einstellungen"
 msgstr "Recommended settings"
 
-#: library/admin/class_upfront_admin_general.php:224
-msgid "Enable site maintenance mode"
-msgstr ""
-
 #: library/servers/class_upfront_editor_l10n_server.php:765
 msgid "Entfernen"
 msgstr "Removed"
+
+#: library/admin/class_upfront_admin_experimental.php:105
+msgid ""
+"Entprellt verwendete ClassicPress-integrierte Skripte und lädt sie asynchron "
+"(Schnell)"
+msgstr ""
 
 #: library/media/class_upfront_media_server.php:712
 msgid ""
@@ -3069,6 +3135,15 @@ msgstr "label container"
 #: elements/upfront-gallery/lib/ugallery.php:380
 msgid "Etikettensortierung aktivieren"
 msgstr "Enable label sorting"
+
+#: library/admin/class_upfront_admin_experimental.php:11
+msgid "Experimental"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:11
+#: library/admin/class_upfront_admin_experimental.php:63
+msgid "Experimentelle Funktionen"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:78
 msgid "Exportiere Bilder mit dem Theme"
@@ -3371,6 +3446,17 @@ msgstr "form validation"
 msgid "Fortfahren"
 msgstr "Continue"
 
+#: library/admin/class_upfront_admin_experimental.php:131
+msgid ""
+"Freeze all assets in their current state and serve them cached. This option "
+"will improve performance and is best used once you're done making changes to "
+"your site."
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:136
+msgid "Freeze time"
+msgstr ""
+
 #: build/upfront/upfront-data.php:37 scripts/upfront/upfront-data.php:37
 msgid "Freitag"
 msgstr ""
@@ -3636,6 +3722,10 @@ msgstr "Global background settings"
 msgid "Globale Regionen"
 msgstr "Global Regions"
 
+#: library/admin/class_upfront_admin_general.php:188
+msgid "Globale Regionen einschließen"
+msgstr ""
+
 #: elements/upfront-like-box/lib/upfront-like-box.php:119
 msgid "globalen Einstellungen"
 msgstr "global settings"
@@ -3799,11 +3889,6 @@ msgstr "Enable breakpoints"
 msgid "Haltepunkte konnten nicht gespeichert werden."
 msgstr "Breakpoints could not be saved."
 
-#: library/admin/class_upfront_admin_experimental.php:113
-#: library/class_upfront_behavior.php:74
-msgid "Hardcore"
-msgstr ""
-
 #: layouts/single.php:12
 #: library/servers/class_upfront_editor_l10n_server.php:402
 msgid "Hauptbereich"
@@ -3854,21 +3939,18 @@ msgstr "Header Background:"
 msgid "Header-Rand"
 msgstr "header border"
 
-#: library/admin/class_upfront_admin_general.php:52
-msgid "Helpful Resources"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:160
-msgid ""
-"Here you will find various Debug helpers that you might want to try if "
-"something goes wrong. Prior to trying any of the below, please make sure you "
-"have performed an <a target=\"_blank\" href=\"%s\"><strong>Empty Cache &amp; "
-"Hard Reload</strong></a>, that usually resolves most issue."
-msgstr ""
-
 #: elements/upfront-maps/lib/upfront_maps.php:86
 msgid "hier"
 msgstr "here"
+
+#: library/admin/class_upfront_admin_general.php:160
+msgid ""
+"Hier findest Du verschiedene Debug-Helfer, die Du ausprobieren kannst, wenn "
+"etwas schief geht. Bevor Du einen der folgenden Schritte ausprobierst, "
+"vergewissere Dich bitte, dass Du erst den <a target=\"_blank\" href=\"%s\">"
+"<strong>Cache leerst &amp; Deine Browserseite aktualisierst</strong></a>, "
+"das behebt normalerweise die meisten Probleme."
+msgstr ""
 
 #: elements/upfront-button/lib/upfront_button.php:116
 msgid "Hier Klicken"
@@ -3901,9 +3983,13 @@ msgstr "Here we are!"
 msgid "Highlight"
 msgstr "Highlight"
 
-#: library/servers/class_upfront_editor_l10n_server.php:365
+#: library/admin/class_upfront_admin_general.php:72
 msgid "Hilfe &amp; Support"
 msgstr "Help &amp; support"
+
+#: library/admin/class_upfront_admin_general.php:52
+msgid "Hilfreiche Ressourcen"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:769
 #: elements/upfront-newnavigation/lib/unewnavigation.php:301
@@ -4000,6 +4086,10 @@ msgstr "Hover state for top level menu item"
 msgid "Hover-Status für Menüelement der Unterebene"
 msgstr "Hover state for sub-level menu item"
 
+#: library/admin/class_upfront_admin_experimental.php:137
+msgid "How long to wait before refreshing the frozen assets cache"
+msgstr ""
+
 #: elements/upfront-code/lib/upfront_code.php:131
 msgid "HTML"
 msgstr "HTML"
@@ -4066,7 +4156,7 @@ msgstr "Ignore sticky posts"
 
 #: library/servers/class_upfront_editor_l10n_server.php:119
 msgid "Ignorieren"
-msgstr "To ignore"
+msgstr "Ignore"
 
 #: library/servers/class_upfront_editor_l10n_server.php:296
 msgid "IHinzu &raquo;"
@@ -4101,10 +4191,6 @@ msgstr "In post location:"
 #: elements/upfront-social-media/lib/upfront-social-media.php:248
 msgid "In-post social media"
 msgstr "In post social media"
-
-#: library/admin/class_upfront_admin_general.php:188
-msgid "Include Global Regions"
-msgstr ""
 
 #: library/class_upfront_logger.php:175
 #: library/media/class_upfront_media_server.php:167
@@ -4289,6 +4375,10 @@ msgstr ""
 
 #: library/class_upfront_permissions.php:494
 msgid "Kann Medien hochladen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_general.php:163
+msgid "Kann nach Framework-Upgrades hilfreich sein"
 msgstr ""
 
 #: library/class_upfront_permissions.php:491
@@ -4715,6 +4805,10 @@ msgstr "Load..."
 msgid "Large"
 msgstr "Large"
 
+#: library/admin/class_upfront_admin_general.php:73
+msgid "Lasse Dich Inspirieren mit Snippets"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:54
 msgid "Layout"
 msgstr "Layout"
@@ -4746,6 +4840,10 @@ msgstr "Layout Style settings"
 #: library/servers/class_upfront_editor_l10n_server.php:434
 msgid "Layout veröffentlichen"
 msgstr "Layout veröffentlichen"
+
+#: library/admin/class_upfront_admin_general.php:194
+msgid "Layout zurücksetzen"
+msgstr ""
 
 #: elements/upfront-like-box/lib/upfront-like-box.php:114
 msgid "Layout-Stil"
@@ -4794,6 +4892,14 @@ msgstr "Put pictures here"
 #: library/servers/class_upfront_editor_l10n_server.php:845
 msgid "Leicht"
 msgstr "Light"
+
+#: library/admin/class_upfront_admin_experimental.php:71
+msgid "Leistungsoptimierungen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:75
+msgid "Leistungsverbessernde Verhaltensänderungen"
+msgstr ""
 
 #: elements/upfront-comment/lib/upfront_comment.php:280
 msgid "Letzte"
@@ -5619,6 +5725,10 @@ msgstr "Nothing"
 msgid "Nickname"
 msgstr "Nickname"
 
+#: library/class_upfront_behavior.php:71
+msgid "Niedrig"
+msgstr ""
+
 #: elements/upfront-gallery/lib/ugallery.php:383
 msgid "niemals"
 msgstr "never"
@@ -5777,7 +5887,7 @@ msgid "Oktober"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:58
-msgid "Online Articles"
+msgid "Online Artikel"
 msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:151
@@ -5953,10 +6063,6 @@ msgstr "Playback"
 #: elements/upfront-social-media/lib/upfront-social-media.php:186
 msgid "Please select an option from backend"
 msgstr "Please select an option from backend"
-
-#: library/admin/class_upfront_admin_general.php:175
-msgid "Please select layout to reset"
-msgstr ""
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:190
 msgid "Please, add some services"
@@ -6263,30 +6369,6 @@ msgstr "order of the slides"
 msgid "Rendern von %s%"
 msgstr "render %s%"
 
-#: library/admin/class_upfront_admin_general.php:130
-msgid "Request queueing and caching strategy"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:194
-msgid "Reset Layout"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:199
-msgid "Reset Theme"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:197
-msgid "Reset Theme to Default State"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:164
-msgid "Reset Upfront Cache"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:168
-msgid "Resets layout to default look, be careful"
-msgstr ""
-
 #: library/servers/class_upfront_editor_l10n_server.php:459
 #: library/servers/class_upfront_editor_l10n_server.php:460
 msgid "Responsiv"
@@ -6452,13 +6534,10 @@ msgstr "Add closing text"
 msgid "Schreibe benutzerdefinierten Code"
 msgstr "Add closing text"
 
+#: library/servers/class_upfront_presets_server.php:623
 #: library/servers/class_upfront_editor_l10n_server.php:490
 msgid "Schrift"
-msgstr "Writing"
-
-#: library/servers/class_upfront_presets_server.php:623
-msgid "Schrift:"
-msgstr "Writing:"
+msgstr "Typography"
 
 #: library/servers/class_upfront_editor_l10n_server.php:206
 #: library/servers/class_upfront_editor_l10n_server.php:549
@@ -6640,10 +6719,6 @@ msgstr "Label visibility"
 msgid "Single Generic"
 msgstr "Single Generic"
 
-#: library/admin/class_upfront_admin_general.php:222
-msgid "Site Maintenance"
-msgstr ""
-
 #: library/admin/class_upfront_admin_response_cache.php:57
 msgid "Sitzung"
 msgstr "meeting"
@@ -6757,7 +6832,7 @@ msgid "Social Container"
 msgstr "Social Container"
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:254
-msgid "Social Counter style:"
+msgid "Social Counter-Stil:"
 msgstr "Social Counter style:"
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:235
@@ -7175,6 +7250,10 @@ msgstr "The wrapper that contains each social button"
 msgid "Theme"
 msgstr "Theme"
 
+#: library/admin/class_upfront_admin_general.php:197
+msgid "Theme auf Standardzustand zurücksetzen"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:829
 msgid "Theme Einstellungen"
 msgstr "Theme settings"
@@ -7280,7 +7359,7 @@ msgstr "Tiled/Pattern"
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:207
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:216
 msgid "Titel"
-msgstr "title"
+msgstr "Title"
 
 #: elements/upfront-contact-form/lib/contact_form.php:522
 msgid "Titel des Kontaktformulars:"
@@ -7288,12 +7367,12 @@ msgstr "Contact form title:"
 
 #: elements/upfront-this-page/lib/this_page.php:54
 msgid "Titel schreiben..."
-msgstr "write title..."
+msgstr "Write title..."
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:154
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:156
 msgid "Titel-Wrapper"
-msgstr "title wrapper"
+msgstr "Title wrapper"
 
 #: elements/upfront-like-box/lib/upfront-like-box.php:122
 msgid "Titelbild ausblenden"
@@ -7321,7 +7400,7 @@ msgstr "Disconnect with"
 
 #: elements/upfront-login/lib/upfront_login.php:202
 msgid "Trigger"
-msgstr "triggers"
+msgstr "trigger"
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:212
 msgid "Twitter box"
@@ -7334,7 +7413,7 @@ msgstr "Typ Link URL:"
 #: library/servers/class_upfront_editor_l10n_server.php:475
 #: library/servers/class_upfront_presets_server.php:622
 msgid "Typelement:"
-msgstr "type element:"
+msgstr "Type element:"
 
 #: library/servers/class_upfront_editor_l10n_server.php:495
 #: library/servers/class_upfront_presets_server.php:629
@@ -7508,7 +7587,7 @@ msgid "UpFront"
 msgstr "UpFront"
 
 #: library/admin/class_upfront_admin_general.php:61
-msgid "Upfront 1.0"
+msgid "UpFront 1.0"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:665
@@ -7534,32 +7613,41 @@ msgstr ""
 "UpFront requires Pretty Permalinks to work. Please enable it <a href=\"%s\">"
 "here</a>"
 
+#: library/admin/class_upfront_admin_experimental.php:160
+msgid "Upfront Kompression aktivieren (GZip)"
+msgstr ""
+
 #: library/admin/class_upfront_admin_general.php:62
-msgid "Upfront Part 1: The Basics, Theme Colors and Typography"
+msgid "UpFront Teil 1: Die Grundlagen, Themenfarben und Typografie"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:63
-msgid "Upfront Part 2: Structuring Your Site with Regions"
+msgid "UpFront Teil 2: Strukturieren Deiner Webseite mit Regionen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:64
-msgid "Upfront Part 3: Laying Out Your Site with Elements"
+msgid "UpFront Teil 3: Gestalten der Webseite mit Elementen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:65
-msgid "Upfront Part 4: Tweaking Elements with Custom Code"
+msgid "UpFront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:66
-msgid "Upfront Part 5: Adding Plugins and Styling Gravity Forms"
+msgid ""
+"UpFront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:67
-msgid "Upfront Part 6: Creating Responsive Websites"
+msgid "UpFront Teil 6: Erstellen von responsiven Webseiten"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:68
-msgid "Upfront Part 7: Working With Pages and Posts"
+msgid "UpFront Teil 7: Arbeiten mit Seiten und Beiträgen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_general.php:164
+msgid "UpFront-Cache zurücksetzen"
 msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:429
@@ -7637,7 +7725,7 @@ msgid "Verlasse UpFront..."
 msgstr "Exit UpFront..."
 
 #: library/admin/class_upfront_admin_general.php:30
-msgid "Version Info"
+msgid "Versions Information"
 msgstr ""
 
 #: elements/upfront-comment/lib/upfront_comment.php:267
@@ -7801,10 +7889,6 @@ msgstr "Limit video titles to"
 #: elements/upfront-tabs/lib/utabs.php:116
 msgid "Viel Spaß mit Registerkarten."
 msgstr "Have fun with tabs."
-
-#: library/admin/class_upfront_admin_general.php:73
-msgid "Visit Forums"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:628
 msgid "Vollbild"
@@ -8017,6 +8101,10 @@ msgstr "What should the element show?"
 msgid "Webseite"
 msgstr "website"
 
+#: library/admin/class_upfront_admin_general.php:222
+msgid "Webseiten-Wartung"
+msgstr ""
+
 #: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_author.php:132
 msgid "Website"
 msgstr "Website"
@@ -8043,6 +8131,12 @@ msgstr "Read more button element"
 #: library/servers/class_upfront_editor_l10n_server.php:303
 msgid "Weitermachen"
 msgstr "Keep going"
+
+#: library/admin/class_upfront_admin_experimental.php:161
+msgid ""
+"Wendet die GZip-Komprimierung auf alle von Upfront generierten Antworten an "
+"(AJAX)"
+msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:372
 msgid "Wenn auf ein Galerie-Thumbnail geklickt wird"
@@ -8196,10 +8290,6 @@ msgstr "limit words"
 msgid "Wow, die sind cool!"
 msgstr "Wow, these are cool!"
 
-#: library/admin/class_upfront_admin_general.php:72
-msgid "WPMUDEV Help"
-msgstr ""
-
 #: elements/upfront-accordion/lib/uaccordion.php:129
 msgid "Wrapper des ersten Panels."
 msgstr "First panel wrapper."
@@ -8324,15 +8414,6 @@ msgstr "Choose menu to use"
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:80
 msgid "Wählen"
 msgstr "Choose"
-
-#: library/admin/class_upfront_admin_general.php:235
-msgid ""
-"You can edit the maintenance page <a href=\"%s\" target=\"_blank\">here</a>"
-msgstr ""
-
-#: library/admin/class_upfront_admin_general.php:191
-msgid "You have no saved layout to reset"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:571
 #: library/servers/class_upfront_presets_server.php:655
@@ -8514,9 +8595,18 @@ msgstr "{{items}} Medium"
 msgid "Älteste"
 msgstr "Oldest"
 
+#: library/admin/class_upfront_admin_experimental.php:166
+#: library/admin/class_upfront_admin_restrictions.php:128
+msgid "Änderungen speichern"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:300
 msgid "Änderungen zurücksetzen"
 msgstr "revert changes"
+
+#: library/admin/class_upfront_admin_general.php:256
+msgid "Änderungsprotokoll"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:156
 msgid "Öffentlich"

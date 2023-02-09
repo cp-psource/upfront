@@ -2,10 +2,10 @@
 Contributors: DerN3rd (WMS N@W)
 Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
 Theme URI: https://n3rds.work
-Tags: classicpress, theme, builder, framework
+Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,12 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 
 == ChangeLog ==
+
+= 1.9.6 Feb23 DerN3rd =
+
+* Hinzugefügt: Englische Sprachfiles
+* Fix: Weitere PhP8 Kompatibilität
+* Fix: Einige Textpassagen verbessert
 
 = 1.9.5 Jan23 DerN3rd =
 

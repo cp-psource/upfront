@@ -215,7 +215,7 @@ if ( $extended ){
 
 	$content = upfront_create_region(array(
 		'name' => "content",
-		'title' => __("Content Area"),
+		'title' => __("Content Bereich"),
 		'scope' => "local",
 		'type' => 'wide'
 	), array(

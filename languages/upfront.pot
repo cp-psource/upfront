@@ -6341,7 +6341,7 @@ msgid "Social Container"
 msgstr ""
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:254
-msgid "Social Counter style:"
+msgid "Social Counter-Stil:"
 msgstr ""
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:235
@@ -8599,32 +8599,45 @@ msgid "Entprellt verwendete ClassicPress-integrierte Skripte und lädt sie async
 msgstr ""
 
 
-#: library/admin/class_upfront_admin_experimental.php:114
+#: library/admin/class_upfront_admin_experimental.php:115
 msgid ""
-"All built-in dependencies as well as jQuery are debounced & moved to "
-"footer. (This mode is very likely to break plugins, please use with "
-"caution)."
+"Alle eingebauten Abhängigkeiten sowie jQuery werden entprellt und in den Footer "
+"verschoben. &#x26A0; Dieser Modus wird sehr wahrscheinlich Plugins beschädigen, bitte "
+"mit Vorsicht verwenden &#x26A0; (RASANT)."
 msgstr ""
 
-#: library/admin/class_upfront_admin_experimental.php:119
-msgid "Assets caching (freeze mode)"
-msgstr ""
-
-#: library/admin/class_upfront_admin_experimental.php:130
-msgid "Cache frozen assets"
+#: library/admin/class_upfront_admin_experimental.php:120
+msgid "Zwischenspeichern von Assets (Freeze-Modus)"
 msgstr ""
 
 #: library/admin/class_upfront_admin_experimental.php:131
-msgid ""
-"Freeze all assets in their current state and serve them cached. This option "
-"will improve performance and is best used once you're done making changes "
-"to your site."
+msgid "Eingefrorene Assets zwischenspeichern"
 msgstr ""
 
-#: library/admin/class_upfront_admin_experimental.php:136
-msgid "Freeze time"
+#: library/admin/class_upfront_admin_experimental.php:132
+msgid ""
+"Friere alle Assets in ihrem aktuellen Zustand ein und stellt sie zwischengespeichert "
+"bereit. Diese Option verbessert die Leistung und wird am besten verwendet, wenn Du mit "
+"den Änderungen an Deiner Webseite fertig bist."
 msgstr ""
 
 #: library/admin/class_upfront_admin_experimental.php:137
-msgid "How long to wait before refreshing the frozen assets cache"
+msgid "Freeze Zeitraum"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:138
+msgid "Wie lange muss gewartet werden, bis der Cache für eingefrorene Assets aktualisiert wird"
+msgstr ""
+
+#: layouts/header.php:5
+msgid "Header Bereich"
+msgstr ""
+
+#: layouts/footer.php:5
+msgid "Footer Bereich"
+msgstr ""
+
+#: layouts/archive-home-full.php:89 layouts/index-full.php:218
+#: layouts/single-full.php:214
+msgid "Content Bereich"
 msgstr ""
