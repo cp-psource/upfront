@@ -212,7 +212,7 @@ class Upfront_Compat_WooCommerce {
 		);
 
 		$layouts['woo-commerce'] = array(
-			'pluginName' => 'WooCommerce',
+			'pluginName' => 'Classic Commerce',
 			'sampleContents' => $sampleContents,
 			'pagesById' => array(
 				array(
