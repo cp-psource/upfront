@@ -58,12 +58,19 @@ class Upfront_UimageView extends Upfront_Object {
 		$data['gifTop'] = (-$data['position']['top']) . 'px';
 
 		//Don't let the caption be bigger than the image
-		$data['captionData'] = array(
+		/*$data['captionData'] = array(
 			'top' => $data['vstretch'] ? 0 : (-$data['position']['top']) . 'px',
 			'left'=> $data['stretch'] ? 0 : (-$data['position']['left']) . 'px',
 			'width'=> $data['stretch'] ? '100%' : $data['size']['width'] . 'px',
 			'height'=> $data['vstretch'] ? '100%' : $data['size']['height'] . 'px',
 			'bottom' => $data['vstretch'] ? '100%' : ($data['element_size']['height'] + $data['position']['top'] - $data['size']['height']) . 'px'
+		);*/
+		$data['captionData'] = array(
+			'top' => $data['vstretch'] ? 0 : (-intval($data['position']['top'])) . 'px',
+			'left'=> $data['stretch'] ? 0 : (-intval($data['position']['left'])) . 'px',
+			'width'=> $data['stretch'] ? '100%' : intval($data['size']['width']) . 'px',
+			'height'=> $data['vstretch'] ? '100%' : intval($data['size']['height']) . 'px',
+			'bottom' => $data['vstretch'] ? '100%' : (intval($data['element_size']['height']) + intval($data['position']['top']) - intval($data['size']['height'])) . 'px'
 		);
 
 		if(!isset($data['preset'])) {
