@@ -84,6 +84,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Hinzugefügt: Englische Sprachfiles
 * Fix: Weitere PhP8 Kompatibilität
 * Fix: Einige Textpassagen verbessert
+* Fix: video-insert-controls-panel Position
 
 = 1.9.5 Jan23 DerN3rd =
 

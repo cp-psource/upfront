@@ -6,6 +6,7 @@ Change Log
 - Erneuert: chosen.css
 - Erneuert: magnific-popup
 - Fix: non-numeric value encountered
+- Fix: video-insert-controls-panel Position
 
 1.9.6 - 2023-02-09
 -------------------------------------------------------------------------------
