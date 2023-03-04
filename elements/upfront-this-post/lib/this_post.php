@@ -667,12 +667,12 @@ class Upfront_ThisPostView extends Upfront_Object {
 			'categories' => __('Kategorien', 'upfront'),
 			'tags' => __('Tags', 'upfront'),
 			'comments_count' => __('Kommentarzähler', 'upfront'),
-			'featured_image' => __('Vorgestelltes Bild', 'upfront'),
+			'featured_image' => __('Beitragsbild', 'upfront'),
 			'show_post_data' => __('Zeige die folgenden Beitragsdaten:', 'upfront'),
 			'post_data' => __('Beitragsdaten', 'upfront'),
 			'post_settings' => __('Beitragseinstellungen', 'upfront'),
 			'featured_image_option' => __('Vorgestellte Bildoption', 'upfront'),
-			'hide_featured_image' => __('Vorgestelltes Bild ausblenden', 'upfront'),
+			'hide_featured_image' => __('Beitragsbild ausblenden', 'upfront'),
 			'full_featured_image' => __('Beitragsbild in voller Größe anzeigen', 'upfront'),
 		);
 		return !empty($key)

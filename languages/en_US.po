@@ -7990,11 +7990,11 @@ msgstr "Featured image option"
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:247
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:261
 #: elements/upfront-this-post/lib/this_post.php:670
-msgid "Vorgestelltes Bild"
+msgid "Beitragsbild"
 msgstr "Featured Image"
 
 #: elements/upfront-this-post/lib/this_post.php:675
-msgid "Vorgestelltes Bild ausblenden"
+msgid "Beitragsbild ausblenden"
 msgstr "Hide featured image"
 
 #: library/servers/class_upfront_presets_server.php:666
@@ -8333,7 +8333,7 @@ msgid "Wähle aus zuvor verwendeten %s"
 msgstr "Choose from previously used %s"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:176
-msgid "Wähle benutzerdefinierten Beitrag"
+msgid "Wähle einen Beitrag"
 msgstr "Choose custom post"
 
 #: elements/upfront-slider/lib/upfront_slider.php:238
