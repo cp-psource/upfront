@@ -81,7 +81,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 = 1.9.7 Mar23 DerN3rd =
 
-Erneuert: chosen.css
+* Erneuert: chosen.css
 * Erneuert: magnific-popup
 * Fix: non-numeric value encountered
 * Fix: video-insert-controls-panel Position
