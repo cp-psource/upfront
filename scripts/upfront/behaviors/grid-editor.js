@@ -698,7 +698,7 @@ var GridEditor = {
 				return;
 
 			// Separate wrapper if more than one element in the wrapper, provided that the wrapper is not conflicting anything
-			if ( $wrap_els.length > 1 ){
+			if ( $wrap_els.size() > 1 ){
 				$wrap_els.each(function(){
 					var wrap_el = ed.get_el($(this)),
 						aff_wraps = ed.get_affected_els(wrap, wraps, [], false)
@@ -1007,9 +1007,9 @@ var GridEditor = {
 		wraps.each(function(wrap){
 			var wrapper_id = wrap.get_wrapper_id();
 			if (
-				($parent ? $parent : $layout).find('[ref-id='+wrapper_id+']').length == 0
+				($parent ? $parent : $layout).find('[ref-id='+wrapper_id+']').size() == 0
 				&&
-				($parent ? $parent : $layout).find('#'+wrapper_id).length == 0
+				($parent ? $parent : $layout).find('#'+wrapper_id).size() == 0
 			) {
 				wrapsToRemove.push(wrap);
 			}
@@ -2547,7 +2547,7 @@ var GridEditor = {
 			$layout = $main.find('.upfront-layout'),
 			collection = model.collection,
 			index = collection.indexOf(model),
-			total = collection.length-1, // total minus shadow region
+			total = collection.size()-1, // total minus shadow region
 			sub = model.get('sub'),
 			container = model.get('container'),
 			directions, handles, axis,
@@ -2663,8 +2663,8 @@ var GridEditor = {
 						var col = ed.get_class_num($me, ed.grid['class']),
 							$prev = $me.prevAll('.upfront-region:first'),
 							$next = $me.nextAll('.upfront-region:first'),
-							prev_col = $prev.length > 0 ? ed.get_class_num($prev, ed.grid['class']) : 0,
-							next_col = $next.length > 0 ? ed.get_class_num($next, ed.grid['class']) : 0,
+							prev_col = $prev.size() > 0 ? ed.get_class_num($prev, ed.grid['class']) : 0,
+							next_col = $next.size() > 0 ? ed.get_class_num($next, ed.grid['class']) : 0,
 							max_col = col + ( next_col > prev_col ? next_col : prev_col ),
 							current_col = Math.abs(Math.ceil(ui.size.width/ed.col_size)),
 							rsz_col = ( current_col > max_col ? max_col : current_col ),

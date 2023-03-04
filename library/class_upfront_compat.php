@@ -4,7 +4,7 @@ require_once('compat/class_upfront_compat_converter.php');
 require_once('compat/class_upfront_compat_parser.php');
 require_once('compat/class_upfront_compat_woocommerce.php');
 require_once('compat/class_upfront_compat_psecommerce.php');
-require_once('compat/class_upfront_compat_brainpress.php');
+require_once('compat/class_upfront_compat_coursepress.php');
 
 class Upfront_Compat implements IUpfront_Server {
 
@@ -13,9 +13,9 @@ class Upfront_Compat implements IUpfront_Server {
 	 *
 	 * @return bool
 	 */
-	/*public static function has_dashboard () {
+	public static function has_dashboard () {
 		return class_exists('PSOURCE_Dashboard');
-	}*/
+	}
 
 
 	/**
@@ -97,7 +97,7 @@ class Upfront_Compat implements IUpfront_Server {
 	}
 
 	/**
-	 * Suppresses Upfront child themes update notices in regular CP areas
+	 * Suppresses Upfront child themes update notices in regular WP areas
 	 *
 	 * @param mixed $raw Transient content - theme updates response
 	 *
@@ -107,7 +107,7 @@ class Upfront_Compat implements IUpfront_Server {
 		if (defined('DOING_AJAX') && DOING_AJAX) return $raw; // Presumably we know what we're doing there
 		// Only ever kick in when there's no WPMU DEV Dashboard around.
 		// Otherwise, trust it'll do the right thing on its own.
-		//if (Upfront_Compat::has_dashboard()) return $raw;
+		if (Upfront_Compat::has_dashboard()) return $raw;
 
 		if (empty($raw) || empty($raw->response)) return $raw; // So nothing new here, carry on
 
@@ -307,7 +307,7 @@ class Upfront_Compat implements IUpfront_Server {
 			if (!class_exists('Upfront_Compat_Backup_Info')) require_once('compat/class_upfront_compat_backup_info.php');
 			$info = new Upfront_Compat_Backup_Info;
 			$data['Compat']['notice'] = '' .
-				__('Wir haben viel Zeit darauf verwendet, den Migrationsprozess richtig hinzubekommen, aber angesichts der Vielfalt an Layouts, die mit UpFront erreicht werden können, und der erstaunlichen Verbesserungen, die wir in Version 1.0 hinzugefügt haben, empfehlen wir Dir dringend, eine vollständige Sicherung von Deiner Webseite mit <b>Snapshot</b>  zu erstellen, bevor Du mit der Bearbeitung Deiner Webseite fortfährst.', 'upfront') .
+				__('We’ve put a lot of time into getting the migration process right, however given the variety of layouts that can be achieved with Upfront and the amazing improvements we’ve added in version 1.0, we strongly advise that you to make a full backup of your site with <b>Snapshot</b> before proceeding to edit your site. ', 'upfront') .
 			'';
 			$data['Compat']['snapshot_url'] = esc_url($info->get_plugin_link());
 			$data['Compat']['snapshot_msg'] = esc_html($info->get_plugin_action());
@@ -328,8 +328,8 @@ class Upfront_Compat implements IUpfront_Server {
 	}
 
 	private function enable_wc_compat() {
-		if (class_exists('Upfront_Compat_ClassicCommerce')) {
-			new Upfront_Compat_ClassicCommerce();
+		if (class_exists('Upfront_Compat_WooCommerce')) {
+			new Upfront_Compat_WooCommerce();
 		}
 	}
 
@@ -340,11 +340,11 @@ class Upfront_Compat implements IUpfront_Server {
 	}
 
 	/**
-	 * Loads BrainPress compatibility class.
+	 * Loads CoursePress compatibility class.
 	 */
 	private function enable_cp_compat() {
-		if (class_exists('Upfront_Compat_BrainPress')) {
-			new Upfront_Compat_BrainPress();
+		if (class_exists('Upfront_Compat_CoursePress')) {
+			new Upfront_Compat_CoursePress();
 		}
 	}
 }

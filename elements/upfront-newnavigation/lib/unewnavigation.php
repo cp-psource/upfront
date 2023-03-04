@@ -636,22 +636,25 @@ class Upfront_newMenuSetting extends Upfront_Server {
 
 Upfront_newMenuSetting::serve();
 
-class upfront_nav_walker extends Walker_Nav_Menu {
-	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+class upfront_nav_walker extends Walker_Nav_Menu
+{
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-	
+
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-	
+
 		// to add current menu item status to a paginated blog
-		if (rtrim(get_permalink(), '/') === $item->url && ! in_array('current-menu-item', $classes)) {
+		if($item->url == rtrim(get_permalink(), '/') && !array_search('current-menu-item', $classes))
 			$classes[] = 'current-menu-item';
-		}
-	
+
 		//this code is why all this function has been overriden, this one checks if the link is anchor and removes the current-menu-item class
-		if (strpos($item->url ?? '', '#') !== false) {
-			$classes = array_diff($classes, array('current-menu-item'));
+		if(strpos($item->url, '#')) {
+			foreach($classes as $index => $class_item) {
+				if($class_item == 'current-menu-item')
+					unset($classes[$index]);
+			}
 		}
-	
+
 		$classes[] = 'menu-item-' . $item->ID;
 		$classes[] = 'menu-item-depth-' . $depth;
 
@@ -667,8 +670,7 @@ class upfront_nav_walker extends Walker_Nav_Menu {
 		 * @param array  $args    An array of wp_nav_menu() arguments.
 		 */
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-    	$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		/**
 		 * Filter the ID applied to a menu item's <li>.
@@ -710,20 +712,20 @@ class upfront_nav_walker extends Walker_Nav_Menu {
 		 * @param object $item The current menu item.
 		 * @param array  $args An array of wp_nav_menu() arguments.
 		 */
-		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
 		$attributes = '';
-    foreach ( $atts as $attr => $value ) {
-        if ( ! empty( $value ) ) {
-            $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-            $attributes .= ' ' . $attr . '="' . $value . '"';
-        }
-    }
+		foreach ( $atts as $attr => $value ) {
+			if ( ! empty( $value ) ) {
+				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+				$attributes .= ' ' . $attr . '="' . $value . '"';
+			}
+		}
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
 		/** This filter is documented in wp-includes/post-template.php */
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID, true ) . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 
@@ -747,6 +749,6 @@ class upfront_nav_walker extends Walker_Nav_Menu {
 	}
 
 	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-		$output .= "</li>\n";
+		$output .= "</li>";
 	}
 }

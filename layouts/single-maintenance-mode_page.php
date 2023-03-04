@@ -6,7 +6,7 @@
 $main = upfront_create_region(
 			array (
   'name' => 'maintenance-mode',
-  'title' => 'Wartungsmodus Area',
+  'title' => 'Maintenance Mode Area',
   'type' => 'full',
   'scope' => 'local',
   'container' => 'maintenance-mode',

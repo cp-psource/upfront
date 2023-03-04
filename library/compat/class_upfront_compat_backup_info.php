@@ -91,7 +91,7 @@ class Upfront_Compat_Backup_Info {
 	 *
 	 * @return bool
 	 */
-	/*private function _has_dashboard () {
+	private function _has_dashboard () {
 		if (false === Upfront_Compat::has_dashboard()) return false;
 
 		if (!empty(PSOURCE_Dashboard::$site) && is_callable(array(PSOURCE_Dashboard::$site, 'allowed_user'))) {
@@ -99,7 +99,7 @@ class Upfront_Compat_Backup_Info {
 		}
 
 		return false;
-	}*/
+	}
 
 	/**
 	 * Get Dashboard install URL

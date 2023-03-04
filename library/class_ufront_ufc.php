@@ -50,15 +50,10 @@ class Upfront_UFC {
 		self::$_theme_colors = is_string(self::$_theme_colors) ? json_decode( self::$_theme_colors ) : self::$_theme_colors;
 		self::$_theme_color_count = !empty(self::$_theme_colors->colors) ? count( self::$_theme_colors->colors ) : 0;
 
-		if (is_string($color)) {
-			if (strpos($color, self::VAR_PREFIX) !== false) {
-				self::$_ufc = $color;
-			} else {
-				self::$_color = $color;
-			}
-		} else {
-			self::$_ufc = null;
-			self::$_color = null;
+		if( strpos( $color, self::VAR_PREFIX ) !== false ){
+			self::$_ufc = $color;
+		}else{
+			self::$_color = $color;
 		}
 
 

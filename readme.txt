@@ -5,7 +5,7 @@ Theme URI: https://n3rds.work
 Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.9.6
+Stable tag: 1.9.7
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,15 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 
 == ChangeLog ==
+
+= 1.9.7 Mar23 DerN3rd =
+
+Erneuert: chosen.css
+* Erneuert: magnific-popup
+* Fix: non-numeric value encountered
+* Fix: video-insert-controls-panel Position
+* Fix: Tabs CSS
+* Fix: Featured Images
 
 = 1.9.6 Feb23 DerN3rd =
 

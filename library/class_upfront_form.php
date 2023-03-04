@@ -107,7 +107,7 @@ class Upfront_Form extends Upfront_FormElement {
 	}
 
 	public function get_validation_message () {
-		return __('Überprüfe Deine Übermittlung auf die unten aufgeführten Fehler', 'xzcv');
+		return __('Inspect your submission for errors outlined below', 'xzcv');
 	}
 
 	public function is_valid () {
@@ -167,7 +167,7 @@ class Upfront_InputElement extends Upfront_FormElement {
 	}
 
 	public function get_validation_message () {
-		return __('Bitte gib die richtige Zeichenfolge ein', 'cxv');
+		return __('Please, enter the correct string', 'cxv');
 	}
 
 	public function set_placeholder ($placeholder) {
@@ -181,7 +181,7 @@ class Upfront_UsernameElement extends Upfront_InputElement {
 	protected $_validation_rule = '^[a-z][a-z0-9]+$';
 
 	public function get_validation_message () {
-		return __('Gültige Benutzernamen beginnen mit einem Buchstaben und enthalten nur alphanumerische Zeichen.', 'cxv');
+		return __('Valid usernames begin with a letter and have only alphanumeric characters.', 'cxv');
 	}
 
 }
@@ -221,14 +221,14 @@ class Upfront_PasswordElement extends Upfront_InputElement {
 	}
 
 	public function get_validation_message () {
-		return __('Dein Passwort muss mindestens 8 Zeichen lang sein.', 'cxv');
+		return __('Your password has to have at least 8 characters.', 'cxv');
 	}
 
 	public function get_contextual_validation_message () {
 		$msg = $this->get_validation_message();
 		if (empty($this->_error)) return $msg;
 		return self::ERR_DO_NOT_MATCH == $this->_error
-			? __('Deine Passwörter stimmen nicht überein.', 'cxv')
+			? __('Your passwords do not match.', 'cxv')
 			: $msg
 		;
 	}
@@ -278,7 +278,7 @@ class Upfront_EmailElement extends Upfront_InputElement {
 	protected $_element_type = 'email';
 
 	public function get_validation_message () {
-		return __('Bitte gib eine gültige Email-Adresse ein', 'cxv');
+		return __('Please, enter a valid email', 'cxv');
 	}
 
 }

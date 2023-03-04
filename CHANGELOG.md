@@ -1,12 +1,14 @@
 Change Log
 ============
 
-1.9.7 - 2023-02-09
+1.9.7 - 2023-03-04
 -------------------------------------------------------------------------------
 - Erneuert: chosen.css
 - Erneuert: magnific-popup
 - Fix: non-numeric value encountered
 - Fix: video-insert-controls-panel Position
+- Fix: Tabs CSS
+- Fix: Featured Images
 
 1.9.6 - 2023-02-09
 -------------------------------------------------------------------------------

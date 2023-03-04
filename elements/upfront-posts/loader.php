@@ -57,7 +57,7 @@ class Upfront_Posts extends Upfront_Server {
 	 * @param WP $wp ClassicPress object
 	 */
 	public function force_wp_archive_limit ($wp) {
-		// Let ClassicCommerce handle stuff if we are dealing with products, since in that case we just
+		// Let WooCommerce handle stuff if we are dealing with products, since in that case we just
 		// pass through content rendering
 		if (!empty($wp->query_vars['post_type']) && $wp->query_vars['post_type'] === 'product') return;
 		if (!empty($wp->query_vars['product_cat'])) return;

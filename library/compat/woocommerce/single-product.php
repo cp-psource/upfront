@@ -81,7 +81,7 @@
 		</div>
 	</div>
 	<div class="related products">
-		<h2>Empfohlene Produkte</h2>
+		<h2>Related Products</h2>
 		<ul class="products">
 			<li class="post-44 product type-product status-publish has-post-thumbnail product_cat-beta product_tag-one first instock shipping-taxable purchasable product-type-simple">
 				<a href="#" class="woocommerce-LoopProduct-link">

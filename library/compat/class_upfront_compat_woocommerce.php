@@ -27,7 +27,7 @@ class Upfront_Compat_WooCommerce {
 	}
 
 	/**
-	 * Hides BrainPress layouts in builder exported layouts if "Layouts" popup when BrainPress is not active.
+	 * Hides CoursePress layouts in builder exported layouts if "Layouts" popup when CoursePress is not active.
 	 */
 	public function skip_layouts_when_inactive($skip, $layout) {
 		$woo_layouts = array(
@@ -212,7 +212,7 @@ class Upfront_Compat_WooCommerce {
 		);
 
 		$layouts['woo-commerce'] = array(
-			'pluginName' => 'Classic Commerce',
+			'pluginName' => 'WooCommerce',
 			'sampleContents' => $sampleContents,
 			'pagesById' => array(
 				array(
@@ -347,11 +347,11 @@ class Upfront_Compat_WooCommerce {
 
 	public function layout_to_name($layout_name, $type, $item, $specificity) {
 		if ($specificity === 'archive-product' && $item === 'product') {
-			return __('Classic-Commerce Shop-Seite', 'upfront');
+			return __('WooCommerce Shop Page', 'upfront');
 		}
 
 		if ($specificity === 'single-page-woocart' || $specificity === 'woocart') {
-			return __('Classic-Commerce Warenkorb-Seite', 'upfront');
+			return __('WooCommerce Cart Page', 'upfront');
 		}
 
 		if ($specificity === 'single-page-woomyaccount' || $specificity === 'woomyaccount') {
@@ -363,7 +363,7 @@ class Upfront_Compat_WooCommerce {
 		}
 
 		if ($specificity === 'archive-product_cat') {
-			return __('WooCommerce Produktkategorie', 'upfront');
+			return __('WooCommerce Product Category', 'upfront');
 		}
 
 		if ($specificity === 'archive-product_tag') {

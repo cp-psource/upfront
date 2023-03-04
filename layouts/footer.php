@@ -2,7 +2,7 @@
 
 $footer = upfront_create_region(array(
 	'name' => 'footer',
-	'title' => __("Footer Bereich"),
+	'title' => __("Footer Area"),
 	'scope' => 'global'
 ));
 

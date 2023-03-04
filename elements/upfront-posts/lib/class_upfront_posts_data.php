@@ -173,7 +173,7 @@ class Upfront_Posts_PostsData {
 			'numeric' => __('Numerisch', 'upfront'),
 			'post_parts_picker' => __('Wähle anzuzeigende Beitragsteile aus', 'upfront'),
 			'post_parts_sorter' => __('Ziehen um Beitragselemente neu anzuordnen', 'upfront'),
-			'select_custom_post' => __('Wähle einen Beitrag', 'upfront'),
+			'select_custom_post' => __('Wähle benutzerdefinierten Beitrag', 'upfront'),
 			'add_custom_post' => __('Füge benutzerdefinierten Beitrag hinzu', 'upfront'),
 			'resize_featured' => __('Angegebenes Bild an Containergröße anpassen', 'upfront'),
 			'general_settings' => __('Allgemeine Einstellungen', 'upfront'),

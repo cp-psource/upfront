@@ -2919,6 +2919,7 @@ div#page.upfront-layout-view.upfront-layout-view .upfront-editable_entity.upfron
   box-shadow: 0px 2px 10px 0px #223240;
   border: none;
   z-index: 2000000000000;
+  right: 95px;
   position: relative;
   text-align: right; }
 
@@ -4350,7 +4351,7 @@ a.upfront-region-name-edit-trigger:hover {
 
 #region-settings-sidebar .upfront-region-bg-setting-region-behavior .upfront-field-multiple {
   background: #fff;
-  /*width: calc(50% - 10px);*/
+  width: calc(50% - 10px);
   margin: 0;
   height: 22px;
   line-height: 20px;

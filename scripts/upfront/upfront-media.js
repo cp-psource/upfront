@@ -1075,7 +1075,7 @@ define([
 						_to_render.push({filter: filter, type: type});
 					});
 				});
-				if (!_to_render.length) return false; // Do not render the empty filter array (ie. only defaults)
+				if (!_to_render.size()) return false; // Do not render the empty filter array (ie. only defaults)
 
 				this.$el.append('<label class="upfront-field-label upfront-field-label-block">' + l10n.active_filters + '</label>');
 
