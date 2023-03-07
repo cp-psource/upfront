@@ -52,7 +52,7 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 						<h2 class="title"><?php esc_html_e("Hilfreiche Ressourcen", Upfront::TextDomain) ?></h2>
 						<div class="inside">
 							<div class="upfront-debug-block">
-								<a target="_blank" href="https://upfront.n3rds.work/upfront-documentation/" class="documentation">UpFront-Dokumentation</a> <a target="_blank" href="https://upfront.n3rds.work/upfront-builder/" class="documentation">Erstellen von UpFront-Themes</a>
+								<a target="_blank" href="https://upfront.n3rds.work/upfront-framework/upfront-1/" class="documentation">UpFront-Dokumentation</a> <a target="_blank" href="https://upfront.n3rds.work/upfront-builder/" class="documentation">Erstellen von UpFront-Themes</a>
 							</div>
 							<div class="upfront-debug-block">
 								<h4><?php esc_html_e("Online Artikel", Upfront::TextDomain) ?></h4>
