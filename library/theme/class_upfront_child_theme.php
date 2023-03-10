@@ -732,18 +732,16 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		return json_decode($presets, $as_array);
 	}
 
-	public function getLoginPresets($presets, $args) {
-		if (empty($presets) === false) return $presets;
-
-		$presets = $this->get_theme_settings()->get('login_presets');
-		if (isset($args['json']) && $args['json']) return $presets;
-
-		$as_array = false;
-		if (isset($args['as_array']) && $args['as_array']) {
-			$as_array = true;
+	public function getLoginPresets($presets = null, $args = array()) {
+		if (!isset($presets)) {
+			$presets = $this->get_theme_settings()->get('login_presets');
 		}
-
-		return json_decode($presets, $as_array);
+	
+		if (!empty($presets)) {
+			return json_decode($presets, $as_array);
+		} else {
+			return $presets;
+		}
 	}
 
 	public function get_post_data_presets ($presets, $args) {
@@ -793,7 +791,11 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		if ($presets !== null) {
+			return json_decode($presets, $as_array);
+		} else {
+			return null;
+		}
 	}
 
 	public function getAccordionPresets($presets, $args) {
