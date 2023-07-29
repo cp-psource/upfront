@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: UpFront\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-02 22:32+0000\n"
-"PO-Revision-Date: 2023-02-08 01:13+0000\n"
+"PO-Revision-Date: 2023-03-11 18:17+0000\n"
 "Last-Translator: DerN3rd\n"
-"Language-Team: English (United States)\n"
-"Language: en_US\n"
+"Language-Team: English (United Kingdom)\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,6 +31,11 @@ msgstr "%"
 #, php-format
 msgid "% der Bereichsbreite"
 msgstr "% of range width"
+
+#: library/servers/class_upfront_editor_ajax.php:324
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
 
 #: library/media/class_upfront_media_server.php:88
 #, php-format
@@ -91,7 +96,7 @@ msgstr "%s is being saved..."
 msgid "%s wurde gelöscht."
 msgstr "%s has been deleted."
 
-#: library/admin/class_upfront_admin_experimental.php:91
+#: library/admin/class_upfront_admin_experimental.php:92
 msgid "&#x1F407; Standard-Optimierung"
 msgstr ""
 
@@ -100,12 +105,10 @@ msgid "&#x1F40C; Keine Optimierung"
 msgstr ""
 
 #: library/admin/class_upfront_admin_experimental.php:104
-#: library/class_upfront_behavior.php:73
 msgid "&#x1F680; Aggressiv"
 msgstr ""
 
 #: library/admin/class_upfront_admin_experimental.php:114
-#: library/class_upfront_behavior.php:74
 msgid "&#x2622; Hardcore"
 msgstr ""
 
@@ -144,6 +147,46 @@ msgstr "/* your styles here */"
 msgid "01 30 2015"
 msgstr "01 30 2015"
 
+#: library/servers/class_upfront_editor_l10n_server.php:815
+msgid "01-Jan"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:816
+msgid "02-Feb"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:817
+msgid "03-Mar"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:818
+msgid "04-Apr"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:819
+msgid "05-Mai"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:820
+msgid "06-Jun"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:821
+msgid "07-Jul"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:822
+msgid "08-Aug"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:823
+msgid "09-Sep"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:824
+msgid "10-Okt"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:626
 msgid "100% Breite"
 msgstr "100% width"
@@ -151,6 +194,14 @@ msgstr "100% width"
 #: library/servers/class_upfront_editor_l10n_server.php:94
 msgid "10px Spaltenfüllung"
 msgstr "10px column fill"
+
+#: library/servers/class_upfront_editor_l10n_server.php:825
+msgid "11-Nov"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:826
+msgid "12-Dez"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:93
 msgid "15px Spaltenfüllung"
@@ -234,7 +285,7 @@ msgid ""
 "<small><strong class=\"warning-text\">&#x26A0; WARNUNG:</strong> Dadurch "
 "wird Dein aktives Design in den Zustand zurückversetzt, in dem es sich bei "
 "der Erstinstallation befand. Dies kann nicht rückgängig gemacht werden, also "
-"sichere es bitte, bevor Du fortfährst</small>."
+"sichere es bitte, bevor Du fortfährst</small>"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:808
@@ -267,8 +318,8 @@ msgstr "Logout link"
 msgid "Absatz"
 msgstr "Paragraph"
 
-#: library/servers/class_upfront_editor_l10n_server.php:482
 #: elements/upfront-text/lib/upfront_text.php:144
+#: library/servers/class_upfront_editor_l10n_server.php:482
 msgid "Absatz (P)"
 msgstr "Paragraph (P)"
 
@@ -312,9 +363,13 @@ msgstr "After Post Content"
 msgid "After Post Title"
 msgstr "After Post Title"
 
+#: library/class_upfront_behavior.php:73
+msgid "Aggressive"
+msgstr ""
+
+#: elements/upfront-accordion/lib/uaccordion.php:116
 #: library/servers/class_upfront_editor_l10n_server.php:551
 #: library/servers/class_upfront_presets_server.php:637
-#: elements/upfront-accordion/lib/uaccordion.php:116
 msgid "Akkordeon"
 msgstr "Accordion"
 
@@ -334,8 +389,8 @@ msgstr "Active tab"
 msgid "Aktive Registerkarte-Inhalt"
 msgstr "Active Tab Content"
 
-#: library/servers/class_upfront_editor_l10n_server.php:678
 #: elements/upfront-gallery/lib/ugallery.php:451
+#: library/servers/class_upfront_editor_l10n_server.php:678
 msgid "Aktiver Bereich BG"
 msgstr "Active area BG"
 
@@ -365,7 +420,7 @@ msgstr "Enable SMTP authentication"
 msgid "Aktiviere Thread-Kommentare (verschachtelte) {{subfield}} Ebenen tief"
 msgstr "Enable thread comments (nested) {{subfield}} levels deep"
 
-#: library/admin/class_upfront_admin_experimental.php:92
+#: library/admin/class_upfront_admin_experimental.php:93
 msgid ""
 "Aktiviert Standardoptimierung - Leichte Optimierungen für Hohe "
 "Kompatibilität (Flott)"
@@ -408,10 +463,20 @@ msgstr "Current navigation point"
 msgid "Aligned"
 msgstr "Aligned"
 
-#: library/admin/class_upfront_admin_experimental.php:114
-msgid ""
-"All built-in dependencies as well as jQuery are debounced & moved to footer. "
-"(This mode is very likely to break plugins, please use with caution)."
+#: library/servers/class_upfront_javascript_main.php:301
+msgid "All archives"
+msgstr ""
+
+#: library/servers/class_upfront_javascript_main.php:300
+msgid "All archives of this type"
+msgstr ""
+
+#: library/servers/class_upfront_javascript_main.php:295
+msgid "All posts"
+msgstr ""
+
+#: library/servers/class_upfront_javascript_main.php:294
+msgid "All posts of this type"
 msgstr ""
 
 #: library/media/class_upfront_media_server.php:82
@@ -419,26 +484,24 @@ msgstr ""
 msgid "Alle"
 msgstr "All"
 
-#: library/servers/class_upfront_javascript_main.php:301
-msgid "Alle Archive"
-msgstr ""
-
-#: library/servers/class_upfront_javascript_main.php:300
-msgid "Alle Archive dieses Typs"
-msgstr ""
-
-#: library/servers/class_upfront_javascript_main.php:295
+#: library/servers/class_upfront_editor_l10n_server.php:150
 msgid "Alle Beiträge"
 msgstr "All posts"
 
 #: library/servers/class_upfront_editor_l10n_server.php:28
-#: library/servers/class_upfront_javascript_main.php:294
 msgid "Alle Beiträge dieser Art"
 msgstr "All posts of this type"
 
 #: library/servers/class_upfront_editor_l10n_server.php:152
 msgid "Alle CPTs"
 msgstr "All CPTs"
+
+#: library/admin/class_upfront_admin_experimental.php:115
+msgid ""
+"Alle eingebauten Abhängigkeiten sowie jQuery werden entprellt und in den "
+"Footer verschoben. &#x26A0; Dieser Modus wird sehr wahrscheinlich Plugins "
+"beschädigen, bitte mit Vorsicht verwenden &#x26A0; (RASANT)."
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:33
 msgid "Alle Elemente mit demselben Beitragstyp"
@@ -477,8 +540,8 @@ msgstr "Everything saved!"
 msgid "Alles zurücksetzen"
 msgstr "Reset all"
 
-#: library/servers/class_upfront_editor_l10n_server.php:251
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:155
+#: library/servers/class_upfront_editor_l10n_server.php:251
 msgid "Allgemein"
 msgstr "Generally"
 
@@ -511,7 +574,7 @@ msgid "Als Voreinstellung speichern"
 msgstr "Save as preset"
 
 #: elements/upfront-gallery/lib/ugallery.php:435
-#: elements/upfront-image/lib/uimage.php:246
+#: elements/upfront-image/lib/uimage.php:247
 msgid "Alternativer Text"
 msgstr "alternative text"
 
@@ -531,12 +594,12 @@ msgstr "Adapt to container"
 msgid "An Container anpassen"
 msgstr "Adapt to containers"
 
-#: elements/upfront-image/lib/uimage.php:265
+#: elements/upfront-image/lib/uimage.php:266
 msgid "An die Maske anpassen"
 msgstr "Adjust to the mask"
 
-#: elements/upfront-image/lib/uimage.php:264
-#: elements/upfront-image/lib/uimage.php:270
+#: elements/upfront-image/lib/uimage.php:265
+#: elements/upfront-image/lib/uimage.php:271
 msgid "An Element anpassen"
 msgstr "Fit to item"
 
@@ -607,13 +670,13 @@ msgstr "anchor"
 msgid "Anker auswählen"
 msgstr "Select anchor"
 
-#: library/servers/class_upfront_editor_l10n_server.php:484
 #: elements/upfront-text/lib/upfront_text.php:145
+#: library/servers/class_upfront_editor_l10n_server.php:484
 msgid "Anker-Link (A)"
 msgstr "Anchor Link (A)"
 
-#: library/servers/class_upfront_editor_l10n_server.php:485
 #: elements/upfront-text/lib/upfront_text.php:146
+#: library/servers/class_upfront_editor_l10n_server.php:485
 msgid "Anker-Link Hover (A:HOVER)"
 msgstr "Anchor Link Hover (A:HOVER)"
 
@@ -633,7 +696,7 @@ msgstr "Show registration form"
 msgid "anonym"
 msgstr "anonymous"
 
-#: elements/upfront-image/lib/uimage.php:275
+#: elements/upfront-image/lib/uimage.php:276
 msgid "Anpassen"
 msgstr "Adjust"
 
@@ -649,8 +712,10 @@ msgstr "View lightbox"
 msgid "Ansichtsfensterbreite"
 msgstr "viewport width"
 
-#: library/servers/class_upfront_editor_l10n_server.php:188
+#: elements/upfront-comment/templates/upfront-comment-list.php:34
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:224
+#: elements/upfront-post-data/tpl/upfront-comment-list.php:37
+#: library/servers/class_upfront_editor_l10n_server.php:188
 msgid "Antworten"
 msgstr "Answer"
 
@@ -677,9 +742,9 @@ msgstr "Number of columns"
 msgid "Anzahl Kommentare"
 msgstr "number of comments"
 
-#: library/media/class_upfront_media_server.php:166
 #: elements/upfront-login/lib/upfront_login.php:192
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:32
+#: library/media/class_upfront_media_server.php:166
 msgid "Anzeige"
 msgstr "Advertisement"
 
@@ -703,6 +768,22 @@ msgstr ""
 msgid "April"
 msgstr ""
 
+#: library/models/class_upfront_entity_resolver.php:221
+msgid "Archive"
+msgstr ""
+
+#: library/class_upfront_admin.php:48
+msgid ""
+"Are you sure you want to reset layout \"{layout}\" to default state? Please "
+"note that this can not be undone."
+msgstr ""
+
+#: library/class_upfront_admin.php:47
+msgid ""
+"Are you sure you want to reset theme to default state? Please note that this "
+"can not be undone."
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:779
 msgid "Areatyp"
 msgstr "area type"
@@ -711,8 +792,8 @@ msgstr "area type"
 msgid "Aria Landmark-Rollen"
 msgstr "Aria Landmark roles"
 
-#: library/admin/class_upfront_admin_experimental.php:119
-msgid "Assets caching (freeze mode)"
+#: library/admin/class_upfront_admin_general.php:73
+msgid "Ask a Question"
 msgstr ""
 
 #: library/media/class_upfront_media_server.php:151
@@ -722,6 +803,10 @@ msgstr "audios"
 #: library/media/class_upfront_media_server.php:165
 msgid "auf dieser Seite"
 msgstr "on this page"
+
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:130
+msgid "Auf neuere Version prüfen"
+msgstr ""
 
 #: build/upfront/upfront-data.php:26 scripts/upfront/upfront-data.php:26
 msgid "August"
@@ -788,6 +873,10 @@ msgstr "Pending review"
 msgid "Auszug"
 msgstr "abstract"
 
+#: library/models/class_upfront_entity_resolver.php:231
+msgid "Author"
+msgstr ""
+
 #: elements/upfront-gallery/lib/ugallery.php:395
 msgid "Auto"
 msgstr "automobile"
@@ -815,12 +904,12 @@ msgstr "Auto expand to fit <br />items as they are <br />added %s"
 msgid "Autoplay"
 msgstr "auto play"
 
+#: elements/upfront-comment/lib/upfront_comment.php:32
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:26
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:134
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:245
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:191
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:212
-#: library/models/class_upfront_entity_resolver.php:231
 #: library/servers/class_upfront_editor_l10n_server.php:75
 #: library/servers/class_upfront_editor_l10n_server.php:183
 #: library/servers/class_upfront_editor_l10n_server.php:279
@@ -924,12 +1013,14 @@ msgstr "Edit lightbox"
 msgid "Bearbeite URL"
 msgstr "Edit URL"
 
+#: elements/upfront-comment/templates/upfront-comment-list.php:31
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:274
+#: elements/upfront-post-data/tpl/upfront-comment-list.php:34
+#: elements/upfront-posts/lib/class_upfront_posts_data.php:223
 #: library/servers/class_upfront_editor_l10n_server.php:67
 #: library/servers/class_upfront_editor_l10n_server.php:175
 #: library/servers/class_upfront_editor_l10n_server.php:282
 #: library/servers/class_upfront_editor_l10n_server.php:764
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:274
-#: elements/upfront-posts/lib/class_upfront_posts_data.php:223
 msgid "Bearbeiten"
 msgstr "Edit"
 
@@ -949,9 +1040,9 @@ msgstr "Finish editing the background"
 msgid "Beginnen mit vorhandenen Layout"
 msgstr "Start with existing layout"
 
-#: library/servers/class_upfront_editor_l10n_server.php:708
-#: elements/upfront-image/lib/uimage.php:250
+#: elements/upfront-image/lib/uimage.php:251
 #: elements/upfront-login/lib/upfront_login.php:194
+#: library/servers/class_upfront_editor_l10n_server.php:708
 msgid "Bei Hover"
 msgstr "At hover"
 
@@ -967,11 +1058,11 @@ msgstr "On click"
 msgid "Beide"
 msgstr "Both"
 
-#: elements/upfront-image/lib/uimage.php:206
+#: elements/upfront-image/lib/uimage.php:207
 msgid "Beim Bearbeiten des Bildes ist ein Fehler aufgetreten"
 msgstr "An error occurred while processing the image"
 
-#: elements/upfront-image/lib/uimage.php:285
+#: elements/upfront-image/lib/uimage.php:286
 msgid ""
 "Beim Hochladen der Datei ist ein Fehler aufgetreten. Bitte versuche es "
 "erneut."
@@ -994,12 +1085,12 @@ msgid ""
 "Beim Speichern der Kontaktformulareinstellungen ist ein Problem aufgetreten."
 msgstr "There was a problem saving the contact form settings."
 
-#: elements/upfront-image/lib/uimage.php:207
+#: elements/upfront-image/lib/uimage.php:208
 msgid "Beim Speichern des bearbeiteten Bildes ist ein Fehler aufgetreten"
 msgstr "An error occurred while saving the edited image"
 
-#: library/servers/class_upfront_editor_l10n_server.php:569
 #: elements/upfront-this-post/lib/this_post.php:661
+#: library/servers/class_upfront_editor_l10n_server.php:569
 msgid "Beitrag"
 msgstr "Contribution"
 
@@ -1056,11 +1147,22 @@ msgstr "post type"
 msgid "Beitragsautor"
 msgstr "Post Author"
 
-#: library/servers/class_upfront_editor_l10n_server.php:260
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:72
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:189
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:247
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:261
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:245
+#: elements/upfront-this-post/lib/this_post.php:670
+#: library/servers/class_upfront_editor_l10n_server.php:178
+#: library/servers/class_upfront_editor_l10n_server.php:260
+#: library/servers/class_upfront_editor_l10n_server.php:578
+#: library/servers/class_upfront_editor_l10n_server.php:623
 msgid "Beitragsbild"
 msgstr "featured image"
+
+#: elements/upfront-this-post/lib/this_post.php:675
+msgid "Beitragsbild ausblenden"
+msgstr "Hide featured image"
 
 #: elements/upfront-this-post/lib/this_post.php:676
 msgid "Beitragsbild in voller Größe anzeigen"
@@ -1083,8 +1185,8 @@ msgstr "post date"
 msgid "Beitragsdetails"
 msgstr "Post Details"
 
-#: library/servers/class_upfront_editor_l10n_server.php:467
 #: elements/upfront-this-post/lib/this_post.php:673
+#: library/servers/class_upfront_editor_l10n_server.php:467
 msgid "Beitragseinstellungen"
 msgstr "Post Settings"
 
@@ -1125,10 +1227,10 @@ msgstr "post title"
 msgid "Beitragstitel-Element"
 msgstr "Post title element"
 
+#: elements/upfront-posts/lib/class_upfront_posts_data.php:145
 #: library/servers/class_upfront_editor_l10n_server.php:174
 #: library/servers/class_upfront_editor_l10n_server.php:507
 #: library/servers/class_upfront_editor_l10n_server.php:561
-#: elements/upfront-posts/lib/class_upfront_posts_data.php:145
 msgid "Beiträge"
 msgstr "posts"
 
@@ -1187,8 +1289,8 @@ msgstr "Custom Settings"
 msgid "Benutzerdefinierte Höhe in px"
 msgstr "Custom height in px"
 
-#: library/servers/class_upfront_editor_l10n_server.php:811
 #: elements/upfront-maps/lib/upfront_maps.php:118
+#: library/servers/class_upfront_editor_l10n_server.php:811
 msgid "Benutzerdefinierten Kartencode verwenden"
 msgstr "Use custom map code"
 
@@ -1196,8 +1298,8 @@ msgstr "Use custom map code"
 msgid "Benutzerdefinierter Haltepunkt 01"
 msgstr "Custom breakpoint 01"
 
-#: library/servers/class_upfront_editor_l10n_server.php:859
 #: elements/upfront-maps/lib/upfront_maps.php:129
+#: library/servers/class_upfront_editor_l10n_server.php:859
 msgid "Benutzerdefinierter Kartencode"
 msgstr "Custom map code"
 
@@ -1213,10 +1315,13 @@ msgstr "Custom markup"
 msgid "Benutzerdefiniertes PHP-Format"
 msgstr "Custom PHP format"
 
-#: library/admin/class_upfront_admin_restrictions.php:19
-#: library/admin/class_upfront_admin_restrictions.php:20
-#: library/admin/class_upfront_admin_restrictions.php:45
+#: library/admin/class_upfront_admin_restrictions.php:39
 msgid "Benutzereinschränkungen"
+msgstr ""
+
+#: library/admin/class_upfront_admin_restrictions.php:13
+#: library/admin/class_upfront_admin_restrictions.php:14
+msgid "Benutzerrechte"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:740
@@ -1243,7 +1348,7 @@ msgstr "Labeling on the side"
 msgid "Beschriftungen für die Eingabefelder"
 msgstr "Labels for the input fields"
 
-#: elements/upfront-image/lib/uimage.php:214
+#: elements/upfront-image/lib/uimage.php:215
 msgid "Beschriftungsebene"
 msgstr "annotation layer"
 
@@ -1251,7 +1356,7 @@ msgstr "annotation layer"
 msgid "Beschriftungselement"
 msgstr "annotation element"
 
-#: elements/upfront-image/lib/uimage.php:213
+#: elements/upfront-image/lib/uimage.php:214
 msgid "Beschriftungsfeld"
 msgstr "label field"
 
@@ -1268,7 +1373,7 @@ msgid "Beschriftungshöhe"
 msgstr "label height"
 
 #: elements/upfront-gallery/lib/ugallery.php:386
-#: elements/upfront-image/lib/uimage.php:219
+#: elements/upfront-image/lib/uimage.php:220
 msgid "Beschriftungsort"
 msgstr "caption location"
 
@@ -1283,10 +1388,6 @@ msgstr "caption text"
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:169
 msgid "Beschränken auf"
 msgstr "Limit to"
-
-#: library/admin/class_upfront_admin_general.php:73
-msgid "Besuche das UpFront Forum"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:383
 msgid "Besuche Link"
@@ -1324,9 +1425,9 @@ msgstr "BG color"
 msgid "Bibliothek"
 msgstr "library"
 
+#: elements/upfront-image/lib/uimage.php:201
 #: library/servers/class_upfront_editor_l10n_server.php:555
 #: library/servers/class_upfront_presets_server.php:641
-#: elements/upfront-image/lib/uimage.php:200
 msgid "Bild"
 msgstr "Picture"
 
@@ -1338,21 +1439,25 @@ msgstr "Image and caption position:"
 msgid "Bild auswählen"
 msgstr "choose picture"
 
-#: library/servers/class_upfront_editor_l10n_server.php:771
-#: elements/upfront-image/lib/uimage.php:231
+#: elements/upfront-image/lib/uimage.php:232
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:273
+#: library/servers/class_upfront_editor_l10n_server.php:771
 msgid "Bild bearbeiten"
 msgstr "Edit image"
 
-#: elements/upfront-image/lib/uimage.php:237
+#: library/servers/class_upfront_editor_l10n_server.php:337
+msgid "Bild einfügen:"
+msgstr ""
+
+#: elements/upfront-image/lib/uimage.php:238
 msgid "Bild ersetzen"
 msgstr "replace image"
 
-#: elements/upfront-image/lib/uimage.php:267
+#: elements/upfront-image/lib/uimage.php:268
 msgid "Bild erweitern"
 msgstr "expand image"
 
-#: elements/upfront-image/lib/uimage.php:233
+#: elements/upfront-image/lib/uimage.php:234
 msgid "Bild hinzufügen"
 msgstr "add a picture"
 
@@ -1360,38 +1465,44 @@ msgstr "add a picture"
 msgid "Bild hochladen"
 msgstr "Upload Image"
 
-#: elements/upfront-image/lib/uimage.php:208
+#: elements/upfront-image/lib/uimage.php:209
 msgid "Bild konnte nicht verarbeitet werden."
 msgstr "Image could not be processed."
 
-#: elements/upfront-image/lib/uimage.php:269
+#: elements/upfront-image/lib/uimage.php:270
 msgid "Bild speichern"
 msgstr "save Image"
+
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:271
+msgid "Bild sperren"
+msgstr ""
 
 #: elements/upfront-maps/lib/upfront_maps.php:93
 msgid "Bild URL (.png):"
 msgstr "Image URL (.png):"
 
-#: library/servers/class_upfront_editor_l10n_server.php:208
 #: elements/upfront-code/lib/upfront_code.php:134
-#: elements/upfront-image/lib/uimage.php:232
+#: elements/upfront-image/lib/uimage.php:233
+#: library/servers/class_upfront_editor_l10n_server.php:208
+#: library/servers/class_upfront_editor_l10n_server.php:343
 msgid "Bild verlinken"
 msgstr "link image"
 
-#: elements/upfront-image/lib/uimage.php:284
+#: elements/upfront-image/lib/uimage.php:285
 msgid "Bild vorbereiten"
 msgstr "Prepare image"
 
-#: library/servers/class_upfront_editor_l10n_server.php:138
-#: elements/upfront-image/lib/uimage.php:273
+#: elements/upfront-image/lib/uimage.php:274
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:272
+#: library/servers/class_upfront_editor_l10n_server.php:138
 msgid "Bild wechseln"
 msgstr "change picture"
 
-#: elements/upfront-image/lib/uimage.php:281
+#: elements/upfront-image/lib/uimage.php:282
 msgid "Bild wird gespeichert..."
 msgstr "Image is being saved..."
 
+#: library/servers/class_upfront_editor_l10n_server.php:341
 #: library/servers/class_upfront_editor_l10n_server.php:787
 msgid "Bild ändern"
 msgstr "change picture"
@@ -1401,7 +1512,7 @@ msgid "Bild-Slider"
 msgstr "Image Slider"
 
 #: elements/upfront-gallery/lib/ugallery.php:351
-#: elements/upfront-image/lib/uimage.php:215
+#: elements/upfront-image/lib/uimage.php:216
 msgid "Bild-Wrapper"
 msgstr "image wrapper"
 
@@ -1422,37 +1533,37 @@ msgstr "image description"
 msgid "Bildbeschriftung"
 msgstr "caption"
 
-#: elements/upfront-image/lib/uimage.php:223
-#: elements/upfront-image/lib/uimage.php:248
+#: elements/upfront-image/lib/uimage.php:224
+#: elements/upfront-image/lib/uimage.php:249
 msgid "Bildbeschriftung anzeigen"
 msgstr "Show caption"
 
-#: elements/upfront-image/lib/uimage.php:222
+#: elements/upfront-image/lib/uimage.php:223
 msgid "Bildbeschriftung ausblenden"
 msgstr "Hide caption"
 
-#: elements/upfront-image/lib/uimage.php:235
+#: elements/upfront-image/lib/uimage.php:236
 msgid "Bildbeschriftung bearbeiten"
 msgstr "Edit caption"
 
-#: elements/upfront-image/lib/uimage.php:251
-#: elements/upfront-image/lib/uimage.php:261
+#: elements/upfront-image/lib/uimage.php:252
+#: elements/upfront-image/lib/uimage.php:262
 msgid "Bildbeschriftung BG"
 msgstr "Caption BG"
 
-#: elements/upfront-image/lib/uimage.php:247
+#: elements/upfront-image/lib/uimage.php:248
 msgid "Bildbeschriftung Einstellungen:"
 msgstr "Caption settings:"
 
-#: elements/upfront-image/lib/uimage.php:236
+#: elements/upfront-image/lib/uimage.php:237
 msgid "Bildbeschriftung hinzufügen"
 msgstr "Add caption to image"
 
-#: elements/upfront-image/lib/uimage.php:260
+#: elements/upfront-image/lib/uimage.php:261
 msgid "Bildbeschriftung Text"
 msgstr "Caption text"
 
-#: elements/upfront-image/lib/uimage.php:216
+#: elements/upfront-image/lib/uimage.php:217
 #: elements/upfront-slider/lib/upfront_slider.php:167
 msgid "Bildcontainer"
 msgstr "image container"
@@ -1461,7 +1572,7 @@ msgstr "image container"
 msgid "Bilddetails bearbeiten"
 msgstr "Edit image details"
 
-#: elements/upfront-image/lib/uimage.php:245
+#: elements/upfront-image/lib/uimage.php:246
 msgid "Bildeinstellungen"
 msgstr "picture settings"
 
@@ -1469,12 +1580,12 @@ msgstr "picture settings"
 msgid "Bildeinsätze"
 msgstr "image inserts"
 
-#: elements/upfront-image/lib/uimage.php:211
+#: elements/upfront-image/lib/uimage.php:212
 msgid "Bildelement"
 msgstr "picture element"
 
-#: library/media/class_upfront_media_server.php:149
 #: elements/upfront-slider/lib/upfront_slider.php:161
+#: library/media/class_upfront_media_server.php:149
 msgid "Bilder"
 msgstr "Pictures"
 
@@ -1520,13 +1631,17 @@ msgstr "image size"
 msgid "Bildgröße anpassen"
 msgstr "Adjust image size"
 
-#: elements/upfront-image/lib/uimage.php:271
+#: elements/upfront-image/lib/uimage.php:272
 msgid "Bildgröße wiederherstellen"
 msgstr "restore image size"
 
-#: elements/upfront-image/lib/uimage.php:272
+#: elements/upfront-image/lib/uimage.php:273
 msgid "Bildgröße zurücksetzen"
 msgstr "Reset image size"
+
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:270
+msgid "Bildoptionen"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:679
 msgid "Bildposition"
@@ -1536,11 +1651,11 @@ msgstr "image position"
 msgid "Bildslider"
 msgstr "image slider"
 
-#: elements/upfront-image/lib/uimage.php:277
+#: elements/upfront-image/lib/uimage.php:278
 msgid "Bildsteuerung"
 msgstr "image control"
 
-#: elements/upfront-image/lib/uimage.php:257
+#: elements/upfront-image/lib/uimage.php:258
 msgid "Bildstil"
 msgstr "image style"
 
@@ -1598,12 +1713,6 @@ msgstr "frame counter"
 msgid "Biografie"
 msgstr "biography"
 
-#: library/class_upfront_admin.php:47
-msgid ""
-"Bist Du sicher, dass Du das Design auf den Standardzustand zurücksetzen "
-"möchtest? Bitte beachte, dass dies nicht rückgängig gemacht werden kann."
-msgstr ""
-
 #: library/servers/class_upfront_editor_l10n_server.php:401
 msgid "Bist Du sicher, dass Sie löschen möchtest"
 msgstr "Are you sure you want to delete"
@@ -1631,14 +1740,6 @@ msgid ""
 msgstr ""
 "Please enter your Google Maps API key in the ClassicPress admin in the "
 "Upfront menu in the Dashboard submenu."
-
-#: library/class_upfront_form.php:170
-msgid "Bitte gib die richtige Zeichenfolge ein"
-msgstr ""
-
-#: library/class_upfront_form.php:281
-msgid "Bitte gib eine gültige Email-Adresse ein"
-msgstr ""
 
 #: elements/upfront-youtube/lib/uyoutube.php:131
 msgid "Bitte gib eine gültige YouTube-Video-URL ein"
@@ -1719,6 +1820,8 @@ msgstr "Please select the widget in the settings"
 msgid "Bitte überprüfe Deine Internetverbindung"
 msgstr "Please check your internet connection"
 
+#: elements/upfront-comment/lib/upfront_comment.php:468
+#: elements/upfront-comment/lib/upfront_comment.php:490
 #: library/servers/class_upfront_editor_l10n_server.php:294
 msgid "Blank"
 msgstr "Blank"
@@ -1731,8 +1834,8 @@ msgstr "Blockquote Alternative (BLOCKQUOTE)"
 msgid "Blockzitat"
 msgstr "block quote"
 
-#: library/servers/class_upfront_editor_l10n_server.php:488
 #: elements/upfront-text/lib/upfront_text.php:149
+#: library/servers/class_upfront_editor_l10n_server.php:488
 msgid "Blockzitat (BLOCKQUOTE)"
 msgstr "Block Quote (BLOCKQUOTE)"
 
@@ -1753,11 +1856,11 @@ msgstr "borders"
 msgid "Bottom"
 msgstr "Bottom"
 
+#: elements/upfront-button/lib/upfront_button.php:123
+#: elements/upfront-text/lib/upfront_text.php:134
 #: library/media/class_upfront_media_server.php:96
 #: library/servers/class_upfront_editor_l10n_server.php:655
 #: library/servers/class_upfront_presets_server.php:615
-#: elements/upfront-button/lib/upfront_button.php:123
-#: elements/upfront-text/lib/upfront_text.php:134
 msgid "Breite"
 msgstr "Broad"
 
@@ -1773,10 +1876,10 @@ msgstr "width(cols)"
 msgid "Burger"
 msgstr "Citizens"
 
-#: library/servers/class_upfront_editor_l10n_server.php:560
-#: library/servers/class_upfront_presets_server.php:646
 #: elements/upfront-button/lib/ubutton.php:91
 #: elements/upfront-button/lib/upfront_button.php:109
+#: library/servers/class_upfront_editor_l10n_server.php:560
+#: library/servers/class_upfront_presets_server.php:646
 msgid "Button"
 msgstr "button"
 
@@ -1804,13 +1907,83 @@ msgstr "Button presets could not be saved."
 msgid "by Term"
 msgstr "by Term"
 
-#: library/admin/class_upfront_admin_experimental.php:130
-msgid "Cache frozen assets"
-msgstr ""
-
 #: elements/upfront-social-media/lib/upfront-social-media.php:231
 msgid "Call to action icon"
 msgstr "Call to action icon"
+
+#: library/class_upfront_permissions.php:488
+msgid "Can Access Upfront Editor Mode"
+msgstr ""
+
+#: library/class_upfront_permissions.php:495
+msgid "Can Create / Modify Element Presets"
+msgstr ""
+
+#: library/class_upfront_permissions.php:499
+msgid "Can Create Posts & Pages From Upfront"
+msgstr ""
+
+#: library/class_upfront_permissions.php:496
+msgid "Can Delete Element Presets"
+msgstr ""
+
+#: library/class_upfront_permissions.php:500
+msgid "Can Edit Anyone's Existing Posts & Pages"
+msgstr ""
+
+#: library/class_upfront_permissions.php:501
+msgid "Can Edit Own Existing Posts & Pages"
+msgstr ""
+
+#: library/class_upfront_permissions.php:503
+msgid "Can Enter & Modify Layouts in Responsive Mode"
+msgstr ""
+
+#: library/class_upfront_permissions.php:498
+msgid ""
+"Can Modify / Save Global Options <p class=\"description\">(Theme Colors, "
+"Comments etc.)</p>"
+msgstr ""
+
+#: library/class_upfront_permissions.php:493
+msgid "Can Modify Archive Layout"
+msgstr ""
+
+#: library/class_upfront_permissions.php:492
+msgid "Can Modify Homepage Layout"
+msgstr ""
+
+#: library/class_upfront_permissions.php:491
+msgid "Can Modify Page Layout"
+msgstr ""
+
+#: library/class_upfront_permissions.php:490
+msgid "Can Modify Single Post Layout"
+msgstr ""
+
+#: library/class_upfront_permissions.php:489
+msgid "Can Modify Upfront Layouts"
+msgstr ""
+
+#: library/class_upfront_permissions.php:504
+msgid "Can Modify User Restrictions"
+msgstr ""
+
+#: library/class_upfront_permissions.php:505
+msgid "Can See / Use Debug Controls"
+msgstr ""
+
+#: library/class_upfront_permissions.php:497
+msgid "Can Switch Between Element Presets"
+msgstr ""
+
+#: library/class_upfront_permissions.php:494
+msgid "Can Upload Media"
+msgstr ""
+
+#: library/class_upfront_permissions.php:502
+msgid "Can Use Embeds (Code El, Media Embeds)"
+msgstr ""
 
 #: elements/upfront-contact-form/lib/contact_form.php:536
 msgid "CAPTCHA"
@@ -1820,30 +1993,6 @@ msgstr "CAPTCHA"
 msgid "CAPTCHA:"
 msgstr "CAPTCHA:"
 
-#: library/compat/class_upfront_compat_classiccommerce.php:362
-msgid "ClassicCommerce Checkout Page"
-msgstr "Classic Commerce Checkout Page"
-
-#: library/compat/class_upfront_compat_classiccommerce.php:358
-msgid "ClassicCommerce My Account Page"
-msgstr "ClassicCommerce My Account Page"
-
-#: library/compat/class_upfront_compat_classiccommerce.php:370
-msgid "ClassicCommerce Product Tag"
-msgstr "Classic Commerce Product Tag"
-
-#: library/compat/class_upfront_compat_classiccommerce.php:366
-msgid "ClassicCommerce Produktkategorie"
-msgstr "ClassicCommerce product category"
-
-#: library/compat/class_upfront_compat_classiccommerce.php:350
-msgid "ClassicCommerce Shop Page"
-msgstr "Classic Commerce Shop Page"
-
-#: library/compat/class_upfront_compat_classiccommerce.php:354
-msgid "ClassicCommerce Warenkorb Page"
-msgstr "ClassicCommerce Cart Page"
-
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:91
 msgid "ClassicPress Datum"
 msgstr "ClassicPress date"
@@ -1852,9 +2001,9 @@ msgstr "ClassicPress date"
 msgid "ClassicPress internal"
 msgstr "ClassicPress internal"
 
+#: elements/upfront-code/lib/upfront_code.php:111
 #: library/servers/class_upfront_editor_l10n_server.php:573
 #: library/servers/class_upfront_presets_server.php:658
-#: elements/upfront-code/lib/upfront_code.php:111
 msgid "Code"
 msgstr "Code"
 
@@ -1894,6 +2043,11 @@ msgstr "Container wrapper for click or hover triggered login form."
 #: elements/upfront-login/lib/upfront_login.php:183
 msgid "Container-Wrapper für die Funktion „Passwort verloren“.."
 msgstr "Container wrapper for Lost Password feature.."
+
+#: layouts/archive-home-full.php:89 layouts/index-full.php:218
+#: layouts/single-full.php:214
+msgid "Content Area"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:259
 msgid "Content Padding"
@@ -1964,11 +2118,11 @@ msgstr "Depiction"
 msgid "Darstellung des angezeigten Menüs"
 msgstr "Representation of the displayed menu"
 
-#: elements/upfront-image/lib/uimage.php:280
+#: elements/upfront-image/lib/uimage.php:281
 msgid "Das Bild kann nicht erweitert werden"
 msgstr "The image cannot be expanded"
 
-#: elements/upfront-image/lib/uimage.php:279
+#: elements/upfront-image/lib/uimage.php:280
 msgid "Das Bild wird vollständig erweitert"
 msgstr "The image is fully expanded"
 
@@ -1976,7 +2130,7 @@ msgstr "The image is fully expanded"
 msgid "Das CAPTCHA-Feld ist ungültig."
 msgstr "The CAPTCHA field is invalid."
 
-#: elements/upfront-image/lib/uimage.php:212
+#: elements/upfront-image/lib/uimage.php:213
 msgid "Das gesamte Bildelement"
 msgstr "The entire picture element"
 
@@ -1996,8 +2150,12 @@ msgstr "The style sheet is empty."
 msgid "Das Sucheingabefeld"
 msgstr "The search input field"
 
-#: library/servers/class_upfront_presets_server.php:613
+#: library/admin/class_upfront_admin_general.php:7
+msgid "Dashboard"
+msgstr ""
+
 #: elements/upfront-button/lib/upfront_button.php:121
+#: library/servers/class_upfront_presets_server.php:613
 msgid "Dashed"
 msgstr "Dashed"
 
@@ -2009,7 +2167,7 @@ msgstr "keep file"
 msgid "Datei entfernen"
 msgstr "delete data"
 
-#: elements/upfront-image/lib/uimage.php:289
+#: elements/upfront-image/lib/uimage.php:290
 msgid "Datei hochladen"
 msgstr "Upload file"
 
@@ -2021,11 +2179,11 @@ msgstr "Copy File URL"
 msgid "Dateiname"
 msgstr "filename"
 
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:64
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:152
 #: library/media/class_upfront_media_server.php:116
 #: library/servers/class_upfront_editor_l10n_server.php:184
 #: library/servers/class_upfront_editor_l10n_server.php:276
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:64
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:152
 msgid "Datum"
 msgstr "Date"
 
@@ -2042,8 +2200,8 @@ msgstr "Date of publication element"
 msgid "Datumseinstellung"
 msgstr "date setting"
 
-#: library/servers/class_upfront_editor_l10n_server.php:252
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:90
+#: library/servers/class_upfront_editor_l10n_server.php:252
 msgid "Datumsformat"
 msgstr "date format"
 
@@ -2065,23 +2223,31 @@ msgstr ""
 msgid "Debugging-Info/Gliederung anzeigen"
 msgstr "Show Debug Info/Outline"
 
-#: elements/upfront-image/lib/uimage.php:227
+#: scripts/upfront/upfront-data.php:30
+msgid "December"
+msgstr ""
+
+#: elements/upfront-image/lib/uimage.php:228
 #: elements/upfront-slider/lib/upfront_slider.php:192
 msgid "Deckt Bild, Mitte"
 msgstr "Covers image, center"
 
-#: elements/upfront-image/lib/uimage.php:226
+#: elements/upfront-image/lib/uimage.php:227
 #: elements/upfront-slider/lib/upfront_slider.php:191
 msgid "Deckt Bild, oben"
 msgstr "Covers image, above"
 
-#: elements/upfront-image/lib/uimage.php:228
+#: elements/upfront-image/lib/uimage.php:229
 msgid "Deckt Bild, Unten"
 msgstr "Covers image, below"
 
 #: elements/upfront-slider/lib/upfront_slider.php:193
 msgid "Deckt Bild, unten"
 msgstr "Covers image, below"
+
+#: library/class_upfront_behavior.php:72
+msgid "Default"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:263
 msgid ""
@@ -2096,13 +2262,13 @@ msgstr ""
 "Overwrite template</strong>, these changes will be applied to the <span "
 "class=\"template_name\">default template</span> (for future posts only)."
 
+#: elements/upfront-post-data/tpl/upfront-comment-list.php:30
+msgid "Dein Beitrag wartet auf die Moderation."
+msgstr ""
+
 #: library/media/class_upfront_media_server.php:145
 msgid "Dein Bildtitel"
 msgstr "your caption"
-
-#: library/class_upfront_form.php:224
-msgid "Dein Passwort muss mindestens 8 Zeichen lang sein."
-msgstr ""
 
 #: elements/upfront-contact-form/lib/contact_form.php:502
 msgid "Deine E-Mail-Adresse ist ungültig."
@@ -2122,10 +2288,6 @@ msgstr ""
 "Your HOMEPAGE — Static layout has been created successfully. You can create "
 "more layouts for your theme by clicking New Layout in the left sidebar. "
 "Remember that the best <del>free</del> themes in life have many layouts!"
-
-#: library/class_upfront_form.php:231
-msgid "Deine Passwörter stimmen nicht überein."
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:23
 msgid "Deine Vorschau ist noch nicht fertig"
@@ -2256,7 +2418,7 @@ msgstr "The wrapper of the entire element."
 msgid "Der Wrapper jedes Panels."
 msgstr "The wrapper of each panel."
 
-#. Author of the theme
+#. Author of the plugin/theme
 msgid "DerN3rd"
 msgstr "DerN3rd"
 
@@ -2268,7 +2430,7 @@ msgstr ""
 msgid "Designschriftarten konnten nicht gespeichert werden."
 msgstr "Theme fonts could not be saved."
 
-#: build/upfront/upfront-data.php:30 scripts/upfront/upfront-data.php:30
+#: build/upfront/upfront-data.php:30
 msgid "Dezember"
 msgstr ""
 
@@ -2288,11 +2450,11 @@ msgstr "The selected media file is already in use. Are you sure?"
 msgid "Die Bild-Wrapper-Ebene"
 msgstr "The image wrapper layer"
 
-#: elements/upfront-image/lib/uimage.php:243
+#: elements/upfront-image/lib/uimage.php:244
 msgid "Die Bildausgabe ist nur im Desktop-Modus verfügbar."
 msgstr "Image output is only available in desktop mode."
 
-#: elements/upfront-image/lib/uimage.php:242
+#: elements/upfront-image/lib/uimage.php:243
 msgid ""
 "Die Bildbearbeitung ist nur für Bilder geeignet, die in ClassicPress "
 "hochgeladen wurden"
@@ -2302,7 +2464,7 @@ msgstr "Image editing is only suitable for images uploaded to ClassicPress"
 msgid "Die Bildbeschreibung wurde erfolgreich aktualisiert."
 msgstr "The image description has been updated successfully."
 
-#: elements/upfront-image/lib/uimage.php:221
+#: elements/upfront-image/lib/uimage.php:222
 msgid ""
 "Die Bildbeschriftung ist für Bilder deaktiviert, die kleiner oder schmaler "
 "als 100 Pixel sind"
@@ -2510,7 +2672,7 @@ msgstr "The row containing all tabs."
 msgid "Die ältesten zu erst"
 msgstr "The oldest first"
 
-#: build/upfront/upfront-data.php:34 scripts/upfront/upfront-data.php:34
+#: build/upfront/upfront-data.php:34
 msgid "Dienstag"
 msgstr ""
 
@@ -2538,7 +2700,7 @@ msgstr ""
 msgid "Diese Funktionalität wurde deaktiviert"
 msgstr "This functionality has been disabled"
 
-#: elements/upfront-image/lib/uimage.php:301
+#: elements/upfront-image/lib/uimage.php:302
 msgid "Diese Nachricht nicht mehr anzeigen"
 msgstr "Do not show this message again"
 
@@ -2623,7 +2785,7 @@ msgstr "Discussion settings are disabled"
 msgid "Done"
 msgstr "Done"
 
-#: build/upfront/upfront-data.php:36 scripts/upfront/upfront-data.php:36
+#: build/upfront/upfront-data.php:36
 msgid "Donnerstag"
 msgstr ""
 
@@ -2631,8 +2793,8 @@ msgstr ""
 msgid "Doppelklicken um den Text zu bearbeiten"
 msgstr "Double-click to edit the text"
 
-#: library/servers/class_upfront_presets_server.php:614
 #: elements/upfront-button/lib/upfront_button.php:122
+#: library/servers/class_upfront_presets_server.php:614
 msgid "Dotted"
 msgstr "Dotted"
 
@@ -2858,7 +3020,7 @@ msgstr "Loading embeddable preview..."
 msgid "Einbetten"
 msgstr "Embed"
 
-#. Description of the theme
+#. Description of the plugin/theme
 msgid ""
 "Eine benutzerfreundliche, extrem vielseitige und unendlich anpassbare Drag-"
 "and-Drop-ClassicPress-Designplattform."
@@ -2911,11 +3073,14 @@ msgstr "Enter to select label(s)."
 msgid "Eingabefelder"
 msgstr "input fields"
 
+#: library/admin/class_upfront_admin_experimental.php:131
+msgid "Eingefrorene Assets zwischenspeichern"
+msgstr ""
+
 #: elements/upfront-login/lib/upfront_login.php:208
 msgid "Einloggen"
 msgstr "log in"
 
-#: library/servers/class_upfront_editor_l10n_server.php:533
 #: elements/upfront-accordion/lib/uaccordion.php:139
 #: elements/upfront-button/lib/ubutton.php:103
 #: elements/upfront-code/lib/upfront_code.php:115
@@ -2925,6 +3090,7 @@ msgstr "log in"
 #: elements/upfront-slider/lib/upfront_slider.php:180
 #: elements/upfront-tabs/lib/utabs.php:138
 #: elements/upfront-youtube/lib/uyoutube.php:129
+#: library/servers/class_upfront_editor_l10n_server.php:533
 msgid "Einstellungen"
 msgstr "Settings"
 
@@ -2995,10 +3161,10 @@ msgstr "parent category"
 msgid "em"
 msgstr "em"
 
-#: library/servers/class_upfront_editor_l10n_server.php:237
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:27
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:254
 #: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_author.php:98
+#: library/servers/class_upfront_editor_l10n_server.php:237
 msgid "Email"
 msgstr "Email"
 
@@ -3029,7 +3195,7 @@ msgid ""
 "Entschuldigung, dieser Dateityp ist aus Sicherheitsgründen nicht erlaubt."
 msgstr "Sorry, this file type is not allowed for security reasons."
 
-#: elements/upfront-image/lib/uimage.php:238
+#: elements/upfront-image/lib/uimage.php:239
 msgid "Entsperre Größenänderung von Bildern"
 msgstr "Entsperre Größenänderung von Bildern"
 
@@ -3110,9 +3276,9 @@ msgstr ""
 "There is an error in your HTML. Please check your markup again for invalid "
 "arguments, broken tags and the like."
 
-#: library/servers/class_upfront_editor_l10n_server.php:861
 #: elements/upfront-code/lib/upfront_code.php:136
 #: elements/upfront-maps/lib/upfront_maps.php:131
+#: library/servers/class_upfront_editor_l10n_server.php:861
 msgid "Es gibt einen Fehler in Deinem JS-Code"
 msgstr "There is an error in your JS code"
 
@@ -3154,8 +3320,8 @@ msgstr "Export images with the theme"
 msgid "Exportieren"
 msgstr "Export"
 
+#: elements/upfront-image/lib/uimage.php:297
 #: library/servers/class_upfront_editor_l10n_server.php:307
-#: elements/upfront-image/lib/uimage.php:296
 msgid "Externer Link"
 msgstr "external link"
 
@@ -3195,28 +3361,28 @@ msgstr "Fan, Follower count"
 msgid "Fans"
 msgstr "Fans"
 
+#: elements/upfront-button/lib/upfront_button.php:124
+#: elements/upfront-text/lib/upfront_text.php:135
 #: library/servers/class_upfront_editor_l10n_server.php:325
 #: library/servers/class_upfront_editor_l10n_server.php:491
 #: library/servers/class_upfront_presets_server.php:616
-#: elements/upfront-button/lib/upfront_button.php:124
-#: elements/upfront-text/lib/upfront_text.php:135
 msgid "Farbe"
 msgstr "Color"
 
-#: library/servers/class_upfront_editor_l10n_server.php:802
-#: elements/upfront-image/lib/uimage.php:253
+#: elements/upfront-image/lib/uimage.php:254
 #: elements/upfront-slider/lib/upfront_slider.php:209
+#: library/servers/class_upfront_editor_l10n_server.php:802
 msgid "Farbe wählen"
 msgstr "choose a colour"
 
-#: library/servers/class_upfront_editor_l10n_server.php:830
 #: elements/upfront-accordion/lib/uaccordion.php:150
 #: elements/upfront-button/lib/ubutton.php:104
 #: elements/upfront-contact-form/lib/contact_form.php:548
-#: elements/upfront-image/lib/uimage.php:259
+#: elements/upfront-image/lib/uimage.php:260
 #: elements/upfront-newnavigation/lib/unewnavigation.php:300
 #: elements/upfront-tabs/lib/utabs.php:143
 #: elements/upfront-text/lib/upfront_text.php:152
+#: library/servers/class_upfront_editor_l10n_server.php:830
 msgid "Farben"
 msgstr "Colors"
 
@@ -3234,8 +3400,12 @@ msgstr "Add feature image"
 msgid "Feature-Bild ändern"
 msgstr "Change feature image"
 
-#: build/upfront/upfront-data.php:20 scripts/upfront/upfront-data.php:20
+#: build/upfront/upfront-data.php:20
 msgid "Februar"
+msgstr ""
+
+#: scripts/upfront/upfront-data.php:20
+msgid "February"
 msgstr ""
 
 #: library/media/class_upfront_media_server.php:672
@@ -3361,8 +3531,8 @@ msgstr "Floating Region Settings"
 msgid "Folie entfernen"
 msgstr "remove foil"
 
-#: library/servers/class_upfront_editor_l10n_server.php:715
 #: elements/upfront-slider/lib/upfront_slider.php:229
+#: library/servers/class_upfront_editor_l10n_server.php:715
 msgid "Folie hinzufügen"
 msgstr "Add slide"
 
@@ -3391,7 +3561,11 @@ msgstr "Followers"
 msgid "Footer"
 msgstr "Footer"
 
-#: elements/upfront-image/lib/uimage.php:258
+#: layouts/footer.php:5
+msgid "Footer Area"
+msgstr ""
+
+#: elements/upfront-image/lib/uimage.php:259
 msgid "Form des Bildelements:"
 msgstr "Form of the picture element:"
 
@@ -3399,9 +3573,9 @@ msgstr "Form of the picture element:"
 msgid "Form Wrapper ausgelöst"
 msgstr "Form wrapper fired"
 
-#: library/servers/class_upfront_editor_l10n_server.php:346
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:278
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:225
+#: library/servers/class_upfront_editor_l10n_server.php:346
 msgid "Format"
 msgstr "Format"
 
@@ -3446,18 +3620,11 @@ msgstr "form validation"
 msgid "Fortfahren"
 msgstr "Continue"
 
-#: library/admin/class_upfront_admin_experimental.php:131
-msgid ""
-"Freeze all assets in their current state and serve them cached. This option "
-"will improve performance and is best used once you're done making changes to "
-"your site."
+#: library/admin/class_upfront_admin_experimental.php:137
+msgid "Freeze Zeitraum"
 msgstr ""
 
-#: library/admin/class_upfront_admin_experimental.php:136
-msgid "Freeze time"
-msgstr ""
-
-#: build/upfront/upfront-data.php:37 scripts/upfront/upfront-data.php:37
+#: build/upfront/upfront-data.php:37
 msgid "Freitag"
 msgstr ""
 
@@ -3465,11 +3632,22 @@ msgstr ""
 msgid "Freshest from"
 msgstr "Freshest from"
 
+#: scripts/upfront/upfront-data.php:37
+msgid "Friday"
+msgstr ""
+
+#: library/admin/class_upfront_admin_experimental.php:132
+msgid ""
+"Friere alle Assets in ihrem aktuellen Zustand ein und stellt sie "
+"zwischengespeichert bereit. Diese Option verbessert die Leistung und wird am "
+"besten verwendet, wenn Du mit den Änderungen an Deiner Webseite fertig bist."
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:62
 msgid "Frisch starten"
 msgstr "Start fresh"
 
-#: library/admin/class_upfront_admin_restrictions.php:49
+#: library/admin/class_upfront_admin_restrictions.php:43
 msgid "Funktionalität"
 msgstr ""
 
@@ -3481,8 +3659,8 @@ msgstr "Add custom post"
 msgid "Füge Bilder hinzu"
 msgstr "Add pictures"
 
-#: library/servers/class_upfront_editor_l10n_server.php:860
 #: elements/upfront-maps/lib/upfront_maps.php:130
+#: library/servers/class_upfront_editor_l10n_server.php:860
 msgid "Füge Deinen generierten Code unten ein."
 msgstr "Paste your generated code below."
 
@@ -3528,7 +3706,7 @@ msgstr "Adds a sortable interface based on the labels given to the images."
 msgid "Fülle den Raum"
 msgstr "fill the space"
 
-#: elements/upfront-image/lib/uimage.php:276
+#: elements/upfront-image/lib/uimage.php:277
 msgid "Füllen"
 msgstr "To fill"
 
@@ -3555,10 +3733,10 @@ msgstr "Intended for an adult audience over 18"
 msgid "G-Map"
 msgstr "G map"
 
-#: library/servers/class_upfront_editor_l10n_server.php:554
-#: library/servers/class_upfront_presets_server.php:640
 #: elements/upfront-gallery/lib/ugallery.php:334
 #: elements/upfront-youtube/lib/uyoutube.php:117
+#: library/servers/class_upfront_editor_l10n_server.php:554
+#: library/servers/class_upfront_presets_server.php:640
 msgid "Galerie"
 msgstr "gallery"
 
@@ -3606,6 +3784,10 @@ msgstr "To permit"
 msgid "General"
 msgstr "general"
 
+#: library/class_upfront_admin.php:64 library/class_upfront_admin.php:78
+msgid "General Settings"
+msgstr ""
+
 #: elements/upfront-social-media/lib/upfront-social-media.php:233
 msgid "General settings"
 msgstr "General settings"
@@ -3614,8 +3796,8 @@ msgstr "General settings"
 msgid "Generisch"
 msgstr "Generic"
 
-#: library/servers/class_upfront_editor_l10n_server.php:487
 #: elements/upfront-text/lib/upfront_text.php:148
+#: library/servers/class_upfront_editor_l10n_server.php:487
 msgid "Geordnete Liste (OL)"
 msgstr "Ordered List (OL)"
 
@@ -3692,6 +3874,10 @@ msgstr "Does not apply to fullscreen regions"
 #: library/servers/class_upfront_editor_l10n_server.php:518
 msgid "Gleiche obere und untere Polsterung"
 msgstr "Same upper and lower padding"
+
+#: elements/upfront-gallery/lib/ugallery.php:381
+msgid "Gleichmäßige Polsterung"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:637
 msgid "Global"
@@ -3783,6 +3969,11 @@ msgstr "Google page not found"
 msgid "Gravatar"
 msgstr "Gravatar"
 
+#: elements/upfront-comment/lib/upfront_comment.php:469
+#: elements/upfront-comment/lib/upfront_comment.php:491
+msgid "Gravatar Logo"
+msgstr ""
+
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:143
 msgid "Gravatar-Element des Autors"
 msgstr "Author's gravatar element"
@@ -3850,19 +4041,13 @@ msgstr "Size:"
 msgid "Größeres Bild"
 msgstr "bigger picture"
 
-#: elements/upfront-image/lib/uimage.php:298
+#: elements/upfront-image/lib/uimage.php:299
 msgid "Größeres Bild anzeigen"
 msgstr "View larger image"
 
 #: elements/upfront-gallery/lib/ugallery.php:373
 msgid "größeres Bild anzeigen"
 msgstr "view larger image"
-
-#: library/class_upfront_form.php:184
-msgid ""
-"Gültige Benutzernamen beginnen mit einem Buchstaben und enthalten nur "
-"alphanumerische Zeichen."
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:848
 msgid "Halb Fett"
@@ -3888,6 +4073,10 @@ msgstr "Enable breakpoints"
 #: library/servers/class_upfront_editor_l10n_server.php:755
 msgid "Haltepunkte konnten nicht gespeichert werden."
 msgstr "Breakpoints could not be saved."
+
+#: library/class_upfront_behavior.php:74
+msgid "Hardcore"
+msgstr ""
 
 #: layouts/single.php:12
 #: library/servers/class_upfront_editor_l10n_server.php:402
@@ -3922,6 +4111,10 @@ msgstr "Headline (H1)"
 #: library/servers/class_upfront_editor_l10n_server.php:797
 msgid "Header"
 msgstr "Header"
+
+#: layouts/header.php:5
+msgid "Header Area"
+msgstr ""
 
 #: elements/upfront-accordion/lib/uaccordion.php:151
 msgid "Header BG"
@@ -3968,14 +4161,14 @@ msgstr "This is where the content of your page goes ;)"
 msgid "Hier kommt die Karte ins Spiel."
 msgstr "This is where the card comes into play."
 
-#: elements/upfront-image/lib/uimage.php:282
+#: elements/upfront-image/lib/uimage.php:283
 msgid "Hier sind wir"
 msgstr "Here we are"
 
-#: library/servers/class_upfront_editor_l10n_server.php:43
-#: library/servers/class_upfront_editor_l10n_server.php:135
 #: elements/upfront-this-page/lib/this_page.php:53
 #: elements/upfront-this-post/lib/this_post.php:664
+#: library/servers/class_upfront_editor_l10n_server.php:43
+#: library/servers/class_upfront_editor_l10n_server.php:135
 msgid "Hier sind wir!"
 msgstr "Here we are!"
 
@@ -3984,6 +4177,7 @@ msgid "Highlight"
 msgstr "Highlight"
 
 #: library/admin/class_upfront_admin_general.php:72
+#: library/servers/class_upfront_editor_l10n_server.php:365
 msgid "Hilfe &amp; Support"
 msgstr "Help &amp; support"
 
@@ -3991,8 +4185,8 @@ msgstr "Help &amp; support"
 msgid "Hilfreiche Ressourcen"
 msgstr ""
 
-#: library/servers/class_upfront_editor_l10n_server.php:769
 #: elements/upfront-newnavigation/lib/unewnavigation.php:301
+#: library/servers/class_upfront_editor_l10n_server.php:769
 msgid "Hintergrund"
 msgstr "background"
 
@@ -4016,10 +4210,10 @@ msgstr "background image position"
 msgid "Hintergrundeinstellungen aktualisiert"
 msgstr "Background settings updated"
 
-#: library/servers/class_upfront_editor_l10n_server.php:684
-#: library/servers/class_upfront_presets_server.php:617
 #: elements/upfront-button/lib/upfront_button.php:125
 #: elements/upfront-text/lib/upfront_text.php:136
+#: library/servers/class_upfront_editor_l10n_server.php:684
+#: library/servers/class_upfront_presets_server.php:617
 msgid "Hintergrundfarbe"
 msgstr "background color"
 
@@ -4036,16 +4230,12 @@ msgstr "background type"
 msgid "Hinterlasse eine Antwort"
 msgstr "Leave a message"
 
-#: library/class_upfront_logger.php:174
-msgid "Hinweis"
-msgstr "Notice"
-
+#: elements/upfront-gallery/lib/ugallery.php:441
 #: library/servers/class_upfront_editor_l10n_server.php:123
 #: library/servers/class_upfront_editor_l10n_server.php:203
 #: library/servers/class_upfront_editor_l10n_server.php:513
 #: library/servers/class_upfront_editor_l10n_server.php:746
 #: library/servers/class_upfront_presets_server.php:601
-#: elements/upfront-gallery/lib/ugallery.php:441
 msgid "Hinzufügen"
 msgstr "Add to"
 
@@ -4058,9 +4248,13 @@ msgid "Hochgeladenes Video"
 msgstr "Uploaded video"
 
 #: elements/upfront-gallery/lib/ugallery.php:426
-#: elements/upfront-image/lib/uimage.php:293
+#: elements/upfront-image/lib/uimage.php:294
 msgid "Hochladen..."
 msgstr "Upload..."
+
+#: library/models/class_upfront_entity_resolver.php:217
+msgid "Home Page"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:223
 msgid "Homepage"
@@ -4086,10 +4280,6 @@ msgstr "Hover state for top level menu item"
 msgid "Hover-Status für Menüelement der Unterebene"
 msgstr "Hover state for sub-level menu item"
 
-#: library/admin/class_upfront_admin_experimental.php:137
-msgid "How long to wait before refreshing the frozen assets cache"
-msgstr ""
-
 #: elements/upfront-code/lib/upfront_code.php:131
 msgid "HTML"
 msgstr "HTML"
@@ -4107,17 +4297,20 @@ msgstr "HTML error:"
 msgid "HTML-Vorlage bearbeiten"
 msgstr "Edit HTML template"
 
-#. URI of the theme
-#. Author URI of the theme
+#. Author URI of the plugin/theme
 msgid "https://n3rds.work"
 msgstr "https://n3rds.work"
+
+#. Theme URI of the plugin/theme
+msgid "https://upfront.n3rds.work/"
+msgstr ""
 
 #: elements/upfront-like-box/lib/upfront-like-box.php:117
 msgid "https://www.facebook.com/YourPage"
 msgstr "https://www.facebook.com/YourPage"
 
-#: library/servers/class_upfront_editor_l10n_server.php:721
 #: elements/upfront-maps/lib/upfront_maps.php:102
+#: library/servers/class_upfront_editor_l10n_server.php:721
 msgid "Hybrid"
 msgstr "Hybrid"
 
@@ -4150,6 +4343,11 @@ msgstr "Icon Fonts Manager"
 msgid "Icons"
 msgstr "Icons"
 
+#: elements/upfront-comment/lib/upfront_comment.php:470
+#: elements/upfront-comment/lib/upfront_comment.php:492
+msgid "Identicon (Generated)"
+msgstr ""
+
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:238
 msgid "Ignoriere klebrige Beiträge"
 msgstr "Ignore sticky posts"
@@ -4162,13 +4360,13 @@ msgstr "Ignore"
 msgid "IHinzu &raquo;"
 msgstr "IAdd &raquo;"
 
-#: elements/upfront-image/lib/uimage.php:266
+#: elements/upfront-image/lib/uimage.php:267
 msgid "IMG 100%"
 msgstr "IMG 100%"
 
-#: library/servers/class_upfront_editor_l10n_server.php:705
 #: elements/upfront-gallery/lib/ugallery.php:385
-#: elements/upfront-image/lib/uimage.php:249
+#: elements/upfront-image/lib/uimage.php:250
+#: library/servers/class_upfront_editor_l10n_server.php:705
 msgid "Immer"
 msgstr "Always"
 
@@ -4259,13 +4457,17 @@ msgstr "Insert image"
 msgid "Insert shortcode"
 msgstr "Insert shortcode"
 
+#: library/class_upfront_form.php:110
+msgid "Inspect your submission for errors outlined below"
+msgstr ""
+
 #: library/compat/class_upfront_compat_backup_info.php:86
 msgid "Install Snapshot"
 msgstr "Install Snapshot"
 
+#: elements/upfront-contact-form/lib/contact_form.php:575
 #: library/servers/class_upfront_editor_l10n_server.php:645
 #: library/servers/class_upfront_editor_l10n_server.php:785
-#: elements/upfront-contact-form/lib/contact_form.php:575
 msgid "Ja"
 msgstr "Yes"
 
@@ -4278,7 +4480,7 @@ msgid "Jan 30 2015"
 msgstr "Jan 30 2015"
 
 #: build/upfront/upfront-data.php:19 scripts/upfront/upfront-data.php:19
-msgid "Januar"
+msgid "January"
 msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:343
@@ -4305,92 +4507,30 @@ msgstr "Someone posts a comment"
 msgid "JS"
 msgstr "JS"
 
-#: library/servers/class_upfront_editor_l10n_server.php:855
 #: elements/upfront-code/lib/upfront_code.php:127
 #: elements/upfront-maps/lib/upfront_maps.php:125
+#: library/servers/class_upfront_editor_l10n_server.php:855
 msgid "JS Fehler:"
 msgstr "js error:"
 
-#: build/upfront/upfront-data.php:25 scripts/upfront/upfront-data.php:25
+#: build/upfront/upfront-data.php:25
 msgid "Juli"
 msgstr ""
 
-#: build/upfront/upfront-data.php:24 scripts/upfront/upfront-data.php:24
+#: scripts/upfront/upfront-data.php:25
+msgid "July"
+msgstr ""
+
+#: scripts/upfront/upfront-data.php:24
+msgid "June"
+msgstr ""
+
+#: build/upfront/upfront-data.php:24
 msgid "Juni"
 msgstr ""
 
-#: library/class_upfront_permissions.php:493
-msgid "Kann Archivlayout ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:499
-msgid "Kann Beiträge und Seiten mit UpFront erstellen"
-msgstr ""
-
-#: library/class_upfront_permissions.php:504
-msgid "Kann Benutzereinschränkungen ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:500
-msgid "Kann bestehende Beiträge und Seiten von jedermann bearbeiten"
-msgstr ""
-
-#: library/class_upfront_permissions.php:505
-msgid "Kann Debug-Steuerelemente sehen/verwenden"
-msgstr ""
-
-#: library/class_upfront_permissions.php:501
-msgid "Kann eigene bestehende Beiträge & Seiten bearbeiten"
-msgstr ""
-
-#: library/class_upfront_permissions.php:495
-msgid "Kann Elementvoreinstellungen erstellen / ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:496
-msgid "Kann Elementvoreinstellungen löschen"
-msgstr ""
-
-#: library/class_upfront_permissions.php:502
-msgid "Kann Embeds verwenden (Code El, Media Embeds)"
-msgstr ""
-
-#: library/class_upfront_permissions.php:498
-msgid ""
-"Kann globale Optionen ändern/speichern <p class=\"description\">"
-"(Designfarben, Kommentare usw.)</p>"
-msgstr ""
-
-#: library/class_upfront_permissions.php:492
-msgid "Kann Homepage-Layout ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:490
-msgid "Kann Layout einzelner Posts ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:503
-msgid "Kann Layouts im Responsivmodus einstellen und ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:494
-msgid "Kann Medien hochladen"
-msgstr ""
-
 #: library/admin/class_upfront_admin_general.php:163
-msgid "Kann nach Framework-Upgrades hilfreich sein"
-msgstr ""
-
-#: library/class_upfront_permissions.php:491
-msgid "Kann Seitenlayout ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:489
-msgid "Kann UpFront Layouts ändern"
-msgstr ""
-
-#: library/class_upfront_permissions.php:497
-msgid "Kann zwischen Elementvoreinstellungen wechseln"
+msgid "Kann nach Core-Upgrades hilfreich sein"
 msgstr ""
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:65
@@ -4417,18 +4557,22 @@ msgstr "map style"
 msgid "Kartentyp"
 msgstr "card type"
 
+#: library/servers/class_upfront_editor_l10n_server.php:127
+msgid "Kategorie auswählen oder erstellen"
+msgstr ""
+
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:184
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:185
 msgid "Kategorie-Link"
 msgstr "category link"
 
-#: library/servers/class_upfront_editor_l10n_server.php:171
-#: library/servers/class_upfront_editor_l10n_server.php:246
-#: library/servers/class_upfront_editor_l10n_server.php:579
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:136
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:193
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:220
 #: elements/upfront-this-post/lib/this_post.php:667
+#: library/servers/class_upfront_editor_l10n_server.php:171
+#: library/servers/class_upfront_editor_l10n_server.php:246
+#: library/servers/class_upfront_editor_l10n_server.php:579
 msgid "Kategorien"
 msgstr "categories"
 
@@ -4466,42 +4610,46 @@ msgstr "No Crop + BG Color"
 msgid "Kein gespeichertes Layout"
 msgstr "No saved layout"
 
-#: library/admin/class_upfront_admin_restrictions.php:196
+#: library/admin/class_upfront_admin_restrictions.php:190
 msgid "Kein Label für &quot;%s&quot;"
 msgstr ""
 
+#: elements/upfront-image/lib/uimage.php:296
 #: library/servers/class_upfront_editor_l10n_server.php:220
-#: elements/upfront-image/lib/uimage.php:295
 msgid "Kein Link"
 msgstr "no link"
 
-#: library/servers/class_upfront_editor_l10n_server.php:465
 #: elements/upfront-slider/lib/upfront_slider.php:188
+#: library/servers/class_upfront_editor_l10n_server.php:465
 msgid "Kein Titel"
 msgstr "No title"
 
-#: library/admin/class_upfront_admin_response_cache.php:45
-#: library/media/class_upfront_media_server.php:83
-#: library/servers/class_upfront_editor_l10n_server.php:423
 #: elements/upfront-contact-form/lib/contact_form.php:570
 #: elements/upfront-gallery/lib/ugallery.php:389
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:171
+#: library/admin/class_upfront_admin_response_cache.php:45
+#: library/media/class_upfront_media_server.php:83
+#: library/servers/class_upfront_editor_l10n_server.php:423
 msgid "Keine"
 msgstr "No"
+
+#: library/servers/class_upfront_editor_l10n_server.php:335
+msgid "Keine Ausrichtung"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:173
 msgid "Keine Beiträge gefunden"
 msgstr "No posts found"
 
-#: elements/upfront-image/lib/uimage.php:204
+#: elements/upfront-image/lib/uimage.php:205
 msgid "Keine Bild-ID angegeben"
 msgstr "No image ID specified"
 
-#: elements/upfront-image/lib/uimage.php:230
+#: elements/upfront-image/lib/uimage.php:231
 msgid "Keine Bildbeschriftung"
 msgstr "No caption"
 
-#: elements/upfront-image/lib/uimage.php:201
+#: elements/upfront-image/lib/uimage.php:202
 msgid "Keine Bilder gesendet"
 msgstr "No pictures sent"
 
@@ -4546,11 +4694,11 @@ msgstr "Not matter"
 msgid "Keine Spaltenfüllung"
 msgstr "No column filling"
 
-#: library/servers/class_upfront_presets_server.php:611
 #: elements/upfront-button/lib/upfront_button.php:119
-#: elements/upfront-image/lib/uimage.php:252
+#: elements/upfront-image/lib/uimage.php:253
 #: elements/upfront-slider/lib/upfront_slider.php:208
 #: elements/upfront-text/lib/upfront_text.php:130
+#: library/servers/class_upfront_presets_server.php:611
 msgid "Keinen"
 msgstr "none"
 
@@ -4610,8 +4758,8 @@ msgstr "Click here to select a Google font"
 msgid "Klicke um das Beitragsbild des Beitrags zu bearbeiten"
 msgstr "Click to edit the featured image of the post"
 
-#: library/servers/class_upfront_editor_l10n_server.php:854
 #: elements/upfront-contact-form/lib/contact_form.php:562
+#: library/servers/class_upfront_editor_l10n_server.php:854
 msgid "Klicke um zu ändern"
 msgstr "Click to change"
 
@@ -4628,9 +4776,9 @@ msgstr "Clone"
 msgid "KMap-Einstellungen"
 msgstr "KMap settings"
 
-#: library/servers/class_upfront_editor_l10n_server.php:185
 #: elements/upfront-comment/lib/upfront_comment.php:244
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:204
+#: library/servers/class_upfront_editor_l10n_server.php:185
 msgid "Kommentar"
 msgstr "comment"
 
@@ -4650,14 +4798,14 @@ msgstr "comment button"
 msgid "Kommentar-Wrapper"
 msgstr "Comment wrapper"
 
-#: library/servers/class_upfront_editor_l10n_server.php:552
-#: library/servers/class_upfront_editor_l10n_server.php:580
-#: library/servers/class_upfront_presets_server.php:638
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:52
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:60
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:194
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:248
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:259
+#: library/servers/class_upfront_editor_l10n_server.php:552
+#: library/servers/class_upfront_editor_l10n_server.php:580
+#: library/servers/class_upfront_presets_server.php:638
 msgid "Kommentare"
 msgstr "Comments"
 
@@ -4719,9 +4867,9 @@ msgstr "configuration"
 msgid "Kontakt"
 msgstr "Contact"
 
+#: elements/upfront-contact-form/lib/contact_form.php:485
 #: library/servers/class_upfront_editor_l10n_server.php:553
 #: library/servers/class_upfront_presets_server.php:639
-#: elements/upfront-contact-form/lib/contact_form.php:485
 msgid "Kontakt Formular"
 msgstr "Contact form"
 
@@ -4771,9 +4919,9 @@ msgstr "Edit labels"
 msgid "Label eingeben..."
 msgstr "Enter labels..."
 
-#: library/media/class_upfront_media_server.php:119
 #: elements/upfront-gallery/lib/ugallery.php:346
 #: elements/upfront-gallery/lib/ugallery.php:437
+#: library/media/class_upfront_media_server.php:119
 msgid "Labels"
 msgstr "Labels"
 
@@ -4804,10 +4952,6 @@ msgstr "Load..."
 #: elements/upfront-social-media/lib/upfront-social-media.php:239
 msgid "Large"
 msgstr "Large"
-
-#: library/admin/class_upfront_admin_general.php:73
-msgid "Lasse Dich Inspirieren mit Snippets"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:54
 msgid "Layout"
@@ -4869,9 +5013,17 @@ msgstr "Check layouts"
 msgid "Layoutstil-Einstellungen"
 msgstr "Layout Style Settings"
 
+#: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_comments.php:313
+msgid "Leave a Reply"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:563
 msgid "Leeren"
 msgstr "Layout Style Settings"
+
+#: layouts/index.php:193 layouts/single-404_page.php:39
+msgid "Left Sidebar"
+msgstr ""
 
 #: library/admin/class_upfront_admin_response_cache.php:46
 msgid ""
@@ -4881,7 +5033,7 @@ msgstr ""
 "Legacy behavior in advance. All queues and buffering for requests are "
 "bypassed."
 
-#: elements/upfront-image/lib/uimage.php:241
+#: elements/upfront-image/lib/uimage.php:242
 msgid "Lege das Bild hier ab"
 msgstr "Drop the picture here"
 
@@ -4945,9 +5097,9 @@ msgstr "Lightbox settings for"
 msgid "Lightboxes"
 msgstr "Lightboxes"
 
+#: elements/upfront-like-box/lib/upfront-like-box.php:103
 #: library/servers/class_upfront_editor_l10n_server.php:557
 #: library/servers/class_upfront_presets_server.php:643
-#: elements/upfront-like-box/lib/upfront-like-box.php:103
 msgid "Like Box"
 msgstr "Like Box"
 
@@ -4967,10 +5119,10 @@ msgstr "linear"
 msgid "Link"
 msgstr "Link"
 
-#: library/servers/class_upfront_editor_l10n_server.php:291
-#: library/servers/class_upfront_editor_l10n_server.php:381
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:220
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:221
+#: library/servers/class_upfront_editor_l10n_server.php:291
+#: library/servers/class_upfront_editor_l10n_server.php:381
 msgid "Link bearbeiten"
 msgstr "edit link"
 
@@ -5002,11 +5154,15 @@ msgstr "Link Opens In:"
 msgid "Link Text"
 msgstr "Link Text"
 
+#: library/servers/class_upfront_editor_l10n_server.php:359
+msgid "Link URL eingeben"
+msgstr ""
+
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:38
 msgid "Link zu"
 msgstr "link to"
 
-#: elements/upfront-image/lib/uimage.php:297
+#: elements/upfront-image/lib/uimage.php:298
 msgid "Link zu einem Beitrag oder einer Seite"
 msgstr "Link to a post or page"
 
@@ -5052,16 +5208,21 @@ msgstr "Left offset"
 msgid "Linkfarbe"
 msgstr "link color"
 
-#: library/servers/class_upfront_editor_l10n_server.php:257
-#: library/servers/class_upfront_editor_l10n_server.php:657
 #: elements/upfront-newnavigation/lib/unewnavigation.php:280
+#: library/servers/class_upfront_editor_l10n_server.php:257
+#: library/servers/class_upfront_editor_l10n_server.php:338
+#: library/servers/class_upfront_editor_l10n_server.php:657
 msgid "Links"
 msgstr "Links"
 
+#: elements/upfront-image/lib/uimage.php:295
 #: library/servers/class_upfront_editor_l10n_server.php:219
-#: elements/upfront-image/lib/uimage.php:294
 msgid "Links zu:"
 msgstr "Links to:"
+
+#: library/servers/class_upfront_editor_l10n_server.php:333
+msgid "Linksbündig"
+msgstr ""
 
 #: elements/upfront-youtube/lib/uyoutube.php:118
 msgid "Liste"
@@ -5080,10 +5241,10 @@ msgstr "List part of post categories"
 msgid "Location"
 msgstr "Location"
 
-#: library/servers/class_upfront_editor_l10n_server.php:556
-#: library/servers/class_upfront_presets_server.php:642
 #: elements/upfront-login/lib/upfront_login.php:165
 #: elements/upfront-login/lib/upfront_login.php:207
+#: library/servers/class_upfront_editor_l10n_server.php:556
+#: library/servers/class_upfront_presets_server.php:642
 msgid "Login"
 msgstr "Login"
 
@@ -5116,10 +5277,14 @@ msgstr "Logout-Link"
 msgid "Lokalisieren"
 msgstr "Locate"
 
-#: library/servers/class_upfront_editor_l10n_server.php:735
 #: elements/upfront-youtube/lib/uyoutube.php:121
+#: library/servers/class_upfront_editor_l10n_server.php:735
 msgid "Loop"
 msgstr "Loop"
+
+#: library/class_upfront_behavior.php:71
+msgid "Low"
+msgstr ""
 
 #: elements/upfront-newnavigation/lib/unewnavigation.php:272
 msgid "Lösche"
@@ -5147,13 +5312,19 @@ msgstr "Extinguish"
 msgid "Mache daraus eine globale Region"
 msgstr "Make it a global region"
 
-#: build/upfront/upfront-data.php:23 scripts/upfront/upfront-data.php:23
+#: build/upfront/upfront-data.php:23
 msgid "Mai"
 msgstr ""
 
-#: layouts/archive-home-full.php:10
+#: layouts/archive-home-full.php:10 layouts/index-full.php:10
+#: layouts/index.php:12 layouts/single-404_page.php:12
+#: layouts/single-full.php:10 library/theme/class_upfront_theme.php:77
 msgid "Main Area"
 msgstr "Main Area"
+
+#: library/models/class_upfront_entity_resolver.php:191
+msgid "Maintenance Mode"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:558
 #: library/servers/class_upfront_presets_server.php:644
@@ -5183,6 +5354,10 @@ msgstr "Map-Container"
 #: elements/upfront-maps/lib/upfront_maps.php:114
 msgid "Map-Stil"
 msgstr "map style"
+
+#: scripts/upfront/upfront-data.php:21
+msgid "March"
+msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:656
 msgid "Margin"
@@ -5230,16 +5405,20 @@ msgid "Maximale Bewertung"
 msgstr "Maximum rating"
 
 #: elements/upfront-gallery/lib/ugallery.php:423
-#: elements/upfront-image/lib/uimage.php:290
+#: elements/upfront-image/lib/uimage.php:291
 #, php-format
 msgid "Maximale Upload-Dateigröße: %s"
 msgstr "Maximum upload file size: %s"
+
+#: scripts/upfront/upfront-data.php:23
+msgid "May"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:511
 msgid "Medien"
 msgstr "media"
 
-#: elements/upfront-image/lib/uimage.php:292
+#: elements/upfront-image/lib/uimage.php:293
 msgid "Medien durchsuchen"
 msgstr "browse media"
 
@@ -5291,8 +5470,8 @@ msgstr "media title"
 msgid "Medientyp"
 msgstr "media type"
 
-#: library/servers/class_upfront_editor_l10n_server.php:847
 #: elements/upfront-social-media/lib/upfront-social-media.php:238
+#: library/servers/class_upfront_editor_l10n_server.php:847
 msgid "Medium"
 msgstr "Medium"
 
@@ -5300,7 +5479,7 @@ msgstr "Medium"
 msgid "Mehr Tools"
 msgstr "More tools"
 
-#: elements/upfront-image/lib/uimage.php:234
+#: elements/upfront-image/lib/uimage.php:235
 msgid "Mehr Werkzeuge"
 msgstr "More tools"
 
@@ -5308,7 +5487,7 @@ msgstr "More tools"
 msgid "Mehr..."
 msgstr "More..."
 
-#: elements/upfront-image/lib/uimage.php:209
+#: elements/upfront-image/lib/uimage.php:210
 msgid "Meine tolle Bildbeschriftung"
 msgstr "My awesome caption"
 
@@ -5382,10 +5561,10 @@ msgstr "Menu style:"
 msgid "Menütyp"
 msgstr "menu type"
 
-#: library/servers/class_upfront_editor_l10n_server.php:581
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:210
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:267
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:221
+#: library/servers/class_upfront_editor_l10n_server.php:581
 msgid "Meta"
 msgstr "Meta"
 
@@ -5445,22 +5624,42 @@ msgstr "Misc"
 msgid "Mittel"
 msgstr "Middle"
 
+#: library/servers/class_upfront_editor_l10n_server.php:340
+msgid "Mittig"
+msgstr ""
+
+#: library/servers/class_upfront_editor_l10n_server.php:336
+msgid "Mittig zentrieren"
+msgstr ""
+
+#: build/upfront/upfront-data.php:35
+msgid "Mittwoch"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:271
 msgid "Monat"
 msgstr "Month"
 
-#: build/upfront/upfront-data.php:33 scripts/upfront/upfront-data.php:33
+#: scripts/upfront/upfront-data.php:33
+msgid "Monday"
+msgstr ""
+
+#: elements/upfront-comment/lib/upfront_comment.php:472
+#: elements/upfront-comment/lib/upfront_comment.php:494
+msgid "MonsterID (Generated)"
+msgstr ""
+
+#: build/upfront/upfront-data.php:33
 msgid "Montag"
 msgstr ""
 
-#: build/upfront/upfront-data.php:21 scripts/upfront/upfront-data.php:21
-msgid "März"
+#: elements/upfront-comment/lib/upfront_comment.php:467
+#: elements/upfront-comment/lib/upfront_comment.php:489
+msgid "Mystery Man"
 msgstr ""
 
-#: library/class_upfront_admin.php:48
-msgid ""
-"Möchtest Du das Layout \"{layout}\" wirklich auf den Standardzustand "
-"zurücksetzen? Bitte beachte, dass dies nicht rückgängig gemacht werden kann"
+#: build/upfront/upfront-data.php:21
+msgid "März"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:26
@@ -5555,8 +5754,8 @@ msgstr "message field"
 msgid "Nachrichtenfeldtext:"
 msgstr "Message field text:"
 
-#: library/servers/class_upfront_editor_l10n_server.php:758
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:252
+#: library/servers/class_upfront_editor_l10n_server.php:758
 msgid "Name"
 msgstr "Name"
 
@@ -5572,11 +5771,13 @@ msgstr "edit names"
 msgid "Namensfeldtext:"
 msgstr "Name field text:"
 
+#: elements/upfront-image/lib/uimage.php:275
 #: library/media/class_upfront_media_server.php:93
-#: elements/upfront-image/lib/uimage.php:274
 msgid "Natürliche Größe"
 msgstr "natural size"
 
+#: layouts/archive-home-full.php:61 layouts/index-full.php:190
+#: layouts/single-full.php:186
 #: library/servers/class_upfront_editor_l10n_server.php:559
 #: library/servers/class_upfront_presets_server.php:645
 msgid "Navigation"
@@ -5594,9 +5795,9 @@ msgstr "Navigation Back"
 msgid "Navigationspunkte"
 msgstr "navigation points"
 
+#: elements/upfront-contact-form/lib/contact_form.php:574
 #: library/servers/class_upfront_editor_l10n_server.php:644
 #: library/servers/class_upfront_editor_l10n_server.php:786
-#: elements/upfront-contact-form/lib/contact_form.php:574
 msgid "Nein"
 msgstr "No"
 
@@ -5667,8 +5868,8 @@ msgstr "Add new %s"
 msgid "Neues %s wird vorbereitet..."
 msgstr "Preparing new %s..."
 
-#: library/media/class_upfront_media_server.php:126
 #: elements/upfront-gallery/lib/ugallery.php:443
+#: library/media/class_upfront_media_server.php:126
 msgid "Neues Etikett erstellen"
 msgstr "Create new label"
 
@@ -5684,16 +5885,16 @@ msgstr "Create new layout"
 msgid "Neues Theme"
 msgstr "New theme"
 
-#: library/media/class_upfront_media_server.php:153
 #: elements/upfront-comment/lib/upfront_comment.php:284
+#: library/media/class_upfront_media_server.php:153
 msgid "Neueste"
 msgstr "Latest"
 
-#: elements/upfront-image/lib/uimage.php:202
+#: elements/upfront-image/lib/uimage.php:203
 msgid "Nicht erlaubt"
 msgstr "Not allowed"
 
-#: elements/upfront-image/lib/uimage.php:205
+#: elements/upfront-image/lib/uimage.php:206
 msgid "Nicht Modifikationen"
 msgstr "Not modifications"
 
@@ -5725,17 +5926,9 @@ msgstr "Nothing"
 msgid "Nickname"
 msgstr "Nickname"
 
-#: library/class_upfront_behavior.php:71
-msgid "Niedrig"
-msgstr ""
-
 #: elements/upfront-gallery/lib/ugallery.php:383
 msgid "niemals"
 msgstr "never"
-
-#: build/upfront/upfront-data.php:35 scripts/upfront/upfront-data.php:35
-msgid "Nittwoch"
-msgstr ""
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:196
 msgid "No credentials"
@@ -5753,19 +5946,19 @@ msgstr "No token"
 msgid "Noch reifer als R"
 msgstr "Even more mature than R"
 
-#: elements/upfront-button/lib/upfront_button.php:119
-#: elements/upfront-contact-form/lib/contact_form.php:558
-#: elements/upfront-image/lib/uimage.php:252
-#: elements/upfront-posts/lib/class_upfront_posts_data.php:171
-#: elements/upfront-slider/lib/upfront_slider.php:208
-#: elements/upfront-text/lib/upfront_text.php:130
-#: library/admin/class_upfront_admin_response_cache.php:45
 #: library/class_upfront_logger.php:171
-#: library/media/class_upfront_media_server.php:83
-#: library/servers/class_upfront_editor_l10n_server.php:423
-#: library/servers/class_upfront_presets_server.php:611
 msgid "None"
 msgstr "None"
+
+#: library/class_upfront_logger.php:174
+msgid "Notice"
+msgstr ""
+
+#: elements/upfront-comment/lib/upfront_comment.php:179
+#: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_comments.php:311
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
 
 #: build/upfront/upfront-data.php:29 scripts/upfront/upfront-data.php:29
 msgid "November"
@@ -5792,13 +5985,8 @@ msgid "Nur Bild"
 msgstr "image only"
 
 #: library/servers/class_upfront_editor_l10n_server.php:27
-#: library/servers/class_upfront_javascript_main.php:293
 msgid "Nur dieser Beitrag"
 msgstr "Just this post"
-
-#: library/servers/class_upfront_javascript_main.php:299
-msgid "Nur dieses Archiv"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:32
 msgid "Nur dieses Element"
@@ -5833,6 +6021,10 @@ msgstr "Upper padding"
 msgid "Oberer Versatz"
 msgstr "Upper offset"
 
+#: scripts/upfront/upfront-data.php:28
+msgid "October"
+msgstr ""
+
 #: elements/upfront-accordion/lib/uaccordion.php:132
 msgid "Odd-Panel-Container"
 msgstr "Odd-Panel-Container"
@@ -5842,7 +6034,7 @@ msgid "oder"
 msgstr "or"
 
 #: elements/upfront-gallery/lib/ugallery.php:424
-#: elements/upfront-image/lib/uimage.php:291
+#: elements/upfront-image/lib/uimage.php:292
 msgid "oder durchsuche Deine"
 msgstr "or browse yours"
 
@@ -5854,35 +6046,35 @@ msgstr "or create new"
 msgid "Oder speichere den aktuellen Stil als neue Voreinstellung:"
 msgstr "Or save the current style as a new preset:"
 
+#: elements/upfront-code/lib/upfront_code.php:122
+#: elements/upfront-comment/lib/upfront_comment.php:251
+#: elements/upfront-maps/lib/upfront_maps.php:126
+#: elements/upfront-social-media/lib/upfront-social-media.php:201
 #: library/media/class_upfront_media_server.php:134
 #: library/servers/class_upfront_editor_l10n_server.php:59
 #: library/servers/class_upfront_editor_l10n_server.php:186
 #: library/servers/class_upfront_editor_l10n_server.php:404
 #: library/servers/class_upfront_editor_l10n_server.php:856
 #: library/servers/class_upfront_presets_server.php:602
-#: elements/upfront-code/lib/upfront_code.php:122
-#: elements/upfront-comment/lib/upfront_comment.php:251
-#: elements/upfront-maps/lib/upfront_maps.php:126
-#: elements/upfront-social-media/lib/upfront-social-media.php:201
 msgid "OK"
 msgstr "OK"
 
+#: elements/upfront-gallery/lib/ugallery.php:394
+#: elements/upfront-gallery/lib/ugallery.php:436
+#: elements/upfront-image/lib/uimage.php:255
+#: elements/upfront-image/lib/uimage.php:269
+#: elements/upfront-image/lib/uimage.php:300
+#: elements/upfront-like-box/lib/upfront-like-box.php:110
+#: elements/upfront-slider/lib/upfront_slider.php:225
 #: library/servers/class_upfront_editor_l10n_server.php:211
 #: library/servers/class_upfront_editor_l10n_server.php:285
 #: library/servers/class_upfront_editor_l10n_server.php:373
 #: library/servers/class_upfront_editor_l10n_server.php:640
 #: library/servers/class_upfront_editor_l10n_server.php:642
-#: elements/upfront-gallery/lib/ugallery.php:394
-#: elements/upfront-gallery/lib/ugallery.php:436
-#: elements/upfront-image/lib/uimage.php:254
-#: elements/upfront-image/lib/uimage.php:268
-#: elements/upfront-image/lib/uimage.php:299
-#: elements/upfront-like-box/lib/upfront-like-box.php:110
-#: elements/upfront-slider/lib/upfront_slider.php:225
 msgid "Ok"
 msgstr "Ok"
 
-#: build/upfront/upfront-data.php:28 scripts/upfront/upfront-data.php:28
+#: build/upfront/upfront-data.php:28
 msgid "Oktober"
 msgstr ""
 
@@ -5898,17 +6090,17 @@ msgstr "Oops, something went wrong"
 msgid "Optionen einfügen"
 msgstr "Insert options"
 
-#: library/servers/class_upfront_editor_l10n_server.php:677
 #: elements/upfront-gallery/lib/ugallery.php:452
+#: library/servers/class_upfront_editor_l10n_server.php:677
 msgid "Overlay BG"
 msgstr "Overlay BG"
 
-#: library/servers/class_upfront_editor_l10n_server.php:730
 #: elements/upfront-maps/lib/upfront_maps.php:111
+#: library/servers/class_upfront_editor_l10n_server.php:730
 msgid "Overview Map"
 msgstr "Overview Map"
 
-#: elements/upfront-image/lib/uimage.php:255
+#: elements/upfront-image/lib/uimage.php:256
 msgid "Padding Einstellungen:"
 msgstr "Pad settings:"
 
@@ -5928,8 +6120,8 @@ msgstr "pagination"
 msgid "Paginierung:"
 msgstr "Pagination:"
 
-#: library/servers/class_upfront_editor_l10n_server.php:726
 #: elements/upfront-maps/lib/upfront_maps.php:106
+#: library/servers/class_upfront_editor_l10n_server.php:726
 msgid "Pan"
 msgstr "Pan"
 
@@ -5969,9 +6161,9 @@ msgstr "Resize to fit the container"
 msgid "Passe die Polsterung an"
 msgstr "Adjust the padding"
 
-#: library/servers/class_upfront_editor_l10n_server.php:245
 #: elements/upfront-contact-form/lib/contact_form.php:577
 #: elements/upfront-login/lib/upfront_login.php:204
+#: library/servers/class_upfront_editor_l10n_server.php:245
 msgid "Passwort"
 msgstr "password"
 
@@ -6067,6 +6259,14 @@ msgstr "Please select an option from backend"
 #: elements/upfront-social-media/lib/upfront-social-media.php:190
 msgid "Please, add some services"
 msgstr "Please, add some services"
+
+#: library/class_upfront_form.php:281
+msgid "Please, enter a valid email"
+msgstr ""
+
+#: library/class_upfront_form.php:170
+msgid "Please, enter the correct string"
+msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:147
 msgid "Please, select a taxonomy"
@@ -6183,6 +6383,10 @@ msgstr "Privately published"
 msgid "Profil bearbeiten"
 msgstr "edit profile"
 
+#: library/compat/class_upfront_compat_psecommerce.php:239
+msgid "PSeCommerce Cart Page"
+msgstr ""
+
 #: library/compat/class_upfront_compat_psecommerce.php:231
 msgid "PSeCommerce Category Archive"
 msgstr "PSeCommerce Category Archive"
@@ -6211,10 +6415,6 @@ msgstr "PSeCommerce Store Page"
 msgid "PSeCommerce Tag Archive"
 msgstr "PSeCommerce Tag Archive"
 
-#: library/compat/class_upfront_compat_psecommerce.php:239
-msgid "PSeCommerce Warenkorb Page"
-msgstr "PSeCommerce Cart Page"
-
 #: elements/upfront-slider/lib/upfront_slider.php:221
 msgid "Punkte"
 msgstr "Points"
@@ -6223,10 +6423,10 @@ msgstr "Points"
 msgid "Pusht Inhalt"
 msgstr "Pushes content"
 
+#: elements/upfront-login/lib/upfront_login.php:220
 #: library/servers/class_upfront_editor_l10n_server.php:661
 #: library/servers/class_upfront_editor_l10n_server.php:836
 #: library/servers/class_upfront_presets_server.php:621
-#: elements/upfront-login/lib/upfront_login.php:220
 msgid "px"
 msgstr "px"
 
@@ -6274,12 +6474,17 @@ msgstr "Right sidebar"
 msgid "Rechter Einzug"
 msgstr "right indent"
 
-#: library/servers/class_upfront_editor_l10n_server.php:258
-#: library/servers/class_upfront_editor_l10n_server.php:658
 #: elements/upfront-newnavigation/lib/unewnavigation.php:281
 #: elements/upfront-newnavigation/lib/unewnavigation.php:285
+#: library/servers/class_upfront_editor_l10n_server.php:258
+#: library/servers/class_upfront_editor_l10n_server.php:339
+#: library/servers/class_upfront_editor_l10n_server.php:658
 msgid "Rechts"
 msgstr "To the right"
+
+#: library/servers/class_upfront_editor_l10n_server.php:334
+msgid "Rechtsbündig"
+msgstr ""
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:98
 msgid "Referenz"
@@ -6406,6 +6611,11 @@ msgstr "Responsive menu bar"
 msgid "Responsives Untermenüelement Hover"
 msgstr "Hover responsive submenu item"
 
+#: elements/upfront-comment/lib/upfront_comment.php:473
+#: elements/upfront-comment/lib/upfront_comment.php:495
+msgid "Retro (Generated)"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:24
 msgid "Revisionen"
 msgstr "revisions"
@@ -6418,8 +6628,12 @@ msgstr "Set up custom breakpoint"
 msgid "Richtung:"
 msgstr "Direction:"
 
-#: library/servers/class_upfront_editor_l10n_server.php:719
+#: layouts/single-404_page.php:66
+msgid "Right Sidebar"
+msgstr ""
+
 #: elements/upfront-maps/lib/upfront_maps.php:100
+#: library/servers/class_upfront_editor_l10n_server.php:719
 msgid "Roadmap"
 msgstr "Roadmap"
 
@@ -6439,14 +6653,18 @@ msgstr "Undone"
 msgid "Rückgängig..."
 msgstr "Undone..."
 
-#: build/upfront/upfront-data.php:38 scripts/upfront/upfront-data.php:38
+#: build/upfront/upfront-data.php:38
 msgid "Samstag"
 msgstr ""
 
-#: library/servers/class_upfront_editor_l10n_server.php:720
 #: elements/upfront-maps/lib/upfront_maps.php:101
+#: library/servers/class_upfront_editor_l10n_server.php:720
 msgid "Satellite"
 msgstr "Satellite"
+
+#: scripts/upfront/upfront-data.php:38
+msgid "Saturday"
+msgstr ""
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:202
 msgid "Saving settings..."
@@ -6506,11 +6724,11 @@ msgstr "Slide to resize thumbnails."
 msgid "Schlichte Bilder"
 msgstr "Plain images"
 
+#: elements/upfront-code/lib/upfront_code.php:137
+#: elements/upfront-maps/lib/upfront_maps.php:132
 #: library/servers/class_upfront_editor_l10n_server.php:106
 #: library/servers/class_upfront_editor_l10n_server.php:665
 #: library/servers/class_upfront_editor_l10n_server.php:862
-#: elements/upfront-code/lib/upfront_code.php:137
-#: elements/upfront-maps/lib/upfront_maps.php:132
 msgid "Schließen"
 msgstr "Close"
 
@@ -6534,10 +6752,13 @@ msgstr "Add closing text"
 msgid "Schreibe benutzerdefinierten Code"
 msgstr "Add closing text"
 
-#: library/servers/class_upfront_presets_server.php:623
 #: library/servers/class_upfront_editor_l10n_server.php:490
 msgid "Schrift"
 msgstr "Typography"
+
+#: library/servers/class_upfront_presets_server.php:623
+msgid "Schrift:"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:206
 #: library/servers/class_upfront_editor_l10n_server.php:549
@@ -6573,14 +6794,18 @@ msgstr "Allow floating regions outside of the main grid"
 msgid "Scrolle zu Anker"
 msgstr "Scroll to Anchor"
 
+#: library/models/class_upfront_entity_resolver.php:226
+msgid "Search"
+msgstr ""
+
 #: library/servers/class_upfront_presets_server.php:631
 msgid "sec"
 msgstr "sec"
 
+#: elements/upfront-this-page/lib/this_page.php:50
 #: library/servers/class_upfront_editor_l10n_server.php:508
 #: library/servers/class_upfront_editor_l10n_server.php:568
 #: library/servers/class_upfront_presets_server.php:652
-#: elements/upfront-this-page/lib/this_page.php:50
 msgid "Seite"
 msgstr "Page"
 
@@ -6642,8 +6867,8 @@ msgstr "Insert sidebar area"
 msgid "Seitenname (leer lassen für single-page.php)"
 msgstr "Page name (leave blank for single-page.php)"
 
-#: library/servers/class_upfront_editor_l10n_server.php:278
 #: elements/upfront-this-page/lib/this_page.php:56
+#: library/servers/class_upfront_editor_l10n_server.php:278
 msgid "Seitentitel"
 msgstr "page title"
 
@@ -6711,7 +6936,7 @@ msgstr "Put quote"
 msgid "Sichtbar:"
 msgstr "Visible:"
 
-#: elements/upfront-image/lib/uimage.php:220
+#: elements/upfront-image/lib/uimage.php:221
 msgid "Sichtbarkeit der Beschriftung"
 msgstr "Label visibility"
 
@@ -6727,13 +6952,13 @@ msgstr "meeting"
 msgid "Skala"
 msgstr "scale"
 
-#: library/servers/class_upfront_editor_l10n_server.php:710
 #: elements/upfront-slider/lib/upfront_slider.php:212
+#: library/servers/class_upfront_editor_l10n_server.php:710
 msgid "Slide Hoch"
 msgstr "Slide up"
 
-#: library/servers/class_upfront_editor_l10n_server.php:711
 #: elements/upfront-slider/lib/upfront_slider.php:214
+#: library/servers/class_upfront_editor_l10n_server.php:711
 msgid "Slide Links"
 msgstr "Slide left"
 
@@ -6741,19 +6966,19 @@ msgstr "Slide left"
 msgid "Slide mit Pfeiltasten aktivieren?"
 msgstr "Enable slide with arrow keys?"
 
-#: library/servers/class_upfront_editor_l10n_server.php:712
 #: elements/upfront-slider/lib/upfront_slider.php:213
+#: library/servers/class_upfront_editor_l10n_server.php:712
 msgid "Slide Rechts"
 msgstr "Slide right"
 
-#: library/servers/class_upfront_editor_l10n_server.php:709
 #: elements/upfront-slider/lib/upfront_slider.php:211
+#: library/servers/class_upfront_editor_l10n_server.php:709
 msgid "Slide Runter"
 msgstr "Slide down"
 
+#: elements/upfront-slider/lib/upfront_slider.php:159
 #: library/servers/class_upfront_editor_l10n_server.php:565
 #: library/servers/class_upfront_presets_server.php:649
-#: elements/upfront-slider/lib/upfront_slider.php:159
 msgid "Slider"
 msgstr "Slider"
 
@@ -6809,6 +7034,10 @@ msgstr "SMTP settings"
 msgid "SMTP Host"
 msgstr "SMTP Host"
 
+#: elements/upfront-contact-form/lib/contact_form.php:573
+msgid "SMTP Port"
+msgstr ""
+
 #: elements/upfront-contact-form/lib/contact_form.php:579
 msgid "SMTP Sicherheit"
 msgstr "SMTP security"
@@ -6817,9 +7046,9 @@ msgstr "SMTP security"
 msgid "So Beiträge anzeigen:"
 msgstr "Show posts like this:"
 
+#: elements/upfront-social-media/lib/upfront-social-media.php:185
 #: library/servers/class_upfront_editor_l10n_server.php:566
 #: library/servers/class_upfront_presets_server.php:650
-#: elements/upfront-social-media/lib/upfront-social-media.php:185
 msgid "Social"
 msgstr "Social"
 
@@ -6832,7 +7061,9 @@ msgid "Social Container"
 msgstr "Social Container"
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:254
-msgid "Social Counter-Stil:"
+#, fuzzy
+#| msgid "Social Counter-Stil:"
+msgid "Social Counter style:"
 msgstr "Social Counter style:"
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:235
@@ -6847,12 +7078,12 @@ msgstr "Social Media settings"
 msgid "Sofort"
 msgstr "Immediately"
 
-#: library/servers/class_upfront_presets_server.php:612
 #: elements/upfront-button/lib/upfront_button.php:120
+#: library/servers/class_upfront_presets_server.php:612
 msgid "Solid"
 msgstr "Solid"
 
-#: build/upfront/upfront-data.php:39 scripts/upfront/upfront-data.php:39
+#: build/upfront/upfront-data.php:39
 msgid "Sonntag"
 msgstr ""
 
@@ -6884,11 +7115,16 @@ msgstr "Storage"
 msgid "Speichere Änderungen..."
 msgstr "Saving changes..."
 
+#: library/admin/class_upfront_admin_experimental.php:167
+msgid "SPEICHERN"
+msgstr ""
+
 #: elements/upfront-code/lib/upfront_code.php:138
 #: elements/upfront-maps/lib/upfront_maps.php:133
 #: library/admin/class_upfront_admin_general.php:108
 #: library/admin/class_upfront_admin_general.php:141
 #: library/admin/class_upfront_admin_general.php:240
+#: library/admin/class_upfront_admin_restrictions.php:122
 #: library/servers/class_upfront_editor_l10n_server.php:210
 #: library/servers/class_upfront_editor_l10n_server.php:372
 #: library/servers/class_upfront_editor_l10n_server.php:863
@@ -6903,7 +7139,7 @@ msgstr "Save as"
 msgid "Speichern als..."
 msgstr "Save as..."
 
-#: elements/upfront-image/lib/uimage.php:239
+#: elements/upfront-image/lib/uimage.php:240
 msgid "Sperre Größenänderung von Bildern"
 msgstr "Block resizing of images"
 
@@ -6911,9 +7147,13 @@ msgstr "Block resizing of images"
 msgid "Sprite verlinken"
 msgstr "Link sprite"
 
+#: elements/upfront-contact-form/lib/contact_form.php:571
+msgid "SSL"
+msgstr ""
+
 #: elements/upfront-accordion/lib/uaccordion.php:147
-#: elements/upfront-tabs/lib/utabs.php:140 functions.php:151
-#: library/class_upfront_behavior.php:72
+#: elements/upfront-slider/lib/upfront_slider.php:233
+#: elements/upfront-tabs/lib/utabs.php:140 functions.php:159
 #: library/servers/class_upfront_editor_l10n_server.php:180
 #: library/servers/class_upfront_editor_l10n_server.php:536
 #: library/servers/class_upfront_presets_server.php:608
@@ -6963,8 +7203,8 @@ msgstr "Home page"
 msgid "Status"
 msgstr "Status"
 
-#: library/servers/class_upfront_editor_l10n_server.php:706
 #: elements/upfront-slider/lib/upfront_slider.php:220
+#: library/servers/class_upfront_editor_l10n_server.php:706
 msgid "Steuerelemente anzeigen"
 msgstr "show controls"
 
@@ -6979,6 +7219,10 @@ msgstr "Sticky"
 #: library/servers/class_upfront_editor_l10n_server.php:653
 msgid "Sticky Region"
 msgstr "Sticky region"
+
+#: library/servers/class_upfront_editor_l10n_server.php:342
+msgid "Stil"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:85
 msgid "Stil exportiert."
@@ -7001,8 +7245,8 @@ msgstr "style name"
 msgid "Straße, Stadt, Land"
 msgstr "street, city, country"
 
-#: library/servers/class_upfront_editor_l10n_server.php:729
 #: elements/upfront-maps/lib/upfront_maps.php:110
+#: library/servers/class_upfront_editor_l10n_server.php:729
 msgid "Street View"
 msgstr "street view"
 
@@ -7035,10 +7279,10 @@ msgstr "subscribers"
 msgid "Such-Container"
 msgstr "search container"
 
+#: elements/upfront-search/lib/upfront_search.php:54
 #: library/media/class_upfront_media_server.php:105
 #: library/servers/class_upfront_editor_l10n_server.php:562
 #: library/servers/class_upfront_presets_server.php:648
-#: elements/upfront-search/lib/upfront_search.php:54
 msgid "Suche"
 msgstr "search"
 
@@ -7053,6 +7297,10 @@ msgstr "Search button"
 #: elements/upfront-search/lib/upfront_search.php:60
 msgid "Suchfeld"
 msgstr "search box"
+
+#: scripts/upfront/upfront-data.php:39
+msgid "Sunday"
+msgstr ""
 
 #: library/admin/class_upfront_admin_restrictions.php:45
 msgid "Super Admin"
@@ -7079,9 +7327,9 @@ msgstr "tab background"
 msgid "Tab-Label-Typografie"
 msgstr "Tab label typography"
 
+#: elements/upfront-tabs/lib/utabs.php:114
 #: library/servers/class_upfront_editor_l10n_server.php:567
 #: library/servers/class_upfront_presets_server.php:651
-#: elements/upfront-tabs/lib/utabs.php:114
 msgid "Tabs"
 msgstr "tabs"
 
@@ -7102,14 +7350,14 @@ msgstr "tag link"
 msgid "Tag-Einstellungen"
 msgstr "Tag Settings"
 
-#: library/servers/class_upfront_editor_l10n_server.php:172
-#: library/servers/class_upfront_editor_l10n_server.php:247
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:108
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:146
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:265
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:203
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:219
 #: elements/upfront-this-post/lib/this_post.php:668
+#: library/servers/class_upfront_editor_l10n_server.php:172
+#: library/servers/class_upfront_editor_l10n_server.php:247
 msgid "Tags"
 msgstr "tags"
 
@@ -7133,24 +7381,28 @@ msgstr "Allow content sharing"
 msgid "Telefonnummer"
 msgstr "phone number"
 
+#: library/servers/class_upfront_editor_l10n_server.php:360
+msgid "Telefonnummer eingeben"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:179
 msgid "Template"
 msgstr "template"
 
-#: library/servers/class_upfront_editor_l10n_server.php:722
 #: elements/upfront-maps/lib/upfront_maps.php:103
+#: library/servers/class_upfront_editor_l10n_server.php:722
 msgid "Terrain"
 msgstr "terrain"
 
+#: elements/upfront-text/lib/upfront_text.php:119
 #: library/servers/class_upfront_editor_l10n_server.php:572
 #: library/servers/class_upfront_presets_server.php:657
-#: elements/upfront-text/lib/upfront_text.php:119
 msgid "Text"
 msgstr "text"
 
-#: library/servers/class_upfront_presets_server.php:618
 #: elements/upfront-button/lib/upfront_button.php:126
 #: elements/upfront-text/lib/upfront_text.php:137
+#: library/servers/class_upfront_presets_server.php:618
 msgid "Text bearbeiten"
 msgstr "edit text"
 
@@ -7242,6 +7494,26 @@ msgstr "The box that contains Youtube button"
 msgid "The layer that contains all the social buttons"
 msgstr "The layer that contains all the social buttons"
 
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:221
+#, php-format
+msgctxt "the plugin title"
+msgid ""
+"Entschuldige, es konnte nicht festgestellt werden, ob Updates für %s "
+"verfügbar sind."
+msgstr ""
+
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:219
+#, php-format
+msgctxt "the plugin title"
+msgid "Im PSOURCE REPO ist eine <b>neuere Version von %s</b> verfügbar!."
+msgstr ""
+
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "Keine neuere Version von %s im PSOURCE REPO gefunden."
+msgstr ""
+
 #: elements/upfront-social-media/lib/upfront-social-media.php:209
 msgid "The wrapper that contains each social button"
 msgstr "The wrapper that contains each social button"
@@ -7302,6 +7574,10 @@ msgstr "Theme colors could not be saved."
 msgid "Themenfarbstile konnten nicht gespeichert werden."
 msgstr "Theme color styles could not be saved."
 
+#: psource/psource-plugin-update/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
 #: elements/upfront-social-media/lib/upfront-social-media.php:224
 msgid ""
 "There is no global settings for the social media. Please configure them "
@@ -7310,8 +7586,14 @@ msgstr ""
 "There is no global settings for the social media. Please configure them "
 "pressing the settings button."
 
-#: library/compat/class_upfront_compat_brainpress.php:294
-msgid "This is virtual page handled by BrainPress."
+#: library/servers/class_upfront_javascript_main.php:299
+msgid "This archive only"
+msgstr ""
+
+#: library/compat/class_upfront_compat_coursepress.php:294
+#, fuzzy
+#| msgid "This is virtual page handled by BrainPress."
+msgid "This is virtual page handled by CoursePress."
 msgstr ""
 "There is no global settings for the social media. Please configure them "
 "pressing the settings button."
@@ -7324,6 +7606,10 @@ msgstr ""
 #: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_taxonomy.php:98
 msgid "This post has no tags assigned"
 msgstr "This post has no tags assigned"
+
+#: library/servers/class_upfront_javascript_main.php:293
+msgid "This post only"
+msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:205
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:242
@@ -7347,6 +7633,10 @@ msgstr "Thumbnail Options"
 #: elements/upfront-youtube/lib/uyoutube.php:140
 msgid "Thumbnails-Container"
 msgstr "Thumbnails container"
+
+#: scripts/upfront/upfront-data.php:36
+msgid "Thursday"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:694
 msgid "Tiled/Pattern"
@@ -7378,6 +7668,10 @@ msgstr "Title wrapper"
 msgid "Titelbild ausblenden"
 msgstr "Hide cover photo"
 
+#: elements/upfront-contact-form/lib/contact_form.php:572
+msgid "TLS"
+msgstr ""
+
 #: library/servers/class_upfront_editor_l10n_server.php:648
 msgid "Top"
 msgstr "Top"
@@ -7398,9 +7692,17 @@ msgstr "Disable trackbacks"
 msgid "Trennen mit"
 msgstr "Disconnect with"
 
+#: library/servers/class_upfront_editor_l10n_server.php:643
+msgid "Trennt dies von der globalen Region"
+msgstr ""
+
 #: elements/upfront-login/lib/upfront_login.php:202
 msgid "Trigger"
 msgstr "trigger"
+
+#: scripts/upfront/upfront-data.php:34
+msgid "Tuesday"
+msgstr ""
 
 #: elements/upfront-social-media/lib/upfront-social-media.php:212
 msgid "Twitter box"
@@ -7415,12 +7717,12 @@ msgstr "Typ Link URL:"
 msgid "Typelement:"
 msgstr "Type element:"
 
-#: library/servers/class_upfront_editor_l10n_server.php:495
-#: library/servers/class_upfront_presets_server.php:629
 #: elements/upfront-button/lib/ubutton.php:105
 #: elements/upfront-contact-form/lib/contact_form.php:551
 #: elements/upfront-newnavigation/lib/unewnavigation.php:299
 #: elements/upfront-text/lib/upfront_text.php:154
+#: library/servers/class_upfront_editor_l10n_server.php:495
+#: library/servers/class_upfront_presets_server.php:629
 msgid "Typografie"
 msgstr "typography"
 
@@ -7449,7 +7751,7 @@ msgstr ""
 "To use your widgets, add widget elements to your UpFront layouts. You can do "
 "this <a href=\"%s\">here</a>"
 
-#: elements/upfront-image/lib/uimage.php:300
+#: elements/upfront-image/lib/uimage.php:301
 msgid ""
 "Um ein Bild in voller Breite zu erhalten, verschiebe es bitte zuerst so, "
 "dass keine anderen Elemente im Weg sind."
@@ -7457,16 +7759,21 @@ msgstr ""
 "To get a full-width image, please first move it so that no other elements "
 "are in the way."
 
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:227
+#, php-format
+msgid "Unbekannter PSOURCE-UPDATTER-Status \"%s\""
+msgstr ""
+
 #: elements/upfront-contact-form/lib/contact_form.php:494
 msgid "Unbekanntes Kontaktformular."
 msgstr "Unknown contact form."
 
-#: library/servers/class_upfront_editor_l10n_server.php:486
 #: elements/upfront-text/lib/upfront_text.php:147
+#: library/servers/class_upfront_editor_l10n_server.php:486
 msgid "Ungeordnete Liste (UL)"
 msgstr "Unordered list (UL)"
 
-#: elements/upfront-image/lib/uimage.php:203
+#: elements/upfront-image/lib/uimage.php:204
 msgid "Ungültige Bild-ID"
 msgstr "Invalid image ID"
 
@@ -7504,7 +7811,7 @@ msgstr "Under"
 msgid "Unter Bild"
 msgstr "under picture"
 
-#: elements/upfront-image/lib/uimage.php:229
+#: elements/upfront-image/lib/uimage.php:230
 msgid "Unter dem Bild"
 msgstr "Under the picture"
 
@@ -7544,7 +7851,7 @@ msgstr "submenu item"
 msgid "Unterregionen"
 msgstr "sub-regions"
 
-#: elements/upfront-image/lib/uimage.php:302
+#: elements/upfront-image/lib/uimage.php:303
 msgid "Unterstützte Formate: mp4/webm"
 msgstr "Formats supported: mp4/webm"
 
@@ -7552,6 +7859,10 @@ msgstr "Formats supported: mp4/webm"
 #: elements/upfront-gallery/lib/ugallery.php:403
 msgid "Untertitel anzeigen"
 msgstr "Show subtitles"
+
+#: library/servers/class_upfront_editor_l10n_server.php:344
+msgid "Untertitel umschalten"
+msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:352
 msgid "Untertitel-Wrapper"
@@ -7581,13 +7892,17 @@ msgstr "Subheading (H6)"
 msgid "Update"
 msgstr "Update"
 
-#. Name of the theme
+#. Theme Name of the plugin/theme
 #: functions.php:209
 msgid "UpFront"
 msgstr "UpFront"
 
+#: library/class_upfront_admin.php:64
+msgid "Upfront"
+msgstr ""
+
 #: library/admin/class_upfront_admin_general.php:61
-msgid "UpFront 1.0"
+msgid "Upfront 1.0"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:665
@@ -7613,41 +7928,49 @@ msgstr ""
 "UpFront requires Pretty Permalinks to work. Please enable it <a href=\"%s\">"
 "here</a>"
 
+#: library/admin/class_upfront_admin_general.php:26
+msgid "UpFront Dashboard"
+msgstr ""
+
+#: library/admin/class_upfront_admin_general.php:7
+msgid "UpFront Einstellungen"
+msgstr ""
+
 #: library/admin/class_upfront_admin_experimental.php:160
 msgid "Upfront Kompression aktivieren (GZip)"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:62
-msgid "UpFront Teil 1: Die Grundlagen, Themenfarben und Typografie"
+msgid "Upfront Teil 1: Die Grundlagen, Themenfarben und Typografie"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:63
-msgid "UpFront Teil 2: Strukturieren Deiner Webseite mit Regionen"
+msgid "Upfront Teil 2: Strukturieren Deiner Webseite mit Regionen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:64
-msgid "UpFront Teil 3: Gestalten der Webseite mit Elementen"
+msgid "Upfront Teil 3: Gestalten der Webseite mit Elementen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:65
-msgid "UpFront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code"
+msgid "Upfront Teil 4: Optimieren von Elementen und benutzerdefiniertem Code"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:66
 msgid ""
-"UpFront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen"
+"Upfront Teil 5: Hinzufügen von Plugins und Formatieren von Gravity-Formularen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:67
-msgid "UpFront Teil 6: Erstellen von responsiven Webseiten"
+msgid "Upfront Teil 6: Erstellen von responsiven Webseiten"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:68
-msgid "UpFront Teil 7: Arbeiten mit Seiten und Beiträgen"
+msgid "Upfront Teil 7: Arbeiten mit Seiten und Beiträgen"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:164
-msgid "UpFront-Cache zurücksetzen"
+msgid "Upfront-Cache zurücksetzen"
 msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:429
@@ -7658,10 +7981,10 @@ msgstr "Upload"
 msgid "Ups! Irgendwas lief schief"
 msgstr "Oops! Something went wrong"
 
-#: library/media/class_upfront_media_server.php:103
-#: library/servers/class_upfront_editor_l10n_server.php:229
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:28
 #: elements/upfront-youtube/lib/uyoutube.php:134
+#: library/media/class_upfront_media_server.php:103
+#: library/servers/class_upfront_editor_l10n_server.php:229
 msgid "URL"
 msgstr "URL"
 
@@ -7686,6 +8009,11 @@ msgstr "user wrappers"
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:37
 msgid "Username"
 msgstr "Username"
+
+#: library/class_upfront_form.php:184
+msgid ""
+"Valid usernames begin with a letter and have only alphanumeric characters."
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:550
 msgid "Variante wählen"
@@ -7770,7 +8098,7 @@ msgid ""
 "Verwende für beste Kompatibilität mindestens die Formate WOFF und WOFF2."
 msgstr "For best compatibility, use at least WOFF and WOFF2 formats."
 
-#: elements/upfront-image/lib/uimage.php:256
+#: elements/upfront-image/lib/uimage.php:257
 msgid "Verwende kein Theme-Padding"
 msgstr "Don't use theme padding"
 
@@ -7877,8 +8205,8 @@ msgstr "Video URL (YouTube, Vimeo or Wistia)"
 msgid "Video vorbereiten"
 msgstr "prepare video"
 
-#: library/media/class_upfront_media_server.php:150
 #: elements/upfront-youtube/lib/uyoutube.php:133
+#: library/media/class_upfront_media_server.php:150
 msgid "Videos"
 msgstr "Videos"
 
@@ -7889,6 +8217,14 @@ msgstr "Limit video titles to"
 #: elements/upfront-tabs/lib/utabs.php:116
 msgid "Viel Spaß mit Registerkarten."
 msgstr "Have fun with tabs."
+
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:56
+msgid "View details"
+msgstr ""
+
+#: library/admin/class_upfront_admin_general.php:73
+msgid "Visit Forums"
+msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:628
 msgid "Vollbild"
@@ -7923,8 +8259,8 @@ msgstr "From <a href=\"{{url}}\" {{target}}>{{name}}</a>"
 msgid "Von <a href=\"{{url}}\">{{name}}</a>"
 msgstr "From <a href=\"{{url}}\">{{name}}</a>"
 
-#: library/servers/class_upfront_editor_l10n_server.php:812
 #: elements/upfront-maps/lib/upfront_maps.php:119
+#: library/servers/class_upfront_editor_l10n_server.php:812
 msgid "Von Apps wie Snazzy Maps generierter Code"
 msgstr "Code generated by apps like Snazzy Maps"
 
@@ -7983,20 +8319,6 @@ msgstr "Preformatted (PRE)"
 msgid "Vorgestellte Bildoption"
 msgstr "Featured image option"
 
-#: library/servers/class_upfront_editor_l10n_server.php:178
-#: library/servers/class_upfront_editor_l10n_server.php:578
-#: library/servers/class_upfront_editor_l10n_server.php:623
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:189
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:247
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:261
-#: elements/upfront-this-post/lib/this_post.php:670
-msgid "Beitragsbild"
-msgstr "Featured Image"
-
-#: elements/upfront-this-post/lib/this_post.php:675
-msgid "Beitragsbild ausblenden"
-msgstr "Hide featured image"
-
 #: library/servers/class_upfront_presets_server.php:666
 msgid "Vorhandene Voreinstellung auswählen (<strong>empfohlen</strong>):"
 msgstr "Choose an existing preset (<strong>recommended</strong>):"
@@ -8045,9 +8367,9 @@ msgstr "templates"
 msgid "Vorlagen anzeigen für"
 msgstr "View templates for"
 
+#: elements/upfront-login/lib/upfront_login.php:211
 #: library/servers/class_upfront_editor_l10n_server.php:141
 #: library/servers/class_upfront_editor_l10n_server.php:432
-#: elements/upfront-login/lib/upfront_login.php:211
 msgid "Vorschau"
 msgstr "preview"
 
@@ -8088,13 +8410,14 @@ msgstr ""
 "WARNING: If you change the template associated with this post, any content "
 "or changes you made using the drag-and-drop Upfront editor will be lost."
 
-#: library/models/class_upfront_entity_resolver.php:191
-msgid "Wartungsmodus"
-msgstr "Maintenance Mode"
-
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:159
 msgid "Was soll das Element anzeigen?"
 msgstr "What should the element show?"
+
+#: elements/upfront-comment/lib/upfront_comment.php:471
+#: elements/upfront-comment/lib/upfront_comment.php:493
+msgid "Wavatar (Generated)"
+msgstr ""
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:39
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:255
@@ -8109,9 +8432,18 @@ msgstr ""
 msgid "Website"
 msgstr "Website"
 
+#: scripts/upfront/upfront-data.php:35
+msgid "Wednesday"
+msgstr ""
+
 #: library/servers/class_upfront_presets_server.php:624
 msgid "Weight/Style:"
 msgstr "Weight/Style:"
+
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:79
+#, php-format
+msgid "Weitere Informationen zu %s"
+msgstr ""
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:144
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:264
@@ -8196,14 +8528,23 @@ msgstr ""
 msgid "Wenn kein Feature-Bild"
 msgstr "If no feature picture"
 
+#: library/class_upfront_compat.php:310
+msgid ""
+"We’ve put a lot of time into getting the migration process right, however "
+"given the variety of layouts that can be achieved with Upfront and the "
+"amazing improvements we’ve added in version 1.0, we strongly advise that you "
+"to make a full backup of your site with <b>Snapshot</b> before proceeding to "
+"edit your site. "
+msgstr ""
+
 #: elements/upfront-social-media/lib/upfront-social-media.php:223
 msgid "What an awesome stuff! "
 msgstr "What an awesome stuff! "
 
-#: library/servers/class_upfront_editor_l10n_server.php:570
-#: library/servers/class_upfront_presets_server.php:654
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:86
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:89
+#: library/servers/class_upfront_editor_l10n_server.php:570
+#: library/servers/class_upfront_presets_server.php:654
 msgid "Widget"
 msgstr "Widget"
 
@@ -8219,6 +8560,12 @@ msgstr "Widget Links"
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:96
 msgid "Widget-Container"
 msgstr "Widget Links"
+
+#: library/admin/class_upfront_admin_experimental.php:138
+msgid ""
+"Wie lange muss gewartet werden, bis der Cache für eingefrorene Assets "
+"aktualisiert wird"
+msgstr ""
 
 #: library/media/class_upfront_media_server.php:130
 msgid "Wie möchtest Du diese Bilder einfügen?"
@@ -8246,16 +8593,6 @@ msgstr ""
 "rich media files. You can then simply embed it into your website. Learn more "
 "here."
 
-#: library/class_upfront_compat.php:310
-msgid ""
-"Wir haben viel Zeit darauf verwendet, den Migrationsprozess richtig "
-"hinzubekommen, aber angesichts der Vielfalt an Layouts, die mit UpFront "
-"erreicht werden können, und der erstaunlichen Verbesserungen, die wir in "
-"Version 1.0 hinzugefügt haben, empfehlen wir Dir dringend, eine vollständige "
-"Sicherung von Deiner Webseite mit <b>Snapshot</b>  zu erstellen,  bevor Du "
-"mit der Bearbeitung Deiner Webseite fortfährst"
-msgstr ""
-
 #: elements/upfront-maps/lib/upfront_maps.php:122
 msgid "Wir konnten Deinen aktuellen Standort nicht automatisch ermitteln."
 msgstr "We could not automatically determine your current location."
@@ -8268,25 +8605,51 @@ msgstr ""
 "We could not find any fields for the selected widget. Something could be "
 "wrong."
 
-#: library/servers/class_upfront_editor_l10n_server.php:608
 #: elements/upfront-comment/lib/upfront_comment.php:246
+#: library/servers/class_upfront_editor_l10n_server.php:608
 msgid "Wird geladen"
 msgstr "Loading"
 
+#: elements/upfront-gallery/lib/ugallery.php:367
 #: library/servers/class_upfront_editor_l10n_server.php:60
 #: library/servers/class_upfront_editor_l10n_server.php:128
-#: elements/upfront-gallery/lib/ugallery.php:367
 msgid "Wird geladen..."
 msgstr "Loading..."
+
+#: library/compat/class_upfront_compat_woocommerce.php:354
+msgid "WooCommerce Cart Page"
+msgstr ""
+
+#: library/compat/class_upfront_compat_woocommerce.php:362
+msgid "WooCommerce Checkout Page"
+msgstr ""
+
+#: library/compat/class_upfront_compat_woocommerce.php:358
+#, fuzzy
+#| msgid "ClassicCommerce My Account Page"
+msgid "WooCommerce My Account Page"
+msgstr "ClassicCommerce My Account Page"
+
+#: library/compat/class_upfront_compat_woocommerce.php:366
+msgid "WooCommerce Product Category"
+msgstr ""
+
+#: library/compat/class_upfront_compat_woocommerce.php:370
+msgid "WooCommerce Product Tag"
+msgstr ""
+
+#: library/compat/class_upfront_compat_woocommerce.php:350
+msgid "WooCommerce Shop Page"
+msgstr ""
 
 #: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:282
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:229
 msgid "Worte einschränken"
 msgstr "limit words"
 
+#: elements/upfront-gallery/lib/ugallery.php:376
 #: library/servers/class_upfront_editor_l10n_server.php:414
 #: library/servers/class_upfront_editor_l10n_server.php:419
-#: elements/upfront-gallery/lib/ugallery.php:376
 msgid "Wow, die sind cool!"
 msgstr "Wow, these are cool!"
 
@@ -8332,10 +8695,6 @@ msgstr "Choose from global regions"
 msgid "Wähle aus zuvor verwendeten %s"
 msgstr "Choose from previously used %s"
 
-#: elements/upfront-posts/lib/class_upfront_posts_data.php:176
-msgid "Wähle einen Beitrag"
-msgstr "Choose custom post"
-
 #: elements/upfront-slider/lib/upfront_slider.php:238
 msgid "Wähle Bilder"
 msgstr "Choose pictures"
@@ -8347,6 +8706,10 @@ msgstr "Select the slider type"
 #: elements/upfront-widget/lib/class_upfront_widget_view.php:92
 msgid "Wähle ein Widget aus"
 msgstr "Choose a widget"
+
+#: elements/upfront-posts/lib/class_upfront_posts_data.php:176
+msgid "Wähle einen Beitrag"
+msgstr "Choose custom post"
 
 #: library/servers/class_upfront_editor_l10n_server.php:833
 msgid "Wähle einen Beitragstyp aus:"
@@ -8409,15 +8772,31 @@ msgstr "Choose symbol font to use:"
 msgid "Wähle zu verwendendes Menü"
 msgstr "Choose menu to use"
 
+#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:80
 #: library/media/class_upfront_media_server.php:84
 #: library/servers/class_upfront_editor_l10n_server.php:288
-#: elements/upfront-post-data/lib/class_upfront_post_data_l10n_server.php:80
 msgid "Wählen"
 msgstr "Choose"
 
+#: library/servers/class_upfront_editor_l10n_server.php:125
+msgid "Wählen oder Tag erstellen"
+msgstr ""
+
+#: elements/upfront-comment/templates/upfront-comment-list.php:27
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: library/class_upfront_form.php:224
+msgid "Your password has to have at least 8 characters."
+msgstr ""
+
+#: library/class_upfront_form.php:231
+msgid "Your passwords do not match."
+msgstr ""
+
+#: elements/upfront-youtube/lib/uyoutube.php:108
 #: library/servers/class_upfront_editor_l10n_server.php:571
 #: library/servers/class_upfront_presets_server.php:655
-#: elements/upfront-youtube/lib/uyoutube.php:108
 msgid "YouTube"
 msgstr "YouTube"
 
@@ -8502,7 +8881,7 @@ msgstr "Draggable map"
 msgid "Ziehe die Beitragsteile ab zum anordnen"
 msgstr "Peel off post parts to arrange"
 
-#: elements/upfront-image/lib/uimage.php:288
+#: elements/upfront-image/lib/uimage.php:289
 msgid "Ziehe die Dateien hier hin, um sie hochzuladen"
 msgstr "Drag files here to upload them"
 
@@ -8514,8 +8893,8 @@ msgstr "Drag to rearrange post elements"
 msgid "Ziel:"
 msgstr "Goal:"
 
-#: library/servers/class_upfront_editor_l10n_server.php:717
 #: elements/upfront-maps/lib/upfront_maps.php:107
+#: library/servers/class_upfront_editor_l10n_server.php:717
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -8527,16 +8906,12 @@ msgstr "Assigned labels"
 msgid "Zugewiesene Labels:"
 msgstr "Assigned labels:"
 
-#: library/class_upfront_permissions.php:488
-msgid "Zugriff auf UpFront-Editor-Modus"
-msgstr ""
-
 #: elements/upfront-gallery/lib/ugallery.php:374
 msgid "zur verlinkten Seite gehen"
 msgstr "go to the linked page"
 
-#: library/servers/class_upfront_editor_l10n_server.php:309
 #: elements/upfront-slider/lib/upfront_slider.php:187
+#: library/servers/class_upfront_editor_l10n_server.php:309
 msgid "Zurück"
 msgstr "Return"
 
@@ -8586,19 +8961,18 @@ msgstr "Two days"
 msgid "Zwei Wochen"
 msgstr "Two weeks"
 
+#: library/admin/class_upfront_admin_experimental.php:120
+msgid "Zwischenspeichern von Assets (Freeze-Modus)"
+msgstr ""
+
 #: library/media/class_upfront_media_server.php:147
 msgid "{{items}} Medium"
 msgstr "{{items}} Medium"
 
-#: library/media/class_upfront_media_server.php:154
 #: elements/upfront-comment/lib/upfront_comment.php:283
+#: library/media/class_upfront_media_server.php:154
 msgid "Älteste"
 msgstr "Oldest"
-
-#: library/admin/class_upfront_admin_experimental.php:166
-#: library/admin/class_upfront_admin_restrictions.php:128
-msgid "Änderungen speichern"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:300
 msgid "Änderungen zurücksetzen"
@@ -8621,6 +8995,7 @@ msgid "Öffne Ext. Link"
 msgstr "Open External Link"
 
 #: library/servers/class_upfront_editor_l10n_server.php:222
+#: library/servers/class_upfront_editor_l10n_server.php:358
 msgid "Öffne Lightbox"
 msgstr "Open lightbox"
 
@@ -8648,11 +9023,11 @@ msgstr "Above image, below"
 msgid "Über das Feld"
 msgstr "About the field"
 
-#: elements/upfront-image/lib/uimage.php:224
+#: elements/upfront-image/lib/uimage.php:225
 msgid "Über dem Bild, oben"
 msgstr "Above the picture, above"
 
-#: elements/upfront-image/lib/uimage.php:225
+#: elements/upfront-image/lib/uimage.php:226
 msgid "Über dem Bild, unten"
 msgstr "Above the picture, below"
 
@@ -8671,10 +9046,6 @@ msgstr "crossfade"
 #: elements/upfront-slider/lib/upfront_slider.php:234
 msgid "Überlagernd"
 msgstr "overlaying"
-
-#: library/class_upfront_form.php:110
-msgid "Überprüfe Deine Übermittlung auf die unten aufgeführten Fehler"
-msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:476
 msgid "Überschrift (H1)"

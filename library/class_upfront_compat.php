@@ -307,7 +307,7 @@ class Upfront_Compat implements IUpfront_Server {
 			if (!class_exists('Upfront_Compat_Backup_Info')) require_once('compat/class_upfront_compat_backup_info.php');
 			$info = new Upfront_Compat_Backup_Info;
 			$data['Compat']['notice'] = '' .
-				__('We’ve put a lot of time into getting the migration process right, however given the variety of layouts that can be achieved with Upfront and the amazing improvements we’ve added in version 1.0, we strongly advise that you to make a full backup of your site with <b>Snapshot</b> before proceeding to edit your site. ', 'upfront') .
+				__('Wir haben viel Zeit darauf verwendet, den Migrationsprozess richtig hinzubekommen. Angesichts der Vielfalt an Layouts, die mit Upfront erreicht werden können, und der erstaunlichen Verbesserungen, die wir in Version 1.0 hinzugefügt haben, empfehlen wir Dir jedoch dringend, mit <b>Snapshot</b> ein vollständiges Backup Deiner Webseite, bevor Du mit der Bearbeitung Deiner Webseite fortfährst. ', 'upfront') .
 			'';
 			$data['Compat']['snapshot_url'] = esc_url($info->get_plugin_link());
 			$data['Compat']['snapshot_msg'] = esc_html($info->get_plugin_action());

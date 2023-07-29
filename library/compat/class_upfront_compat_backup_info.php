@@ -80,10 +80,10 @@ class Upfront_Compat_Backup_Info {
 	 * @return string
 	 */
 	public function get_plugin_action () {
-		if ($this->is_plugin_active()) return __('Backup with Snapshot', 'upfront');
-		if ($this->is_plugin_present() && current_user_can('activate_plugins')) return __('Activate Snapshot', 'upfront');
+		if ($this->is_plugin_active()) return __('Backup mit Snapshot', 'upfront');
+		if ($this->is_plugin_present() && current_user_can('activate_plugins')) return __('Snapshot aktivieren', 'upfront');
 
-		return __('Install Snapshot', 'upfront');
+		return __('Snapshot installieren', 'upfront');
 	}
 
 	/**
