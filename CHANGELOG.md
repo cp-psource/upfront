@@ -1,6 +1,11 @@
 Change Log
 ============
 
+1.9.8 - 2023-08-02
+-------------------------------------------------------------------------------
+- Fix: PHP Warning:  Trying to access array offset on value of type null
+- Fix: Problem mit CP1.6 und dem speichern von Bildern
+
 1.9.7 - 2023-03-04
 -------------------------------------------------------------------------------
 - Erneuert: chosen.css

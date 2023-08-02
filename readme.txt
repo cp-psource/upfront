@@ -97,6 +97,11 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 1.9.8 Mar23 DerN3rd =
+
+* Fix: PHP Warning:  Trying to access array offset on value of type null
+* Fix: Problem mit CP1.6 und dem speichern von Bildern
+
 = 1.9.7 Mar23 DerN3rd =
 
 * Erneuert: chosen.css

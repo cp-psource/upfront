@@ -518,7 +518,7 @@ class Upfront_Uimage_Server extends Upfront_Server {
 
 		//$cropped = array(round($crop['left']), round($crop['top']), round($crop['width']), round($crop['height']));
 
-		//Don't let the crop be bigger than the size
+		// Crop the image and ensure the crop area is within the image bounds
 		$size = $image_editor->get_size();
 		$crop = array(
 			'top' => round($crop['top']),
@@ -527,57 +527,54 @@ class Upfront_Uimage_Server extends Upfront_Server {
 			'height' => round($crop['height'])
 		);
 
-		if ($crop['top'] < 0) {
-			$crop['height'] -= $crop['top'];
-			$crop['top'] = 0;
-		}
-		if ($crop['left'] < 0) {
-			$crop['width'] -= $crop['left'];
-			$crop['left'] = 0;
-		}
-
-		if ($size['height'] < $crop['height']) $crop['height'] = $size['height'];
-		if ($size['width'] < $crop['width']) $crop['width'] = $size['width'];
-
+		$crop['top'] = max(0, $crop['top']);
+		$crop['left'] = max(0, $crop['left']);
+		$crop['width'] = min($crop['width'], $size['width']);
+		$crop['height'] = min($crop['height'], $size['height']);
 
 		if ($crop && !$image_editor->crop($crop['left'], $crop['top'], $crop['width'], $crop['height'])) {
-		//if($crop && !$image_editor->crop($cropped[0], $cropped[1], $cropped[2], $cropped[3]))
 			return $this->_out(new Upfront_JsonResponse_Error(Upfront_UimageView::_get_l10n('edit_error')));
 		}
 
-		// generate new filename
+		// Generate a new filename for the cropped image
 		$path = $image_path;
-		$path_parts = pathinfo( $path );
+		$path_parts = pathinfo($path);
 
 		$filename = $path_parts['filename'] . '-' . $image_editor->get_suffix();
-		if (!isset($imageData['skip_random_filename'])) $filename .=  '-' . rand(1000, 9999);
+		if (!isset($imageData['skip_random_filename'])) {
+			$filename .=  '-' . rand(1000, 9999);
+		}
 
 		$imagepath = $path_parts['dirname'] . '/' . $filename . '.' . $path_parts['extension'];
 
+		// Set the quality of the new image
 		$image_editor->set_quality(90);
+
+		// Save the cropped image
 		$saved = $image_editor->save($imagepath);
 
-		if (is_wp_error( $saved )) {
+		if (is_wp_error($saved)) {
 			return array(
 				'error' => true,
-				'msg' => 'Wenn Bilder aus dem Standardspeicher verschoben werden (z.B. über ein Plugin, das Uploads in S3 speichert), hat Upfront keinen Zugriff. (' . implode('; ', $saved->get_error_messages()) . ')'
+				'msg' => 'Fehler beim Speichern des Bildes: ' . implode('; ', $saved->get_error_messages())
 			);
 		}
 
 		if (is_wp_error($image_editor) || empty($imageData['id'])) {
 			return array(
 				'error' => true,
-				'msg' => Upfront_UimageView::_get_l10n('error_save')
+				'msg' => 'Fehler beim Bearbeiten des Bildes.'
 			);
 		}
 
+		// Get the URLs of the original and cropped images
 		$urlOriginal = wp_get_attachment_image_src($imageData['id'], 'full');
 		$urlOriginal = $urlOriginal[0];
 		$url  = str_replace($path_parts['basename'], $saved['file'], $urlOriginal);
 
+		// Handle rotated versions of the full-size image if needed
 		if ($rotate) {
-			//We must do a rotated version of the full size image
-			$fullsizename = $path_parts['filename'] . '-r' . $rotate ;
+			$fullsizename = $path_parts['filename'] . '-r' . $rotate;
 			$fullsizepath = $path_parts['dirname'] . '/' . $fullsizename . '.' . $path_parts['extension'];
 			if (!file_exists($fullsizepath)) {
 				$full = wp_get_image_editor(_load_image_to_edit_path($imageData['id']));
@@ -586,24 +583,20 @@ class Upfront_Uimage_Server extends Upfront_Server {
 				$savedfull = $full->save($fullsizepath);
 			}
 			$urlOriginal = str_replace($path_parts['basename'], $fullsizename . '.' . $path_parts['extension'], $urlOriginal);
-		} // We won't be cleaning up the rotated fullsize images
+		}
 
-
-// *** ALright, so this is the magic cleanup part
-		// Drop the old resized image for this element, if any
+		// Update the used image sizes metadata
 		$used = get_post_meta($imageData['id'], 'upfront_used_image_sizes', true);
 		$element_id = !empty($imageData['element_id']) ? $imageData['element_id'] : 0;
-		if (!empty($used) && !empty($used[$element_id]['path']) && file_exists($used[$element_id]['path'])) {
-			// OOOH, so we have a previos crop!
-			//TODO ok so we don't do this anymore because it causes any element that uses images to
-			// have a broken image if user have not saved layout after croping image or resizing thumbnails.
-			// This have to be mplemented better so it does not lead to broken images.
-			// @unlink($used[$element_id]['path']); // Drop the old one, we have new stuffs to replace it
-		}
-		$used[$element_id] = $saved; // Keep track of used elements per element ID
-		update_post_meta($imageData['id'], 'upfront_used_image_sizes', $used);
-// *** Flags updated, files clear. Moving on
 
+		// Check if the element_id exists in the metadata array before accessing it
+		if (!empty($used) && is_array($used) && array_key_exists($element_id, $used)) {
+			// Keep track of used elements per element ID
+			$used[$element_id] = $saved;
+			update_post_meta($imageData['id'], 'upfront_used_image_sizes', $used);
+		}
+
+		// Trigger post-processing hook for the image
 		if (!empty($imagepath) && !empty($url)) {
 			/**
 			 * Image has been successfully changed. Trigger any post-processing hook.
@@ -614,7 +607,7 @@ class Upfront_Uimage_Server extends Upfront_Server {
 			 * @param array $used Image Metadata
 			 * @param array $imageData
 			 */
-			do_action('upfront-media-images-image_changed', $imagepath, $url, $saved, $used, $imageData );
+			do_action('upfront-media-images-image_changed', $imagepath, $url, $saved, $used, $imageData);
 		}
 
 		return array(

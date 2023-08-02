@@ -1460,41 +1460,48 @@ define([
 			}
 		},
 
-		openImageSelector: function(e){
+		openImageSelector: function(e) {
 			var me = this;
 			if (e && e.preventDefault) e.preventDefault();
-
+		
 			Upfront.Views.Editor.ImageSelector.open({
 				multiple_sizes: false
-			}).done(function(images){
-				var sizes = {};
-				_.each(images, function(image, id){
-					sizes = image;
-					me.imageId = id;
-				});
-
-				var	imageInfo = {
+			}).done(function(images) {
+				if (images) {
+					var sizes = {};
+					_.each(images, function(image, id) {
+						sizes = image;
+						me.imageId = id;
+					});
+		
+					var imageInfo = {
 						src: sizes.medium ? sizes.medium[0] : sizes.full[0],
 						srcFull: sizes.full[0],
 						srcOriginal: sizes.full[0],
-						fullSize: {width: sizes.full[1], height: sizes.full[2]},
-						size: sizes.medium ? {width: sizes.medium[1], height: sizes.medium[2]} : {width: sizes.full[1], height: sizes.full[2]},
+						fullSize: { width: sizes.full[1], height: sizes.full[2] },
+						size: sizes.medium ? { width: sizes.medium[1], height: sizes.medium[2] } : { width: sizes.full[1], height: sizes.full[2] },
 						position: false,
 						rotation: 0,
 						id: me.imageId
-					}
-				;
-				$('<img>')
-					.load(function(){
+					};
+		
+					var $img = $('<img>');
+		
+					$img.load(function() {
 						Upfront.Views.Editor.ImageSelector.close();
 						me.openEditor(true, imageInfo);
-					})
-					.on("error", function () {
+					}).on("error", function() {
 						Upfront.Views.Editor.ImageSelector.close();
-						Upfront.Views.Editor.notify(l10n.process_error, 'error');
-					})
-					.attr('src', imageInfo.srcFull)
-				;
+						if (Upfront.Views.Editor.notify) {
+							Upfront.Views.Editor.notify(l10n.process_error, 'error');
+						}
+					});
+		
+					$img.attr('src', imageInfo.srcFull);
+				} else {
+					// Handle case when no images are selected
+					// Optionally display a message to the user
+				}
 			});
 		},
 
