@@ -101,6 +101,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 * Fix: PHP Warning:  Trying to access array offset on value of type null
 * Fix: Problem mit CP1.6 und dem speichern von Bildern
+* Angepast: Modal Top-Versetzt, Höhen-Begrenzt
 
 = 1.9.7 Mar23 DerN3rd =
 

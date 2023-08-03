@@ -5,6 +5,7 @@ Change Log
 -------------------------------------------------------------------------------
 - Fix: PHP Warning:  Trying to access array offset on value of type null
 - Fix: Problem mit CP1.6 und dem speichern von Bildern
+- Anpassung: Modal Top-Versetzt, Höhen-Begrenzt
 
 1.9.7 - 2023-03-04
 -------------------------------------------------------------------------------
