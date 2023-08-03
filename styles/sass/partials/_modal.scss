@@ -154,10 +154,11 @@
 .upfront-inline-modal,
 .upfront-inline-modal-wrap {
 	position: absolute;
-	top: 0;
+	top: 5px;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	max-height: 550px;
 	z-index: 10001004;
 }
 /* Resolve fixed region CSS editor z-index issues */
