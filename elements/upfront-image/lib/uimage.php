@@ -64,7 +64,8 @@ class Upfront_UimageView extends Upfront_Object {
 			'width'=> $data['stretch'] ? '100%' : $data['size']['width'] . 'px',
 			'height'=> $data['vstretch'] ? '100%' : $data['size']['height'] . 'px',
 			//'bottom' => $data['vstretch'] ? '100%' : ($data['element_size']['height'] + $data['position']['top'] - $data['size']['height']) . 'px'
-			'bottom' => $data['vstretch'] ? '100%' : (round($data['element_size']['height'] + $data['position']['top'] - $data['size']['height'])) . 'px'
+			//'bottom' => $data['vstretch'] ? '100%' : (round($data['element_size']['height'] + $data['position']['top'] - $data['size']['height'])) . 'px'
+			'bottom' => $data['vstretch'] ? '100%' : (round((int)$data['element_size']['height'] + (int)$data['position']['top'] - (int)$data['size']['height'])) . 'px'
 		);
 
 		if(!isset($data['preset'])) {
