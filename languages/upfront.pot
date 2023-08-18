@@ -4124,7 +4124,7 @@ msgid "Folie hinzufügen"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:230
-msgid "Wähle den Slider-Typ aus"
+msgid "Slider-Typ auswählen"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:231
@@ -7994,7 +7994,7 @@ msgid "Position halten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:651
-msgid "Verhältnis beibehalten"
+msgid "Ratio halten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:652

@@ -227,7 +227,7 @@ class Upfront_UsliderView extends Upfront_Object {
 			'accessibility' => __('Barrierefreiheit', 'upfront'),
 			'slides' => __('Slides', 'upfront'),
 			'add_slide' => __('Folie hinzufügen', 'upfront'),
-			'choose_type' => __('Wähle den Slider-Typ aus', 'upfront'),
+			'choose_type' => __('Slider-Typ auswählen', 'upfront'),
 			'can_change' => __('Dies kann später über das Einstellungsfeld geändert werden', 'upfront'),
 			'img_only' => __('Nur Bild', 'upfront'),
 			'default' => __('Standard', 'upfront'),

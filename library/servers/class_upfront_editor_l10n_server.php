@@ -648,7 +648,7 @@ class Upfront_EditorL10n_Server implements IUpfront_Server {
 				'top' => __('Top', 'upfront'),
 				'sub_top' => __('Sub Top', 'upfront'),
 				'keep_position' => __('Position halten', 'upfront'),
-				'keep_ratio' => __('Verhältnis beibehalten', 'upfront'),
+				'keep_ratio' => __('Ratio halten', 'upfront'),
 				'restrict_to_parent' => __('Floating auf übergeordnete Region beschränken', 'upfront'),
 				'sticky_region' => __('Sticky Region', 'upfront'),
 				'bg_updated' => __('Hintergrundeinstellungen aktualisiert', 'upfront'),
