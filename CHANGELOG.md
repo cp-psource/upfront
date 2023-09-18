@@ -7,6 +7,8 @@ Change Log
 - Fix: Problem mit CP1.6 und dem speichern von Bildern
 - Anpassung: Modal Top-Versetzt, Höhen-Begrenzt
 - Fix:  Uncaught TypeError: Unsupported operand types: int - string
+- Better Text
+- Languages: en/fr/it
 
 1.9.7 - 2023-03-04
 -------------------------------------------------------------------------------

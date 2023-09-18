@@ -49,7 +49,7 @@ Upfront_Behavior::debug()->set_baseline();
 class Upfront {
 
 	/**
-	 * Textdomäne des Themas
+	 * Textdomäne des Themes
 	 *
 	 * @var string
 	 */

@@ -70,7 +70,7 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 							</div>
 							<div class="upfront-debug-block">
 								<h4><?php _e("Hilfe &amp; Support", Upfront::TextDomain) ?></h4>
-								<a class="upfront_button visit-forum" href="https://upfront.n3rds.work/support/" target="_blank"><?php esc_html_e("Visit Forums", Upfront::TextDomain) ?></a> <a class="upfront_button" href="https://upfront.n3rds.work/forums/forum/support#question" target="_blank"><?php esc_html_e("Ask a Question", Upfront::TextDomain) ?></a>
+								<a class="upfront_button visit-forum" href="https://upfront.n3rds.work/support/" target="_blank"><?php esc_html_e("Forum besuchen", Upfront::TextDomain) ?></a> <a class="upfront_button" href="https://upfront.n3rds.work/forums/forum/support#question" target="_blank"><?php esc_html_e("Frage stellen", Upfront::TextDomain) ?></a>
 							</div>
 						</div>
 					</div>

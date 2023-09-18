@@ -5,7 +5,7 @@ Theme URI: https://upfront.n3rds.work/
 Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.9.7
+Stable tag: 1.9.8
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -97,14 +97,16 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
-= 1.9.8 Mar23 DerN3rd =
+= 1.9.8 =
 
 * Fix: PHP Warning:  Trying to access array offset on value of type null
 * Fix: Problem mit CP1.6 und dem speichern von Bildern
 * Angepast: Modal Top-Versetzt, Höhen-Begrenzt
 * Fix:  Uncaught TypeError: Unsupported operand types: int - string
+* Better Text
+* Languages: en/fr/it
 
-= 1.9.7 Mar23 DerN3rd =
+= 1.9.7 =
 
 * Erneuert: chosen.css
 * Erneuert: magnific-popup
@@ -113,14 +115,14 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Fix: Tabs CSS
 * Fix: Featured Images
 
-= 1.9.6 Feb23 DerN3rd =
+= 1.9.6 =
 
 * Hinzugefügt: Englische Sprachfiles
 * Fix: Weitere PhP8 Kompatibilität
 * Fix: Einige Textpassagen verbessert
 * Fix: video-insert-controls-panel Position
 
-= 1.9.5 Jan23 DerN3rd =
+= 1.9.5 =
 
 * HINWEIS: Nun PSOURCE!
 * Angepasst: Auf Deutsch übersetzt inkl. Quellcode
