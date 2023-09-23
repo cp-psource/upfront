@@ -50,7 +50,8 @@ class Upfront_UcontactView extends Upfront_Object {
 		}
 
 		$args['show_subject'] = $args['show_subject'] && sizeof($args['show_subject']);
-		$args['show_captcha'] = $args['show_captcha'] && sizeof($args['show_captcha']);
+		//$args['show_captcha'] = $args['show_captcha'] && sizeof($args['show_captcha']);
+		$args['show_subject'] = is_array($args['show_subject']) && sizeof($args['show_subject']);
 		$args['form_add_title'] = $args['form_add_title'] && sizeof($args['form_add_title']);
 
 		$markup =  $this->get_template('ucontact', $args);

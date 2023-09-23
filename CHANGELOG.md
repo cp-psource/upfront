@@ -1,6 +1,10 @@
 Change Log
 ============
 
+1.9.9- 2023-08-02
+-------------------------------------------------------------------------------
+- Fix: sizeof(): must be of type Countable|array
+
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------
 - Fix: PHP Warning:  Trying to access array offset on value of type null
