@@ -10,6 +10,7 @@ Change Log
 - Add: allow mulitple instances of %id% in iframe src
 - Update magnific-popup.css
 - Add: mute to video iframe srcs to allow auto play
+- Update beforeClose callback core.js
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------
