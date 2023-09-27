@@ -70,7 +70,7 @@
                 var elements = [];
                 if ( this.sections ){
                     this.sections.each(function(section){
-                        if ( section.elements.size() )
+                        if ( section.elements.length )
                             elements.push(section.elements.value());
                     });
                 }
@@ -82,7 +82,7 @@
                 var me = this,
                     section_have_els = 0;
                 this.sections.each(function(section){
-                    if ( section.elements && section.elements.size() > 0 ){
+                    if ( section.elements && section.elements.length > 0 ){
                         section_have_els++;
                     }
                     else {
@@ -98,7 +98,7 @@
                 }
             },
 						elements_are_initialized: function(elements) {
-							return elements.size() > 0;
+							return elements.length > 0;
 						},
             _reset_modules: function () {
                 var regions = this.model.get("regions"),
@@ -116,7 +116,7 @@
                     });
                     this.model.get('regions').add( region );
                 }
-								if ( region.get("modules").length === elements.size()) return;
+								if ( region.get("modules").length === elements.length) return;
 								var self = this;
 								var modules = region.get("modules");
 								elements.each(function (element) {
