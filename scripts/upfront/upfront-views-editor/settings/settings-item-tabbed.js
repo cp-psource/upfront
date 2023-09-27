@@ -91,7 +91,7 @@
             },
             save_fields: function () {
                 this.settings.invoke('save_fields');
-                if ( this.radio && this.$el.find('.upfront-settings-item-tab input:checked').length > 0 ) {
+                if ( this.radio && this.$el.find('.upfront-settings-item-tab input:checked').size() > 0 ) {
                     var property_model = this.get_property_model();
                     if ( property_model ) {
                         property_model.set({'value': this.get_value()}, {silent: true});

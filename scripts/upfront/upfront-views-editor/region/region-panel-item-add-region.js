@@ -237,7 +237,7 @@
 						add_region: function () {
 								var to = this.options.to,
 										collection = this.model.collection,
-										total = collection.length - 1, // total minus shadow region
+										total = collection.size() - 1, // total minus shadow region
 										index = collection.indexOf(this.model),
 										position = this.model.get('position'),
 										sub_model = this.model.get_sub_regions(),
@@ -325,7 +325,7 @@
 								var me = this,
 										to = this.options.to,
 										collection = this.model.collection,
-										total = collection.length - 1, // total minus shadow region
+										total = collection.size() - 1, // total minus shadow region
 										index = collection.indexOf(this.model),
 										position = this.model.get('position'),
 										sub_model = this.model.get_sub_regions(),
