@@ -108,6 +108,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Add: mute to video iframe srcs to allow auto play
 * Update beforeClose callback core.js
 * Fix: Open correct image by index
+* Fix: Prevent setting alt=String("undefined")
 
 = 1.9.8 =
 
