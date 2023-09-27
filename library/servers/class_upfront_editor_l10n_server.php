@@ -199,7 +199,7 @@ class Upfront_EditorL10n_Server implements IUpfront_Server {
 				'edit_post_url' => __('Bearbeite die <b>URL</b> für diesen Beitrag', 'upfront'),
 				'post_url_info' => __('Standardmäßig wird Deine URL durch den Titel eines Beitrags oder einer Seite bestimmt. Du kannst es hier ändern.<br/>Es ist eine gute Idee, sie kurz und einprägsam zu halten.', 'upfront'),
 				'parent_category' => __('Eltern-Kategorie', 'upfront'),
-				'add_new' => __('Neues %s hinzufügen', 'upfront'),
+				'add_new' => __('Neue %s hinzufügen', 'upfront'),
 				'add' => __('Hinzufügen', 'upfront'),
 				'all_categories' => __('Alle Kategorien', 'upfront'),
 				'top_categories' => __('Meist verwendet', 'upfront'),
