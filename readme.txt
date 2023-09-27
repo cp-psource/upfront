@@ -104,6 +104,8 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Fix: preg_quote(): Passing null to parameter
 * Fix: Mousedown/MouseUp overlay problem
 * Add: allow mulitple instances of %id% in iframe src
+* Update magnific-popup.css
+* Add: mute to video iframe srcs to allow auto play
 
 = 1.9.8 =
 
