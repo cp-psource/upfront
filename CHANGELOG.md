@@ -6,6 +6,7 @@ Change Log
 - Fix: sizeof(): must be of type Countable|array
 - Optimierung: CSS Editor-Sidebar
 - Fix: preg_quote(): Passing null to parameter
+- Fix: Mousedown/MouseUp overlay problem
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------

@@ -102,6 +102,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Fix: sizeof(): must be of type Countable|array
 * Editor-Sidebar CSS Optimierung
 * Fix: preg_quote(): Passing null to parameter
+* Fix: Mousedown/MouseUp overlay problem
 
 = 1.9.8 =
 
