@@ -110,6 +110,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Fix: Open correct image by index
 * Fix: Prevent setting alt=String("undefined")
 * Update Pako.js
+* Fix: Trying to access array offset on value of type null
 
 = 1.9.8 =
 
