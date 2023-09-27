@@ -662,6 +662,7 @@
             }
     
             options.el = $(e.mfpEl);
+            options.index = e.index;
             if(options.delegate) {
                 options.items = el.find(options.delegate);
             }
@@ -928,7 +929,7 @@
                     }
                     items = items.eq( index );
                 }
-                mfp._openClick({mfpEl:items}, jqEl, itemOpts);
+                mfp._openClick({mfpEl:items, index: index}, jqEl, itemOpts);
             } else {
                 if(mfp.isOpen)
                     mfp[options].apply(mfp, Array.prototype.slice.call(arguments, 1));

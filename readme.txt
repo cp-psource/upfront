@@ -107,6 +107,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Update magnific-popup.css
 * Add: mute to video iframe srcs to allow auto play
 * Update beforeClose callback core.js
+* Fix: Open correct image by index
 
 = 1.9.8 =
 

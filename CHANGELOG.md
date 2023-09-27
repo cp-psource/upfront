@@ -11,6 +11,7 @@ Change Log
 - Update magnific-popup.css
 - Add: mute to video iframe srcs to allow auto play
 - Update beforeClose callback core.js
+- Fix: Open correct image by index
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------
