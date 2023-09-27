@@ -103,6 +103,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Editor-Sidebar CSS Optimierung
 * Fix: preg_quote(): Passing null to parameter
 * Fix: Mousedown/MouseUp overlay problem
+* Add: allow mulitple instances of %id% in iframe src
 
 = 1.9.8 =
 

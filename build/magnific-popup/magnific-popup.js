@@ -1629,7 +1629,7 @@
                                 embedSrc = this.id.call( this, embedSrc );
                             }
                         }
-                        embedSrc = this.src.replace('%id%', embedSrc );
+                        embedSrc = this.src.replace(/%id%/g, embedSrc );
                         return false; // break;
                     }
                 });

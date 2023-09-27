@@ -7,6 +7,7 @@ Change Log
 - Optimierung: CSS Editor-Sidebar
 - Fix: preg_quote(): Passing null to parameter
 - Fix: Mousedown/MouseUp overlay problem
+- Add: allow mulitple instances of %id% in iframe src
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------
