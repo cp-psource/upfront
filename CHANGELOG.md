@@ -13,6 +13,7 @@ Change Log
 - Update beforeClose callback core.js
 - Fix: Open correct image by index
 - Fix: Prevent setting alt=String("undefined")
+- Update Pako.js
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------
