@@ -220,11 +220,11 @@
             if(!mfp.bgOverlay) {
     
                 // Dark overlay
-                mfp.bgOverlay = _getEl('bg').on('click'+EVENT_NS, function() {
+                mfp.bgOverlay = _getEl('bg').on('mousedown'+EVENT_NS, function() {
                     mfp.close();
                 });
     
-                mfp.wrap = _getEl('wrap').attr('tabindex', -1).on('click'+EVENT_NS, function(e) {
+                mfp.wrap = _getEl('wrap').attr('tabindex', -1).on('mousedown'+EVENT_NS, function(e) {
                     if(mfp._checkIfClose(e.target)) {
                         mfp.close();
                     }
@@ -385,18 +385,19 @@
          * Closes the popup
          */
         close: function() {
-            if(!mfp.isOpen) return;
             _mfpTrigger(BEFORE_CLOSE_EVENT);
+            if(!mfp.isOpen) return;
     
-            mfp.isOpen = false;
             // for CSS3 animation
             if(mfp.st.removalDelay && !mfp.isLowIE && mfp.supportsTransition )  {
                 mfp._addClassToMFP(REMOVING_CLASS);
                 setTimeout(function() {
                     mfp._close();
+                    mfp.isOpen = false;
                 }, mfp.st.removalDelay);
             } else {
                 mfp._close();
+                mfp.isOpen = false;
             }
         },
     
@@ -662,6 +663,7 @@
             }
     
             options.el = $(e.mfpEl);
+            options.index = e.index;
             if(options.delegate) {
                 options.items = el.find(options.delegate);
             }
@@ -928,7 +930,7 @@
                     }
                     items = items.eq( index );
                 }
-                mfp._openClick({mfpEl:items}, jqEl, itemOpts);
+                mfp._openClick({mfpEl:items, index: index}, jqEl, itemOpts);
             } else {
                 if(mfp.isOpen)
                     mfp[options].apply(mfp, Array.prototype.slice.call(arguments, 1));
@@ -993,6 +995,16 @@
                 if(item.src) {
                     var inlineSt = mfp.st.inline,
                         el = $(item.src);
+
+                    // If the source element is a template tag then it is a document fragment
+				    // and must have the content pulled out into a new element.
+				    // The benefit of using a template tag is that the browser will not
+				    // render it or fetch its images before needed.
+				    if (el[0].tagName === "TEMPLATE") {
+                        content = el.html();
+                        el = $("<div></div>");
+                        el.html(content);
+                    }
     
                     if(el.length) {
     
@@ -1301,7 +1313,11 @@
                     var img = document.createElement('img');
                     img.className = 'mfp-img';
                     if(item.el && item.el.find('img').length) {
-                        img.alt = item.el.find('img').attr('alt');
+                        // Sometimes the img does not have an alt attribute. jQuery 1.6+ will
+                        // then return /undefined/, setting img.alt=String("undefined").
+                        if(item.el.find('img').attr('alt')) {
+                            img.alt = item.el.find('img').attr('alt');
+                        }
                     }
                     item.img = $(img).on('load.mfploader', onLoadComplete).on('error.mfploader', onLoadError);
                     img.src = item.src;
@@ -1581,12 +1597,12 @@
                 youtube: {
                     index: 'youtube.com',
                     id: 'v=',
-                    src: '//www.youtube.com/embed/%id%?autoplay=1'
+                    src: '//www.youtube.com/embed/%id%?autoplay=1&mute=1'
                 },
                 vimeo: {
                     index: 'vimeo.com/',
                     id: '/',
-                    src: '//player.vimeo.com/video/%id%?autoplay=1'
+                    src: '//player.vimeo.com/video/%id%?autoplay=1&muted=1'
                 },
                 gmaps: {
                     index: '//maps.google.',
@@ -1629,7 +1645,7 @@
                                 embedSrc = this.id.call( this, embedSrc );
                             }
                         }
-                        embedSrc = this.src.replace('%id%', embedSrc );
+                        embedSrc = this.src.replace(/%id%/g, embedSrc );
                         return false; // break;
                     }
                 });
