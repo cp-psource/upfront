@@ -46,18 +46,19 @@ class Upfront_UFC {
 				'json' => true
 			)
 		);
-
+	
 		self::$_theme_colors = is_string(self::$_theme_colors) ? json_decode( self::$_theme_colors ) : self::$_theme_colors;
 		self::$_theme_color_count = !empty(self::$_theme_colors->colors) ? count( self::$_theme_colors->colors ) : 0;
-
-		if( strpos( $color, self::VAR_PREFIX ) !== false ){
-			self::$_ufc = $color;
-		}else{
-			self::$_color = $color;
+	
+		// Überprüfen, ob $color nicht null ist, bevor es verwendet wird
+		if ($color !== null) {
+			if( strpos( $color, self::VAR_PREFIX ) !== false ){
+				self::$_ufc = $color;
+			}else{
+				self::$_color = $color;
+			}
 		}
-
-
-
+	
 		return new self;
 	}
 
