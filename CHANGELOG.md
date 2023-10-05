@@ -14,6 +14,7 @@ Change Log
 - Fix: Open correct image by index
 - Fix: Prevent setting alt=String("undefined")
 - Update Pako.js
+- Fix: Uncaught Error: Call to a member function
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------

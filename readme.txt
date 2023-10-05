@@ -111,6 +111,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Fix: Prevent setting alt=String("undefined")
 * Update Pako.js
 * Fix: Trying to access array offset on value of type null
+* Fix: Uncaught Error: Call to a member function
 
 = 1.9.8 =
 
