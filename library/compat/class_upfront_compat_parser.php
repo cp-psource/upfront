@@ -215,7 +215,13 @@ class Upfront_Compat_LayoutParser extends Upfront_Grid {
 	public function last_in_line() {
 		if ($this->next_wrapper === null) return false;
 	
-		$wrapper_prop = $this->next_wrapper['breakpoints'][$this->current_breakpoint->get_id()];
+		// Check if 'breakpoints' key exists in $this->next_wrapper
+		if (isset($this->next_wrapper['breakpoints'])) {
+			$wrapper_prop = $this->next_wrapper['breakpoints'][$this->current_breakpoint->get_id()];
+		} else {
+			// Handle the case when 'breakpoints' key doesn't exist
+			return false;
+		}
 	
 		if ($this->next_wrapper === false || !$wrapper_prop || empty($wrapper_prop['clear'])) {
 			return true;

@@ -9,6 +9,8 @@ class Upfront_ElementStyles extends Upfront_Server {
 	const TYPE_SCRIPT = 'js';
 	const TYPE_STYLE = 'css';
 
+	private $_cache; // Deklaration der Eigenschaft
+
 	public static function serve () {
 		$me = new self;
 		$me->_add_hooks();
