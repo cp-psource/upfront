@@ -2,39 +2,39 @@
 
 abstract class Upfront_Presets_Server extends Upfront_Server {
 
-	protected $isPostPartServer = false;
-	protected $isThisPostServer = false;
-	protected $isCommentServer = false;
-	protected $isNavigationServer = false;
+    protected $isPostPartServer = false;
+    protected $isThisPostServer = false;
+    protected $isCommentServer = false;
+    protected $isNavigationServer = false;
+    protected $db_key;
 
-	protected function __construct() {
-		parent::__construct();
+    protected function __construct() {
+        parent::__construct();
 
-		add_filter('upfront_l10n', array('Upfront_Presets_Server', 'add_l10n_strings'));
+        add_filter('upfront_l10n', array('Upfront_Presets_Server', 'add_l10n_strings'));
 
-		$this->elementName = $this->get_element_name();
-		$this->db_key = 'upfront_' . get_stylesheet() . '_' . $this->elementName . '_presets';
+        $this->db_key = 'upfront_' . get_stylesheet() . '_' . $this->get_element_name() . '_presets';
 
-		$registry = Upfront_PresetServer_Registry::get_instance();
-		$registry->set($this->elementName, $this);
-	}
+        $registry = Upfront_PresetServer_Registry::get_instance();
+        $registry->set($this->get_element_name(), $this);
+    }
 
-	public abstract function get_element_name();
+    public abstract function get_element_name();
 
-	protected function _add_hooks () {
-		if (Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
-			upfront_add_ajax('upfront_get_' . $this->elementName . '_presets', array($this, 'get'));
-		}
-		if (Upfront_Permissions::current(Upfront_Permissions::SAVE)) {
-			upfront_add_ajax('upfront_save_' . $this->elementName . '_preset', array($this, 'save'));
-			upfront_add_ajax('upfront_delete_' . $this->elementName . '_preset', array($this, 'delete'));
-			upfront_add_ajax('upfront_reset_' . $this->elementName . '_preset', array($this, 'reset'));
-		}
-	}
+    protected function _add_hooks () {
+        if (Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
+            upfront_add_ajax('upfront_get_' . $this->get_element_name() . '_presets', array($this, 'get'));
+        }
+        if (Upfront_Permissions::current(Upfront_Permissions::SAVE)) {
+            upfront_add_ajax('upfront_save_' . $this->get_element_name() . '_preset', array($this, 'save'));
+            upfront_add_ajax('upfront_delete_' . $this->get_element_name() . '_preset', array($this, 'delete'));
+            upfront_add_ajax('upfront_reset_' . $this->get_element_name() . '_preset', array($this, 'reset'));
+        }
+    }
 
-	public function get() {
-		$this->_out(new Upfront_JsonResponse_Success($this->get_presets()));
-	}
+    public function get() {
+        $this->_out(new Upfront_JsonResponse_Success($this->get_presets()));
+    }
 
 	public function delete() {
 		if (!isset($_POST['data'])) {
