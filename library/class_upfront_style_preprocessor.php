@@ -5,31 +5,15 @@
  */
 class Upfront_StylePreprocessor {
 
-	/**
-	 * Grid reference
-	 *
-	 * @var object
-	 */
-	private $_grid;
+    private $_grid;
+    private $_layout;
+    private $_debugger; // Hinzugefügte Klassenvariable
 
-	/**
-	 * Layout reference
-	 *
-	 * @var object
-	 */
-	private $_layout;
-
-	/**
-	 * Instantiates the pre-processing
-	 *
-	 * @param Upfront_Grid $grid Grid object to use
-	 * @param mixed $layout Optional (Upfront_Layout)object to use as layout
-	 */
-	public function __construct (Upfront_Grid $grid, Upfront_Layout $layout=null) {
-		$this->_grid = $grid;
-		$this->_layout = $layout;
-		$this->_debugger = Upfront_Debug::get_debugger();
-	}
+    public function __construct (Upfront_Grid $grid, Upfront_Layout $layout=null) {
+        $this->_grid = $grid;
+        $this->_layout = $layout;
+        $this->_debugger = Upfront_Debug::get_debugger();
+    }
 
 	/**
 	 * Processes the grid into styles

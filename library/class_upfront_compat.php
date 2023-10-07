@@ -8,6 +8,9 @@ require_once('compat/class_upfront_compat_coursepress.php');
 
 class Upfront_Compat implements IUpfront_Server {
 
+	private $_v1_script_added = false; // Deklaration der Eigenschaft
+	private $_has_backup_notice = false; // Hinzugefügte Klassenvariable
+
 	/**
 	 * Check if we have Dashboard plugin alive and active
 	 *
@@ -192,34 +195,45 @@ class Upfront_Compat implements IUpfront_Server {
 		}
 	}
 
-	/**
-	 * Add backup notice on the v1 first editor boot
-	 */
+    /**
+     * Add backup notice on the v1 first editor boot
+     */
 	private function _check_v1_backup () {
-		if (!Upfront_Permissions::current(Upfront_Permissions::BOOT)) return false; // We don't care, not editable
-		if (function_exists('upfront_exporter_is_running') && upfront_exporter_is_running()) return false; // Not in exporter
-		if ($this->_is_update_notice_dismissed_for('1.0')) return false; // We have notices dismissed for v1.0 version and below
+        if (!Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
+            return false; // We don't care, not editable
+        }
+        if (function_exists('upfront_exporter_is_running') && upfront_exporter_is_running()) {
+            return false; // Not in exporter
+        }
+        if ($this->_is_update_notice_dismissed_for('1.0')) {
+            return false; // We have notices dismissed for v1.0 version and below
+        }
 
-		if (!class_exists('Upfront_Compat_Backup_Info')) require_once('compat/class_upfront_compat_backup_info.php');
-		$info = new Upfront_Compat_Backup_Info;
-		if (!$info->is_actionable()) return false;
+        if (!class_exists('Upfront_Compat_Backup_Info')) {
+            require_once('compat/class_upfront_compat_backup_info.php');
+        }
+        $info = new Upfront_Compat_Backup_Info;
+        if (!$info->is_actionable()) {
+            return false;
+        }
 
-		// This check is potentially costly, so don't do it unless we have to
-		if (!(defined('DOING_AJAX') && DOING_AJAX)) {
-			if (!$this->_is_updated_install()) return false; // Only on updated installs
-		}
+        // This check is potentially costly, so don't do it unless we have to
+        if (!(defined('DOING_AJAX') && DOING_AJAX)) {
+            if (!$this->_is_updated_install()) {
+                return false; // Only on updated installs
+            }
+        }
 
-		$this->_has_backup_notice = true;
+        $this->_has_backup_notice = true;
 
-		if (empty($this->_v1_script_added)) {
-			Upfront_CoreDependencies_Registry::get_instance()->add_script(
-				trailingslashit(Upfront::get_root_url()) . 'scripts/upfront/compat/v1.js'
-			);
-			$this->_v1_script_added = true;
-			add_filter('upfront_data', array($this, 'add_v1_transition_data'));
-		}
-	}
-
+        if (empty($this->_v1_script_added)) {
+            Upfront_CoreDependencies_Registry::get_instance()->add_script(
+                trailingslashit(Upfront::get_root_url()) . 'scripts/upfront/compat/v1.js'
+            );
+            $this->_v1_script_added = true;
+            add_filter('upfront_data', array($this, 'add_v1_transition_data'));
+        }
+    }
 	/**
 	 * Check if this is an updated install, or a new one
 	 *
@@ -295,6 +309,7 @@ class Upfront_Compat implements IUpfront_Server {
 	 * Data filtering handler
 	 *
 	 * @param array $data
+	 * @return array
 	 */
 	public function add_v1_transition_data ($data) {
 		$current = wp_get_theme();
@@ -304,7 +319,9 @@ class Upfront_Compat implements IUpfront_Server {
 		);
 
 		if (!empty($this->_has_backup_notice) && Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
-			if (!class_exists('Upfront_Compat_Backup_Info')) require_once('compat/class_upfront_compat_backup_info.php');
+			if (!class_exists('Upfront_Compat_Backup_Info')) {
+				require_once('compat/class_upfront_compat_backup_info.php');
+			}
 			$info = new Upfront_Compat_Backup_Info;
 			$data['Compat']['notice'] = '' .
 				__('Wir haben viel Zeit darauf verwendet, den Migrationsprozess richtig hinzubekommen. Angesichts der Vielfalt an Layouts, die mit Upfront erreicht werden können, und der erstaunlichen Verbesserungen, die wir in Version 1.0 hinzugefügt haben, empfehlen wir Dir jedoch dringend, mit <b>Snapshot</b> ein vollständiges Backup Deiner Webseite, bevor Du mit der Bearbeitung Deiner Webseite fortfährst. ', 'upfront') .

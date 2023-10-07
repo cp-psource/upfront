@@ -7,11 +7,14 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
     protected $isCommentServer = false;
     protected $isNavigationServer = false;
     protected $db_key;
+	protected $elementName; // Hinzugefügte Eigenschaft
 
     protected function __construct() {
         parent::__construct();
 
         add_filter('upfront_l10n', array('Upfront_Presets_Server', 'add_l10n_strings'));
+
+		$this->elementName = $this->get_element_name(); // Initialisierung hinzugefügt
 
         $this->db_key = 'upfront_' . get_stylesheet() . '_' . $this->get_element_name() . '_presets';
 
