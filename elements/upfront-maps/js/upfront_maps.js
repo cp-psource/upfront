@@ -318,7 +318,7 @@ define([
 				.find("#upfront_map-location_overlay-location")
 					.off("keydown").on("keydown", function (e) {
 						if (13 === e.which) {
-							$location.find("#upfront_map-location_overlay-use_location").click();
+							$location.find("#upfront_map-location_overlay-use_location").on('click',);
 							Upfront.Events.trigger("upfront:element:edit:stop"); // Trigger this so we can drag maps with enter-submitted locations
 						}
 					})

@@ -173,7 +173,7 @@
 				this.editModeOn(e);
 				var me = this;
 				var target, ueditor_target;
-				if(typeof e.target == 'undefined' || e.target.trim === '') target = $(e);
+				if(typeof e.target == 'undefined' || e.target.trim() === '') target = $(e);
 				else target = $(e.target);
 
 				if (!target.hasClass('menu_item')) {
@@ -1009,7 +1009,7 @@
 					var close_icon = $('<button class="burger_nav_close"></button>');
 					$menu.prepend($('<li>').addClass('wrap_burger_nav_close').append(close_icon));
 
-					close_icon.bind('touchstart click', function() {
+					close_icon.on('touchstart click', function() {
 						$(e.target).closest('.responsive_nav_toggler').trigger('click');
 						if ($nav.attr('data-burger_alignment') === 'top' || $nav.attr('data-burger_alignment') === 'whole') {
 							$('section.upfront-layout').css('margin-top', 0);
@@ -1301,7 +1301,7 @@
 					}
 				}
 
-				me.$el.find('li.new_menu_item i.upfront-icon-region-labelEdit').click(); // enable edit mode via panel
+				me.$el.find('li.new_menu_item i.upfront-icon-region-labelEdit').on('click',); // enable edit mode via panel
 			},
 
 			getControlItems: function(){

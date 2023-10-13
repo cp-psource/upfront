@@ -42,10 +42,10 @@ define([
 			});
 			this.delegateEvents();
 
-			this.model.get('properties').bind('change', this.render, this);
-			this.model.get('properties').bind('change', this.handle_visual_padding_hint, this);
-			this.model.get('properties').bind('add', this.render, this);
-			this.model.get('properties').bind('remove', this.render, this);
+			this.model.get('properties').on('change', this.render, this);
+			this.model.get('properties').on('change', this.handle_visual_padding_hint, this);
+			this.model.get('properties').on('add', this.render, this);
+			this.model.get('properties').on('remove', this.render, this);
 
 			this.listenTo(Upfront.Events, "theme_colors:update", this.update_colors, this);
 

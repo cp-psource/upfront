@@ -435,7 +435,7 @@
             // bind methods
             for (var z = 0; z < len; z++)
             {
-                this[module][methods[z]] = this[module][methods[z]].bind(this);
+                this[module][methods[z]] = this[module][methods[z]].on(this);
             }
         },
 
@@ -1432,7 +1432,7 @@
                         // bind methods
                         for (var z = 0; z < len; z++)
                         {
-                            this[s][methods[z]] = this[s][methods[z]].bind(this);
+                            this[s][methods[z]] = this[s][methods[z]].on(this);
                         }
 
                         if ($.isFunction(this[s].init)) this[s].init();
@@ -5943,7 +5943,7 @@
                     if (e.which != 13) return;
 
                     e.preventDefault();
-                    this.$modal.find('button.redactor-modal-action-btn').click();
+                    this.$modal.find('button.redactor-modal-action-btn').on('click',);
                 },
                 createCancelButton: function()
                 {

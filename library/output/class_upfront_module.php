@@ -1,18 +1,17 @@
 <?php
 
 class Upfront_Module extends Upfront_Container {
-    protected $_type = 'Module';
-    protected $_children = 'objects';
-    protected $_child_view_class = 'Upfront_Object';
+	protected $_type = 'Module';
+	protected $_children = 'objects';
+	protected $_child_view_class = 'Upfront_Object';
 
-    private $_child_instances;
-    private $_parent_data; // Hinzugefügte Klassenvariable
+	private $_child_instances;
 
-    public function __construct ($data, $parent_data = "") {
-        parent::__construct($data);
-        $this->_parent_data = $parent_data;
-        Upfront_Output::$current_module = $this;
-    }
+	public function __construct ($data, $parent_data = "") {
+		parent::__construct($data);
+		$this->_parent_data = $parent_data;
+		Upfront_Output::$current_module = $this;
+	}
 
 	public function get_markup () {
 		if ($this->is_spacer()) {
@@ -27,10 +26,10 @@ class Upfront_Module extends Upfront_Container {
 		return $pre . parent::get_markup();
 	}
 
-    public function get_wrapper () {
-        $wrapper_id = $this->_get_property('wrapper_id');
-        return Upfront_Wrapper::get_instance($wrapper_id, $this->_parent_data);
-    }
+	public function get_wrapper () {
+		$wrapper_id = $this->_get_property('wrapper_id');
+		return Upfront_Wrapper::get_instance($wrapper_id, $this->_parent_data);
+	}
 
 	public function get_css_class () {
 		$classes = parent::get_css_class();

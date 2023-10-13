@@ -21,14 +21,14 @@
 		 */
 		$('.tabs-tab').keydown(function(e) {
 			if (e.which == 13) {
-				$(this).click();
+				$(this).on('click',);
 			}
 			if (e.which == 37) {
-				$(this).prev('.tabs-tab').focus().click();
+				$(this).prev('.tabs-tab').focus().on('click',);
 			}
 			
 			if (e.which == 39) {
-				$(this).next('.tabs-tab').focus().click();
+				$(this).next('.tabs-tab').focus().on('click',);
 			}
 		});
 	});

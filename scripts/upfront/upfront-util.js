@@ -48,7 +48,7 @@ define([
 ], function ( pako, Cache ){
 
 	var guessLinkType = function(url) {
-		if(!$.trim(url) || $.trim(url) == '#' || $.trim(url) === '') {
+		if (!url.trim() || url.trim() == '#' || url.trim() === '') {
 			return 'unlink';
 		}
 
@@ -969,7 +969,7 @@ define([
 				;
 
 				if ( !this.disable_esc ) {
-					$('body').bind( 'keyup', function( event ) {
+					$('body').on( 'keyup', function( event ) {
 						if ( event.keyCode === 27 ) me.close();
 					});
 				}

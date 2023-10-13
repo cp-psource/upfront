@@ -39,7 +39,7 @@ define([
 					me.render();
 				}
 			});
-			this.model.get('properties').bind('change', this.handle_visual_padding_hint, this);
+			this.model.get('properties').on('change', this.handle_visual_padding_hint, this);
 		},
 
 		render: function () {
@@ -386,7 +386,7 @@ define([
 			this.$el.find('.state_settings_button_wrapper').show();
 			this.$el.find('[class^="'+ selected +'_settings"]').closest('.settings_module').show();
 			setTimeout(function(){
-				me.$el.find('.state_settings_button.state_settings_button_static').click();
+				me.$el.find('.state_settings_button.state_settings_button_static').on('click',);
 			}, 100);
 		},
 		change_view: function (part_style) {

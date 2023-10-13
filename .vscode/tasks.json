@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "test",
+			"path": "scripts/test",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: test - scripts/test",
+			"detail": "mocha -t 60000 -b -s 1000 --reporter spec test.js"
+		}
+	]
+}

@@ -145,7 +145,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Hinzugefügt: PSource Updater
 * Hinzugefügt: Aktuelle Hilfequellen, Tutorials und Links auf Deutsch
 * Hinzugefügt: Unterstützung für Terminmanager
-* Fix: Veraltetes .click() jQuery
+* Fix: Veraltetes .on('click',) jQuery
 * Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
 * Fix: Securityfix Dashboard-Changelog (fopen)
 * Fix: Veraltete each() Funktion Dashboard-Changelog

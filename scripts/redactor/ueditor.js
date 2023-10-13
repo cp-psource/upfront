@@ -871,7 +871,7 @@
 					if( Overriden_Methods[module] && Overriden_Methods[module][methods[z]] )
 						method =  Overriden_Methods[module][methods[z]];
 
-					this[module][methods[z]] = method.bind(this);
+					this[module][methods[z]] = method.on(this);
 				}
 			};
 
@@ -1843,7 +1843,7 @@
 				this.inserts = opts.inserts || {};
 				this._inserts = {};
 				this.ueditor = opts.ueditor;
-				this.onRemoveInsert = _.bind(this.removeInsert, this);
+				this.onRemoveInsert = _.on(this.removeInsert, this);
 				this.insertsData = opts.insertsData || {};
 				this.deletedInserts = {};
 				this.$el.children().addClass('nosortable');

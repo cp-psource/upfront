@@ -219,7 +219,7 @@ $.extend( $.simulate.prototype, {
 			triggered = true;
 		}
 
-		element.bind( "focus", trigger );
+		element.on( "focus", trigger );
 		element[ 0 ].focus();
 
 		if ( !triggered ) {
@@ -240,7 +240,7 @@ $.extend( $.simulate.prototype, {
 			triggered = true;
 		}
 
-		element.bind( "blur", trigger );
+		element.on( "blur", trigger );
 		element[ 0 ].blur();
 
 		// blur events are async in IE

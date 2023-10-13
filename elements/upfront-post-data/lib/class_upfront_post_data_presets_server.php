@@ -123,7 +123,7 @@ class Upfront_PostData_Presets_Server extends Upfront_DataElement_Preset_Server 
 
 	protected function _add_hooks () {
 		parent::_add_hooks();
-		add_filter('upfront_get_' . $this->elementName . '_presets', array($this, 'get_augmented_presets'), 99);
+		add_filter('upfront_get_' . $this->get_element_name() . '_presets', array($this, 'get_augmented_presets'), 99);
 	}
 
 	/**

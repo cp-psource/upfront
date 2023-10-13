@@ -21,7 +21,7 @@ define([
 					me.close();
 				}
 			});
-			$(document).mouseup(function(e){
+			$(document).on('mouseup',function(e){
 				var	target = $(e.target),
 					currentEntity = Upfront.data.currentEntity;
 

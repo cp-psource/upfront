@@ -6,15 +6,12 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
     protected $isThisPostServer = false;
     protected $isCommentServer = false;
     protected $isNavigationServer = false;
-    protected $db_key;
-	protected $elementName; // Hinzugefügte Eigenschaft
+    public $db_key;
 
     protected function __construct() {
         parent::__construct();
 
         add_filter('upfront_l10n', array('Upfront_Presets_Server', 'add_l10n_strings'));
-
-		$this->elementName = $this->get_element_name(); // Initialisierung hinzugefügt
 
         $this->db_key = 'upfront_' . get_stylesheet() . '_' . $this->get_element_name() . '_presets';
 
@@ -49,9 +46,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		}
 
 		$properties = stripslashes_deep($_POST['data']);
-		do_action('upfront_delete_' . $this->elementName . '_preset', $properties, $this->elementName);
+		do_action('upfront_delete_' . $this->get_element_name() . '_preset', $properties, $this->get_element_name());
 
-		if (!has_action('upfront_delete_' . $this->elementName . '_preset')) {
+		if (!has_action('upfront_delete_' . $this->get_element_name() . '_preset')) {
 			$presets = $this->get_presets();
 
 			$result = array();
@@ -66,7 +63,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			$this->update_presets($result);
 		}
 
-		$this->_out(new Upfront_JsonResponse_Success('Deleted ' . $this->elementName . ' preset.'));
+		$this->_out(new Upfront_JsonResponse_Success('Deleted ' . $this->get_element_name() . ' preset.'));
 	}
 
 	public function reset() {
@@ -85,9 +82,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			return $this->_out(new Upfront_JsonResponse_Error("Invalid preset"));
 		}
 
-		do_action('upfront_reset_' . $this->elementName . '_preset', $properties, $this->elementName);
+		do_action('upfront_reset_' . $this->get_element_name() . '_preset', $properties, $this->get_element_name());
 
-		if (!has_action('upfront_reset_' . $this->elementName . '_preset')) {
+		if (!has_action('upfront_reset_' . $this->get_element_name() . '_preset')) {
 			$presets = $this->get_presets();
 			$result = array();
 			$resetpreset = array();
@@ -207,7 +204,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		$presets = json_decode(Upfront_Cache_Utils::get_option($this->db_key, '[]'), true);
 
 		$presets = apply_filters(
-			'upfront_get_' . $this->elementName . '_presets',
+			'upfront_get_' . $this->get_element_name() . '_presets',
 			$presets,
 			array(
 				'json' => false,
@@ -264,9 +261,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			}
 		}
 
-		do_action('upfront_save_' . $this->elementName . '_preset', $properties, $this->elementName);
+		do_action('upfront_save_' . $this->get_element_name() . '_preset', $properties, $this->get_element_name());
 
-		if (!has_action('upfront_save_' . $this->elementName . '_preset')) {
+		if (!has_action('upfront_save_' . $this->get_element_name() . '_preset')) {
 			$presets = $this->get_presets();
 
 			$result = array();
@@ -284,7 +281,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			$this->update_presets($result);
 		}
 
-		$this->_out(new Upfront_JsonResponse_Success('Saved ' . $this->elementName . ' preset, yay.'));
+		$this->_out(new Upfront_JsonResponse_Success('Saved ' . $this->get_element_name() . ' preset, yay.'));
 	}
 
 	public function get_presets_styles() {
@@ -366,7 +363,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		$settings = Upfront_ChildTheme::get_settings();
 		//Get presets distributed with the theme
 		$theme_presets = is_object($settings) && $settings instanceof Upfront_Theme_Settings
-			? json_decode($settings->get($this->elementName . '_presets'), true)
+			? json_decode($settings->get($this->get_element_name() . '_presets'), true)
 			: false
 		;
 
@@ -453,9 +450,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 	}
 
 	public function get_presets_javascript_server() {
-		$presets = Upfront_Cache_Utils::get_option('upfront_' . get_stylesheet() . '_' . $this->elementName . '_presets');
+		$presets = Upfront_Cache_Utils::get_option('upfront_' . get_stylesheet() . '_' . $this->get_element_name() . '_presets');
 		$presets = apply_filters(
-			'upfront_get_' . $this->elementName . '_presets',
+			'upfront_get_' . $this->get_element_name() . '_presets',
 			$presets,
 			array(
 				'json' => false,

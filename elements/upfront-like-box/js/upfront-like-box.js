@@ -189,7 +189,7 @@
 			});
 			this.$el.find('.upfront-like-box_url').on('keydown', function(e) {
 				if(e.which == 13) {
-					me.$el.find('.upfront-like-box_button').click();
+					me.$el.find('.upfront-like-box_button').on('click',);
 					Upfront.Events.trigger("upfront:element:edit:stop");
 				}
 			});

@@ -302,7 +302,7 @@ var AppearancePanel = Upfront.Views.Editor.Settings.Panel.extend({
 			if(!this.$el.find('.border-enabled input').prop('checked'))
 				me.$el.find('.upfront-field-number').prop('disabled', true);
 
-			this.$el.find('.border-enabled input').bind('change', function() {
+			this.$el.find('.border-enabled input').on('change', function() {
 				if($(this).prop('checked'))
 					me.$el.find('.upfront-field-number').prop('disabled', false);
 				else

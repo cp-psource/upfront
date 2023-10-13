@@ -617,9 +617,9 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 					me.setupLightbox();
 					me.createLightboxSettings();
 					// Prevent lightbox from closing when clicking on image or caption
-					$('.glb-content-container').click(me.preventClose);
-					$('.glb-image-container').click(me.preventClose);
-					$('.glb-caption-container').click(me.preventClose);
+					$('.glb-content-container').on('click',me.preventClose);
+					$('.glb-image-container').on('click',me.preventClose);
+					$('.glb-caption-container').on('click',me.preventClose);
 					// Prevent magnific from capturing focus
 					setTimeout(function() {
 						$(document).off('focusin');
@@ -821,18 +821,18 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 			}
 		);
 
-		$('#gallery-lb-settings .upfront-inline-modal-save').click( function() {
-			$('#gallery-lb-settings-button').click();
+		$('#gallery-lb-settings .upfront-inline-modal-save').on('click', function() {
+			$('#gallery-lb-settings-button').on('click',);
 			if (me.galleryLightboxCssEditor) {
 				me.galleryLightboxCssEditor.close();
 			}
 		});
 
-		$('#gallery-lb-settings').click( function(event) {
+		$('#gallery-lb-settings').on('click', function(event) {
 			event.stopPropagation();
 		});
 
-		$('#gallery-lb-settings').find('.edit-lightbox-css').click( function(event) {
+		$('#gallery-lb-settings').find('.edit-lightbox-css').on('click', function(event) {
 			me.galleryLightboxCssEditor = new Upfront.Views.Editor.GeneralCSSEditor({
 				model: me.model,
 				page_class: 'gallery-' + me.property('element_id') + '-lightbox',

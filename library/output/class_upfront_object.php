@@ -2,21 +2,21 @@
 
 
 class Upfront_Object extends Upfront_Entity {
-    protected $_type = 'Object';
-    protected $_parent_data = "";
+	protected $_type = 'Object';
 
-    public function __construct($data, $parent_data = "") {
-        // Stellen Sie sicher, dass alle Eigenschaften initialisiert sind
-        $data['properties'] = $this->merge_default_properties($data);
-        parent::__construct($data);
-        $this->_parent_data = $parent_data;
-        Upfront_Output::$current_object = $this;
-    }
+	public function __construct ($data, $parent_data = "") {
+		//Make sure all the properties are initialized
+		$data['properties'] = $this->merge_default_properties($data);
+		parent::__construct($data);
+		$this->_parent_data = $parent_data;
+		Upfront_Output::$current_object = $this;
+	}
 
-    public function get_wrapper() {
-        $wrapper_id = $this->_get_property('wrapper_id');
-        return Upfront_Wrapper::get_instance($wrapper_id, $this->_parent_data);
-    }
+	public function get_wrapper () {
+		$wrapper_id = $this->_get_property('wrapper_id');
+		return Upfront_Wrapper::get_instance($wrapper_id, $this->_parent_data);
+	}
+
 	protected function merge_default_properties($data){
 
 		if(! method_exists(get_class($this), 'default_properties')){

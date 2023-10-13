@@ -31,10 +31,10 @@ var UyoutubeView = Upfront.Views.ObjectView.extend({
 
 		this.delegateEvents();
 
-		this.model.get("properties").bind("change", this.render, this);
-		this.model.get('properties').bind('change', this.handle_visual_padding_hint, this);
-		this.model.get("properties").bind("add", this.render, this);
-		this.model.get("properties").bind("remove", this.render, this);
+		this.model.get("properties").on("change", this.render, this);
+		this.model.get('properties').on('change', this.handle_visual_padding_hint, this);
+		this.model.get("properties").on("add", this.render, this);
+		this.model.get("properties").on("remove", this.render, this);
 
 		this.listenTo(Upfront.Events, "upfront:layout_size:change_breakpoint", this.onResizeStop);
 
@@ -166,7 +166,7 @@ var UyoutubeView = Upfront.Views.ObjectView.extend({
 
 		this.$el.find('.upfront-youtube-url').on('keydown', function(e) {
 			if(e.which == 13) {
-				me.$el.find('.upfront-youtube-button').click();
+				me.$el.find('.upfront-youtube-button').on('click',);
 				Upfront.Events.trigger("upfront:element:edit:stop");
 			}
 		});
