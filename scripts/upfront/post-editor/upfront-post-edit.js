@@ -1331,7 +1331,7 @@
 					},
 					allowMouseWheel: function () {
 						//Enable scroll when chosen is closed
-						$('.sidebar-panel-content .sidebar-tab-content').unbind('mousewheel');
+						$('.sidebar-panel-content .sidebar-tab-content').off('mousewheel');
 					}
 				});
 

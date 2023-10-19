@@ -57,24 +57,19 @@
                     func = instance[options];
                 }
 
-                if (typeof instance !== 'undefined' && $.isFunction(func))
-                {
+                if (typeof instance !== 'undefined' && typeof func === 'function') {
                     var methodVal = func.apply(instance, args);
-                    if (methodVal !== undefined && methodVal !== instance)
-                    {
+                    if (methodVal !== undefined && methodVal !== instance) {
                         val.push(methodVal);
                     }
                 }
-                else
-                {
+                else {
                     $.error('No such method "' + options + '" for Redactor');
                 }
             });
         }
-        else
-        {
-            this.each(function()
-            {
+        else {
+            this.each(function() {
                 $.data(this, 'redactor', {});
                 $.data(this, 'redactor', Redactor(this, options));
             });
@@ -1356,20 +1351,17 @@
                     this.$editor.on('keyup.redactor', $.proxy(this.keyup.init, this));
 
                     // textarea keydown
-                    if ($.isFunction(this.opts.codeKeydownCallback))
-                    {
+                    if (typeof this.opts.codeKeydownCallback === 'function') {
                         this.$textarea.on('keydown.redactor-textarea', $.proxy(this.opts.codeKeydownCallback, this));
                     }
 
                     // textarea keyup
-                    if ($.isFunction(this.opts.codeKeyupCallback))
-                    {
+                    if (typeof this.opts.codeKeyupCallback === 'function') {
                         this.$textarea.on('keyup.redactor-textarea', $.proxy(this.opts.codeKeyupCallback, this));
                     }
 
                     // focus
-                    if ($.isFunction(this.opts.focusCallback))
-                    {
+                    if (typeof this.opts.focusCallback === 'function') {
                         this.$editor.on('focus.redactor', $.proxy(this.opts.focusCallback, this));
                     }
 
@@ -1377,14 +1369,12 @@
                     $(document).on('mousedown', function(e) { clickedElement = e.target; });
 
                     // blur
-                    this.$editor.on('blur.redactor', $.proxy(function(e)
-                    {
+                    this.$editor.on('blur.redactor', $.proxy(function(e) {
                         if (this.rtePaste) return;
                         if (!this.build.isBlured(clickedElement)) return;
 
                         this.utils.disableSelectAll();
-                        if ($.isFunction(this.opts.blurCallback)) this.core.setCallback('blur', e);
-
+                        if (typeof this.opts.blurCallback === 'function') this.core.setCallback('blur', e);
                     }, this));
                 },
                 isBlured: function(clickedElement)
@@ -1411,33 +1401,32 @@
                     if (!this.opts.plugins) return;
                     if (!RedactorPlugins) return;
 
-                    $.each(this.opts.plugins, $.proxy(function(i, s)
-                    {
+                    $.each(this.opts.plugins, $.proxy(function(i, s) {
                         if (typeof RedactorPlugins[s] === 'undefined') return;
-
-                        if ($.inArray(s, $.Redactor.modules) !== -1)
-                        {
+                    
+                        if ($.inArray(s, $.Redactor.modules) !== -1) {
                             $.error('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
                             return;
                         }
-
-                        if (!$.isFunction(RedactorPlugins[s])) return;
-
+                    
+                        if (typeof RedactorPlugins[s] !== 'function') return;
+                    
                         this[s] = RedactorPlugins[s]();
-
+                    
                         // get methods
                         var methods = this.getModuleMethods(this[s]);
                         var len = methods.length;
-
+                    
                         // bind methods
-                        for (var z = 0; z < len; z++)
-                        {
-                            this[s][methods[z]] = this[s][methods[z]].on(this);
+                        for (var z = 0; z < len; z++) {
+                            if (typeof this[s][methods[z]] === 'function') {
+                                this[s][methods[z]] = this[s][methods[z]].on(this);
+                            }
                         }
-
-                        if ($.isFunction(this[s].init)) this[s].init();
-
-
+                    
+                        if (typeof this[s].init === 'function') {
+                            this[s].init();
+                        }
                     }, this));
 
                 },
@@ -1542,20 +1531,22 @@
                     else if (type == 'dropdown') this.dropdown.show(e, btnName);
                     else this.button.onClickCallback(e, callback, btnName);
                 },
-                onClickCallback: function(e, callback, btnName)
-                {
+                onClickCallback: function(e, callback, btnName) {
                     var func;
-
-                    if ($.isFunction(callback)) callback.call(this, btnName);
-                    else if (callback.search(/\./) != '-1')
-                    {
+                
+                    if (typeof callback === 'function') {
+                        callback.call(this, btnName);
+                    } else if (callback.indexOf('.') !== -1) {
                         func = callback.split('.');
-                        if (typeof this[func[0]] == 'undefined') return;
-
-                        this[func[0]][func[1]](btnName);
+                        if (typeof this[func[0]] === 'undefined') return;
+                
+                        if (typeof this[func[0]][func[1]] === 'function') {
+                            this[func[0]][func[1]](btnName);
+                        }
+                    } else if (typeof this[callback] === 'function') {
+                        this[callback](btnName);
                     }
-                    else this[callback](btnName);
-
+                
                     this.observe.buttons(e, btnName);
                 },
                 get: function(key)
@@ -2808,16 +2799,16 @@
                 {
                     return this.core.event;
                 },
-                setCallback: function(type, e, data)
-                {
+                setCallback: function(type, e, data) {
                     var callback = this.opts[type + 'Callback'];
-                    if ($.isFunction(callback))
-                    {
-                        return (typeof data == 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
-                    }
-                    else
-                    {
-                        return (typeof data == 'undefined') ? e : data;
+                    if (typeof callback === 'function') {
+                        if (typeof data === 'undefined') {
+                            return callback.call(this, e);
+                        } else {
+                            return callback.call(this, e, data);
+                        }
+                    } else {
+                        return (typeof data === 'undefined') ? e : data;
                     }
                 },
                 destroy: function()

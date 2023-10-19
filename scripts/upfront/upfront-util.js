@@ -391,19 +391,19 @@ define([
 		 */
 		find_from_elements: function ($els, from, filter, reverse, until) {
 			var index = $els.index($(from)),
-				find_from = reverse ? _.first($els, index).reverse() : _.rest($els, index+1),
+				find_from = reverse ? _.first($els, index).reverse() : _.rest($els, index + 1),
 				finish = false,
-				is_filter_cb = filter && _.isFunction(filter),
-				is_until_cb = until && _.isFunction(until)
-			;
-			return $(_.filter(find_from, function(el){
-				if ( finish ) return false;
-				if ( ( is_filter_cb && filter($(el), $els) ) || ( !is_filter_cb && $(el).is(filter) ) ){
-						if ( until && ( ( is_until_cb && until($(el), $els) ) || ( !is_until_cb && $(el).is(until) ) ) ){
-								finish = true;
-								return false;
-						}
-						return true;
+				is_filter_cb = filter && typeof filter === 'function',
+				is_until_cb = until && typeof until === 'function';
+
+			return $(_.filter(find_from, function (el) {
+				if (finish) return false;
+				if ((is_filter_cb && filter($(el), $els)) || (!is_filter_cb && $(el).is(filter))) {
+					if (until && ((is_until_cb && until($(el), $els)) || (!is_until_cb && $(el).is(until))) {
+						finish = true;
+						return false;
+					}
+					return true;
 				}
 				return false;
 			}));

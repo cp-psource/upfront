@@ -1235,7 +1235,7 @@
 				},
 				allowMouseWheel: function() {
 					//Enable scroll when chosen is closed
-					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
+					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
 				}
 		});
 
@@ -1554,7 +1554,7 @@
             },
             allowMouseWheel: function() {
                 //Enable scroll when chosen is closed
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
             }
         });
 

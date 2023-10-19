@@ -131,7 +131,7 @@ jQuery(function($){
 
 						$form.find(".ucontact-message-container").on('click', function() {
 							$(this).removeClass("ucontact-success-response").html("");
-							$(this).unbind('click');
+							$(this).off('click');
 						});
 
 						name.val('');

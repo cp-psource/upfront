@@ -233,18 +233,18 @@
 			get_style_element: function() {
 				return $('style#' + this.get_style_id());
 			},
-			close: function(e){
-				if(e && _.isFunction(e.preventDefault)) e.preventDefault();
-
+			close: function(e) {
+				if (e && typeof e.preventDefault === 'function') e.preventDefault();
+			
 				$(window).off('resize', this.resizeHandler);
 				this.off('change');
-
+			
 				this.$style = false;
 				if (this.editor) this.editor.destroy();
-
+			
 				$('#page').css('padding-bottom', 0);
 				this.$el.hide();
-
+			
 				Upfront.Events.trigger('csseditor:closed', this.element_id);
 			},
 			render: function(){

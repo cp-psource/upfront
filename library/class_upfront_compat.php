@@ -8,6 +8,9 @@ require_once('compat/class_upfront_compat_coursepress.php');
 
 class Upfront_Compat implements IUpfront_Server {
 
+	public $v1_script_added;
+	public $has_backup_notice;
+
 	/**
 	 * Check if we have Dashboard plugin alive and active
 	 *

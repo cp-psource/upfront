@@ -174,7 +174,7 @@ EventElement.prototype.unbind = function (eventName, handler) {
 
 EventElement.prototype.unbindAll = function () {
   for (var name in this.events) {
-    this.unbind(name);
+    this.off(name);
   }
 };
 
@@ -198,7 +198,7 @@ EventManager.prototype.bind = function (element, eventName, handler) {
 };
 
 EventManager.prototype.unbind = function (element, eventName, handler) {
-  this.eventElement(element).unbind(eventName, handler);
+  this.eventElement(element).off(eventName, handler);
 };
 
 EventManager.prototype.unbindAll = function () {
@@ -210,7 +210,7 @@ EventManager.prototype.unbindAll = function () {
 EventManager.prototype.once = function (element, eventName, handler) {
   var ee = this.eventElement(element);
   var onceHandler = function (e) {
-    ee.unbind(eventName, onceHandler);
+    ee.off(eventName, onceHandler);
     handler(e);
   };
   ee.on(eventName, onceHandler);
@@ -452,7 +452,7 @@ function bindMouseScrollXHandler(element, i) {
 
   var mouseUpHandler = function () {
     _.stopScrolling(element, 'x');
-    i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+    i.event.off(i.ownerDocument, 'mousemove', mouseMoveHandler);
   };
 
   i.event.on(i.scrollbarX, 'mousedown', function (e) {
@@ -497,7 +497,7 @@ function bindMouseScrollYHandler(element, i) {
 
   var mouseUpHandler = function () {
     _.stopScrolling(element, 'y');
-    i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+    i.event.off(i.ownerDocument, 'mousemove', mouseMoveHandler);
   };
 
   i.event.on(i.scrollbarY, 'mousedown', function (e) {

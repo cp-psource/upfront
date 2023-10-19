@@ -697,64 +697,50 @@
 
 						if (this.utils.browser('msie')) e.returnValue = false;
 
-						if (type == 'command')
-						{
+						if (type == 'command') {
 							this.inline.format(callback);
 						}
-						else if (type == 'dropdown')
-						{
+						else if (type == 'dropdown') {
 							this.dropdown.show(e, btnName);
 						}
-						else
-						{
+						else {
 							var func;
-
-							if ($.isFunction(callback))
-							{
+						
+							if (typeof callback === 'function') {
 								callback.call(this, btnName);
 								this.observe.buttons(e, btnName);
-							}
-							else if (callback.search(/\./) != '-1')
-							{
+							} else if (callback.indexOf('.') !== -1) {
 								func = callback.split('.');
-								if (typeof this[func[0]] != 'undefined')
-								{
+								if (typeof this[func[0]] !== 'undefined') {
 									this[func[0]][func[1]](btnName);
 									this.observe.buttons(e, btnName);
 								}
-							}
-							else
-							{
-								this[callback](btnName);
-								this.observe.buttons(e, btnName);
+							} else {
+								if (typeof this[callback] === 'function') {
+									this[callback](btnName);
+									this.observe.buttons(e, btnName);
+								}
 							}
 						}
 					},
-					get: function(key)
-					{
+					get: function(key) {
 						return this.$toolbar.find('a.re-' + key);
 					},
-					setActive: function(key)
-					{
+					setActive: function(key) {
 						this.button.get(key).addClass('redactor-act');
 					},
-					setInactive: function(key)
-					{
+					setInactive: function(key) {
 						this.button.get(key).removeClass('redactor-act');
 					},
-					setInactiveAll: function(key)
-					{
-						if (typeof key == 'undefined')
-						{
+					setInactiveAll: function(key) {
+						if (typeof key == 'undefined') {
 							this.$toolbar.find('a.re-icon').removeClass('redactor-act');
 						}
-						else
-						{
+						else {
 							this.$toolbar.find('a.re-icon').not('.re-' + key).removeClass('redactor-act');
 						}
 					},
-					setActiveInVisual: function()
-					{
+					setActiveInVisual: function() {
 						this.$toolbar.find('a.re-icon').not('a.re-html').removeClass('redactor-button-disabled');
 					},
 					setInactiveInCode: function()

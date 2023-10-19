@@ -1,6 +1,9 @@
 <?php
 
 class Upfront_Module extends Upfront_Container {
+
+	public $_parent_data;
+	
 	protected $_type = 'Module';
 	protected $_children = 'objects';
 	protected $_child_view_class = 'Upfront_Object';

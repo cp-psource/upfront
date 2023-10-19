@@ -73,7 +73,7 @@
                             paramNames = $.isArray(options.paramName) ?
                                     options.paramName : [options.paramName];
                         iframe
-                            .unbind('load')
+                            .off('load')
                             .on('load', function () {
                                 var response;
                                 // Wrap in a try/catch block to catch exceptions thrown
@@ -161,7 +161,7 @@
                         // and prevents warning popups on HTTPS in IE6.
                         // concat is used to avoid the "Script URL" JSLint error:
                         iframe
-                            .unbind('load')
+                            .off('load')
                             .prop('src', 'javascript'.concat(':false;'));
                     }
                     if (form) {
