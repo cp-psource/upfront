@@ -194,11 +194,11 @@ EventManager.prototype.eventElement = function (element) {
 };
 
 EventManager.prototype.bind = function (element, eventName, handler) {
-  this.eventElement(element).on(eventName, handler);
+  this.eventElement(element).bind(eventName, handler);
 };
 
 EventManager.prototype.unbind = function (element, eventName, handler) {
-  this.eventElement(element).off(eventName, handler);
+  this.eventElement(element).unbind(eventName, handler);
 };
 
 EventManager.prototype.unbindAll = function () {
@@ -210,7 +210,7 @@ EventManager.prototype.unbindAll = function () {
 EventManager.prototype.once = function (element, eventName, handler) {
   var ee = this.eventElement(element);
   var onceHandler = function (e) {
-    ee.off(eventName, onceHandler);
+    ee.unbind(eventName, onceHandler);
     handler(e);
   };
   ee.on(eventName, onceHandler);
@@ -386,8 +386,8 @@ function bindClickRailHandler(element, i) {
   }
   var stopPropagation = function (e) { e.stopPropagation(); };
 
-  i.event.on(i.scrollbarY, 'click', stopPropagation);
-  i.event.on(i.scrollbarYRail, 'click', function (e) {
+  i.event.bind(i.scrollbarY, 'click', stopPropagation);
+  i.event.bind(i.scrollbarYRail, 'click', function (e) {
     var positionTop = e.pageY - window.pageYOffset - pageOffset(i.scrollbarYRail).top;
     var direction = positionTop > i.scrollbarYTop ? 1 : -1;
 
@@ -397,8 +397,8 @@ function bindClickRailHandler(element, i) {
     e.stopPropagation();
   });
 
-  i.event.on(i.scrollbarX, 'click', stopPropagation);
-  i.event.on(i.scrollbarXRail, 'click', function (e) {
+  i.event.bind(i.scrollbarX, 'click', stopPropagation);
+  i.event.bind(i.scrollbarXRail, 'click', function (e) {
     var positionLeft = e.pageX - window.pageXOffset - pageOffset(i.scrollbarXRail).left;
     var direction = positionLeft > i.scrollbarXLeft ? 1 : -1;
 
@@ -455,13 +455,13 @@ function bindMouseScrollXHandler(element, i) {
     i.event.off(i.ownerDocument, 'mousemove', mouseMoveHandler);
   };
 
-  i.event.on(i.scrollbarX, 'mousedown', function (e) {
+  i.event.bind(i.scrollbarX, 'mousedown', function (e) {
     currentPageX = e.pageX;
     currentLeft = _.toInt(dom.css(i.scrollbarX, 'left')) * i.railXRatio;
     _.startScrolling(element, 'x');
 
-    i.event.on(i.ownerDocument, 'mousemove', mouseMoveHandler);
-    i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+    i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+    i.event.bindce(i.ownerDocument, 'mouseup', mouseUpHandler);
 
     e.stopPropagation();
     e.preventDefault();
@@ -500,13 +500,13 @@ function bindMouseScrollYHandler(element, i) {
     i.event.off(i.ownerDocument, 'mousemove', mouseMoveHandler);
   };
 
-  i.event.on(i.scrollbarY, 'mousedown', function (e) {
+  i.event.bind(i.scrollbarY, 'mousedown', function (e) {
     currentPageY = e.pageY;
     currentTop = _.toInt(dom.css(i.scrollbarY, 'top')) * i.railYRatio;
     _.startScrolling(element, 'y');
 
-    i.event.on(i.ownerDocument, 'mousemove', mouseMoveHandler);
-    i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
+    i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
+    i.event.bindce(i.ownerDocument, 'mouseup', mouseUpHandler);
 
     e.stopPropagation();
     e.preventDefault();
@@ -530,10 +530,10 @@ var updateScroll = require('../update-scroll');
 
 function bindKeyboardHandler(element, i) {
   var hovered = false;
-  i.event.on(element, 'mouseenter', function () {
+  i.event.bind(element, 'mouseenter', function () {
     hovered = true;
   });
-  i.event.on(element, 'mouseleave', function () {
+  i.event.bind(element, 'mouseleave', function () {
     hovered = false;
   });
 
@@ -561,7 +561,7 @@ function bindKeyboardHandler(element, i) {
     return true;
   }
 
-  i.event.on(i.ownerDocument, 'keydown', function (e) {
+  i.event.bind(i.ownerDocument, 'keydown', function (e) {
     if ((e.isDefaultPrevented && e.isDefaultPrevented()) || e.defaultPrevented) {
       return;
     }
@@ -807,9 +807,9 @@ function bindMouseWheelHandler(element, i) {
   }
 
   if (typeof window.onwheel !== "undefined") {
-    i.event.on(element, 'wheel', mousewheelHandler);
+    i.event.bind(element, 'wheel', mousewheelHandler);
   } else if (typeof window.onmousewheel !== "undefined") {
-    i.event.on(element, 'mousewheel', mousewheelHandler);
+    i.event.bind(element, 'mousewheel', mousewheelHandler);
   }
 }
 
@@ -825,7 +825,7 @@ var instances = require('../instances');
 var updateGeometry = require('../update-geometry');
 
 function bindNativeScrollHandler(element, i) {
-  i.event.on(element, 'scroll', function () {
+  i.event.bind(element, 'scroll', function () {
     updateGeometry(element);
   });
 }
@@ -879,7 +879,7 @@ function bindSelectionHandler(element, i) {
   }
 
   var isSelected = false;
-  i.event.on(i.ownerDocument, 'selectionchange', function () {
+  i.event.bind(i.ownerDocument, 'selectionchange', function () {
     if (element.contains(getRangeNode())) {
       isSelected = true;
     } else {
@@ -887,20 +887,20 @@ function bindSelectionHandler(element, i) {
       stopScrolling();
     }
   });
-  i.event.on(window, 'mouseup', function () {
+  i.event.bind(window, 'mouseup', function () {
     if (isSelected) {
       isSelected = false;
       stopScrolling();
     }
   });
-  i.event.on(window, 'keyup', function () {
+  i.event.bind(window, 'keyup', function () {
     if (isSelected) {
       isSelected = false;
       stopScrolling();
     }
   });
 
-  i.event.on(window, 'mousemove', function (e) {
+  i.event.bind(window, 'mousemove', function (e) {
     if (isSelected) {
       var mousePosition = {x: e.pageX, y: e.pageY};
       var containerGeometry = {
@@ -1102,26 +1102,26 @@ function bindTouchHandler(element, i, supportsTouch, supportsIePointer) {
   }
 
   if (supportsTouch) {
-    i.event.on(window, 'touchstart', globalTouchStart);
-    i.event.on(window, 'touchend', globalTouchEnd);
-    i.event.on(element, 'touchstart', touchStart);
-    i.event.on(element, 'touchmove', touchMove);
-    i.event.on(element, 'touchend', touchEnd);
+    i.event.bind(window, 'touchstart', globalTouchStart);
+    i.event.bind(window, 'touchend', globalTouchEnd);
+    i.event.bind(element, 'touchstart', touchStart);
+    i.event.bind(element, 'touchmove', touchMove);
+    i.event.bind(element, 'touchend', touchEnd);
   }
 
   if (supportsIePointer) {
     if (window.PointerEvent) {
-      i.event.on(window, 'pointerdown', globalTouchStart);
-      i.event.on(window, 'pointerup', globalTouchEnd);
-      i.event.on(element, 'pointerdown', touchStart);
-      i.event.on(element, 'pointermove', touchMove);
-      i.event.on(element, 'pointerup', touchEnd);
+      i.event.bind(window, 'pointerdown', globalTouchStart);
+      i.event.bind(window, 'pointerup', globalTouchEnd);
+      i.event.bind(element, 'pointerdown', touchStart);
+      i.event.bind(element, 'pointermove', touchMove);
+      i.event.bind(element, 'pointerup', touchEnd);
     } else if (window.MSPointerEvent) {
-      i.event.on(window, 'MSPointerDown', globalTouchStart);
-      i.event.on(window, 'MSPointerUp', globalTouchEnd);
-      i.event.on(element, 'MSPointerDown', touchStart);
-      i.event.on(element, 'MSPointerMove', touchMove);
-      i.event.on(element, 'MSPointerUp', touchEnd);
+      i.event.bind(window, 'MSPointerDown', globalTouchStart);
+      i.event.bind(window, 'MSPointerUp', globalTouchEnd);
+      i.event.bind(element, 'MSPointerDown', touchStart);
+      i.event.bind(element, 'MSPointerMove', touchMove);
+      i.event.bind(element, 'MSPointerUp', touchEnd);
     }
   }
 }
@@ -1219,8 +1219,8 @@ function Instance(element) {
   i.scrollbarXRail = dom.appendTo(dom.e('div', 'ps-scrollbar-x-rail'), element);
   i.scrollbarX = dom.appendTo(dom.e('div', 'ps-scrollbar-x'), i.scrollbarXRail);
   i.scrollbarX.setAttribute('tabindex', 0);
-  i.event.on(i.scrollbarX, 'focus', focus);
-  i.event.on(i.scrollbarX, 'blur', blur);
+  i.event.bind(i.scrollbarX, 'focus', focus);
+  i.event.bind(i.scrollbarX, 'blur', blur);
   i.scrollbarXActive = null;
   i.scrollbarXWidth = null;
   i.scrollbarXLeft = null;
@@ -1238,8 +1238,8 @@ function Instance(element) {
   i.scrollbarYRail = dom.appendTo(dom.e('div', 'ps-scrollbar-y-rail'), element);
   i.scrollbarY = dom.appendTo(dom.e('div', 'ps-scrollbar-y'), i.scrollbarYRail);
   i.scrollbarY.setAttribute('tabindex', 0);
-  i.event.on(i.scrollbarY, 'focus', focus);
-  i.event.on(i.scrollbarY, 'blur', blur);
+  i.event.bind(i.scrollbarY, 'focus', focus);
+  i.event.bind(i.scrollbarY, 'blur', blur);
   i.scrollbarYActive = null;
   i.scrollbarYHeight = null;
   i.scrollbarYTop = null;

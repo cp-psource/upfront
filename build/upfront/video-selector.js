@@ -1,1 +1,463 @@
-!function(e){upfrontrjs.define(["text!elements/upfront-image/tpl/video_editor.html"],function(t){var o,i=Upfront.Settings.l10n.image_element,n=Upfront.Settings&&Upfront.Settings.l10n?Upfront.Settings.l10n.global.views:Upfront.mainData.l10n.global.views,r=Backbone.View.extend({selectorTpl:_.template(e(t).find("#selector-tpl").html()),progressTpl:_.template(e(t).find("#progress-tpl").html()),formTpl:_.template(e(t).find("#upload-form-tpl").html()),defaultOptions:{multiple:!1,multiple_sizes:!0,preparingText:n.preparing_video_upload},options:{},initialize:function(){this.setup_upload_form()},setup_upload_form:function(){var t=this;if(0===e("#upfront-upload-video").length){e("body").append(t.formTpl({url:Upfront.Settings.ajax_url,l10n:i.template})),e("body").on("keyup",function(e){27===e.keyCode&&t.closeOverlay()});var o=e("#upfront-progress"),r=e("#upfront-video-file-input"),a=e("#upfront-upload-video");a.fileupload&&a.fileupload({sequentialUploads:!0,formData:_.extend({action:"upfront-media-upload"},Upfront.Media.Ref),fileInput:null,paramName:"media[]"}).on("fileuploadstart",function(){o.css("width","0")}).on("fileuploadprogressall",function(e,t){var i=parseInt(t.loaded/t.total*100,10);o.css("width",i+"%")}).on("fileuploaddone",function(i,r){var l=r.result;o.css("width","100%"),e("#upfront-image-uploading h2").html(n.preparing_video_upload),t.onFileUploadDone(l),a[0].reset()}).on("fileuploadfail",function(e,o){var i;i="undefined"!==o.jqXHR.responseJSON&&o.jqXHR.responseJSON?o.jqXHR.responseJSON.error:o.jqXHR.statusText,Upfront.Views.Editor.notify(i,"error"),t.openSelector(),a[0].reset()}),r.on("change",function(){if(this.files.length){if(null===this.files[0].name.match(/\.(mp4|webm)$/))return void Upfront.Views.Editor.notify(n.allowed_video_type_error,"error");XMLHttpRequest&&(new XMLHttpRequest).upload?t.uploadVideo(this.files):t.openProgress(function(){a.fileupload("add",{fileInput:r})})}})}e("#upfront-upload-video").hide()},onFileUploadDone:function(t){var n=this;Upfront.Util.post({action:"upfront-media-video_info",video_id:t.data[0]}).done(function(i){var n=e("source",i.data.url).attr("src").split("?")[0];e("body").append('<video id="tempVideoForThumb" controls="controls" preload="none"></video>');var r=e("#tempVideoForThumb"),a=r[0],l=!1,s=function(){var e=n.split("/");e=e[e.length-1],e=e.split("."),e=e[0]+"-video-thumbnail.png",l=!0;var s=r.width(),p=r.height(),d=document.createElement("canvas"),u=Math.round(s/p*100)/100;d.width=s,d.height=p;var f=d.getContext("2d");f.drawImage(a,0,0,s,p);var c=d.toDataURL(),h={videoId:t.data[0],embed:i.data.url,width:s,height:p,aspect:u,base64image:c,thumbname:e,action:"upfront-save-video-info"};Upfront.Util.post(h).done(function(e){var n={id:t.data[0],embed:i.data.url,cover:e.data.thumburl,width:s,height:p,aspect:u};o.resolve(n),r.remove()})};a.addEventListener("canplay",function(){this.currentTime=0},!1),a.addEventListener("seeked",function(){l||s()},!1),a.src=n,a.load()}).error(function(){Upfront.Views.Editor.notify(i.sel.upload_error,"error"),n.openSelector()})},open:function(t){return o=e.Deferred(),_.isObject(t)||(t={}),this.options=_.extend({},this.defaultOptions,t),this.openSelector(),Upfront.Events.trigger("upfront:element:edit:start","media-upload"),o.promise()},openSelector:function(){var t=this;this.openOverlaySection(this.selectorTpl,{},function(){var o=e("#upfront-video-file-input");t.options.multiple===!0?(o.attr("multiple","multiple"),o.attr("name","media[]")):(o.attr("multiple",!1),o.removeAttr("multiple"),o.attr("name","media")),e("#upront-image-placeholder").on("dragenter",function(e){e.preventDefault(),e.stopPropagation()}).on("dragleave",function(t){t.preventDefault(),t.stopPropagation(),e(this).css("border-color","#C3DCF1"),e(this).css("background","none")}).on("dragover",function(t){t.preventDefault(),t.stopPropagation(),e(this).css("border-color","#1fcd8f"),e(this).css("background","rgba(255,255,255,.1)"),e(this).find()}).on("drop",function(e){var o;e.preventDefault(),e.stopPropagation(),e.originalEvent.dataTransfer&&(o=e.originalEvent.dataTransfer.files,o.length&&t.uploadVideo(o))}),t.resizeOverlay()})},openProgress:function(e){var t=this;this.openOverlaySection(this.progressTpl,{},function(){t.resizeOverlay(),e()})},resizeOverlay:function(){var t=e("#upfront-image-overlay");if(t.length){var o=e("#upront-image-placeholder"),i=e("#upfront-image-uploading"),n={},r=parseInt(e("#page").css("marginLeft"),10),a={left:r,width:e(window).width()-r,height:e(window).height()},l=a.height/2-220;l>0?(t.removeClass("small_placeholder"),l+="px"):(t.addClass("small_placeholder"),l=a.height/2-140+"px"),t.css(a),n={height:a.height-100,"padding-top":l},o.css(n),i.css(n)}},close:function(){this.closeOverlay()},cancelOverlay:function(e){e.target===e.currentTarget&&this.closeOverlay(e)},closeOverlay:function(){e("#upfront-image-overlay").off("click").fadeOut("fast",function(){e(this).remove(),e("#upfront-image-overlay").remove()}),e("html").css({overflow:this.bodyOverflow?this.bodyOverflow:"auto",height:"auto",width:"auto"}),e("body").removeClass("upfront-image-upload-open"),this.reopenSettings&&(e("#settings").fadeIn(),this.reopenSettings=!1),e(window).off("resize",this.resizeOverlay),Upfront.Events.trigger("upfront:element:edit:stop")},openOverlaySection:function(t,o,n){var r=this,a=e("#settings"),l=e("#upfront-image-overlay");return o.l10n=i.template,l.length?void e(".upfront-image-section").fadeOut("fast",function(){var i=e(t(o)).hide();l.append(i),i.fadeIn("fast"),e(this).remove(),n&&n(l)}):(this.bodyOverflow=e("html").css("overflow"),e("html").css({overflow:"hidden",width:e(window).width()+"px",height:e(window).height()+"px"}),l=e('<div id="upfront-image-overlay" class="upfront-ui"></div>').append(t(o)).hide(),e("body").append(l).addClass("upfront-image-upload-open"),this.setOverlayEvents(),l.fadeIn("fast"),this.resizeOverlay(),e(window).on("resize",function(e){e.target===window&&r.resizeOverlay()}),a.is(":visible")&&(a.fadeOut(),this.reopenSettings=!0),void(n&&n(l)))},setOverlayEvents:function(){var t=this;e("#upfront-image-overlay").on("click",function(e){t.cancelOverlay(e)}).on("click","a.select-files",function(e){t.openFileBrowser(e)}).on("click","a.open-media-gallery",function(e){t.openMediaGallery(e)})},openMediaGallery:function(t){var n=this,r={multiple_selection:this.options.multiple,multiple_sizes:this.options.multiple_sizes,media_type:["videos"]};t.preventDefault(),Upfront.Media.Manager.open(r).done(function(t,r){if(r&&r.length>0){var a=r.at(0).get("ID");Upfront.Util.post({action:"upfront-get-video-info",video_id:a}).done(function(e){o.resolve(e.data.videoinfo)}).error(function(){Upfront.Views.Editor.notify(i.sel.upload_error,"error"),n.openSelector()}),n.openProgress(function(){e("#upfront-image-uploading h2").html(n.options.preparingText)})}})},openFileBrowser:function(t){t.preventDefault(),e("#upfront-video-file-input").on('click',)},checkFileUpdate:function(){return!0},uploadVideo:function(t){var o=this;o.setup_upload_form(),this.openProgress(function(){e("#upfront-upload-video").fileupload("send",{files:t})})}});return r})}(jQuery);
+(function ($) {
+upfrontrjs.define([
+	'text!elements/upfront-image/tpl/video_editor.html'
+], function(editorTpl) {
+	var l10n = Upfront.Settings.l10n.image_element;
+	var l10nG = Upfront.Settings && Upfront.Settings.l10n
+		? Upfront.Settings.l10n.global.views
+		: Upfront.mainData.l10n.global.views;
+
+	// Had some mysterious issue with deferred not being the one we need,
+	// this resolves it.
+	var theOneDeferred;
+
+	var VideoSelector = Backbone.View.extend({
+		selectorTpl: _.template($(editorTpl).find('#selector-tpl').html()),
+		progressTpl: _.template($(editorTpl).find('#progress-tpl').html()),
+		formTpl: _.template($(editorTpl).find('#upload-form-tpl').html()),
+		defaultOptions: {multiple: false, multiple_sizes: true, preparingText: l10nG.preparing_video_upload},
+		options: {},
+
+
+		initialize: function(){
+			// Set the form up
+			this.setup_upload_form();
+		},
+		setup_upload_form : function(){
+			var me = this;
+			if ($('#upfront-upload-video').length === 0) {
+				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
+
+				$('body').on( 'keyup', function( event ) {
+					if ( event.keyCode === 27 )
+						me.closeOverlay();
+				});
+
+				var progress = $('#upfront-progress'),
+					fileInput = $('#upfront-video-file-input'),
+					form = $('#upfront-upload-video')
+				;
+
+				if (!!form.fileupload) {
+					form.fileupload({
+							sequentialUploads: true,
+							formData: _.extend({action: 'upfront-media-upload'}, Upfront.Media.Ref),
+							fileInput: null, // disable change listener, we handle it below
+							paramName: 'media[]' // due to previous options we have to set this manually
+						})
+						.on('fileuploadstart', function () {
+							progress.css('width', '0');
+						})
+						.on('fileuploadprogressall', function (e, data) {
+							var percent = parseInt(data.loaded / data.total * 100, 10);
+							progress.css('width', percent + '%');
+						})
+						.on('fileuploaddone', function (e, data) {
+							var response = data.result;
+							progress.css('width', '100%');
+							$('#upfront-image-uploading h2').html(l10nG.preparing_video_upload);
+							me.onFileUploadDone(response);
+							form[0].reset();
+						})
+						.on('fileuploadfail', function (e, response) {
+							var error;
+
+							// Check if responseJSON exist to prevent JS errors
+							if(response.jqXHR.responseJSON !== "undefined" && response.jqXHR.responseJSON) {
+								error = response.jqXHR.responseJSON.error;
+							} else {
+								error = response.jqXHR.statusText;
+							}
+
+							Upfront.Views.Editor.notify(error, 'error');
+							me.openSelector();
+							form[0].reset();
+						});
+				}
+
+				fileInput.on('change', function(){
+					if (this.files.length) {
+						if (this.files[0].name.match(/\.(mp4|webm)$/) === null) {
+							Upfront.Views.Editor.notify(l10nG.allowed_video_type_error, 'error');
+							return;
+						}
+						if(XMLHttpRequest && (new XMLHttpRequest()).upload) { //XHR uploads!
+							me.uploadVideo(this.files);
+						} else {
+							me.openProgress(function() {
+								form.fileupload('add', {
+									fileInput: fileInput
+								});
+							});
+						}
+					}
+				});
+			}
+			// Form never needs to be seen
+			$('#upfront-upload-video').hide();
+		},
+
+		onFileUploadDone: function(response) {
+			var me = this;
+			Upfront.Util.post({
+				action: 'upfront-media-video_info',
+				video_id: response.data[0]
+			})
+				.done(function(response2){
+					var filename = $('source', response2.data.url).attr('src').split('?')[0];
+					$('body').append('<video id="tempVideoForThumb" controls="controls" preload="none"></video>');
+
+					var $tempVideo = $('#tempVideoForThumb');
+					var tempVideo = $tempVideo[0];
+					var donethedead = false;
+
+					var getThumb = function() {
+						var thumbName = filename.split('/');
+						thumbName = thumbName[thumbName.length - 1];
+						thumbName = thumbName.split('.');
+						thumbName = thumbName[0] + '-video-thumbnail.png';
+
+						donethedead = true;
+
+						var width = $tempVideo.width();
+						var height = $tempVideo.height();
+						var canvas = document.createElement('canvas');
+						var aspect = Math.round(width/height*100)/100;
+						canvas.width = width;
+						canvas.height = height;
+
+						var ctx = canvas.getContext('2d');
+						ctx.drawImage(tempVideo, 0, 0, width, height);
+						var base64image = canvas.toDataURL();
+
+						// Let's generate thumbnail and save all info so we can pop it
+						// up when video is just chosen from media library
+						var data = {
+							videoId: response.data[0],
+							embed: response2.data.url,
+							width: width,
+							height: height,
+							aspect: aspect,
+							base64image: base64image,
+							thumbname: thumbName,
+							action: 'upfront-save-video-info'
+						};
+
+						Upfront.Util.post(data).done( function(response3) {
+							var videoData = {
+								id: response.data[0],
+								embed: response2.data.url,
+								cover: response3.data.thumburl,
+								width: width,
+								height: height,
+								aspect: aspect
+							};
+							theOneDeferred.resolve(videoData);
+							$tempVideo.remove();
+						});
+					};
+
+					tempVideo.addEventListener('canplay', function() {
+							this.currentTime = 0;
+					}, false);
+					tempVideo.addEventListener('seeked', function() {
+						if (donethedead) return;
+						    getThumb();
+					}, false);
+
+					tempVideo.src = filename;
+					tempVideo.load();
+				})
+			.error(function(){
+				Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
+				me.openSelector();
+			});
+		},
+
+		open: function(options) {
+			theOneDeferred = $.Deferred();
+
+			if(! _.isObject(options)) {
+				options = {};
+			}
+
+			this.options = _.extend({}, this.defaultOptions, options);
+
+			this.openSelector();
+
+			Upfront.Events.trigger('upfront:element:edit:start', 'media-upload');
+
+			return theOneDeferred.promise();
+		},
+
+		openSelector: function() {
+			var me = this;
+			this.openOverlaySection(this.selectorTpl, {}, function() {
+				var input = $('#upfront-video-file-input');
+				if (me.options.multiple === true) {
+					input.attr('multiple','multiple');
+					input.attr('name', 'media[]');
+				} else {
+					input.attr('multiple', false);
+					input.removeAttr('multiple');
+					input.attr('name', 'media');
+				}
+
+				$('#upront-image-placeholder')
+					.on('dragenter', function(e){
+						e.preventDefault();
+						e.stopPropagation();
+					})
+					.on('dragleave', function(e){
+						e.preventDefault();
+						e.stopPropagation();
+						$(this).css('border-color', '#C3DCF1');
+						$(this).css('background', 'none');
+					})
+					.on('dragover', function(e){
+						e.preventDefault();
+						e.stopPropagation();
+						$(this).css('border-color', '#1fcd8f');
+						$(this).css('background', 'rgba(255,255,255,.1)');
+						$(this).find();
+					})
+					.on('drop', function(e){
+						var files;
+						e.preventDefault();
+						e.stopPropagation();
+						if (e.originalEvent.dataTransfer) {
+							files = e.originalEvent.dataTransfer.files;
+
+							// Only call the handler if 1 or more files was dropped.
+							if (files.length) {
+									//input[0].files = files;
+									me.uploadVideo(files);
+							}
+						}
+					});
+
+				me.resizeOverlay();
+			});
+		},
+
+		openProgress: function(callback){
+			var me = this;
+			this.openOverlaySection(this.progressTpl, {}, function() {
+				me.resizeOverlay();
+				callback();
+			});
+		},
+
+		resizeOverlay: function(){
+			var overlay = $('#upfront-image-overlay');
+			if(!overlay.length) {
+				return;
+			}
+
+			var placeholder = $('#upront-image-placeholder'),
+				uploading = $('#upfront-image-uploading'),
+				phcss = {},
+				// Compensate positioning for sidebar.
+				left = parseInt($('#page').css('marginLeft'), 10),
+				style = {
+					left: left,
+					width: $(window).width() - left,
+					height: $(window).height()
+				},
+				ptop = (style.height / 2 - 220)
+			;
+
+			if(ptop > 0){
+				overlay.removeClass('small_placeholder');
+				ptop += 'px';
+			}
+			else {
+				overlay.addClass('small_placeholder');
+				ptop = (style.height / 2 - 140) + 'px';
+			}
+
+			overlay.css(style);
+			phcss = {
+				height: style.height - 100,
+				'padding-top':  ptop
+			};
+
+			placeholder.css(phcss);
+			uploading.css(phcss);
+		},
+
+		close: function() {
+			this.closeOverlay();
+		},
+
+		cancelOverlay: function(e) {
+			if(e.target === e.currentTarget) {
+				this.closeOverlay(e);
+			}
+		},
+		closeOverlay: function(){
+			$('#upfront-image-overlay')
+				.off('click')
+				.fadeOut('fast', function(){
+					$(this).remove();
+					$('#upfront-image-overlay').remove();
+				})
+			;
+
+			$('html').css({
+				overflow: this.bodyOverflow ? this.bodyOverflow : 'auto',
+				height: 'auto',
+				width: 'auto'
+			});
+
+			$('body').removeClass('upfront-image-upload-open');
+
+			if(this.reopenSettings){
+				$('#settings').fadeIn();
+				this.reopenSettings = false;
+			}
+
+			//Restart draggable
+			//this.parent_module_view.$('.upfront-editable_entity:first').draggable('enable');
+
+			$(window).off('resize', this.resizeOverlay);
+			Upfront.Events.trigger('upfront:element:edit:stop');
+		},
+
+		openOverlaySection: function(tpl, tplOptions, callback){
+			var me = this,
+				settings = $('#settings'),
+				overlay = $('#upfront-image-overlay')
+				//,parent = this.parent_module_view.$('.upfront-editable_entity:first')
+			;
+
+			tplOptions.l10n = l10n.template;
+
+			/*
+			if(!this.elementSize.width)
+				this.setElementSize();
+			*/
+			if(overlay.length){
+				$('.upfront-image-section').fadeOut('fast', function(){
+					var content = $(tpl(tplOptions)).hide();
+					overlay.append(content);
+					content.fadeIn('fast');
+					$(this).remove();
+					if(callback){
+						callback(overlay);
+					}
+				});
+				return;
+			}
+
+			this.bodyOverflow = $('html').css('overflow');
+			$('html')
+				.css({
+					overflow: 'hidden',
+					width: $(window).width() + 'px',
+					height: $(window).height() + 'px'
+				})
+			;
+
+			//Stop draggable
+			/*
+			if (parent.is(".ui-draggable"))
+				parent.draggable('disable');
+			*/
+
+			overlay = $('<div id="upfront-image-overlay" class="upfront-ui"></div>').append(tpl(tplOptions)).hide();
+
+			$('body')
+				.append(overlay)
+				.addClass('upfront-image-upload-open')
+			;
+
+
+			this.setOverlayEvents();
+
+			overlay.fadeIn('fast');
+			this.resizeOverlay();
+
+			$(window)
+				.on('resize', function(e){
+					if(e.target === window){
+						me.resizeOverlay();
+					}
+				})
+			;
+
+			if(settings.is(':visible')){
+				settings.fadeOut();
+				this.reopenSettings = true;
+			}
+
+			if(callback) {
+				callback(overlay);
+			}
+		},
+		setOverlayEvents: function() {
+			var me = this;
+			$('#upfront-image-overlay')
+				.on('click', function(e){
+					me.cancelOverlay(e);
+				})
+				.on('click', 'a.select-files', function(e){
+					me.openFileBrowser(e);
+				})
+				.on('click', 'a.open-media-gallery', function(e){
+					me.openMediaGallery(e);
+				})
+			;
+		},
+		openMediaGallery: function(e) {
+			var me = this,
+				opts = {
+					multiple_selection: this.options.multiple,
+					multiple_sizes: this.options.multiple_sizes,
+					media_type:['videos']
+				}
+			;
+			e.preventDefault();
+
+			Upfront.Media.Manager.open(opts)
+				.done(function(popup, result){
+					if(result && result.length > 0){
+						var video_id = result.at(0).get('ID');
+						Upfront.Util.post({
+							action: 'upfront-get-video-info',
+							video_id: video_id
+						})
+							.done(function(response2){
+								theOneDeferred.resolve(response2.data.videoinfo);
+							})
+						.error(function(){
+							Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
+							me.openSelector();
+						});
+
+						me.openProgress(function(){
+							$('#upfront-image-uploading h2').html(me.options.preparingText);
+						});
+					}
+				})
+			;
+		},
+		openFileBrowser: function(e){
+			e.preventDefault();
+			$('#upfront-video-file-input').on('click',);
+		},
+		checkFileUpdate: function(){
+			 return true;
+		},
+		uploadVideo: function(files){
+			var me = this;
+			me.setup_upload_form();
+			this.openProgress(function() {
+				$('#upfront-upload-video').fileupload('send', {files: files});
+			});
+		}
+	});
+
+	return VideoSelector;
+});
+})(jQuery);

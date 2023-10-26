@@ -1829,7 +1829,7 @@
 				this.inserts = opts.inserts || {};
 				this._inserts = {};
 				this.ueditor = opts.ueditor;
-				this.onRemoveInsert = _.on(this.removeInsert, this);
+				this.onRemoveInsert = _.bind(this.removeInsert, this);
 				this.insertsData = opts.insertsData || {};
 				this.deletedInserts = {};
 				this.$el.children().addClass('nosortable');

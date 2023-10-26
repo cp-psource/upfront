@@ -528,11 +528,11 @@
                 this.spectrumOptions = spectrumOptions;
 
 
-                spectrumOptions.move = _.on( this.on_spectrum_move, this ) ;
+                spectrumOptions.move = _.bind( this.on_spectrum_move, this ) ;
 
-                spectrumOptions.show = _.on( this.on_spectrum_show, this );
+                spectrumOptions.show = _.bind( this.on_spectrum_show, this );
 
-                spectrumOptions.beforeShow = _.on( this.on_spectrum_beforeShow, this );
+                spectrumOptions.beforeShow = _.bind( this.on_spectrum_beforeShow, this );
 
                 /**
                  * Wrap the hide callback so we can re-use it.
@@ -682,7 +682,7 @@
 				}
 
 				if( this.options.spectrum && !this.options.spectrum.flat && ( !this.field_options || !this.field_options.flat ) && this.field_options.hideOnOuterClick )
-					$("html").on('mousedown', _.on( this.hide_on_outer_click, this ) );
+					$("html").on('mousedown', _.bind( this.hide_on_outer_click, this ) );
 			},
 			on_spectrum_beforeShow: function(color){
 				if( color instanceof Object ){
@@ -729,7 +729,7 @@
 				this.revert();
 				this.$(".sp-container").addClass("sp-hidden"); //  hide
 				Upfront.Events.trigger("color:spectrum:hide");
-                $("html").off('mousedown', _.on( this.hide_on_outer_click, this ) );
+                $("html").off('mousedown', _.bind( this.hide_on_outer_click, this ) );
             },
             revert: function(){
                 this.$spectrum.trigger("click.spectrum"); // trigger cancel

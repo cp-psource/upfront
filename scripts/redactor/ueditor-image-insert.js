@@ -14,7 +14,7 @@ var ImageInsert = base.ImageInsertBase.extend({
     create_controlls: function(group_width_cls){
         this.controlsData = [
             {id: 'link', type: 'dialog', icon: 'link', tooltip: 'Link image', view: this.getLinkView()},
-            {id: 'toggle_caption', type: 'simple', icon: 'caption', tooltip: 'Toggle Caption', active: _.on( this.get_caption_state, this ) }
+            {id: 'toggle_caption', type: 'simple', icon: 'caption', tooltip: 'Toggle Caption', active: _.bind( this.get_caption_state, this ) }
         ];
 
         if( this.allow_alignment( group_width_cls ) )
