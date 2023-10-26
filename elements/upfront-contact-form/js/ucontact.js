@@ -71,7 +71,7 @@ var UcontactView = Upfront.Views.ObjectView.extend({
 			props = PresetUtil.getPresetProperties('contact', preset) || {}
 		;
 
-		if (_.size(props) <= 0) return false; // No properties, carry on
+		if (props.length <= 0) return false; // No properties, carry on
 
 		PresetUtil.updatePresetStyle('contact', props, settingsStyleTpl);
 

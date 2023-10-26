@@ -59,7 +59,7 @@ define([
 				props = PresetUtil.getPresetProperties('tab', preset) || {}
 			;
 
-			if (_.size(props) <= 0) return false; // No properties, carry on
+			if (props.length <= 0) return false; // No properties, carry on
 
 			PresetUtil.updatePresetStyle('tab', props, settingsStyleTpl);
 
