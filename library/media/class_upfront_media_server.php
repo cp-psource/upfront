@@ -144,7 +144,7 @@ class Upfront_MediaServer extends Upfront_Server {
 			'image_title' => __('Bildtitel', 'upfront'),
 			'your_image_title' => __('Dein Bildtitel', 'upfront'),
 			'n_of_x' => _x("von", "N von X", 'upfront'),
-			'entity_list_info' => __('{{items}} Medium', 'upfront'),
+			'entity_list_info' => __('{{items}} Medien', 'upfront'),
 			'filter' => array(
 				'images' => __('Bilder', 'upfront'),
 				'videos' => __('Videos', 'upfront'),

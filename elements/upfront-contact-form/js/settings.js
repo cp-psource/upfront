@@ -311,7 +311,7 @@ define([
 							options: {
 								state: 'static-fields',
 								title: '',
-								label: 'Fields Border',
+								label: 'Feldrahmen',
 								fields: {
 									use: 'static-fields-useborder',
 									width: 'static-fields-borderwidth',
@@ -325,7 +325,7 @@ define([
 							options: {
 								state: 'static-button',
 								title: '',
-								label: 'Button Border',
+								label: 'Button-Rahmen',
 								fields: {
 									use: 'static-button-useborder',
 									width: 'static-button-borderwidth',
@@ -392,7 +392,7 @@ define([
 							options: {
 								state: 'hover-fields',
 								title: '',
-								label: 'Fields Border',
+								label: 'Feldrahmen',
 								prepend: 'hover-',
 								prefix: 'static',
 								fields: {
@@ -408,7 +408,7 @@ define([
 							options: {
 								state: 'hover-button',
 								title: '',
-								label: 'Button Border',
+								label: 'Button-Rahmen',
 								prepend: 'hover-',
 								prefix: 'static',
 								fields: {
@@ -465,7 +465,7 @@ define([
 							options: {
 								state: 'focus-button',
 								title: '',
-								label: 'Button Border',
+								label: 'Button-Rahmen',
 								prepend: 'focus-',
 								prefix: 'static',
 								fields: {
