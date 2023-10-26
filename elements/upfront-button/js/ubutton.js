@@ -136,7 +136,7 @@ var ButtonView = Upfront.Views.ObjectView.extend({
 			props = PresetUtil.getPresetProperties('button', preset) || {}
 		;
 
-		if (props.length <= 0) return false; // No properties, carry on
+		if (_.size(props) <= 0) return false; // No properties, carry on
 
 		PresetUtil.updatePresetStyle('button', props, settingsStyleTpl);
 

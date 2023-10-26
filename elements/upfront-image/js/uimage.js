@@ -158,7 +158,7 @@ define([
 
 			var props = this.get_preset_properties();
 
-			if (props.length <= 0) return false; // No properties, carry on
+			if (_.size(props) <= 0) return false; // No properties, carry on
 
 			PresetUtil.updatePresetStyle('gallery', props, settingsStyleTpl);
 
