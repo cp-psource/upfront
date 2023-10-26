@@ -4442,7 +4442,7 @@ msgid "Inline"
 msgstr "Inline"
 
 #: elements/upfront-contact-form/lib/contact_form.php:545
-msgid "Inline mit Feld"
+msgid "Vor dem Feld"
 msgstr "Inline with field"
 
 #: library/servers/class_upfront_editor_l10n_server.php:583
@@ -9020,7 +9020,7 @@ msgid "Über Bild, unten"
 msgstr "Above image, below"
 
 #: elements/upfront-contact-form/lib/contact_form.php:544
-msgid "Über das Feld"
+msgid "Im Feld"
 msgstr "About the field"
 
 #: elements/upfront-image/lib/uimage.php:225

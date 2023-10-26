@@ -542,8 +542,8 @@ class Upfront_UcontactView extends Upfront_Object {
 			'apr' => array(
 				'label' => __('Darstellung', 'upfront'),
 				'above' => __('Über dem Feld', 'upfront'),
-				'over' => __('Über das Feld', 'upfront'),
-				'inline' => __('Inline mit Feld', 'upfront'),
+				'over' => __('Im Feld', 'upfront'),
+				'inline' => __('Vor dem Feld', 'upfront'),
 			),
 			'settings' => __('Kontaktformular-Einstellungen', 'upfront'),
 			'colors_label' => __('Farben', 'upfront'),
