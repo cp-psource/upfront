@@ -5,7 +5,7 @@ Theme URI: https://upfront.n3rds.work/
 Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.9.8
+Stable tag: 1.9.9
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -112,6 +112,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Update Pako.js
 * Fix: Trying to access array offset on value of type null
 * Fix: Uncaught Error: Call to a member function
+* Fix: Deprecated jQuery
 
 = 1.9.8 =
 

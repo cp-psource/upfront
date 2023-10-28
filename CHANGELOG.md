@@ -1,7 +1,7 @@
 Change Log
 ============
 
-1.9.9- 2023-08-02
+1.9.9 - 2023-10-26
 -------------------------------------------------------------------------------
 - Fix: sizeof(): must be of type Countable|array
 - Optimierung: CSS Editor-Sidebar
@@ -15,6 +15,7 @@ Change Log
 - Fix: Prevent setting alt=String("undefined")
 - Update Pako.js
 - Fix: Uncaught Error: Call to a member function
+- Fix: Deprecated jQuery
 
 1.9.8 - 2023-08-02
 -------------------------------------------------------------------------------
