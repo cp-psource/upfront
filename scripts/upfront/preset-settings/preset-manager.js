@@ -117,7 +117,7 @@ define([
 			if(preset === "default") {
 				setTimeout( function() {
 					//Wrap settings and preset styles
-					me.$el.find('.preset_specific').next().andSelf().wrapAll('<div class="default-overlay-wrapper" />');
+					me.$el.find('.preset_specific').next().addBack().wrapAll('<div class="default-overlay-wrapper" />');
 
 					//Append overlay div
 					me.$el.find('.default-overlay-wrapper').append('<div class="default-overlay">' +
@@ -198,19 +198,6 @@ define([
 			if(typeof presetModel === "undefined") {
 				presetModel = this.presets.findWhere({id: 'default'});
 			}
-
-			// Fixing responsive presets issue - don't even try to understand - black magic
-			var p = this.model.get_property_by_name('breakpoint_presets');
-			if (false === (typeof p === 'undefined' || typeof p.get !== 'function' || typeof p.set !== 'function')) {
-				p =  p.get('value');
-				var n = {
-					desktop: p.desktop || '',
-					mobile: p.mobile || '',
-					tablet: p.tablet || ''
-				};
-				this.model.get_property_by_name('breakpoint_presets').set('value', n);
-			}
-			// end of black magic
 
 			// Add items
 			if (this.selectPresetModule && this.selectPresetModule.stopListening) {
@@ -297,7 +284,7 @@ define([
 				this.editPresetModule,
 				this.presetCssModule
 			]);
-
+			
 			this.stopListening(Upfront.Events, 'element:settings:canceled');
 			this.listenToOnce(Upfront.Events, 'element:settings:canceled', function() {
 				_.each(this.backupPreset, function (backupPreset) {
@@ -342,7 +329,7 @@ define([
 			this.debouncedSavePreset(properties);
 
 			this.updateMainDataCollectionPreset(properties);
-
+			
 			this.presets.findWhere({id: properties.id}).clear().set(properties);
 		},
 
@@ -392,7 +379,7 @@ define([
 			if (!elementStyleName) elementStyleName = '_default';
 
 			// If element style is not default we should add _default too
-			if(elementStyleName !== '_default') {
+			if (elementStyleName !== '_default') {
 				// We need to initialize cssEditor to get element styles
 				Upfront.Application.cssEditor.init({
 					model: this.model,
@@ -400,17 +387,17 @@ define([
 					no_render: true
 				});
 
-				//Get _default styles
-				default_style = $.trim(Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
+				// Get _default styles
+				default_style = Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page').trim();
 
-				//Make sure we remove #page from default classes
+				// Make sure we remove #page from default classes
 				default_style = default_style.replace(/#page/g, '');
 
-				//Normalize styles
+				// Normalize styles
 				default_style = this.migrateDefaultStyle(default_style);
 
-				//Prepend styles with preset
-				default_style = Upfront.Application.stylesAddSelectorMigration($.trim(default_style), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
+				// Prepend styles with preset
+				default_style = Upfront.Application.stylesAddSelectorMigration(default_style.trim(), '#page .' + presetName.toLowerCase().replace(/ /g, '-').trim());
 			}
 
 			// We need to initialize cssEditor to get element styles
@@ -420,17 +407,17 @@ define([
 				no_render: true
 			});
 
-			var style = $.trim(Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
+			var style = Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page').trim();
 
-			//Apply style only for the current preset
+			// Apply style only for the current preset
 			style = style.replace(new RegExp(elementStyleName, 'g'), presetName.toLowerCase().replace(/ /g, '-'));
 
-			if(elementStyleName !== '_default') {
-				style = default_style + style;
+			if (elementStyleName !== '_default') {
+				style = default_style.trim() + style;
 			} else {
-				//Normalize styles
+				// Normalize styles
 				style = this.migrateDefaultStyle(style);
-				style = Upfront.Application.stylesAddSelectorMigration($.trim(style), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
+				style = Upfront.Application.stylesAddSelectorMigration(style.trim(), '#page .' + presetName.toLowerCase().replace(/ /g, '-').trim());
 			}
 
 			//Migrate element styles

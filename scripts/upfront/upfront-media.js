@@ -2748,7 +2748,7 @@ define([
 				me.load(options);
 			}, {width: 800, hold_editor: options.hold_editor}, 'media-manager');
 
-			popup.always(_.bind(this.cleanup_active_filters, this));
+			popup.always(_.on(this.cleanup_active_filters, this));
 			popup.progress($.proxy(this.clean_up, this));
 
 			Upfront.Events.trigger('upfront:element:edit:start', 'media-upload');

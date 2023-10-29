@@ -257,7 +257,7 @@
                 catch (e) { }
             }
 
-            offsetElement.bind("click.spectrum touchstart.spectrum", function (e) {
+            offsetElement.on("click.spectrum touchstart.spectrum", function (e) {
                 if (!disabled) {
                     toggle();
                 }
@@ -274,24 +274,24 @@
             }
 
             // Prevent clicks from bubbling up to document.  This would cause it to be hidden.
-            container.click(stopPropagation);
+            container.on('click',stopPropagation);
 
             // Handle user typed input
-            textInput.change(setFromTextInput);
-            textInput.bind("paste", function () {
+            textInput.on('change',setFromTextInput);
+            textInput.on("paste", function () {
                 setTimeout(setFromTextInput, 1);
             });
             textInput.keydown(function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
 
             cancelButton.text(opts.cancelText);
-            cancelButton.bind("click.spectrum", function (e) {
+            cancelButton.on("click.spectrum", function (e) {
                 e.stopPropagation();
                 e.preventDefault();
                 hide("cancel");
             });
 
             chooseButton.text(opts.chooseText);
-            chooseButton.bind("click.spectrum", function (e) {
+            chooseButton.on("click.spectrum", function (e) {
                 e.stopPropagation();
                 e.preventDefault();
                 if (isValid()) {
@@ -384,8 +384,8 @@
             }
 
             var paletteEvent = IE ? "mousedown.spectrum" : "click.spectrum touchstart.spectrum";
-            paletteContainer.delegate(".sp-thumb-el", paletteEvent, { ignore: true }, palletElementClick);
-            initialColorContainer.delegate(".sp-thumb-el:nth-child(1)", paletteEvent, { ignore: true }, palletElementClick);
+            paletteContainer.on(paletteEvent, ".sp-thumb-el", { ignore: true }, palletElementClick);
+            initialColorContainer.on(paletteEvent, ".sp-thumb-el:nth-child(1)", { ignore: true }, palletElementClick);
         }
 
         function addColorToSelectionPalette(color) {
@@ -511,8 +511,8 @@
             hideAll();
             visible = true;
 
-            $(doc).bind("click.spectrum", hide);
-            $(window).bind("resize.spectrum", resize);
+            $(doc).on("click.spectrum", hide);
+            $(window).on("resize.spectrum", resize);
             replacer.addClass("sp-active");
             container.removeClass("sp-hidden");
 
@@ -538,8 +538,8 @@
             if (!visible || flat) { return; }
             visible = false;
 
-            $(doc).unbind("click.spectrum", hide);
-            $(window).unbind("resize.spectrum", resize);
+            $(doc).off("click.spectrum", hide);
+            $(window).off("resize.spectrum", resize);
 
             replacer.removeClass("sp-active");
             container.addClass("sp-hidden");
@@ -719,7 +719,7 @@
             // Update the selection palette with the current color
             addColorToSelectionPalette(color);
             // if (hasChanged) {
-            callbacks.change(color);
+            callbacks.on('change',color);
             //}
             if (fireCallback) {
                 boundElement.trigger('change.spectrum', [ color ]);
@@ -754,7 +754,7 @@
 
         function destroy() {
             boundElement.show();
-            offsetElement.unbind("click.spectrum touchstart.spectrum");
+            offsetElement.off("click.spectrum touchstart.spectrum");
             container.remove();
             replacer.remove();
             spectrums[spect.id] = null;
@@ -930,7 +930,7 @@
                     maxWidth = $(element).width();
                     offset = $(element).offset();
 
-                    $(doc).bind(duringDragEvents);
+                    $(doc).on(duringDragEvents);
                     $(doc.body).addClass("sp-dragging");
 
                     if (!hasTouch) {
@@ -943,14 +943,14 @@
         }
         function stop() {
             if (dragging) {
-                $(doc).unbind(duringDragEvents);
+                $(doc).off(duringDragEvents);
                 $(doc.body).removeClass("sp-dragging");
                 onstop.apply(element, arguments);
             }
             dragging = false;
         }
 
-        $(element).bind("touchstart mousedown", start);
+        $(element).on("touchstart mousedown", start);
     }
 
     function throttle(func, wait, debounce) {

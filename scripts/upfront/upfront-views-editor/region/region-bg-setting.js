@@ -66,7 +66,7 @@
 
 				// Preserve background settings element event binding by detaching them before resetting html
 				$content.find('.upfront-region-bg-setting-tab-primary, .upfront-region-bg-setting-tab-secondary').children().detach();
-				
+
 				$content.html(setting);
 				$modal.addClass('upfront-region-modal-bg');
 
@@ -87,7 +87,7 @@
 				if ( $bg_settings_content ) {
 					// Set max height
 					this.set_settings_content_max_height();
-					
+
 					// Add JS Scrollbar.
 					perfectScrollbar.withDebounceUpdate(
 						// Element.
@@ -109,14 +109,14 @@
 						$($bg_settings_content).css('position', 'relative');
 					});
 				}
-				
+
 				// If region settings sidebar.
 				if (this.$el.parent().attr('id') === 'region-settings-sidebar') {
 					// Save region data for later resetting.
 					this.save_current_models();
 				}
 			},
-			
+
 			set_settings_content_max_height: function() {
 				var height = this.$el.height(),
 					titleHeight = this.$el.find('.upfront-region-bg-setting-header').first().outerHeight(true),
@@ -192,12 +192,11 @@
 						},
 						blur: function () {
 							var collection = this.model.collection,
-								prev_title = this.model.get('title'),
-								prev_name = this.model.get('name'),
-								title = $.trim(this.get_value().replace(/[^A-Za-z0-9\s_-]/g, '')), // strict filtering to prevent unwanted character
-								name = title.toLowerCase().replace(/\s/g, '-'),
-								new_title, sub_regions, region_css
-							;
+							prev_title = this.model.get('title'),
+							prev_name = this.model.get('name'),
+							title = this.get_value().replace(/[^A-Za-z0-9\s_-]/g, ''), // strict filtering to prevent unwanted characters
+							name = title.toLowerCase().replace(/\s/g, '-').trim(),
+							new_title, sub_regions, region_css;
 							if ( prev_title != title ) {
 								// Check if the region name exists
 								if ( collection.get_by_name(name) ) {
@@ -751,7 +750,7 @@
 					no_render: true
 				});
 				return {
-					styles: $.trim(Upfront.Application.cssEditor.get_style_element().html()),
+					styles: Upfront.Application.cssEditor.get_style_element().html(),
 					selector: Upfront.Application.cssEditor.get_css_selector()
 				};
 			},
@@ -855,7 +854,7 @@
 								thecollection.remove(sub_model);
 						});
 					}
-	
+
 					// Close settings and edit mode.
 					this.close();
 
@@ -921,7 +920,7 @@
 				// resize settings content
 				this.set_settings_content_max_height();
 			},
-			
+
 			// Close Region Settings Sidebar.
 			on_click_cancel: function() {
 				this.reset_models();

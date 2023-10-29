@@ -78,7 +78,7 @@ define([
 
 		_Upfront_SingularEditor = Backbone.View.extend(_.extend({}, _Upfront_ViewMixin, {
 			initialize: function (opts) {
-				// this.model.bind("change", this.render, this);
+				// this.model.on("change", this.render, this);
 				this.options = opts;
 				this.listenTo(this.model, "change", this.render);
 				if (this.init) this.init();
@@ -287,7 +287,7 @@ define([
 						false === Upfront.plugins.isForbiddenByPlugin('initialize featured image selector')
 				) {
 					var feature_selector = $('<a href="#" class="feature_image_selector">' + l10n.add_featured_image + '</a>');
-					feature_selector.bind('click', function() {
+					feature_selector.on('click', function() {
 						Upfront.Views.Editor.ImageSelector.open().done(function(images){
 							var sizes = {},
 								imageId = 0
@@ -1182,9 +1182,7 @@ define([
 			},
 			updateAdvancedPadding: function() {
 				var me = this;
-				if ( me.model.get_breakpoint_property_value('use_padding') != 0 ) {
-					me.model.set_breakpoint_property('use_padding', 'yes', true);
-				}
+				me.model.set_breakpoint_property('use_padding', 'yes', true);
 				if ( me.$control_el ) {
 					var advancedPaddingControl = me.$control_el.find('.upfront-element-controls .upfront-field-advanced-padding');
 					if ( advancedPaddingControl.length > 0 ) {
@@ -1276,9 +1274,9 @@ define([
 
 		_Upfront_PluralEditor = Backbone.View.extend(_.extend({}, _Upfront_ViewMixin, {
 			initialize: function () {
-				// this.model.bind("change", this.render, this);
-				// this.model.bind("add", this.render, this);
-				// this.model.bind("remove", this.render, this);
+				// this.model.on("change", this.render, this);
+				// this.model.on("add", this.render, this);
+				// this.model.on("remove", this.render, this);
 				this.listenTo(this.model, 'change', this.render);
 				this.listenTo(this.model, 'add', this.render);
 				this.listenTo(this.model, 'remove', this.render);
@@ -1623,7 +1621,7 @@ define([
 				this.$el.empty().addClass(cls);
 				this.$el.append(this.label);
 
-				this.$el.bind('click', function(e) {
+				this.$el.on('click', function(e) {
 					e.preventDefault();
 					me.action(this.for_view, e);
 					Upfront.Events.trigger("entity:contextmenu:deactivate", this);
@@ -3189,8 +3187,8 @@ define([
 					if ( ! Upfront.data.object_views[obj.cid] ){
 						this.listenTo(local_view, 'upfront:entity:activate', this.on_activate);
 						this.listenTo(local_view.model, 'remove', this.deactivate);
-						//local_view.bind("upfront:entity:activate", this.on_activate, this);
-						//local_view.model.bind("remove", this.deactivate, this);
+						//local_view.on("upfront:entity:activate", this.on_activate, this);
+						//local_view.model.on("remove", this.deactivate, this);
 						//local_view.listenTo(local_view.model, "remove", this.deactivate);
 						Upfront.data.object_views[obj.cid] = local_view;
 					}
@@ -3314,7 +3312,7 @@ define([
 			remove_model: function (model) {
 				var view = Upfront.data.object_views[model.cid];
 				if ( !view ) return;
-				view.unbind();
+				view.off();
 				view.remove();
 				delete Upfront.data.object_views[model.cid];
 			},
@@ -3893,7 +3891,7 @@ define([
 
 				// Add Hover Class on group resize handle hover.
 				me = this;
-				this.$el.parent().find('.upfront-resize-handle-wrapper').hover(function() {
+				this.$el.parent().find('.upfront-resize-handle-wrapper').on('mouseenter',function() {
 					me.$el.addClass('upfront-module-group-handle-hover');
 				}, function() {
 					me.$el.removeClass('upfront-module-group-handle-hover');
@@ -4699,8 +4697,8 @@ define([
 						local_view.render();
 					}
 					if ( ! Upfront.data.module_views[module.cid] ){
-						//local_view.bind("upfront:entity:activate", this.on_activate, this);
-						//local_view.model.bind("remove", this.deactivate, this);
+						//local_view.on("upfront:entity:activate", this.on_activate, this);
+						//local_view.model.on("remove", this.deactivate, this);
 						//local_view.listenTo(local_view.model, 'remove', this.deactivate);
 
 						this.listenTo(local_view, 'upfront:entity:activate', this.on_activate);
@@ -4780,7 +4778,7 @@ define([
 			remove_model: function (model) {
 				var view = Upfront.data.module_views[model.cid];
 				if ( !view ) return;
-				view.unbind();
+				view.off();
 				view.remove();
 				delete Upfront.data.module_views[model.cid];
 			},
@@ -5092,9 +5090,9 @@ define([
 				this.max_col = width ? Upfront.Util.width_to_col(width) : grid.size;
 				this.available_col = this.max_col;
 
-				// this.model.get("properties").bind("change", this.update, this);
-				// this.model.get("properties").bind("add", this.update, this);
-				// this.model.get("properties").bind("remove", this.update, this);
+				// this.model.get("properties").on("change", this.update, this);
+				// this.model.get("properties").on("add", this.update, this);
+				// this.model.get("properties").on("remove", this.update, this);
 				this.listenTo(this.model.get("properties"), 'change', this.update);
 				this.listenTo(this.model.get("properties"), 'add', this.update);
 				this.listenTo(this.model.get("properties"), 'remove', this.update);
@@ -5582,7 +5580,7 @@ define([
 			},
 			on_change_breakpoint:  function () {
 				this.update_pos();
-				//_.delay(this.update_pos.bind(this), 200);
+				//_.delay(this.update_pos.on(this), 200);
 			},
 			on_grid_update: function () {
 				this.update_pos();
@@ -5780,11 +5778,11 @@ define([
 				this.collection = this.model.collection;
 				this.listenTo(this.dispatcher, 'plural:propagate_activation', this.on_mouse_up);
 				//this.dispatcher.on("plural:propagate_activation", this.on_mouse_up, this);
-				// this.model.get("properties").bind("change", this.update, this);
-				// this.model.get("properties").bind("add", this.update, this);
-				// this.model.get("properties").bind("remove", this.update, this);
-				// this.model.get("modules").bind("change", this.on_module_update, this);
-				// this.model.get("modules").bind("add", this.on_module_update, this);
+				// this.model.get("properties").on("change", this.update, this);
+				// this.model.get("properties").on("add", this.update, this);
+				// this.model.get("properties").on("remove", this.update, this);
+				// this.model.get("modules").on("change", this.on_module_update, this);
+				// this.model.get("modules").on("add", this.on_module_update, this);
 				this.listenTo(this.model.get("properties"), 'change', this.update);
 				this.listenTo(this.model.get("properties"), 'add', this.update);
 				this.listenTo(this.model.get("properties"), 'remove', this.update);
@@ -6753,8 +6751,8 @@ define([
 				var me = this;
 				this.$bg.insertBefore(this.$el);
 				if(this.model.get_property_value_by_name('click_out_close') == 'yes') {
-					this.$bg.unbind('click');
-					this.$bg.bind('click', function() {
+					this.$bg.off('click');
+					this.$bg.on('click', function() {
 						me.hide();
 					});
 				}
@@ -6816,12 +6814,12 @@ define([
 				var me = this;
 
 				if(this.model.get_property_value_by_name('click_out_close') == 'yes') {
-					this.$bg.unbind('click');
-					this.$bg.bind('click', function() {
+					this.$bg.off('click');
+					this.$bg.on('click', function() {
 						me.hide();
 					});
 				} else {
-					this.$bg.unbind('click');
+					this.$bg.off('click');
 				}
 
 				this.$bg.css('background-color', this.model.get_property_value_by_name('overlay_color') );
@@ -7019,17 +7017,17 @@ define([
 					container_view.listenTo(local_view, "region_update", container_view.on_region_update);
 					container_view.listenTo(local_view, "region_changed", container_view.on_region_changed);
 /*
-					local_view.bind("region_render", container_view.on_region_render, container_view);
-					local_view.bind("region_update", container_view.on_region_update, container_view);
-					local_view.bind("region_changed", container_view.on_region_changed, container_view);
+					local_view.on("region_render", container_view.on_region_render, container_view);
+					local_view.on("region_update", container_view.on_region_update, container_view);
+					local_view.on("region_changed", container_view.on_region_changed, container_view);
 					*/
 					if ( region.is_main() )
-						//container_view.bind("region_resize", local_view.region_resize, local_view);
+						//container_view.on("region_resize", local_view.region_resize, local_view);
 						local_view.listenTo(container_view, 'region_resize', local_view.region_resize);
 					else
 						container_view.add_sub_model(region);
 					local_view.render();
-					//local_view.bind("activate_region", this.activate_region, this);
+					//local_view.on("activate_region", this.activate_region, this);
 					this.listenTo(local_view, 'activate_region', this.activate_region);
 					Upfront.data.region_views[region.cid] = local_view;
 				}
@@ -7132,18 +7130,18 @@ define([
 					sub_container_view = this.sub_container_views[model.cid];
 				delete Upfront.data.region_views[model.cid];
 				if ( view.region_panels ){
-					view.region_panels.unbind();
+					view.region_panels.off();
 					view.region_panels.remove();
 				}
 				if ( view.bg_setting ){
-					view.bg_setting.unbind();
+					view.bg_setting.off();
 					view.bg_setting.remove();
 				}
 				if ( view.edit_position ){
-					view.edit_position.unbind();
+					view.edit_position.off();
 					view.edit_position.remove();
 				}
-				view.unbind();
+				view.off();
 				view.remove();
 				if ( container_view){
 					if ( container_view.sub_model.length > 0 ) {
@@ -7162,16 +7160,16 @@ define([
 					if ( !Upfront.data.region_views[container_view.model.cid] && container_view.sub_model.length == 0 ){
 						delete this.container_views[container_view.model.cid];
 						if ( container_view.region_fixed_panels ){
-							container_view.region_fixed_panels.unbind();
+							container_view.region_fixed_panels.off();
 							container_view.region_fixed_panels.remove();
 						}
-						container_view.unbind();
+						container_view.off();
 						container_view.remove();
 					}
 				}
 				if ( sub_container_view ){
 					delete this.sub_container_views[model.cid];
-					sub_container_view.unbind();
+					sub_container_view.off();
 					sub_container_view.remove();
 				}
 				Upfront.Events.trigger("entity:region:removed", view, model);
@@ -7244,9 +7242,9 @@ define([
 				};
 			},
 			init: function () {
-				// this.model.get("properties").bind("change", this.update, this);
+				// this.model.get("properties").on("change", this.update, this);
 				this.listenTo(this.model.get("properties"), 'change', this.update);
-				// this.model.bind("remove", this.on_remove, this);
+				// this.model.on("remove", this.on_remove, this);
 				this.listenTo(this.model, 'remove', this.on_remove);
 
 				this.listenTo(Upfront.Events, 'entity:region:update_position', this.on_region_update);
@@ -7567,7 +7565,7 @@ define([
 				this.toggle_wrapper_visibility();
 			},
 			on_remove: function () {
-				this.unbind();
+				this.off();
 				this.remove();
 			}
 		}),

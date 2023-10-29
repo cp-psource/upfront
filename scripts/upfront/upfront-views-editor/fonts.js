@@ -503,7 +503,7 @@
 				if (e && e.preventDefault) e.preventDefault();
 				if (e && e.stopPropagation) e.stopPropagation();
 
-								this.$el.find('#upfront-icon-font-input').click();
+								this.$el.find('#upfront-icon-font-input').on('click',);
 
 				return false;
 						},

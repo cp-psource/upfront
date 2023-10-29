@@ -25,8 +25,5 @@
     "test-js": "node_modules/.bin/mocha test/js",
     "test": "npm run test-php && npm run test-js",
     "jshint": "./node_modules/.bin/jshint ./ --exclude node_modules/,build/,scripts/chosen,scripts/file_upload,scripts/findandreplace,scripts/jquery,scripts/magnific-popup,scripts/realperson,scripts/spectrum"
-  },
-  "dependencies": {
-    "url-parse": "^1.5.10"
   }
 }

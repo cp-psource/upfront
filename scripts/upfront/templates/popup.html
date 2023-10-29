@@ -453,7 +453,7 @@
 						<span class="upfront-css-selector" title="{{ data.info }}" data-selector="{{ s }}">{{data.label}}</span>
 						{[ }); ]}
 						{[ if (elementType) { ]}
-						{{ _.size(selectors) ? '' : 'No selectors available for the ' + elementType.toLowerCase() + ' element.'}}
+						{{ selectors.length ? '' : 'No selectors available for the ' + elementType.toLowerCase() + ' element.'}}
 						{[ } ]}
 					</div>
 					{[ } ]}
@@ -627,7 +627,7 @@
 					{[ } ]}
 				</div>
 			</div>
-			<span class="add-font-button">Add &raquo;</span>
+			<span class="add-font-button">Hinzu &raquo;</span>
 		</div>
 	</script>
 

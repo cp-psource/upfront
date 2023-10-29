@@ -479,7 +479,7 @@
 						// On hover, add classes allowing sidebar to shrink on low resolutions.
 						addHoverSidebarClasses: function() {
 							// On Mouse Enter.
-							$('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').hover(function() {
+							$('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').on('mouseenter',function() {
 								$('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').addClass('upfront-sidebar-hover');
 							// On Mouse Leave.
 							}, function() {

@@ -400,8 +400,8 @@ define([
 
 				//Prepare image picker
 				$editor
-					.on('click', '.upfront-css-theme_image', _.bind(this.open_theme_image_picker, this))
-					.on('click', '.upfront-css-media_image', _.bind(this.open_media_image_picker, this))
+					.on('click', '.upfront-css-theme_image', _.on(this.open_theme_image_picker, this))
+					.on('click', '.upfront-css-media_image', _.on(this.open_media_image_picker, this))
 				;
 			},
 

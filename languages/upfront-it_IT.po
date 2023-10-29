@@ -1029,11 +1029,11 @@ msgid "Über dem Feld"
 msgstr ""
 
 #: elements/upfront-contact-form/lib/contact_form.php:544
-msgid "Im Feld"
+msgid "Über das Feld"
 msgstr ""
 
 #: elements/upfront-contact-form/lib/contact_form.php:545
-msgid "Vor dem Feld"
+msgid "Inline mit Feld"
 msgstr ""
 
 #: elements/upfront-contact-form/lib/contact_form.php:547

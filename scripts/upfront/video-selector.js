@@ -28,7 +28,7 @@ define([
 			if ($('#upfront-upload-video').length === 0) {
 				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
 
-				$('body').bind( 'keyup', function( event ) {
+				$('body').on( 'keyup', function( event ) {
 					if ( event.keyCode === 27 )
 						me.closeOverlay();
 				});
@@ -45,21 +45,21 @@ define([
 							fileInput: null, // disable change listener, we handle it below
 							paramName: 'media[]' // due to previous options we have to set this manually
 						})
-						.bind('fileuploadstart', function () {
+						.on('fileuploadstart', function () {
 							progress.css('width', '0');
 						})
-						.bind('fileuploadprogressall', function (e, data) {
+						.on('fileuploadprogressall', function (e, data) {
 							var percent = parseInt(data.loaded / data.total * 100, 10);
 							progress.css('width', percent + '%');
 						})
-						.bind('fileuploaddone', function (e, data) {
+						.on('fileuploaddone', function (e, data) {
 							var response = data.result;
 							progress.css('width', '100%');
 							$('#upfront-image-uploading h2').html(l10nG.preparing_video_upload);
 							me.onFileUploadDone(response);
 							form[0].reset();
 						})
-						.bind('fileuploadfail', function (e, response) {
+						.on('fileuploadfail', function (e, response) {
 							var error;
 
 							// Check if responseJSON exist to prevent JS errors
@@ -444,7 +444,7 @@ define([
 		},
 		openFileBrowser: function(e){
 			e.preventDefault();
-			$('#upfront-video-file-input').click();
+			$('#upfront-video-file-input').on('click',);
 		},
 		checkFileUpdate: function(){
 			 return true;

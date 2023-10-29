@@ -92,7 +92,7 @@ var PlainTxtElement = Upfront.Views.Editor.Sidebar.Element.extend({
 		var object = new PlainTxtModel({
 				"name": "",
 				"properties": [
-					{"name": "content", "value": "<p>My awesome stub content goes here</p>"}
+					{"name": "content", "value": "<p>Meine großartigen Inhalte kommen hierher</p>"}
 				]
 			}),
 			module = new Upfront.Models.Module({
@@ -302,7 +302,7 @@ var AppearancePanel = Upfront.Views.Editor.Settings.Panel.extend({
 			if(!this.$el.find('.border-enabled input').prop('checked'))
 				me.$el.find('.upfront-field-number').prop('disabled', true);
 
-			this.$el.find('.border-enabled input').bind('change', function() {
+			this.$el.find('.border-enabled input').on('change', function() {
 				if($(this).prop('checked'))
 					me.$el.find('.upfront-field-number').prop('disabled', false);
 				else

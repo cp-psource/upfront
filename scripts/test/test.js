@@ -91,7 +91,7 @@ describe('Test Upfront', function() {
     describe('Upfront editor', function() {
       it('should load by click', function(done) {
         client
-          .click('.upfront-edit_layout')
+          .on('click','.upfront-edit_layout')
           .wait(loadLayoutTime) // this is actual editor load, so give it time
           .isVisible('#sidebar-ui-wrapper', function(error, visible) {
             expect(error).to.equal(null);
@@ -105,7 +105,7 @@ describe('Test Upfront', function() {
       it('should enter edit background mode', function(done) {
         client
           .moveToObject('.upfront-region-container') // this gives hover effect so use it when you need to show commands before clicking on them
-          .click('.upfront-region-edit-trigger')
+          .on('click','.upfront-region-edit-trigger')
           .isVisible('.upfront-icon-region-bg-setting', function(error, visible) {
             expect(error).to.equal(null);
             expect(visible).to.equal(true);
@@ -115,9 +115,9 @@ describe('Test Upfront', function() {
 
       it('should create new region above', function(done) {
         client
-          .click('.upfront-icon-region-add-top')
-          // .click('.upfront-region-finish-edit') // this does not work, don't know why :/
-          .click('#parlor-slider-about-wrapper') // to finish region edit
+          .on('click','.upfront-icon-region-add-top')
+          // .on('click','.upfront-region-finish-edit') // this does not work, don't know why :/
+          .on('click','#parlor-slider-about-wrapper') // to finish region edit
           .isVisible(testRegion, function(error, visible) {
             expect(error).to.equal(null);
             expect(visible).to.equal(true);
@@ -153,7 +153,7 @@ describe('Test Upfront', function() {
         client
           .getText(testRegion + ' .upfront-plain_txt', function(error, text) {
             expect(error).to.equal(null);
-            expect(text).to.have.string('My awesome stub content goes here');
+            expect(text).to.have.string('Meine großartigen Inhalte kommen hierher');
             done();
           });
       });
@@ -164,7 +164,7 @@ describe('Test Upfront', function() {
           .clearElement('.upfront-plain_txt p')
           .doubleClick('.upfront-plain_txt p')
           .keys('New Text!')
-          .click('#parlor-slider-about-wrapper') // to loose focus from element and close redactor
+          .on('click','#parlor-slider-about-wrapper') // to loose focus from element and close redactor
           .getText(testRegion + ' .upfront-plain_txt', function(error, text) {
             expect(error).to.equal(null);
             expect(text).to.equals('New Text!');
@@ -177,11 +177,11 @@ describe('Test Upfront', function() {
           .doubleClick('.upfront-plain_txt p')
           .uMoveToObject('.upfront-plain_txt p') // Gotta hover for phantomjs to show image attachment bits
           .wait(1) // For Firefox
-          .click('.upfront-image-attachment-bits')
+          .on('click','.upfront-image-attachment-bits')
           .waitFor('.upfront-media_collection', 500) // allow gallery to load up to 500ms
-          .click('.upfront-media_collection .upfront-media_item .thumbnail') // select first image
-          .click('.use') // click "OK" button
-          .click('#parlor-slider-about-wrapper') // to loose focus from element and close redactor
+          .on('click','.upfront-media_collection .upfront-media_item .thumbnail') // select first image
+          .on('click','.use') // click "OK" button
+          .on('click','#parlor-slider-about-wrapper') // to loose focus from element and close redactor
           .isVisible('.upfront-plain_txt .upfront-inserted_image-wrapper', function(error, visible) {
             expect(error).to.equal(null);
             done();
@@ -191,7 +191,7 @@ describe('Test Upfront', function() {
       it('should be deletable', function(done) {
         client
           .moveToObject(testRegion + ' .upfront-plain_txt') // hover element to cause delete button to show
-          .click(testRegion + ' .upfront-entity-delete_trigger')
+          .on('click',testRegion + ' .upfront-entity-delete_trigger')
           .isVisible(testRegion + ' .upfront-plain_txt', function(error, visible) {
             if (client.options.desiredCapabilities.browserName === 'phantomjs') {
               expect(error.type).to.equal('UnknownError'); // there is no method to check if element exists on page so...
@@ -226,7 +226,7 @@ describe('Test Upfront', function() {
       it('should be deletable', function(done) {
         client
           .moveToObject(testRegion + ' .upfront-image') // hover element to cause delete button to show
-          .click(testRegion + ' .upfront-entity-delete_trigger')
+          .on('click',testRegion + ' .upfront-entity-delete_trigger')
           .isVisible(testRegion + ' .upfront-image', function(error, visible) {
             if (client.options.desiredCapabilities.browserName === 'phantomjs') {
               expect(error.type).to.equal('UnknownError'); // there is no method to check if element exists on page so...

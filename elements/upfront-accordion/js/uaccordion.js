@@ -46,7 +46,7 @@ define([
 				props = PresetUtil.getPresetProperties('accordion', preset) || {}
 			;
 			
-			if (_.size(props) <= 0) return false; // No properties, carry on
+			if (props.length <= 0) return false; // No properties, carry on
 
 			PresetUtil.updatePresetStyle('accordion', props, settingsStyleTpl);
 
