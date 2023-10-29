@@ -174,7 +174,7 @@ EventElement.prototype.unbind = function (eventName, handler) {
 
 EventElement.prototype.unbindAll = function () {
   for (var name in this.events) {
-    this.off(name);
+    this.unbind(name);
   }
 };
 
@@ -213,7 +213,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
     ee.unbind(eventName, onceHandler);
     handler(e);
   };
-  ee.on(eventName, onceHandler);
+  ee.bind(eventName, onceHandler);
 };
 
 module.exports = EventManager;
@@ -452,7 +452,7 @@ function bindMouseScrollXHandler(element, i) {
 
   var mouseUpHandler = function () {
     _.stopScrolling(element, 'x');
-    i.event.off(i.ownerDocument, 'mousemove', mouseMoveHandler);
+    i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
   };
 
   i.event.bind(i.scrollbarX, 'mousedown', function (e) {
@@ -461,7 +461,7 @@ function bindMouseScrollXHandler(element, i) {
     _.startScrolling(element, 'x');
 
     i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
-    i.event.bindce(i.ownerDocument, 'mouseup', mouseUpHandler);
+    i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
 
     e.stopPropagation();
     e.preventDefault();
@@ -497,7 +497,7 @@ function bindMouseScrollYHandler(element, i) {
 
   var mouseUpHandler = function () {
     _.stopScrolling(element, 'y');
-    i.event.off(i.ownerDocument, 'mousemove', mouseMoveHandler);
+    i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
   };
 
   i.event.bind(i.scrollbarY, 'mousedown', function (e) {
@@ -506,7 +506,7 @@ function bindMouseScrollYHandler(element, i) {
     _.startScrolling(element, 'y');
 
     i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
-    i.event.bindce(i.ownerDocument, 'mouseup', mouseUpHandler);
+    i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
 
     e.stopPropagation();
     e.preventDefault();

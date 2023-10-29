@@ -697,50 +697,64 @@
 
 						if (this.utils.browser('msie')) e.returnValue = false;
 
-						if (type == 'command') {
+						if (type == 'command')
+						{
 							this.inline.format(callback);
 						}
-						else if (type == 'dropdown') {
+						else if (type == 'dropdown')
+						{
 							this.dropdown.show(e, btnName);
 						}
-						else {
+						else
+						{
 							var func;
-						
-							if (typeof callback === 'function') {
+
+							if ($.isFunction(callback))
+							{
 								callback.call(this, btnName);
 								this.observe.buttons(e, btnName);
-							} else if (callback.indexOf('.') !== -1) {
+							}
+							else if (callback.search(/\./) != '-1')
+							{
 								func = callback.split('.');
-								if (typeof this[func[0]] !== 'undefined') {
+								if (typeof this[func[0]] != 'undefined')
+								{
 									this[func[0]][func[1]](btnName);
 									this.observe.buttons(e, btnName);
 								}
-							} else {
-								if (typeof this[callback] === 'function') {
-									this[callback](btnName);
-									this.observe.buttons(e, btnName);
-								}
+							}
+							else
+							{
+								this[callback](btnName);
+								this.observe.buttons(e, btnName);
 							}
 						}
 					},
-					get: function(key) {
+					get: function(key)
+					{
 						return this.$toolbar.find('a.re-' + key);
 					},
-					setActive: function(key) {
+					setActive: function(key)
+					{
 						this.button.get(key).addClass('redactor-act');
 					},
-					setInactive: function(key) {
+					setInactive: function(key)
+					{
 						this.button.get(key).removeClass('redactor-act');
 					},
-					setInactiveAll: function(key) {
-						if (typeof key == 'undefined') {
+					setInactiveAll: function(key)
+					{
+						if (typeof key == 'undefined')
+						{
 							this.$toolbar.find('a.re-icon').removeClass('redactor-act');
 						}
-						else {
+						else
+						{
 							this.$toolbar.find('a.re-icon').not('.re-' + key).removeClass('redactor-act');
 						}
 					},
-					setActiveInVisual: function() {
+					setActiveInVisual: function()
+					{
 						this.$toolbar.find('a.re-icon').not('a.re-html').removeClass('redactor-button-disabled');
 					},
 					setInactiveInCode: function()
@@ -857,7 +871,7 @@
 					if( Overriden_Methods[module] && Overriden_Methods[module][methods[z]] )
 						method =  Overriden_Methods[module][methods[z]];
 
-					this[module][methods[z]] = method.on(this);
+					this[module][methods[z]] = method.bind(this);
 				}
 			};
 
@@ -2079,14 +2093,14 @@
 					prevblock_html = $.trim( $prevBlock.html() ) || '',
 					show_tooltip = true;
 
-				$image_embed_insert_wrappers.each(function(){
-					var $this = $(this),
-						height = $this.find(".ueditor-insert-variant-group").height(),
-						top = $this.offset().top;
-					if( block_top <= ( height + top + 20) && block_top >= ( top - 5)  ){
-						show_tooltip = false;
-					}
-				});
+				// $image_embed_insert_wrappers.each(function(){
+				// 	var $this = $(this),
+				// 		height = $this.find(".ueditor-insert-variant-group").height(),
+				// 		top = $this.offset().top;
+				// 	if( block_top <= ( height + top + 20) && block_top >= ( top - 5)  ){
+				// 		show_tooltip = false;
+				// 	}
+				// });
 
 				return 	show_tooltip
 					&& 	$block.closest(".ueditor-insert").length === 0

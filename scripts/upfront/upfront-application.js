@@ -1371,28 +1371,30 @@ var Application = new (Backbone.Router.extend({
 			processed = ''
 		;
 
-		_.each(rules, function(rl) {
-			var src = rl.trim().split('{');
-		
+		_.each(rules, function (rl) {
+			var src = $.trim(rl).split('{');
+
 			if (src.length != 2) return true; // wtf
-		
+
 			var individual_selectors = src[0].split(','),
-				processed_selectors = [];
-			_.each(individual_selectors, function(sel) {
-				sel = sel.trim();
+				processed_selectors = []
+			;
+			_.each(individual_selectors, function (sel) {
+				sel = $.trim(sel);
 				var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
-				var is_container = clean_selector[0] === '@' || me.recursiveExistenceMigration(selector, clean_selector),
+				var	is_container = clean_selector[0] === '@' || me.recursiveExistenceMigration(selector, clean_selector),
 					spacer = is_container
 						? '' // This is not a descentent selector - used for containers
-						: ' '; // This is a descentent selector
-		
+						: ' ' // This is a descentent selector
+				;
+
 				processed_selectors.push('' +
 					selector + spacer + sel +
 				'');
 			});
 			processed += processed_selectors.join(', ') + ' {' +
 				src[1] + // Actual rule
-				'\n}\n';
+			'\n}\n';
 		});
 		return processed;
 	},

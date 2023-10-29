@@ -128,7 +128,7 @@
 					else if ( $(this).hasClass('upfront-field-empty') ) {
 							$(this).removeClass('upfront-field-empty');
 					}
-				}).trigger('keyup').on('change',function(){
+				}).trigger('keyup').change(function(){
 					me.trigger('changed', me.get_value());
 				});
 				this.trigger('rendered');
@@ -213,10 +213,11 @@
 					;
 			},
 			get_value: function () {
-                return this.is_edited
-                    ? Field_Text.prototype.get_value.call(this)
-                    : this.get_field().text().trim();
-            },
+				return this.is_edited
+					? Field_Text.prototype.get_value.call(this)
+					: $.trim(this.get_field().text())
+					;
+			},
 			set_value: function (value) {
 				return this.is_edited
 					? this.get_field().val(value)
@@ -734,7 +735,7 @@
             revert: function(){
                 this.$spectrum.trigger("click.spectrum"); // trigger cancel
                 if(this.options.spectrum && typeof this.options.spectrum.change === "function")
-                    this.options.spectrum.on('change',this.color);// Explicitly cancel
+                    this.options.spectrum.change(this.color);// Explicitly cancel
 
                 if( this.color && this.color.toRgbString ) {
                     this.update_input_border_color(this.color.toRgbString); // Set input color
@@ -843,7 +844,7 @@
 				}
 				// Trigger change event
 				if(this.options.spectrum && typeof this.options.spectrum.change === "function"){
-					this.options.spectrum.on('change',color);
+					this.options.spectrum.change(color);
 				}
 				e.stopPropagation();
 				e.preventDefault();
@@ -857,7 +858,7 @@
 				}
 				// Trigger change event
 				if(this.options.spectrum && typeof this.options.spectrum.change === "function"){
-					this.options.spectrum.on('change',color);
+					this.options.spectrum.change(color);
 				}
 				//Update preview color
 				this.update_input_border_color(color.toRgbString);
@@ -881,7 +882,7 @@
 
 				// Trigger change event
 				if(this.options.spectrum && typeof this.options.spectrum.change === "function"){
-					this.options.spectrum.on('change',color);
+					this.options.spectrum.change(color);
 				}
 
 				// Trigger move event in Theme Color Swatches
@@ -891,7 +892,7 @@
 
 				// Trigger change event in Theme Color Swatches
 				if(this.options && typeof this.options.change === "function"){
-					this.options.on('change',color);
+					this.options.change(color);
 				}
 			},
 			get_value : function() {
@@ -955,7 +956,7 @@
 
 						// Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
 						if ( $(e.currentTarget).siblings('input').not(':checked')) {
-							$(e.currentTarget).siblings('input').on('click',);
+							$(e.currentTarget).siblings('input').click();
 						}
 
 						this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1186,7 +1187,7 @@
 				openOptions: function(e) {
 
 					//Disable scroll when chosen is opened
-					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
+					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
 						return false;
 					});
 
@@ -1235,7 +1236,7 @@
 				},
 				allowMouseWheel: function() {
 					//Enable scroll when chosen is closed
-					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
+					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
 				}
 		});
 
@@ -1284,7 +1285,7 @@
 
                     // Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
                     if ( $(e.currentTarget).siblings('input').not(':checked')) {
-                        $(e.currentTarget).siblings('input').on('click',);
+                        $(e.currentTarget).siblings('input').click();
                     }
 
                     this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1511,7 +1512,7 @@
             openOptions: function(e) {
 
                 //Disable scroll when chosen is opened
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
                     return false;
                 });
 
@@ -1554,7 +1555,7 @@
             },
             allowMouseWheel: function() {
                 //Enable scroll when chosen is closed
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
             }
         });
 
@@ -1813,7 +1814,7 @@
 				e.preventDefault();
 
 				// Simulate label click
-				this.$el.find('.upfront_toggle_checkbox').on('click',);
+				this.$el.find('.upfront_toggle_checkbox').click();
 			},
 
 			get_value_html: function (value, index) {

@@ -10,6 +10,125 @@
 		'scripts/upfront/upfront-views-editor/notifier',
 		'scripts/perfect-scrollbar/perfect-scrollbar'
 	], function (popup_tpl, Fields, Fonts, notifier, perfectScrollbar) {
+
+		var isComment = function(s) {
+			return s.trim().charAt(0) === '/';
+		};
+		var isWhitespace = function(s) {
+			return s.trim() === '';
+		};
+
+		/**
+		 * Separates css to comments, rules and whitespace.
+		 * Outputs array that contains above listed tokens.
+		 */
+		var tokenize = function(css) {
+			var brokenByStart = css.innerText.split('/*');
+			var sortedByStart = [];
+			brokenByStart.forEach(function(arg) {
+				if (arg.trim() === '') {
+					sortedByStart.push(arg);
+					return;
+				}
+				sortedByStart.push('/*' + arg);
+			});
+
+			var brokenByEnd = [];
+
+			sortedByStart.forEach(function(arg) {
+				if (arg.match(/\*\//) === null) {
+					brokenByEnd.push(arg);
+					return;
+				}
+				var parts = arg.split('*/');
+				parts.forEach(function(part) {
+					if (part.trim() === '') {
+						brokenByEnd.push(part);
+						return;
+					}
+					if (part.match(/\/\*/) === null) {
+						brokenByEnd.push(part);
+						return;
+					}
+					brokenByEnd.push(part + '*/');
+				});
+			});
+
+			/* Separated rules, comments and whitespace */
+			var separated = [];
+			var lastDone = 0;
+			brokenByEnd.forEach(function(arg, i) {
+				if (lastDone > i) {
+					return;
+				}
+				lastDone = i;
+				if (arg.trim() === '') {
+					separated.push(arg);
+					return;
+				}
+				if (arg.charAt(0) === "/") {
+					separated.push(arg);
+					return;
+				}
+				var openings = arg.match(/{/g);
+				openings = openings === null ? 0 : openings.length;
+
+				var closings = arg.match(/}/g);
+				closings = closings === null ? 0 : closings.length;
+
+				if (openings === closings) {
+					separated.push(arg);
+					return;
+				}
+				var sub = arg;
+				i++;
+				for (; i < brokenByEnd.length; i++) {
+					sub += brokenByEnd[i];
+
+					openings = sub.match(/{/g);
+					openings = openings === null ? 0 : openings.length;
+					closings = sub.match(/}/g);
+					closings = closings === null ? 0 : closings.length;
+
+					if (openings === closings) {
+						i++;
+						separated.push(sub);
+						break;
+					}
+				}
+				lastDone = i;
+			});
+
+			var spacesep = [];
+
+			separated.forEach( function(arg, i) {
+				if (arg.trim() === '') {
+					spacesep.push(arg);
+					return;
+				}
+				if (arg.charAt(0) === "/") {
+					spacesep.push(arg);
+					return;
+				}
+				/* Trim start */
+				while(arg.charAt(0).trim() === '') {
+					spacesep.push(arg.charAt(0));
+					arg = arg.substring(1);
+				}
+				/* Trim end */
+				var end = '';
+				while (arg.charAt(arg.length - 1).trim() === '') {
+					end += arg.charAt(arg.length - 1);
+					arg = arg.substring(0, arg.length - 1);
+				}
+				spacesep.push(arg);
+				spacesep.push(end);
+			});
+
+			return spacesep;
+		};
+
+
 		return Backbone.View.extend({
 			className: 'upfront-ui',
 			id: 'upfront-csseditor',
@@ -233,18 +352,18 @@
 			get_style_element: function() {
 				return $('style#' + this.get_style_id());
 			},
-			close: function(e) {
-				if (e && typeof e.preventDefault === 'function') e.preventDefault();
-			
+			close: function(e){
+				if(e && _.isFunction(e.preventDefault)) e.preventDefault();
+
 				$(window).off('resize', this.resizeHandler);
 				this.off('change');
-			
+
 				this.$style = false;
 				if (this.editor) this.editor.destroy();
-			
+
 				$('#page').css('padding-bottom', 0);
 				this.$el.hide();
-			
+
 				Upfront.Events.trigger('csseditor:closed', this.element_id);
 			},
 			render: function(){
@@ -322,14 +441,12 @@
 				});
 
 				styles = Upfront.Util.colors.convert_string_color_to_ufc(this.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
-
 				if (this.is_global_stylesheet === false) {
 					selector = this.get_css_selector().replace(/[.+*\[\]]/g, '\\$&');
 					scope = new RegExp(selector + '\\s*', 'g');
 					styles = styles.replace(scope, '');
 				}
-
-				editor.setValue(styles.trim(), -1);
+				editor.setValue($.trim(styles), -1);
 
 				// Set up the proper vscroller width to go along with new change.
 				editor.renderer.scrollBar.width = 5;
@@ -495,41 +612,44 @@
 				if (this.is_global_stylesheet && empty(selector)) return contents;
 
 				var me = this,
-					rules = contents.split('}'),
+					tokens = tokenize(contents);
 					processed = ''
 				;
 
-				_.each(rules, function (rl) {
-					var src = rl.trim().split('{');
+				_.each(tokens, function (t) {
+					if (isComment(t) || isWhitespace(t)) {
+						processed += t;
+						return;
+					}
 
-					if (src.length != 2) return true; // wtf
+					var rule = t.split('{');
 
-					var individual_selectors = src[0].split(','),
+					var selectors = rule[0].split(','),
 						processed_selectors = []
 					;
-					_.each(individual_selectors, function (sel) {
-						sel = sel.trim();
-						var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
+					_.each(selectors, function (s) {
+						var openingWS = '';
+						var endingWS = '';
+						while (s.charAt(0).trim() === '') {
+							openingWs += s.charAt(0);
+							s = s.substring(1);
+						}
+						while (s.charAt(s.length - 1).trim() === '') {
+							endingWS += s.charAt(s.length - 1);
+							s = s.substring(0, s.length - 1);
+						}
+
+						var clean_selector = s.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
 						var	is_container = clean_selector[0] === '@' || me.recursiveExistence(selector, clean_selector),
 							spacer = is_container
-								? '' // This is not a descentent selector - used for containers
-								: ' ' // This is a descentent selector
+								? '' // This is not a descendant selector - used for containers
+								: ' ' // This is a descendant selector
 						;
 
-						processed_selectors.push('' +
-							selector + spacer + sel +
-							'');
+						processed_selectors.push(openingWS + selector + spacer + s + endingWS);
 					});
-					processed += processed_selectors.join(', ') + ' {' +
-						src[1] + // Actual rule
-						'\n}\n';
+					processed += processed_selectors.join(',') + '{' + rule[1];
 				});
-
-				// Handle closing comments being omitted from the processed string
-				// Only apply if the original contents has closing CSS comment, and the processed one does not
-				if (contents.match(/\*\/\s*$/) && !processed.match(/\*\/\s*$/)) {
-					processed += '\n*/';
-				}
 
 				return processed;
 			},
@@ -553,7 +673,7 @@
 			// When stylename changes upfront needs to update element model theme_style property
 			// and also to save style under new stylename.
 			updateStylename: function() {
-				var new_name = this.$('.upfront-css-save-name-field').val().trim(),
+				var new_name =  $.trim(this.$('.upfront-css-save-name-field').val()),
 					old_name = this.stylename;
 
 				// Strict filtering on stylename
@@ -597,8 +717,8 @@
 			save: function(event) {
 				if (event) event.preventDefault();
 				var me = this,
-				styles = this.editor.getValue().trim(),
-				data;
+					styles = $.trim(this.editor.getValue()),
+					data;
 
 				if (this.is_global_stylesheet === false && this.stylename === this.get_temp_stylename())
 					return notifier.addMessage(l10n.style_name_nag, 'error');
@@ -651,8 +771,8 @@
 			/* API to call save style without loading editor */
 			saveCall: function (notify) {
 				var me = this,
-				styles = this.get_style_element().html(),
-				data;
+					styles = $.trim(this.get_style_element().html()),
+					data;
 
 				data = {
 					styles: styles,

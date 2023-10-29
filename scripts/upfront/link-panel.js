@@ -303,7 +303,7 @@ define([
 		},
 
 		createLightBox: function() {
-			var name = this.$('.js-ulinkpanel-lightbox-input').val().trim();
+			var name = $.trim(this.$('.js-ulinkpanel-lightbox-input').val());
 			if (!name) {
 				Upfront.Views.Editor.notify(Upfront.Settings.l10n.global.views.ltbox_empty_name_nag, 'error');
 				return false;
@@ -326,7 +326,7 @@ define([
 		/* Handle manually entered urls: external and email */
 		onUrlInputBlur: function(event) {
 			var userInput = $(event.currentTarget).val().trim();
-			if ((!this.model.get('type') || this.model.get('type') === 'external' || this.model.get('type') === 'unlink') && !userInput.match(/https?:\/\//) && !_.isEmpty( userInput ) ) {
+			if ((!this.model.get('type') || this.model.get('type') === 'external' || this.model.get('type') === 'unlink') && !userInput.match(/https?:\/\//) && !_.isEmpty( userInput ) && !userInput.startsWith('#') ) {
 				userInput = 'http://' + userInput;
 			}
 			if (this.model.get('type') === 'email' && !userInput.match(/^mailto:/)) {
