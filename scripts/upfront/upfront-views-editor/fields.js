@@ -128,7 +128,7 @@
 					else if ( $(this).hasClass('upfront-field-empty') ) {
 							$(this).removeClass('upfront-field-empty');
 					}
-				}).trigger('keyup').change(function(){
+				}).trigger('keyup').on('change',function(){
 					me.trigger('changed', me.get_value());
 				});
 				this.trigger('rendered');
@@ -213,11 +213,10 @@
 					;
 			},
 			get_value: function () {
-				return this.is_edited
-					? Field_Text.prototype.get_value.call(this)
-					: $.trim(this.get_field().text())
-					;
-			},
+                return this.is_edited
+                    ? Field_Text.prototype.get_value.call(this)
+                    : this.get_field().text().trim();
+            },
 			set_value: function (value) {
 				return this.is_edited
 					? this.get_field().val(value)
@@ -529,11 +528,11 @@
                 this.spectrumOptions = spectrumOptions;
 
 
-                spectrumOptions.move = _.bind( this.on_spectrum_move, this ) ;
+                spectrumOptions.move = _.on( this.on_spectrum_move, this ) ;
 
-                spectrumOptions.show = _.bind( this.on_spectrum_show, this );
+                spectrumOptions.show = _.on( this.on_spectrum_show, this );
 
-                spectrumOptions.beforeShow = _.bind( this.on_spectrum_beforeShow, this );
+                spectrumOptions.beforeShow = _.on( this.on_spectrum_beforeShow, this );
 
                 /**
                  * Wrap the hide callback so we can re-use it.
@@ -683,7 +682,7 @@
 				}
 
 				if( this.options.spectrum && !this.options.spectrum.flat && ( !this.field_options || !this.field_options.flat ) && this.field_options.hideOnOuterClick )
-					$("html").on('mousedown', _.bind( this.hide_on_outer_click, this ) );
+					$("html").on('mousedown', _.on( this.hide_on_outer_click, this ) );
 			},
 			on_spectrum_beforeShow: function(color){
 				if( color instanceof Object ){
@@ -730,12 +729,12 @@
 				this.revert();
 				this.$(".sp-container").addClass("sp-hidden"); //  hide
 				Upfront.Events.trigger("color:spectrum:hide");
-                $("html").off('mousedown', _.bind( this.hide_on_outer_click, this ) );
+                $("html").off('mousedown', _.on( this.hide_on_outer_click, this ) );
             },
             revert: function(){
                 this.$spectrum.trigger("click.spectrum"); // trigger cancel
                 if(this.options.spectrum && typeof this.options.spectrum.change === "function")
-                    this.options.spectrum.change(this.color);// Explicitly cancel
+                    this.options.spectrum.on('change',this.color);// Explicitly cancel
 
                 if( this.color && this.color.toRgbString ) {
                     this.update_input_border_color(this.color.toRgbString); // Set input color
@@ -844,7 +843,7 @@
 				}
 				// Trigger change event
 				if(this.options.spectrum && typeof this.options.spectrum.change === "function"){
-					this.options.spectrum.change(color);
+					this.options.spectrum.on('change',color);
 				}
 				e.stopPropagation();
 				e.preventDefault();
@@ -858,7 +857,7 @@
 				}
 				// Trigger change event
 				if(this.options.spectrum && typeof this.options.spectrum.change === "function"){
-					this.options.spectrum.change(color);
+					this.options.spectrum.on('change',color);
 				}
 				//Update preview color
 				this.update_input_border_color(color.toRgbString);
@@ -882,7 +881,7 @@
 
 				// Trigger change event
 				if(this.options.spectrum && typeof this.options.spectrum.change === "function"){
-					this.options.spectrum.change(color);
+					this.options.spectrum.on('change',color);
 				}
 
 				// Trigger move event in Theme Color Swatches
@@ -892,7 +891,7 @@
 
 				// Trigger change event in Theme Color Swatches
 				if(this.options && typeof this.options.change === "function"){
-					this.options.change(color);
+					this.options.on('change',color);
 				}
 			},
 			get_value : function() {
@@ -956,7 +955,7 @@
 
 						// Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
 						if ( $(e.currentTarget).siblings('input').not(':checked')) {
-							$(e.currentTarget).siblings('input').click();
+							$(e.currentTarget).siblings('input').on('click',);
 						}
 
 						this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1187,7 +1186,7 @@
 				openOptions: function(e) {
 
 					//Disable scroll when chosen is opened
-					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
+					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
 						return false;
 					});
 
@@ -1236,7 +1235,7 @@
 				},
 				allowMouseWheel: function() {
 					//Enable scroll when chosen is closed
-					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
+					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
 				}
 		});
 
@@ -1285,7 +1284,7 @@
 
                     // Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
                     if ( $(e.currentTarget).siblings('input').not(':checked')) {
-                        $(e.currentTarget).siblings('input').click();
+                        $(e.currentTarget).siblings('input').on('click',);
                     }
 
                     this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1512,7 +1511,7 @@
             openOptions: function(e) {
 
                 //Disable scroll when chosen is opened
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
                     return false;
                 });
 
@@ -1555,7 +1554,7 @@
             },
             allowMouseWheel: function() {
                 //Enable scroll when chosen is closed
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
             }
         });
 
@@ -1814,7 +1813,7 @@
 				e.preventDefault();
 
 				// Simulate label click
-				this.$el.find('.upfront_toggle_checkbox').click();
+				this.$el.find('.upfront_toggle_checkbox').on('click',);
 			},
 
 			get_value_html: function (value, index) {
