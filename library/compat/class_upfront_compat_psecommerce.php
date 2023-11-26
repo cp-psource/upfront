@@ -276,7 +276,7 @@ class Upfront_Compat_PSeCommerce {
 			'layout' => array(
 				'type' => 'single',
 				'item' => 'single-page',
-				'specificity' => 'single-page-mwarenkorb'
+				'specificity' => 'single-page-mpcart'
 			)
 		);
 		$layouts[] = array(
