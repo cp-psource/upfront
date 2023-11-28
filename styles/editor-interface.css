@@ -647,7 +647,7 @@ em {
 #sidebar-ui .sidebar-commands-control .command-start-responsive,
 #sidebar-ui .sidebar-commands-control .exit-responsive {
   margin: 0px;
-  max-width: 160px;
+  max-width: 122px;
   line-height: 22px;
   padding: 0px 6px;
   height: auto;
@@ -661,7 +661,7 @@ em {
 
 #sidebar-ui .sidebar-commands-control .exit-responsive {
   margin-left: 18px !important;
-  margin-right: 25px !important; }
+  margin-right: 75px !important; }
 
 #sidebar-ui .sidebar-commands-control .command-start-responsive:before {
   opacity: 1; }
@@ -890,7 +890,7 @@ em {
 
 #sidebar-ui .command-edit-bg,
 #sidebar-ui .command-edit-global-regions {
-  width: 48% !important;
+  width: 46% !important;
   padding: 0px !important;
   margin-top: 15px !important; }
 
@@ -905,7 +905,7 @@ em {
 #sidebar-ui .command-edit-structure {
   margin-right: 80px;
   display: inline-block;
-  width: 125px;
+  width: 105px;
   margin: 5px 0px !important; }
 
 #sidebar-ui .command-edit-bg {
@@ -1489,7 +1489,7 @@ span.draggable-post-element.element-dragging {
 #sidebar-ui .field-grid-half,
 #element-settings-sidebar .field-grid-half {
   clear: left;
-  width: 100%;
+  width: 46%;
   padding: 0px;
   float: left;
   margin: 0; }
@@ -2340,7 +2340,7 @@ input.upfront-field-text:hover,
   z-index: 99; }
 
 .upfront-field-wrap-color .upfront-color-field-right {
-  width: 85%;
+  width: 60%;
   display: block;
   float: left; }
 
@@ -2697,7 +2697,7 @@ div.uinsert-selector a:hover {
 
 .uimage-control-panel-content .upfront-field-radio:checked {
   border-color: #fff;
-}
+} 
 */
 .ueditor-insert:hover .upfront-resize-handle-e,
 .ueditor-insert:hover .upfront-resize-handle-w {
@@ -4249,7 +4249,7 @@ a.upfront-region-name-edit-trigger {
   display: none;
   border: 1px solid #a8a8a8;
   border-radius: 2px;
-  width: 80px;
+  width: 52px;
   height: 20px;
   background: #fff;
   color: #212121;
@@ -4855,7 +4855,7 @@ div.upfront-region-bg-setting-floating-restrict, .upfront-region-bg-setting-stic
 .upfront-region-editing .upfront-region.controls-visible .responsive-item-controls {
   display: block; }
 
-/* Hide 'Add Region' triggers & 'Region Resize' handle when settings panel is open
+/* Hide 'Add Region' triggers & 'Region Resize' handle when settings panel is open 
 .upfront-region-editing .upfront-region-bg-setting-open .upfront-region-panel-item-add-region,
 .upfront-region-editing .upfront-region-bg-setting-open .upfront-icon-control-region-resize-e:before,
 .upfront-region-editing .upfront-region-bg-setting-open .upfront-icon-control-region-resize-w:before {
@@ -7292,11 +7292,10 @@ span.upfront-settings-item-title:after {
 .upfront-inline-modal,
 .upfront-inline-modal-wrap {
   position: absolute;
-  top: 5%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  max-height: 550px;
   z-index: 10001004; }
 
 /* Resolve fixed region CSS editor z-index issues */
@@ -13003,13 +13002,13 @@ License: MIT
   opacity: 1;
   z-index: 0; }
 
-/*  Selectors using uf-core-el-sprite
+/*  Selectors using uf-core-el-sprite 
     ================================= */
 .upfront-element-controls .upfront-inline-panel .upfront-padding-keyboard,
 .upfront-element-controls .upfront-inline-panel .upfront-checkbox-info:before,
 .upfront-element-controls .upfront-inline-panel .padding-lock label,
 div.ugallery-controls i.upfront-icon:before {
-  /*
+  /* 
     background-image: url('../img/uf-core-el-sprite.png');
     background-image: url('../img/uf-core-el-sprite.svg');
     */
@@ -19066,7 +19065,7 @@ div.upfront-regions a#no_region_add_one {
   box-shadow: 0px 2px 1px rgba(38, 58, 77, 0.3); }
 
 div.upfront-region.empty_in_theme_mode:not(.upfront-region-floating):not(.upfront-region-lightbox):before {
-  content: "Lege hier Elemente aus der Editorleiste ab"; }
+  content: "Drop Elements from the sidebar here"; }
 
 div.upfront-regions a#no_region_add_one {
   cursor: pointer; }
@@ -19100,7 +19099,7 @@ div.upfront-regions a#no_region_add_one {
   margin: 20px 30px;
   width: 50px; }
 
-/* hack to fix empty paragraphs collapsing on each other
+/* hack to fix empty paragraphs collapsing on each other 
    note: Commented out since redactor no longer has that bug,
    so this fix is now redundant...
 
@@ -19453,7 +19452,7 @@ html {
 
 /* insert font widget */
 #insert-font-widget {
-  width: 135px;
+  width: 95px;
   height: 30px;
   float: left;
   margin-left: 20px;
@@ -19520,7 +19519,7 @@ a.upfront-css-font {
   line-height: 31px;
   font-size: 11px;
   font-family: verdana, sans-serif;
-  max-width: 130px;
+  max-width: 70px;
   overflow: hidden;
   white-space: nowrap; }
 
@@ -20177,7 +20176,8 @@ div.preset-manager-panel .upfront-settings-css {
 #element-settings-sidebar .upfront-css-edit,
 div.preset-manager-panel .edit_preset_css {
   position: relative;
-  margin-top: 12px; }
+  margin-top: -12px;
+  left: 90px; }
 
 #element-settings-sidebar .edit-preset-css-label,
 div.preset-manager-panel .edit_preset_label {
@@ -20217,7 +20217,7 @@ div.preset-manager-panel .upfront-settings-css {
 /* Default overlay */
 div.preset-manager-panel .default-overlay-wrapper {
   position: relative;
-  min-height: 330px; }
+  min-height: 300px; }
 
 div.preset-manager-panel .default-overlay {
   position: absolute;
@@ -20300,7 +20300,7 @@ div.preset-manager-panel .overlay-button-input:hover {
   display: none; }
 
 /* Inline panels icons */
-/*  Selectors using uf-core-el-sprite
+/*  Selectors using uf-core-el-sprite 
 	================================= */
 #upfront-image-overlay .select-files:before,
 #upfront-image-overlay .icon-picture,
@@ -20313,7 +20313,7 @@ div#page .upfront-object.upfront-image .swap-image-overlay p:before,
 .image-edit-control-panel-item,
 .image-edit-control-panel-item.upfront-control-dialog-open,
 .image-crop-edit-button:before {
-  /*
+  /* 
 	background-image: url(../../../img/uf-core-el-sprite.png);
 	background-image: url('../../../img/uf-core-el-sprite.svg');
 	*/
@@ -20667,4 +20667,3 @@ div#page .upfront-object.upfront-image .swap-image-overlay p:before,
   background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.08) 0%, transparent 100%); }
 
 /*# sourceMappingURL=editor-interface.css.map */
-

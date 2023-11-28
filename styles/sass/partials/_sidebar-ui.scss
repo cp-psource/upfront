@@ -493,7 +493,7 @@
 #sidebar-ui .sidebar-commands-control .command-start-responsive,
 #sidebar-ui .sidebar-commands-control .exit-responsive {
 	margin: 0px;
-	max-width: 160px;
+	max-width: 122px;
 	line-height: 22px;
 	padding: 0px 6px;
 	height: auto;
@@ -508,7 +508,7 @@
 
 #sidebar-ui .sidebar-commands-control .exit-responsive {
 	margin-left: 18px !important;
-	margin-right: 25px !important;
+	margin-right: 75px !important;
 }
 
 #sidebar-ui .sidebar-commands-control .command-start-responsive:before {
@@ -778,7 +778,7 @@
 
 #sidebar-ui .command-edit-bg,
 #sidebar-ui .command-edit-global-regions {
-	width: 48% !important;
+	width: 46% !important;
 	padding: 0px !important;
 	margin-top: 15px !important;
 }
@@ -796,7 +796,7 @@
 #sidebar-ui .command-edit-structure {
 	margin-right: 80px;
 	display: inline-block;
-	width: 125px;
+	width: 105px;
 	margin: 5px 0px !important;
 }
 
@@ -1477,7 +1477,7 @@ span.draggable-post-element.element-dragging
 #sidebar-ui .field-grid-half,
 #element-settings-sidebar .field-grid-half {
 	clear: left;
-	width: 100%;
+	width: 46%;
 	padding: 0px;
 	float: left;
 	margin: 0;

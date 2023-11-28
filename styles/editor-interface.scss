@@ -130,9 +130,9 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 	z-index: 1;
 	cursor: pointer;
 	padding: 10px;
@@ -412,7 +412,7 @@
 }
 .upfront-control-dialog-open .inline-panel-control-dialog,
 .upfront-ui .upfront-control-dialog-open .inline-panel-control-dialog,
-.upfront-sub-control-dialog-open .inline-panel-sub-control-dialog {
+.upfront-sub-control-dialog-open .inline-panel-sub-control-dialog, {
 	display: block;
 }
 .inline-panel-item-selected.labeled{
