@@ -6705,7 +6705,7 @@ msgid "Schaltfläche zu "
 msgstr "button to"
 
 #: elements/upfront-login/lib/upfront_login.php:232
-msgid "Schaltflächenhintergrund"
+msgid "Hintergrund"
 msgstr "button background"
 
 #: elements/upfront-search/lib/upfront_search.php:69

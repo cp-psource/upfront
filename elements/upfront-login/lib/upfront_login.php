@@ -229,7 +229,7 @@ class Upfront_LoginView extends Upfront_Object {
 				'logout_link' => __("Logout-Link", 'upfront'),
 				'wrapper_background' => __("Wrapper-Hintergrund", 'upfront'),
 				'field_background' => __("Feldhintergrund", 'upfront'),
-				'button_background' => __("Schaltflächenhintergrund", 'upfront'),
+				'button_background' => __("Hintergrund", 'upfront'),
 				'link_color' => __("Linkfarbe", 'upfront'),
 			)
 		);

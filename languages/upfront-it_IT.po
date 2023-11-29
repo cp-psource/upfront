@@ -2261,7 +2261,7 @@ msgid "Feldhintergrund"
 msgstr ""
 
 #: elements/upfront-login/lib/upfront_login.php:232
-msgid "Schaltflächenhintergrund"
+msgid "Hintergrund"
 msgstr ""
 
 #: elements/upfront-login/lib/upfront_login.php:233
