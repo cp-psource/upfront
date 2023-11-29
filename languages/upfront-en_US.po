@@ -1278,7 +1278,7 @@ msgstr "Custom width in px"
 
 #: library/servers/class_upfront_editor_l10n_server.php:417
 #: library/servers/class_upfront_presets_server.php:663
-msgid "Benutzerdefinierte CSS"
+msgid "Stylesheet"
 msgstr "Custom CSS"
 
 #: library/servers/class_upfront_editor_l10n_server.php:92
@@ -3937,7 +3937,7 @@ msgid "Globaler Hintergrund"
 msgstr "Global background"
 
 #: library/servers/class_upfront_editor_l10n_server.php:454
-msgid "Globales CSS bearbeiten"
+msgid "Globales CSS"
 msgstr "Edit Global CSS"
 
 #: elements/upfront-youtube/lib/uyoutube.php:111
@@ -6443,7 +6443,7 @@ msgid "Raster ausblenden"
 msgstr "Hide grid"
 
 #: library/servers/class_upfront_editor_l10n_server.php:451
-msgid "Raster bearbeiten"
+msgid "Raster"
 msgstr "Edit grid"
 
 #: library/servers/class_upfront_editor_l10n_server.php:376
@@ -6762,7 +6762,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:206
 #: library/servers/class_upfront_editor_l10n_server.php:549
-msgid "Schriftart einfügen"
+msgid "Schriftart"
 msgstr "Insert font"
 
 #: library/servers/class_upfront_editor_l10n_server.php:539
@@ -6771,7 +6771,7 @@ msgstr "choose font"
 
 #: library/servers/class_upfront_editor_l10n_server.php:455
 #: library/servers/class_upfront_editor_l10n_server.php:473
-msgid "Schriftarten verwalten"
+msgid "Schriftarten"
 msgstr "Manage Fonts"
 
 #: library/servers/class_upfront_editor_l10n_server.php:212
@@ -8273,7 +8273,7 @@ msgid "Vor dem Senden"
 msgstr "Before sending"
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "Voreingestelltes CSS bearbeiten"
+msgid "CSS bearbeiten"
 msgstr "Edit default CSS"
 
 #: library/servers/class_upfront_presets_server.php:598
