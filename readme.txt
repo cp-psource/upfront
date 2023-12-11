@@ -97,6 +97,10 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 2.0.0 =
+
+* Fix upfront-region-name-edit-trigger CSS
+
 = 1.9.9 =
 
 * Fix: sizeof(): must be of type Countable|array
