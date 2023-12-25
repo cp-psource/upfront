@@ -193,14 +193,13 @@ var USliderView = Upfront.Views.ObjectView.extend({
 	},
 
 	update_colors: function () {
-
 		var props = this.get_preset_properties();
-
-		if (_.size(props) <= 0) return false; // No properties, carry on
-
+	
+		if (Object.keys(props).length <= 0) return false; // No properties, carry on
+	
 		PresetUtil.updatePresetStyle('slider', props, settingsStyleTpl);
-
 	},
+	
 
 	on_edit: function(){
 		return false;

@@ -449,13 +449,16 @@
 					{[ if (selectors) { ]}
 					<div class="upfront-css-selectors upfront-scroll-panel">
 						<p>{{Upfront.Settings.l10n.global.content.available_element_selectors}}</p>
-						{[ _.each(selectors, function(data, s){ ]}
-						<span class="upfront-css-selector" title="{{ data.info }}" data-selector="{{ s }}">{{data.label}}</span>
+						{# Each loop for selectors #}
+						{[ _.each(selectors, function(data, s) { ]}
+							<span class="upfront-css-selector" title="{{ data.info }}" data-selector="{{ s }}">{{data.label}}</span>
 						{[ }); ]}
+					
+						{# Check if elementType exists #}
 						{[ if (elementType) { ]}
-						{{ _.size(selectors) ? '' : 'No selectors available for the ' + elementType.toLowerCase() + ' element.'}}
+							{{ Object.keys(selectors).length ? '' : 'No selectors available for the ' + elementType.toLowerCase() + ' element.' }}
 						{[ } ]}
-					</div>
+					</div>					
 					{[ } ]}
 					<div class="upfront-css-save-form">
 						{[ if (show_style_name) { ]}

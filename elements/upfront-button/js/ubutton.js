@@ -133,15 +133,13 @@ var ButtonView = Upfront.Views.ObjectView.extend({
 	update_colors: function () {
 		var me = this,
 			preset = this.model.get_property_value_by_name("preset"),
-			props = PresetUtil.getPresetProperties('button', preset) || {}
-		;
-
-		if (_.size(props) <= 0) return false; // No properties, carry on
-
+			props = PresetUtil.getPresetProperties('button', preset) || {};
+	
+		if (Object.keys(props).length <= 0) return false; // No properties, carry on
+	
 		PresetUtil.updatePresetStyle('button', props, settingsStyleTpl);
-
 	},
-
+	
 	clear_preset_name: function(preset) {
 		preset = preset.replace(' ', '-');
 		preset = preset.replace(/[^-a-zA-Z0-9]/, '');

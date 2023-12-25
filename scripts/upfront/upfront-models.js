@@ -468,7 +468,7 @@ var _alpha = "alpha",
 				return false;
 			var collection = this.collection,
 				index = collection.indexOf(this),
-				total = collection.size()-1, // total minus shadow region
+				total = collection.length-1, // total minus shadow region
 				container = this.get('container') || this.get('name'),
 				ref_models = collection.filter(function(model){ return model.get('container') == container || model.get('name') == container; }),
 				ref_models2 = [],

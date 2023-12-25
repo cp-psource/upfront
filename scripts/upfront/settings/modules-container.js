@@ -74,7 +74,7 @@ define([
 
 			var me = this;
 			this.modules.each(function (module) {
-				if ( module.fields.size() > 0 ) {
+				if ( module.fields.length > 0 ) {
 					module.save_fields();
 				}
 			});

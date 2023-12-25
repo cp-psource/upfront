@@ -1204,7 +1204,7 @@ define([
 						//Upfront.Util.log("we're good here");
 
 						// Notify about concurrent edits
-						if ("concurrent_users" in data && data.concurrent_users && _.size(data.concurrent_users)) {
+						if ("concurrent_users" in data && data.concurrent_users && Object.keys(data.concurrent_users).length > 0) {
 							var users = _.values(data.concurrent_users).join(', ');
 							Upfront.Views.Editor.notify(Upfront.Settings.l10n.global.views.already_edited_nag.replace(/%s/, users), 'error');
 						}

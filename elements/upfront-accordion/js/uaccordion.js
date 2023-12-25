@@ -43,13 +43,11 @@ define([
 		update_colors: function () {
 			var me = this,
 				preset = this.model.get_property_value_by_name("preset"),
-				props = PresetUtil.getPresetProperties('accordion', preset) || {}
-			;
-			
-			if (_.size(props) <= 0) return false; // No properties, carry on
-
+				props = PresetUtil.getPresetProperties('accordion', preset) || {};
+		
+			if (Object.keys(props).length <= 0) return false; // No properties, carry on
+		
 			PresetUtil.updatePresetStyle('accordion', props, settingsStyleTpl);
-
 		},
 
 		/**
