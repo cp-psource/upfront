@@ -534,7 +534,7 @@ class Upfront_Uimage_Server extends Upfront_Server {
 		$crop['height'] = min($crop['height'], $size['height']);
 
 		if ($crop && !$image_editor->crop($crop['left'], $crop['top'], $crop['width'], $crop['height'])) {
-			return $this->_out(new Upfront_JsonResponse_Error(Upfront_UimageView::_get_l10n('edit_error')));
+			return Upfront_JsonResponse_Error::create(Upfront_UimageView::_get_l10n('edit_error'));
 		}
 
 		// Generate a new filename for the cropped image

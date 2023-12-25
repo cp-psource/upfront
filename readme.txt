@@ -102,6 +102,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * Fix upfront-region-name-edit-trigger CSS
 * Update: fileupload.js
 * Update: text.js
+* Fix: $this can not be used in static methods
 
 = 1.9.9 =
 
