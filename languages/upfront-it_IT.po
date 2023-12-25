@@ -2261,7 +2261,7 @@ msgid "Feldhintergrund"
 msgstr ""
 
 #: elements/upfront-login/lib/upfront_login.php:232
-msgid "Hintergrund"
+msgid "Schaltflächenhintergrund"
 msgstr ""
 
 #: elements/upfront-login/lib/upfront_login.php:233
@@ -5429,15 +5429,15 @@ msgid "Info"
 msgstr ""
 
 #: library/class_upfront_permissions.php:488
-msgid "Can Access Upfront Editor Mode"
+msgid "Kann auf den Upfront-Editor-Modus zugreifen"
 msgstr ""
 
 #: library/class_upfront_permissions.php:489
-msgid "Can Modify Upfront Layouts"
+msgid "Kann UpFront Layouts anpassen"
 msgstr ""
 
 #: library/class_upfront_permissions.php:490
-msgid "Can Modify Single Post Layout"
+msgid "Kann das Layout einzelner Beiträge ändern"
 msgstr ""
 
 #: library/class_upfront_permissions.php:491
@@ -6604,7 +6604,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:206
 #: library/servers/class_upfront_editor_l10n_server.php:549
-msgid "Schriftart"
+msgid "Schriftart einfügen"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:207
@@ -7280,7 +7280,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:417
 #: library/servers/class_upfront_presets_server.php:663
-msgid "Stylesheet"
+msgid "Benutzerdefinierte CSS"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:420
@@ -7389,7 +7389,7 @@ msgid "Layouts"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:451
-msgid "Raster"
+msgid "Raster bearbeiten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:452
@@ -7397,12 +7397,12 @@ msgid "Globaler BG"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:454
-msgid "Globales CSS"
+msgid "Globales CSS bearbeiten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:455
 #: library/servers/class_upfront_editor_l10n_server.php:473
-msgid "Schriftarten"
+msgid "Schriftarten verwalten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:456
@@ -8793,7 +8793,7 @@ msgid "Alle zurücksetzen"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "CSS bearbeiten"
+msgid "Voreingestelltes CSS bearbeiten"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:664

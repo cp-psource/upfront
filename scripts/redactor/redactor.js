@@ -583,7 +583,7 @@
                     var json;
                     try
                     {
-                        json = JSON.parse(data);
+                        json = $.parseJSON(data);
                     }
                     catch(e)
                     {
@@ -7977,7 +7977,7 @@
                             var json;
                             try
                             {
-                                json = (typeof data === 'string' ? JSON.parse(data) : data);
+                                json = (typeof data === 'string' ? $.parseJSON(data) : data);
                             }
                             catch(err)
                             {

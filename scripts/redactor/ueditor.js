@@ -814,7 +814,7 @@
 						var btn = this.button.build(key, { title: title });
 						var $btn = this.button.get(afterkey);
 
-						if ($btn.length !== 0) $btn.parent().after($('<li>').append(btn));
+						if ($btn.size() !== 0) $btn.parent().after($('<li>').append(btn));
 						else this.$toolbar.append($('<li>').append(btn));
 
 						return btn;
@@ -826,7 +826,7 @@
 						var btn = this.button.build(key, { title: title });
 						var $btn = this.button.get(beforekey);
 
-						if ($btn.length !== 0) $btn.parent().before($('<li>').append(btn));
+						if ($btn.size() !== 0) $btn.parent().before($('<li>').append(btn));
 						else this.$toolbar.append($('<li>').append(btn));
 
 						return btn;
