@@ -265,7 +265,7 @@ Shuffle.prototype = {
 
         // Loop through each item and use provided function to determine
         // whether to hide it or not.
-        if ( $.isFunction(category) ) {
+        if ( typeof category === "function" ) {
             $items.each(function() {
                 var $item = $(this),
                 passes = category.call($item[0], $item, self);
@@ -780,7 +780,7 @@ Shuffle.prototype = {
         // Set the duration to zero so it happens immediately
         element.style[ durationName ] = '0ms'; // ms needed for firefox!
 
-        if ( $.isFunction( property ) ) {
+        if ( typeof property === "function" ) {
             property();
         } else {
             element.style[ property ] = value;
