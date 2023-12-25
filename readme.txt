@@ -100,6 +100,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 = 2.0.0 =
 
 * Fix upfront-region-name-edit-trigger CSS
+* Update: fileupload.js
 
 = 1.9.9 =
 
