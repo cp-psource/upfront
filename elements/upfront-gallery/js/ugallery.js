@@ -139,7 +139,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 
 			ugalleries[elementId] = {};
 
-			raw_labels = ['All'];
+			raw_labels = ['Alle'];
 			_.each(this.images.models, function(image) {
 				raw_labels = _.union(raw_labels, image.get('tags'));
 			});

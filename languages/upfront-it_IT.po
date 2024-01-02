@@ -5429,15 +5429,15 @@ msgid "Info"
 msgstr ""
 
 #: library/class_upfront_permissions.php:488
-msgid "Kann auf den Upfront-Editor-Modus zugreifen"
+msgid "Can Access Upfront Editor Mode"
 msgstr ""
 
 #: library/class_upfront_permissions.php:489
-msgid "Kann UpFront Layouts anpassen"
+msgid "Can Modify Upfront Layouts"
 msgstr ""
 
 #: library/class_upfront_permissions.php:490
-msgid "Kann das Layout einzelner Beiträge ändern"
+msgid "Can Modify Single Post Layout"
 msgstr ""
 
 #: library/class_upfront_permissions.php:491

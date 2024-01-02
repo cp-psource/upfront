@@ -140,7 +140,7 @@ class Upfront_MediaServer extends Upfront_Server {
 			'video_recommendation_nag' => __('Wir empfehlen die Nutzung von Diensten wie YouTube, Vimeo oder Soundcloud zum Speichern von Rich-Media-Dateien. Du kannst es dann einfach in Deine Webseite einbetten. Erfahre hier mehr.', 'upfront'),
 			'keep_file' => __('Datei behalten', 'upfront'),
 			'remove_file' => __('Datei entfernen', 'upfront'),
-			'media_url' => __('URL des Mediums', 'upfront'),
+			'media_url' => __('URL des Medium', 'upfront'),
 			'image_title' => __('Bildtitel', 'upfront'),
 			'your_image_title' => __('Dein Bildtitel', 'upfront'),
 			'n_of_x' => _x("von", "N von X", 'upfront'),

@@ -62,11 +62,11 @@ class Upfront_UgalleryView extends Upfront_Object {
 		/**
 		 * Remove All if we already have one
 		 */
-		if(($key = array_search(array('id' => 'All', 'text' => 'All'), $data['labels'],  true)) !== false) {
+		if(($key = array_search(array('id' => 'Alle', 'text' => 'Alle'), $data['labels'],  true)) !== false) {
 			unset($data['labels'][$key]);
 		}
 
-		array_unshift($data['labels'], array('id' => '0', 'text' => 'All'));
+		array_unshift($data['labels'], array('id' => '0', 'text' => 'Alle'));
 		$data['labels_length'] = sizeof($data['labels']);
 		$data['image_labels'] = $this->image_labels;
 
