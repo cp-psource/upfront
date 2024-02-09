@@ -1,6 +1,6 @@
 === UpFront Framework ===
 Contributors: DerN3rd (WMS N@W)
-Theme URI: https://github.com/cp-psource/upfront/wiki/UpFront-Theme%E2%80%90Framework
+Theme URI: https://cp-psource.github.io/upfront/
 Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
 Tested up to: 5.0
