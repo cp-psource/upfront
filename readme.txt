@@ -1,7 +1,7 @@
 === UpFront Framework ===
 Contributors: DerN3rd (WMS N@W)
 Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
-Theme URI: https://upfront.n3rds.work/
+Theme URI: https://github.com/cp-psource/upfront/wiki/UpFront-Theme%E2%80%90Framework
 Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
 Tested up to: 5.0
