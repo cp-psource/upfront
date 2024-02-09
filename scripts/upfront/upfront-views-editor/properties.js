@@ -13,9 +13,9 @@
             },
             initialize: function () {
                 /*
-                 this.model.get("properties").on("change", this.render, this);
-                 this.model.get("properties").on("add", this.render, this);
-                 this.model.get("properties").on("remove", this.render, this);
+                 this.model.get("properties").bind("change", this.render, this);
+                 this.model.get("properties").bind("add", this.render, this);
+                 this.model.get("properties").bind("remove", this.render, this);
                  */
 
                 this.listenTo(this.model.get("properties"), 'change', this.render);

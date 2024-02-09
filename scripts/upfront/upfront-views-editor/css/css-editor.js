@@ -233,18 +233,18 @@
 			get_style_element: function() {
 				return $('style#' + this.get_style_id());
 			},
-			close: function(e) {
-				if (e && typeof e.preventDefault === 'function') e.preventDefault();
-			
+			close: function(e){
+				if(e && _.isFunction(e.preventDefault)) e.preventDefault();
+
 				$(window).off('resize', this.resizeHandler);
 				this.off('change');
-			
+
 				this.$style = false;
 				if (this.editor) this.editor.destroy();
-			
+
 				$('#page').css('padding-bottom', 0);
 				this.$el.hide();
-			
+
 				Upfront.Events.trigger('csseditor:closed', this.element_id);
 			},
 			render: function(){
@@ -322,14 +322,12 @@
 				});
 
 				styles = Upfront.Util.colors.convert_string_color_to_ufc(this.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
-
 				if (this.is_global_stylesheet === false) {
 					selector = this.get_css_selector().replace(/[.+*\[\]]/g, '\\$&');
 					scope = new RegExp(selector + '\\s*', 'g');
 					styles = styles.replace(scope, '');
 				}
-
-				editor.setValue(styles.trim(), -1);
+				editor.setValue($.trim(styles), -1);
 
 				// Set up the proper vscroller width to go along with new change.
 				editor.renderer.scrollBar.width = 5;
@@ -500,7 +498,7 @@
 				;
 
 				_.each(rules, function (rl) {
-					var src = rl.trim().split('{');
+					var src = $.trim(rl).split('{');
 
 					if (src.length != 2) return true; // wtf
 
@@ -508,7 +506,7 @@
 						processed_selectors = []
 					;
 					_.each(individual_selectors, function (sel) {
-						sel = sel.trim();
+						sel = $.trim(sel);
 						var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
 						var	is_container = clean_selector[0] === '@' || me.recursiveExistence(selector, clean_selector),
 							spacer = is_container
@@ -553,7 +551,7 @@
 			// When stylename changes upfront needs to update element model theme_style property
 			// and also to save style under new stylename.
 			updateStylename: function() {
-				var new_name = this.$('.upfront-css-save-name-field').val().trim(),
+				var new_name =  $.trim(this.$('.upfront-css-save-name-field').val()),
 					old_name = this.stylename;
 
 				// Strict filtering on stylename
@@ -597,8 +595,8 @@
 			save: function(event) {
 				if (event) event.preventDefault();
 				var me = this,
-				styles = this.editor.getValue().trim(),
-				data;
+					styles = $.trim(this.editor.getValue()),
+					data;
 
 				if (this.is_global_stylesheet === false && this.stylename === this.get_temp_stylename())
 					return notifier.addMessage(l10n.style_name_nag, 'error');
@@ -651,8 +649,8 @@
 			/* API to call save style without loading editor */
 			saveCall: function (notify) {
 				var me = this,
-				styles = this.get_style_element().html(),
-				data;
+					styles = $.trim(this.get_style_element().html()),
+					data;
 
 				data = {
 					styles: styles,

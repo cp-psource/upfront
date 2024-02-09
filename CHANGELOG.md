@@ -91,7 +91,7 @@ Change Log
 - Fix: Post Part Settings - Teile fehlen
 - Fix: Bilder von Galerieelementen können beim Bearbeiten der Bildunterschrift versehentlich ausgetauscht werden
 - Fix: Beitragselement-Autorenteil schneidet Text ab
-- Fix: Die Schaltfläche "Schriftarten verwalten" ist nicht immer aktiv
+- Fix: Die Schaltfläche "Fonts" ist nicht immer aktiv
 - Fix: Die Auswahl des Kalenders im Widget-Element verursacht einen Fehler
 - Fix: Dem Beitrag hinzugefügtes Menüelement wird im Frontend nicht angezeigt
 - Fix: Das Kontaktformular sendet E-Mails in einigen Fällen nicht richtig

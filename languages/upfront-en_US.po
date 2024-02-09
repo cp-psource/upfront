@@ -6443,7 +6443,7 @@ msgid "Raster ausblenden"
 msgstr "Hide grid"
 
 #: library/servers/class_upfront_editor_l10n_server.php:451
-msgid "Raster bearbeiten"
+msgid "Basis-Raster"
 msgstr "Edit grid"
 
 #: library/servers/class_upfront_editor_l10n_server.php:376
@@ -6771,7 +6771,7 @@ msgstr "choose font"
 
 #: library/servers/class_upfront_editor_l10n_server.php:455
 #: library/servers/class_upfront_editor_l10n_server.php:473
-msgid "Schriftarten verwalten"
+msgid "Fonts"
 msgstr "Manage Fonts"
 
 #: library/servers/class_upfront_editor_l10n_server.php:212
@@ -8273,7 +8273,7 @@ msgid "Vor dem Senden"
 msgstr "Before sending"
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "Voreingestelltes CSS bearbeiten"
+msgid "CSS bearbeiten"
 msgstr "Edit default CSS"
 
 #: library/servers/class_upfront_presets_server.php:598

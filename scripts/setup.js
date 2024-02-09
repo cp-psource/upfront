@@ -48,7 +48,6 @@ require(['backbone'], function (Backbone) {
 					"layouts": "#layouts",
 					"settings": "#settings",
 					"contextmenu": "#contextmenu",
-					/*Wird benötigt für Output?*/
 					//"main": "#upfront-output"
 					"main": "#page"
 				},

@@ -21,7 +21,7 @@ var PostImageInsert = base.ImageInsertBase.extend({
             {id: 'style', type: 'dialog', icon: 'style', tooltip: l10n.style, view: this.getStyleView()},
             {id: 'change_image', type: 'simple', icon: 'change_image', tooltip: l10n.change_image},
             {id: 'link', type: 'dialog', icon: 'link', tooltip: l10n.link_image, view: this.getLinkView()},
-            {id: 'toggle_caption', type: 'simple', icon: 'caption', tooltip: l10n.toggle_caption, active: _.on( this.get_caption_state, this ) }
+            {id: 'toggle_caption', type: 'simple', icon: 'caption', tooltip: l10n.toggle_caption, active: _.bind( this.get_caption_state, this ) }
         ];
         this.createControls();
 
@@ -181,10 +181,10 @@ var WP_PostImageInsert = base.ImageInsertBase.extend({
     },
     prepare_controls: function(){
         this.controlsData = [
-            {id: 'wp_style', type: 'dialog', icon:  _.on( this.get_style_icon, this ), tooltip: 'Style', view: this.getStyleView(), hideOkButton: true },
+            {id: 'wp_style', type: 'dialog', icon:  _.bind( this.get_style_icon, this ), tooltip: 'Style', view: this.getStyleView(), hideOkButton: true },
             {id: 'change_image', type: 'simple', icon: 'change_image', tooltip: l10n.change_image},
             {id: 'link', type: 'dialog', icon: 'link', tooltip: 'Link image', view: this.getLinkView()},
-            {id: 'toggle_caption', type: 'simple', icon: 'caption', tooltip: 'Toggle Caption', active: _.on( this.get_caption_state, this ) }
+            {id: 'toggle_caption', type: 'simple', icon: 'caption', tooltip: 'Toggle Caption', active: _.bind( this.get_caption_state, this ) }
         ];
     },
     start: function( result ){

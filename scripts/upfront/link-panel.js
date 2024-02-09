@@ -303,7 +303,7 @@ define([
 		},
 
 		createLightBox: function() {
-			var name = this.$('.js-ulinkpanel-lightbox-input').val().trim();
+			var name = $.trim(this.$('.js-ulinkpanel-lightbox-input').val());
 			if (!name) {
 				Upfront.Views.Editor.notify(Upfront.Settings.l10n.global.views.ltbox_empty_name_nag, 'error');
 				return false;

@@ -7389,7 +7389,7 @@ msgid "Layouts"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:451
-msgid "Raster bearbeiten"
+msgid "Basis-Raster"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:452
@@ -7402,7 +7402,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:455
 #: library/servers/class_upfront_editor_l10n_server.php:473
-msgid "Schriftarten verwalten"
+msgid "Fonts"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:456
@@ -8793,7 +8793,7 @@ msgid "Alle zurücksetzen"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "Voreingestelltes CSS bearbeiten"
+msgid "CSS bearbeiten"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:664

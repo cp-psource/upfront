@@ -659,7 +659,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			'posts_label' => __('Post', 'upfront'),
 			'reset_posts' => __('Alle zurücksetzen', 'upfront'),
 			'default_label' => __('Standard', 'upfront'),
-			'edit_preset_css' => __('Voreingestelltes CSS bearbeiten', 'upfront'),
+			'edit_preset_css' => __('CSS bearbeiten', 'upfront'),
 			'edit_preset_label' => __('Benutzerdefinierte CSS', 'upfront'),
 			'convert_style_to_preset' => __('Als Voreinstellung speichern', 'upfront'),
 			'convert_preset_info' => __('Upfront 1.0 führt Voreinstellungen ein, die es Dir ermöglichen, Stile für jedes Element auf Deiner Webseite zu speichern und wiederzuverwenden. Bevor Du dieses Element bearbeiten kannst, wähle eine der folgenden Optionen:', 'upfront'),

@@ -470,7 +470,7 @@ class Upfront_EditorL10n_Server implements IUpfront_Server {
 				'page_details' => __('Seitendetails', 'upfront'),
 				'post_components' => __('Komponenten posten', 'upfront'),
 				'no_defined_fonts' => __('Du hast noch keine Themenschriften definiert. Beginne bitte mit dem Hinzufügen von Schriftarten, die Du zum Theme verwenden möchtest.', 'upfront'),
-				'select_fonts_to_use' => __('Schriftarten verwalten', 'upfront'),
+				'select_fonts_to_use' => __('Fonts', 'upfront'),
 				'text_alignment' => __('Textausrichtung', 'upfront'),
 				'type_element' => __('Typelement:', 'upfront'),
 				'h1' => __('Überschrift (H1)', 'upfront'),

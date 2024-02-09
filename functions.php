@@ -1,12 +1,16 @@
 <?php
+require 'psource/psource-plugin-update/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-require 'psource/psource-plugin-update/psource-plugin-updater.php';
-use Psource\PluginUpdateChecker\v5\PucFactory;
-$MyUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=upfront',
-	__FILE__, 
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/cp-psource/upfront',
+	__FILE__,
 	'upfront'
 );
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
 
 /**
  * Haupteinstiegspunkt für den Upfront-Core

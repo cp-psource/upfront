@@ -1067,13 +1067,13 @@ jQuery(document).ready(function($){
 				if(lightbox.data('closeicon') == 'yes')
 					close.append(close_icon);
 
-				close.on('click', function() {
+				close.bind('click', function() {
 					lightboxhide();
 				});
 			}
 
 			if(lightbox.data('clickout') == 'yes') {
-				overlay.on('click', function() {
+				overlay.bind('click', function() {
 					lightboxhide();
 				});
 			}

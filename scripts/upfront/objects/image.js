@@ -49,7 +49,7 @@ var ImageElement = Upfront.Views.Editor.Sidebar.Element.extend({
 		var object = new ImageModel({
 				"name": "",
 				"properties": [
-					{"name": "content", "value": "http://wpsalad.com/wp-content/uploads/2012/11/psource.png"}
+					{"name": "content", "value": "http://wpsalad.com/wp-content/uploads/2012/11/wpmudev.png"}
 				]
 			}),
 			module = new Upfront.Models.Module({

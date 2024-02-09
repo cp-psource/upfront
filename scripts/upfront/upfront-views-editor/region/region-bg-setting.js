@@ -192,11 +192,12 @@
 						},
 						blur: function () {
 							var collection = this.model.collection,
-							prev_title = this.model.get('title'),
-							prev_name = this.model.get('name'),
-							title = this.get_value().replace(/[^A-Za-z0-9\s_-]/g, ''), // strict filtering to prevent unwanted characters
-							name = title.toLowerCase().replace(/\s/g, '-').trim(),
-							new_title, sub_regions, region_css;
+								prev_title = this.model.get('title'),
+								prev_name = this.model.get('name'),
+								title = $.trim(this.get_value().replace(/[^A-Za-z0-9\s_-]/g, '')), // strict filtering to prevent unwanted character
+								name = title.toLowerCase().replace(/\s/g, '-'),
+								new_title, sub_regions, region_css
+							;
 							if ( prev_title != title ) {
 								// Check if the region name exists
 								if ( collection.get_by_name(name) ) {
@@ -750,7 +751,7 @@
 					no_render: true
 				});
 				return {
-					styles: Upfront.Application.cssEditor.get_style_element().html(),
+					styles: $.trim(Upfront.Application.cssEditor.get_style_element().html()),
 					selector: Upfront.Application.cssEditor.get_css_selector()
 				};
 			},

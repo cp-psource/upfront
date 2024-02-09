@@ -19,7 +19,7 @@ var _callback = function () {};
 function get_backup_notice () {
 	var notice = ((Upfront.data || {}).Compat || {}).notice,
 		url = ((Upfront.data || {}).Compat || {}).snapshot_url,
-		msg = ((Upfront.data || {}).Compat || {}).snapshot_msg || 'Snapshot installieren',
+		msg = ((Upfront.data || {}).Compat || {}).snapshot_msg || 'Install Snapshot',
 		has_snapshot_class = url.match(/snapshots_new_panel/) ? 'has-snapshot' : ''
 	;
 	_callback = function () {
@@ -30,7 +30,7 @@ function get_backup_notice () {
 		'<div class="upfront-version_compatibility-nag">' +
 			'<p>' + notice + '</p>' +
 			'<div>' +
-				'<a class="boot ' + has_snapshot_class + '" href="#boot">Weiter bearbeiten</a>' +
+				'<a class="boot ' + has_snapshot_class + '" href="#boot">Proceed to edit</a>' +
 				(url ? '<a class="update ' + has_snapshot_class + '" href="' + url + '">' + msg + '</a>' : '') +
 			'</div>' +
 		'</div>' +
@@ -43,12 +43,12 @@ function get_backup_notice () {
  * @return {String} Theme notice markup
  */
 function get_theme_notice () {
-	var theme = ((Upfront.data || {}).Compat || {}).theme || 'Deines aktuellen Themes',
+	var theme = ((Upfront.data || {}).Compat || {}).theme || 'your current theme',
 		url = ((Upfront.data || {}).Compat || {}).theme_url
 	;
 	return '' +
 		'<div class="upfront-version_compatibility-nag">' +
-			'<p>Eine neue Version von <b>' + theme + '</b> ist verfügbar. Wir empfehlen Dir, <b> zu aktualisieren' + theme + '</b> bevor Du Änderungen vornimmst.</p>' +
+			'<p>A new version of <b>' + theme + '</b> is available. We recommend you Update <b>' + theme + '</b> before making any edits.</p>' +
 			'<div>' +
 				'<a class="boot" href="#boot">Proceed to edit</a>' +
 				(url ? '<a class="update" href="' + url + '">Update ' + theme + '</a>' : '') +

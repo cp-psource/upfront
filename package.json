@@ -25,5 +25,10 @@
     "test-js": "node_modules/.bin/mocha test/js",
     "test": "npm run test-php && npm run test-js",
     "jshint": "./node_modules/.bin/jshint ./ --exclude node_modules/,build/,scripts/chosen,scripts/file_upload,scripts/findandreplace,scripts/jquery,scripts/magnific-popup,scripts/realperson,scripts/spectrum"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "clean-css-cli": "^5.6.3",
+    "requirejs": "^2.3.6"
   }
 }
