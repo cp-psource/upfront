@@ -85,6 +85,7 @@ Wirf einen Blick in unser [PSOURCE Sortiment](https://github.com/cp-psource) und
 = 2.0.0 =
 
 * Fix: json Decode String
+* Fix: Deprecated isFunction
 
 = 1.9.9 =
 

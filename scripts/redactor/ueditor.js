@@ -709,74 +709,58 @@
 						{
 							var func;
 
-							if ($.isFunction(callback))
-							{
+							if (typeof callback === 'function') {
 								callback.call(this, btnName);
 								this.observe.buttons(e, btnName);
 							}
-							else if (callback.search(/\./) != '-1')
-							{
+							else if (callback.search(/\./) != '-1') {
 								func = callback.split('.');
-								if (typeof this[func[0]] != 'undefined')
-								{
+								if (typeof this[func[0]] != 'undefined') {
 									this[func[0]][func[1]](btnName);
 									this.observe.buttons(e, btnName);
 								}
 							}
-							else
-							{
+							else {
 								this[callback](btnName);
 								this.observe.buttons(e, btnName);
 							}
 						}
 					},
-					get: function(key)
-					{
+					get: function(key) {
 						return this.$toolbar.find('a.re-' + key);
 					},
-					setActive: function(key)
-					{
+					setActive: function(key) {
 						this.button.get(key).addClass('redactor-act');
 					},
-					setInactive: function(key)
-					{
+					setInactive: function(key) {
 						this.button.get(key).removeClass('redactor-act');
 					},
-					setInactiveAll: function(key)
-					{
-						if (typeof key == 'undefined')
-						{
+					setInactiveAll: function(key) {
+						if (typeof key == 'undefined') {
 							this.$toolbar.find('a.re-icon').removeClass('redactor-act');
 						}
-						else
-						{
+						else {
 							this.$toolbar.find('a.re-icon').not('.re-' + key).removeClass('redactor-act');
 						}
 					},
-					setActiveInVisual: function()
-					{
+					setActiveInVisual: function() {
 						this.$toolbar.find('a.re-icon').not('a.re-html').removeClass('redactor-button-disabled');
 					},
-					setInactiveInCode: function()
-					{
+					setInactiveInCode: function() {
 						this.$toolbar.find('a.re-icon').not('a.re-html').addClass('redactor-button-disabled');
 					},
-					changeIcon: function(key, classname)
-					{
+					changeIcon: function(key, classname) {
 						this.button.get(key).addClass('re-' + classname);
 					},
-					removeIcon: function(key, classname)
-					{
+					removeIcon: function(key, classname) {
 						this.button.get(key).removeClass('re-' + classname);
 					},
-					setAwesome: function(key, name)
-					{
+					setAwesome: function(key, name) {
 						var $button = this.button.get(key);
 						$button.removeClass('redactor-btn-image').addClass('fa-redactor-btn');
 						$button.html('<i class="fa ' + name + '"></i>');
 					},
-					addCallback: function($btn, callback)
-					{
+					addCallback: function($btn, callback) {
 						var type = (callback == 'dropdown') ? 'dropdown' : 'func';
 						var key = $btn.attr('rel');
 						$btn.on('touchstart click', $.proxy(function(e)
@@ -786,8 +770,7 @@
 
 						}, this));
 					},
-					addDropdown: function($btn, dropdown)
-					{
+					addDropdown: function($btn, dropdown) {
 						var key = $btn.attr('rel');
 						this.button.addCallback($btn, 'dropdown');
 

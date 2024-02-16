@@ -57,8 +57,7 @@
                     func = instance[options];
                 }
 
-                if (typeof instance !== 'undefined' && $.isFunction(func))
-                {
+                if (typeof instance !== 'undefined' && typeof func === 'function') {
                     var methodVal = func.apply(instance, args);
                     if (methodVal !== undefined && methodVal !== instance)
                     {
@@ -1356,20 +1355,17 @@
                     this.$editor.on('keyup.redactor', $.proxy(this.keyup.init, this));
 
                     // textarea keydown
-                    if ($.isFunction(this.opts.codeKeydownCallback))
-                    {
+                    if (typeof this.opts.codeKeydownCallback === 'function') {
                         this.$textarea.on('keydown.redactor-textarea', $.proxy(this.opts.codeKeydownCallback, this));
                     }
 
                     // textarea keyup
-                    if ($.isFunction(this.opts.codeKeyupCallback))
-                    {
+                    if (typeof this.opts.codeKeyupCallback === 'function') {
                         this.$textarea.on('keyup.redactor-textarea', $.proxy(this.opts.codeKeyupCallback, this));
                     }
 
                     // focus
-                    if ($.isFunction(this.opts.focusCallback))
-                    {
+                    if (typeof this.opts.focusCallback === 'function') {
                         this.$editor.on('focus.redactor', $.proxy(this.opts.focusCallback, this));
                     }
 
@@ -1383,7 +1379,7 @@
                         if (!this.build.isBlured(clickedElement)) return;
 
                         this.utils.disableSelectAll();
-                        if ($.isFunction(this.opts.blurCallback)) this.core.setCallback('blur', e);
+                        if (typeof this.opts.blurCallback === 'function') this.core.setCallback('blur', e);
 
                     }, this));
                 },
@@ -1421,7 +1417,7 @@
                             return;
                         }
 
-                        if (!$.isFunction(RedactorPlugins[s])) return;
+                        if (typeof RedactorPlugins[s] !== 'function') return;
 
                         this[s] = RedactorPlugins[s]();
 
@@ -1430,12 +1426,11 @@
                         var len = methods.length;
 
                         // bind methods
-                        for (var z = 0; z < len; z++)
-                        {
+                        for (var z = 0; z < len; z++) {
                             this[s][methods[z]] = this[s][methods[z]].bind(this);
                         }
 
-                        if ($.isFunction(this[s].init)) this[s].init();
+                        if (typeof this[s].init === 'function') this[s].init();
 
 
                     }, this));
@@ -1542,13 +1537,11 @@
                     else if (type == 'dropdown') this.dropdown.show(e, btnName);
                     else this.button.onClickCallback(e, callback, btnName);
                 },
-                onClickCallback: function(e, callback, btnName)
-                {
+                onClickCallback: function(e, callback, btnName) {
                     var func;
 
-                    if ($.isFunction(callback)) callback.call(this, btnName);
-                    else if (callback.search(/\./) != '-1')
-                    {
+                    if (typeof callback === 'function') callback.call(this, btnName);
+                    else if (callback.search(/\./) != '-1') {
                         func = callback.split('.');
                         if (typeof this[func[0]] == 'undefined') return;
 
@@ -2808,20 +2801,16 @@
                 {
                     return this.core.event;
                 },
-                setCallback: function(type, e, data)
-                {
+                setCallback: function(type, e, data) {
                     var callback = this.opts[type + 'Callback'];
-                    if ($.isFunction(callback))
-                    {
+                    if (typeof callback === 'function') {
                         return (typeof data == 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
                     }
-                    else
-                    {
+                    else {
                         return (typeof data == 'undefined') ? e : data;
                     }
                 },
-                destroy: function()
-                {
+                destroy: function() {
                     this.core.setCallback('destroy');
 
                     // off events and remove data
