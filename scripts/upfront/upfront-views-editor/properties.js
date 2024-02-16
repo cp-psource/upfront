@@ -12,11 +12,6 @@
                 "click #done-adding-property": "add_new_property"
             },
             initialize: function () {
-                /*
-                 this.model.get("properties").bind("change", this.render, this);
-                 this.model.get("properties").bind("add", this.render, this);
-                 this.model.get("properties").bind("remove", this.render, this);
-                 */
 
                 this.listenTo(this.model.get("properties"), 'change', this.render);
                 this.listenTo(this.model.get("properties"), 'add', this.render);

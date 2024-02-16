@@ -12,7 +12,7 @@
     "jshint": "^2.13.6",
     "load-grunt-tasks": "~5.1.0",
     "mocha": "^10.2.0",
-    "underscore": "^1.13.4"
+    "underscore": "^1.13.6"
   },
   "jshintConfig": {
     "esversion": 3,
