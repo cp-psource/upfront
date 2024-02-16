@@ -86,6 +86,9 @@ Wirf einen Blick in unser [PSOURCE Sortiment](https://github.com/cp-psource) und
 
 * Fix: json Decode String
 * Fix: Deprecated isFunction
+* Fix: Deprecated .size()
+* Fix: Deprecated .keyup()
+* Fix: Deprecated .click()
 
 = 1.9.9 =
 

@@ -23,7 +23,7 @@ define([
 				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
 				
 				$('body').on( 'keyup', function( event ) {
-					if ( event.keyCode === 27 )
+					if ( event.key === 27 )
 						me.closeOverlay();
 				});
 				

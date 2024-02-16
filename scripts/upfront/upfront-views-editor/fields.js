@@ -79,13 +79,13 @@
 				return this.default_value;
 			},
 			get_value: function () {
-				var $field = this.get_field();
-				if ( ! this.multiple || ($field.size() == 1 && $field.is('select')) )
-					return $field.val();
-				else
-					return _.map($field, function (el) { return $(el).val(); });
-				return false;
-			},
+                var $field = this.get_field();
+                if ( ! this.multiple || ($field.length == 1 && $field.is('select')) ) // .size() durch .length ersetzt
+                    return $field.val();
+                else
+                    return _.map($field, function (el) { return $(el).val(); });
+                return false;
+            },            
 			set_value: function (value) {
 				this.get_field().val(value);
 			},
@@ -114,43 +114,42 @@
 		});
 
 		var Field_Text = Field.extend({
-			className: 'upfront-field-wrap upfront-field-wrap-text',
-			render: function () {
-				this.$el.html('');
-				if ( !this.options.compact )
-					this.$el.append(this.get_label_html());
-				this.$el.append(this.get_field_html());
-				var me = this;
-				this.get_field().keyup(function(){
-					if ( '' === $(this).val() ){
-							$(this).addClass('upfront-field-empty');
-					}
-					else if ( $(this).hasClass('upfront-field-empty') ) {
-							$(this).removeClass('upfront-field-empty');
-					}
-				}).trigger('keyup').change(function(){
-					me.trigger('changed', me.get_value());
-				});
-				this.trigger('rendered');
-			},
-			get_field_html: function () {
-				var attr = {
-					'type': 'text',
-					'class': 'upfront-field upfront-field-text',
-					'id': this.get_field_id(),
-					'name': this.get_field_name(),
-					'value': this.get_saved_value()
-				};
-				if ( this.options.compact ) {
-					attr.placeholder = this.label;
-					this.$el.attr('title', this.label);
-				}
-				else if ( this.options.placeholder ) {
-					attr.placeholder = this.options.placeholder;
-				}
-				return '<input ' + this.get_field_attr_html(attr) + ' />';
-			}
-		});
+            className: 'upfront-field-wrap upfront-field-wrap-text',
+            render: function () {
+                this.$el.html('');
+                if (!this.options.compact)
+                    this.$el.append(this.get_label_html());
+                this.$el.append(this.get_field_html());
+                var me = this;
+                this.get_field().on('input', function(){
+                    if ('' === $(this).val()){
+                        $(this).addClass('upfront-field-empty');
+                    } else if ($(this).hasClass('upfront-field-empty')) {
+                        $(this).removeClass('upfront-field-empty');
+                    }
+                    me.trigger('changed', me.get_value());
+                }).trigger('input').change(function(){
+                    me.trigger('changed', me.get_value());
+                });
+                this.trigger('rendered');
+            },
+            get_field_html: function () {
+                var attr = {
+                    'type': 'text',
+                    'class': 'upfront-field upfront-field-text',
+                    'id': this.get_field_id(),
+                    'name': this.get_field_name(),
+                    'value': this.get_saved_value()
+                };
+                if (this.options.compact) {
+                    attr.placeholder = this.label;
+                    this.$el.attr('title', this.label);
+                } else if (this.options.placeholder) {
+                    attr.placeholder = this.options.placeholder;
+                }
+                return '<input ' + this.get_field_attr_html(attr) + ' />';
+            }
+        });        
 
 		var Field_Title = Field.extend({
 			className: 'upfront-field-wrap upfront-field-wrap-title',
@@ -956,7 +955,7 @@
 
 						// Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
 						if ( $(e.currentTarget).siblings('input').not(':checked')) {
-							$(e.currentTarget).siblings('input').click();
+							$(e.currentTarget).siblings('input').trigger('click');
 						}
 
 						this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1285,7 +1284,7 @@
 
                     // Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
                     if ( $(e.currentTarget).siblings('input').not(':checked')) {
-                        $(e.currentTarget).siblings('input').click();
+                        $(e.currentTarget).siblings('input').trigger('click');
                     }
 
                     this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1734,13 +1733,13 @@
 
                 this.$el.on('change', '.upfront-field-multiple input', function(){
                     me.$el.find('.upfront-field-multiple').each(function(){
-                        if ( $(this).find('input:checked').size() > 0 ) {
+                        if ( $(this).find('input:checked').length > 0 ) { // .size() durch .length ersetzt
                             $(this).addClass('upfront-field-multiple-selected');
                         } else {
                             $(this).removeClass('upfront-field-multiple-selected');
                         }
                     });
-
+                
                     me.trigger('changed', me.get_value());
                 });
 
@@ -1814,7 +1813,7 @@
 				e.preventDefault();
 
 				// Simulate label click
-				this.$el.find('.upfront_toggle_checkbox').click();
+				this.$el.find('.upfront_toggle_checkbox').trigger('click');
 			},
 
 			get_value_html: function (value, index) {

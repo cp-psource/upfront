@@ -71,14 +71,14 @@ define([
 
 		save_settings: function () {
 			if (!this.modules) return;
-
+		
 			var me = this;
 			this.modules.each(function (module) {
-				if ( module.fields.size() > 0 ) {
+				if ( module.fields.length > 0 ) { // .size() durch .length ersetzt
 					module.save_fields();
 				}
 			});
-		}
+		}		
 	});
 
 	return ModulesContainer;

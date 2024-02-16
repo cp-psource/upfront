@@ -1545,11 +1545,11 @@
 					status: this.status,
 					post_password: this.post_password
 				})));
-				if(this.postVisibility === "sticky") {
-					this.$el.find('#visibility-radio-public').click();
+				if (this.postVisibility === "sticky") {
+					this.$el.find('#visibility-radio-public').trigger('click');
 					this.$el.find('#sticky-span').css('display', 'inline-block');
-					this.$el.find('#sticky-span input').click();
-				}
+					this.$el.find('#sticky-span input').trigger('click');
+				}				
 
 				return this;
 			},
@@ -1636,7 +1636,7 @@
 				return this;
 			},
 			validateDate: function () {
-				this.$('.schedule-hours, .schedule-minutes').change(function () {
+				this.$('.schedule-hours, .schedule-minutes').on('change', function () {
 					var max = parseInt($(this).attr('max'), 10);
 					var min = parseInt($(this).attr('min'), 10);
 

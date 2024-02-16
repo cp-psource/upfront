@@ -161,7 +161,7 @@
             currentValue = 0,
             currentAlpha = 1,
             palette = opts.palette.slice(0),
-            paletteArray = $.isArray(palette[0]) ? palette : [palette],
+            paletteArray = Array.isArray(palette[0]) ? palette : [palette];
             selectionPalette = opts.selectionPalette.slice(0),
             maxSelectionSize = opts.maxSelectionSize,
             draggingClass = "sp-dragging",
@@ -274,20 +274,24 @@
             }
 
             // Prevent clicks from bubbling up to document.  This would cause it to be hidden.
-            container.click(stopPropagation);
+            container.on('click', stopPropagation);
 
             // Handle user typed input
-            textInput.change(setFromTextInput);
-            textInput.bind("paste", function () {
+            textInput.on('change', setFromTextInput);
+            textInput.on('paste', function () {
                 setTimeout(setFromTextInput, 1);
             });
-            textInput.keydown(function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
+            textInput.on('keydown', function (e) {
+                if (e.key == 13) {
+                    setFromTextInput();
+                }
+            });
 
             cancelButton.text(opts.cancelText);
-            cancelButton.bind("click.spectrum", function (e) {
+            cancelButton.on('click.spectrum', function (e) {
                 e.stopPropagation();
                 e.preventDefault();
-                hide("cancel");
+                hide('cancel');
             });
 
             chooseButton.text(opts.chooseText);

@@ -6014,7 +6014,7 @@ msgid "Alles gespeichert!"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:39
-msgid "Rendern von %s%"
+msgid "Renderstatus: %s%"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:40

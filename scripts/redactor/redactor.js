@@ -2755,7 +2755,7 @@
                 },
                 textareaIndenting: function(e)
                 {
-                    if (e.keyCode !== 9) return true;
+                    if (e.key !== 9) return true;
 
                     var $el = this.$textarea;
                     var start = $el.get(0).selectionStart;
@@ -4510,7 +4510,7 @@
                     }
 
                     // ie and ff exit from table
-                    if (this.opts.enterKey && (this.utils.browser('msie') || this.utils.browser('mozilla')) && (key === this.keyCode.DOWN || key === this.keyCode.RIGHT))
+                    if (this.opts.enterKey && (this.utils.browser('msie') || this.utils.browser('mozilla')) && (key === this.key.DOWN || key === this.key.RIGHT))
                     {
                         var isEndOfTable = false;
                         var $table = false;
@@ -4533,13 +4533,13 @@
                     }
 
                     // down
-                    if (this.opts.enterKey && key === this.keyCode.DOWN)
+                    if (this.opts.enterKey && key === this.key.DOWN)
                     {
                         this.keydown.onArrowDown();
                     }
 
                     // turn off enter key
-                    if (!this.opts.enterKey && key === this.keyCode.ENTER)
+                    if (!this.opts.enterKey && key === this.key.ENTER)
                     {
                         e.preventDefault();
                         // remove selected
@@ -4548,7 +4548,7 @@
                     }
 
                     // on enter
-                    if (key == this.keyCode.ENTER && !e.shiftKey && !e.ctrlKey && !e.metaKey)
+                    if (key == this.key.ENTER && !e.shiftKey && !e.ctrlKey && !e.metaKey)
                     {
                         var stop = this.core.setCallback('enter', e);
                         if (stop === false)
@@ -4651,20 +4651,20 @@
                     }
 
                     // Shift+Enter or Ctrl+Enter
-                    if (key === this.keyCode.ENTER && (e.ctrlKey || e.shiftKey))
+                    if (key === this.key.ENTER && (e.ctrlKey || e.shiftKey))
                     {
                         return this.keydown.onShiftEnter(e);
                     }
 
 
                     // tab or cmd + [
-                    if (key === this.keyCode.TAB || e.metaKey && key === 221 || e.metaKey && key === 219)
+                    if (key === this.key.TAB || e.metaKey && key === 221 || e.metaKey && key === 219)
                     {
                         return this.keydown.onTab(e, key);
                     }
 
                     // image delete and backspace
-                    if (key === this.keyCode.BACKSPACE || key === this.keyCode.DELETE)
+                    if (key === this.key.BACKSPACE || key === this.key.DELETE)
                     {
                         if (this.utils.browser('mozilla') && this.keydown.current && this.keydown.current.tagName === 'TD')
                         {
@@ -4707,7 +4707,7 @@
                     }
 
                     // backspace
-                    if (key === this.keyCode.BACKSPACE)
+                    if (key === this.key.BACKSPACE)
                     {
                         this.keydown.removeInvisibleSpace();
                         this.keydown.removeEmptyListInTable(e);
@@ -4729,7 +4729,7 @@
                 },
                 checkKeyEvents: function(key)
                 {
-                    var k = this.keyCode;
+                    var k = this.key;
                     var keys = [k.BACKSPACE, k.DELETE, k.ENTER, k.SPACE, k.ESC, k.TAB, k.CTRL, k.META, k.ALT, k.SHIFT];
 
                     return ($.inArray(key, keys) == -1) ? true : false;
@@ -4764,7 +4764,7 @@
                     }
                     else if (!this.keydown.ctrl)
                     {
-                        if (key == this.keyCode.BACKSPACE || key == this.keyCode.DELETE || (key == this.keyCode.ENTER && !e.ctrlKey && !e.shiftKey) || key == this.keyCode.SPACE)
+                        if (key == this.key.BACKSPACE || key == this.key.DELETE || (key == this.key.ENTER && !e.ctrlKey && !e.shiftKey) || key == this.key.SPACE)
                         {
                             this.buffer.set();
                         }
@@ -4776,7 +4776,7 @@
                     {
                         this.utils.enableSelectAll();
                     }
-                    else if (key != this.keyCode.LEFT_WIN && !this.keydown.ctrl)
+                    else if (key != this.key.LEFT_WIN && !this.keydown.ctrl)
                     {
                         this.utils.disableSelectAll();
                     }
@@ -5107,7 +5107,7 @@
                         this.code.sync();
                     }
 
-                    if (key === this.keyCode.DELETE || key === this.keyCode.BACKSPACE)
+                    if (key === this.key.DELETE || key === this.key.BACKSPACE)
                     {
                         // clear unverified
                         this.clean.clearUnverified();
@@ -5142,7 +5142,7 @@
                 },
                 isLinkify: function(key)
                 {
-                    return this.opts.convertLinks && (this.opts.convertUrlLinks || this.opts.convertImageLinks || this.opts.convertVideoLinks) && key === this.keyCode.ENTER && !this.utils.isCurrentOrParent('PRE');
+                    return this.opts.convertLinks && (this.opts.convertUrlLinks || this.opts.convertImageLinks || this.opts.convertVideoLinks) && key === this.key.ENTER && !this.utils.isCurrentOrParent('PRE');
                 },
                 replaceToParagraph: function(clone)
                 {
@@ -5932,7 +5932,7 @@
                     if (e.which != 13) return;
 
                     e.preventDefault();
-                    this.$modal.find('button.redactor-modal-action-btn').click();
+                    this.$modal.find('button.redactor-modal-action-btn').trigger('click');
                 },
                 createCancelButton: function()
                 {
@@ -6004,7 +6004,7 @@
                 },
                 closeHandler: function(e)
                 {
-                    if (e.which != this.keyCode.ESC) return;
+                    if (e.which != this.key.ESC) return;
 
                     this.modal.close(false);
                 },
@@ -6944,7 +6944,7 @@
                     };
 
                     keys = keys.toLowerCase().split(" ");
-                    var special = hotkeysSpecialKeys[e.keyCode],
+                    var special = hotkeysSpecialKeys[e.key],
                         character = String.fromCharCode( e.which ).toLowerCase(),
                         modif = "", possible = {};
 
@@ -7373,7 +7373,7 @@
                         for (var i = 0; i < len; i++)
                         {
                             var attrs = this.tidy.settings.removeAttr[i][1];
-                            if ($.isArray(attrs)) attrs = attrs.join(' ');
+                            if (Array.isArray(attrs)) attrs = attrs.join(' ');
 
                             this.tidy.$div.find(this.tidy.settings.removeAttr[i][0]).removeAttr(attrs);
                         }
@@ -7403,7 +7403,7 @@
                     {
                         $.each($el[0].attributes, function(i, item)
                         {
-                            if ($.isArray(allowed[pos]))
+                            if (Array.isArray(allowed[pos]))
                             {
                                 if ($.inArray(item.name, allowed[pos]) == -1)
                                 {
@@ -7464,7 +7464,7 @@
                     if (!this.tidy.settings.removeDataAttr) return;
 
                     var tags = this.tidy.settings.removeDataAttr;
-                    if ($.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
+                    if (Array.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
 
                     this.tidy.removeAttrs(this.tidy.$div.find(tags), '^(data-)');
 
@@ -8443,7 +8443,7 @@
                     var parent = this.selection.getParent();
                     var current = this.selection.getCurrent();
 
-                    if ($.isArray(tagName))
+                    if (Array.isArray(tagName))
                     {
                         var matched = 0;
                         $.each(tagName, $.proxy(function(i, s)

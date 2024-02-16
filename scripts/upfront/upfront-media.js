@@ -1075,7 +1075,7 @@ define([
 						_to_render.push({filter: filter, type: type});
 					});
 				});
-				if (!_to_render.size()) return false; // Do not render the empty filter array (ie. only defaults)
+				if (!_to_render.length) return false; // Do not render the empty filter array (ie. only defaults)
 
 				this.$el.append('<label class="upfront-field-label upfront-field-label-block">' + l10n.active_filters + '</label>');
 
@@ -1556,9 +1556,9 @@ define([
 			this.do_search(e);
 		},
 		on_keyup: function (e) {
-			if ( e.keyCode == 13 )
+			if ( e.key == 13 )
 				this.search_button.$el.trigger('click');
-			//else if ( e.keyCode == 27 )
+			//else if ( e.key == 27 )
 			//	this.$el.find('.clear').trigger('click');
 		}
 	});

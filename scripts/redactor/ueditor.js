@@ -87,8 +87,8 @@
 								}
 							}
 						}, this)).on('keydown.redactor', $.proxy(function (e) {
-							if(e.keyCode === 91 && e.metaKey) return;
-							if (e.which === this.keyCode.ESC) {
+							if(e.key === 91 && e.metaKey) return;
+							if (e.which === this.key.ESC) {
 								//self.getSelection().collapseToStart();
 							}
 							self.$air.fadeOut(100);
@@ -811,7 +811,7 @@
 						var btn = this.button.build(key, { title: title });
 						var $btn = this.button.get(afterkey);
 
-						if ($btn.size() !== 0) $btn.parent().after($('<li>').append(btn));
+						if ($btn.length !== 0) $btn.parent().after($('<li>').append(btn));
 						else this.$toolbar.append($('<li>').append(btn));
 
 						return btn;
@@ -823,7 +823,7 @@
 						var btn = this.button.build(key, { title: title });
 						var $btn = this.button.get(beforekey);
 
-						if ($btn.size() !== 0) $btn.parent().before($('<li>').append(btn));
+						if ($btn.length !== 0) $btn.parent().before($('<li>').append(btn));
 						else this.$toolbar.append($('<li>').append(btn));
 
 						return btn;
@@ -1117,30 +1117,30 @@
 					 * Clean unverified spans and remove their style attr
 					 */
 					_.delay(function() {
-						if (e.keyCode === 8) {
+						if (e.key === 8) {
 							self.redactor.clean.clearUnverified();
 							self.redactor.$editor.find('span').not('[data-verified="redactor"]').removeAttr('style');
 						}
 					}, 2);
 
 					setTimeout(function(){
-						if(e.keyCode === 65 && e.metaKey ){
+						if(e.key === 65 && e.metaKey ){
 							self.cmdKeyA = true;
 						}
 
-						if(e.keyCode === 91 && e.metaKey ){
+						if(e.key === 91 && e.metaKey ){
 							self.cmdKey = true;
 						}
 
-						if(e.keyCode === 67 && e.metaKey ){
+						if(e.key === 67 && e.metaKey ){
 							self.onCopy(e);
 						}
 					});
 
 					// Expand known text patterns
-					if (32 === e.keyCode) self.expand_known_text_patterns();
+					if (32 === e.key) self.expand_known_text_patterns();
 
-					if( ( e.keyCode != 37 && e.keyCode != 39 ) && self.redactor ) {
+					if( ( e.key != 37 && e.key != 39 ) && self.redactor ) {
 						var current = $(self.redactor.selection.getCurrent());
 						if(current.hasClass('uf_font_icon')) {
 							self.redactor.caret.setAfter(current);
@@ -1156,7 +1156,7 @@
 
 				// Open air when selecting text with keyboard
 				this.$el.on('keyup', function(e){
-					if(self.redactor && self.redactor.selection.getText() &&  [37, 38, 39, 40].indexOf( e.keyCode ) !== -1 || (e.keyCode === 65 && e.ctrlKey) || (self.cmdKeyA)  ){
+					if(self.redactor && self.redactor.selection.getText() &&  [37, 38, 39, 40].indexOf( e.key ) !== -1 || (e.key === 65 && e.ctrlKey) || (self.cmdKeyA)  ){
 						self.redactor.airShow(e);
 					}
 				});
@@ -1177,7 +1177,7 @@
 					/**
 					 * Make sure return doesn't delete the last charactor
 					 */
-					if (13 === e.keyCode && !e.shiftKey && (self || {}).redactor && !self.redactor.keydown.pre && !self.redactor.$air.is(":visible") ) {
+					if (13 === e.key && !e.shiftKey && (self || {}).redactor && !self.redactor.keydown.pre && !self.redactor.$air.is(":visible") ) {
 						self.redactor.utils.removeEmpty();
 						// Add extra space to end of previous paragraph to prevent backspace deleting last character.
 						$(self.redactor.selection.getCurrent()).prev().append("&#x200b;");
@@ -1186,7 +1186,7 @@
 
 			},
 			stopOnEscape: function(e) {
-				if(e.keyCode === 27 && !( $(".upfront-content-marker-contents").length && $(".upfront-content-marker-contents").data("ueditor") ) ){
+				if(e.key === 27 && !( $(".upfront-content-marker-contents").length && $(".upfront-content-marker-contents").data("ueditor") ) ){
 					this.stop();
 				}
 			},
@@ -1783,7 +1783,7 @@
 
 								 var f = jQuery.Event("keydown");
 								 f.which = 65;
-								 f.keyCode = 65;// # Some key code value
+								 f.key = 65;// # Some key code value
 
 
 

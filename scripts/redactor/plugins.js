@@ -88,7 +88,7 @@
 
 			closePanel: function(){
 				if(this.panel.is(':visible'))
-					this.button.click();
+				this.button.trigger('click');
 			},
 
 			disableEditorStop: function(){
@@ -677,7 +677,7 @@
 					};
 					UeditorEvents.on("ueditor:key:down", function (redactor, e) {
 						if ($(redactor.selection.getParent()).hasClass("uf_font_icon") || $(redactor.selection.getCurrent()).hasClass("uf_font_icon")) {
-							if (!( e.keyCode < 48 || e.keyCode > 90 )) {
+							if (!( e.key < 48 || e.key > 90 )) {
 								e.preventDefault();
 							}
 						}
@@ -915,7 +915,7 @@
 						// Close on panel ok
 						this.listenTo(this.linkPanel, 'linkpanel:close', function() {
 							// Didn't find any function to do this, so go raw
-							$('a.re-upfrontLink').click().removeClass('dropact redactor_act');
+							$('a.re-upfrontLink').trigger('click').removeClass('dropact redactor_act');
 							// Preserve caret position, or it will just reset to 0 after selection is removed.
 							var caretOffset = me.redactor.caret.getOffset();
 							me.redactor.selection.remove();
@@ -937,19 +937,18 @@
 
 					closeLinkPanel: function() {
 						var $buttons = this.$el.parent().siblings('li'),
-							totalWidth = 0
-							;
-
+							totalWidth = 0;
+					
 						$buttons.each(function(i, element) {
-							totalWidth = totalWidth + parseInt($(element).width());
+							totalWidth += parseInt($(element).width());
 						});
-
+					
 						this.$el.closest('.redactor_air').css('width', totalWidth + 5);
-
-						$('a.re-upfrontLink').click().removeClass('dropact redactor_act');
-
+					
+						$('a.re-upfrontLink').trigger('click').removeClass('dropact redactor_act');
+					
 						$buttons.show();
-					},
+					},					
 
 					hideSiblings: function() {
 						this.updateWrapperSize();

@@ -422,7 +422,7 @@ DragDrop.prototype = {
 							current_el_top = bottom+1;
 						});
 						var $last = $els.last(),
-							last = $last.size() > 0 ? ed.get_el($last) : false,
+							last = $last.length > 0 ? ed.get_el($last) : false, // .size() durch .length ersetzt
 							last_me = ( last && last._id == me._id ),
 							wrap_bottom = ( breakpoint && !breakpoint['default'] && next_clr_el_top ) ? Math.ceil(next_clr_el_top.grid_center.y) : max_row_wrap.grid.bottom
 						;
@@ -1376,7 +1376,7 @@ DragDrop.prototype = {
 		});
 		if ( !this.drop.is_me && this.drop.type == 'side-before' ) {
 			var $next_wrap = this.drop.insert[1];
-			if ( $next_wrap.size() > 0 ){
+			if ( $next_wrap.length > 0 ){ // .size() durch .length ersetzt
 				var next_wrap = ed.get_wrap($next_wrap),
 					next_wrap_clr = ( !breakpoint || breakpoint['default'] ) ? $next_wrap.hasClass('clr') : $next_wrap.data('breakpoint_clear');
 				if ( ! next_wrap_clr || this.drop.is_clear ){
@@ -1761,7 +1761,7 @@ DragDrop.prototype = {
 			$helper = this.$helper
 		;
 		_.each(ed.els, function(each){
-			each.$el.find(".upfront-debug-info").size() || each.$el.find('.upfront-editable_entity:first').append('<div class="upfront-debug-info"></div>');
+			each.$el.find(".upfront-debug-info").length || each.$el.find('.upfront-editable_entity:first').append('<div class="upfront-debug-info"></div>'); // .size() durch .length ersetzt
 			each.$el.find(".upfront-debug-info").text(
 				'grid: ('+each.grid.left+','+each.grid.right+'),'+'('+each.grid.top+','+each.grid.bottom+') | '+
 				'outer: ('+each.outer_grid.left+','+each.outer_grid.right+'),('+each.outer_grid.top+','+each.outer_grid.bottom+') | '+
@@ -1797,7 +1797,8 @@ DragDrop.prototype = {
 			$layout.append($view);
 		});
 		$layout.append('<div id="upfront-compare-area"></div>');
-		$helper.find(".upfront-debug-info").size() || $helper.append('<div class="upfront-debug-info"></div>');
+		$helper.find(".upfront-debug-info").length || $helper.append('<div class="upfront-debug-info"></div>'); // .size() durch .length ersetzt
+
 	}
 };
 

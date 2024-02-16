@@ -29,7 +29,7 @@ define([
 				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
 
 				$('body').bind( 'keyup', function( event ) {
-					if ( event.keyCode === 27 )
+					if ( event.key === 27 )
 						me.closeOverlay();
 				});
 
@@ -444,7 +444,8 @@ define([
 		},
 		openFileBrowser: function(e){
 			e.preventDefault();
-			$('#upfront-video-file-input').click();
+			$('#upfront-video-file-input').trigger('click');
+
 		},
 		checkFileUpdate: function(){
 			 return true;

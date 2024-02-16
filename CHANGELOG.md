@@ -368,13 +368,13 @@ Change Log
 - Fix: Galerie-Lightbox-Optionsanwendung im Frontend.
 - Fix: Pfeilfüllung mit erweiterten Einstellungen synchronisieren.
 - Fix: Kategoriendatenelement von Seiten entfernen.
-- Fix: Rendern von Fehlermeldungen bei Widget-Elementen verbessert.
+- Fix: Renderstatus: Fehlermeldungen bei Widget-Elementen verbessert.
 - Fix: Problem beim Einfügen von Schriftarten in der Bearbeitung im reaktionsschnellen Modus.
 - Fix: Javascript-Fehler beim Senden des Kontaktformulars.
 - Fix: Problem mit dem PHP-Format des Postdatums.
 - Fix: Probleme bei der Auflösung von Hintergrundbildern.
 - Fix: Verwendung von Schriftarten konsolidieren.
-- Fix: Responsives Rendern von Bildvarianten.
+- Fix: Responsives Renderstatus: Bildvarianten.
 
 
 1.3.3 - 2016-07-19

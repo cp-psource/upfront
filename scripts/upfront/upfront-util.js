@@ -969,7 +969,7 @@ define([
 
 				if ( !this.disable_esc ) {
 					$('body').bind( 'keyup', function( event ) {
-						if ( event.keyCode === 27 ) me.close();
+						if ( event.key === 27 ) me.close();
 					});
 				}
 

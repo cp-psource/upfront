@@ -205,7 +205,7 @@ PostContentEditor.prototype = {
 				this.parent.currentData.title = this.$title.text();
 				Upfront.Events.trigger('content:change:title', this.parent.currentData.title);
 				// escape
-				if( e.keyCode === 27 ) {
+				if( e.key === 27 ) {
 					this.disable_edit_title();
 				}
 			},
@@ -303,7 +303,7 @@ PostContentEditor.prototype = {
 				}
 			},
 			keyup: function (e) {
-				if( e.keyCode === 27 ){
+				if( e.key === 27 ){
 					// escape
 					this.stopEditContent();
 				}
