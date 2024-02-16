@@ -182,7 +182,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 	}
 
 	protected function checkMenusExist() {
-		$menus = json_decode($this->get_theme_settings()->get('menus'), true);
+		$menus = json_decode((string)$this->get_theme_settings()->get('menus'), true);
 		if (empty($menus)) return;
 
 		$existing_menus = $this->getExistingMenus();
@@ -602,7 +602,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		$theme_fonts = $this->get_theme_settings()->get('theme_fonts');
 		if (isset($args['json']) && $args['json']) return $theme_fonts;
 
-		return is_array( $theme_fonts ) ? $theme_fonts : json_decode($theme_fonts);
+		return is_array( $theme_fonts ) ? $theme_fonts : json_decode((string)$theme_fonts);
 	}
 
 	public function getIconFonts($icon_fonts, $args) {
@@ -673,7 +673,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($button_presets, $as_array);
+		return json_decode((string)$button_presets, $as_array);
 	}
 
 	public function getTabPresets($presets, $args) {
@@ -687,7 +687,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getPostsPresets($presets, $args) {
@@ -701,7 +701,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getPostPresets($presets, $args) {
@@ -715,7 +715,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getCommentPresets($presets, $args) {
@@ -729,7 +729,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getLoginPresets($presets = null, $args = array()) {
@@ -804,7 +804,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		$presets = $this->get_theme_settings()->get('accordion_presets');
 
 		// Juggle the presets to add some defaults because presets migration to new settings
-		$presetsArray = json_decode($presets, true);
+		$presetsArray = json_decode((string)$presets, true);
 		if (is_array($presetsArray)) {
 			foreach($presetsArray as $index=>$preset) {
 				if (isset($preset['active-use-color']) === false) {
@@ -825,7 +825,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getContactPresets($presets, $args) {
@@ -839,7 +839,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getGalleryPresets($presets, $args) {
@@ -853,7 +853,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getImagePresets($presets, $args) {
@@ -867,7 +867,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getNavPresets($presets, $args) {
@@ -881,7 +881,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getSliderPresets($presets, $args) {
@@ -895,7 +895,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getTextPresets($presets, $args) {
@@ -909,7 +909,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public function getWidgetPresets($presets, $args) {
@@ -923,7 +923,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode($presets, $as_array);
+		return json_decode((string)$presets, $as_array);
 	}
 
 	public static function getPostImageVariants($image_variants = null, $args = null) {

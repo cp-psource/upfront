@@ -1,5 +1,5 @@
 === UpFront Framework ===
-Contributors: DerN3rd (WMS N@W)
+Contributors: PSOURCE
 Theme URI: https://cp-psource.github.io/upfront/
 Tags: classicpress-theme, classicpress, theme, framework, awesome
 Requires at least: 4.9
@@ -81,6 +81,10 @@ Noch nicht? - Dann empfehlen wir Dir, einen Blick auf unser [PS Mitgliedschaften
 Wirf einen Blick in unser [PSOURCE Sortiment](https://github.com/cp-psource) und hole noch mehr aus Deinem WordPress/ClassicPress!
 
 == ChangeLog ==
+
+= 2.0.0 =
+
+* Fix: json Decode String
 
 = 1.9.9 =
 
