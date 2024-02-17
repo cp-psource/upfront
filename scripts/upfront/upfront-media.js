@@ -1991,9 +1991,8 @@ define([
 				//e.preventDefault();
 				if (13 !== e.which) return true;
 
-				var string = $.trim($(e.target).val()),
-					num = parseInt(string, 10)
-				;
+				var string = e.target.value.trim(),
+    			num = parseInt(string, 10);
 				if (!num) return false;
 				if (num > ActiveFilters.max_pages) num = ActiveFilters.max_pages;
 				if (ActiveFilters.set_page(num)) Upfront.Events.trigger("media_manager:media:list", ActiveFilters);

@@ -214,7 +214,7 @@
 			get_value: function () {
 				return this.is_edited
 					? Field_Text.prototype.get_value.call(this)
-					: $.trim(this.get_field().text())
+					: this.get_field().text().trim();
 					;
 			},
 			set_value: function (value) {

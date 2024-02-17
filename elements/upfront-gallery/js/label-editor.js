@@ -86,8 +86,7 @@ define([
 
 			var	me = this,
 				$nameField = this.$el.find('.add-label'),
-				label = $.trim($nameField.val())
-			;
+				label = $nameField.val().trim();
 
 			if (label.length){
 				$nameField.val('').siblings('.labels_list').html('');

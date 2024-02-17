@@ -7277,7 +7277,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:417
 #: library/servers/class_upfront_presets_server.php:663
-msgid "Benutzerdefinierte CSS"
+msgid "Style:"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:420

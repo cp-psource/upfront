@@ -57,7 +57,7 @@
 								e.stopPropagation();
 								if (13 !== e.which) return true;
 
-								var string = $.trim($(e.target).val()),
+								var string = $(e.target).val().trim(),
 										num = parseInt(string, 10)
 										;
 								if (!num || num < 1) return false;

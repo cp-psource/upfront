@@ -327,7 +327,7 @@
 					scope = new RegExp(selector + '\\s*', 'g');
 					styles = styles.replace(scope, '');
 				}
-				editor.setValue($.trim(styles), -1);
+				editor.setValue(styles.trim(), -1);
 
 				// Set up the proper vscroller width to go along with new change.
 				editor.renderer.scrollBar.width = 5;
@@ -498,22 +498,20 @@
 				;
 
 				_.each(rules, function (rl) {
-					var src = $.trim(rl).split('{');
-
+					var src = rl.trim().split('{');
+				
 					if (src.length != 2) return true; // wtf
-
+				
 					var individual_selectors = src[0].split(','),
-						processed_selectors = []
-					;
+						processed_selectors = [];
 					_.each(individual_selectors, function (sel) {
-						sel = $.trim(sel);
+						sel = sel.trim();
 						var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
-						var	is_container = clean_selector[0] === '@' || me.recursiveExistence(selector, clean_selector),
+						var is_container = clean_selector[0] === '@' || me.recursiveExistence(selector, clean_selector),
 							spacer = is_container
 								? '' // This is not a descentent selector - used for containers
-								: ' ' // This is a descentent selector
-						;
-
+								: ' '; // This is a descentent selector
+				
 						processed_selectors.push('' +
 							selector + spacer + sel +
 							'');
@@ -522,6 +520,7 @@
 						src[1] + // Actual rule
 						'\n}\n';
 				});
+				
 
 				// Handle closing comments being omitted from the processed string
 				// Only apply if the original contents has closing CSS comment, and the processed one does not
@@ -551,7 +550,7 @@
 			// When stylename changes upfront needs to update element model theme_style property
 			// and also to save style under new stylename.
 			updateStylename: function() {
-				var new_name =  $.trim(this.$('.upfront-css-save-name-field').val()),
+				var new_name = this.$('.upfront-css-save-name-field').val().trim(),
 					old_name = this.stylename;
 
 				// Strict filtering on stylename
@@ -595,7 +594,7 @@
 			save: function(event) {
 				if (event) event.preventDefault();
 				var me = this,
-					styles = $.trim(this.editor.getValue()),
+					styles = this.editor.getValue().trim(),
 					data;
 
 				if (this.is_global_stylesheet === false && this.stylename === this.get_temp_stylename())
@@ -649,7 +648,7 @@
 			/* API to call save style without loading editor */
 			saveCall: function (notify) {
 				var me = this,
-					styles = $.trim(this.get_style_element().html()),
+				styles = this.get_style_element().html().trim(),
 					data;
 
 				data = {

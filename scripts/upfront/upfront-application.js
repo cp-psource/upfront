@@ -1372,7 +1372,7 @@ var Application = new (Backbone.Router.extend({
 		;
 
 		_.each(rules, function (rl) {
-			var src = $.trim(rl).split('{');
+			var src = rl.trim().split('{');
 
 			if (src.length != 2) return true; // wtf
 
@@ -1380,7 +1380,7 @@ var Application = new (Backbone.Router.extend({
 				processed_selectors = []
 			;
 			_.each(individual_selectors, function (sel) {
-				sel = $.trim(sel);
+				sel = sel.trim();
 				var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
 				var	is_container = clean_selector[0] === '@' || me.recursiveExistenceMigration(selector, clean_selector),
 					spacer = is_container

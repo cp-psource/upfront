@@ -1079,7 +1079,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 	},
 
 	getLabelSelector: function(imageId){
-		var tpl = $($.trim(this.labelsTpl({labels: this.extractImageLabels(imageId), l10n: l10n.template})));
+		var tpl = $(this.labelsTpl({labels: this.extractImageLabels(imageId), l10n: l10n.template}).trim());
 		return tpl;
 	},
 
@@ -1647,7 +1647,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 			//Remove labels
 			var labels = me.imageLabels[imageId].split(',');
 			_.each(labels, function(label){
-				var labelId = $.trim(label.replace('"label_', '').replace('"', ''));
+				var labelId = label.replace('"label_', '').replace('"', '').trim();
 				me.deleteLabel(labelId, imageId);
 			});
 			me.imageLabels[imageId] = '';

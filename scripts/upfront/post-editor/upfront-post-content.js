@@ -151,7 +151,7 @@ PostContentEditor.prototype = {
 				if ( $part.length ){
 					var $node = this._findDeep($part);
 					// Verify node
-					if ( $.trim($node.text()) == $.trim($part.text()) ) {
+					if ($node.text().trim() == $part.text().trim()) {
 						this.$title = $node;
 					}
 					else {
@@ -229,7 +229,7 @@ PostContentEditor.prototype = {
 					if ( $part.length ){
 						var $node = this._findDeep($part);
 						// Verify node
-						if ( $.trim($node.text()) == $.trim($part.text()) ) {
+						if ($node.text().trim() == $part.text().trim()) {
 							this.$title = $node;
 						}
 						else {
@@ -342,12 +342,12 @@ PostContentEditor.prototype = {
 							$shortcode = $this.find(".post-images-shortcode").length ? $this.find(".post-images-shortcode") : $this.find(".post-images-shortcode-wp")
 						;
 						if ( $shortcode.length > 0 ) {
-							var shortcode = $.trim( $shortcode.html().replace(/(\r\n|\n|\r)/gm,"") );
+							var shortcode = $shortcode.html().replace(/(\r\n|\n|\r)/gm,"").trim();
 							$this.replaceWith( shortcode );
 						}
 
 					});
-					content = $.trim( this.editor.getValue() );
+					content = this.editor.getValue().trim();
 					content = content.replace(/(\n)*?<br\s*\/?>\n*/g, "<br/>");
 					if ( isExcerpt ) {
 						this.parent.currentData.excerpt = content;
@@ -1700,7 +1700,7 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 				var results = {};
 
 				if ('publish' === e || 'draft' === e || 'auto-draft' === e) {
-					if (me.parts.titles) results.title = $.trim(me.parts.titles.text());
+					if (me.parts.titles) results.title = me.parts.titles.text().trim();
 					if (me.currentContent){
 						var editor = $(me.currentContent).data('ueditor');
 
@@ -1715,12 +1715,12 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 						me.$(".upfront-inserted_image-wrapper").each(function () {
 							var $this = $(this),
 								$shortcode = $this.find(".post-images-shortcode").length ? $this.find(".post-images-shortcode") : $this.find(".post-images-shortcode-wp"),
-								shortcode = $.trim( $shortcode.html().replace(/(\r\n|\n|\r)/gm,"") )
+								shortcode = $shortcode.html().replace(/(\r\n|\n|\r)/gm,"").trim();
 							;
 							$this.replaceWith( shortcode );
 						});
 
-						results.content = $.trim( editor.getValue() );
+						results.content = editor.getValue().trim();
 						results.content = results.content.replace(/(\n)*?<br\s*\/?>\n*/g, "<br/>");
 						results.inserts = editor.getInsertsData();
 						results.author = me.postAuthor;
