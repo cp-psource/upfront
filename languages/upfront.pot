@@ -7416,7 +7416,7 @@ msgid "Responsiv"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:461
-msgid "Verlasse Responsiv"
+msgid "Normalmodus"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:462

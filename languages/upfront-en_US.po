@@ -8045,7 +8045,7 @@ msgid "Ratio halten"
 msgstr "maintain relationship"
 
 #: library/servers/class_upfront_editor_l10n_server.php:461
-msgid "Verlasse Responsiv"
+msgid "Normalmodus"
 msgstr "Exit Responsive"
 
 #: library/servers/class_upfront_editor_l10n_server.php:413

@@ -458,7 +458,7 @@ class Upfront_EditorL10n_Server implements IUpfront_Server {
 				'export_str' => __('Exportieren', 'upfront'),
 				'create_responsive_layouts' => __('Responsiv', 'upfront'),
 				'responsive_mode' => __('Responsiv', 'upfront'),
-				'exit_responsive' => __('Verlasse Responsiv', 'upfront'),
+				'exit_responsive' => __('Normalmodus', 'upfront'),
 				'activate_breakpoints' => __('Haltepunkte aktivieren', 'upfront'),
 				'new_breakpoint' => __('Neuer benutzerdefinierter Haltepunkt', 'upfront'),
 				'browse_layouts' => __('Layouts durchsuchen', 'upfront'),
