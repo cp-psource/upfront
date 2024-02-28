@@ -48,7 +48,7 @@ define([
 ], function ( pako, Cache ){
 
 	var guessLinkType = function(url) {
-		if(!$.trim(url) || $.trim(url) == '#' || $.trim(url) === '') {
+		if (!url.trim() || url.trim() == '#' || url.trim() === '') {
 			return 'unlink';
 		}
 

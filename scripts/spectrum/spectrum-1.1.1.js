@@ -274,24 +274,24 @@
             }
 
             // Prevent clicks from bubbling up to document.  This would cause it to be hidden.
-            container.click(stopPropagation);
+            container.on("click", stopPropagation);
 
             // Handle user typed input
-            textInput.change(setFromTextInput);
-            textInput.bind("paste", function () {
+            textInput.on("input", setFromTextInput);
+            textInput.on("paste", function () {
                 setTimeout(setFromTextInput, 1);
             });
-            textInput.keydown(function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
+            textInput.on("keydown", function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
 
             cancelButton.text(opts.cancelText);
-            cancelButton.bind("click.spectrum", function (e) {
+            cancelButton.on("click.spectrum", function (e) {
                 e.stopPropagation();
                 e.preventDefault();
                 hide("cancel");
             });
 
             chooseButton.text(opts.chooseText);
-            chooseButton.bind("click.spectrum", function (e) {
+            chooseButton.on("click.spectrum", function (e) {
                 e.stopPropagation();
                 e.preventDefault();
                 if (isValid()) {
