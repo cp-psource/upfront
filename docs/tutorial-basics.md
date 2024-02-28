@@ -1,7 +1,3 @@
-layout: page
-title: "Upfront Part 1: The Basics, Theme Colors and Typography"
-permalink: upfront/tutorial/basics
-
 # Upfront Part 1: The Basics, Theme Colors and Typography
 
 Mit Upfront können Sie das Design Ihrer Website so einfach anpassen, dass Sie nie wieder ein WordPress-Theme benötigen.
