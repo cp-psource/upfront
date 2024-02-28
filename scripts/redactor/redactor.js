@@ -7381,7 +7381,7 @@
                         for (var i = 0; i < len; i++)
                         {
                             var attrs = this.tidy.settings.removeAttr[i][1];
-                            if ($.isArray(attrs)) attrs = attrs.join(' ');
+                            if (Array.isArray(attrs)) attrs = attrs.join(' ');
 
                             this.tidy.$div.find(this.tidy.settings.removeAttr[i][0]).removeAttr(attrs);
                         }
@@ -7411,7 +7411,7 @@
                     {
                         $.each($el[0].attributes, function(i, item)
                         {
-                            if ($.isArray(allowed[pos]))
+                            if (Array.isArray(allowed[pos]))
                             {
                                 if ($.inArray(item.name, allowed[pos]) == -1)
                                 {
@@ -7472,7 +7472,7 @@
                     if (!this.tidy.settings.removeDataAttr) return;
 
                     var tags = this.tidy.settings.removeDataAttr;
-                    if ($.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
+                    if (Array.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
 
                     this.tidy.removeAttrs(this.tidy.$div.find(tags), '^(data-)');
 
@@ -8451,7 +8451,7 @@
                     var parent = this.selection.getParent();
                     var current = this.selection.getCurrent();
 
-                    if ($.isArray(tagName))
+                    if (Array.isArray(tagName))
                     {
                         var matched = 0;
                         $.each(tagName, $.proxy(function(i, s)
