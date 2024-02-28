@@ -1,6 +1,6 @@
 <?php
 /**
- * Image element for Upfront
+ * Bild-Element für Upfront
  */
 class Upfront_UimageView extends Upfront_Object {
 
@@ -25,16 +25,12 @@ class Upfront_UimageView extends Upfront_Object {
 		if (!isset($data['link_target'])) $data['link_target'] = '';
 
 		if($link['type'] == 'image'){
-			//wp_enqueue_style('magnific');
 			upfront_add_element_style('magnific', array('/scripts/magnific-popup/magnific-popup.css', false));
-			//wp_enqueue_script('magnific');
 			upfront_add_element_script('magnific', array('/scripts/magnific-popup/magnific-popup.min.js', false));
 		}
 
 		$data['url'] = $link['type'] == 'unlink' ? false : $link['url'];
-
 		$data['wrapper_id'] = str_replace('image-object-', 'wrapper-', $data['element_id']);
-
 		$data['wrapper_id'] = 'hello_up';
 
 		if($data['stretch']) {
@@ -46,7 +42,7 @@ class Upfront_UimageView extends Upfront_Object {
 			$data['stretchClass'] = '';
 		}
 		
-		// Retrieve Image ALT
+		// Alternativen Text des Bildes abrufen
 		$data['alternative_text'] = get_post_meta($data['image_id'], '_wp_attachment_image_alt', true);
 		$data['containerWidth'] = min($data['size']['width'], $data['element_size']['width']);
 
@@ -57,14 +53,12 @@ class Upfront_UimageView extends Upfront_Object {
 		$data['gifLeft'] = $data['gifImage'] && $data['position']['left'] > 0 ? (-$data['position']['left']) . 'px' : 0;
 		$data['gifTop'] = (-$data['position']['top']) . 'px';
 
-		//Don't let the caption be bigger than the image
+		// Die Bildunterschrift darf nicht größer als das Bild sein
 		$data['captionData'] = array(
 			'top' => $data['vstretch'] ? 0 : (-$data['position']['top']) . 'px',
 			'left'=> $data['stretch'] ? 0 : (-$data['position']['left']) . 'px',
 			'width'=> $data['stretch'] ? '100%' : $data['size']['width'] . 'px',
 			'height'=> $data['vstretch'] ? '100%' : $data['size']['height'] . 'px',
-			//'bottom' => $data['vstretch'] ? '100%' : ($data['element_size']['height'] + $data['position']['top'] - $data['size']['height']) . 'px'
-			//'bottom' => $data['vstretch'] ? '100%' : (round($data['element_size']['height'] + $data['position']['top'] - $data['size']['height'])) . 'px'
 			'bottom' => $data['vstretch'] ? '100%' : (round((int)$data['element_size']['height'] + (int)$data['position']['top'] - (int)$data['size']['height'])) . 'px'
 		);
 
@@ -73,41 +67,26 @@ class Upfront_UimageView extends Upfront_Object {
 		}
 
 		if ($data['usingNewAppearance'] === true) {
-			// Clean up hardcoded image caption color
+			// Bereinigen der festcodierten Bildunterschriftfarbe
 			$data['image_caption'] = preg_replace('#^<span style=".+?"#', '<span ', $data['image_caption']);
 		}
 
 		$data['properties'] = Upfront_Image_Presets_Server::get_instance()->get_preset_properties($data['preset']);
-
 		$data['cover_caption'] = $data['caption_position'] != 'below_image'; // array_search($data['caption_alignment'], array('fill', 'fill_bottom', 'fill_middle')) !== FALSE;
-
 		$data['placeholder_class'] = !empty($data['src']) ? '' : 'uimage-placeholder';
-
-		/*
-		* Commented this line because sets background color for captions under image to be always white
-		* If this functionallity is needed, we will restore it
-		*
-		if ($data['caption_position'] === 'below_image') $data['captionBackground'] = false;
-
-		*/
 		$data['link_target'] = $link['target'];
 
 		if (!empty($data['src'])) $data['src'] = preg_replace('/^https?:/', '', trim($data['src']));
-
 
 		// print_r($data);die;
 		$markup = '<div>' . upfront_get_template('uimage', $data, dirname(dirname(__FILE__)) . '/tpl/image.html') . '</div>';
 
 		if($link['type'] == 'image'){
 			//Lightbox
-			//wp_enqueue_style('magnific');
 			upfront_add_element_style('magnific', array('/scripts/magnific-popup/magnific-popup.css', false));
-			//wp_enqueue_script('magnific');//Front script
 			upfront_add_element_script('magnific', array('/scripts/magnific-popup/magnific-popup.min.js', false));
-
 			upfront_add_element_script('uimage', array('js/uimage-front.js', dirname(__FILE__)));
 
-			//
 			$magnific_options = array(
 				'type' => 'image',
 				'delegate' => 'a'
@@ -199,23 +178,23 @@ class Upfront_UimageView extends Upfront_Object {
 
 	public static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Bild', 'upfront'),
-			'no_images' => __("Keine Bilder gesendet", 'upfront'),
-			'not_allowed' => __("Nicht erlaubt", 'upfront'),
-			'invalid_id' => __('Ungültige Bild-ID', 'upfront'),
-			'no_id' => __('Keine Bild-ID angegeben', 'upfront'),
+			'element_name' 		=> __('Bild', 'upfront'),
+			'no_images' 		=> __("Keine Bilder gesendet", 'upfront'),
+			'not_allowed' 		=> __("Nicht erlaubt", 'upfront'),
+			'invalid_id' 		=> __('Ungültige Bild-ID', 'upfront'),
+			'no_id' 			=> __('Keine Bild-ID angegeben', 'upfront'),
 			'not_modifications' => __('Nicht Modifikationen', 'upfront'), // wtf?
-			'edit_error' => __('Beim Bearbeiten des Bildes ist ein Fehler aufgetreten', 'upfront'),
-			'save_error' => __('Beim Speichern des bearbeiteten Bildes ist ein Fehler aufgetreten', 'upfront'),
-			'process_error' => __('Bild konnte nicht verarbeitet werden.', 'upfront'),
-			'image_caption' => __('Meine tolle Bildbeschriftung', 'upfront'),
+			'edit_error' 		=> __('Beim Bearbeiten des Bildes ist ein Fehler aufgetreten', 'upfront'),
+			'save_error' 		=> __('Beim Speichern des bearbeiteten Bildes ist ein Fehler aufgetreten', 'upfront'),
+			'process_error' 	=> __('Bild konnte nicht verarbeitet werden.', 'upfront'),
+			'image_caption' 	=> __('Meine tolle Bildbeschriftung', 'upfront'),
 			'css' => array(
-				'image_label' => __('Bildelement', 'upfront'),
-				'image_info' => __('Das gesamte Bildelement', 'upfront'),
+				'image_label' 	=> __('Bildelement', 'upfront'),
+				'image_info' 	=> __('Das gesamte Bildelement', 'upfront'),
 				'caption_label' => __('Beschriftungsfeld', 'upfront'),
-				'caption_info' => __('Beschriftungsebene', 'upfront'),
+				'caption_info' 	=> __('Beschriftungsebene', 'upfront'),
 				'wrapper_label' => __('Bild-Wrapper', 'upfront'),
-				'wrapper_info' => __('Bildcontainer', 'upfront'),
+				'wrapper_info' 	=> __('Bildcontainer', 'upfront'),
 			),
 			'ctrl' => array(
 				'caption_position' => __('Beschriftungsort', 'upfront'),
@@ -340,14 +319,6 @@ class Upfront_Uimage_Server extends Upfront_Server {
 		foreach($data['images'] as $imageData){
 			if(!$imageData['id'])
 				continue;
-				//return $this->_out(new Upfront_JsonResponse_Error("Invalid image ID"));
-
-			//if(!current_user_can('edit_post', $imageData['id']) ){
-			//if (!Upfront_Permissions::current(Upfront_Permissions::RESIZE, $imageData['id'])) {
-			//	$images[$imageData['id']] = array('error' => true, 'msg' => Upfront_UimageView::_get_l10n('not_allowed'));
-			//	continue;
-				//wp_die( -1 );
-			//}
 
 			$image = get_post($imageData['id']);
 			if( $image instanceof WP_Post && $image->post_mime_type == 'image/gif'){ //Gif are not really resized/croped to preserve animations
@@ -434,7 +405,6 @@ class Upfront_Uimage_Server extends Upfront_Server {
 			}
 		}
 
-
 		$images = array();
 		$intermediate_sizes = get_intermediate_image_sizes();
 		$intermediate_sizes[] = 'full';
@@ -454,18 +424,6 @@ class Upfront_Uimage_Server extends Upfront_Server {
 		}
 		else
 			$sizes['custom'] = $custom_size ? $data['customSize'] : array();
-//			if ($custom_size) {
-//				$image_custom_size = $this->calculate_image_resize_data($data['customSize'], array('width' => $sizes['full'][1], 'height' => $sizes['full'][2]));
-//				$image_custom_size['id'] = $id;
-//				if (!empty($data['element_id'])) {
-//					$image_custom_size['element_id'] = $data['element_id'];
-//				}
-//				$sizes['custom'] = $this->resize_image($image_custom_size);
-//				$sizes['custom']['editdata'] = $image_custom_size;
-//			} else {
-//				$sizes['custom'] = $custom_size ? $data['customSize'] : array();
-//			}
-
 			if (sizeof($sizes) != 0) $images[$id] = $sizes;
 		}
 
@@ -498,14 +456,13 @@ class Upfront_Uimage_Server extends Upfront_Server {
 		if (is_wp_error($image_editor)) {
 			return array(
 				'error' => true,
-				'msg' => Upfront_UimageView::_get_l10n('invalid_id')
+				'msg' 	=> Upfront_UimageView::_get_l10n('invalid_id')
 			);
 		}
 
-
 		if ($rotate && !$image_editor->rotate(-$rotate)) return array(
 			'error' => true,
-			'msg' => Upfront_UimageView::_get_l10n('edit_error')
+			'msg' 	=> Upfront_UimageView::_get_l10n('edit_error')
 		);
 
 		$full_size = $image_editor->get_size();
@@ -513,28 +470,29 @@ class Upfront_Uimage_Server extends Upfront_Server {
 		if ($resize && !$image_editor->crop(0, 0, $full_size['width'], $full_size['height'], $resize['width'], $resize['height'], false)) {
 			return array(
 				'error' => true,
-				'msg' => Upfront_UimageView::_get_l10n('edit_error')
+				'msg' 	=> Upfront_UimageView::_get_l10n('edit_error')
 			);
 		}
-
-		//$cropped = array(round($crop['left']), round($crop['top']), round($crop['width']), round($crop['height']));
 
 		// Crop the image and ensure the crop area is within the image bounds
 		$size = $image_editor->get_size();
 		$crop = array(
-			'top' => round($crop['top']),
-			'left' => round($crop['left']),
-			'width' => round($crop['width']),
-			'height' => round($crop['height'])
+			'top' 		=> round($crop['top']),
+			'left' 		=> round($crop['left']),
+			'width' 	=> round($crop['width']),
+			'height' 	=> round($crop['height'])
 		);
 
-		$crop['top'] = max(0, $crop['top']);
-		$crop['left'] = max(0, $crop['left']);
-		$crop['width'] = min($crop['width'], $size['width']);
+		$crop['top'] 	= max(0, $crop['top']);
+		$crop['left'] 	= max(0, $crop['left']);
+		$crop['width'] 	= min($crop['width'], $size['width']);
 		$crop['height'] = min($crop['height'], $size['height']);
 
 		if ($crop && !$image_editor->crop($crop['left'], $crop['top'], $crop['width'], $crop['height'])) {
-			return $this->_out(new Upfront_JsonResponse_Error(Upfront_UimageView::_get_l10n('edit_error')));
+			return array(
+				'error' => true,
+				'msg' => Upfront_UimageView::_get_l10n('edit_error')
+			);
 		}
 
 		// Generate a new filename for the cropped image
@@ -678,8 +636,6 @@ class Upfront_Uimage_Server extends Upfront_Server {
 		$video_html = str_replace('controls="controls"', '', $video_html);
 
 		return $video_html;
-
 	}
-
 }
 Upfront_Uimage_Server::serve();
