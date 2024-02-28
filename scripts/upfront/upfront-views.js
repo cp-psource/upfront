@@ -1617,7 +1617,7 @@ define([
 				this.$el.empty().addClass(cls);
 				this.$el.append(this.label);
 
-				this.$el.bind('click', function(e) {
+				this.$el.on('click', function(e) {
 					e.preventDefault();
 					me.action(this.for_view, e);
 					Upfront.Events.trigger("entity:contextmenu:deactivate", this);
@@ -6733,7 +6733,7 @@ define([
 				this.$bg.insertBefore(this.$el);
 				if(this.model.get_property_value_by_name('click_out_close') == 'yes') {
 					this.$bg.unbind('click');
-					this.$bg.bind('click', function() {
+					this.$bg.on('click', function() {
 						me.hide();
 					});
 				}
@@ -6796,7 +6796,7 @@ define([
 
 				if(this.model.get_property_value_by_name('click_out_close') == 'yes') {
 					this.$bg.unbind('click');
-					this.$bg.bind('click', function() {
+					this.$bg.on('click', function() {
 						me.hide();
 					});
 				} else {

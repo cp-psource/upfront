@@ -1187,7 +1187,7 @@
 				openOptions: function(e) {
 
 					//Disable scroll when chosen is opened
-					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
+					$('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
 						return false;
 					});
 
@@ -1512,7 +1512,7 @@
             openOptions: function(e) {
 
                 //Disable scroll when chosen is opened
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
                     return false;
                 });
 
