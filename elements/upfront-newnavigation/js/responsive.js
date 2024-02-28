@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
 	hasNavInit();
 	
 	// Show burger nav on enter
-	$('.responsive_nav_toggler, .burger_nav_close').keydown(function(e) {
+	$('.responsive_nav_toggler, .burger_nav_close').on('keydown', function(e) {
 		if (e.which == 13) {
 			$(this).closest('.upfront-navigation').find('.responsive_nav_toggler').trigger('click');
 		}

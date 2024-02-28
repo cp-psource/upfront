@@ -75,9 +75,9 @@
 					var splitted = variations[_i].split("+"),
 						control_part = splitted.length > 1 ?  splitted[0].toLowerCase() + "Key" : false,
 						k = splitted[1];
-					if( control_part && event[control_part] && this.keys[k] === event.key  ){
+					if( control_part && event[control_part] && this.keys[k] === event.keyCode  ){
 						this._call_method( event, fn );
-					}else if( false === control_part &&  this.control_keys[k] === event.key ){
+					}else if( false === control_part &&  this.control_keys[k] === event.keyCode ){
 						this._call_method( event, fn );
 					}
 				}

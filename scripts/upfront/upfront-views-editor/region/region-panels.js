@@ -236,19 +236,19 @@
                     ;
 
                 if ($regionEl.find('.open-responsive-item-controls').length === 0) {
-                    openItemControls.on('click', function () {
+                    openItemControls.click(function () {
                         $regionEl.toggleClass('controls-visible');
                     });
                     $regionEl.append(openItemControls);
                 }
 
-                responsiveAddRegionTop.on('click', function () {
+                responsiveAddRegionTop.click(function () {
                     me.add_panel_top.$el.find('.upfront-icon').trigger('click');
                     $regionEl.toggleClass('controls-visible');
                 });
                 itemControls.append(responsiveAddRegionTop);
 
-                responsiveAddRegionBottom.on('click', function () {
+                responsiveAddRegionBottom.click(function () {
                     me.add_panel_bottom.$el.find('.upfront-icon').trigger('click');
                     $regionEl.toggleClass('controls-visible');
                 });
@@ -256,14 +256,14 @@
 
                 if (me.model.is_main() && this.model.get('allow_sidebar')) {
                     if (sub_models.left === false) {
-                        responsiveAddRegionLeft.on('click', function () {
+                        responsiveAddRegionLeft.click(function () {
                             me.add_panel_left.$el.find('.upfront-icon').trigger('click');
                             $regionEl.toggleClass('controls-visible');
                         });
                         itemControls.append(responsiveAddRegionLeft);
                     }
                     if (sub_models.right === false) {
-                        responsiveAddRegionRight.on('click', function () {
+                        responsiveAddRegionRight.click(function () {
                             me.add_panel_right.$el.find('.upfront-icon').trigger('click');
                             $regionEl.toggleClass('controls-visible');
                         });

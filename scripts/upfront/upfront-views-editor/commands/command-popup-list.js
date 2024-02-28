@@ -74,7 +74,7 @@
 								} );
 
 								// Add Toggle Filter button functionality.
-								me.$popup.top.find('.upfront-icon-popup-search').on('click', me.toggle_filter);
+								me.$popup.top.find('.upfront-icon-popup-search').click(me.toggle_filter);
 
 								me.dispatch_panel_creation();
 

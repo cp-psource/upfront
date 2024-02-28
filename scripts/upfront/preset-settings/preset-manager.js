@@ -388,7 +388,7 @@ define([
 				});
 
 				//Get _default styles
-				default_style = Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page').trim();
+				default_style = $.trim(Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
 
 				//Make sure we remove #page from default classes
 				default_style = default_style.replace(/#page/g, '');
@@ -397,7 +397,7 @@ define([
 				default_style = this.migrateDefaultStyle(default_style);
 
 				//Prepend styles with preset
-				default_style = Upfront.Application.stylesAddSelectorMigration(default_style.trim(), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
+				default_style = Upfront.Application.stylesAddSelectorMigration($.trim(default_style), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
 			}
 
 			// We need to initialize cssEditor to get element styles
@@ -407,7 +407,7 @@ define([
 				no_render: true
 			});
 
-			var style = Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page').trim();
+			var style = $.trim(Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
 
 			//Apply style only for the current preset
 			style = style.replace(new RegExp(elementStyleName, 'g'), presetName.toLowerCase().replace(/ /g, '-'));
@@ -417,7 +417,7 @@ define([
 			} else {
 				//Normalize styles
 				style = this.migrateDefaultStyle(style);
-				style = Upfront.Application.stylesAddSelectorMigration(style.trim(), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
+				style = Upfront.Application.stylesAddSelectorMigration($.trim(style), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
 			}
 
 			//Migrate element styles
@@ -524,7 +524,7 @@ define([
 			Upfront.Util.post({
 				data: preset.toJSON(),
 				action: 'upfront_reset_' + this.ajaxActionSlug + '_preset'
-			}).success(function (ret) {
+			}).done(function (ret) {
 				var resetPreset = ret.data;
 				if(_.isEmpty(ret.data) || ret.data === false) {
 					resetPreset = me.getPresetDefaults('default');
@@ -543,7 +543,7 @@ define([
 				me.$el.empty();
 				me.render();
 				Upfront.Events.trigger('element:preset:updated');
-			}).error(function (ret) {
+			}).fail(function (ret) {
 				//Notify error
 				Upfront.Views.Editor.notify(ret);
 			});

@@ -71,8 +71,8 @@ define([
 				else
 					field.property.set({'value': field.get_value()}, {'silent': true});
 			});
-			if (changed.length > 0)
-    		this.panel.is_changed = true;
+			if ( changed.size() > 0 )
+				this.panel.is_changed = true;
 		},
 
 		remove: function(){

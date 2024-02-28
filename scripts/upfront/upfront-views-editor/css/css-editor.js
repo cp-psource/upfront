@@ -327,7 +327,7 @@
 					scope = new RegExp(selector + '\\s*', 'g');
 					styles = styles.replace(scope, '');
 				}
-				editor.setValue(styles.trim(), -1);
+				editor.setValue($.trim(styles), -1);
 
 				// Set up the proper vscroller width to go along with new change.
 				editor.renderer.scrollBar.width = 5;
@@ -498,20 +498,22 @@
 				;
 
 				_.each(rules, function (rl) {
-					var src = rl.trim().split('{');
-				
+					var src = $.trim(rl).split('{');
+
 					if (src.length != 2) return true; // wtf
-				
+
 					var individual_selectors = src[0].split(','),
-						processed_selectors = [];
+						processed_selectors = []
+					;
 					_.each(individual_selectors, function (sel) {
-						sel = sel.trim();
+						sel = $.trim(sel);
 						var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
-						var is_container = clean_selector[0] === '@' || me.recursiveExistence(selector, clean_selector),
+						var	is_container = clean_selector[0] === '@' || me.recursiveExistence(selector, clean_selector),
 							spacer = is_container
 								? '' // This is not a descentent selector - used for containers
-								: ' '; // This is a descentent selector
-				
+								: ' ' // This is a descentent selector
+						;
+
 						processed_selectors.push('' +
 							selector + spacer + sel +
 							'');
@@ -520,7 +522,6 @@
 						src[1] + // Actual rule
 						'\n}\n';
 				});
-				
 
 				// Handle closing comments being omitted from the processed string
 				// Only apply if the original contents has closing CSS comment, and the processed one does not
@@ -550,7 +551,7 @@
 			// When stylename changes upfront needs to update element model theme_style property
 			// and also to save style under new stylename.
 			updateStylename: function() {
-				var new_name = this.$('.upfront-css-save-name-field').val().trim(),
+				var new_name =  $.trim(this.$('.upfront-css-save-name-field').val()),
 					old_name = this.stylename;
 
 				// Strict filtering on stylename
@@ -594,7 +595,7 @@
 			save: function(event) {
 				if (event) event.preventDefault();
 				var me = this,
-					styles = this.editor.getValue().trim(),
+					styles = $.trim(this.editor.getValue()),
 					data;
 
 				if (this.is_global_stylesheet === false && this.stylename === this.get_temp_stylename())
@@ -622,7 +623,7 @@
 				data.action = 'upfront_save_styles';
 
 				Upfront.Util.post(data)
-					.success(function(response) {
+					.done(function(response) {
 						var data = response.data,
 							elementType = me.elementType.id;
 
@@ -640,7 +641,7 @@
 
 						return notifier.addMessage(l10n.style_saved_as.replace(/%s/,  me.get_style_id()));
 					})
-					.error(function(response){
+					.fail(function(response){
 						return notifier.addMessage(l10n.there_was_an_error);
 					});
 			},
@@ -648,7 +649,7 @@
 			/* API to call save style without loading editor */
 			saveCall: function (notify) {
 				var me = this,
-				styles = this.get_style_element().html().trim(),
+					styles = $.trim(this.get_style_element().html()),
 					data;
 
 				data = {
@@ -669,7 +670,7 @@
 				data.action = 'upfront_save_styles';
 
 				Upfront.Util.post(data)
-					.success(function(response) {
+					.done(function(response) {
 						var data = response.data,
 							elementType = me.elementType.id;
 
@@ -683,7 +684,7 @@
 
 						return notify ? notifier.addMessage(l10n.style_saved_as.replace(/%s/,  me.get_style_id())) : true;
 					})
-					.error(function(response){
+					.fail(function(response){
 						return notify ? notifier.addMessage(l10n.there_was_an_error) : true;
 					});
 
@@ -762,7 +763,7 @@
 				;
 
 				Upfront.Util.post(fetchData)
-					.success(function(response){
+					.done(function(response){
 						deferred.resolve(response.data.styles);
 					});
 				return deferred.promise();

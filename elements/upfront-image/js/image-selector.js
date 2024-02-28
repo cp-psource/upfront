@@ -54,7 +54,7 @@ define([
 								.done(function(response){
 									me.deferred.resolve(response.data.images, response);
 								})
-								.error(function(){
+								.fail(function(){
 									Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
 									me.openSelector();
 								});

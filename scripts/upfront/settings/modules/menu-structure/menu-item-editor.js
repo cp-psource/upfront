@@ -288,7 +288,7 @@ define([
 		},
 
 		createLightBox: function() {
-			var name = this.$('.menu-item-lightbox-input').val().trim();
+			var name = $.trim(this.$('.menu-item-lightbox-input').val());
 			if (!name) {
 				Upfront.Views.Editor.notify(l10n.ltbox_empty_name_nag, 'error');
 				return false;
@@ -310,7 +310,7 @@ define([
 
 		onUrlNameChange: function() {
 			this.model.set({
-				'menu-item-url': this.$el.find('.menu-item-external-input').val().trim()
+				'menu-item-url': $.trim(this.$el.find('.menu-item-external-input').val())
 			});
 			this.saveItem();
 		},
@@ -324,7 +324,7 @@ define([
 
 		onEmailNameChange: function() {
 			this.model.set({
-				'menu-item-url': 'mailto:' + this.$el.find('.menu-item-email-input').val().trim()
+				'menu-item-url': 'mailto:' + $.trim(this.$el.find('.menu-item-email-input').val())
 			});
 			this.saveItem();
 		},
@@ -337,7 +337,7 @@ define([
 		},
 
 		onItemNameChange: function() {
-			var newTitle = this.$el.find('.menu-item-title').val().trim();
+			var newTitle = $.trim(this.$el.find('.menu-item-title').val());
 			this.model.set({
 				'menu-item-title': newTitle
 			});

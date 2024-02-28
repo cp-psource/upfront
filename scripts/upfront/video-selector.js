@@ -28,8 +28,8 @@ define([
 			if ($('#upfront-upload-video').length === 0) {
 				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
 
-				$('body').bind( 'keyup', function( event ) {
-					if ( event.key === 27 )
+				$('body').on( 'keyup', function( event ) {
+					if ( event.keyCode === 27 )
 						me.closeOverlay();
 				});
 
@@ -168,7 +168,7 @@ define([
 					tempVideo.src = filename;
 					tempVideo.load();
 				})
-			.error(function(){
+			.fail(function(){
 				Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
 				me.openSelector();
 			});
@@ -430,7 +430,7 @@ define([
 							.done(function(response2){
 								theOneDeferred.resolve(response2.data.videoinfo);
 							})
-						.error(function(){
+						.fail(function(){
 							Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
 							me.openSelector();
 						});
@@ -444,8 +444,7 @@ define([
 		},
 		openFileBrowser: function(e){
 			e.preventDefault();
-			$('#upfront-video-file-input').trigger('click');
-
+			$('#upfront-video-file-input').click();
 		},
 		checkFileUpdate: function(){
 			 return true;

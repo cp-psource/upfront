@@ -5,9 +5,9 @@ define([], function () {
 
 			var me = this;
 			this.settings.each(function (setting) {
-				if ( !setting.handlesSaving && (setting.fields || setting.settings).length > 0 ) { // .size() durch .length ersetzt
+				if ( !setting.handlesSaving && (setting.fields || setting.settings).size() > 0 ) {
 					setting.save_fields();
-				} else if (!setting.handlesSaving) {
+				} else  if (!setting.handlesSaving) {
 					var value = me.model.get_property_value_by_name(setting.get_name());
 					if ( value != setting.get_value() ) {
 						me.model.set_property(

@@ -698,7 +698,7 @@ var GridEditor = {
 				return;
 
 			// Separate wrapper if more than one element in the wrapper, provided that the wrapper is not conflicting anything
-			if ( $wrap_els.length > 1 ){ // .size() durch .length ersetzt
+			if ( $wrap_els.size() > 1 ){
 				$wrap_els.each(function(){
 					var wrap_el = ed.get_el($(this)),
 						aff_wraps = ed.get_affected_els(wrap, wraps, [], false)
@@ -1007,13 +1007,13 @@ var GridEditor = {
 		wraps.each(function(wrap){
 			var wrapper_id = wrap.get_wrapper_id();
 			if (
-				($parent ? $parent : $layout).find('[ref-id='+wrapper_id+']').length === 0 // .size() durch .length ersetzt
+				($parent ? $parent : $layout).find('[ref-id='+wrapper_id+']').size() == 0
 				&&
-				($parent ? $parent : $layout).find('#'+wrapper_id).length === 0 // .size() durch .length ersetzt
+				($parent ? $parent : $layout).find('#'+wrapper_id).size() == 0
 			) {
 				wrapsToRemove.push(wrap);
 			}
-		});		
+		});
 		_.each(wrapsToRemove, function(wrap) {
 			wraps.remove(wrap);
 		});
@@ -2541,32 +2541,33 @@ var GridEditor = {
 	 */
 	create_region_resizable: function(view, model){
 		var app = this,
-		ed = Upfront.Behaviors.GridEditor,
-		$me = view.$el,
-		$main = $(Upfront.Settings.LayoutEditor.Selectors.main),
-		$layout = $main.find('.upfront-layout'),
-		collection = model.collection,
-		index = collection.indexOf(model),
-		total = collection.length - 1, // total minus shadow region, .size() durch .length ersetzt
-		sub = model.get('sub'),
-		container = model.get('container'),
-		directions, handles, axis,
-		fixed_pos = {},
-		get_fixed_pos = function () {
-			var pos = {
-					top: model.get_property_value_by_name('top'),
-					left: model.get_property_value_by_name('left'),
-					bottom: model.get_property_value_by_name('bottom'),
-					right: model.get_property_value_by_name('right'),
-					width: model.get_property_value_by_name('width'),
-					height: model.get_property_value_by_name('height')
-				};
-			pos.is_top = ( typeof pos.top == 'number' );
-			pos.is_left = ( typeof pos.left == 'number' );
-			pos.is_bottom = ( typeof pos.bottom == 'number' );
-			pos.is_right = ( typeof pos.right == 'number' );
-			return pos;
-		};
+			ed = Upfront.Behaviors.GridEditor,
+			$me = view.$el,
+			$main = $(Upfront.Settings.LayoutEditor.Selectors.main),
+			$layout = $main.find('.upfront-layout'),
+			collection = model.collection,
+			index = collection.indexOf(model),
+			total = collection.size()-1, // total minus shadow region
+			sub = model.get('sub'),
+			container = model.get('container'),
+			directions, handles, axis,
+			fixed_pos = {},
+			get_fixed_pos = function () {
+				var pos = {
+						top: model.get_property_value_by_name('top'),
+						left: model.get_property_value_by_name('left'),
+						bottom: model.get_property_value_by_name('bottom'),
+						right: model.get_property_value_by_name('right'),
+						width: model.get_property_value_by_name('width'),
+						height: model.get_property_value_by_name('height')
+					};
+				pos.is_top = ( typeof pos.top == 'number' );
+				pos.is_left = ( typeof pos.left == 'number' );
+				pos.is_bottom = ( typeof pos.bottom == 'number' );
+				pos.is_right = ( typeof pos.right == 'number' );
+				return pos;
+			}
+		;
 		if ( $me.data('ui-resizable') )
 			return false;
 		if ( !model.is_main() && sub && !sub.match(/^(fixed|left|right)$/) )
@@ -2660,14 +2661,15 @@ var GridEditor = {
 					}
 					else {
 						var col = ed.get_class_num($me, ed.grid['class']),
-						$prev = $me.prevAll('.upfront-region:first'),
-						$next = $me.nextAll('.upfront-region:first'),
-						prev_col = $prev.length > 0 ? ed.get_class_num($prev, ed.grid['class']) : 0, // .size() durch .length ersetzt
-						next_col = $next.length > 0 ? ed.get_class_num($next, ed.grid['class']) : 0, // .size() durch .length ersetzt
-						max_col = col + ( next_col > prev_col ? next_col : prev_col ),
-						current_col = Math.abs(Math.ceil(ui.size.width/ed.col_size)),
-						rsz_col = ( current_col > max_col ? max_col : current_col ),
-						w = Math.round(rsz_col*ed.col_size);
+							$prev = $me.prevAll('.upfront-region:first'),
+							$next = $me.nextAll('.upfront-region:first'),
+							prev_col = $prev.size() > 0 ? ed.get_class_num($prev, ed.grid['class']) : 0,
+							next_col = $next.size() > 0 ? ed.get_class_num($next, ed.grid['class']) : 0,
+							max_col = col + ( next_col > prev_col ? next_col : prev_col ),
+							current_col = Math.abs(Math.ceil(ui.size.width/ed.col_size)),
+							rsz_col = ( current_col > max_col ? max_col : current_col ),
+							w = Math.round(rsz_col*ed.col_size)
+						;
 						$helper.css({
 							height: ui.originalSize.height,
 							width: w,
@@ -3166,7 +3168,7 @@ var GridEditor = {
 					Upfront.Util.post({
 						action: 'upfront_load_editor_grid',
 						baseline: grid_data.baseline
-					}, 'text').success(function(data) {
+					}, 'text').done(function(data) {
 						if ( $('#upfront-editor-grid-inline').length )
 							$('#upfront-editor-grid-inline').html( data );
 						else

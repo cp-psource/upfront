@@ -6130,9 +6130,9 @@ define([
 				if(Upfront.Application.get_current() != "theme" || this.$el.hasClass('upfront-region-floating') || this.$el.hasClass('upfront-region-lightbox') || this.$el.attr('id')=='region-shadow')
 					return;
 
-					if (this.$el.find('> .upfront-region-wrapper > .upfront-modules_container .upfront-wrapper').length < 1) { // .size() durch .length ersetzt
-						this.$el.addClass('empty_in_theme_mode');
-					}					
+				if(this.$el.find('> .upfront-region-wrapper > .upfront-modules_container .upfront-wrapper').size() < 1) {
+					this.$el.addClass('empty_in_theme_mode');
+				}
 				else {
 					this.$el.removeClass('empty_in_theme_mode');
 				}
@@ -6664,7 +6664,7 @@ define([
 				e.stopPropagation();
 			},
 			check_modules: function () {
-				var total = this.$el.find('> .upfront-region-wrapper > .upfront-modules_container > .upfront-editable_entities_container').find('.upfront-module').length;
+				var total = this.$el.find('> .upfront-region-wrapper > .upfront-modules_container > .upfront-editable_entities_container').find('.upfront-module').size();
 				if ( total == 0 ){
 					this.$el.removeClass('upfront-region-has-modules');
 					this.$el.addClass('upfront-region-empty');
@@ -6888,7 +6888,7 @@ define([
 					e.stopPropagation();
 			},
 			check_modules: function () {
-				var total = this.$el.find('> .upfront-region-wrapper > .upfront-modules_container > .upfront-editable_entities_container').find('.upfront-module').length; // .size() durch .length ersetzt
+				var total = this.$el.find('> .upfront-region-wrapper > .upfront-modules_container > .upfront-editable_entities_container').find('.upfront-module').size();
 				if ( total == 0 ){
 					this.$el.removeClass('upfront-region-has-modules');
 					this.$el.addClass('upfront-region-empty');
@@ -7692,11 +7692,11 @@ define([
 					return;
 				}
 
-				if (e.key === 38 || e.key === 40) {
+				if (e.keyCode === 38 || e.keyCode === 40) {
 					e.preventDefault();
 					e.stopPropagation();
 
-					switch (e.key) {
+					switch (e.keyCode) {
 						case 38:
 							currentEntity.paddingControl.on_up_arrow_click();
 							break;

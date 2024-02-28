@@ -42,7 +42,7 @@
 			}
 			else {
 				if (isMethod) {
-					$.error('Can\'t call the method ' + args + '. The object is not initialized');
+					$.fail('Can\'t call the method ' + args + '. The object is not initialized');
 				}
 				else {
 					// Initialize object

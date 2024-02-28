@@ -162,7 +162,7 @@ define([
 			this._location = fields.location.get_value();
 
 			this.$el.on('keypress', 'input[name="background_map_location"]', function (e) {
-				if( e.key === 13 ){
+				if( e.keyCode === 13 ){
 					me._location = $(this).val();
 					me._location_changed = true;
 					me.geocode_location();

@@ -11,15 +11,15 @@
                     var allowed, curVal, newVal, step,
                         index = $(event.target).data("ui-slider-handle-index");
 
-                    switch (event.key) {
-                        case $.ui.key.HOME:
-                        case $.ui.key.END:
-                        case $.ui.key.PAGE_UP:
-                        case $.ui.key.PAGE_DOWN:
-                        case $.ui.key.UP:
-                        case $.ui.key.RIGHT:
-                        case $.ui.key.DOWN:
-                        case $.ui.key.LEFT:
+                    switch (event.keyCode) {
+                        case $.ui.keyCode.HOME:
+                        case $.ui.keyCode.END:
+                        case $.ui.keyCode.PAGE_UP:
+                        case $.ui.keyCode.PAGE_DOWN:
+                        case $.ui.keyCode.UP:
+                        case $.ui.keyCode.RIGHT:
+                        case $.ui.keyCode.DOWN:
+                        case $.ui.keyCode.LEFT:
                             event.preventDefault();
                             if (!this._keySliding) {
                                 this._keySliding = true;
@@ -39,41 +39,41 @@
                         curVal = newVal = this.value();
                     }
 
-                    switch (event.key) {
-                        case $.ui.key.HOME:
+                    switch (event.keyCode) {
+                        case $.ui.keyCode.HOME:
                             newVal = this._valueMin();
                             break;
-                        case $.ui.key.END:
+                        case $.ui.keyCode.END:
                             newVal = this._valueMax();
                             break;
-                        case $.ui.key.PAGE_UP:
+                        case $.ui.keyCode.PAGE_UP:
                             newVal = this._trimAlignValue(
                                 curVal + ( ( this._valueMax() - this._valueMin() ) / this.numPages )
                             );
                             break;
-                        case $.ui.key.PAGE_DOWN:
+                        case $.ui.keyCode.PAGE_DOWN:
                             newVal = this._trimAlignValue(
                                 curVal - ( (this._valueMax() - this._valueMin()) / this.numPages ));
                             break;
-                        case $.ui.key.UP:
+                        case $.ui.keyCode.UP:
                             if (curVal === this._valueMax()) {
                                 return;
                             }
                             newVal = this._trimAlignValue(curVal + step );
                             break;
-                        case $.ui.key.RIGHT:
+                        case $.ui.keyCode.RIGHT:
                             if (curVal === this._valueMax()) {
                                 return;
                             }
                             newVal = this._trimAlignValue(curVal + ( -step  ));
                             break;
-                        case $.ui.key.DOWN:
+                        case $.ui.keyCode.DOWN:
                             if (curVal === this._valueMin()) {
                                 return;
                             }
                             newVal = this._trimAlignValue(curVal - step );
                             break;
-                        case $.ui.key.LEFT:
+                        case $.ui.keyCode.LEFT:
                             if (curVal === this._valueMin()) {
                                 return;
                             }

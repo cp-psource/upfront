@@ -99,7 +99,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.success(function (response) {
+				.done(function (response) {
 					me.each(function (model) {
 						var labels = response.data[model.get("ID")];
 						if (labels) model.set({labels: labels}, {silent: true});
@@ -117,7 +117,7 @@ define([
 				}
 			;
 			return Upfront.Util.post(data)
-				.success(function (response) {
+				.done(function (response) {
 					me.each(function (model) {
 						var labels = response.data[model.get("ID")];
 						if (labels) model.set({labels: labels}, {silent: true});
@@ -135,7 +135,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.success(function (response) {
+				.done(function (response) {
 					me.reset([]);
 					Upfront.Events.trigger("media_manager:media:list", ActiveFilters);
 				})
@@ -151,7 +151,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.success(function (response) {
+				.done(function (response) {
 					me.reset([]);
 					Upfront.Events.trigger("media_manager:media:list", ActiveFilters);
 				})
@@ -264,7 +264,7 @@ define([
 		reload_labels: function () {
 			var me = this;
 			Upfront.Util.post({action: "upfront-media-get_labels"})
-				.success(function (response) {
+				.done(function (response) {
 					var arr = [];
 					if (response.data) {
 						me.labels_cache = response.data;
@@ -1075,7 +1075,7 @@ define([
 						_to_render.push({filter: filter, type: type});
 					});
 				});
-				if (!_to_render.length) return false; // Do not render the empty filter array (ie. only defaults)
+				if (!_to_render.size()) return false; // Do not render the empty filter array (ie. only defaults)
 
 				this.$el.append('<label class="upfront-field-label upfront-field-label-block">' + l10n.active_filters + '</label>');
 
@@ -1556,9 +1556,9 @@ define([
 			this.do_search(e);
 		},
 		on_keyup: function (e) {
-			if ( e.key == 13 )
+			if ( e.keyCode == 13 )
 				this.search_button.$el.trigger('click');
-			//else if ( e.key == 27 )
+			//else if ( e.keyCode == 27 )
 			//	this.$el.find('.clear').trigger('click');
 		}
 	});
@@ -1991,8 +1991,9 @@ define([
 				//e.preventDefault();
 				if (13 !== e.which) return true;
 
-				var string = e.target.value.trim(),
-    			num = parseInt(string, 10);
+				var string = $.trim($(e.target).val()),
+					num = parseInt(string, 10)
+				;
 				if (!num) return false;
 				if (num > ActiveFilters.max_pages) num = ActiveFilters.max_pages;
 				if (ActiveFilters.set_page(num)) Upfront.Events.trigger("media_manager:media:list", ActiveFilters);
@@ -2576,7 +2577,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.success(function (response) {
+				.done(function (response) {
 					Upfront.Events.trigger("media_manager:media:labels_updated");
 				})
 			;
@@ -2605,7 +2606,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.success(function (response) {
+				.done(function (response) {
 					var id = me.model.get("ID"),
 						data = response.data || {},
 						labels = data[id] || data

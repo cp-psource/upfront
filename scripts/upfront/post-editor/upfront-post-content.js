@@ -151,7 +151,7 @@ PostContentEditor.prototype = {
 				if ( $part.length ){
 					var $node = this._findDeep($part);
 					// Verify node
-					if ($node.text().trim() == $part.text().trim()) {
+					if ( $.trim($node.text()) == $.trim($part.text()) ) {
 						this.$title = $node;
 					}
 					else {
@@ -205,7 +205,7 @@ PostContentEditor.prototype = {
 				this.parent.currentData.title = this.$title.text();
 				Upfront.Events.trigger('content:change:title', this.parent.currentData.title);
 				// escape
-				if( e.key === 27 ) {
+				if( e.keyCode === 27 ) {
 					this.disable_edit_title();
 				}
 			},
@@ -229,7 +229,7 @@ PostContentEditor.prototype = {
 					if ( $part.length ){
 						var $node = this._findDeep($part);
 						// Verify node
-						if ($node.text().trim() == $part.text().trim()) {
+						if ( $.trim($node.text()) == $.trim($part.text()) ) {
 							this.$title = $node;
 						}
 						else {
@@ -303,7 +303,7 @@ PostContentEditor.prototype = {
 				}
 			},
 			keyup: function (e) {
-				if( e.key === 27 ){
+				if( e.keyCode === 27 ){
 					// escape
 					this.stopEditContent();
 				}
@@ -342,12 +342,12 @@ PostContentEditor.prototype = {
 							$shortcode = $this.find(".post-images-shortcode").length ? $this.find(".post-images-shortcode") : $this.find(".post-images-shortcode-wp")
 						;
 						if ( $shortcode.length > 0 ) {
-							var shortcode = $shortcode.html().replace(/(\r\n|\n|\r)/gm,"").trim();
+							var shortcode = $.trim( $shortcode.html().replace(/(\r\n|\n|\r)/gm,"") );
 							$this.replaceWith( shortcode );
 						}
 
 					});
-					content = this.editor.getValue().trim();
+					content = $.trim( this.editor.getValue() );
 					content = content.replace(/(\n)*?<br\s*\/?>\n*/g, "<br/>");
 					if ( isExcerpt ) {
 						this.parent.currentData.excerpt = content;
@@ -1700,7 +1700,7 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 				var results = {};
 
 				if ('publish' === e || 'draft' === e || 'auto-draft' === e) {
-					if (me.parts.titles) results.title = me.parts.titles.text().trim();
+					if (me.parts.titles) results.title = $.trim(me.parts.titles.text());
 					if (me.currentContent){
 						var editor = $(me.currentContent).data('ueditor');
 
@@ -1715,12 +1715,12 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 						me.$(".upfront-inserted_image-wrapper").each(function () {
 							var $this = $(this),
 								$shortcode = $this.find(".post-images-shortcode").length ? $this.find(".post-images-shortcode") : $this.find(".post-images-shortcode-wp"),
-								shortcode = $shortcode.html().replace(/(\r\n|\n|\r)/gm,"").trim();
+								shortcode = $.trim( $shortcode.html().replace(/(\r\n|\n|\r)/gm,"") )
 							;
 							$this.replaceWith( shortcode );
 						});
 
-						results.content = editor.getValue().trim();
+						results.content = $.trim( editor.getValue() );
 						results.content = results.content.replace(/(\n)*?<br\s*\/?>\n*/g, "<br/>");
 						results.inserts = editor.getInsertsData();
 						results.author = me.postAuthor;

@@ -935,7 +935,7 @@
 
 				if (xml && data.documentElement.nodeName === 'parsererror') {
 					if ($.error) {
-						$.error('parsererror');
+						$.fail('parsererror');
 					}
 				}
 				if (s && s.dataFilter) {

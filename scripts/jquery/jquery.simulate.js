@@ -169,7 +169,7 @@ $.extend( $.simulate.prototype, {
 				event = document.createEvent( "KeyEvents" );
 				event.initKeyEvent( type, options.bubbles, options.cancelable, options.view,
 					options.ctrlKey, options.altKey, options.shiftKey, options.metaKey,
-					options.key, options.charCode );
+					options.keyCode, options.charCode );
 			// initKeyEvent throws an exception in WebKit
 			// see: http://stackoverflow.com/questions/6406784/initkeyevent-keypress-only-works-in-firefox-need-a-cross-browser-solution
 			// and also https://bugs.webkit.org/show_bug.cgi?id=13368
@@ -183,7 +183,7 @@ $.extend( $.simulate.prototype, {
 					altKey: options.altKey,
 					shiftKey: options.shiftKey,
 					metaKey: options.metaKey,
-					keyCode: options.key,
+					keyCode: options.keyCode,
 					charCode: options.charCode
 				});
 			}
@@ -193,7 +193,7 @@ $.extend( $.simulate.prototype, {
 		}
 
 		if ( !!/msie [\w.]+/.exec( navigator.userAgent.toLowerCase() ) || (({}).toString.call( window.opera ) === "[object Opera]") ) {
-			event.key = (options.charCode > 0) ? options.charCode : options.key;
+			event.keyCode = (options.charCode > 0) ? options.charCode : options.keyCode;
 			event.charCode = undefined;
 		}
 

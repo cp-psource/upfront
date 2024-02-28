@@ -388,17 +388,23 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 	}
 
 	private function getActiveIconFont() {
-		//error_log('getting active icon font' . $this->get_theme_settings()->get('icon_fonts'));
-		$fonts = json_decode($this->get_theme_settings()->get('icon_fonts'), true);
-		$active_font = false;
-		if(empty($fonts)) return false;
-		foreach($fonts as $font) {
-			if ($font['active'] === true) {
-				$active_font = $font;
-				break;
+		$iconFontsSetting = $this->get_theme_settings()->get('icon_fonts');
+	
+		// Überprüfen, ob $iconFontsSetting nicht null ist, bevor es an json_decode() übergeben wird
+		if ($iconFontsSetting !== null) {
+			$fonts = json_decode($iconFontsSetting, true);
+			$active_font = false;
+			if(empty($fonts)) return false;
+			foreach($fonts as $font) {
+				if ($font['active'] === true) {
+					$active_font = $font;
+					break;
+				}
 			}
+			return $active_font;
+		} else {
+			return false; // Rückgabewert, wenn get_theme_settings()->get('icon_fonts') null ist
 		}
-		return $active_font;
 	}
 
 	/**

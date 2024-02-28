@@ -72,7 +72,7 @@ var _mfpOn = function(name, f) {
 			// converts "mfpEventName" to "eventName" callback and triggers it if it's present
 			e = e.charAt(0).toLowerCase() + e.slice(1);
 			if(mfp.st.callbacks[e]) {
-				mfp.st.callbacks[e].apply(mfp, Array.isArray(data) ? data : [data]);
+				mfp.st.callbacks[e].apply(mfp, $.isArray(data) ? data : [data]);
 			}
 		}
 	},
@@ -166,7 +166,7 @@ MagnificPopup.prototype = {
 				}
 			}
 		} else {
-			mfp.items = Array.isArray(data.items) ? data.items : [data.items];
+			mfp.items = $.isArray(data.items) ? data.items : [data.items];
 			mfp.index = data.index || 0;
 		}
 
@@ -282,7 +282,7 @@ MagnificPopup.prototype = {
 		if(mfp.st.enableEscapeKey) {
 			// Close on ESC key
 			_document.on('keyup' + EVENT_NS, function(e) {
-				if(e.key === 27) {
+				if(e.keyCode === 27) {
 					mfp.close();
 				}
 			});
@@ -1124,6 +1124,11 @@ $.magnificPopup.registerModule(AJAX_NS, {
 });
 
 
+
+
+
+	
+
 /*>>ajax*/
 
 /*>>image*/
@@ -1721,9 +1726,9 @@ $.magnificPopup.registerModule('gallery', {
 				}
 
 				_document.on('keydown'+ns, function(e) {
-					if (e.key === 37) {
+					if (e.keyCode === 37) {
 						mfp.prev();
-					} else if (e.key === 39) {
+					} else if (e.keyCode === 39) {
 						mfp.next();
 					}
 				});

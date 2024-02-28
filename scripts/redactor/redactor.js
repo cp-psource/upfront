@@ -57,7 +57,8 @@
                     func = instance[options];
                 }
 
-                if (typeof instance !== 'undefined' && typeof func === 'function') {
+                if (typeof instance !== 'undefined' && $.isFunction(func))
+                {
                     var methodVal = func.apply(instance, args);
                     if (methodVal !== undefined && methodVal !== instance)
                     {
@@ -66,7 +67,7 @@
                 }
                 else
                 {
-                    $.error('No such method "' + options + '" for Redactor');
+                    $.fail('No such method "' + options + '" for Redactor');
                 }
             });
         }
@@ -1355,17 +1356,20 @@
                     this.$editor.on('keyup.redactor', $.proxy(this.keyup.init, this));
 
                     // textarea keydown
-                    if (typeof this.opts.codeKeydownCallback === 'function') {
+                    if ($.isFunction(this.opts.codeKeydownCallback))
+                    {
                         this.$textarea.on('keydown.redactor-textarea', $.proxy(this.opts.codeKeydownCallback, this));
                     }
 
                     // textarea keyup
-                    if (typeof this.opts.codeKeyupCallback === 'function') {
+                    if ($.isFunction(this.opts.codeKeyupCallback))
+                    {
                         this.$textarea.on('keyup.redactor-textarea', $.proxy(this.opts.codeKeyupCallback, this));
                     }
 
                     // focus
-                    if (typeof this.opts.focusCallback === 'function') {
+                    if ($.isFunction(this.opts.focusCallback))
+                    {
                         this.$editor.on('focus.redactor', $.proxy(this.opts.focusCallback, this));
                     }
 
@@ -1379,7 +1383,7 @@
                         if (!this.build.isBlured(clickedElement)) return;
 
                         this.utils.disableSelectAll();
-                        if (typeof this.opts.blurCallback === 'function') this.core.setCallback('blur', e);
+                        if ($.isFunction(this.opts.blurCallback)) this.core.setCallback('blur', e);
 
                     }, this));
                 },
@@ -1413,11 +1417,11 @@
 
                         if ($.inArray(s, $.Redactor.modules) !== -1)
                         {
-                            $.error('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
+                            $.fail('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
                             return;
                         }
 
-                        if (typeof RedactorPlugins[s] !== 'function') return;
+                        if (!$.isFunction(RedactorPlugins[s])) return;
 
                         this[s] = RedactorPlugins[s]();
 
@@ -1426,11 +1430,12 @@
                         var len = methods.length;
 
                         // bind methods
-                        for (var z = 0; z < len; z++) {
+                        for (var z = 0; z < len; z++)
+                        {
                             this[s][methods[z]] = this[s][methods[z]].bind(this);
                         }
 
-                        if (typeof this[s].init === 'function') this[s].init();
+                        if ($.isFunction(this[s].init)) this[s].init();
 
 
                     }, this));
@@ -1537,11 +1542,13 @@
                     else if (type == 'dropdown') this.dropdown.show(e, btnName);
                     else this.button.onClickCallback(e, callback, btnName);
                 },
-                onClickCallback: function(e, callback, btnName) {
+                onClickCallback: function(e, callback, btnName)
+                {
                     var func;
 
-                    if (typeof callback === 'function') callback.call(this, btnName);
-                    else if (callback.search(/\./) != '-1') {
+                    if ($.isFunction(callback)) callback.call(this, btnName);
+                    else if (callback.search(/\./) != '-1')
+                    {
                         func = callback.split('.');
                         if (typeof this[func[0]] == 'undefined') return;
 
@@ -2755,7 +2762,7 @@
                 },
                 textareaIndenting: function(e)
                 {
-                    if (e.key !== 9) return true;
+                    if (e.keyCode !== 9) return true;
 
                     var $el = this.$textarea;
                     var start = $el.get(0).selectionStart;
@@ -2804,13 +2811,14 @@
                 setCallback: function(type, e, data) {
                     var callback = this.opts[type + 'Callback'];
                     if (typeof callback === 'function') {
-                        return (typeof data == 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
+                        return (typeof data === 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
                     }
                     else {
                         return (typeof data == 'undefined') ? e : data;
                     }
                 },
-                destroy: function() {
+                destroy: function()
+                {
                     this.core.setCallback('destroy');
 
                     // off events and remove data
@@ -4510,7 +4518,7 @@
                     }
 
                     // ie and ff exit from table
-                    if (this.opts.enterKey && (this.utils.browser('msie') || this.utils.browser('mozilla')) && (key === this.key.DOWN || key === this.key.RIGHT))
+                    if (this.opts.enterKey && (this.utils.browser('msie') || this.utils.browser('mozilla')) && (key === this.keyCode.DOWN || key === this.keyCode.RIGHT))
                     {
                         var isEndOfTable = false;
                         var $table = false;
@@ -4533,13 +4541,13 @@
                     }
 
                     // down
-                    if (this.opts.enterKey && key === this.key.DOWN)
+                    if (this.opts.enterKey && key === this.keyCode.DOWN)
                     {
                         this.keydown.onArrowDown();
                     }
 
                     // turn off enter key
-                    if (!this.opts.enterKey && key === this.key.ENTER)
+                    if (!this.opts.enterKey && key === this.keyCode.ENTER)
                     {
                         e.preventDefault();
                         // remove selected
@@ -4548,7 +4556,7 @@
                     }
 
                     // on enter
-                    if (key == this.key.ENTER && !e.shiftKey && !e.ctrlKey && !e.metaKey)
+                    if (key == this.keyCode.ENTER && !e.shiftKey && !e.ctrlKey && !e.metaKey)
                     {
                         var stop = this.core.setCallback('enter', e);
                         if (stop === false)
@@ -4651,20 +4659,20 @@
                     }
 
                     // Shift+Enter or Ctrl+Enter
-                    if (key === this.key.ENTER && (e.ctrlKey || e.shiftKey))
+                    if (key === this.keyCode.ENTER && (e.ctrlKey || e.shiftKey))
                     {
                         return this.keydown.onShiftEnter(e);
                     }
 
 
                     // tab or cmd + [
-                    if (key === this.key.TAB || e.metaKey && key === 221 || e.metaKey && key === 219)
+                    if (key === this.keyCode.TAB || e.metaKey && key === 221 || e.metaKey && key === 219)
                     {
                         return this.keydown.onTab(e, key);
                     }
 
                     // image delete and backspace
-                    if (key === this.key.BACKSPACE || key === this.key.DELETE)
+                    if (key === this.keyCode.BACKSPACE || key === this.keyCode.DELETE)
                     {
                         if (this.utils.browser('mozilla') && this.keydown.current && this.keydown.current.tagName === 'TD')
                         {
@@ -4707,7 +4715,7 @@
                     }
 
                     // backspace
-                    if (key === this.key.BACKSPACE)
+                    if (key === this.keyCode.BACKSPACE)
                     {
                         this.keydown.removeInvisibleSpace();
                         this.keydown.removeEmptyListInTable(e);
@@ -4729,7 +4737,7 @@
                 },
                 checkKeyEvents: function(key)
                 {
-                    var k = this.key;
+                    var k = this.keyCode;
                     var keys = [k.BACKSPACE, k.DELETE, k.ENTER, k.SPACE, k.ESC, k.TAB, k.CTRL, k.META, k.ALT, k.SHIFT];
 
                     return ($.inArray(key, keys) == -1) ? true : false;
@@ -4764,7 +4772,7 @@
                     }
                     else if (!this.keydown.ctrl)
                     {
-                        if (key == this.key.BACKSPACE || key == this.key.DELETE || (key == this.key.ENTER && !e.ctrlKey && !e.shiftKey) || key == this.key.SPACE)
+                        if (key == this.keyCode.BACKSPACE || key == this.keyCode.DELETE || (key == this.keyCode.ENTER && !e.ctrlKey && !e.shiftKey) || key == this.keyCode.SPACE)
                         {
                             this.buffer.set();
                         }
@@ -4776,7 +4784,7 @@
                     {
                         this.utils.enableSelectAll();
                     }
-                    else if (key != this.key.LEFT_WIN && !this.keydown.ctrl)
+                    else if (key != this.keyCode.LEFT_WIN && !this.keydown.ctrl)
                     {
                         this.utils.disableSelectAll();
                     }
@@ -5107,7 +5115,7 @@
                         this.code.sync();
                     }
 
-                    if (key === this.key.DELETE || key === this.key.BACKSPACE)
+                    if (key === this.keyCode.DELETE || key === this.keyCode.BACKSPACE)
                     {
                         // clear unverified
                         this.clean.clearUnverified();
@@ -5142,7 +5150,7 @@
                 },
                 isLinkify: function(key)
                 {
-                    return this.opts.convertLinks && (this.opts.convertUrlLinks || this.opts.convertImageLinks || this.opts.convertVideoLinks) && key === this.key.ENTER && !this.utils.isCurrentOrParent('PRE');
+                    return this.opts.convertLinks && (this.opts.convertUrlLinks || this.opts.convertImageLinks || this.opts.convertVideoLinks) && key === this.keyCode.ENTER && !this.utils.isCurrentOrParent('PRE');
                 },
                 replaceToParagraph: function(clone)
                 {
@@ -5932,7 +5940,7 @@
                     if (e.which != 13) return;
 
                     e.preventDefault();
-                    this.$modal.find('button.redactor-modal-action-btn').trigger('click');
+                    this.$modal.find('button.redactor-modal-action-btn').click();
                 },
                 createCancelButton: function()
                 {
@@ -6004,7 +6012,7 @@
                 },
                 closeHandler: function(e)
                 {
-                    if (e.which != this.key.ESC) return;
+                    if (e.which != this.keyCode.ESC) return;
 
                     this.modal.close(false);
                 },
@@ -6944,7 +6952,7 @@
                     };
 
                     keys = keys.toLowerCase().split(" ");
-                    var special = hotkeysSpecialKeys[e.key],
+                    var special = hotkeysSpecialKeys[e.keyCode],
                         character = String.fromCharCode( e.which ).toLowerCase(),
                         modif = "", possible = {};
 
@@ -7373,7 +7381,7 @@
                         for (var i = 0; i < len; i++)
                         {
                             var attrs = this.tidy.settings.removeAttr[i][1];
-                            if (Array.isArray(attrs)) attrs = attrs.join(' ');
+                            if ($.isArray(attrs)) attrs = attrs.join(' ');
 
                             this.tidy.$div.find(this.tidy.settings.removeAttr[i][0]).removeAttr(attrs);
                         }
@@ -7403,7 +7411,7 @@
                     {
                         $.each($el[0].attributes, function(i, item)
                         {
-                            if (Array.isArray(allowed[pos]))
+                            if ($.isArray(allowed[pos]))
                             {
                                 if ($.inArray(item.name, allowed[pos]) == -1)
                                 {
@@ -7464,7 +7472,7 @@
                     if (!this.tidy.settings.removeDataAttr) return;
 
                     var tags = this.tidy.settings.removeDataAttr;
-                    if (Array.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
+                    if ($.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
 
                     this.tidy.removeAttrs(this.tidy.$div.find(tags), '^(data-)');
 
@@ -8443,7 +8451,7 @@
                     var parent = this.selection.getParent();
                     var current = this.selection.getCurrent();
 
-                    if (Array.isArray(tagName))
+                    if ($.isArray(tagName))
                     {
                         var matched = 0;
                         $.each(tagName, $.proxy(function(i, s)

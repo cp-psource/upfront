@@ -85,7 +85,7 @@ var LayoutEditorSubapplication = Subapplication.extend({
 				"template_type": template_type,
 				"template_slug": template_slug
 			})
-			.success(function () {
+			.done(function () {
 				Upfront.Util.log("layout applied");
 
 				// remove the old cache of layouts as cache will be updated upon loading layouts
@@ -98,7 +98,7 @@ var LayoutEditorSubapplication = Subapplication.extend({
 				},100);
 
 			})
-			.error(function () {
+			.fail(function () {
 				Upfront.Util.log("error saving layout");
 				Upfront.Events.trigger("command:layout:save_error");
 			})
@@ -151,7 +151,7 @@ var LayoutEditorSubapplication = Subapplication.extend({
 				"template_type": template_type,
 				"template_slug": template_slug
 			})
-			.success(function (resp) {
+			.done(function (resp) {
 				Upfront.Util.log("layout saved");
 				Upfront.Events.trigger("command:layout:save_success");
 
@@ -173,7 +173,7 @@ var LayoutEditorSubapplication = Subapplication.extend({
 
 				me.save_presets();
 			})
-			.error(function () {
+			.fail(function () {
 				Upfront.Util.log("error saving layout");
 				Upfront.Events.trigger("command:layout:save_error");
 			})
@@ -267,7 +267,7 @@ var LayoutEditorSubapplication = Subapplication.extend({
 					$(this).html(tpl(resp));
 				});
 			})
-			.error(function (resp) {
+			.fail(function (resp) {
 				console.log(resp);
 			})
 		;
@@ -833,7 +833,7 @@ var Application = new (Backbone.Router.extend({
 			},
 			base_only: true // flag for w/o element styles
 		})
-			.success(function(response) {
+			.done(function(response) {
 				// Switch styles
 				$('#upfront-main-css').after('<style id="upfront-main-base-css">' + response.data.styles + '</style>');
 				$('#upfront-main-css').remove();
@@ -1016,7 +1016,7 @@ var Application = new (Backbone.Router.extend({
 			this.loadingLayout.abort();
 
 		this.loadingLayout = Upfront.Util.post(request_data)
-			.success(function (response) {
+			.done(function (response) {
 				app.set_layout_up(response);
 
 				if(app.saveCache){
@@ -1024,7 +1024,7 @@ var Application = new (Backbone.Router.extend({
 					app.saveCache = false;
 				}
 			})
-			.error(function (xhr) {
+			.fail(function (xhr) {
 				if(xhr.statusText == 'abort') //we are ok
 					return;
 
@@ -1061,7 +1061,7 @@ var Application = new (Backbone.Router.extend({
 			this.loadingLayout.abort();
 
 		this.loadingLayout = Upfront.Util.post(request_data)
-			.success(function (response) {
+			.done(function (response) {
 				// Temporary, until find better solution
 				Upfront.layout_data_from_create_layout = layout_ids;
 				app.set_layout_up(response);
@@ -1070,7 +1070,7 @@ var Application = new (Backbone.Router.extend({
 					app.saveCache = false;
 				}
 			})
-			.error(function (xhr) {
+			.fail(function (xhr) {
 				if(xhr.statusText == 'abort') //we are ok
 					return;
 
@@ -1372,7 +1372,7 @@ var Application = new (Backbone.Router.extend({
 		;
 
 		_.each(rules, function (rl) {
-			var src = rl.trim().split('{');
+			var src = $.trim(rl).split('{');
 
 			if (src.length != 2) return true; // wtf
 
@@ -1380,7 +1380,7 @@ var Application = new (Backbone.Router.extend({
 				processed_selectors = []
 			;
 			_.each(individual_selectors, function (sel) {
-				sel = sel.trim();
+				sel = $.trim(sel);
 				var clean_selector = sel.replace(/:[^\s]+/, ''); // Clean up states states such as :hover, so as to not mess up the matching
 				var	is_container = clean_selector[0] === '@' || me.recursiveExistenceMigration(selector, clean_selector),
 					spacer = is_container

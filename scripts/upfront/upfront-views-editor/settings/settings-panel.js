@@ -586,10 +586,10 @@
             },
             save_settings: function () {
                 if (!this.settings) return false;
-            
+
                 var me = this;
                 this.settings.each(function (setting) {
-                    if ( (setting.fields || setting.settings).length > 0 ) { // .size() durch .length ersetzt
+                    if ( (setting.fields || setting.settings).size() > 0 ) {
                         setting.save_fields();
                     } else {
                         var value = me.model.get_property_value_by_name(setting.get_name());

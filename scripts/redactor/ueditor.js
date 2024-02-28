@@ -29,11 +29,11 @@
 					if(isMethod)
 						result = ueditor.callMethod(options);
 					else
-						$.error('Ueditor is already instantiated');
+						$.fail('Ueditor is already instantiated');
 				}
 				else{
 					if(isMethod)
-						$.error('Can\'t call the ueditor method ' + options + '. Ueditor not initialized');
+						$.fail('Can\'t call the ueditor method ' + options + '. Ueditor not initialized');
 					else {
 						// Initialize editor
 						$el.data('ueditor', new Ueditor($el, options));
@@ -87,8 +87,8 @@
 								}
 							}
 						}, this)).on('keydown.redactor', $.proxy(function (e) {
-							if(e.key === 91 && e.metaKey) return;
-							if (e.which === this.key.ESC) {
+							if(e.keyCode === 91 && e.metaKey) return;
+							if (e.which === this.keyCode.ESC) {
 								//self.getSelection().collapseToStart();
 							}
 							self.$air.fadeOut(100);
@@ -712,55 +712,67 @@
 							if (typeof callback === 'function') {
 								callback.call(this, btnName);
 								this.observe.buttons(e, btnName);
-							}
-							else if (callback.search(/\./) != '-1') {
-								func = callback.split('.');
-								if (typeof this[func[0]] != 'undefined') {
+							} else if (callback.includes('.')) {
+								const func = callback.split('.');
+								if (typeof this[func[0]] !== 'undefined' && typeof this[func[0]][func[1]] === 'function') {
 									this[func[0]][func[1]](btnName);
 									this.observe.buttons(e, btnName);
 								}
-							}
-							else {
-								this[callback](btnName);
-								this.observe.buttons(e, btnName);
+							} else {
+								if (typeof this[callback] === 'function') {
+									this[callback](btnName);
+									this.observe.buttons(e, btnName);
+								}
 							}
 						}
 					},
-					get: function(key) {
+					get: function(key)
+					{
 						return this.$toolbar.find('a.re-' + key);
 					},
-					setActive: function(key) {
+					setActive: function(key)
+					{
 						this.button.get(key).addClass('redactor-act');
 					},
-					setInactive: function(key) {
+					setInactive: function(key)
+					{
 						this.button.get(key).removeClass('redactor-act');
 					},
-					setInactiveAll: function(key) {
-						if (typeof key == 'undefined') {
+					setInactiveAll: function(key)
+					{
+						if (typeof key == 'undefined')
+						{
 							this.$toolbar.find('a.re-icon').removeClass('redactor-act');
 						}
-						else {
+						else
+						{
 							this.$toolbar.find('a.re-icon').not('.re-' + key).removeClass('redactor-act');
 						}
 					},
-					setActiveInVisual: function() {
+					setActiveInVisual: function()
+					{
 						this.$toolbar.find('a.re-icon').not('a.re-html').removeClass('redactor-button-disabled');
 					},
-					setInactiveInCode: function() {
+					setInactiveInCode: function()
+					{
 						this.$toolbar.find('a.re-icon').not('a.re-html').addClass('redactor-button-disabled');
 					},
-					changeIcon: function(key, classname) {
+					changeIcon: function(key, classname)
+					{
 						this.button.get(key).addClass('re-' + classname);
 					},
-					removeIcon: function(key, classname) {
+					removeIcon: function(key, classname)
+					{
 						this.button.get(key).removeClass('re-' + classname);
 					},
-					setAwesome: function(key, name) {
+					setAwesome: function(key, name)
+					{
 						var $button = this.button.get(key);
 						$button.removeClass('redactor-btn-image').addClass('fa-redactor-btn');
 						$button.html('<i class="fa ' + name + '"></i>');
 					},
-					addCallback: function($btn, callback) {
+					addCallback: function($btn, callback)
+					{
 						var type = (callback == 'dropdown') ? 'dropdown' : 'func';
 						var key = $btn.attr('rel');
 						$btn.on('touchstart click', $.proxy(function(e)
@@ -770,7 +782,8 @@
 
 						}, this));
 					},
-					addDropdown: function($btn, dropdown) {
+					addDropdown: function($btn, dropdown)
+					{
 						var key = $btn.attr('rel');
 						this.button.addCallback($btn, 'dropdown');
 
@@ -811,7 +824,7 @@
 						var btn = this.button.build(key, { title: title });
 						var $btn = this.button.get(afterkey);
 
-						if ($btn.length !== 0) $btn.parent().after($('<li>').append(btn));
+						if ($btn.size() !== 0) $btn.parent().after($('<li>').append(btn));
 						else this.$toolbar.append($('<li>').append(btn));
 
 						return btn;
@@ -823,7 +836,7 @@
 						var btn = this.button.build(key, { title: title });
 						var $btn = this.button.get(beforekey);
 
-						if ($btn.length !== 0) $btn.parent().before($('<li>').append(btn));
+						if ($btn.size() !== 0) $btn.parent().before($('<li>').append(btn));
 						else this.$toolbar.append($('<li>').append(btn));
 
 						return btn;
@@ -1117,30 +1130,30 @@
 					 * Clean unverified spans and remove their style attr
 					 */
 					_.delay(function() {
-						if (e.key === 8) {
+						if (e.keyCode === 8) {
 							self.redactor.clean.clearUnverified();
 							self.redactor.$editor.find('span').not('[data-verified="redactor"]').removeAttr('style');
 						}
 					}, 2);
 
 					setTimeout(function(){
-						if(e.key === 65 && e.metaKey ){
+						if(e.keyCode === 65 && e.metaKey ){
 							self.cmdKeyA = true;
 						}
 
-						if(e.key === 91 && e.metaKey ){
+						if(e.keyCode === 91 && e.metaKey ){
 							self.cmdKey = true;
 						}
 
-						if(e.key === 67 && e.metaKey ){
+						if(e.keyCode === 67 && e.metaKey ){
 							self.onCopy(e);
 						}
 					});
 
 					// Expand known text patterns
-					if (32 === e.key) self.expand_known_text_patterns();
+					if (32 === e.keyCode) self.expand_known_text_patterns();
 
-					if( ( e.key != 37 && e.key != 39 ) && self.redactor ) {
+					if( ( e.keyCode != 37 && e.keyCode != 39 ) && self.redactor ) {
 						var current = $(self.redactor.selection.getCurrent());
 						if(current.hasClass('uf_font_icon')) {
 							self.redactor.caret.setAfter(current);
@@ -1156,7 +1169,7 @@
 
 				// Open air when selecting text with keyboard
 				this.$el.on('keyup', function(e){
-					if(self.redactor && self.redactor.selection.getText() &&  [37, 38, 39, 40].indexOf( e.key ) !== -1 || (e.key === 65 && e.ctrlKey) || (self.cmdKeyA)  ){
+					if(self.redactor && self.redactor.selection.getText() &&  [37, 38, 39, 40].indexOf( e.keyCode ) !== -1 || (e.keyCode === 65 && e.ctrlKey) || (self.cmdKeyA)  ){
 						self.redactor.airShow(e);
 					}
 				});
@@ -1177,7 +1190,7 @@
 					/**
 					 * Make sure return doesn't delete the last charactor
 					 */
-					if (13 === e.key && !e.shiftKey && (self || {}).redactor && !self.redactor.keydown.pre && !self.redactor.$air.is(":visible") ) {
+					if (13 === e.keyCode && !e.shiftKey && (self || {}).redactor && !self.redactor.keydown.pre && !self.redactor.$air.is(":visible") ) {
 						self.redactor.utils.removeEmpty();
 						// Add extra space to end of previous paragraph to prevent backspace deleting last character.
 						$(self.redactor.selection.getCurrent()).prev().append("&#x200b;");
@@ -1186,7 +1199,7 @@
 
 			},
 			stopOnEscape: function(e) {
-				if(e.key === 27 && !( $(".upfront-content-marker-contents").length && $(".upfront-content-marker-contents").data("ueditor") ) ){
+				if(e.keyCode === 27 && !( $(".upfront-content-marker-contents").length && $(".upfront-content-marker-contents").data("ueditor") ) ){
 					this.stop();
 				}
 			},
@@ -1783,7 +1796,7 @@
 
 								 var f = jQuery.Event("keydown");
 								 f.which = 65;
-								 f.key = 65;// # Some key code value
+								 f.keyCode = 65;// # Some key code value
 
 
 
