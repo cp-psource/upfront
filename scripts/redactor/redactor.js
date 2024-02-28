@@ -422,8 +422,7 @@
                 this.bindModuleMethods($.Redactor.modules[i]);
             }
         },
-        bindModuleMethods: function(module)
-        {
+        bindModuleMethods: function(module) {
             if (typeof this[module] == 'undefined') return;
 
             // init module
@@ -439,8 +438,7 @@
             }
         },
 
-        alignment: function()
-        {
+        alignment: function() {
             return {
                 left: function()
                 {

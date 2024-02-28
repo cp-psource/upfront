@@ -40,39 +40,39 @@ define([
 
 				if (!!form.fileupload) {
 					form.fileupload({
-							sequentialUploads: true,
-							formData: _.extend({action: 'upfront-media-upload'}, Upfront.Media.Ref),
-							fileInput: null, // disable change listener, we handle it below
-							paramName: 'media[]' // due to previous options we have to set this manually
-						})
-						.bind('fileuploadstart', function () {
-							progress.css('width', '0');
-						})
-						.bind('fileuploadprogressall', function (e, data) {
-							var percent = parseInt(data.loaded / data.total * 100, 10);
-							progress.css('width', percent + '%');
-						})
-						.bind('fileuploaddone', function (e, data) {
-							var response = data.result;
-							progress.css('width', '100%');
-							$('#upfront-image-uploading h2').html(l10nG.preparing_video_upload);
-							me.onFileUploadDone(response);
-							form[0].reset();
-						})
-						.bind('fileuploadfail', function (e, response) {
-							var error;
+						sequentialUploads: true,
+						formData: _.extend({action: 'upfront-media-upload'}, Upfront.Media.Ref),
+						fileInput: null, // disable change listener, we handle it below
+						paramName: 'media[]' // due to previous options we have to set this manually
+					})
+					.bind('fileuploadstart', function () {
+						progress.css('width', '0');
+					})
+					.bind('fileuploadprogressall', function (e, data) {
+						var percent = parseInt(data.loaded / data.total * 100, 10);
+						progress.css('width', percent + '%');
+					})
+					.bind('fileuploaddone', function (e, data) {
+						var response = data.result;
+						progress.css('width', '100%');
+						$('#upfront-image-uploading h2').html(l10nG.preparing_video_upload);
+						me.onFileUploadDone(response);
+						form[0].reset();
+					})
+					.bind('fileuploadfail', function (e, response) {
+						var error;
 
-							// Check if responseJSON exist to prevent JS errors
-							if(response.jqXHR.responseJSON !== "undefined" && response.jqXHR.responseJSON) {
-								error = response.jqXHR.responseJSON.error;
-							} else {
-								error = response.jqXHR.statusText;
-							}
+						// Check if responseJSON exist to prevent JS errors
+						if(response.jqXHR.responseJSON !== "undefined" && response.jqXHR.responseJSON) {
+							error = response.jqXHR.responseJSON.error;
+						} else {
+							error = response.jqXHR.statusText;
+						}
 
-							Upfront.Views.Editor.notify(error, 'error');
-							me.openSelector();
-							form[0].reset();
-						});
+						Upfront.Views.Editor.notify(error, 'error');
+						me.openSelector();
+						form[0].reset();
+					});
 				}
 
 				fileInput.on('change', function(){
