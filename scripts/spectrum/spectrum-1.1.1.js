@@ -257,7 +257,7 @@
                 catch (e) { }
             }
 
-            offsetElement.bind("click.spectrum touchstart.spectrum", function (e) {
+            offsetElement.on("click.spectrum touchstart.spectrum", function (e) {
                 if (!disabled) {
                     toggle();
                 }
@@ -511,8 +511,8 @@
             hideAll();
             visible = true;
 
-            $(doc).bind("click.spectrum", hide);
-            $(window).bind("resize.spectrum", resize);
+            $(doc).on("click.spectrum", hide);
+            $(window).on("resize.spectrum", resize);
             replacer.addClass("sp-active");
             container.removeClass("sp-hidden");
 
@@ -930,7 +930,7 @@
                     maxWidth = $(element).width();
                     offset = $(element).offset();
 
-                    $(doc).bind(duringDragEvents);
+                    $(doc).on(duringDragEvents);
                     $(doc.body).addClass("sp-dragging");
 
                     if (!hasTouch) {
@@ -950,7 +950,7 @@
             dragging = false;
         }
 
-        $(element).bind("touchstart mousedown", start);
+        $(element).on("touchstart mousedown", start);
     }
 
     function throttle(func, wait, debounce) {
