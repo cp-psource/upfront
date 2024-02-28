@@ -51,34 +51,7 @@ Add theme colors, customize typography, and edit global settings without a singl
 
 == POWERMODUS: UpFront Builder ==
 
-== Mehr PSOURCE ==
 
-= PS MAPS PLUGIN =
-
-Hole mehr aus PS Events indem Du Deinen Veranstaltungen total anpassbare, interkative Google-Karten spendierst.
-So lotst Du Deine Teilnehmer direkt zum Veranstaltungsort!
-Mit unserem [PS Maps Plugin](https://github.com/cp-psource/ps-maps) entfaltet PS Events ganz neues Potential.
-
-= PSECOMMERCE PLUGIN =
-
-Verkaufe Online-Tickets oder verechne Teilnahme-Gebüren und verechne es über die PSeCommerce Gateways.
-Du kannst Deine Events auch als Shop-Produkte anlegen lassen.
-Lerne [PSeCommerce](https://github.com/cp-psource/psecommerce) kennen!
-
-= PS MITGLIEDSCHAFTEN PLUGIN =
-
-Deine Benutzer bezahlen für eine besondere Mitgliedschaft? 
-Belohne sie mit Ermäßigungen wenn sie an einer Deiner Veranstaltungen teilnehmen!
-Noch nicht? - Dann empfehlen wir Dir, einen Blick auf unser [PS Mitgliedschaften Plugin](https://github.com/cp-psource/mitgliedschaften-pro) zu werfen.
-
-= PS-ENEWSLETTER PLUGIN =
-
-(Empfohlen für ClassicPress)
-[PSeNewsletter](https://github.com/cp-psource/ps-newsletter) informiert Deine Event-Teilnehmer über weitere Event-Details, halte Deine Besucher Up-To-Date.
-
-= Finde mehr Piestingtal.Source =
-
-Wirf einen Blick in unser [PSOURCE Sortiment](https://github.com/cp-psource) und hole noch mehr aus Deinem WordPress/ClassicPress!
 
 == ChangeLog ==
 
