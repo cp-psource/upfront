@@ -1,6 +1,6 @@
 layout: page
 title: "Upfront Part 1: The Basics, Theme Colors and Typography"
-permalink: /tutorial/basics
+permalink: upfront/tutorial/basics
 
 # Upfront Part 1: The Basics, Theme Colors and Typography
 
