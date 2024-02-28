@@ -997,19 +997,14 @@ var GridEditor = {
 				}
 				wrap_model.set_property('breakpoint', wrap_breakpoint);
 			}
-			/*$wrap.stop().css({
-				position: '',
-				left: '',
-				right: ''
-			});*/
 		});
 		var wrapsToRemove = [];
 		wraps.each(function(wrap){
 			var wrapper_id = wrap.get_wrapper_id();
 			if (
-				($parent ? $parent : $layout).find('[ref-id='+wrapper_id+']').size() == 0
+				($parent ? $parent : $layout).find('[ref-id='+wrapper_id+']').length == 0
 				&&
-				($parent ? $parent : $layout).find('#'+wrapper_id).size() == 0
+				($parent ? $parent : $layout).find('#'+wrapper_id).length == 0
 			) {
 				wrapsToRemove.push(wrap);
 			}
