@@ -39,26 +39,38 @@ class Upfront_Grid {
 	}
 
 	/*
-	 * Create responsive settings from layout_properties->grid if it is set in theme settings.
-	 */
+	* Erstellen von responsiven Einstellungen aus layout_properties->grid, wenn es in den Theme-Einstellungen festgelegt ist.
+	*/
 	private function initialize_default_breakpoints() {
 		if (is_null(Upfront_ChildTheme::get_instance())) {
 			return $this->get_default_breakpoints();
 		}
-		$layout_properties = json_decode(Upfront_ChildTheme::get_settings()->get('layout_properties'), true);
-		if (!is_array($layout_properties)) {
-			return $this->get_default_breakpoints();
-		}
-		foreach($layout_properties as $property) {
-			if ($property['name'] === 'grid') {
-				$grid_settings = $property['value'];
-			}
-		}
-		if (!isset($grid_settings)) {
+
+		$layout_properties_json = Upfront_ChildTheme::get_settings()->get('layout_properties');
+		
+		if (is_null($layout_properties_json)) {
 			return $this->get_default_breakpoints();
 		}
 
-		// Do the actual merge from here on
+		$layout_properties = json_decode($layout_properties_json, true);
+
+		if (!is_array($layout_properties)) {
+			return $this->get_default_breakpoints();
+		}
+
+		$grid_settings = null;
+		foreach ($layout_properties as $property) {
+			if ($property['name'] === 'grid') {
+				$grid_settings = $property['value'];
+				break;
+			}
+		}
+
+		if (is_null($grid_settings)) {
+			return $this->get_default_breakpoints();
+		}
+
+		// Die eigentliche Zusammenführung erfolgt ab hier
 		$defaults = $this->get_default_breakpoints();
 
 		$properties = array(
@@ -67,23 +79,25 @@ class Upfront_Grid {
 			'baselines' => 'baseline',
 			'type_paddings' => 'type_padding',
 		);
-		foreach($properties as $prop_name=>$prop_translated) {
+
+		foreach ($properties as $prop_name => $prop_translated) {
 			if (isset($grid_settings[$prop_name])) {
-				foreach($grid_settings[$prop_name] as $name=>$value) {
-					switch($name) {
-					case 'desktop':
-						$defaults[0][$prop_translated] = $value;
-						break;
-					case 'tablet':
-						$defaults[1][$prop_translated] = $value;
-						break;
-					case 'mobile':
-						$defaults[2][$prop_translated] = $value;
-						break;
+				foreach ($grid_settings[$prop_name] as $name => $value) {
+					switch ($name) {
+						case 'desktop':
+							$defaults[0][$prop_translated] = $value;
+							break;
+						case 'tablet':
+							$defaults[1][$prop_translated] = $value;
+							break;
+						case 'mobile':
+							$defaults[2][$prop_translated] = $value;
+							break;
 					}
 				}
 			}
 		}
+
 		return $defaults;
 	}
 
