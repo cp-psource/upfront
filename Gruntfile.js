@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		sass: {
 			options: {
+				implementation: require('node-sass'),
 				sourceMap: true,
 				outputStyle: 'nested',
 				sourceComments: false
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'styles/editor-interface.css': 'styles/editor-interface.scss',
-                    'styles/build/admin.css': 'styles/sass/admin/admin.scss'
+					'styles/build/admin.css': 'styles/sass/admin/admin.scss'
 				}
 			}
 		},
