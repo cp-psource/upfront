@@ -1734,7 +1734,7 @@
 
                 this.$el.on('change', '.upfront-field-multiple input', function(){
                     me.$el.find('.upfront-field-multiple').each(function(){
-                        if ( $(this).find('input:checked').size() > 0 ) {
+                        if ($this.find('input:checked').length > 0) {
                             $(this).addClass('upfront-field-multiple-selected');
                         } else {
                             $(this).removeClass('upfront-field-multiple-selected');
