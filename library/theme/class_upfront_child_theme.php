@@ -18,7 +18,6 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 	private $_version = false;
 	private $_required_pages = array();
-
 	private static $_theme_settings;
 
 	protected static $instance;
@@ -108,6 +107,8 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		$this->checkMenusExist();
 		$this->initialize();
 	}
+
+	protected $_slider_imported = false;
 
 	/**
 	 * Sets the theme settings object
