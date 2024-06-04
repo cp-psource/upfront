@@ -627,31 +627,31 @@
 		                }
 					},
 
-										done: function (e, data) {
-												var font = data.result.data.font;
-												var fontObject;
+					done: function (e, data) {
+						var font = data.result.data.font;
+						var fontObject;
 
-												if (_.keys(font.files).length === 1) {
-														me.$el.find('.icon-fonts-list').append('<div data-family="' + font.family + '" class="icon-fonts-list-item">' + font.name + '</div>');
-														me.collection.add(font);
-												} else {
-														fontObject = me.collection.findWhere({'family': font.family});
-														fontObject.set({files: font.files});
-														if (fontObject.get('active') === true) {
-																me.updateActiveFontStyle(font.family);
-														}
-												}
+						if (_.keys(font.files).length === 1) {
+							me.$el.find('.icon-fonts-list').append('<div data-family="' + font.family + '" class="icon-fonts-list-item">' + font.name + '</div>');
+							me.collection.add(font);
+						} else {
+							fontObject = me.collection.findWhere({'family': font.family});
+							fontObject.set({files: font.files});
+							if (fontObject.get('active') === true) {
+								me.updateActiveFontStyle(font.family);
+							}
+						}
 						me.fileUploadInitialized = false;
 						me.render();
-/*
-												fontObject = me.collection.findWhere({'family': font.family});
-												var listItem = me.$el.find('[data-family=' + font.family + ']');
-												listItem.find('.icon-font-upload-status').remove();
-												if (fontObject.getUploadStatus() !== true) {
-														listItem.append('<span class="icon-font-upload-status" title="' + fontObject.getUploadStatusMessage() + '">*</span>');
-												}
-*/
-										},
+						/*
+						fontObject = me.collection.findWhere({'family': font.family});
+						var listItem = me.$el.find('[data-family=' + font.family + ']');
+						listItem.find('.icon-font-upload-status').remove();
+						if (fontObject.getUploadStatus() !== true) {
+							listItem.append('<span class="icon-font-upload-status" title="' + fontObject.getUploadStatusMessage() + '">*</span>');
+						}
+						*/
+					},
 					/**
 					 * Error handler
 					 *
