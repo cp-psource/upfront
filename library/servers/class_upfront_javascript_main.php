@@ -472,7 +472,7 @@ EOMainJs;
 	}
 
 	private function get_authors(){
-		$data = get_users(array('who' => 'authors'));
+		$data = get_users(array('capability' => 'authors'));
 		$authors = array();
 		foreach($data as $a){
 			$authors[] = array(
