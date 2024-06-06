@@ -361,13 +361,16 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 	 */
 	public function get_theme_presets() {
 		$settings = Upfront_ChildTheme::get_settings();
-		//Get presets distributed with the theme
-		$theme_presets = is_object($settings) && $settings instanceof Upfront_Theme_Settings
-			? json_decode($settings->get($this->get_element_name() . '_presets'), true)
-			: false
-		;
+		// Get presets distributed with the theme
+		$presetData = is_object($settings) && $settings instanceof Upfront_Theme_Settings
+			? $settings->get($this->get_element_name() . '_presets')
+			: null;
 
-		return $theme_presets;
+		if ($presetData === null) {
+			return false;
+		}
+
+		return json_decode($presetData, true);
 	}
 
 	/**
@@ -459,42 +462,34 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 				'as_array' => true
 			)
 		);
-
-		if(!is_array($presets)) {
-			$presets = json_decode($presets, true);
+	
+		if (!is_string($presets)) {
+			return json_encode(array());
 		}
-
-		$theme_presets = array();
-		$updatedPresets = array();
-
-		//Get presets distributed with the theme
-		$theme_presets = $this->get_theme_presets_names();
-
-		if(empty($theme_presets)) {
-			return json_encode($this->migrate_presets($presets));
+	
+		$decodedPresets = json_decode($presets, true);
+	
+		if ($decodedPresets === null) {
+			return json_encode(array());
 		}
-
-		//Check if preset is distributed with the theme
-		if (is_array($presets)) foreach($presets as $preset) {
-			if(in_array($preset['id'], $theme_presets)) {
-				$preset['theme_preset'] = true;
-			} else {
-				$preset['theme_preset'] = false;
-			}
-			$updatedPresets[] = $preset;
+	
+		$themePresets = $this->get_theme_presets_names();
+	
+		if (empty($themePresets)) {
+			return json_encode($this->migrate_presets($decodedPresets));
 		}
-
+	
+		foreach ($decodedPresets as &$preset) {
+			$preset['theme_preset'] = in_array($preset['id'], $themePresets);
+		}
+	
 		$updatedPresets = $this->replace_new_lines(
-			$this->migrate_presets($updatedPresets)
+			$this->migrate_presets($decodedPresets)
 		);
 		$updatedPresets = $this->_expand_passive_relative_url($updatedPresets);
 		$updatedPresets = $this->handle_post_parts($updatedPresets);
-
-		$updatedPresets = json_encode($updatedPresets);
-
-		if(empty($updatedPresets)) $updatedPresets = json_encode(array());
-
-		return $updatedPresets;
+	
+		return json_encode($updatedPresets);
 	}
 
 	public function get_typography_values_by_tag($tag) {

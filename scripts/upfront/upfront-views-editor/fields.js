@@ -956,7 +956,7 @@
 
 						// Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
 						if ( $(e.currentTarget).siblings('input').not(':checked')) {
-							$(e.currentTarget).siblings('input').click();
+							$(e.currentTarget).siblings('input').trigger('click');
 						}
 
 						this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1285,7 +1285,7 @@
 
                     // Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
                     if ( $(e.currentTarget).siblings('input').not(':checked')) {
-                        $(e.currentTarget).siblings('input').click();
+                        $(e.currentTarget).siblings('input').trigger('click');
                     }
 
                     this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1723,27 +1723,27 @@
             selected_state: 'checked',
             render: function () {
                 var me = this;
-
+        
                 this.$el.html('');
-
+        
                 if ( this.label ) {
                     this.$el.append(this.get_label_html());
                 }
-
+        
                 this.$el.append(this.get_field_html());
-
+        
                 this.$el.on('change', '.upfront-field-multiple input', function(){
                     me.$el.find('.upfront-field-multiple').each(function(){
-                        if ($this.find('input:checked').length > 0) {
+                        if ($(this).find('input:checked').length > 0) { // Änderung hier
                             $(this).addClass('upfront-field-multiple-selected');
                         } else {
                             $(this).removeClass('upfront-field-multiple-selected');
                         }
                     });
-
+        
                     me.trigger('changed', me.get_value());
                 });
-
+        
                 this.trigger('rendered');
             },
             get_field_html: function () {
@@ -1777,7 +1777,7 @@
                 }
                 return '<span class="' + classes + '"><input ' + this.get_field_attr_html(attr) + ' />' + '<label for="' + id + '">' + this.get_icon_html(value.icon, icon_class) + '<span class="upfront-field-label-text">' + value.label + '</span></label></span>';
             }
-        });
+        });        
 
         var Field_Radios = Field_Multiple_Input.extend({
             className: 'upfront-field-wrap upfront-field-wrap-multiple upfront-field-wrap-radios',

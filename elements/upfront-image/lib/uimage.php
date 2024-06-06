@@ -43,7 +43,11 @@ class Upfront_UimageView extends Upfront_Object {
 		}
 		
 		// Alternativen Text des Bildes abrufen
-		$data['alternative_text'] = get_post_meta($data['image_id'], '_wp_attachment_image_alt', true);
+		if (!empty($data['image_id'])) {
+			$data['alternative_text'] = get_post_meta($data['image_id'], '_wp_attachment_image_alt', true);
+		} else {
+			$data['alternative_text'] = ''; // Oder einen anderen Standardwert setzen
+		}
 		$data['containerWidth'] = min($data['size']['width'], $data['element_size']['width']);
 
 		if($data['vstretch'])

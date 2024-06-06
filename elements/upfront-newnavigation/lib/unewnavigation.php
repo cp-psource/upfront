@@ -21,7 +21,7 @@ class Upfront_UnewnavigationView extends Upfront_Object {
 			/* NEW APPEARANCE */
 			// preset here uses the Desktop one
 			$preset_props = Upfront_Nav_Presets_Server::get_instance()->get_preset_properties($preset);
-			$breakpoint_data['preset'] = isset($preset_props['breakpoint'])?$preset_props['breakpoint']:false;
+			$breakpoint_data['preset'] = isset($preset_props['breakpoint'])?$preset_props['breakpoint']:array();
 			// catering breakpoint presets
 			$breakpoint_presets = $this->_get_property('breakpoint_presets');
 			$breakpoint_presets = is_array($breakpoint_presets) ? $breakpoint_presets : array();

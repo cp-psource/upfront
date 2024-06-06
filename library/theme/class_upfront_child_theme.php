@@ -276,16 +276,15 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 	public function getThemeStylesAsCss() {
 		$layout = Upfront_Layout::get_parsed_cascade(); // Use pure static method instead
-		$layout_id = ( !empty($layout['specificity']) ? $layout['specificity'] : ( !empty($layout['item']) ? $layout['item'] : $layout['type'] ) );
+		$layout_id = (!empty($layout['specificity']) ? $layout['specificity'] : (!empty($layout['item']) ? $layout['item'] : $layout['type']));
 		$out = '';
 		// See if there are styles in theme files
 		$styles_root = get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'element-styles';
 		// List subdirectories as element types
 		$element_types = is_dir($styles_root)
 			? array_diff(scandir($styles_root), self::$_EXCLUDED_FILES)
-			: array()
-		;
-
+			: array();
+	
 		$alternate_layout_id = false;
 		if (!empty($layout['item']) && 'single-page' == $layout['item'] && !empty($layout['specificity'])) {
 			$page_id = preg_replace('/.*-([0-9]+)$/', '$1', $layout['specificity']);
@@ -295,12 +294,12 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				break;
 			}
 		}
-
+	
 		// Also check more general cascade styles - works with single post layouts
 		if (empty($alternate_layout_id) && !empty($layout['specificity']) && !empty($layout['item'])) {
 			$alternate_layout_id = $layout['item'];
 		}
-
+	
 		foreach ($element_types as $type) {
 			$style_files = array_diff(scandir($styles_root . DIRECTORY_SEPARATOR . $type), self::$_EXCLUDED_FILES);
 			foreach ($style_files as $style) {
@@ -315,15 +314,15 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				$out .= $style_content;
 			}
 		}
-
+	
 		// Add icon font style if there is active icon font other than UpFont
 		$font = $this->getActiveIconFont();
 		if ($font) {
 			//$out .= "\nin font \n";
 			$longSrc = '';
-			foreach($font['files'] as $type=>$file) {
+			foreach ($font['files'] as $type => $file) {
 				$longSrc .= "url('" . self::THEME_BASE_URL_MACRO . '/icon-fonts/' . $file . "') format('";
-				switch($type) {
+				switch ($type) {
 					case 'eot':
 						$longSrc .= 'embedded-opentype';
 						break;
@@ -339,14 +338,14 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				}
 				$longSrc .= "'),";
 			};
-
+	
 			$icon_font_style = "@font-face {" .
 				"	font-family: '" . $font['family'] . "';";
 			if (isset($font['files']['eot'])) {
 				$icon_font_style .= "src: url('" . self::THEME_BASE_URL_MACRO . '/icon-fonts/' . $font['files']['eot'] . "');";
 			}
 			$icon_font_style .= "src:" . substr($longSrc, 0, -1) . ';';
-
+	
 			$icon_font_style .=
 				"	font-weight: normal;" .
 				"	font-style: normal;" .
@@ -358,33 +357,31 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		} else {
 			// Load UpfOnt as default
 			$out .= "/* icomoon fonts */
-				@font-face {
-					font-family: 'icomoon';
-					src: url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.eot?taxgy5');
-					src: url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.eot?taxgy5#iefix') format('embedded-opentype'),
-					url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.woff?taxgy5') format('woff'),
-					url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.ttf?taxgy5') format('truetype'),
-					url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.svg?taxgy5#icomoon') format('svg');
-					font-weight: normal;
-					font-style: normal;
-				}
-				.upfront-output-layout .uf_font_icon, .upfront-output-layout .uf_font_icon * {
-					font-family: 'icomoon' !important;
-					speak: none;
-					font-style: normal;
-					font-weight: normal;
-					font-variant: normal;
-					text-transform: none;
-					line-height: 1;
-					position: relative;
-					/* Better Font Rendering =========== */
-					-webkit-font-smoothing: antialiased;
-					-moz-osx-font-smoothing: grayscale;
-				}";
+					@font-face {
+						font-family: 'icomoon';
+						src: url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.eot?taxgy5');
+						src: url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.eot?taxgy5#iefix') format('embedded-opentype'),
+						url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.woff?taxgy5') format('woff'),
+						url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.ttf?taxgy5') format('truetype'),
+						url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.svg?taxgy5#icomoon') format('svg');
+						font-weight: normal;
+						font-style: normal;
+					}
+					.upfront-output-layout .uf_font_icon, .upfront-output-layout .uf_font_icon * {
+						font-family: 'icomoon' !important;
+						speak: none;
+						font-style: normal;
+						font-weight: normal;
+						font-variant: normal;
+						text-transform: none;
+						line-height: 1;
+						position: relative;
+						/* Better Font Rendering =========== */
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}";
 		}
-
-		$this->_theme_styles_called = true;
-
+	
 		return $out;
 	}
 
@@ -613,13 +610,15 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 	}
 
 	public function getIconFonts($icon_fonts, $args) {
-		if (empty($icon_fonts) === false && $icon_fonts !== '[]') return $icon_fonts;
-
+		if (!empty($icon_fonts) && $icon_fonts !== '[]') {
+			return $icon_fonts;
+		}
+	
 		$icon_fonts = $this->get_theme_settings()->get('icon_fonts');
 		// Always add icomoon which is always available from Upfront theme
-		$icon_fonts_array = is_array( $icon_fonts ) ? $icon_fonts : json_decode($icon_fonts);
-		$icon_fonts_array = is_array( $icon_fonts_array ) ? $icon_fonts_array : array(); // doublecheck we have something useful
-
+		$icon_fonts_array = is_string($icon_fonts) ? json_decode($icon_fonts, true) : $icon_fonts;
+		$icon_fonts_array = is_array($icon_fonts_array) ? $icon_fonts_array : array(); // doublecheck we have something useful
+	
 		array_unshift($icon_fonts_array, array(
 			'name' => 'UpFont',
 			'family' => 'icomoon',
@@ -632,10 +631,13 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			'active' => false,
 			'type' => 'default'
 		));
-		if (isset($args['json']) && $args['json']) return json_encode($icon_fonts_array);
-
-		return $icon_fonts_array();
-	}
+	
+		if (isset($args['json']) && $args['json']) {
+			return json_encode($icon_fonts_array);
+		}
+	
+		return $icon_fonts_array;
+	}	
 
 	public function getAdditionalFonts() {
 		$additional_fonts = $this->get_theme_settings()->get('additional_fonts');
