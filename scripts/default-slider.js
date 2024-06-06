@@ -382,7 +382,7 @@
 			control_next_prev: false
 		};
 		$('.upfront-inline_post-slider').upfront_default_slider(inline_slider);
-
+	
 		// Bg slider
 		var bg_slider = {
 				auto_height: false,
@@ -395,14 +395,23 @@
 				});
 			};
 		init_bg_slider();
-
-		// Refresh size on window.load and window.resize
-		$(window).on('load', function(){
+	
+		// Function to refresh sliders
+		var refreshSliders = function(){
 			$('.upfront-inline_post-slider, .upfront-bg-slider').trigger('refresh');
-		});
+		};
+	
+		// Refresh size on window.load and window.resize
+		$(window).on('load', refreshSliders);
+	
+		// Check if the window load event has already occurred
+		if (document.readyState === "complete") {
+			refreshSliders();
+		}
+	
 		var lazyInitBgSlider = throttle(function(){
 			init_bg_slider();
-			$('.upfront-inline_post-slider, .upfront-bg-slider').trigger('refresh');
+			refreshSliders();
 		}, 100);
 		$(window).on('resize', lazyInitBgSlider);
 
