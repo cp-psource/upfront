@@ -2,7 +2,17 @@
 	<?php if($usingNewAppearance === false) { ?>
 	<div class="uimage uimage-<?php echo $caption_position ?> uimage-status-<?php echo $image_status ?> uimage-caption-<?php echo $caption_position ?>-<?php echo $caption_alignment ?><?php echo $gifImage ?><?php echo $stretchClass ?> <?php echo $placeholder_class ?>" style="text-align: <?php echo $align ?>;">
 	<?php } else { ?>
-	<div class="upfront-image-wrapper uimage uimage-<?php echo $properties['caption-position'] ?> uimage-status-<?php echo $image_status ?> uimage-caption-<?php echo $properties['caption-position'] ?>-<?php echo $properties['caption-alignment'] ?><?php echo $gifImage ?><?php echo $stretchClass ?> <?php echo $placeholder_class ?>" style="text-align: <?php echo $align ?>;">
+        <?php
+        // PHP-Code, um die Variablen vorzubereiten
+        $caption_position = isset($properties['caption-position']) ? $properties['caption-position'] : '';
+        $caption_alignment = isset($properties['caption-alignment']) ? $properties['caption-alignment'] : '';
+        ?>
+        <div class="upfront-image-wrapper uimage 
+        uimage-<?php echo $caption_position ?> 
+        uimage-status-<?php echo $image_status ?> 
+        uimage-caption-<?php echo $caption_position ?>-<?php echo $caption_alignment ?> 
+        <?php echo $gifImage ?><?php echo $stretchClass ?> <?php echo $placeholder_class ?>" 
+        style="text-align: <?php echo $align ?>;">
 	<?php } ?>
 		<div class="upfront-image-caption-container" style="margin-top:<?php echo $marginTop ?>px">
 			<?php if($url && !$in_editor) { ?>
