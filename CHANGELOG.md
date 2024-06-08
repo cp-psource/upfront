@@ -1,6 +1,18 @@
 Change Log
 ============
 
+2.0.0- 2024-08-06
+-------------------------------------------------------------------------------
+- Kompatibilität: ClassicPress v1 100%
+- Kompatibilität: ClassicPress v2.1 90%
+- Kompatibilität: WordPressPress v6.5 90%
+- Fix: json Decode String
+- Fix: Deprecated isFunction
+- Fix: Deprecated .size()
+- Fix: Deprecated .keyup()
+- Fix: Deprecated .click()
+- Major PhP8/jQuery Fixes
+
 1.9.9- 2023-08-02
 -------------------------------------------------------------------------------
 - Fix: sizeof(): must be of type Countable|array
