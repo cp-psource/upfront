@@ -3305,7 +3305,7 @@ define([
 			remove_model: function (model) {
 				var view = Upfront.data.object_views[model.cid];
 				if ( !view ) return;
-				view.unbind();
+				view.off();
 				view.remove();
 				delete Upfront.data.object_views[model.cid];
 			},
@@ -4770,7 +4770,7 @@ define([
 			remove_model: function (model) {
 				var view = Upfront.data.module_views[model.cid];
 				if ( !view ) return;
-				view.unbind();
+				view.off();
 				view.remove();
 				delete Upfront.data.module_views[model.cid];
 			},
@@ -6732,7 +6732,7 @@ define([
 				var me = this;
 				this.$bg.insertBefore(this.$el);
 				if(this.model.get_property_value_by_name('click_out_close') == 'yes') {
-					this.$bg.unbind('click');
+					this.$bg.off('click');
 					this.$bg.on('click', function() {
 						me.hide();
 					});
@@ -6795,12 +6795,12 @@ define([
 				var me = this;
 
 				if(this.model.get_property_value_by_name('click_out_close') == 'yes') {
-					this.$bg.unbind('click');
+					this.$bg.off('click');
 					this.$bg.on('click', function() {
 						me.hide();
 					});
 				} else {
-					this.$bg.unbind('click');
+					this.$bg.off('click');
 				}
 
 				this.$bg.css('background-color', this.model.get_property_value_by_name('overlay_color') );
@@ -7105,18 +7105,18 @@ define([
 					sub_container_view = this.sub_container_views[model.cid];
 				delete Upfront.data.region_views[model.cid];
 				if ( view.region_panels ){
-					view.region_panels.unbind();
+					view.region_panels.off();
 					view.region_panels.remove();
 				}
 				if ( view.bg_setting ){
-					view.bg_setting.unbind();
+					view.bg_setting.off();
 					view.bg_setting.remove();
 				}
 				if ( view.edit_position ){
-					view.edit_position.unbind();
+					view.edit_position.off();
 					view.edit_position.remove();
 				}
-				view.unbind();
+				view.off();
 				view.remove();
 				if ( container_view){
 					if ( container_view.sub_model.length > 0 ) {
@@ -7135,16 +7135,16 @@ define([
 					if ( !Upfront.data.region_views[container_view.model.cid] && container_view.sub_model.length == 0 ){
 						delete this.container_views[container_view.model.cid];
 						if ( container_view.region_fixed_panels ){
-							container_view.region_fixed_panels.unbind();
+							container_view.region_fixed_panels.off();
 							container_view.region_fixed_panels.remove();
 						}
-						container_view.unbind();
+						container_view.off();
 						container_view.remove();
 					}
 				}
 				if ( sub_container_view ){
 					delete this.sub_container_views[model.cid];
-					sub_container_view.unbind();
+					sub_container_view.off();
 					sub_container_view.remove();
 				}
 				Upfront.Events.trigger("entity:region:removed", view, model);
@@ -7538,7 +7538,7 @@ define([
 				this.toggle_wrapper_visibility();
 			},
 			on_remove: function () {
-				this.unbind();
+				this.off();
 				this.remove();
 			}
 		}),
