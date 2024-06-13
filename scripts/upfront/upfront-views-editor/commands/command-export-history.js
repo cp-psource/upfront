@@ -13,10 +13,8 @@
             },
             on_click: function () {
                 alert("Check console output");
-                console.log({
-                    "undo": Upfront.Util.Transient.get_all("undo"),
-                    "redo": Upfront.Util.Transient.get_all("redo")
-                });
+                console.log("Undo actions:", Upfront.Util.Transient.get_all("undo"));
+console.log("Redo actions:", Upfront.Util.Transient.get_all("redo"));
             }
         });
 

@@ -44,11 +44,11 @@ var requirejs, require, define;
     }
 
     function isFunction(it) {
-        return ostring.call(it) === '[object Function]';
+        return typeof it === 'function';
     }
-
+    
     function isArray(it) {
-        return ostring.call(it) === '[object Array]';
+        return Array.isArray(it);
     }
 
     /**
@@ -114,7 +114,7 @@ var requirejs, require, define;
             eachProp(source, function (value, prop) {
                 if (force || !hasProp(target, prop)) {
                     if (deepStringMixin && typeof value === 'object' && value &&
-                        !isArray(value) && !isFunction(value) &&
+                        !Array.isArray(value) && typeof value !== 'function' &&
                         !(value instanceof RegExp)) {
 
                         if (!target[prop]) {
@@ -183,18 +183,19 @@ var requirejs, require, define;
         return;
     }
 
+    // Überprüfen, ob requirejs definiert ist und ob es eine Funktion ist
     if (typeof requirejs !== 'undefined') {
-        if (isFunction(requirejs)) {
-            //Do not overwrite an existing requirejs instance.
+        if (typeof requirejs === 'function') {
+            // Nicht überschreiben, wenn bereits eine requirejs-Instanz vorhanden ist.
             return;
         }
         cfg = requirejs;
         requirejs = undefined;
     }
 
-    //Allow for a require config object
-    if (typeof require !== 'undefined' && !isFunction(require)) {
-        //assume it is a config object.
+    // Erlaube ein require-Konfigurationsobjekt
+    if (typeof require !== 'undefined' && typeof require !== 'function') {
+        // Nehme an, es handelt sich um ein Konfigurationsobjekt.
         cfg = require;
         require = undefined;
     }
@@ -868,15 +869,11 @@ var requirejs, require, define;
                     this.defining = true;
 
                     if (this.depCount < 1 && !this.defined) {
-                        if (isFunction(factory)) {
-                            //If there is an error listener, favor passing
-                            //to that instead of throwing an error. However,
-                            //only do it for define()'d  modules. require
-                            //errbacks should not be called for failures in
-                            //their callbacks (#699). However if a global
-                            //onError is set, use that.
-                            if ((this.events.error && this.map.isDefine) ||
-                                req.onError !== defaultOnError) {
+                        if (typeof factory === 'function') {
+                            // Wenn ein Fehlerlistener vorhanden ist, bevorzuge das Weiterleiten an diesen anstelle eines Fehlerwurfs.
+                            // Allerdings nur für mit define() definierte Module. require errbacks sollten nicht für Fehler in ihren Callbacks aufgerufen werden (#699).
+                            // Wenn jedoch ein globaler onError gesetzt ist, verwende diesen.
+                            if ((this.events.error && this.map.isDefine) || req.onError !== defaultOnError) {
                                 try {
                                     exports = context.execCb(id, factory, depExports, exports);
                                 } catch (e) {
@@ -885,51 +882,50 @@ var requirejs, require, define;
                             } else {
                                 exports = context.execCb(id, factory, depExports, exports);
                             }
-
-                            // Favor return value over exports. If node/cjs in play,
-                            // then will not have a return value anyway. Favor
-                            // module.exports assignment over exports object.
+                    
+                            // Bevorzuge den Rückgabewert gegenüber exports. Wenn Node/CJS im Spiel ist,
+                            // wird sowieso kein Rückgabewert haben. Bevorzuge Zuweisung von module.exports über das exports-Objekt.
                             if (this.map.isDefine && exports === undefined) {
                                 cjsModule = this.module;
                                 if (cjsModule) {
                                     exports = cjsModule.exports;
                                 } else if (this.usingExports) {
-                                    //exports already set the defined value.
+                                    // exports hat bereits den definierten Wert gesetzt.
                                     exports = this.exports;
                                 }
                             }
-
+                    
                             if (err) {
                                 err.requireMap = this.map;
                                 err.requireModules = this.map.isDefine ? [this.map.id] : null;
                                 err.requireType = this.map.isDefine ? 'define' : 'require';
                                 return onError((this.error = err));
                             }
-
+                    
                         } else {
-                            //Just a literal value
+                            // Nur ein Literalwert
                             exports = factory;
                         }
-
+                    
                         this.exports = exports;
-
+                    
                         if (this.map.isDefine && !this.ignore) {
                             defined[id] = exports;
-
+                    
                             if (req.onResourceLoad) {
                                 var resLoadMaps = [];
-                                each(this.depMaps, function (depMap) {
+                                this.depMaps.forEach(function (depMap) {
                                     resLoadMaps.push(depMap.normalizedMap || depMap);
                                 });
                                 req.onResourceLoad(context, this.map, resLoadMaps);
                             }
                         }
-
-                        //Clean up
+                    
+                        // Aufräumen
                         cleanRegistry(id);
-
+                    
                         this.defined = true;
-                    }
+                    }                    
 
                     //Finished the define stage. Allow calling check again
                     //to allow define notifications below in the case of a
@@ -1407,68 +1403,63 @@ var requirejs, require, define;
 
                 function localRequire(deps, callback, errback) {
                     var id, map, requireMod;
-
-                    if (options.enableBuildCallback && callback && isFunction(callback)) {
+                
+                    if (options.enableBuildCallback && callback && typeof callback === 'function') {
                         callback.__requireJsBuild = true;
                     }
-
+                
                     if (typeof deps === 'string') {
-                        if (isFunction(callback)) {
-                            //Invalid call
-                            return onError(makeError('requireargs', 'Invalid require call'), errback);
+                        if (typeof callback === 'function') {
+                            // Ungültiger Aufruf
+                            return onError(makeError('requireargs', 'Ungültiger require-Aufruf'), errback);
                         }
-
-                        //If require|exports|module are requested, get the
-                        //value for them from the special handlers. Caveat:
-                        //this only works while module is being defined.
-                        if (relMap && hasProp(handlers, deps)) {
+                
+                        // Wenn require|exports|module angefordert werden, hole den Wert aus den speziellen Handlern.
+                        if (relMap && handlers.hasOwnProperty(deps)) {
                             return handlers[deps](registry[relMap.id]);
                         }
-
-                        //Synchronous access to one module. If require.get is
-                        //available (as in the Node adapter), prefer that.
+                
+                        // Synchroner Zugriff auf ein Modul. Wenn req.get verfügbar ist, bevorzugen Sie diesen.
                         if (req.get) {
                             return req.get(context, deps, relMap, localRequire);
                         }
-
-                        //Normalize module name, if it contains . or ..
+                
+                        // Normalisierung des Modulnamens, falls es . oder .. enthält
                         map = makeModuleMap(deps, relMap, false, true);
                         id = map.id;
-
-                        if (!hasProp(defined, id)) {
-                            return onError(makeError('notloaded', 'Module name "' +
-                                        id +
-                                        '" has not been loaded yet for context: ' +
-                                        contextName +
-                                        (relMap ? '' : '. Use require([])')));
+                
+                        if (!defined.hasOwnProperty(id)) {
+                            return onError(makeError('notloaded', 'Modulname "' +
+                                id +
+                                '" wurde noch nicht geladen für den Kontext: ' +
+                                contextName +
+                                (relMap ? '' : '. Verwenden Sie require([])')));
                         }
                         return defined[id];
                     }
-
-                    //Grab defines waiting in the global queue.
+                
+                    // Hole Defines, die in der globalen Warteschlange warten.
                     intakeDefines();
-
-                    //Mark all the dependencies as needing to be loaded.
+                
+                    // Markiere alle Abhängigkeiten als zum Laden bereit.
                     context.nextTick(function () {
-                        //Some defines could have been added since the
-                        //require call, collect them.
+                        // Möglicherweise wurden einige Defines hinzugefügt, seit der require-Aufruf gemacht wurde, sammle sie.
                         intakeDefines();
-
+                
                         requireMod = getModule(makeModuleMap(null, relMap));
-
-                        //Store if map config should be applied to this require
-                        //call for dependencies.
+                
+                        // Speichere, ob die Kartenkonfiguration auf diesen require-Aufruf angewendet werden soll.
                         requireMod.skipMap = options.skipMap;
-
+                
                         requireMod.init(deps, callback, errback, {
                             enabled: true
                         });
-
+                
                         checkLoaded();
                     });
-
+                
                     return localRequire;
-                }
+                }                
 
                 mixin(localRequire, {
                     isBrowser: isBrowser,
@@ -2080,7 +2071,7 @@ var requirejs, require, define;
 
         //If no name, and callback is a function, then figure out if it a
         //CommonJS thing with dependencies.
-        if (!deps && isFunction(callback)) {
+        if (!deps && typeof callback === 'function') {
             deps = [];
             //Remove comments from the callback string,
             //look for require calls, and pull them into the dependencies,
