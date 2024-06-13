@@ -411,7 +411,7 @@ class Upfront {
 	<div id="sidebar-ui" class="upfront-ui"></div>
 	<div id="settings" style="display:none"></div>
 	<div id="contextmenu" style="display:none"></div>
-EOAdditivemarkup;
+	EOAdditivemarkup;
 
 		do_action('upfront-core-inject_dependencies');
 	}
@@ -433,6 +433,14 @@ EOAdditivemarkup;
 }
 add_action('init', array('Upfront', 'serve'), 0);
 add_action('after_setup_theme', array('Upfront', "load_textdomain"));
+
+add_action('init', 'start_session', 1);
+
+function start_session() {
+    if(!session_id()) {
+        session_start();
+    }
+}
 
 /**
  * Filtert wp caption atts, um die Beschriftung auszublenden, falls show_caption gleich "0" ist
