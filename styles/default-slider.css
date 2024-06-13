@@ -177,7 +177,7 @@
 }
 .upfront-default-slider-nav-prev,
 .upfront-default-slider-nav-next {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	margin: auto;
