@@ -922,9 +922,12 @@
 
 				return (doc && doc.documentElement && doc.documentElement.nodeName !== 'parsererror') ? doc : null;
 			};
-			var parseJSON = $.parseJSON || function(s) {
-				/* jslint evil:true */
-				return window['eval']('(' + s + ')');			// eslint-disable-line dot-notation
+			var parseJSON = JSON.parse || function(s) {
+				try {
+					return JSON.parse(s);
+				} catch (e) {
+					return window['eval']('(' + s + ')'); // Fallback to eval
+				}
 			};
 
 			var httpData = function(xhr, type, s) { // mostly lifted from jq1.4.4

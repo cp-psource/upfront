@@ -1403,12 +1403,11 @@
 			if ( !slides )
 				return;
 			// is it json array?
-			if ( /^(\[)/.test( slides ) ) {
+			if (/^(\[)/.test(slides)) {
 				try {
-					slides = $.parseJSON( slides );
-				}
-				catch(err) {
-					API.log( 'error parsing progressive slides', err );
+					slides = JSON.parse(slides);
+				} catch (err) {
+					API.log('error parsing progressive slides', err);
 					return;
 				}
 			}

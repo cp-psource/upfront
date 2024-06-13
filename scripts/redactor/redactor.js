@@ -563,8 +563,7 @@
 
                     jsxhr.done(this.autosave.success);
                 },
-                getHiddenFields: function(data)
-                {
+                getHiddenFields: function(data) {
                     if (this.opts.autosaveFields === false || typeof this.opts.autosaveFields !== 'object')
                     {
                         return data;
@@ -580,15 +579,12 @@
                     return data;
 
                 },
-                success: function(data)
-                {
+                success: function(data) {
                     var json;
-                    try
-                    {
-                        json = $.parseJSON(data);
+                    try {
+                        json = JSON.parse(data);
                     }
-                    catch(e)
-                    {
+                    catch(e)  {
                         //data has already been parsed
                         json = data;
                     }
@@ -598,17 +594,14 @@
                     this.core.setCallback(callbackName, this.autosave.name, json);
                     this.autosave.html = this.autosave.source;
                 },
-                disable: function()
-                {
+                disable: function() {
                     clearInterval(this.autosaveInterval);
                 }
             };
         },
-        block: function()
-        {
+        block: function() {
             return {
-                formatting: function(name)
-                {
+                formatting: function(name) {
                     this.block.clearStyle = false;
                     var type, value;
 
@@ -626,8 +619,7 @@
                     this.block.format(this.formatting[name].tag, type, value);
 
                 },
-                format: function(tag, type, value)
-                {
+                format: function(tag, type, value) {
                     if (tag == 'quote') tag = 'blockquote';
 
                     var formatTags = ['p', 'pre', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -7966,32 +7958,26 @@
                     xhr.open('POST', this.upload.url);
 
                     // complete
-                    xhr.onreadystatechange = $.proxy(function()
-                    {
-                        if (xhr.readyState == 4)
-                        {
+                    xhr.onreadystatechange = $.proxy(function() {
+                        if (xhr.readyState == 4) {
                             var data = xhr.responseText;
 
                             data = data.replace(/^\[/, '');
                             data = data.replace(/\]$/, '');
 
                             var json;
-                            try
-                            {
-                                json = (typeof data === 'string' ? $.parseJSON(data) : data);
+                            try {
+                                json = (typeof data === 'string') ? JSON.parse(data) : data;
                             }
-                            catch(err)
-                            {
+                            catch(err) {
                                 json = {
                                     error: true
                                 };
                             }
 
-
                             this.progress.hide();
 
-                            if (!this.upload.direct)
-                            {
+                            if (!this.upload.direct) {
                                 this.upload.$droparea.removeClass('drag-drop');
                             }
 
