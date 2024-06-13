@@ -487,44 +487,44 @@
 				});
 
 				var Icon_Fonts_Manager = Backbone.View.extend({
-						id: 'icon-fonts-manager',
-						className: 'clearfix',
-						template: _.template($(popup_tpl).find('#icon-fonts-manager-tpl').html()),
+					id: 'icon-fonts-manager',
+					className: 'clearfix',
+					template: _.template($(popup_tpl).find('#icon-fonts-manager-tpl').html()),
 
-						events: {
-								'click .upload-icon-font': 'triggerFileChooser',
-								'click .icon-font-upload-status': 'triggerFileChooser',
-								'click .icon-fonts-list-item': 'makeFontActive',
-								'click .icon-fonts-list-item a.expand-toggle': 'expandListItems',
-				'click .font-filename a': 'removeFontFile'
-						},
+					events: {
+						'click .upload-icon-font': 'triggerFileChooser',
+						'click .icon-font-upload-status': 'triggerFileChooser',
+						'click .icon-fonts-list-item': 'makeFontActive',
+						'click .icon-fonts-list-item a.expand-toggle': 'expandListItems',
+						'click .font-filename a': 'removeFontFile'
+					},
 
-						triggerFileChooser: function (e) {
+					triggerFileChooser: function (e) {
 				if (e && e.preventDefault) e.preventDefault();
 				if (e && e.stopPropagation) e.stopPropagation();
 
-								this.$el.find('#upfront-icon-font-input').click();
+				this.$el.find('#upfront-icon-font-input').click();
 
 				return false;
-						},
+			},
 
-						render: function() {
-								this.$el.html(this.template({
-										url: Upfront.mainData.ajax,
-										show_no_fonts_notice: false,
-										fonts: this.collection.models
-								}));
-								if (_.isUndefined(this.collection.findWhere({active: true}))) {
-										this.$el.find('[data-family="icomoon"]').addClass('icon-fonts-list-item-active');
-								}
+					render: function() {
+						this.$el.html(this.template({
+							url: Upfront.mainData.ajax,
+							show_no_fonts_notice: false,
+							fonts: this.collection.models
+						}));
+						if (_.isUndefined(this.collection.findWhere({active: true}))) {
+							this.$el.find('[data-family="icomoon"]').addClass('icon-fonts-list-item-active');
+						}
 
-								if (!this.fileUploadInitialized) {
-										this.fileUploadInitialized = true;
-										this.initializeFileUpload();
-								}
+						if (!this.fileUploadInitialized) {
+							this.fileUploadInitialized = true;
+							this.initializeFileUpload();
+						}
 
-								return this;
-						},
+						return this;
+					},
 
 			/**
 			 * Expand file list items on family item click
