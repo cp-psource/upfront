@@ -391,7 +391,7 @@
 								};
 
 								Upfront.Util.post(postData)
-										.fail(function(){
+										.error(function(){
 												return notifier.addMessage(l10n.theme_fonts_save_fail);
 										});
 						};
@@ -487,44 +487,44 @@
 				});
 
 				var Icon_Fonts_Manager = Backbone.View.extend({
-					id: 'icon-fonts-manager',
-					className: 'clearfix',
-					template: _.template($(popup_tpl).find('#icon-fonts-manager-tpl').html()),
+						id: 'icon-fonts-manager',
+						className: 'clearfix',
+						template: _.template($(popup_tpl).find('#icon-fonts-manager-tpl').html()),
 
-					events: {
-						'click .upload-icon-font': 'triggerFileChooser',
-						'click .icon-font-upload-status': 'triggerFileChooser',
-						'click .icon-fonts-list-item': 'makeFontActive',
-						'click .icon-fonts-list-item a.expand-toggle': 'expandListItems',
-						'click .font-filename a': 'removeFontFile'
-					},
+						events: {
+								'click .upload-icon-font': 'triggerFileChooser',
+								'click .icon-font-upload-status': 'triggerFileChooser',
+								'click .icon-fonts-list-item': 'makeFontActive',
+								'click .icon-fonts-list-item a.expand-toggle': 'expandListItems',
+				'click .font-filename a': 'removeFontFile'
+						},
 
-					triggerFileChooser: function (e) {
+						triggerFileChooser: function (e) {
 				if (e && e.preventDefault) e.preventDefault();
 				if (e && e.stopPropagation) e.stopPropagation();
 
-				this.$el.find('#upfront-icon-font-input').click();
+								this.$el.find('#upfront-icon-font-input').click();
 
 				return false;
-			},
+						},
 
-					render: function() {
-						this.$el.html(this.template({
-							url: Upfront.mainData.ajax,
-							show_no_fonts_notice: false,
-							fonts: this.collection.models
-						}));
-						if (_.isUndefined(this.collection.findWhere({active: true}))) {
-							this.$el.find('[data-family="icomoon"]').addClass('icon-fonts-list-item-active');
-						}
+						render: function() {
+								this.$el.html(this.template({
+										url: Upfront.mainData.ajax,
+										show_no_fonts_notice: false,
+										fonts: this.collection.models
+								}));
+								if (_.isUndefined(this.collection.findWhere({active: true}))) {
+										this.$el.find('[data-family="icomoon"]').addClass('icon-fonts-list-item-active');
+								}
 
-						if (!this.fileUploadInitialized) {
-							this.fileUploadInitialized = true;
-							this.initializeFileUpload();
-						}
+								if (!this.fileUploadInitialized) {
+										this.fileUploadInitialized = true;
+										this.initializeFileUpload();
+								}
 
-						return this;
-					},
+								return this;
+						},
 
 			/**
 			 * Expand file list items on family item click
@@ -570,7 +570,7 @@
 						name: name,
 						idx: idx
 					})
-					.fail(function (data) {
+					.error(function (data) {
 						var error = ((data || {}).responseJSON || {}).error || 'Oops, something went wrong';
 						if (!_.isString(error) && (error || {}).message) error = error.message;
 						Upfront.Views.Editor.notify(error, 'error');
@@ -627,31 +627,31 @@
 		                }
 					},
 
-					done: function (e, data) {
-						var font = data.result.data.font;
-						var fontObject;
+										done: function (e, data) {
+												var font = data.result.data.font;
+												var fontObject;
 
-						if (_.keys(font.files).length === 1) {
-							me.$el.find('.icon-fonts-list').append('<div data-family="' + font.family + '" class="icon-fonts-list-item">' + font.name + '</div>');
-							me.collection.add(font);
-						} else {
-							fontObject = me.collection.findWhere({'family': font.family});
-							fontObject.set({files: font.files});
-							if (fontObject.get('active') === true) {
-								me.updateActiveFontStyle(font.family);
-							}
-						}
+												if (_.keys(font.files).length === 1) {
+														me.$el.find('.icon-fonts-list').append('<div data-family="' + font.family + '" class="icon-fonts-list-item">' + font.name + '</div>');
+														me.collection.add(font);
+												} else {
+														fontObject = me.collection.findWhere({'family': font.family});
+														fontObject.set({files: font.files});
+														if (fontObject.get('active') === true) {
+																me.updateActiveFontStyle(font.family);
+														}
+												}
 						me.fileUploadInitialized = false;
 						me.render();
-						/*
-						fontObject = me.collection.findWhere({'family': font.family});
-						var listItem = me.$el.find('[data-family=' + font.family + ']');
-						listItem.find('.icon-font-upload-status').remove();
-						if (fontObject.getUploadStatus() !== true) {
-							listItem.append('<span class="icon-font-upload-status" title="' + fontObject.getUploadStatusMessage() + '">*</span>');
-						}
-						*/
-					},
+/*
+												fontObject = me.collection.findWhere({'family': font.family});
+												var listItem = me.$el.find('[data-family=' + font.family + ']');
+												listItem.find('.icon-font-upload-status').remove();
+												if (fontObject.getUploadStatus() !== true) {
+														listItem.append('<span class="icon-font-upload-status" title="' + fontObject.getUploadStatusMessage() + '">*</span>');
+												}
+*/
+										},
 					/**
 					 * Error handler
 					 *
@@ -681,7 +681,7 @@
 
 
 								Upfront.Util.post(postData)
-										.fail(function(){
+										.error(function(){
 												return notifier.addMessage('Could not update active icon font');
 										});
 

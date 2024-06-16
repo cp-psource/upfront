@@ -234,7 +234,7 @@
 				return $('style#' + this.get_style_id());
 			},
 			close: function(e){
-				if (e && typeof e.preventDefault === 'function') e.preventDefault();
+				if(e && _.isFunction(e.preventDefault)) e.preventDefault();
 
 				$(window).off('resize', this.resizeHandler);
 				this.off('change');
@@ -623,7 +623,7 @@
 				data.action = 'upfront_save_styles';
 
 				Upfront.Util.post(data)
-					.done(function(response) {
+					.success(function(response) {
 						var data = response.data,
 							elementType = me.elementType.id;
 
@@ -641,7 +641,7 @@
 
 						return notifier.addMessage(l10n.style_saved_as.replace(/%s/,  me.get_style_id()));
 					})
-					.fail(function(response){
+					.error(function(response){
 						return notifier.addMessage(l10n.there_was_an_error);
 					});
 			},
@@ -670,7 +670,7 @@
 				data.action = 'upfront_save_styles';
 
 				Upfront.Util.post(data)
-					.done(function(response) {
+					.success(function(response) {
 						var data = response.data,
 							elementType = me.elementType.id;
 
@@ -684,7 +684,7 @@
 
 						return notify ? notifier.addMessage(l10n.style_saved_as.replace(/%s/,  me.get_style_id())) : true;
 					})
-					.fail(function(response){
+					.error(function(response){
 						return notify ? notifier.addMessage(l10n.there_was_an_error) : true;
 					});
 
@@ -763,7 +763,7 @@
 				;
 
 				Upfront.Util.post(fetchData)
-					.done(function(response){
+					.success(function(response){
 						deferred.resolve(response.data.styles);
 					});
 				return deferred.promise();

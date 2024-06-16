@@ -33,7 +33,7 @@
 				// Until I find time to fix this properly, here we go with debounce.
 				this.update_styles_debounced = _.debounce(this.update_styles, 500);
 				this.update_styles_debounced();
-				Theme_Colors.colors.on('change reset add', this.update_styles_debounced, this);
+				Theme_Colors.colors.bind('change reset add', this.update_styles_debounced, this);
 			},
 			events : {
 				"change .panel-setting-theme-colors-shades-range": "change_range",

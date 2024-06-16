@@ -47,14 +47,14 @@ class Upfront_ThisPageView extends Upfront_Object {
 
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Seite', 'upfront'),
-			'thrashed_post' => __('Diese %s wurde gelöscht. Um es zu bearbeiten, <a class="ueditor_restore">stelle es %s wieder her</a>.', 'upfront'),
-			'refreshing' => __('Aktualisiere Seite...', 'upfront'),
-			'here_we_are' => __('Hier sind wir!', 'upfront'),
-			'title_placeholder' => __('Titel schreiben...', 'upfront'),
-			'content_placeholder' => __('Hier kommt der Inhalt Deiner Seite hin ;)', 'upfront'),
-			'page_title' => __('Seitentitel', 'upfront'),
-			'page_content' => __('Seiteninhalt', 'upfront'),
+			'element_name' => __('Page', 'upfront'),
+			'thrashed_post' => __('This %s has been deleted. To edit it, <a class="ueditor_restore">restore the %s</a>.', 'upfront'),
+			'refreshing' => __('Refreshing...', 'upfront'),
+			'here_we_are' => __('Here we are!', 'upfront'),
+			'title_placeholder' => __('Write a title...', 'upfront'),
+			'content_placeholder' => __('Your content goes here ;)', 'upfront'),
+			'page_title' => __('Page Title', 'upfront'),
+			'page_content' => __('Page Content', 'upfront'),
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)

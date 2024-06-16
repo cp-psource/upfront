@@ -173,8 +173,10 @@ class JShrink_Minifier
      * The primary action occurs here. This function loops through the input string,
      * outputting anything that's relevant and discarding anything that is not.
      */
-    protected function loop() {
+    protected function loop()
+    {
         while ($this->a !== false && !is_null($this->a) && $this->a !== '') {
+
             switch ($this->a) {
                 // new lines
                 case "\n":
@@ -184,18 +186,21 @@ class JShrink_Minifier
                         $this->saveString();
                         break;
                     }
+
                     // if B is a space we skip the rest of the switch block and go down to the
                     // string/regex check below, resetting $this->b with getReal
-                    if ($this->b === ' ') {
+                    if($this->b === ' ')
                         break;
-                    }
-                    // otherwise we treat the newline like a space
+
+                // otherwise we treat the newline like a space
+
                 case ' ':
-                    if (static::isAlphaNumeric($this->b)) {
+                    if(static::isAlphaNumeric($this->b))
                         echo $this->a;
-                    }
+
                     $this->saveString();
                     break;
+
                 default:
                     switch ($this->b) {
                         case "\n":
@@ -210,29 +215,31 @@ class JShrink_Minifier
                                 }
                             }
                             break;
+
                         case ' ':
-                            if (!static::isAlphaNumeric($this->a)) {
+                            if(!static::isAlphaNumeric($this->a))
                                 break;
-                            }
+
                         default:
                             // check for some regex that breaks stuff
                             if ($this->a == '/' && ($this->b == '\'' || $this->b == '"')) {
                                 $this->saveRegex();
-                                break 2; // Use break 2 instead of continue
+                                continue;
                             }
+
                             echo $this->a;
                             $this->saveString();
                             break;
                     }
             }
+
             // do reg check of doom
             $this->b = $this->getReal();
-            if (($this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false)) {
+
+            if(($this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false))
                 $this->saveRegex();
-            }
         }
     }
-
 
     /**
      * Resets attributes that do not need to be stored between requests so that

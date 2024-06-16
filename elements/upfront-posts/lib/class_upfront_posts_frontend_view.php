@@ -5,6 +5,8 @@
  */
 class Upfront_PostsView extends Upfront_Object {
 
+	public $_parent_data;
+
 	public function get_markup () {
 		$data = $this->_properties_to_array();
 		if (empty($data)) $data = Upfront_Posts_PostsData::get_defaults();

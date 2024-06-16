@@ -129,7 +129,7 @@ class Upfront_Post_Data_PartView_Author extends Upfront_Post_Data_PartView {
 		$name = get_the_author_meta('display_name', $author);
 		$url_string = !empty($this->_data['link_text'])
 			? esc_html(sanitize_text_field($this->_data['link_text']))
-			: __('Webseite', 'upfront')
+			: __('Website', 'upfront')
 		;
 		
 		$author_url = get_author_posts_url($author);

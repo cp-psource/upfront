@@ -1,4 +1,29 @@
 <?php
+/*
+Plugin Name: Upfront Posts module
+Plugin URI: http://premium.wpmudev.org/project/upfront
+Description: Complex Upfront module 1
+Version: 0.1
+Text Domain: usearch
+Author: Ve Bailovity (Incsub)
+Author URI: http://premium.wpmudev.org
+
+Copyright 2009-2011 Incsub (http://incsub.com)
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
+the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
 
 class Upfront_Posts extends Upfront_Server {
 
@@ -54,7 +79,7 @@ class Upfront_Posts extends Upfront_Server {
 	 * The default query global will use whatever instead, and will 404 if its limit
 	 * value is higher than our posts element
 	 *
-	 * @param WP $wp ClassicPress object
+	 * @param WP $wp WordPress object
 	 */
 	public function force_wp_archive_limit ($wp) {
 		// Let WooCommerce handle stuff if we are dealing with products, since in that case we just
@@ -107,8 +132,8 @@ class Upfront_Posts extends Upfront_Server {
 
 		// Initialize data
 		$data = array(
-			"post_types" => array('' => __('Bitte wähle aus', 'upfront')),
-			"taxonomies" => array('' => __('Bitte wähle aus', 'upfront')),
+			"post_types" => array('' => __('Please, select one', 'upfront')),
+			"taxonomies" => array('' => __('Please, select one', 'upfront')),
 		);
 
 		foreach ($raw_post_types as $type => $obj) {

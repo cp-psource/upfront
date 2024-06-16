@@ -29,11 +29,11 @@
 					if(isMethod)
 						result = ueditor.callMethod(options);
 					else
-						$.fail('Ueditor is already instantiated');
+						$.error('Ueditor is already instantiated');
 				}
 				else{
 					if(isMethod)
-						$.fail('Can\'t call the ueditor method ' + options + '. Ueditor not initialized');
+						$.error('Can\'t call the ueditor method ' + options + '. Ueditor not initialized');
 					else {
 						// Initialize editor
 						$el.data('ueditor', new Ueditor($el, options));
@@ -709,20 +709,24 @@
 						{
 							var func;
 
-							if (typeof callback === 'function') {
+							if ($.isFunction(callback))
+							{
 								callback.call(this, btnName);
 								this.observe.buttons(e, btnName);
-							} else if (callback.includes('.')) {
-								const func = callback.split('.');
-								if (typeof this[func[0]] !== 'undefined' && typeof this[func[0]][func[1]] === 'function') {
+							}
+							else if (callback.search(/\./) != '-1')
+							{
+								func = callback.split('.');
+								if (typeof this[func[0]] != 'undefined')
+								{
 									this[func[0]][func[1]](btnName);
 									this.observe.buttons(e, btnName);
 								}
-							} else {
-								if (typeof this[callback] === 'function') {
-									this[callback](btnName);
-									this.observe.buttons(e, btnName);
-								}
+							}
+							else
+							{
+								this[callback](btnName);
+								this.observe.buttons(e, btnName);
 							}
 						}
 					},
@@ -2078,32 +2082,29 @@
 					$block = $( current ),
 					$prevBlock = $block.parent().prev(),
 					indexPosition = redactor.range.startOffset;
-			
+
 				if( !current || _.isEmpty( $block ) ) return false;
-			
+
+
 				var $image_embed_insert_wrappers = $(".upfront-inserted_image-wrapper, .upfront-inserted_embed-wrapper"),
+					block_top = $block.offset().top,
 					block_html = $.trim( $block.html() ) || '',
 					prevblock_html = $.trim( $prevBlock.html() ) || '',
 					show_tooltip = true;
-			
+
 				$image_embed_insert_wrappers.each(function(){
 					var $this = $(this),
 						height = $this.find(".ueditor-insert-variant-group").height(),
-						offset = $this.offset(),
-						top;
-					
-					if(offset) {
-						top = offset.top;
-						if( top !== undefined && block_top <= ( height + top + 20) && block_top >= ( top - 5)  ){
-							show_tooltip = false;
-						}
+						top = $this.offset().top;
+					if( block_top <= ( height + top + 20) && block_top >= ( top - 5)  ){
+						show_tooltip = false;
 					}
 				});
-			
-				return  show_tooltip
-					&&  $block.closest(".ueditor-insert").length === 0
+
+				return 	show_tooltip
+					&& 	$block.closest(".ueditor-insert").length === 0
 					&&  ( block_html.match(/<br>/g) || ( indexPosition < 1 && prevblock_html.match(/<br>/g) ) || ( typeof $block.closest("p.nosortable").html() !== "undefined" &&  $.trim( $block.closest("p.nosortable").html() ) === "" ) ) ;
-			}			
+			}
 		});
 
 		var ImagesHelper = {

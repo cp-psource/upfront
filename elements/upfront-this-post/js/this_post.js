@@ -232,7 +232,7 @@ var ThisPostView = Upfront.Views.ObjectView.extend({
 					post_type: Upfront.Settings.LayoutEditor.newpostType,
 					properties: this._properties
 				})
-			}).done(function(response){
+			}).success(function(response){
 				if(loading){
 					loading.done();
 					loading = false;

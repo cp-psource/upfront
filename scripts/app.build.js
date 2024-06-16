@@ -11,7 +11,7 @@
 		"maps_context_menu": "empty:",// Leave out maps context menu or it will not initialize properly
 		"backbone": "../../../../wp-includes/js/backbone.min", // this assumes standard wp directory arrangement.
 		"underscore": "../../../../wp-includes/js/underscore.min",
-		"jquery.ui.widget": "upfront/widget.min",
+		"jquery.ui.widget": "jquery/widget.min",
 		"models": "upfront/upfront-models",
 		"views": "upfront/upfront-views",
 		"editor_views": "upfront/upfront-views-editor",

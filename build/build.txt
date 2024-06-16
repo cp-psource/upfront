@@ -221,7 +221,7 @@ jquery/jquery.simulate.js
 /home/dernerd/Local Sites/ps-dev/app/public/wp-content/themes/upfront/scripts/backbone-query-parameters/backbone-query-parameters.js
 responsive.js
 findandreplace/findAndReplaceDOMText.js
-upfront/widget.min.js
+jquery/widget.min.js
 file_upload/jquery.fileupload.js
 file_upload/jquery.iframe-transport.js
 upfront/objects/loading.js

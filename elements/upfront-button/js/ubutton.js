@@ -41,10 +41,10 @@ var ButtonView = Upfront.Views.ObjectView.extend({
 
 		this.delegateEvents();
 
-		this.model.get('properties').on('change', this.render, this);
-		this.model.get('properties').on('change', this.handle_visual_padding_hint, this);
-		this.model.get('properties').on('add', this.render, this);
-		this.model.get('properties').on('remove', this.render, this);
+		this.model.get('properties').bind('change', this.render, this);
+		this.model.get('properties').bind('change', this.handle_visual_padding_hint, this);
+		this.model.get('properties').bind('add', this.render, this);
+		this.model.get('properties').bind('remove', this.render, this);
 		this.listenTo(this.model, 'change:preset', this.updatePresetClass);
 
 		Upfront.Events.on('entity:deactivated', this.stopEdit, this);
@@ -136,7 +136,7 @@ var ButtonView = Upfront.Views.ObjectView.extend({
 			props = PresetUtil.getPresetProperties('button', preset) || {}
 		;
 
-		if (Object.keys(props).length <= 0) return false; // No properties, carry on
+		if (_.size(props) <= 0) return false; // No properties, carry on
 
 		PresetUtil.updatePresetStyle('button', props, settingsStyleTpl);
 

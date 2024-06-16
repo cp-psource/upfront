@@ -32,22 +32,22 @@ class Upfront_Server_Admin implements IUpfront_Server {
 		// Kill the damn customizer. It's like cancer, popping out randomly all over the place
 		add_action('customize_controls_init', array($this, 'refuse_customizer'));
 
-		//$this->dashboard_notice();
+		$this->dashboard_notice();
 	}
 
 	public function pagetemplate_notice() {
 		$screen = ( function_exists('get_current_screen') ) ? get_current_screen() : false;
 		if( ($GLOBALS['pagenow'] == "post.php" || $GLOBALS['pagenow'] == "post-new.php") && $screen && $screen->post_type == "page" && post_type_supports($screen->post_type,'page-attributes') ) {
-			echo '<div class="error"><p>'. __('WARNUNG: Wenn Du die diesem Beitrag zugeordnete Vorlage änderst, gehen alle Inhalte oder Änderungen, die Du mit dem Drag-and-Drop-Upfront-Editor vorgenommen hast, verloren.', 'upfront'). '</p></div>';
+			echo '<div class="error"><p>'. __('WARNING: If you change the template associated with this post then any content or changes you have made using the drag and drop Upfront editor will be lost.', 'upfront'). '</p></div>';
 		}
 	}
 
-	/*public function dashboard_notice () {
-		$path = wp_normalize_path(Upfront::get_root_dir() . '/library/external/dashboard-notice/psource-dash-notification.php');
+	public function dashboard_notice () {
+		$path = wp_normalize_path(Upfront::get_root_dir() . '/library/external/dashboard-notice/wpmudev-dash-notification.php');
 		if (!file_exists($path)) return false;
 
 		require_once($path);
-	}*/
+	}
 
 	/**
 	 * If someone tries to "live preview", send them back.
@@ -173,7 +173,7 @@ class Upfront_Server_Admin implements IUpfront_Server {
 	 */
 	private function _notify_about_parent_deletion_attempt () {
 		if (empty($_GET['upfront-delete'])) return false;
-		return __('Du hast versucht, das UpFront-Framework zu entfernen, während noch ein untergeordnetes UpFront-Design aktiv war. Bitte aktiviere ein anderes Design und versuche es erneut.', 'upfront');
+		return __('You have tried removing Upfront core while still having an Upfront child theme active. Please, activate a different theme and try again.', 'upfront');
 	}
 
 	/**
@@ -182,7 +182,7 @@ class Upfront_Server_Admin implements IUpfront_Server {
 	private function _permalink_setup_check_notice () {
 		if (get_option('permalink_structure')) return false;
 		$msg = sprintf(
-			__('UpFront benötigt Pretty Permalinks, um zu funktionieren. Bitte aktiviere sie <a href="%s">hier</a>', 'upfront'),
+			__('Upfront requires Pretty Permalinks to work. Please enable them <a href="%s">here</a>', 'upfront'),
 			admin_url('/options-permalink.php')
 		);
 		return $msg;
@@ -198,7 +198,7 @@ class Upfront_Server_Admin implements IUpfront_Server {
 		$parent = $current->parent();
 		if (!empty($parent)) return false; // Don't deal with child themes.
 
-		return __('Bitte aktiviere eines der Upfront-Child Designs.', 'upfront');
+		return __('Please, activate one of the Upfront child themes.', 'upfront');
 	}
 
 	/**
@@ -280,7 +280,7 @@ class Upfront_Server_Admin implements IUpfront_Server {
 		if( !isset($pagenow) || $pagenow !== "widgets.php" ) return;
 
 		return sprintf(
-				__('Um Deine Widgets zu nutzen, füge Deinen UpFront-Layouts Widget-Elemente hinzu. Du kannst dies <a href="%s">hier tun</a>', 'upfront'),
+				__('To make use of your widgets, add Widget element to your layouts. You can do so <a href="%s">here</a>', 'upfront'),
 				get_home_url() . "?editmode=true"
 			);
 	}

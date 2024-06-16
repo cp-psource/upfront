@@ -39,7 +39,7 @@ define([
 				data = {"action": "uwidget_get_widget_admin_form", "data": JSON.stringify({"widget": widget})}
 			;
 			Upfront.Util.post(data)
-				.done(function (ret) {
+				.success(function (ret) {
 					self.model.set_property('current_widget_specific_fields', ret.data);
 
 					self.$el.html('');
@@ -57,7 +57,7 @@ define([
 					parent.model.set_property('current_widget', widget);
 
 				})
-				.fail(function (ret) {
+				.error(function (ret) {
 					console.log("error receiving widget specific settings");
 				})
 			;

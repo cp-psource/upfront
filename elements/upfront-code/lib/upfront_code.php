@@ -57,8 +57,8 @@ class Upfront_CodeView extends Upfront_Object {
 
 	private function _to_valid_html ($raw) {
 		if (class_exists('DOMDocument') && class_exists('DOMXpath')) {
-			// Das ist auf so vielen Ebenen falsch, aber anscheinend notwendig ...
-			// Erzwinge den Inhaltstyp-Header, damit die DOMDocument-Codierung nicht standardmäßig latin-1 ist -.-
+			// So this is just wrong on so many levels, but apparently necessary... 
+			// Force the content type header, so that DOMDocument encoding doesn't default to latin-1 -.-
 			// As per: http://stackoverflow.com/questions/3523409/domdocument-encoding-problems-characters-transformed
 			$raw = "<head><meta http-equiv='Content-type' content='text/html; charset=UTF-8' /></head><body>{$raw}</body>";
 			
@@ -109,34 +109,34 @@ class Upfront_CodeView extends Upfront_Object {
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
 			'element_name' => __('Code', 'upfront'),
-			'default_markup' => __('<b>Gib hier Dein Markup ein...</b>', 'upfront'),
-			'default_style' => __('/* Deine Stile hier */', 'upfront'),
-			'default_script' => __('/* Dein Code hier */', 'upfront'),
-			'settings' => __('Einstellungen', 'upfront'),
+			'default_markup' => __('<b>Enter your markup here...</b>', 'upfront'),
+			'default_style' => __('/* Your styles here */', 'upfront'),
+			'default_script' => __('/* Your code here */', 'upfront'),
+			'settings' => __('Settings', 'upfront'),
 			'intro' => array(
-				'embed' => __('Drittanbieter-Code einbetten', 'upfront'),
-				'code' => __('Schreibe benutzerdefinierten Code', 'upfront'),
+				'embed' => __('Embed 3rd Party code', 'upfront'),
+				'code' => __('Write Custom Code', 'upfront'),
 			),
 			'create' => array(
-				'change' => __('Klicken um zu ändern', 'upfront'),
+				'change' => __('Click to change', 'upfront'),
 				'ok' => __('OK', 'upfront'),
 			),
 			'errors' => array(
-				'markup' => __('HTML Fehler:', 'upfront'),
-				'style' => __('CSS Fehler:', 'upfront'),
-				'script' => __('JS Fehler:', 'upfront'),
-				'error_markup' => __('Es gibt einen Fehler in Deinem HTML. Bitte überprüfe Dein Markup erneut auf ungültige Argumente, defekte Tags und dergleichen.', 'upfront'),
+				'markup' => __('HTML error:', 'upfront'),
+				'style' => __('CSS error:', 'upfront'),
+				'script' => __('JS error:', 'upfront'),
+				'error_markup' => __('There\'s an error in your HTML. Please, re-check your markup for invalid arguments, broken tags and the like.', 'upfront'),
 			),
 			'template' => array(
 				'html' => __('HTML', 'upfront'),
 				'css' => __('CSS', 'upfront'),
 				'js' => __('JS', 'upfront'),
-				'link_image' => __('Bild verlinken', 'upfront'),
-				'link_theme_image' => __('Themenbild verlinken', 'upfront'),
-				'code_error' => __('Es gibt einen Fehler in Deinem JS-Code', 'upfront'),
-				'close' => __('Schließen', 'upfront'),
-				'save' => __('Speichern', 'upfront'),
-				'paste_your_code' => __('Füge unten Deinen Einbettungscode ein', 'upfront'),
+				'link_image' => __('Link image', 'upfront'),
+				'link_theme_image' => __('Link theme image', 'upfront'),
+				'code_error' => __('There is an error in your JS code', 'upfront'),
+				'close' => __('close', 'upfront'),
+				'save' => __('Save', 'upfront'),
+				'paste_your_code' => __('Paste your embed code below', 'upfront'),
 			),
 		);
 		return !empty($key)

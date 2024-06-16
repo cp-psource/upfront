@@ -57,7 +57,8 @@
                     func = instance[options];
                 }
 
-                if (typeof instance !== 'undefined' && typeof func === 'function') {
+                if (typeof instance !== 'undefined' && $.isFunction(func))
+                {
                     var methodVal = func.apply(instance, args);
                     if (methodVal !== undefined && methodVal !== instance)
                     {
@@ -66,7 +67,7 @@
                 }
                 else
                 {
-                    $.fail('No such method "' + options + '" for Redactor');
+                    $.error('No such method "' + options + '" for Redactor');
                 }
             });
         }
@@ -421,7 +422,8 @@
                 this.bindModuleMethods($.Redactor.modules[i]);
             }
         },
-        bindModuleMethods: function(module) {
+        bindModuleMethods: function(module)
+        {
             if (typeof this[module] == 'undefined') return;
 
             // init module
@@ -437,7 +439,8 @@
             }
         },
 
-        alignment: function() {
+        alignment: function()
+        {
             return {
                 left: function()
                 {
@@ -563,7 +566,8 @@
 
                     jsxhr.done(this.autosave.success);
                 },
-                getHiddenFields: function(data) {
+                getHiddenFields: function(data)
+                {
                     if (this.opts.autosaveFields === false || typeof this.opts.autosaveFields !== 'object')
                     {
                         return data;
@@ -579,12 +583,15 @@
                     return data;
 
                 },
-                success: function(data) {
+                success: function(data)
+                {
                     var json;
-                    try {
-                        json = JSON.parse(data);
+                    try
+                    {
+                        json = $.parseJSON(data);
                     }
-                    catch(e)  {
+                    catch(e)
+                    {
                         //data has already been parsed
                         json = data;
                     }
@@ -594,14 +601,17 @@
                     this.core.setCallback(callbackName, this.autosave.name, json);
                     this.autosave.html = this.autosave.source;
                 },
-                disable: function() {
+                disable: function()
+                {
                     clearInterval(this.autosaveInterval);
                 }
             };
         },
-        block: function() {
+        block: function()
+        {
             return {
-                formatting: function(name) {
+                formatting: function(name)
+                {
                     this.block.clearStyle = false;
                     var type, value;
 
@@ -619,7 +629,8 @@
                     this.block.format(this.formatting[name].tag, type, value);
 
                 },
-                format: function(tag, type, value) {
+                format: function(tag, type, value)
+                {
                     if (tag == 'quote') tag = 'blockquote';
 
                     var formatTags = ['p', 'pre', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -1345,17 +1356,20 @@
                     this.$editor.on('keyup.redactor', $.proxy(this.keyup.init, this));
 
                     // textarea keydown
-                    if (typeof this.opts.codeKeydownCallback === 'function') {
+                    if ($.isFunction(this.opts.codeKeydownCallback))
+                    {
                         this.$textarea.on('keydown.redactor-textarea', $.proxy(this.opts.codeKeydownCallback, this));
                     }
 
                     // textarea keyup
-                    if (typeof this.opts.codeKeyupCallback === 'function') {
+                    if ($.isFunction(this.opts.codeKeyupCallback))
+                    {
                         this.$textarea.on('keyup.redactor-textarea', $.proxy(this.opts.codeKeyupCallback, this));
                     }
 
                     // focus
-                    if (typeof this.opts.focusCallback === 'function') {
+                    if ($.isFunction(this.opts.focusCallback))
+                    {
                         this.$editor.on('focus.redactor', $.proxy(this.opts.focusCallback, this));
                     }
 
@@ -1369,7 +1383,7 @@
                         if (!this.build.isBlured(clickedElement)) return;
 
                         this.utils.disableSelectAll();
-                        if (typeof this.opts.blurCallback === 'function') this.core.setCallback('blur', e);
+                        if ($.isFunction(this.opts.blurCallback)) this.core.setCallback('blur', e);
 
                     }, this));
                 },
@@ -1403,11 +1417,11 @@
 
                         if ($.inArray(s, $.Redactor.modules) !== -1)
                         {
-                            $.fail('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
+                            $.error('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
                             return;
                         }
 
-                        if (typeof RedactorPlugins[s] !== 'function') return;
+                        if (!$.isFunction(RedactorPlugins[s])) return;
 
                         this[s] = RedactorPlugins[s]();
 
@@ -1421,7 +1435,7 @@
                             this[s][methods[z]] = this[s][methods[z]].bind(this);
                         }
 
-                        if (typeof this[s].init === 'function') this[s].init();
+                        if ($.isFunction(this[s].init)) this[s].init();
 
 
                     }, this));
@@ -1532,9 +1546,8 @@
                 {
                     var func;
 
-                    if (typeof callback === 'function') {
-                        callback.call(this, btnName);
-                    } else if (callback.search(/\./) != '-1')
+                    if ($.isFunction(callback)) callback.call(this, btnName);
+                    else if (callback.search(/\./) != '-1')
                     {
                         func = callback.split('.');
                         if (typeof this[func[0]] == 'undefined') return;
@@ -2795,12 +2808,15 @@
                 {
                     return this.core.event;
                 },
-                setCallback: function(type, e, data) {
+                setCallback: function(type, e, data)
+                {
                     var callback = this.opts[type + 'Callback'];
-                    if (typeof callback === 'function') {
-                        return (typeof data === 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
+                    if ($.isFunction(callback))
+                    {
+                        return (typeof data == 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
                     }
-                    else {
+                    else
+                    {
                         return (typeof data == 'undefined') ? e : data;
                     }
                 },
@@ -7958,26 +7974,32 @@
                     xhr.open('POST', this.upload.url);
 
                     // complete
-                    xhr.onreadystatechange = $.proxy(function() {
-                        if (xhr.readyState == 4) {
+                    xhr.onreadystatechange = $.proxy(function()
+                    {
+                        if (xhr.readyState == 4)
+                        {
                             var data = xhr.responseText;
 
                             data = data.replace(/^\[/, '');
                             data = data.replace(/\]$/, '');
 
                             var json;
-                            try {
-                                json = (typeof data === 'string') ? JSON.parse(data) : data;
+                            try
+                            {
+                                json = (typeof data === 'string' ? $.parseJSON(data) : data);
                             }
-                            catch(err) {
+                            catch(err)
+                            {
                                 json = {
                                     error: true
                                 };
                             }
 
+
                             this.progress.hide();
 
-                            if (!this.upload.direct) {
+                            if (!this.upload.direct)
+                            {
                                 this.upload.$droparea.removeClass('drag-drop');
                             }
 

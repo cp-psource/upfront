@@ -42,10 +42,10 @@ define([
 			});
 			this.delegateEvents();
 
-			this.model.get('properties').on('change', this.render, this);
-			this.model.get('properties').on('change', this.handle_visual_padding_hint, this);
-			this.model.get('properties').on('add', this.render, this);
-			this.model.get('properties').on('remove', this.render, this);
+			this.model.get('properties').bind('change', this.render, this);
+			this.model.get('properties').bind('change', this.handle_visual_padding_hint, this);
+			this.model.get('properties').bind('add', this.render, this);
+			this.model.get('properties').bind('remove', this.render, this);
 
 			this.listenTo(Upfront.Events, "theme_colors:update", this.update_colors, this);
 
@@ -59,7 +59,7 @@ define([
 				props = PresetUtil.getPresetProperties('tab', preset) || {}
 			;
 
-			if (Object.keys(props).length <= 0) return false; // No properties, carry on
+			if (_.size(props) <= 0) return false; // No properties, carry on
 
 			PresetUtil.updatePresetStyle('tab', props, settingsStyleTpl);
 
@@ -157,13 +157,13 @@ define([
 
 		onTabKeydown: function(event) {
 			var id;
-			if (event.key === 13) {
+			if (event.keyCode === 13) {
 				event.preventDefault();
 				$(event.currentTarget).removeAttr('contenteditable');
 				id = $(event.currentTarget).data('content-id').split('-').pop();
 				this.property('tabs')[id].title = $(event.currentTarget).text();
 				this.addTooltips();
-				if ($(event.currentTarget).find('i').length < 1) {
+				if ($(event.currentTarget).find('i').size() < 1) {
 					$(event.currentTarget).append('<i></i>');
 				}
 			}

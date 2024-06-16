@@ -6,6 +6,8 @@
  */
 class Upfront_UnewnavigationView extends Upfront_Object {
 
+	public $_parent_data;
+
 	public function get_markup () {
 		$breakpoint_menu_id = $this->_get_property('breakpoint_menu_id');
 		$menu_id = $this->_get_property('menu_id');
@@ -21,7 +23,7 @@ class Upfront_UnewnavigationView extends Upfront_Object {
 			/* NEW APPEARANCE */
 			// preset here uses the Desktop one
 			$preset_props = Upfront_Nav_Presets_Server::get_instance()->get_preset_properties($preset);
-			$breakpoint_data['preset'] = isset($preset_props['breakpoint'])?$preset_props['breakpoint']:array();
+			$breakpoint_data['preset'] = isset($preset_props['breakpoint'])?$preset_props['breakpoint']:false;
 			// catering breakpoint presets
 			$breakpoint_presets = $this->_get_property('breakpoint_presets');
 			$breakpoint_presets = is_array($breakpoint_presets) ? $breakpoint_presets : array();
@@ -64,7 +66,7 @@ class Upfront_UnewnavigationView extends Upfront_Object {
 				$higher_name = $name;
 
 				/** if breakpoint has menu_style set to burger, but no
-				*	burger_alignment is defined, set it to default
+					burger_alignment is defined, set it to default
 				**/
 				if(isset($breakpoint_data['preset'][$name]) && isset($breakpoint_data['preset'][$name]['menu_style']) && $breakpoint_data['preset'][$name]['menu_style'] && !isset($breakpoint_data['preset'][$name]['burger_alignment']) ) {
 					$breakpoint_data['preset'][$name]['burger_alignment'] = 'left';
@@ -225,84 +227,84 @@ class Upfront_UnewnavigationView extends Upfront_Object {
 
 	public static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Menü', 'upfront'),
-			'select_menu' => __('Bitte wähle das Menü in den Einstellungen', 'upfront'),
-			'not_found' => __('Menü nicht gefunden', 'upfront'),
-			'cant_update' => __('Menü kann nicht aktualisiert werden', 'upfront'),
-			'cant_create' => __('Menü kann nicht erstellt werden', 'upfront'),
-			'delete_success' => __('Der Menüpunkt wurde erfolgreich gelöscht', 'upfront'),
-			'cant_delete' => __('Menü kann nicht gelöscht werden', 'upfront'),
-			'cant_update_auto' => __('Seiten zum automatischen Hinzufügen zu Menüs können nicht aktualisiert werden', 'upfront'),
-			'visit_url' => __('Besuche URL', 'upfront'),
-			'edit_url' => __('Bearbeite URL', 'upfront'),
-			'edit_label' => __('Label bearbeiten', 'upfront'),
-			'remove_link' => __('Link entfernen', 'upfront'),
-			'link_label' => __('Link Label', 'upfront'),
-			'create_dropdown' => __('Dropdown erstellen', 'upfront'),
-			'choose_existing_menu' => __('Vorhandenes Menü auswählen', 'upfront'),
-			'are_you_sure_nag' => __('Möchtest Du dieses Menü wirklich löschen?', 'upfront'),
+			'element_name' => __('Menu', 'upfront'),
+			'select_menu' => __('Please select menu in settings', 'upfront'),
+			'not_found' => __('Menu not found', 'upfront'),
+			'cant_update' => __('Cannot update menu', 'upfront'),
+			'cant_create' => __('Cannot create menu', 'upfront'),
+			'delete_success' => __('The menu item has been successfully deleted', 'upfront'),
+			'cant_delete' => __('Cannot delete menu', 'upfront'),
+			'cant_update_auto' => __('Cannot update menu auto add pages', 'upfront'),
+			'visit_url' => __('Visit URL', 'upfront'),
+			'edit_url' => __('Edit URL', 'upfront'),
+			'edit_label' => __('Edit label', 'upfront'),
+			'remove_link' => __('Remove link', 'upfront'),
+			'link_label' => __('Link label', 'upfront'),
+			'create_dropdown' => __('Create Drop-Down', 'upfront'),
+			'choose_existing_menu' => __('Choose existing menu', 'upfront'),
+			'are_you_sure_nag' => __('Are you sure to delete this menu?', 'upfront'),
 			'css' => array(
-				'bar_label' => __('Menüleiste', 'upfront'),
-				'bar_info' => __('Menüleiste', 'upfront'),
-				'item_label' => __('Menüpunkt', 'upfront'),
-				'item_info' => __('Menüpunkt der obersten Ebene', 'upfront'),
-				'hover_label' => __('Menüelement Hover', 'upfront'),
-				'hover_info' => __('Hover-Status für Menüelement der obersten Ebene', 'upfront'),
-				'close_info' => __('Symbol zum Schließen der responsiven Navigation', 'upfront'),
-				'subitem_label' => __('Untermenüpunkt', 'upfront'),
-				'subitem_info' => __('Unterebene Menüpunkt', 'upfront'),
-				'subitem_hover_label' => __('Untermenüelement Hover', 'upfront'),
-				'subitem_hover_info' => __('Hover-Status für Menüelement der Unterebene', 'upfront'),
-				'responsive_bar_label' => __('Responsive Menüleiste', 'upfront'),
-				'responsive_trigger' => __('Responsiv Menüauslöser', 'upfront'),
-				'responsive_trigger_bars' => __('Responsiv Triggerleisten', 'upfront'),
-				'responsive_nav_close' => __('Responsiv Schließen Symbol', 'upfront'),
-				'responsive_item_label' => __('Responsiv Menüelement', 'upfront'),
-				'responsive_hover_label' => __('Responsiv Menüelement Hover', 'upfront'),
-				'responsive_subitem_label' => __('Responsiv Untermenüelement', 'upfront'),
-				'responsive_subitem_hover_label' => __('Responsives Untermenüelement Hover', 'upfront'),
+				'bar_label' => __('Menu Bar', 'upfront'),
+				'bar_info' => __('Menu Bar', 'upfront'),
+				'item_label' => __('Menu Item', 'upfront'),
+				'item_info' => __('Top level Menu item', 'upfront'),
+				'hover_label' => __('Menu Item hover', 'upfront'),
+				'hover_info' => __('Hover state for Top level Menu item', 'upfront'),
+				'close_info' => __('Icon to close the responsive navigation', 'upfront'),
+				'subitem_label' => __('Sub Menu Item', 'upfront'),
+				'subitem_info' => __('Sub level Menu item', 'upfront'),
+				'subitem_hover_label' => __('Sub Menu Item hover', 'upfront'),
+				'subitem_hover_info' => __('Hover state for Sub level Menu item', 'upfront'),
+				'responsive_bar_label' => __('Responsive Menu Bar', 'upfront'),
+				'responsive_trigger' => __('Responsive Menu Trigger', 'upfront'),
+				'responsive_trigger_bars' => __('Responsive Trigger Bars', 'upfront'),
+				'responsive_nav_close' => __('Responsive Close Icon', 'upfront'),
+				'responsive_item_label' => __('Responsive Menu Item', 'upfront'),
+				'responsive_hover_label' => __('Responsive Menu Item hover', 'upfront'),
+				'responsive_subitem_label' => __('Responsive Sub Menu Item', 'upfront'),
+				'responsive_subitem_hover_label' => __('Responsive Sub Menu Item hover', 'upfront'),
 			),
-			'new_menu_name' => __('Neuen Menünamen eingeben...', 'upfront'),
-			'create_new' => __('Menü erstellen', 'upfront'),
+			'new_menu_name' => __('Type new menu name...', 'upfront'),
+			'create_new' => __('Create New', 'upfront'),
 			'link_name' => __('Link Name', 'upfront'),
 			'mnu' => array(
-				'label' => __('Menü', 'upfront'),
-				'title' => __('Allgemeine Einstellungen', 'upfront'),
-				'load' => __('Wähle zu verwendendes Menü', 'upfront'),
-				'delete_menu' => __('Lösche', 'upfront'),
-				'create' => __('oder Neu erstellen', 'upfront'),
-				'use' => __('Benutze', 'upfront'),
-				'btn' => __('Taste zum Öffnen des Menüs', 'upfront'),
-				'appearance' => __('Darstellung des angezeigten Menüs', 'upfront'),
-				'show_on_click' => __('Zeige die Position des Klickmenüs an:', 'upfront'),
-				'alignment' => __('Ausrichtung:', 'upfront'),
-				'aligh' => __('Menüpunkt Ausrichtung', 'upfront'),
-				'left' => __('Links', 'upfront'),
-				'right' => __('Rechts', 'upfront'),
+				'label' => __('Menu', 'upfront'),
+				'title' => __('General Settings', 'upfront'),
+				'load' => __('Select Menu to Use', 'upfront'),
+				'delete_menu' => __('Delete', 'upfront'),
+				'create' => __('or Create New', 'upfront'),
+				'use' => __('Use', 'upfront'),
+				'btn' => __('button to open menu', 'upfront'),
+				'appearance' => __('Revealed Menu Appearance', 'upfront'),
+				'show_on_click' => __('Show on click menu location:', 'upfront'),
+				'alignment' => __('Alignment:', 'upfront'),
+				'aligh' => __('Menu Item Alignment', 'upfront'),
+				'left' => __('Left', 'upfront'),
+				'right' => __('Right', 'upfront'),
 				'horiz' => __('Horizontal', 'upfront'),
-				'vert' => __('Vertikal', 'upfront'),
-				'triggered' => __('Burger', 'upfront'),
-				'right' => __('Rechts', 'upfront'),
-				'top' => __('Oben', 'upfront'),
-				'whole' => __('Ganz', 'upfront'),
-				'over' => __('Über Inhalt', 'upfront'),
-				'push' => __('Pusht Inhalt', 'upfront'),
-				'align' => __('Ausrichtung der Menüpunkte', 'upfront'),
-				'style' => __('Menüstil:', 'upfront'),
-				'center' => __('Zentriert', 'upfront'),
-				'behavior' => __('Verhaltenseinstellungen', 'upfront'),
-				'auto_add' => __('Neue Seiten automatisch hinzufügen', 'upfront'),
-				'float' => __('Schwebe dieses Menü', 'upfront'),
+				'vert' => __('Vertical', 'upfront'),
+				'triggered' => __('Triggered', 'upfront'),
+				'right' => __('Right', 'upfront'),
+				'top' => __('Top', 'upfront'),
+				'whole' => __('Whole', 'upfront'),
+				'over' => __('Over Content', 'upfront'),
+				'push' => __('Pushes Content', 'upfront'),
+				'align' => __('Menu Items Alignment', 'upfront'),
+				'style' => __('Menu Style:', 'upfront'),
+				'center' => __('Center', 'upfront'),
+				'behavior' => __('Behaviour Settings', 'upfront'),
+				'auto_add' => __('Add new Pages automatically', 'upfront'),
+				'float' => __('Float this menu', 'upfront'),
 			),
 			'panel' => array(
-				'menu_kind_label' => __('Menütyp', 'upfront'),
-				'typography_label' => __('Typografie', 'upfront'),
-				'colors_label' => __('Farben', 'upfront'),
-				'background_label' => __('Hintergrund', 'upfront'),
-				'item_background_label' => __('Element-Hintergrund', 'upfront'),
+				'menu_kind_label' => __('Menu Kind', 'upfront'),
+				'typography_label' => __('Typography', 'upfront'),
+				'colors_label' => __('Colors', 'upfront'),
+				'background_label' => __('Background', 'upfront'),
+				'item_background_label' => __('Item Background', 'upfront'),
 			),
-			'settings' => __('Einstellungen', 'upfront'),
-			'add_item' => __('Menüpunkt hinzufügen', 'upfront'),
+			'settings' => __('Settings', 'upfront'),
+			'add_item' => __('Add a menu item', 'upfront'),
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)

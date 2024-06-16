@@ -3,6 +3,9 @@
  * Contact form element for Upfront.
  */
 class Upfront_UcontactView extends Upfront_Object {
+
+	public $_parent_data;
+	
 	var $error = false;
 	var $defaults = array();
 
@@ -50,8 +53,7 @@ class Upfront_UcontactView extends Upfront_Object {
 		}
 
 		$args['show_subject'] = $args['show_subject'] && sizeof($args['show_subject']);
-		//$args['show_captcha'] = $args['show_captcha'] && sizeof($args['show_captcha']);
-		$args['show_subject'] = is_array($args['show_subject']) && sizeof($args['show_subject']);
+		$args['show_captcha'] = $args['show_captcha'] && sizeof($args['show_captcha']);
 		$args['form_add_title'] = $args['form_add_title'] && sizeof($args['form_add_title']);
 
 		$markup =  $this->get_template('ucontact', $args);
@@ -252,21 +254,9 @@ class Upfront_UcontactView extends Upfront_Object {
 			} else if (!empty($emailto)) {
 				
 				// Let's first force mail callbacks
-				/*if (!empty($name)) {
+				if (!empty($name)) {
 					$email_callback = create_function('$email', "return '{$email}';");
 					$name_callback = create_function('$name', "return '{$name}';");
-					add_filter('wp_mail_from', $email_callback, 99);
-					add_filter('wp_mail_from_name', $name_callback, 99);
-				}*/
-				if (!empty($name)) {
-					// Create a closure using anonymous function
-					$email_callback = function($email) use ($name) {
-						return $name;
-					};
-				
-					$name_callback = function($name_param) use ($name) {
-						return $name;
-					};
 					add_filter('wp_mail_from', $email_callback, 99);
 					add_filter('wp_mail_from_name', $name_callback, 99);
 				}
@@ -482,103 +472,103 @@ class Upfront_UcontactView extends Upfront_Object {
 
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Kontakt', 'upfront'),
-			'contact_form' => __('Kontakt Formular', 'upfront'),
-			'contact_details' => __('Kontaktdetails', 'upfront'),
+			'element_name' => __('Contact', 'upfront'),
+			'contact_form' => __('Contact form', 'upfront'),
+			'contact_details' => __('Contact Details', 'upfront'),
 			'name_label' => __('Name:', 'upfront'),
 			'email_label' => __('Email:', 'upfront'),
-			'subject_label' => __('Betreff:', 'upfront'),
+			'subject_label' => __('Subject:', 'upfront'),
 			'captcha_label' => __('CAPTCHA:', 'upfront'),
-			'default_subject' => __('Gesendet von der Webseite', 'upfront'),
-			'message_label' => __('Nachricht:', 'upfront'),
-			'button_text' => __('Senden', 'upfront'),
-			'unknown_form' => __('Unbekanntes Kontaktformular.', 'upfront'),
-			'invalid_data' => __('Die Kontaktformulardaten sind ungültig.', 'upfront'),
-			'settings_stored' => __('Kontaktformulareinstellungen gespeichert.', 'upfront'),
-			'store_error' => __('Beim Speichern der Kontaktformulareinstellungen ist ein Problem aufgetreten.', 'upfront'),
-			'error_sending' => __('Beim Senden der E-Mail ist ein Fehler aufgetreten.', 'upfront'),
-			'error_captcha' => __('Das CAPTCHA-Feld ist ungültig.', 'upfront'),
-			'mail_sent' => __('Die E-Mail wurde erfolgreich versendet.', 'upfront'),
-			'missing_name' => __('Du musst Deinen Namen angeben.', 'upfront'),
-			'invalid_email' => __('Deine E-Mail-Adresse ist ungültig.', 'upfront'),
-			'missing_subject' => __('Du musst einen Betreff für die Nachricht schreiben.', 'upfront'),
-			'missing_message' => __('Du hast vergessen, eine Nachricht zu schreiben.', 'upfront'),
+			'default_subject' => __('Sent from the website', 'upfront'),
+			'message_label' => __('Message:', 'upfront'),
+			'button_text' => __('Send', 'upfront'),
+			'unknown_form' => __('Unknown contact form.', 'upfront'),
+			'invalid_data' => __('The contact form data is not valid.', 'upfront'),
+			'settings_stored' => __('Contact form settings stored.', 'upfront'),
+			'store_error' => __('There was a problem storing the contact form settings.', 'upfront'),
+			'error_sending' => __('There was an error sending the email.', 'upfront'),
+			'error_captcha' => __('The CAPTCHA field is not valid.', 'upfront'),
+			'mail_sent' => __('The email has been sent successfully.', 'upfront'),
+			'missing_name' => __('You must write your name.', 'upfront'),
+			'invalid_email' => __('Your email address is not valid.', 'upfront'),
+			'missing_subject' => __('You must write a subject for the message.', 'upfront'),
+			'missing_message' => __('You forgot to write the message.', 'upfront'),
 			'css' => array(
-				'labels_label' => __('Feldbezeichnungen', 'upfront'),
-				'labels_info' => __('Textinfo für jedes Feld', 'upfront'),
-				'fields_label' => __('Felder', 'upfront'),
-				'fields_info' => __('Feldeingaben', 'upfront'),
-				'msg_label' => __('Nachrichtenfeld', 'upfront'),
-				'msg_info' => __('Nachrichtenfeld', 'upfront'),
-				'err_label' => __('Fehlerfelder', 'upfront'),
-				'err_info' => __('Felder mit Fehlern.', 'upfront'),
-				'send_label' => __('Senden-Schaltfläche', 'upfront'),
-				'send_info' => __('Senden-Schaltfläche des Formulars', 'upfront'),
+				'labels_label' => __('Field labels', 'upfront'),
+				'labels_info' => __('Text info for every field', 'upfront'),
+				'fields_label' => __('Fields', 'upfront'),
+				'fields_info' => __('Field inputs', 'upfront'),
+				'msg_label' => __('Mesage Field', 'upfront'),
+				'msg_info' => __('Mesasge field', 'upfront'),
+				'err_label' => __('Error fields', 'upfront'),
+				'err_info' => __('Fields with errors.', 'upfront'),
+				'send_label' => __('Submit button', 'upfront'),
+				'send_info' => __('Form\'s submit button', 'upfront'),
 			),
 			'general' => array(
-				'label' => __('Allgemeine Einstellungen', 'upfront'),
-				'send_to' => __('Formularinhalt senden an:', 'upfront'),
-				'button_text' => __('Text der Schaltfläche zum Senden des Kontaktformulars:', 'upfront'),
-				'use_title' => __('Formulartitel verwenden', 'upfront'),
-				'form_title' => __('Titel des Kontaktformulars:', 'upfront'),
+				'label' => __('General Settings', 'upfront'),
+				'send_to' => __('Send form content to:', 'upfront'),
+				'button_text' => __('Contact form submit button text:', 'upfront'),
+				'use_title' => __('Use form title', 'upfront'),
+				'form_title' => __('Contact form title:', 'upfront'),
 			),
 			'validation' => array(
-				'label' => __('Formularvalidierung', 'upfront'),
+				'label' => __('Form validation', 'upfront'),
 				'on_field' => __('Inline', 'upfront'),
-				'on_submit' => __('Vor dem Senden', 'upfront'),
+				'on_submit' => __('On Submit', 'upfront'),
 			),
 			'fields' => array(
-				'label' => __('Formularfelder', 'upfront'),
-				'title' => __('Kontaktformularfelder', 'upfront'),
-				'name' => __('Namensfeldtext:', 'upfront'),
-				'email' => __('E-Mail-Feldtext:', 'upfront'),
-				'msg' => __('Nachrichtenfeldtext:', 'upfront'),
-				'show_subject' => __('Betrefffeld', 'upfront'),
+				'label' => __('Form Fields', 'upfront'),
+				'title' => __('Contact Form Fields', 'upfront'),
+				'name' => __('Name Field Text:', 'upfront'),
+				'email' => __('Email Field Text:', 'upfront'),
+				'msg' => __('Message Field Text:', 'upfront'),
+				'show_subject' => __('Subject field', 'upfront'),
 				'show_captcha' => __('CAPTCHA', 'upfront'),
-				'subject' => __('Betreff Feldtext:', 'upfront'),
-				'default_subject' => __('Standardbetreff:', 'upfront'),
-				'label_localtion' => __('Position der Feldbeschriftung:', 'upfront')
+				'subject' => __('Subject Field text:', 'upfront'),
+				'default_subject' => __('Default subject:', 'upfront'),
+				'label_localtion' => __('Field Label Location:', 'upfront')
 			),
 			'apr' => array(
-				'label' => __('Darstellung', 'upfront'),
-				'above' => __('Über dem Feld', 'upfront'),
-				'over' => __('Über das Feld', 'upfront'),
-				'inline' => __('Inline mit Feld', 'upfront'),
+				'label' => __('Appearance', 'upfront'),
+				'above' => __('Above the field', 'upfront'),
+				'over' => __('Over the field', 'upfront'),
+				'inline' => __('Inline with field', 'upfront'),
 			),
-			'settings' => __('Kontaktformular-Einstellungen', 'upfront'),
-			'colors_label' => __('Farben', 'upfront'),
-			'field_bg_label' => __('Feld BG', 'upfront'),
-			'button_bg_label' => __('Schaltfläche BG', 'upfront'),
-			'typography_label' => __('Typografie', 'upfront'),
-			'field_labels_label' => __('Feldbeschriftungen', 'upfront'),
-			'field_values_label' => __('Feldwerte', 'upfront'),
-			'button_label' => __('Schaltfläche', 'upfront'),
-			'field_button_label' => __('Feld & Schaltfläche', 'upfront'),
-			'field_label' => __('Feld', 'upfront'),
+			'settings' => __('Contact form settings', 'upfront'),
+			'colors_label' => __('Colors', 'upfront'),
+			'field_bg_label' => __('Field BG', 'upfront'),
+			'button_bg_label' => __('Button BG', 'upfront'),
+			'typography_label' => __('Typography', 'upfront'),
+			'field_labels_label' => __('Field Labels', 'upfront'),
+			'field_values_label' => __('Field Values', 'upfront'),
+			'button_label' => __('Button', 'upfront'),
+			'field_button_label' => __('Field & Button', 'upfront'),
+			'field_label' => __('Field', 'upfront'),
 			'template' => array(
-				'missing_name' => __('Du musst Deinen Namen schreiben.', 'upfront'),
-				'invalid_email' => __('Die E-Mail-adresse ist nicht gültig.', 'upfront'),
-				'missing_subject' => __('Du musst einen Betreff für die Nachricht schreiben.', 'upfront'),
-				'missing_body' => __('Du hast vergessen, eine Nachricht zu schreiben.', 'upfront'),
-				'realperson_regenerate' => __('Klicke um zu ändern', 'upfront'),
+				'missing_name' => __('You must write your name.', 'upfront'),
+				'invalid_email' => __('The email address is not valid.', 'upfront'),
+				'missing_subject' => __('You must write a subject for the message.', 'upfront'),
+				'missing_body' => __('You forgot to write a message.', 'upfront'),
+				'realperson_regenerate' => __('Click to change', 'upfront'),
 			),
 			'smtp' => array(
-				'enable' => __('Aktiviere SMTP', 'upfront'),
-				'label' => __('SMTP Einstellungen', 'upfront'),
-				'from_email' => __('Von (Email)', 'upfront'),
-				'from_name' => __('Von (Name)', 'upfront'),
-				'host' => __('SMTP Host', 'upfront'),
-				'none' => __('Keine', 'upfront'),
+				'enable' => __('Enable SMTP'),
+				'label' => __('SMTP Settings'),
+				'from_email' => __('From (Email)'),
+				'from_name' => __('From (Name)'),
+				'host' => __('SMTP Host'),
+				'none' => __('None'),
 				'ssl' => __('SSL'),
 				'tls' => __('TLS'),
 				'port' => __('SMTP Port'),
-				'no' => __('Nein', 'upfront'),
-				'yes' => __('Ja', 'upfront'),
-				'username' => __('Nutzername', 'upfront'),
-				'password' => __('Passwort', 'upfront'),
-				'configuration' => __('Konfiguration', 'upfront'),
-				'secure' => __('SMTP Sicherheit', 'upfront'),
-				'authentication' => __('Aktiviere SMTP-Authentifizierung', 'upfront')
+				'no' => __('No'),
+				'yes' => __('Yes'),
+				'username' => __('Username'),
+				'password' => __('Password'),
+				'configuration' => __('Configuration'),
+				'secure' => __('SMTP Secure'),
+				'authentication' => __('Enable SMTP Authentication')
 			)
 		);
 		return !empty($key)

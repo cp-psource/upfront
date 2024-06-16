@@ -80,11 +80,11 @@
 			},
 			get_value: function () {
 				var $field = this.get_field();
-				if (!this.multiple || ($field.length == 1 && $field.is('select')))
+				if ( ! this.multiple || ($field.size() == 1 && $field.is('select')) )
 					return $field.val();
 				else
 					return _.map($field, function (el) { return $(el).val(); });
-				//return false;
+				return false;
 			},
 			set_value: function (value) {
 				this.get_field().val(value);
@@ -121,16 +121,16 @@
 					this.$el.append(this.get_label_html());
 				this.$el.append(this.get_field_html());
 				var me = this;
-				this.get_field().on('keyup', function(){
+				this.get_field().keyup(function(){
 					if ( '' === $(this).val() ){
 							$(this).addClass('upfront-field-empty');
 					}
 					else if ( $(this).hasClass('upfront-field-empty') ) {
 							$(this).removeClass('upfront-field-empty');
 					}
-				}).trigger('keyup').on('change', function() {
-					me.trigger('changed', me.get_value());
-				});
+				}).trigger('keyup').on('keyup', function() {
+                    me.trigger('changed', me.get_value());
+                });
 				this.trigger('rendered');
 			},
 			get_field_html: function () {
@@ -956,7 +956,7 @@
 
 						// Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
 						if ( $(e.currentTarget).siblings('input').not(':checked')) {
-							$(e.currentTarget).siblings('input').trigger('click');
+							$(e.currentTarget).siblings('input').click();
 						}
 
 						this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1285,7 +1285,7 @@
 
                     // Make sure that input is clicked (for some reason in redactor toolbar this does not work naturally)
                     if ( $(e.currentTarget).siblings('input').not(':checked')) {
-                        $(e.currentTarget).siblings('input').trigger('click');
+                        $(e.currentTarget).siblings('input').click();
                     }
 
                     this.$el.find('.upfront-field-select').removeClass('upfront-field-select-expanded');
@@ -1512,7 +1512,7 @@
             openOptions: function(e) {
 
                 //Disable scroll when chosen is opened
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').on('mousewheel', function() {
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').bind('mousewheel', function() {
                     return false;
                 });
 
@@ -1555,7 +1555,7 @@
             },
             allowMouseWheel: function() {
                 //Enable scroll when chosen is closed
-                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').off('mousewheel');
+                $('.sidebar-panel-content .sidebar-tab-content, #sidebar-scroll-wrapper').unbind('mousewheel');
             }
         });
 
@@ -1723,27 +1723,27 @@
             selected_state: 'checked',
             render: function () {
                 var me = this;
-        
+
                 this.$el.html('');
-        
+
                 if ( this.label ) {
                     this.$el.append(this.get_label_html());
                 }
-        
+
                 this.$el.append(this.get_field_html());
-        
+
                 this.$el.on('change', '.upfront-field-multiple input', function(){
                     me.$el.find('.upfront-field-multiple').each(function(){
-                        if ($(this).find('input:checked').length > 0) { // Änderung hier
+                        if ( $(this).find('input:checked').size() > 0 ) {
                             $(this).addClass('upfront-field-multiple-selected');
                         } else {
                             $(this).removeClass('upfront-field-multiple-selected');
                         }
                     });
-        
+
                     me.trigger('changed', me.get_value());
                 });
-        
+
                 this.trigger('rendered');
             },
             get_field_html: function () {
@@ -1777,7 +1777,7 @@
                 }
                 return '<span class="' + classes + '"><input ' + this.get_field_attr_html(attr) + ' />' + '<label for="' + id + '">' + this.get_icon_html(value.icon, icon_class) + '<span class="upfront-field-label-text">' + value.label + '</span></label></span>';
             }
-        });        
+        });
 
         var Field_Radios = Field_Multiple_Input.extend({
             className: 'upfront-field-wrap upfront-field-wrap-multiple upfront-field-wrap-radios',

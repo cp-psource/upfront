@@ -9,7 +9,7 @@ define(function() {
 
 	Upfront.Util.post({
 		"action": "uposts_list_initial_info"
-	}).done(function (initialData) {
+	}).success(function (initialData) {
 		_initial = initialData.data;
 	}); // End response wrap
 
@@ -162,7 +162,7 @@ define(function() {
 				"action": "uposts_get_markup",
 				layout_cascade: Upfront.Application.current_subapplication.get_layout_data().layout,
 				"data": JSON.stringify(data)
-			}).done(function (response) {
+			}).success(function (response) {
 				me.markup = response.data;
 				$(content_selector)
 					.find(".upfront-object-content")
@@ -223,7 +223,7 @@ define(function() {
 						post: post,
 						properties: flat
 					}
-				}).done(function (response) {
+				}).success(function (response) {
 					loading.$el.remove();
 					loading = false;
 					wrapper.html(response.data);
@@ -489,7 +489,7 @@ define(function() {
 			Upfront.Util.post({
 				"action": "upost_get_taxonomy_terms",
 				"taxonomy": taxonomy}
-			).done(function (terms) {
+			).success(function (terms) {
 				var term_values = [];
 				_(terms.data).each(function (label, id) {
 					term_values.push({label: label, value: id});

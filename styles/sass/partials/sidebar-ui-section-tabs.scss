@@ -40,11 +40,10 @@
 	margin-top: 9px;
 }
 .panel-setting-theme-colors-shades-range-labels li {
-    display: inline-block;
-    /* float: left; */
-    font: 11px normal verdana, sans-serif;
-    color: #476580;
-    margin-right: 10px; /* optional: Abstand zwischen den Elementen hinzufügen */
+	display: inline-block;
+	float: left;
+	font:11px normal verdana, sans-serif;
+	color: #476580;
 }
 .panel-setting-theme-colors-shades-range-labels li:last-child {
 	float: right;
@@ -54,5 +53,8 @@
 	color:#212121;
 	font-weight: bold;
 	border-bottom: 2px solid black;
+}
+.sidebar-tab-content{
+	display: none;
 }
 

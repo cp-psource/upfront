@@ -22,9 +22,9 @@ ul.menu li a {
 	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-div.upfront-navigation div[data-style="burger"] ul.sub-menu {
+/*div.upfront-navigation div[data-style="burger"] ul.sub-menu {
   display: block;
-}
+}*/
 
 div.upfront-navigation div[data-style="horizontal"]:not([data-style="burger"]) li.menu-item:hover > ul.sub-menu,
 div.upfront-navigation div[data-style="horizontal"]:not([data-style="burger"]) li.menu-item a:focus + ul.sub-menu,
@@ -193,7 +193,7 @@ div.upfront-newnavigation_module:hover  div[data-style="burger"] .responsive_nav
 }
 
 .responsive_nav_toggler {
-	/*float:right;*/
+	float:right;
 	position:relative;
 	z-index: 2000;
 	width:40px;

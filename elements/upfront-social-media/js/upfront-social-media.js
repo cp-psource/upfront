@@ -105,14 +105,14 @@
             loading.render();
             this.$('#upfront-popup-content').css('position', 'relative').append(loading.$el);
             Upfront.Util.post({"action": "usocial_save_globals", "data": JSON.stringify(setDataProperties)})
-                .done(function (ret) {
+                .success(function (ret) {
                     loading.cancel();
                     Upfront.Popup.close();
                     Upfront.Views.Editor.notify(l10n.updated);
                     Upfront.data.usocial.globals = setData;
                     me.deferred.resolve(setData);
                 })
-                .fail(function (ret) {
+                .error(function (ret) {
                     Upfront.Util.log("Error Saving settings");
                 })
             ;

@@ -32,10 +32,7 @@ class Upfront_JavascriptMain extends Upfront_Server {
 		$current_theme_url = get_stylesheet_directory_uri();
 		$site_path = parse_url($site, PHP_URL_PATH);
 		$current_theme_path = parse_url($current_theme_url, PHP_URL_PATH);
-		
-		if (is_string($site_path)) {
-			$current_theme_path = preg_replace('/^' . preg_quote($site_path, '/') . '/i', '', $current_theme_path);
-		}
+		$current_theme_path = preg_replace('/^' . preg_quote($site_path, '/') . '/i', '', $current_theme_path);
 
 		if (empty($is_ssl) && is_ssl()) {
 			$root = preg_replace('/^https:/', 'http:', $root);
@@ -472,7 +469,7 @@ EOMainJs;
 	}
 
 	private function get_authors(){
-		$data = get_users(array('capability' => 'authors'));
+		$data = get_users(array('who' => 'authors'));
 		$authors = array();
 		foreach($data as $a){
 			$authors[] = array(

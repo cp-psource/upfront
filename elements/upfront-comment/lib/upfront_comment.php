@@ -29,23 +29,23 @@ class Upfront_UcommentView extends Upfront_Object {
 		$comments = array(
 			array_merge($fake_comment, array(
 				'user_id' => get_current_user_id(),
-				'comment_author' => __('Autor','upfront'),
+				'comment_author' => 'Author',
 				'comment_content' => 'test stuff author comment',
 			)),
 			array_merge($fake_comment, array(
 				'user_id' => 0,
-				'comment_author' => __('Besucher', 'upfront'),
+				'comment_author' => 'Visitor',
 				'comment_content' => 'test stuff visitor comment',
 			)),
 			array_merge($fake_comment, array(
 				'user_id' => 0,
-				'comment_author' => __('Trackback', 'upfront'),
+				'comment_author' => 'Trackback',
 				'comment_type' => 'trackback',
 				'comment_content' => 'test stuff visitor trackback',
 			)),
 			array_merge($fake_comment, array(
 				'user_id' => 0,
-				'comment_author' => __('Pingback', 'upfront'),
+				'comment_author' => 'Pingback',
 				'comment_type' => 'pingback',
 				'comment_content' => 'test stuff visitor pingkback',
 			)),
@@ -178,7 +178,7 @@ class Upfront_UcommentView extends Upfront_Object {
 		return '<p class="comment-form-comment">' .
 			'<label for="comment">' . _x( 'Comment', 'noun' ) . '</label>' .
 			' ' .
-			'<textarea placeholder="' . esc_attr(__('Hinterlasse eine Antwort', 'upfront')) . '" id="comment" name="comment" cols="45" rows="8" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea>' .
+			'<textarea placeholder="' . esc_attr(__('Leave a Reply')) . '" id="comment" name="comment" cols="45" rows="8" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea>' .
 		'</p>';
 	}
 
@@ -241,57 +241,57 @@ class Upfront_UcommentView extends Upfront_Object {
 
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Kommentar', 'upfront'),
-			'error_permissions' => __('Du kannst das nicht machen', 'upfront'),
-			'loading' => __('Wird geladen', 'upfront'),
-			'loading_error' => __("Fehler beim Laden des Kommentars", 'upfront'),
-			'discussion_settings' => __('Diskussionseinstellungen', 'upfront'),
-			'settings_disabled' => __('Diskussionseinstellungen sind deaktiviert', 'upfront'),
+			'element_name' => __('Comment', 'upfront'),
+			'error_permissions' => __('You can not do this', 'upfront'),
+			'loading' => __('Loading', 'upfront'),
+			'loading_error' => __("Error loading comment", 'upfront'),
+			'discussion_settings' => __('Discussion Settings', 'upfront'),
+			'settings_disabled' => __('Discussion Settings are disabled', 'upfront'),
 			'avatars' => __('Avatars', 'upfront'),
 			'ok' => __('OK', 'upfront'),
-			'please_wait' => __('Bitte warte', 'upfront'),
-			'avatar_settings' => __('Avatar Einstellungen', 'upfront'),
-			'show_avatars' => __('Avatare anzeigen', 'upfront'),
-			'max_rating' => __('Maximale Bewertung', 'upfront'),
-			'settings' => __('Einstellungen', 'upfront'),
-			'main_panel' => __('Hauptsächlich', 'upfront'),
+			'please_wait' => __('Please, wait', 'upfront'),
+			'avatar_settings' => __('Avatar Settings', 'upfront'),
+			'show_avatars' => __('Show avatars', 'upfront'),
+			'max_rating' => __('Maximum rating', 'upfront'),
+			'settings' => __('Settings', 'upfront'),
+			'main_panel' => __('Main', 'upfront'),
 			'rating' => array(
-				'g' => __('Für alle Zielgruppen geeignet', 'upfront'),
-				'pg' => __('Möglicherweise anstößig, normalerweise für Zuschauer ab 13 Jahren', 'upfront'),
-				'r' => __('Für erwachsenes Publikum über 18 bestimmt', 'upfront'),
-				'x' => __('Noch reifer als R', 'upfront'),
+				'g' => __('Suitable for all audiences', 'upfront'),
+				'pg' => __('Possibly offensive, usually for audiences 13 and above', 'upfront'),
+				'r' => __('Intended for adult audiences above 17', 'upfront'),
+				'x' => __('Even more mature than R', 'upfront'),
 			),
-			'default_avatar' => __('Standard-Avatar', 'upfront'),
+			'default_avatar' => __('Default Avatar', 'upfront'),
 			'article' => array(
-				'label' => __('Standardeinstellungen für Artikel', 'upfront'),
-				'pingback' => __('Versuche alle Blogs, die mit dem Artikel verlinkt sind, zu benachrichtigen', 'upfront'),
-				'ping_status' => __('Link-Benachrichtigungen von anderen Blogs zulassen (Pingbacks und Trackbacks)', 'upfront'),
-				'comment_status' => __('Personen erlauben, Kommentare zu neuen Artikeln zu posten<br />(Diese Einstellungen können für einzelne Artikel überschrieben werden.)', 'upfront'),
-				'attachments' => __('Anhänge in Kommentaren zulassen', 'upfront'),
-				'email' => __('E-Mail-Abonnementfeld anzeigen', 'upfront'),
+				'label' => __('Default Article Settings', 'upfront'),
+				'pingback' => __('Attempt to notify any blogs linked to from the article', 'upfront'),
+				'ping_status' => __('Allow link notifications from other blogs (pingbacks and trackbacks)', 'upfront'),
+				'comment_status' => __('Allow people to post comments on new articles<br />(These settings may be overridden for individual articles.)', 'upfront'),
+				'attachments' => __('Allow attachments in comments', 'upfront'),
+				'email' => __('Show email subscription field', 'upfront'),
 			),
 			'other' => array(
-				'label' => __('Andere Kommentareinstellungen', 'upfront'),
-				'require_name_email' => __('Der Autor des Kommentars muss Name und E-Mail-Adresse angeben', 'upfront'),
-				'comment_registration' => __('Benutzer müssen registriert und eingeloggt sein, um Kommentare abgeben zu können', 'upfront'),
-				'autoclose' => __('Kommentare zu Artikeln, die älter als {{subfield}} Tage sind, automatisch schließen', 'upfront'),
-				'thread_comments' => __('Aktiviere Thread-Kommentare (verschachtelte) {{subfield}} Ebenen tief', 'upfront'),
-				'page_comments' => __('Paginiere Kommentare nach {{depth}} Kommentaren der obersten Ebene und zeige standardmäßig {{page}} Seite an', 'upfront'),
-				'last' => __('Letzte', 'upfront'),
-				'first' => __('Erste', 'upfront'),
-				'order' => __('Kommentare sollten mit diesen Kommentaren oben auf jeder Seite angezeigt werden', 'upfront'),
-				'older' => __('Älteste', 'upfront'),
-				'newer' => __('Neueste', 'upfront'),
-				'email_me' => __('Schicke eine E-Mail wenn', 'upfront'),
-				'comments_notify' => __('Jemand einen Kommentar postet', 'upfront'),
-				'moderation_notify' => __('Ein Kommentar zur Moderation zurückgehalten wird', 'upfront'),
-				'before_comment_appears' => __('Bevor ein Kommentar erscheint', 'upfront'),
-				'comment_moderation' => __('Ein Administrator muss den Kommentar immer genehmigen', 'upfront'),
-				'comment_whitelist' => __('Der Kommentarautor muss einen zuvor genehmigten Kommentar haben', 'upfront'),
-				'moderation_label' => __('Kommentar Moderation', 'upfront'),
-				'max_links' => __('Halte einen Kommentar in der Warteschlange, wenn er {{field}} oder mehr Links enthält. (Ein gemeinsames Merkmal von Kommentar-Spam ist eine große Anzahl von Hyperlinks.)', 'upfront'),
-				'moderation_keys' => __('Wenn ein Kommentar eines dieser Wörter in seinem Inhalt, Namen, URL, E-Mail oder IP enthält, wird er in der Moderationswarteschlange gehalten. Ein Wort oder IP pro Zeile. Es wird innerhalb von Wörtern übereinstimmen, also wird „press“ mit „ClassicPress“ übereinstimmen.', 'upfront'),
-				'blacklist_keys' => __('Wenn ein Kommentar eines dieser Wörter in seinem Inhalt, Namen, URL, E-Mail oder IP enthält, wird er als Spam markiert. Ein Wort oder IP pro Zeile. Es wird innerhalb von Wörtern übereinstimmen, also wird „press“ mit „ClassicPress“ übereinstimmen.', 'upfront'),
+				'label' => __('Other Comment Settings', 'upfront'),
+				'require_name_email' => __('Comment author must fill out name and e-mail', 'upfront'),
+				'comment_registration' => __('Users must be registered and logged in to comment', 'upfront'),
+				'autoclose' => __('Automatically close comments on articles older than {{subfield}} days', 'upfront'),
+				'thread_comments' => __('Enable threaded (nested) comments {{subfield}} levels deep', 'upfront'),
+				'page_comments' => __('Paginate comments after {{depth}} top level comments and display {{page}} page by default', 'upfront'),
+				'last' => __('last', 'upfront'),
+				'first' => __('first', 'upfront'),
+				'order' => __('Comments should be displayed with the these comments at the top of each page', 'upfront'),
+				'older' => __('older', 'upfront'),
+				'newer' => __('newer', 'upfront'),
+				'email_me' => __('E-mail me whenever', 'upfront'),
+				'comments_notify' => __('Anyone posts a comment', 'upfront'),
+				'moderation_notify' => __('A comment is held for moderation', 'upfront'),
+				'before_comment_appears' => __('Before a comment appears', 'upfront'),
+				'comment_moderation' => __('An administrator must always approve the comment', 'upfront'),
+				'comment_whitelist' => __('Comment author must have a previously approved comment', 'upfront'),
+				'moderation_label' => __('Comment Moderation', 'upfront'),
+				'max_links' => __('Hold a comment in the queue if it contains {{field}} or more links. (A common characteristic of comment spam is a large number of hyperlinks.)', 'upfront'),
+				'moderation_keys' => __('When a comment contains any of these words in its content, name, URL, e-mail, or IP, it will be held in the moderation queue. One word or IP per line. It will match inside words, so “press” will match “WordPress”.', 'upfront'),
+				'blacklist_keys' => __('When a comment contains any of these words in its content, name, URL, e-mail, or IP, it will be marked as spam. One word or IP per line. It will match inside words, so “press” will match “WordPress”.', 'upfront'),
 			),
 		);
 		return !empty($key)
@@ -327,7 +327,7 @@ class Upfront_UcommentAjax extends Upfront_Server {
 	}
 
 	public function save_discussion_settings () {
-		if (!Upfront_Permissions::current(Upfront_Permissions::OPTIONS)) $this->_out(new Upfront_JsonResponse_Error("Du kannst das nicht machen"));
+		if (!Upfront_Permissions::current(Upfront_Permissions::OPTIONS)) $this->_out(new Upfront_JsonResponse_Error("You can not do this"));
 		$data = stripslashes_deep($_POST['data']);
 
 		if (isset($data['default_pingback_flag'])) {

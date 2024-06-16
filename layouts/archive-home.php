@@ -257,7 +257,7 @@ $main->add_element("PlainTxt", array (
   'id' => 'module-1468468185982-1850',
   'options' =>
   array (
-    'content' => '<p style="text-align: center;">Wähle aus unserer Sammlung von <a href="https://upfront.n3rds.work/projects/category/themes/" target="_blank">Starter-Designs</a> und beginne sofort mit der Anpassung Deiner Webseite.</ p> <p style="text-align: center;">Oder beginne ganz von vorn mit dem <a href="' . esc_url(admin_url('admin.php?page=upfront-builder')) . '">UpFront Builder</a> und erwecke die Webseite, von der Du immer geträumt hast, zum Leben.</p>',
+    'content' => '<p style="text-align: center;">Choose from our collection of <a href="https://premium.wpmudev.org/projects/category/themes/" target="_blank">starter themes</a> and get started customizing your site right away.</p> <p style="text-align: center;">Or start from scratch with the <a href="' . esc_url(admin_url('admin.php?page=upfront-builder')) . '">Upfront Builder</a> and bring the site you’ve always dreamed of to life.</p>',
     'type' => 'PlainTxtModel',
     'view_class' => 'PlainTxtView',
     'element_id' => 'text-object-1468468185981-1427',

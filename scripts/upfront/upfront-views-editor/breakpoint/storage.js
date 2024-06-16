@@ -42,7 +42,7 @@
                 };
 
                 Upfront.Util.post(postData)
-                    .fail(function () {
+                    .error(function () {
                         return notifier.addMessage(l10n.breakpoint_save_fail);
                     });
             };

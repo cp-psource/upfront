@@ -5,8 +5,6 @@
  */
 class Upfront_StylePreprocessor {
 
-	private $_debugger;
-
 	/**
 	 * Grid reference
 	 *

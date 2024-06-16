@@ -18,9 +18,12 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 	private $_version = false;
 	private $_required_pages = array();
+
 	private static $_theme_settings;
 
 	protected static $instance;
+	
+	protected $_slider_imported = false;
 
 	public static function get_instance () {
 		return self::$instance;
@@ -108,8 +111,6 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		$this->initialize();
 	}
 
-	protected $_slider_imported = false;
-
 	/**
 	 * Sets the theme settings object
 	 * Not really all that useful in the context of this class, but comes
@@ -183,7 +184,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 	}
 
 	protected function checkMenusExist() {
-		$menus = json_decode((string)$this->get_theme_settings()->get('menus'), true);
+		$menus = json_decode($this->get_theme_settings()->get('menus'), true);
 		if (empty($menus)) return;
 
 		$existing_menus = $this->getExistingMenus();
@@ -227,7 +228,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		}
 	}
 
-	/*protected function up_update_nav_menu_item($menu_id, $db_id, $menu_items, $args = array(), $parent_id = 0) {
+	protected function up_update_nav_menu_item($menu_id, $db_id, $args = array(), $menu_items, $parent_id = 0) {
 		if (is_wp_error($menu_id)) return false; // Prevent notice if we received an error instead of an ID
 		$id = wp_update_nav_menu_item($menu_id, $db_id, array(
 						'menu-item-parent-id' => $parent_id,
@@ -244,26 +245,6 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				$this->up_update_nav_menu_item( $menu_id, 0, $menu_item, $menu_items, $id);
 			}
 		}
-	}*/
-
-	protected function up_update_nav_menu_item($menu_id, $db_id, $menu_items, $args = array(), $parent_id = 0) {
-		if (is_wp_error($menu_id)) return false; // Prevent notice if we received an error instead of an ID
-		$url = isset($args['url']) ? $args['url'] : ''; // set default value if 'url' is not set
-		$id = wp_update_nav_menu_item($menu_id, $db_id, array(
-					'menu-item-parent-id' => $parent_id,
-					'menu-item-url' => $url,
-					'menu-item-title' => $args['title'],
-					'menu-item-position' => $args['menu_order'],
-					'menu-item-status' => 'publish'
-				));
-		//add child items
-	
-		if(isset($menu_items[$args['db_id']])) {
-	
-			foreach($menu_items[$args['db_id']] as $menu_item) {
-				$this->up_update_nav_menu_item( $menu_id, 0, $menu_item, $menu_items, $id);
-			}
-		}
 	}
 
 	protected function getExistingMenus() {
@@ -276,15 +257,16 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 	public function getThemeStylesAsCss() {
 		$layout = Upfront_Layout::get_parsed_cascade(); // Use pure static method instead
-		$layout_id = (!empty($layout['specificity']) ? $layout['specificity'] : (!empty($layout['item']) ? $layout['item'] : $layout['type']));
+		$layout_id = ( !empty($layout['specificity']) ? $layout['specificity'] : ( !empty($layout['item']) ? $layout['item'] : $layout['type'] ) );
 		$out = '';
 		// See if there are styles in theme files
 		$styles_root = get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'element-styles';
 		// List subdirectories as element types
 		$element_types = is_dir($styles_root)
 			? array_diff(scandir($styles_root), self::$_EXCLUDED_FILES)
-			: array();
-	
+			: array()
+		;
+
 		$alternate_layout_id = false;
 		if (!empty($layout['item']) && 'single-page' == $layout['item'] && !empty($layout['specificity'])) {
 			$page_id = preg_replace('/.*-([0-9]+)$/', '$1', $layout['specificity']);
@@ -294,12 +276,12 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				break;
 			}
 		}
-	
+
 		// Also check more general cascade styles - works with single post layouts
 		if (empty($alternate_layout_id) && !empty($layout['specificity']) && !empty($layout['item'])) {
 			$alternate_layout_id = $layout['item'];
 		}
-	
+
 		foreach ($element_types as $type) {
 			$style_files = array_diff(scandir($styles_root . DIRECTORY_SEPARATOR . $type), self::$_EXCLUDED_FILES);
 			foreach ($style_files as $style) {
@@ -314,15 +296,15 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				$out .= $style_content;
 			}
 		}
-	
+
 		// Add icon font style if there is active icon font other than UpFont
 		$font = $this->getActiveIconFont();
 		if ($font) {
 			//$out .= "\nin font \n";
 			$longSrc = '';
-			foreach ($font['files'] as $type => $file) {
+			foreach($font['files'] as $type=>$file) {
 				$longSrc .= "url('" . self::THEME_BASE_URL_MACRO . '/icon-fonts/' . $file . "') format('";
-				switch ($type) {
+				switch($type) {
 					case 'eot':
 						$longSrc .= 'embedded-opentype';
 						break;
@@ -338,14 +320,14 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 				}
 				$longSrc .= "'),";
 			};
-	
+
 			$icon_font_style = "@font-face {" .
 				"	font-family: '" . $font['family'] . "';";
 			if (isset($font['files']['eot'])) {
 				$icon_font_style .= "src: url('" . self::THEME_BASE_URL_MACRO . '/icon-fonts/' . $font['files']['eot'] . "');";
 			}
 			$icon_font_style .= "src:" . substr($longSrc, 0, -1) . ';';
-	
+
 			$icon_font_style .=
 				"	font-weight: normal;" .
 				"	font-style: normal;" .
@@ -357,52 +339,48 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		} else {
 			// Load UpfOnt as default
 			$out .= "/* icomoon fonts */
-					@font-face {
-						font-family: 'icomoon';
-						src: url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.eot?taxgy5');
-						src: url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.eot?taxgy5#iefix') format('embedded-opentype'),
-						url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.woff?taxgy5') format('woff'),
-						url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.ttf?taxgy5') format('truetype'),
-						url('" . get_theme_root_uri() . "/upfront/fonts/icomoon.svg?taxgy5#icomoon') format('svg');
-						font-weight: normal;
-						font-style: normal;
-					}
-					.upfront-output-layout .uf_font_icon, .upfront-output-layout .uf_font_icon * {
-						font-family: 'icomoon' !important;
-						speak: none;
-						font-style: normal;
-						font-weight: normal;
-						font-variant: normal;
-						text-transform: none;
-						line-height: 1;
-						position: relative;
-						/* Better Font Rendering =========== */
-						-webkit-font-smoothing: antialiased;
-						-moz-osx-font-smoothing: grayscale;
-					}";
+				@font-face {
+					font-family: 'icomoon';
+					src: url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.eot?taxgy5');
+					src: url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.eot?taxgy5#iefix') format('embedded-opentype'),
+					url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.woff?taxgy5') format('woff'),
+					url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.ttf?taxgy5') format('truetype'),
+					url('" . get_theme_root_uri() ."/upfront/fonts/icomoon.svg?taxgy5#icomoon') format('svg');
+					font-weight: normal;
+					font-style: normal;
+				}
+				.upfront-output-layout .uf_font_icon, .upfront-output-layout .uf_font_icon * {
+					font-family: 'icomoon' !important;
+					speak: none;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					text-transform: none;
+					line-height: 1;
+					position: relative;
+					/* Better Font Rendering =========== */
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+				}";
 		}
-	
+
+		$this->_theme_styles_called = true;
+
 		return $out;
 	}
 
 	private function getActiveIconFont() {
-		$iconFontsSetting = $this->get_theme_settings()->get('icon_fonts');
-	
-		// Überprüfen, ob $iconFontsSetting nicht null ist, bevor es an json_decode() übergeben wird
-		if ($iconFontsSetting !== null) {
-			$fonts = json_decode($iconFontsSetting, true);
-			$active_font = false;
-			if(empty($fonts)) return false;
-			foreach($fonts as $font) {
-				if ($font['active'] === true) {
-					$active_font = $font;
-					break;
-				}
+		//error_log('getting active icon font' . $this->get_theme_settings()->get('icon_fonts'));
+		$fonts = json_decode($this->get_theme_settings()->get('icon_fonts'), true);
+		$active_font = false;
+		if(empty($fonts)) return false;
+		foreach($fonts as $font) {
+			if ($font['active'] === true) {
+				$active_font = $font;
+				break;
 			}
-			return $active_font;
-		} else {
-			return false; // Rückgabewert, wenn get_theme_settings()->get('icon_fonts') null ist
 		}
+		return $active_font;
 	}
 
 	/**
@@ -606,19 +584,17 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		$theme_fonts = $this->get_theme_settings()->get('theme_fonts');
 		if (isset($args['json']) && $args['json']) return $theme_fonts;
 
-		return is_array( $theme_fonts ) ? $theme_fonts : json_decode((string)$theme_fonts);
+		return is_array( $theme_fonts ) ? $theme_fonts : json_decode($theme_fonts);
 	}
 
 	public function getIconFonts($icon_fonts, $args) {
-		if (!empty($icon_fonts) && $icon_fonts !== '[]') {
-			return $icon_fonts;
-		}
-	
+		if (empty($icon_fonts) === false && $icon_fonts !== '[]') return $icon_fonts;
+
 		$icon_fonts = $this->get_theme_settings()->get('icon_fonts');
 		// Always add icomoon which is always available from Upfront theme
-		$icon_fonts_array = is_string($icon_fonts) ? json_decode($icon_fonts, true) : $icon_fonts;
-		$icon_fonts_array = is_array($icon_fonts_array) ? $icon_fonts_array : array(); // doublecheck we have something useful
-	
+		$icon_fonts_array = is_array( $icon_fonts ) ? $icon_fonts : json_decode($icon_fonts);
+		$icon_fonts_array = is_array( $icon_fonts_array ) ? $icon_fonts_array : array(); // doublecheck we have something useful
+
 		array_unshift($icon_fonts_array, array(
 			'name' => 'UpFont',
 			'family' => 'icomoon',
@@ -631,13 +607,10 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			'active' => false,
 			'type' => 'default'
 		));
-	
-		if (isset($args['json']) && $args['json']) {
-			return json_encode($icon_fonts_array);
-		}
-	
-		return $icon_fonts_array;
-	}	
+		if (isset($args['json']) && $args['json']) return json_encode($icon_fonts_array);
+
+		return $icon_fonts_array();
+	}
 
 	public function getAdditionalFonts() {
 		$additional_fonts = $this->get_theme_settings()->get('additional_fonts');
@@ -682,7 +655,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$button_presets, $as_array);
+		return json_decode($button_presets, $as_array);
 	}
 
 	public function getTabPresets($presets, $args) {
@@ -696,7 +669,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getPostsPresets($presets, $args) {
@@ -710,7 +683,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getPostPresets($presets, $args) {
@@ -724,7 +697,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getCommentPresets($presets, $args) {
@@ -738,19 +711,21 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
-	public function getLoginPresets($presets = null, $args = array()) {
-		if (!isset($presets)) {
-			$presets = $this->get_theme_settings()->get('login_presets');
+	public function getLoginPresets($presets, $args) {
+		if (empty($presets) === false) return $presets;
+
+		$presets = $this->get_theme_settings()->get('login_presets');
+		if (isset($args['json']) && $args['json']) return $presets;
+
+		$as_array = false;
+		if (isset($args['as_array']) && $args['as_array']) {
+			$as_array = true;
 		}
-	
-		if (!empty($presets)) {
-			return json_decode($presets, $as_array);
-		} else {
-			return $presets;
-		}
+
+		return json_decode($presets, $as_array);
 	}
 
 	public function get_post_data_presets ($presets, $args) {
@@ -793,18 +768,18 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 	 */
 	private function _get_prepared_presets ($key, $args) {
 		$presets = $this->get_theme_settings()->get($key);
-		if (isset($args['json']) && $args['json']) return $presets;
+		
+		// Check if presets is not null or not empty
+		if (!is_string($presets) || trim($presets) === '') {
+			return $args['json'] ? null : ($args['as_array'] ? [] : null);
+		}
 
 		$as_array = false;
 		if (isset($args['as_array']) && $args['as_array']) {
 			$as_array = true;
 		}
 
-		if ($presets !== null) {
-			return json_decode($presets, $as_array);
-		} else {
-			return null;
-		}
+		return json_decode($presets, $as_array);
 	}
 
 	public function getAccordionPresets($presets, $args) {
@@ -813,7 +788,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 		$presets = $this->get_theme_settings()->get('accordion_presets');
 
 		// Juggle the presets to add some defaults because presets migration to new settings
-		$presetsArray = json_decode((string)$presets, true);
+		$presetsArray = json_decode($presets, true);
 		if (is_array($presetsArray)) {
 			foreach($presetsArray as $index=>$preset) {
 				if (isset($preset['active-use-color']) === false) {
@@ -834,7 +809,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getContactPresets($presets, $args) {
@@ -848,7 +823,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getGalleryPresets($presets, $args) {
@@ -862,22 +837,28 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getImagePresets($presets, $args) {
-		if (empty($presets) === false) return $presets;
-
-		$presets = $this->get_theme_settings()->get('image_presets');
-		if (isset($args['json']) && $args['json']) return $presets;
-
-		$as_array = false;
-		if (isset($args['as_array']) && $args['as_array']) {
-			$as_array = true;
+		if (!empty($presets)) {
+			return $presets; // Wenn $presets nicht leer ist, direkt zurückgeben
 		}
-
-		return json_decode((string)$presets, $as_array);
+	
+		// Wenn $presets leer ist, versuchen, die Image-Presets zu erhalten
+		$presets = $this->get_theme_settings()->get('image_presets');
+	
+		if (isset($args['json']) && $args['json']) {
+			return $presets; // Falls 'json' in $args gesetzt ist und true ist, einfach $presets zurückgeben
+		}
+	
+		// Überprüfen, ob 'as_array' in $args gesetzt und true ist
+		$as_array = isset($args['as_array']) && $args['as_array'];
+	
+		// Jetzt $presets decodieren, wobei $as_array bestimmt, ob as Array oder Objekt decodiert wird
+		return json_decode($presets ?? '[]', $as_array); // Standardwert '[]' verwenden, falls $presets null ist
 	}
+	
 
 	public function getNavPresets($presets, $args) {
 		if (empty($presets) === false) return $presets;
@@ -890,7 +871,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getSliderPresets($presets, $args) {
@@ -904,7 +885,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getTextPresets($presets, $args) {
@@ -918,7 +899,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public function getWidgetPresets($presets, $args) {
@@ -932,7 +913,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 			$as_array = true;
 		}
 
-		return json_decode((string)$presets, $as_array);
+		return json_decode($presets, $as_array);
 	}
 
 	public static function getPostImageVariants($image_variants = null, $args = null) {

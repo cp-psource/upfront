@@ -5,6 +5,10 @@ if (!class_exists('Upfront_Presets_Server')) {
 }
 
 class Upfront_Post_Presets_Server extends Upfront_Presets_Server {
+
+	public $elementName;
+	public $db_key;
+	
 	protected $isThisPostServer = true;
 	private static $instance;
 

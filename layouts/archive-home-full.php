@@ -7,7 +7,7 @@ $extended = $extended ? $extended : false;
 
 $main = upfront_create_region(array(
 	'name' => "main", 
-	'title' => __("Main Area", 'upfront'),
+	'title' => __("Main Area"),
 	'scope' => "local",
 	'type' => 'full',
 	'default' => true
@@ -36,7 +36,7 @@ $main->add_element('PlainTxt', array(
 	'margin_left' => 1,
 	'new_line' => false,
 	'options' => array(
-		'content' => __("<p>Text element with no background color applied<p>", 'upfront'),
+		'content' => "<p>Text element with no background color applied<p>",
 		"class" => "c24 upfront-plain_txt",
 	)
 ));

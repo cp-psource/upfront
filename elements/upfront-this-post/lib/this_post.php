@@ -658,22 +658,22 @@ class Upfront_ThisPostView extends Upfront_Object {
 
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Beitrag', 'upfront'),
-			'thrashed_post' => __('Dieser %s wurde gelöscht. Um es zu bearbeiten, <a class="ueditor_restore">stelle es %s wieder her</a>.', 'upfront'),
-			'refreshing' => __('Aktualisiere Beitrag...', 'upfront'),
-			'here_we_are' => __('Hier sind wir!', 'upfront'),
-			'post_author' => __('Beitragsautor', 'upfront'),
-			'post_date' => __('Beitragsdatum', 'upfront'),
-			'categories' => __('Kategorien', 'upfront'),
+			'element_name' => __('This Post', 'upfront'),
+			'thrashed_post' => __('This %s has been deleted. To edit it, <a class="ueditor_restore">restore the %s</a>.', 'upfront'),
+			'refreshing' => __('Refreshing post ...', 'upfront'),
+			'here_we_are' => __('Here we are!', 'upfront'),
+			'post_author' => __('Post Author', 'upfront'),
+			'post_date' => __('Post Date', 'upfront'),
+			'categories' => __('Categories', 'upfront'),
 			'tags' => __('Tags', 'upfront'),
-			'comments_count' => __('Kommentarzähler', 'upfront'),
-			'featured_image' => __('Beitragsbild', 'upfront'),
-			'show_post_data' => __('Zeige die folgenden Beitragsdaten:', 'upfront'),
-			'post_data' => __('Beitragsdaten', 'upfront'),
-			'post_settings' => __('Beitragseinstellungen', 'upfront'),
-			'featured_image_option' => __('Vorgestellte Bildoption', 'upfront'),
-			'hide_featured_image' => __('Beitragsbild ausblenden', 'upfront'),
-			'full_featured_image' => __('Beitragsbild in voller Größe anzeigen', 'upfront'),
+			'comments_count' => __('Comments count', 'upfront'),
+			'featured_image' => __('Featured image', 'upfront'),
+			'show_post_data' => __('Show the following Post Data:', 'upfront'),
+			'post_data' => __('Post Data', 'upfront'),
+			'post_settings' => __('Post settings', 'upfront'),
+			'featured_image_option' => __('Featured Image Option', 'upfront'),
+			'hide_featured_image' => __('Hide Featured Image ', 'upfront'),
+			'full_featured_image' => __('Show Full-Size featured image', 'upfront'),
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)

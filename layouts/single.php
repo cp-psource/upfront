@@ -9,7 +9,7 @@ $right_sidebar = !empty($right_sidebar) ? $right_sidebar : false;
 
 $main = upfront_create_region(array(
 	'name' => "main",
-	'title' => __("Hauptbereich", 'upfront'),
+	'title' => __("Main Area"),
 	'scope' => "local",
 	'type' => $type,
 	'default' => true,
@@ -45,7 +45,7 @@ $main->add_element("PostData", array (
     "date_posted_format" => "F j, Y g:i a",
     "content" => "content",
     "post-part-date_posted" => "<div class=\"upostdata-part date_posted\">
-	Veröffentlicht am <span class=\"date\">{{date}}</span></div>",
+	Posted on <span class=\"date\">{{date}}</span></div>",
     "post-part-title" => "<div class=\"upostdata-part title\">
 	<h1>{{title}}</h1>
 </div>
@@ -396,7 +396,7 @@ $main->add_element("PostData", array (
 if ( $left_sidebar ){
 	$left = upfront_create_region(array(
 		'name' => "left-sidebar",
-		'title' => __("Linke Seitenleiste", 'upfront'),
+		'title' => __("Left Sidebar"),
 		'scope' => "local",
 	), array(
 		'col' => 6,
@@ -412,7 +412,7 @@ if ( $left_sidebar ){
 		'margin_left' => 1,
 		'new_line' => false,
 		'options' => array(
-			'content' => "Textelement in der linken Seitenleiste",
+			'content' => "Text element on left sidebar",
 			"class" => "c24 upfront-plain_txt",
 		)
 	));
@@ -423,7 +423,7 @@ if ( $left_sidebar ){
 if ( $right_sidebar ){
 	$right = upfront_create_region(array(
 		'name' => "right-sidebar",
-		'title' => __("Rechte Seitenleiste", 'upfront'),
+		'title' => __("Right Sidebar"),
 		'scope' => "local",
 	), array(
 		'col' => 6,
@@ -439,7 +439,7 @@ if ( $right_sidebar ){
 		'margin_left' => 1,
 		'new_line' => false,
 		'options' => array(
-			'content' => "Textelement in der rechten Seitenleiste",
+			'content' => "Text element on right sidebar",
 			"class" => "c24 upfront-plain_txt",
 		)
 	));

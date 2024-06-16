@@ -17,7 +17,7 @@
 			}
 			else{
 				if(isMethod)
-					$.fail('Can\'t call the ueditor method ' + args + '. The slider is not initialized');
+					$.error('Can\'t call the ueditor method ' + args + '. The slider is not initialized');
 				else {
 					// Initialize slider
 					$slider.data('uslider', new JQueryUslider($slider, args));

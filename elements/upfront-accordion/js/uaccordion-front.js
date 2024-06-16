@@ -18,15 +18,15 @@
 		 */
 		$('.accordion-panel-title').keydown(function(e) {
 			if (e.which == 13) {
-				$(this).on('click',);
+				$(this).click();
 			}
 
 			if (e.which == 38 || e.which == 37) {
-				$(this).parent().prev('.accordion-panel').find('.accordion-panel-title').focus().on('click',);
+				$(this).parent().prev('.accordion-panel').find('.accordion-panel-title').focus().click();
 			}
 			
 			if (e.which == 40 || e.which == 39) {
-				$(this).parent().next('.accordion-panel').find('.accordion-panel-title').focus().on('click',);
+				$(this).parent().next('.accordion-panel').find('.accordion-panel-title').focus().click();
 			}
 		});
 	});

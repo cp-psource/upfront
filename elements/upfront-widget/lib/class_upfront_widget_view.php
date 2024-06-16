@@ -2,6 +2,8 @@
 
 class Upfront_UwidgetView extends Upfront_Object {
 
+	public $_parent_data;
+
 	public function get_markup () {
 		$element_id = $this->_get_property('element_id');
 		$element_id = $element_id ? "id='{$element_id}'" : '';
@@ -84,23 +86,23 @@ class Upfront_UwidgetView extends Upfront_Object {
 	public static function get_l10n ($key=false) {
 		$l10n = array(
 			'element_name' => __('Widget', 'upfront'),
-			'loading' => __('Lade Widgets...', 'upfront'),
-			'done' => __('Erledigt!', 'upfront'),
+			'loading' => __('Loading...', 'upfront'),
+			'done' => __('Done!', 'upfront'),
 			'widget' => __('Widget', 'upfront'),
-			'settings' => __('Widget Einstellungen', 'upfront'),
-			'general_settings' => __('Allgemeine Einstellungen', 'upfront'),
-			'widget_select' => __('Wähle ein Widget aus', 'upfront'),
-			'select_widget' => __('Bitte wähle das Widget in den Einstellungen aus', 'upfront'),
-			'select_one' => __('Bitte Widget auswählen', 'upfront'),
+			'settings' => __('Widget settings', 'upfront'),
+			'general_settings' => __('General Settings', 'upfront'),
+			'widget_select' => __('Select Widget', 'upfront'),
+			'select_widget' => __('Please select widget in settings', 'upfront'),
+			'select_one' => __('Please select widget', 'upfront'),
 			'css' => array(
-				'container_label' => __('Widget-Container', 'upfront'),
-				'container_info' => __('Der Container, der das Widget-Element umschließt', 'upfront'),
-				'links_label' => __('Widget Links', 'upfront'),
-				'links_info' => __('Widget Links', 'upfront'),
+				'container_label' => __('Widget container', 'upfront'),
+				'container_info' => __('The container that wraps widget element', 'upfront'),
+				'links_label' => __('Widget links', 'upfront'),
+				'links_info' => __('Widget links', 'upfront'),
 			),
-			'render_error' => __('Hoppla, beim Rendern des Widgets scheint etwas schief gelaufen zu sein', 'upfront'),
-			'not_shown_to_visitors' => __('Diese Nachricht wird Deinen Besuchern nicht angezeigt', 'upfront'),
-			'missing_admin_data' => __('Wir konnten keine Felder für das ausgewählte Widget finden. Etwas könnte falsch sein.', 'upfront'),
+			'render_error' => __('Ooops, something seems to have gone wrong with rendering the widget', 'upfront'),
+			'not_shown_to_visitors' => __('This message will not be shown to your visitors', 'upfront'),
+			'missing_admin_data' => __('We haven\'t been able to find any fields for the selected widget. Something could be wrong.', 'upfront'),
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)

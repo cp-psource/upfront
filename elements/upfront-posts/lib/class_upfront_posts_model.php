@@ -54,8 +54,8 @@ class Upfront_Posts_Model {
 	 */
 	private static function _get_model_class ($data) {
 		$list_type = !empty($data['list_type']) ? $data['list_type'] : self::DEFAULT_LIST_TYPE;
-		$class_name = __CLASS__ . '_' . ucfirst($list_type);
-		if (!class_exists($class_name)) $class_name = __CLASS__ . '_' . ucfirst(self::DEFAULT_LIST_TYPE);
+		$class_name = get_class() . '_' . ucfirst($list_type);
+		if (!class_exists($class_name)) $class_name = get_class() . '_' . ucfirst(self::DEFAULT_LIST_TYPE);
 		return $class_name;
 	}
 
