@@ -1,8 +1,8 @@
-Eine benutzerfreundliche, extrem vielseitige und unendlich anpassbare Drag-and-Drop-ClassicPress-Designplattform.
+# UpFront Framework
 
-An easy-to-use, extremely versatile, and infinitely customizable drag-and-drop ClassicPress design platform.
+## An easy-to-use, extremely versatile, and infinitely customizable drag-and-drop ClassicPress design platform.
 
-== Description ==
+### Description
 
 Grenzenlose Theme-Möglichkeiten
 Stelle Dir vor, Du öffnest Photoshop, entwirfst Dein Layout, klickst auf Speichern und das war's – es ist online und funktioniert.
