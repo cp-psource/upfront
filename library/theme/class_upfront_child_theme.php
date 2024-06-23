@@ -184,14 +184,16 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 	}
 
 	protected function checkMenusExist() {
-		$menus = json_decode($this->get_theme_settings()->get('menus'), true);
+		$theme_settings = $this->get_theme_settings()->get('menus');
+		$menus = !is_null($theme_settings) ? json_decode($theme_settings, true) : [];
+	
 		if (empty($menus)) return;
-
+	
 		$existing_menus = $this->getExistingMenus();
-
-		foreach($menus as $menu) {
+	
+		foreach ($menus as $menu) {
 			if (in_array($menu['slug'], $existing_menus)) continue;
-
+	
 			// Create menu if it does not exists
 			$new_menu_id = wp_create_nav_menu($menu['name']);
 			if (is_numeric($new_menu_id)) { // The menu ID has to be numeric!
@@ -200,33 +202,21 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 					'menu-name' => $menu['name'], // This member is required because of the way the `wp_update_nav_menu_object` works in WPv4.0 (direct array member access without existence check)
 				));
 			}
-
+	
 			if (empty($menu['items'])) continue;
 			$menu_items = array();
-			foreach($menu['items'] as $menu_item) {
+			foreach ($menu['items'] as $menu_item) {
 				$menu_item['url'] = str_replace('%siteurl%', home_url(), $menu_item['url']);
 				$menu_item['url'] = str_replace('{{upfront:home_url}}', home_url(), $menu_item['url']);
 				$menu_items[$menu_item['menu_item_parent']][] = $menu_item;
 			}
-			foreach($menu_items[0] as $menu_item) {
-				$this->up_update_nav_menu_item( $new_menu_id, 0, $menu_item, $menu_items);
+			if (!empty($menu_items[0])) {
+				foreach ($menu_items[0] as $menu_item) {
+					$this->up_update_nav_menu_item($new_menu_id, 0, $menu_item, $menu_items);
+				}
 			}
-
-			/*
-			foreach($menu['items'] as $menu_item) {
-				wp_update_nav_menu_item(
-					$new_menu_id,
-					0,
-					array(
-						'menu-item-url' => $menu_item['url'],
-						'menu-item-title' => $menu_item['title'],
-						'menu-item-position' => $menu_item['menu_order'],
-						'menu-item-status' => 'publish'
-					)
-				);
-			}*/
 		}
-	}
+	}	
 
 	protected function up_update_nav_menu_item($menu_id, $db_id, $args = array(), $menu_items, $parent_id = 0) {
 		if (is_wp_error($menu_id)) return false; // Prevent notice if we received an error instead of an ID

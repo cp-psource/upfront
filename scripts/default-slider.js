@@ -396,14 +396,23 @@
 			};
 		init_bg_slider();
 
-		// Refresh size on window.load and window.resize
-		$(window).on('load', function(){
+		// Funktion zum Initialisieren und Triggern des Refreshs
+		function triggerRefresh() {
 			$('.upfront-inline_post-slider, .upfront-bg-slider').trigger('refresh');
-		});
-		var lazyInitBgSlider = throttle(function(){
+		}
+
+		// Prüfen, ob das Fenster bereits geladen ist
+		if (document.readyState === "complete") {
+			triggerRefresh();
+		} else {
+			$(window).on('load', triggerRefresh);
+		}
+
+		var lazyInitBgSlider = throttle(function() {
 			init_bg_slider();
 			$('.upfront-inline_post-slider, .upfront-bg-slider').trigger('refresh');
 		}, 100);
+
 		$(window).on('resize', lazyInitBgSlider);
 
 		// Integration with Upfront editor
