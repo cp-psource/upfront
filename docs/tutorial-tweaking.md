@@ -61,11 +61,11 @@ blockquote.upfront-quote-alternative:before, blockquote.upfront-quote-alternativ
 }
 </pre>
 
-This is pretty straight-forward CSS, but what is that <pre>#ufc3</pre> thingy? That’s not a valid hexadecimal color you would say, and you would be absolutely right.
+This is pretty straight-forward CSS, but what is that `#ufc3` thingy? That’s not a valid hexadecimal color you would say, and you would be absolutely right.
 
-In fact, <pre>#ufc3</pre> is a built-in Upfront variable. This allows me to use Theme Colors that we defined in the first article in this series within the Code element.
+In fact, `#ufc3` is a built-in Upfront variable. This allows me to use Theme Colors that we defined in the first article in this series within the Code element.
 
-Color variables begin with 0 and go to 9, so to refer to the first theme color you defined, you would use <pre>#ufc0</pre>, <pre>#ufc1</pre> for the second theme color and so on. The rest of the code is pretty common. Upfront comes with two blockquote styles; we are using the blockquote selector to style the first one, and <pre>blockquote.upfront-quote-alternative</pre> for the alternative blockquote style.
+Color variables begin with 0 and go to 9, so to refer to the first theme color you defined, you would use `#ufc0`, `#ufc1` for the second theme color and so on. The rest of the code is pretty common. Upfront comes with two blockquote styles; we are using the blockquote selector to style the first one, and `blockquote.upfront-quote-alternative` for the alternative blockquote style.
 
 Now, I am going to show you a little CSS trick to make our first blockquote look a bit more like a speech bubble. Add the following code to your blockquote styles:
 
@@ -84,7 +84,7 @@ blockquote:after {
 }
 </pre>
 
-Here we are using <pre>:after</pre>, which is a pseudo-element, and it’s an extremely powerful tool in your CSS arsenal. There’s a [superb article by Chris Coyier](https://css-tricks.com/pseudo-element-roundup/) (who you really should follow on Twitter) about cool things you can do with pseudo elements.
+Here we are using `:after`, which is a pseudo-element, and it’s an extremely powerful tool in your CSS arsenal. There’s a [superb article by Chris Coyier](https://css-tricks.com/pseudo-element-roundup/) (who you really should follow on Twitter) about cool things you can do with pseudo elements.
 
 ![Blockquote styling](images/blockquote-styling.gif)
 
@@ -203,9 +203,9 @@ Just like global typography, Upfront allows you to dig a little deeper and and c
 
 Let’s explore this further by creating an animated button style.
 
-Drag a new Button Element onto your site, and then go into the Settings and create a new preset. I am calling mine <pre>NoFill</pre>.
+Drag a new Button Element onto your site, and then go into the Settings and create a new preset. I am calling mine `NoFill`.
 
-Let’s give this button a 3px wide border, and select one of our theme colors for it (I have gone with the green, which for me happens to be <pre>#ufc0</pre>). I have also made the background transparent and given button text the same color we used before.
+Let’s give this button a 3px wide border, and select one of our theme colors for it (I have gone with the green, which for me happens to be `#ufc0`). I have also made the background transparent and given button text the same color we used before.
 
 For the hover state, I have kept all values the same, but made the button text white. Now before proceeding further, let’s click **OK** and save the layout (always remember to save your progress!).
 
@@ -213,7 +213,7 @@ Now at this stage all we have is a button that changes its text color on hover. 
  
 Once again, I won’t go into the details here, just add the code in the snippet below to your code panel, give the style a name (I have gone for “hover-effect”) and click **Save**.
 
-Now hover over your button and you will see that it now has an animated effect. Pretty cool, huh? If you are not getting the color you have selected for the border you can adjust it in the code (line 8, <pre>background-color:#ufc0;</pre>) to your desired color variable or any color in general.
+Now hover over your button and you will see that it now has an animated effect. Pretty cool, huh? If you are not getting the color you have selected for the border you can adjust it in the code (line 8, `background-color:#ufc0;`) to your desired color variable or any color in general.
 
 ![Image caption hover](images/image-caption-hover.gif)
 
@@ -246,7 +246,7 @@ Now save your style (I called mine “caption-transform”) and again, save the 
 
 You will notice that we have not used any colors in the CSS, meaning that you can still change the caption background and text colors via the element settings and text editing experience. This means you can have a bunch of different colored captions that will use this behavior.
 
-You will notice that I have offset my caption to begin 10px above and to the left of the image itself. This was my stylistic preference. If you would prefer to have the caption placed directly over the image, you need to modify line 10 <pre>transform:translate(-10px,-10px);</pre> to look like <pre>transform:translate(0px,0px);</pre>.
+You will notice that I have offset my caption to begin 10px above and to the left of the image itself. This was my stylistic preference. If you would prefer to have the caption placed directly over the image, you need to modify line 10 `transform:translate(-10px,-10px);` to look like `transform:translate(0px,0px);`.
 
 Note: Don’t forget to run that CSS through the pre-fixing app I mentioned before. I usually write my CSS un-prefixed in Upfront and once I am happy with the result, I’ll run it through the app. I find that to be the most efficient way to ensure my CSS is correct.
 
@@ -278,7 +278,7 @@ And here’s what adding the code looks like in action using Upfront:
 Styling the navigation to match our theme design.
 In the previous post in this series ([UpFront-Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)), we changed the appearance of the navigation in the header to a vertical layout, but didn’t go further into customizing it.
 
-I have created a new style for my navigation called <pre>parrot-main-nav</pre> and added the following CSS to match my design:
+I have created a new style for my navigation called `parrot-main-nav`and added the following CSS to match my design:
 
 <pre>
 .upfront-navigation {
