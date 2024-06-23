@@ -11,13 +11,15 @@ This is the second post in our series introducing how to use Upfront. We’re ad
 ![Edit regions](images/edit-regions.gif)
 
 ### Over the course of this series we will use lots of examples to show you how to use Upfront:
-Part 1: The Basics, Theme Colors and Typography
-Part 2: Structuring Your Site with Regions
-Part 3: Laying Out Your Site with Elements
-Part 4: Tweaking Elements and Custom Code
-Part 5: Adding Plugins and Styling Gravity Forms
-Part 6: Creating Responsive Websites
-Part 7: Working with Pages and Posts
+
+- **Part 1:** [The Basics, Theme Colors and Typography](https://cp-psource.github.io/upfront/tutorial-basics.html)
+- **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
+- **Part 3:** [Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)
+- **Part 4:** [Tweaking Elements and Custom Code](https://cp-psource.github.io/upfront/tutorial-tweaking.html)
+- **Part 5:** [Adding Plugins and Styling Gravity Forms](https://cp-psource.github.io/upfront/tutorial-plugins.html)
+- **Part 6:** [Creating Responsive Websites](https://cp-psource.github.io/upfront/tutorial-responsive.html)
+- **Part 7:** [Working with Pages and Posts](https://cp-psource.github.io/upfront/tutorial-content.html)
+
 We’re taking the Spirit theme and completely reworking its regions, content, typography and other elements, and turning it into a product theme, complete with its own branding, colors, typography, buttons, images, contact form and other elements.
 
 In the last post in this series, we updated theme colors, typography and added custom fonts. Here’s a look at our progress so far:
@@ -40,10 +42,10 @@ As you scroll through Spirit, a small pen icon will appear in the top-right corn
 
 When you click on the icon, the page will transform to show you a few different options.
 
-In the top left-hand corner, the region’s dimensions will be displayed
-In the top right-hand corner there’s a red “x” icon (for deleting a region), and underneath that a green cog icon (region settings)
-There are also yellow “+” icons to the top, left, right and bottom of the page (for inserting a new region)
-Lastly, a green “Finish editing background” option will display (for saving changes to the region)
+- In the top left-hand corner, the region’s dimensions will be displayed
+- In the top right-hand corner there’s a red “x” icon (for deleting a region), and underneath that a green cog icon (region settings)
+- There are also yellow “+” icons to the top, left, right and bottom of the page (for inserting a new region)
+- Lastly, a green “Finish editing background” option will display (for saving changes to the region)
 
 ![Spirit header](images/spirit-header-small.png)
 
@@ -62,7 +64,7 @@ There are a bunch of different types of regions you can use to build your site. 
 ![Fullscreen region settings](images/spirit-header-small.png)
 Fullscreen region settings
 
-## Fullscreen
+### Fullscreen
 
 Only header regions allow a fullscreen option. As the name implies, this region fills the entire browser screen from top to bottom and left to right.
 
@@ -70,13 +72,13 @@ This is a great option if you want to use a hero image as your header, or even c
 
 This type of region provides two further options:
 
-## Add Navigation Region
+### Add Navigation Region
 
 This is essentially a sub-region, which allows you to display navigation within the header region. What’s great about this option is that when users access your site, they will be able to see your navigation displayed “above the fold” in their browser window.
 
 The default is no navigation, or show it at the top or bottom of the region.
 
-## Element Behavior
+### Element Behavior
 
 You can choose your fullscreen header to “Keep Position” or “Keep Ratio.”
 
@@ -87,7 +89,7 @@ Keep Ratio means those same elements will automatically adjust their position wh
 ![100% Wide region settings](images/100-wide.png)
 100% Wide region settings
 
-## 100% Wide
+### 100% Wide
 
 Display regions full width left to right, but not top to bottom.
 
@@ -96,7 +98,7 @@ Use this type of region if you don’t want your header to fill the browser wind
 ![Contained region settings](images/contained1.png)
 Contained region settings
 
-## Contained
+### Contained
 
 The Contained option allows you to letterbox your site.
 
@@ -104,14 +106,16 @@ You can control the container width by going to Theme Settings and clicking on E
 
 You can also change the global background type to a solid color, image or even video to display across your whole site.
 
-Background Types
+### Background Types
+
 You don’t have to settle for boring colors for your backgrounds. Upfront allows you to have:
 
-Solid Color – OK, well you can have colors if you want, but they don’t have to be boring! Add your own hexadecimal code or use the color picker.
-Image – When you upload an image, you can specify it’s positioning (full width, tiled/pattern or fixed). If you choose the fixed option, you can even specify the image’s exact X and Y positioning. Talk about precise!
-Video – Add a video as a background
-Image Slider – Easily add a slider any number of images, specify.
-Map – This option uses Google Maps, so all you need to do it enter an address, select your zoom, choose a may style (roadmap, satellite, hybrid, or terrain), and check which controls you want to also display (pan, map type, scale, street view, overview map).
+- **Solid Color** – OK, well you can have colors if you want, but they don’t have to be boring! Add your own hexadecimal code or use the color picker.
+- **Image** – When you upload an image, you can specify it’s positioning (full width, tiled/pattern or fixed). If you choose the fixed option, you can even specify the image’s exact X and Y positioning. Talk about precise!
+- **Video** – Add a video as a background
+- **Image Slider** – Easily add a slider any number of images, specify.
+- **Map** – This option uses Google Maps, so all you need to do it enter an address, select your zoom, choose a may style (roadmap, satellite, hybrid, or terrain), and check which controls you want to also display (pan, map type, scale, street view, overview map).
+
 Now that we know how to update the header image, let’s go ahead and do that:
 
 ![regions](images/regions.gif)
@@ -129,31 +133,31 @@ Now that we’ve covered the main stuff, let’s look at other region options th
 ![Auto-resizing regions](images/resize.png)
 Auto-resizing regions
 
-## Auto-resize
+### Auto-resize
 
 The 100% Wide and Contained regions provide an auto-resize option. The best way to explain how it works is with a scenario: Let’s say I created a region that was 400px high. If I turned auto-resize off, Upfront would not allow that region to automatically re-size if I tried to stack more elements that the region’s height. But if I turned auto-resize on and then tried to either stack elements or insert an element taller than the region, the region would automatically update to the require height.
 
 ![Name regions for consistency](images/name-region.png)
 Name regions for consistency
 
-## Naming Regions
+### Naming Regions
 You can name regions in the settings for pure convenience! I should also add that when you name a region is passes that name as an ID, which is handy if you want to play with custom CSS. We’ll look at this in an upcoming post.
 
 ![Add sticky regions, such as navigation](images/sticky.png)
 Add sticky regions, such as navigation
 
-## Sticky Regions
+### Sticky Regions
 
 You can make regions “stick,” which is particularly helpful if you want to add navigation that is always visible on a page. Note that it’s only possible to make one region sticky at a time.
 
 ![Add sidebars to your site where you want them](images/sidebar.png)
 Add sidebars to your site where you want them
 
-## Sidebars
+### Sidebars
 
 Just as you would add a new region, click the left and right yellow “+” icons to create sidebars. In the settings, you can then choose a background type, along with the full width, tiled/pattern, and fixed position image variations.
 
-## Global Regions
+### Global Regions
 
 Using global regions is a neat way to display the same header or footer, or even both, across your site, saving you from having to duplicate your content.
 
@@ -163,20 +167,20 @@ Upfront automatically recognizes the top and bottom regions on your site as the 
 
 So again, let’s recap what we’ve accomplished so far in putting together our new site:
 
-We’ve deleted a bunch of regions to reshape the layout of our site
-We’ve updated the header region to display our own image
-We’ve added a full width video
+- We’ve deleted a bunch of regions to reshape the layout of our site
+- We’ve updated the header region to display our own image
+- We’ve added a full width video
+
 In the next post in this series, we’ll continue working on our new site, this time focusing on how to lay out the site with elements, such as images, text and buttons.
 
-Read the next post in this series: Part 3: Laying Out Your Site with Elements
+**Read the next post in this series:** [Part 3: Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)
 
-If you have any questions about what we’ve covered in this post, feel free to ask away in the comments below.
+### How to Use Upfront Series:
 
-How to Use Upfront Series:
-Part 1: The Basics, Theme Colors and Typography
-Part 2: Structuring Your Site with Regions
-Part 3: Laying Out Your Site with Elements
-Part 4: Tweaking Elements and Custom Code
-Part 5: Adding Plugins and Styling Gravity Forms
-Part 6: Creating Responsive Websites
-Part 7: Working with Pages and Posts
+- **Part 1:** [The Basics, Theme Colors and Typography](https://cp-psource.github.io/upfront/tutorial-basics.html)
+- **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
+- **Part 3:** [Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)
+- **Part 4:** [Tweaking Elements and Custom Code](https://cp-psource.github.io/upfront/tutorial-tweaking.html)
+- **Part 5:** [Adding Plugins and Styling Gravity Forms](https://cp-psource.github.io/upfront/tutorial-plugins.html)
+- **Part 6:** [Creating Responsive Websites](https://cp-psource.github.io/upfront/tutorial-responsive.html)
+- **Part 7:** [Working with Pages and Posts](https://cp-psource.github.io/upfront/tutorial-content.html)

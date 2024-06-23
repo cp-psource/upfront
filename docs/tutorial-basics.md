@@ -4,14 +4,15 @@ Mit Upfront können Sie das Design Ihrer Website so einfach anpassen, dass Sie n
 Dank des leistungsstarken und intuitiven Designs der Theme-Plattform können Sie den gesamten Inhalt Ihrer Website per Drag-and-Drop im Front-End bearbeiten und bearbeiten. Das Erstellen einer Website nimmt überhaupt keine Zeit in Anspruch. Es ist wirklich so einfach.
 In dieser siebenteiligen Serie, die die Verwendung von Upfront vorstellt, zeige ich Ihnen, wie Sie ein vorhandenes Upfront-Theme – in diesem Fall Spirit – in eine völlig andere Website umwandeln, komplett mit eigenem Branding, Bildern, benutzerdefinierten Schriftarten usw responsives Layout.
 
-Im Verlauf dieser Serie zeigen wir Ihnen anhand zahlreicher Beispiele, wie Sie Upfront nutzen:
-Teil 1: Die Grundlagen, Themenfarben und Typografie
-Teil 2: Strukturieren Ihrer Website mit Regionen
-Teil 3: Gestalten Sie Ihre Website mit Elementen
-Teil 4: Elemente und benutzerdefinierten Code optimieren
-Teil 5: Plugins hinzufügen und Gravity-Formulare gestalten
-Teil 6: Responsive Websites erstellen
-Teil 7: Arbeiten mit Seiten und Beiträgen
+## Im Verlauf dieser Serie zeigen wir Ihnen anhand zahlreicher Beispiele, wie Sie Upfront nutzen:
+
+- **Part 1:** [The Basics, Theme Colors and Typography](https://cp-psource.github.io/upfront/tutorial-basics.html)
+- **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
+- **Part 3:** [Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)
+- **Part 4:** [Tweaking Elements and Custom Code](https://cp-psource.github.io/upfront/tutorial-tweaking.html)
+- **Part 5:** [Adding Plugins and Styling Gravity Forms](https://cp-psource.github.io/upfront/tutorial-plugins.html)
+- **Part 6:** [Creating Responsive Websites](https://cp-psource.github.io/upfront/tutorial-responsive.html)
+- **Part 7:** [Working with Pages and Posts](https://cp-psource.github.io/upfront/tutorial-content.html)
 
 Wir werden das Spirit-Thema aufgreifen und seine Regionen, Inhalte, Typografie und andere Elemente komplett überarbeiten und Folgendes umwandeln:
 
@@ -117,10 +118,10 @@ Lesen Sie den nächsten Beitrag in dieser Reihe: Teil 2: Strukturieren Sie Ihre 
 Wenn Sie Fragen zu dem haben, was wir in diesem Beitrag behandelt haben, können Sie uns diese gerne in den Kommentaren unten stellen.
 
 So verwenden Sie Upfront-Serien:
-Teil 1: Die Grundlagen, Themenfarben und Typografie
-Teil 2: Strukturieren Ihrer Website mit Regionen
-Teil 3: Gestalten Sie Ihre Website mit Elementen
-Teil 4: Elemente und benutzerdefinierten Code optimieren
-Teil 5: Plugins hinzufügen und Gravity-Formulare gestalten
-Teil 6: Responsive Websites erstellen
-Teil 7: Arbeiten mit Seiten und Beiträgen
+- **Part 1:** [The Basics, Theme Colors and Typography](https://cp-psource.github.io/upfront/tutorial-basics.html)
+- **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
+- **Part 3:** [Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)
+- **Part 4:** [Tweaking Elements and Custom Code](https://cp-psource.github.io/upfront/tutorial-tweaking.html)
+- **Part 5:** [Adding Plugins and Styling Gravity Forms](https://cp-psource.github.io/upfront/tutorial-plugins.html)
+- **Part 6:** [Creating Responsive Websites](https://cp-psource.github.io/upfront/tutorial-responsive.html)
+- **Part 7:** [Working with Pages and Posts](https://cp-psource.github.io/upfront/tutorial-content.html)
