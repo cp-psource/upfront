@@ -1390,7 +1390,7 @@ msgid "Visit Forums"
 msgstr "訪問論壇"
 
 #: library/admin/class_upfront_admin_general.php:71
-msgid "WPMUDEV Help"
+msgid "PSOURCE Help"
 msgstr "WPMUDEV 支援"
 
 #: library/admin/class_upfront_admin_general.php:67

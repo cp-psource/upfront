@@ -1,6 +1,12 @@
 Change Log
 ============
 
+2.0.1 - 2024-06-23
+-------------------------------------------------------------------------------
+- Fix: Deprecated dynamic Functions
+- Fix: jQuery deprecated functions
+- Add: Better PhP8.3 Support
+
 1.9.4 - 2017-10-16
 -------------------------------------------------------------------------------
 - Add: Clean up PHP function calls

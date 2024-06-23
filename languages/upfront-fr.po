@@ -1394,7 +1394,7 @@ msgid "Visit Forums"
 msgstr "Visiter des forums"
 
 #: library/admin/class_upfront_admin_general.php:71
-msgid "WPMUDEV Help"
+msgid "PSOURCE Help"
 msgstr "Aide WPMUDEV"
 
 #: library/admin/class_upfront_admin_general.php:67

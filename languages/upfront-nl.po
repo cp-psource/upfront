@@ -1390,8 +1390,8 @@ msgid "Visit Forums"
 msgstr "Bezoek Forums"
 
 #: library/admin/class_upfront_admin_general.php:71
-msgid "WPMUDEV Help"
-msgstr "WPMUDEV Help"
+msgid "PSOURCE Help"
+msgstr "PSOURCE Help"
 
 #: library/admin/class_upfront_admin_general.php:67
 msgid "Upfront Part 7: Working With Pages and Posts"

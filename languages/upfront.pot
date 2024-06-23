@@ -4940,7 +4940,7 @@ msgid "Upfront Part 7: Working With Pages and Posts"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:72
-msgid "WPMUDEV Help"
+msgid "PSOURCE Help"
 msgstr ""
 
 #: library/admin/class_upfront_admin_general.php:73
