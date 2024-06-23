@@ -1,10 +1,12 @@
 # Upfront Part 1: The Basics, Theme Colors and Typography
 
-Mit Upfront können Sie das Design Ihrer Website so einfach anpassen, dass Sie nie wieder ein WordPress-Theme benötigen.
-Dank des leistungsstarken und intuitiven Designs der Theme-Plattform können Sie den gesamten Inhalt Ihrer Website per Drag-and-Drop im Front-End bearbeiten und bearbeiten. Das Erstellen einer Website nimmt überhaupt keine Zeit in Anspruch. Es ist wirklich so einfach.
-In dieser siebenteiligen Serie, die die Verwendung von Upfront vorstellt, zeige ich Ihnen, wie Sie ein vorhandenes Upfront-Theme – in diesem Fall Spirit – in eine völlig andere Website umwandeln, komplett mit eigenem Branding, Bildern, benutzerdefinierten Schriftarten usw responsives Layout.
+## Upfront makes customizing the design of your site so easy you’ll never need another WordPress theme.
 
-## Im Verlauf dieser Serie zeigen wir Ihnen anhand zahlreicher Beispiele, wie Sie Upfront nutzen:
+Thanks to the theme platform’s powerful and intuitive design, you can drag-and-drop and edit all of your site’s content on the front-end. Creating a site takes no time at all. It really is that simple.
+
+In this seven-part series introducing how to use Upfront, I’ll show you how to take an existing Upfront theme – in this case Spirit – and turn it into a completely different site, complete with its own branding, images, custom fonts and responsive layout.
+
+### Over the course of this series we will use lots of examples to show you how to use Upfront:
 
 - **Part 1:** [The Basics, Theme Colors and Typography](https://cp-psource.github.io/upfront/tutorial-basics.html)
 - **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
@@ -14,110 +16,122 @@ In dieser siebenteiligen Serie, die die Verwendung von Upfront vorstellt, zeige 
 - **Part 6:** [Creating Responsive Websites](https://cp-psource.github.io/upfront/tutorial-responsive.html)
 - **Part 7:** [Working with Pages and Posts](https://cp-psource.github.io/upfront/tutorial-content.html)
 
-Wir werden das Spirit-Thema aufgreifen und seine Regionen, Inhalte, Typografie und andere Elemente komplett überarbeiten und Folgendes umwandeln:
+We’ll be taking the Spirit theme and completely reworking its regions, content, typography and other elements, turning this:
 
 ![Spirit Theme](images/spirit-upfront-theme.png)
 
-Darin ein Produktthema, komplett mit eigenem Branding, Farben, Typografie, Schaltflächen, Bildern, Kontaktformular und anderen Elementen:
+Into this, a product theme, complete with its own branding, colors, typography, buttons, images, contact form and other elements:
 
 ![Parrot Theme](images/parrot-theme.jpg)
+* Let’s get started.
 
-## Lass uns anfangen.
+## Installing Upfront and Spirit
 
-Installation von Upfront und Spirit
-Als Erstes müssen Sie Upfront und Spirit installieren. Sie können dies tun, indem Sie das WPMU DEV Dashboard herunterladen. Nach der Installation aktivieren Sie es im Backend Ihrer Website. Anschließend können Sie sich bei Ihrem WPMU DEV-Konto anmelden. Navigieren Sie zu „Themes“, klicken Sie auf Spirit und installieren Sie es.
+First thing’s first, you need to install Upfront and [Spirit](https://github.com/cp-psource/uf-spirit). Once installed, activate it in the backend of your site. Navigate to “Themes,” click Spirit and install it.
 
-Sie müssen Upfront nicht separat herunterladen, da es automatisch mit allen unseren neuen Themes installiert wird, wenn Sie das Dashboard-Plugin verwenden.
+If you already have Upfront and Spirit installed, make sure you have the latest versions. This is important as Upfront is still under development and new versions are being regularly released.
 
-Wenn Sie Upfront und Spirit bereits installiert haben, stellen Sie sicher, dass Sie über die neuesten Versionen verfügen. Dies ist wichtig, da sich Upfront noch in der Entwicklung befindet und regelmäßig neue Versionen veröffentlicht werden.
+Next, go to **Appearance > Themes** and activate Spirit.
 
-Gehen Sie als Nächstes zu „Darstellung“ > „Themen“ und aktivieren Sie „Spirit“.
+![Editing in Upfront.](images/activate-upfront.png)
+* Editing in Upfront.
 
-Bearbeiten in Upfront
-Bearbeiten in Upfront.
-Es ist wichtig, Pretty Permalinks zu aktivieren. Gehen Sie zu Einstellungen > Permalinks und aktivieren Sie das Optionsfeld neben „Beitragsname“.
+It’s important to enable Pretty Permalinks. Go to **Settings > Permalinks** and check the radio button next to “Post Name.”
 
-Jetzt können Sie mit der Bearbeitung Ihrer Website beginnen. Klicken Sie in der Admin-Leiste oben auf der Seite auf „Upfront“.
+Now you’re ready to start editing your site. In the admin bar at the top of the page, click on “Upfront.”
 
-Löschen, Ändern der Größe und Verschieben
-Beginnen wir mit dem Löschen von Dingen.
+### Deleting, Resizing and Moving
 
-Sie müssen lediglich mit der Maus über ein Element fahren und auf das rote „x“ klicken, das oben rechts angezeigt wird.
+Let’s start with deleting stuff.
 
-Die Größenänderung ist genauso einfach. Lassen Sie uns die Größe desselben Elements ändern. Bewegen Sie den Mauszeiger darüber, klicken Sie auf den orangefarbenen Griff und ziehen Sie ihn auf die gewünschte Größe.
+All you need to do is hover over an element and click the red “x” that appears in the top-right.
 
-Wenn Sie ein Element, beispielsweise einen Text oder ein Bild, verschieben möchten, bewegen Sie den Mauszeiger darüber und klicken und ziehen Sie.
+Resizing is just as easy. Let’s resize the same element. Hover over it, click the orange handle and drag it to your desired size.
 
-Hinweis: Wenn Sie sich fragen, warum Sie die Größe des „Spirit“-Logos nicht ändern können, liegt das daran, dass es sich um ein Standardbild handelt, das mit diesem speziellen Design geliefert wird. Sie können gerne Ihr eigenes Logo hochladen oder es einfach löschen.
+If you want to move an element, such as text or an image, hover over it and click and drag.
 
-Größe ändern, ziehen, löschen
-Themenfarben
-Haben Sie schon einmal ein tolles Thema für Ihre Website gefunden und das Layout gefiel Ihnen, aber die Farben gefielen Ihnen einfach nicht?
+Note: If you’re wondering why you can’t resize the “Spirit” logo, it’s because it’s a default image that comes with this particular theme. Feel free to upload your own logo or just delete it.
 
-Mit Upfront können Sie alle Ihre Theme-Farben von einem zentralen Ort aus steuern und ersparen sich so den Aufwand, die Farben einzelner Elemente jedes Mal zu ändern, wenn Sie Ihre Meinung ändern. Das bedeutet, dass Sie die Farben steuern können – und die Konsistenz auf Ihrer gesamten Website aufrechterhalten – für Dinge wie Text, Rahmen, Hintergründe, Farben … alles! Es ist wie eine Farbpalette für Ihre Website.
+![Größe ändern, ziehen, löschen](images/resize-drag-delete.gif)
 
-Wenn Sie zu den Designeinstellungen gehen und dann auf „Farben“ klicken, werden Sie sehen, dass Spirit sechs Designfarben zugewiesen wurden.
+### Theme Colors
 
-Das Theme, das ich erstelle, hat Markenfarben. Ich muss also nur auf jede Standardfarbe klicken, meinen Hexadezimalcode eingeben (oder eine Farbe aus der Farbauswahl auswählen) und auf „OK“ klicken. Jedes Element in meinem Theme wird automatisch auf die entsprechenden Farben aktualisiert.
+Have you ever found a great theme for your site and loved the layout, but just didn’t like the colors?
 
-Schauen Sie sich das GIF unten an, um zu sehen, wie das alles funktioniert. Wenn Sie Upfront installiert haben, können Sie die Designeinstellungen selbst ausprobieren (oder versuchen, die Spirit-Demoseite anzupassen).
+Upfront allows you to control all of your theme colors from one central location, saving you the hassle of changing the colors of individual elements every time you change your mind. This means you can control the colors – and maintain consistency across your site – for things like text, borders, backgrounds, colors… everything! It’s like a color palette for your site.
+
+If you go to **Theme Settings** and then click on **Colors**, you’ll see that Spirit has been assigned six theme colors.
+
+The theme I’m building has branded colors, so all I need to do is click on each default color, enter my hexadecimal code (or choose a color from the color picker) and click OK. Each of the elements in my theme will automatically update to the corresponding colors.
+
+Check out the GIF below to see how it all works. If you have Upfront installed, why not go have and have a play with the theme settings yourself.
+
+Make sure you hit Save when you’re done.
 
 
-Text bearbeiten
-Das Bearbeiten von Text in Upfront ist einfach. Sie müssen lediglich auf einen Textbereich doppelklicken. Wenn Sie erneut doppelklicken, um ein Wort auszuwählen (oder dreimal klicken, um einen Absatz auszuwählen), wird die Textbearbeitungssymbolleiste eingeblendet, die Ihnen die folgenden Optionen bietet :
+![Text bearbeiten](images/theme-colors1.gif)
 
-Typelement – Dazu gehören H1, H2, H3, H4, H5, H6, P und das Codeformat
-Fett – Machen Sie den Text fett
-Kursivschrift – Schreiben Sie Ihren Text kursiv
-Ausrichtung – Links, Mitte und rechts richten Ihren Text aus bzw. im Blocksatz
-Liste – Erstellen Sie eine Liste mit Aufzählungszeichen oder Nummern
-Blockquote – Erstellen Sie ein Blockquote
-Link – Verlinken Sie Text mit einer URL, einem Beitrag oder einer Seite, einem Anker oder einem Lightbox-Element
-Inline-Symbole – Fügen Sie ein Symbol ein
-Textbearbeitung
-Textbearbeitung in Upfront.
-Die Textbearbeitungssymbolleiste enthält Symbole, die Sie beliebig vergrößern oder verkleinern und deren vertikale Ausrichtung anpassen können.
+Editing Text
+Editing text in Upfront is simple. All you need to do is double-click on a text area, and if you double-click again to select a word (or triple-click to select a paragraph), the text editing toolbar will pop-up, giving you the following options:
 
-Wenn Sie mit der Verwendung der Symbolleiste fertig sind, klicken Sie einfach an eine andere Stelle auf der Seite und die Symbolleiste wird ausgeblendet.
+- Type Element – This includes H1, H2, H3, H4, H5, H6, P and code format
+- Bold – Make text bold
+- Italics – Italicize your text
+- Alignment – Left, center and right align or justify your text
+- List – Create a bulleted or numbered list
+- Blockquote – Create a blockquote
+- Link – Link text to a URL, post or page, anchor or a lightbox element
+- Inline Icons – Insert an icon
 
-Typografie
-Mit Upfront können Sie Ihre Schriftarten von einem einfachen Ort in der Seitenleiste aus verwalten. Gehen Sie einfach zu den Designeinstellungen und klicken Sie dann auf Typografie.
+![Text Editing in Upfront](images/text-editing.png)
+* Text Editing in Upfront.
 
-Für jedes Typelement können Sie Schriftart, Stärke/Stil, Farbe, Größe und Zeilenhöhe angeben.
+The text editing toolbar includes icons, which you can make it as big or as small as you like, as well as adjust their vertical alignment.
 
-Sie können auch benutzerdefinierte CSS-Regeln hinzufügen, aber wir werden uns später in einem anderen Beitrag dieser Serie damit befassen.
+When you’re done using the toolbar, just click elsewhere on the page and the toolbar will disappear.
 
-Mit dem Theme Fonts Manager können Sie Ihrem Theme beliebige Google-Schriftarten hinzufügen. Klicken Sie einfach auf „Themenschriftarten-Manager“ und wählen Sie eine Google-Schriftart aus. Klicken Sie dann auf „Hinzufügen“, um sie zu Ihrer Liste der Themenschriftarten hinzuzufügen. Sie können dann im Schriftart-Dropdown-Menü auf diese Schriftart zugreifen, etwa so:
+### Typography
+
+Upfront allows you to manage your fonts all from one easy location in the sidebar. Just go to **Theme Settings**, and then click on **Typography**.
+
+For each type element, you can specify its typeface, weight/style, color, size, and line height.
+
+You can also add custom CSS rules, but we’ll look at that later as part of another post in this series.
+
+The Theme Fonts Manager allows you to add any Google font to your theme. Simply click on **Theme Fonts Manager** and select a Google font, then click **Add** to add it to your theme font styles list. You can then access that font in the typeface dropdown menu, like so:
 
 ![Thementypografie](images/theme-typography.gif)
 
-Konsistente Typografie
-Der beste Weg, Ihren Text, einschließlich Ihrer Überschriften und Absatztexte, zu formatieren, besteht darin, alles auf einmal zu erledigen. Der einfachste Weg, dies zu tun, besteht darin, Ihrer Website Beispieltext hinzuzufügen, ihn in den Designeinstellungen zu formatieren und ihn dann zu löschen.
+### Consistent Typography
 
-So machen Sie es:
+The best way to style your text, including your headers and paragraph text, is to do it all in one go. The easiest way to do this is to add sample text to your site, style it in the Theme Settings, and then delete it.
 
-Kopieren Sie den Beispieltext, den wir bei CodePen hochgeladen haben, und stellen Sie sicher, dass die Formatierung erhalten bleibt
-Fügen Sie den Text in ein beliebiges Textelement in Upfront ein
-Gehen Sie zu den Designeinstellungen und wählen Sie Typografie aus, falls diese noch nicht geöffnet ist
-Wählen Sie für jedes Schriftelement Schriftart, Stärke/Stil, Farbe, Größe und Zeilenhöhe
-Der Beispieltext wird bei jeder Auswahl automatisch aktualisiert, sodass Sie alle Ihre Änderungen auf einmal sehen können. Aus gestalterischer Sicht können Sie so schnell erkennen, ob Ihre Schriftarten- und Farbauswahl für verschiedene Schriftelemente übereinstimmen.
+Here’s how you do it:
 
-Das obige GIF veranschaulicht, wie Sie Änderungen an Ihrer Typografie in einer Live-Vorschau anzeigen können, wenn Sie Aktualisierungen in den Designeinstellungen vornehmen.
+-Copy the [sample text we’ve uploaded over at CodePen](https://codepen.io/Dernerd/pen/XWwqZep) and make sure the formatting remains intact
+-Paste the text into any text element in Upfront
+-Go to Theme Settings and select Typography if it isn’t already open
+-For each type element, choose a typeface, weight/style, color, size and line height
 
-Abschluss
-Lassen Sie uns noch einmal zusammenfassen, was wir bisher bei der Zusammenstellung unserer neuen Website erreicht haben:
+The sample text will auto-update as you make each selection, allowing you to see all of your changes in one go. From a design point of view, this allows you to quickly see whether your font and color choices for different type elements match.
 
-Wir haben herausgefunden, wie Sie Elemente wie Bilder und Textbereiche löschen, verschieben und in der Größe ändern können
-Alle Themenfarben wurden aktualisiert, um dem Branding unserer neuen Website zu entsprechen
-Wir haben alle Schriftelemente (H1, H2, P usw.) mit neuen Schriftarten und -größen aktualisiert
-Wir haben auch benutzerdefinierte Schriftarten hinzugefügt
-Im nächsten Beitrag dieser Reihe werden wir weiter an unserer neuen Website arbeiten und uns dieses Mal darauf konzentrieren, wie man mithilfe von Regionen ein benutzerdefiniertes Layout erstellt, das sich von Spirit unterscheidet.
+The GIF above illustrates how you can live preview changes to your typography when you make updates in the Theme Settings.
 
-Lesen Sie den nächsten Beitrag in dieser Reihe: Teil 2: Strukturieren Sie Ihre Website mit Regionen
+## Conclusion
 
-Wenn Sie Fragen zu dem haben, was wir in diesem Beitrag behandelt haben, können Sie uns diese gerne in den Kommentaren unten stellen.
+So let’s recap what we’ve accomplished so far in putting together our new site:
 
-So verwenden Sie Upfront-Serien:
+- We’ve worked out how to delete, move and resize elements like images and text areas
+- All theme colors have been updated to match the branding for our new site
+- We’ve updated all the type elements (H1, H2, P, etc) with new typefaces and sizes
+- We’ve also added custom fonts
+
+In the next post in this series, we’ll continue working on our new site, this time focusing on how to use regions to create a custom layout different from Spirit.
+
+Read the next post in this series: **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
+
+### How to Use Upfront Series:
+
 - **Part 1:** [The Basics, Theme Colors and Typography](https://cp-psource.github.io/upfront/tutorial-basics.html)
 - **Part 2:** [Structuring Your Site with Regions](https://cp-psource.github.io/upfront/tutorial-regions.html)
 - **Part 3:** [Laying Out Your Site with Elements](https://cp-psource.github.io/upfront/tutorial-elements.html)

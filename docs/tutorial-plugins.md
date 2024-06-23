@@ -119,7 +119,7 @@ What’s we’re doing is changing the color and font of the button (`gform_foot
 We’re also styling the placeholder text, giving the text area a border and aligning the text area and button so they sit flush.
 
 ![Styling Gravity Forms](images/gravity-forms.gif)
-*Styling Gravity Forms
+* Styling Gravity Forms
 
 Here’s what the styled subscribe form looks like with the custom CSS.
 
