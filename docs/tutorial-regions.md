@@ -62,7 +62,7 @@ The focus will swap to the new region and if you click on the green cog icon you
 There are a bunch of different types of regions you can use to build your site. Let’s go through them all.
 
 ![Fullscreen region settings](images/spirit-header-small.png)
-Fullscreen region settings
+- Fullscreen region settings
 
 ### Fullscreen
 
@@ -87,7 +87,7 @@ Keep Position means any logos, text, images, buttons etc. will remain where they
 Keep Ratio means those same elements will automatically adjust their position when a user resizes their browser window. For example, if your logo is smack bang in the middle of the region, it will vertically adjust its position when the browser window is resized. This is a handy option for this very reason!
 
 ![100% Wide region settings](images/100-wide.png)
-100% Wide region settings
+- 100% Wide region settings
 
 ### 100% Wide
 
@@ -96,7 +96,7 @@ Display regions full width left to right, but not top to bottom.
 Use this type of region if you don’t want your header to fill the browser window, but need it to display full width. We’ll look at options for setting the vertical height of regions below.
 
 ![Contained region settings](images/contained1.png)
-Contained region settings
+- Contained region settings
 
 ### Contained
 
@@ -131,27 +131,27 @@ Upload a video from popular services, including YouTube, Vimeo and Wistia. There
 Now that we’ve covered the main stuff, let’s look at other region options that help make life easier.
 
 ![Auto-resizing regions](images/resize.png)
-Auto-resizing regions
+- Auto-resizing regions
 
 ### Auto-resize
 
 The 100% Wide and Contained regions provide an auto-resize option. The best way to explain how it works is with a scenario: Let’s say I created a region that was 400px high. If I turned auto-resize off, Upfront would not allow that region to automatically re-size if I tried to stack more elements that the region’s height. But if I turned auto-resize on and then tried to either stack elements or insert an element taller than the region, the region would automatically update to the require height.
 
 ![Name regions for consistency](images/name-region.png)
-Name regions for consistency
+- Name regions for consistency
 
 ### Naming Regions
 You can name regions in the settings for pure convenience! I should also add that when you name a region is passes that name as an ID, which is handy if you want to play with custom CSS. We’ll look at this in an upcoming post.
 
 ![Add sticky regions, such as navigation](images/sticky.png)
-Add sticky regions, such as navigation
+- Add sticky regions, such as navigation
 
 ### Sticky Regions
 
 You can make regions “stick,” which is particularly helpful if you want to add navigation that is always visible on a page. Note that it’s only possible to make one region sticky at a time.
 
 ![Add sidebars to your site where you want them](images/sidebar.png)
-Add sidebars to your site where you want them
+- Add sidebars to your site where you want them
 
 ### Sidebars
 

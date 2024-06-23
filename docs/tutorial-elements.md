@@ -39,7 +39,7 @@ You can find out more about styling text and using the text editing toolbar in [
 Add an image to your site. Just drag-and-drop the element where you would like to display an image. The element box will prompt you to add a new image. You can then upload a new file or choose an existing image from your media gallery.
 
 ![Using the Image element](images/image-crop.gif)
-Upfront cropping: Better than the existing WordPress cropping experience.
+- Upfront cropping: Better than the existing WordPress cropping experience.
 
 Dimensions will display in the top-left corner so you can resize resize your image to your desired height and width.
 
@@ -60,7 +60,7 @@ Once you’ve added your images, there are lots of options for basic styling in 
 - **Caption Settings:** Add captions over images, under images or not at all.
 
 ![Using the Gallery element](images/gallery-element.jpg)
-Using the Gallery element
+- Using the Gallery element
 
 To re-order the images, switch the “On/Off” button underneath the settings cog to “On” and then click and drag them where you like. When switched off, you can move the images around.
 
@@ -82,7 +82,7 @@ You can update the map in the settings:
 - **Hide markers:** Hide the red pin that marks the map location.
 
 ![Using the Like Box element](images/likebox-element.jpg)
-Using the Like Box element
+- Using the Like Box element
 
 ### Like Box
 
@@ -112,7 +112,7 @@ When you drag across the element, it will prompt you to pick either multiple vid
 - **Thumbnail size:** Drag and slider across to resize the video images.
 
 ![Using the Tabs element](images/tabs-element.png)
-Using the Tabs element.
+- Using the Tabs element.
 
 ### Tabs
 
@@ -143,7 +143,7 @@ Needless to say, there are more useful ways you could take advantage of the Code
 With the Login element, you can place a login form anywhere on your site. When you drag across the element, it displays as a form by default, but in the settings you can change this to a dropdown if you don’t want the login to take up too much space on your site. You can also change the text for the login button and display a logout link.
 
 ![Using the Contact element](images/contact-element.png)
-Set up a simple email form using the Contact element.
+- Set up a simple email form using the Contact element.
 
 ### Contact
 
@@ -174,7 +174,7 @@ It comes with a basic preset style, depending on the default theme you’re usin
 Whether you want to add a link to another page on your site or a link where users can download a product, the Button element lets you create and style a button to match your site.
 
 ![Using the Button element](images/button-element.png)
-Using the Button element
+- Using the Button element
 
 As with all elements, drag it where you want and a default button will display. You can double-click the button to edit the text, or go to the settings to select or create a button preset design.
 
