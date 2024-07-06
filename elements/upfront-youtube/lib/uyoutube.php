@@ -3,9 +3,6 @@
  * YouTube element for Upfront
  */
 class Upfront_UyoutubeView extends Upfront_Object {
-
-	public $_parent_data;
-	
 	public static function default_properties(){
 		return array(
 			'type' => 'UyoutubeModel',
@@ -109,41 +106,41 @@ class Upfront_UyoutubeView extends Upfront_Object {
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
 			'element_name' => __('YouTube', 'upfront'),
-			'enter_url' => __('Enter YouTube video URL', 'upfront'),
+			'enter_url' => __('Gib die YouTube-Video-URL ein', 'upfront'),
 			'url_placeholder' => __('YouTube URL', 'upfront'),
 			'submit_button' => __('Go', 'upfront'),
-			'element_settings' => __('YouTube settings', 'upfront'),
-			'apperance_title' => __('APPEARANCE', 'upfront'),
-			'title_limit' => __('Limit Video Title to', 'upfront'),
-			'characters_label' => __('char.', 'upfront'),
-			'display_style' => __('Display style:', 'upfront'),
-			'gallery_label' => __('Gallery', 'upfront'),
-			'list_label' => __('List', 'upfront'),
-			'first_to_thumbnails' => __('Add 1st Video to Thumbnails', 'upfront'),
-			'autoplay' => __('Play Video on Page Load', 'upfront'),
+			'element_settings' => __('YouTube Einstellungen', 'upfront'),
+			'apperance_title' => __('DARSTELLUNG', 'upfront'),
+			'title_limit' => __('Videotitel beschränken auf', 'upfront'),
+			'characters_label' => __('Zeichen.', 'upfront'),
+			'display_style' => __('Anzeigestil:', 'upfront'),
+			'gallery_label' => __('Galerie', 'upfront'),
+			'list_label' => __('Liste', 'upfront'),
+			'first_to_thumbnails' => __('Erstes Video zu Miniaturansichten hinzufügen', 'upfront'),
+			'autoplay' => __('Video beim Laden der Seite abspielen', 'upfront'),
 			'loop' => __('Loop', 'upfront'),
 			'playback' => __('Playback', 'upfront'),
-			'thumbnail_size' => __('Thumbnail Size', 'upfront'),
-			'thumbnail_size_info' => __('Slide to resize the thumbnails.', 'upfront'),
+			'thumbnail_size' => __('Thumbnail Größe', 'upfront'),
+			'thumbnail_size_info' => __('Schieben um die Größe der Miniaturansichten zu ändern.', 'upfront'),
 			'videos_title' => __('VIDEO', 'upfront'),
 			'default_video' => __('Video 1 URL', 'upfront'),
 			'video_placeholder' => __('YouTube Video URL', 'upfront'),
-			'add_video' => __('Add Another Video', 'upfront'),
-			'settings' => __('Settings', 'upfront'),
-			'general_settings' => __('General Settings', 'upfront'),
-			'validMessage' => __('Please enter valid YouTube video URL', 'upfront'),
+			'add_video' => __('Füge ein weiteres Video hinzu', 'upfront'),
+			'settings' => __('Einstellungen', 'upfront'),
+			'general_settings' => __('Allgemeine Einstellungen', 'upfront'),
+			'validMessage' => __('Bitte gib eine gültige YouTube-Video-URL ein', 'upfront'),
 			'template' => array(
 				'video_label' => __('Videos', 'upfront'),
 				'url_label' => __('URL', 'upfront'),
 				'url_placeholder' => __('YouTube Video URL', 'upfront'),
 			),
 			'css' => array(
-				'global_wrapper_label' => __('Global container', 'upfront'),
-				'global_wrapper_info' => __('The layer that contains all content of the element.', 'upfront'),
-				'thumbnails_wrapper_label' => __('Thumbnails container', 'upfront'),
-				'thumbnails_wrapper_info' => __('The layer that contains thumbnails.', 'upfront'),
+				'global_wrapper_label' => __('Globaler Container', 'upfront'),
+				'global_wrapper_info' => __('Die Ebene, die den gesamten Inhalt des Elements enthält.', 'upfront'),
+				'thumbnails_wrapper_label' => __('Thumbnails-Container', 'upfront'),
+				'thumbnails_wrapper_info' => __('Die Ebene, die Miniaturansichten enthält.', 'upfront'),
 				'thumbnail_label' => __('Thumbnail', 'upfront'),
-				'thumbnail_info' => __('The layer that contains thumbnail image and title.', 'upfront'),
+				'thumbnail_info' => __('Die Ebene, die Miniaturbild und Titel enthält.', 'upfront'),
 			),
 
 			'edit_text' => __('Edit Text', 'upfront'),

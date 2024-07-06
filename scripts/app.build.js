@@ -11,7 +11,7 @@
 		"maps_context_menu": "empty:",// Leave out maps context menu or it will not initialize properly
 		"backbone": "../../../../wp-includes/js/backbone.min", // this assumes standard wp directory arrangement.
 		"underscore": "../../../../wp-includes/js/underscore.min",
-		"jquery.ui.widget": "jquery/widget.min",
+		"jquery.ui.widget": "upfront/widget.min",
 		"models": "upfront/upfront-models",
 		"views": "upfront/upfront-views",
 		"editor_views": "upfront/upfront-views-editor",
@@ -79,7 +79,7 @@
 	findNestedDependencies: true, // we need this since we have nested require calls
 	modules: [
 	{
-		name: "main-2.0.1",
+		name: "main-2.0.0",
 		include: ["requireLib", "setup"],
 		create: true
 	}

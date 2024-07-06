@@ -23,7 +23,7 @@ define([
 				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
 				
 				$('body').on( 'keyup', function( event ) {
-					if ( event.keyCode === 27 )
+					if ( event.key === 27 )
 						me.closeOverlay();
 				});
 				
@@ -54,7 +54,7 @@ define([
 								.done(function(response){
 									me.deferred.resolve(response.data.images, response);
 								})
-								.error(function(){
+								.fail(function(){
 									Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
 									me.openSelector();
 								});
@@ -373,7 +373,7 @@ define([
 		},
 		openFileBrowser: function(e){
 			e.preventDefault();
-			$('#upfront-image-file-input').click();
+			$('#upfront-image-file-input').on('click',);
 		},
 		checkFileUpdate: function(){
 			 return true;

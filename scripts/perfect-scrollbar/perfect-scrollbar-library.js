@@ -213,7 +213,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
     ee.unbind(eventName, onceHandler);
     handler(e);
   };
-  ee.bind(eventName, onceHandler);
+  ee.on(eventName, onceHandler);
 };
 
 module.exports = EventManager;

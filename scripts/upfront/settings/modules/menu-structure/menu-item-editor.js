@@ -337,13 +337,13 @@ define([
 		},
 
 		onItemNameChange: function() {
-			var newTitle = $.trim(this.$el.find('.menu-item-title').val());
+			var newTitle = this.$el.find('.menu-item-title').val().trim();
 			this.model.set({
 				'menu-item-title': newTitle
 			});
 			this.$el.parent().find('.menu-item-title').first().text(newTitle);
 			this.saveItem();
-		},
+		},		
 
 		getLinkTypeLabel: function(type) {
 			var contentL10n = Upfront.Settings.l10n.global.content;

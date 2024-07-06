@@ -2,7 +2,7 @@
 	<?php if($usingNewAppearance === false) { ?>
 	<div class="uimage uimage-<?php echo $caption_position ?> uimage-status-<?php echo $image_status ?> uimage-caption-<?php echo $caption_position ?>-<?php echo $caption_alignment ?><?php echo $gifImage ?><?php echo $stretchClass ?> <?php echo $placeholder_class ?>" style="text-align: <?php echo $align ?>;">
 	<?php } else { ?>
-		<?php
+        <?php
         // PHP-Code, um die Variablen vorzubereiten
         $caption_position = isset($properties['caption-position']) ? $properties['caption-position'] : '';
         $caption_alignment = isset($properties['caption-alignment']) ? $properties['caption-alignment'] : '';
@@ -25,7 +25,7 @@
 			<?php } else { ?>
 				<div class="upfront-image-starting_placeholder"><p>Image placeholder</p></div>
 			<?php } ?>
-	
+
 		<?php if($usingNewAppearance !== true) { ?>
 			<?php if($include_image_caption) { ?>
 				<div class="wp-caption uimage-<?php echo $caption_alignment ?> uimage-<?php echo $caption_trigger ?> uimage-padded-caption" style="background:<?php echo $captionBackground == '1' ? $background : 'rgba(255, 255, 255, 0)' ?>; ">

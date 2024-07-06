@@ -94,7 +94,7 @@ $main->add_element("Posts", array (
     'gravatar_size' => 200,
     'preset' => 'default',
     'post-part-date_posted' => '<div class="uposts-part date_posted">
-	Posted on <span class="datetime">{{datetime}}</span></div>',
+	Veröffentlicht am <span class="datetime">{{datetime}}</span></div>',
     'post-part-author' => '<div class="uposts-part author">
 	By <a href="{{url}}">{{name}}</a></div>',
     'post-part-gravatar' => '<div class="uposts-part gravatar">

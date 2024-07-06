@@ -92,9 +92,6 @@ abstract class Upfront_DataElement_Preset_Server extends Upfront_Presets_Server 
 
 class Upfront_PostData_Presets_Server extends Upfront_DataElement_Preset_Server {
 
-	public $elementName;
-	public $db_key;
-
 	private static $_instance;
 
 	public function get_data_type () { return 'post_data';	}
@@ -126,7 +123,7 @@ class Upfront_PostData_Presets_Server extends Upfront_DataElement_Preset_Server 
 
 	protected function _add_hooks () {
 		parent::_add_hooks();
-		add_filter('upfront_get_' . $this->elementName . '_presets', array($this, 'get_augmented_presets'), 99);
+		add_filter('upfront_get_' . $this->get_element_name() . '_presets', array($this, 'get_augmented_presets'), 99);
 	}
 
 	/**
@@ -191,9 +188,6 @@ class Upfront_PostData_Presets_Server extends Upfront_DataElement_Preset_Server 
 
 class Upfront_Author_Presets_Server extends Upfront_DataElement_Preset_Server {
 
-	public $elementName;
-	public $db_key;
-
 	private static $_instance;
 
 	public function get_data_type () { return 'author';	}
@@ -257,9 +251,6 @@ class Upfront_Author_Presets_Server extends Upfront_DataElement_Preset_Server {
 
 class Upfront_FeaturedImage_Presets_Server extends Upfront_DataElement_Preset_Server {
 
-	public $elementName;
-	public $db_key;
-
 	private static $_instance;
 
 	public function get_data_type () { return 'featured_image';	}
@@ -286,9 +277,6 @@ class Upfront_FeaturedImage_Presets_Server extends Upfront_DataElement_Preset_Se
 }
 
 class Upfront_Taxonomy_Presets_Server extends Upfront_DataElement_Preset_Server {
-
-	public $elementName;
-	public $db_key;
 
 	private static $_instance;
 
@@ -337,9 +325,6 @@ class Upfront_Taxonomy_Presets_Server extends Upfront_DataElement_Preset_Server 
 }
 
 class Upfront_Comments_Presets_Server extends Upfront_DataElement_Preset_Server {
-
-	public $elementName;
-	public $db_key;
 
 	private static $_instance;
 
@@ -396,9 +381,6 @@ class Upfront_Comments_Presets_Server extends Upfront_DataElement_Preset_Server 
 }
 
 class Upfront_Meta_Presets_Server extends Upfront_DataElement_Preset_Server {
-
-	public $elementName;
-	public $db_key;
 
 	private static $_instance;
 

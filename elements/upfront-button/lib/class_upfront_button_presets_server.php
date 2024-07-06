@@ -3,10 +3,6 @@
 require_once Upfront::get_root_dir() . '/library/servers/class_upfront_presets_server.php';
 
 class Upfront_Button_Presets_Server extends Upfront_Presets_Server {
-
-	public $elementName;
-	public $db_key;
-	
 	private static $instance;
 
 	protected function __construct() {
@@ -49,30 +45,26 @@ class Upfront_Button_Presets_Server extends Upfront_Presets_Server {
 	}
 
 	public function get_presets() {
-		// Holen Sie sich die Option aus der Datenbank und dekodieren Sie sie als JSON
-		$presets_json = Upfront_Cache_Utils::get_option($this->db_key, '[]');
-		$presets = json_decode($presets_json, true);
-	
-		// Wenden Sie Filter an, um die Presets zu modifizieren
+		$presets = json_decode(Upfront_Cache_Utils::get_option($this->db_key, '[]'), true);
+
 		$presets = apply_filters(
-			'upfront_get_' . $this->elementName . '_presets',
+			'upfront_get_' . $this->get_element_name() . '_presets',
 			$presets,
 			array(
 				'json' => false,
 				'as_array' => true
 			)
 		);
-	
-		// Ersetzen Sie neue Zeilen in den Presets (falls erforderlich)
+
 		$presets = $this->replace_new_lines($presets);
-	
-		// Stellen Sie sicher, dass $presets ein Array ist (Fail-safe)
-		if (!is_array($presets)) {
+
+		// Fail-safe
+		if (is_array($presets) === false) {
 			$presets = array();
 		}
-	
+
 		return $presets;
-	}	
+	}
 
 	public function clearPreset($preset) {
 		$preset = str_replace(' ', '-', $preset);

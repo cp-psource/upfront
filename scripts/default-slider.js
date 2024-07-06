@@ -17,7 +17,7 @@
 			}
 			else{
 				if(isMethod)
-					$.error('Can\'t call the ueditor method ' + args + '. The slider is not initialized');
+					$.fail('Can\'t call the ueditor method ' + args + '. The slider is not initialized');
 				else {
 					// Initialize slider
 					$slider.data('uslider', new JQueryUslider($slider, args));
@@ -235,7 +235,7 @@
 			;
 			
 			// Handle key press
-			$slider.keydown(function(e) {
+			$slider.on('keydown', function(e) {
 				// Previous slide
 				if (e.which == 37) {
 					me.prev();
@@ -396,23 +396,14 @@
 			};
 		init_bg_slider();
 
-		// Funktion zum Initialisieren und Triggern des Refreshs
-		function triggerRefresh() {
+		// Refresh size on window.load and window.resize
+		$(window).on('load', function(){
 			$('.upfront-inline_post-slider, .upfront-bg-slider').trigger('refresh');
-		}
-
-		// Prüfen, ob das Fenster bereits geladen ist
-		if (document.readyState === "complete") {
-			triggerRefresh();
-		} else {
-			$(window).on('load', triggerRefresh);
-		}
-
-		var lazyInitBgSlider = throttle(function() {
+		});
+		var lazyInitBgSlider = throttle(function(){
 			init_bg_slider();
 			$('.upfront-inline_post-slider, .upfront-bg-slider').trigger('refresh');
 		}, 100);
-
 		$(window).on('resize', lazyInitBgSlider);
 
 		// Integration with Upfront editor

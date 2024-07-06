@@ -204,10 +204,22 @@ class Upfront_Compat_LayoutParser extends Upfront_Grid {
 		return $this->max_col - $this->line_col;
 	}
 	
-	public function last_in_line () {
-		$wrapper_prop = $this->next_wrapper['breakpoints'][$this->current_breakpoint->get_id()];
-		if ( $this->next_wrapper === false || $wrapper_prop['clear'] ) return true;
-		return ( $this->line_col + $wrapper_prop['max_col'] > $this->max_col );
+	public function last_in_line() {
+		if ($this->next_wrapper === null) return false;
+	
+		// Überprüfen, ob 'breakpoints'-Schlüssel in $this->next_wrapper existiert
+		if (isset($this->next_wrapper['breakpoints'])) {
+			$wrapper_prop = $this->next_wrapper['breakpoints'][$this->current_breakpoint->get_id()];
+		} else {
+			// Behandeln, wenn der 'breakpoints'-Schlüssel nicht existiert
+			return false;
+		}
+	
+		if ($this->next_wrapper === false || !$wrapper_prop || empty($wrapper_prop['clear'])) {
+			return true;
+		}
+	
+		return ($this->line_col + $wrapper_prop['max_col'] > $this->max_col);
 	}
 	
 	public function first_in_line () {

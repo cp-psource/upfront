@@ -3,9 +3,6 @@
  * Accordion element for Upfront
  */
 class Upfront_UaccordionView extends Upfront_Object {
-
-	public $_parent_data;
-	
 	public static function default_properties() {
 		$defaultPanel = new StdClass();
 		$defaultPanel->title = self::_get_l10n('default_panel_title');
@@ -116,44 +113,44 @@ class Upfront_UaccordionView extends Upfront_Object {
 
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
-			'element_name' => __('Accordion', 'upfront'),
+			'element_name' => __('Akkordeon', 'upfront'),
 			'default_panel_title' => __('Panel 1', 'upfront'),
-			'default_panel_content' => __('<p>Click on active panel title to edit title. Confirm with Enter key.</p><p>Click on plus button [+] to add new panel.</p>', 'upfront'),
+			'default_panel_content' => __('<p>Klicke auf den Titel des aktiven Panels, um den Titel zu bearbeiten. Bestätige mit der Eingabetaste.</p><p>Klicke auf die Plus-Schaltfläche [+], um ein neues Panel hinzuzufügen.</p>', 'upfront'),
 			'css' => array(
-				'containers_label' => __('Panel containers', 'upfront'),
-				'containers_info' => __('The wrapper layer of every panel.', 'upfront'),
-				'header_label' => __('Panel header', 'upfront'),
-				'header_info' => __('The header title of every panel', 'upfront'),
-				'active_header_label' => __('Active Panel header', 'upfront'),
-				'active_header_info' => __('The header title of active panel', 'upfront'),
-				'body_label' => __('Panel body', 'upfront'),
-				'body_info' => __('The content part of every panel.', 'upfront'),
-				'first_label' => __('First Panel container', 'upfront'),
-				'first_info' => __('The wrapper layer of first panel.', 'upfront'),
-				'last_label' => __('Last Panel container', 'upfront'),
-				'last_label' => __('The wrapper layer of last panel.', 'upfront'),
-				'odd_label' => __('Odd Panel containers', 'upfront'),
-				'odd_info' => __('The wrapper layer of odd panels.', 'upfront'),
-				'even_label' => __('Even Panel containers', 'upfront'),
-				'even_info' => __('The wrapper layer of even panels.', 'upfront'),
+				'containers_label' => __('Panel-Container', 'upfront'),
+				'containers_info' => __('Der Wrapper jedes Panels.', 'upfront'),
+				'header_label' => __('Panel-Kopfzeile', 'upfront'),
+				'header_info' => __('Der Kopfzeilentitel jedes Panels', 'upfront'),
+				'active_header_label' => __('Header des aktiven Panels', 'upfront'),
+				'active_header_info' => __('Der Kopfzeilentitel des aktiven Bereichs', 'upfront'),
+				'body_label' => __('Panel-Body', 'upfront'),
+				'body_info' => __('Der Inhaltsteil jedes Panels.', 'upfront'),
+				'first_label' => __('First Panel-Container', 'upfront'),
+				'first_info' => __('Wrapper des ersten Panels.', 'upfront'),
+				'last_label' => __('Letzter Panel-Container', 'upfront'),
+				'last_label' => __('Wrapper des letzten Panels.', 'upfront'),
+				'odd_label' => __('Odd-Panel-Container', 'upfront'),
+				'odd_info' => __('Wrapper von ungeraden Paneelen.', 'upfront'),
+				'even_label' => __('Gerade Panel-Container', 'upfront'),
+				'even_info' => __('Wrapper von geraden Paneelen.', 'upfront'),
 				'wrap' => __('Element Wrapper', 'upfront'),
-				'wrap_info' => __('The wrapper of the whole element.', 'upfront'),
+				'wrap_info' => __('Der Wrapper des gesamten Elements.', 'upfront'),
 			),
-			'settings' => __('Settings', 'upfront'),
+			'settings' => __('Einstellungen', 'upfront'),
 			'panel_label'	=> __('Panel', 'upfront'),
-			'add_panel'	=> __('Add Panel', 'upfront'),
-			'content_label' => __('<p>Content</p>', 'upfront'),
-			'appearance' => __('Appearance', 'upfront'),
-			'section_bg' => __('Section Background:', 'upfront'),
-			'header_bg' => __('Header Background:', 'upfront'),
-			'header_border' => __('Header Border:', 'upfront'),
-			'default_preset' => __('Default', 'upfront'),
-			'content_area_colors_label' => __('Content Area Colors', 'upfront'),
-			'content_area_bg_label' => __('Content Area BG', 'upfront'),
-			'colors_label' => __('Colors', 'upfront'),
+			'add_panel'	=> __('Panel hinzufügen', 'upfront'),
+			'content_label' => __('<p>Inhalt</p>', 'upfront'),
+			'appearance' => __('Darstellung', 'upfront'),
+			'section_bg' => __('Abschnitt Hintergrund:', 'upfront'),
+			'header_bg' => __('Header-Hintergrund:', 'upfront'),
+			'header_border' => __('Header-Rand', 'upfront'),
+			'default_preset' => __('Standard', 'upfront'),
+			'content_area_colors_label' => __('Farben des Inhaltsbereichs', 'upfront'),
+			'content_area_bg_label' => __('Inhaltsbereich BG', 'upfront'),
+			'colors_label' => __('Farben', 'upfront'),
 			'header_bg_label' => __('Header BG', 'upfront'),
-			'triangle_icon_label' => __('Triangle Icon', 'upfront'),
-			'typography_tab_label' => __('Tab Label Typography', 'upfront'),
+			'triangle_icon_label' => __('Dreieck-Symbol', 'upfront'),
+			'typography_tab_label' => __('Tab-Label-Typografie', 'upfront'),
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)

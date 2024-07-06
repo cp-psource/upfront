@@ -7,407 +7,473 @@ Change Log
 - Fix: jQuery deprecated functions
 - Add: Better PhP8.3 Support
 
+2.0.0- 2024-08-06
+-------------------------------------------------------------------------------
+- Kompatibilität: ClassicPress v1 100%
+- Kompatibilität: ClassicPress v2.1 90%
+- Kompatibilität: WordPressPress v6.5 90%
+- Fix: json Decode String
+- Fix: Deprecated isFunction
+- Fix: Deprecated .size()
+- Fix: Deprecated .keyup()
+- Fix: Deprecated .click()
+- Major PhP8/jQuery Fixes
+
+1.9.9- 2023-08-02
+-------------------------------------------------------------------------------
+- Fix: sizeof(): must be of type Countable|array
+- Optimierung: CSS Editor-Sidebar
+- Fix: preg_quote(): Passing null to parameter
+- Fix: Mousedown/MouseUp overlay problem
+- Add: allow mulitple instances of %id% in iframe src
+- Update magnific-popup.css
+- Add: mute to video iframe srcs to allow auto play
+- Update beforeClose callback core.js
+- Fix: Open correct image by index
+- Fix: Prevent setting alt=String("undefined")
+- Update Pako.js
+- Fix: Uncaught Error: Call to a member function
+
+1.9.8 - 2023-08-02
+-------------------------------------------------------------------------------
+- Fix: PHP Warning:  Trying to access array offset on value of type null
+- Fix: Problem mit CP1.6 und dem speichern von Bildern
+- Anpassung: Modal Top-Versetzt, Höhen-Begrenzt
+- Fix:  Uncaught TypeError: Unsupported operand types: int - string
+- Better Text
+- Languages: en/fr/it
+
+1.9.7 - 2023-03-04
+-------------------------------------------------------------------------------
+- Erneuert: chosen.css
+- Erneuert: magnific-popup
+- Fix: non-numeric value encountered
+- Fix: video-insert-controls-panel Position
+- Fix: Tabs CSS
+- Fix: Featured Images
+
+1.9.6 - 2023-02-09
+-------------------------------------------------------------------------------
+- Hinzugefügt: Englische Sprachfiles
+- Fix: Weitere PhP8 Kompatibilität
+- Fix: Einige Textpassagen verbessert
+
+1.9.5 - 2023-01-16
+-------------------------------------------------------------------------------
+- HINWEIS: Nun PSOURCE!
+- Angepasst: Auf Deutsch übersetzt inkl. Quellcode
+- Hinzugefügt: PSource Updater
+- Hinzugefügt: Aktuelle Hilfequellen, Tutorials und Links auf Deutsch
+- Hinzugefügt: Unterstützung für Terminmanager
+- Fix: Veraltetes .on('click',) jQuery
+- Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
+- Fix: Securityfix Dashboard-Changelog (fopen)
+- Fix: Veraltete each() Funktion Dashboard-Changelog
+- Fix: Deprecated create_function
+- Fix: PhP8.1 Inkompatibilitäten
+
+
 1.9.4 - 2017-10-16
 -------------------------------------------------------------------------------
-- Add: Clean up PHP function calls
-- Fix: Accordion Element UI buttons overlap
-- Fix: Styling for checkbox in "This is editor..." popup in Firefox
-- Fix: Posts/Pages popup sometimes does not load properly on subsites
-- Fix: Renaming Page in sidebar does not work
-- Fix: WooCommerce products page shows posts instead products
-- Fix: Video Element "Add 1st video to thumbnails" can not be turned off
-- Fix: Undo/Redo commands should not be visible in responsive mode
-- Fix: Page Settings visibility option "Sticky" can not be saved
-- Fix: Fullscreen region image disappears after some time
+- Hinzugefügt: Aufräumen von PHP-Funktionsaufrufen
+- Fix: Akkordeon-Element-UI-Schaltflächen überlappen sich
+- Fix: Styling für das Kontrollkästchen im Popup "Das ist der Editor ..." in Firefox
+- Fix: Das Posts/Pages-Popup wird auf Subsites manchmal nicht richtig geladen
+- Fix: Das Umbenennen der Seite in der Seitenleiste funktioniert nicht
+- Fix: ClassicCommerce-Produktseite zeigt Beiträge statt Produkte
+- Fix: Videoelement "Erstes Video zu Thumbnails hinzufügen" kann nicht deaktiviert werden
+- Fix: Undo/Redo-Befehle sollten im Responsive-Modus nicht sichtbar sein
+- Fix: Sichtbarkeitsoption "Sticky" in den Seiteneinstellungen kann nicht gespeichert werden
+- Fix: Vollbild-Regionsbild verschwindet nach einiger Zeit
 
 
 1.9.3 - 2017-08-23
 -------------------------------------------------------------------------------
-- Add: Load video only when user clicks on play in YouTube Element
-- Add: Properly show post content when there is "more" tag in content
-- Fix: Broken archive URL does not resolve to 404 properly
-- Fix: Import images dialog shows when Editor is started
-- Fix: Tabs Element text now saves correctly
-- Fix: Setting YouTube Element display style to list triggers JavaScript error
-- Fix: Code Element does not look the same in Editor and in front-end
-- Fix: Category and Archives widget options are now working properly
-- Fix: Gallery Element resize and Editor quit causes PHP notices to show
-- Fix: Menu Element post type dropdown hidden behind other elements
-- Fix: Contact Element "Name" label is not editable
-- Fix: YouTube Element setting auto play breaks OK button
+- Hinzugefügt: Video nur laden, wenn der Benutzer in YouTube Element auf Wiedergabe klickt
+- Hinzugefügt: Beitragsinhalt richtig anzeigen, wenn der Inhalt "mehr"-Tags enthält
+- Fix: Fehlerhafte Archiv-URL wird nicht richtig zu 404 aufgelöst
+- Fix: Der Dialog Bilder importieren wird angezeigt, wenn der Editor gestartet wird
+- Fix: Tabs-Elementtext wird jetzt korrekt gespeichert
+- Fix: Das Festlegen des Anzeigestils von YouTube-Elementen auf Liste löst einen JavaScript-Fehler aus
+- Fix: Codeelement sieht im Editor und im Frontend nicht gleich aus
+- Fix: Kategorie- und Archiv-Widget-Optionen funktionieren jetzt richtig
+- Fix: Die Größenänderung von Galerieelementen und das Beenden des Editors führen dazu, dass PHP-Hinweise angezeigt werden
+- Fix: Menüelement-Posttyp-Dropdown hinter anderen Elementen versteckt
+- Fix: Das Label "Name" des Kontaktelements kann nicht bearbeitet werden
+- Fix: Die automatische Wiedergabe der YouTube-Elementeinstellung unterbricht die OK-Schaltfläche
 
 1.9.2 - 2017-08-16
 -------------------------------------------------------------------------------
-- Fix: YouTube Element adds video on add video control outside click
-- Fix: Accordion Element border options
-- Fix: Post Part Settings - parts are missing
-- Fix: Gallery Element images can get accidentally swapped when editing caption
-- Fix: Posts Element author part cuts off text
-- Fix: Manage Fonts button is not always active
-- Fix: Selecting calendar in Widget Element causes error
-- Fix: Menu Element added to post does not show on front end
-- Fix: Contact Form does not send emails properly in some cases
-- Fix: Map Element map breaks out of element borders
-- Fix: Checkbox is missing in "This is Editor Interface..." dialog
-- Fix: Page Settings radio buttons are cut off
-- Fix: Button Element Settings round corners locked icon is not aligned
-- Fix: Page Settings buttons are misaligned
-- Fix: Contact Form Element is not displaying sender email
-- Fix: Contact Form Element form validation options are not aligned
-- Fix: Media Gallery filter options overlap
-- Fix: Slider Element show controls options are not aligned
-- Fix: Post Settings radio buttons are not aligned
-- Fix: Accordion Element background color not applied properly
-- Fix: Contact Form Element disabling SMTP does not hide related settings
-- Fix: Contact Form Element subject and captcha are not showing until settings are closed
-- Fix: Tab and Accordion Element do not apply preset until they are activated
-- Fix: Menu Element breaks out of narrow regions
+- Fix: YouTube-Element fügt ein Video hinzu, wenn Sie außerhalb des Klicks ein Videosteuerelement hinzufügen
+- Fix: Rahmenoptionen für Akkordeon-Elemente
+- Fix: Post Part Settings - Teile fehlen
+- Fix: Bilder von Galerieelementen können beim Bearbeiten der Bildunterschrift versehentlich ausgetauscht werden
+- Fix: Beitragselement-Autorenteil schneidet Text ab
+- Fix: Die Schaltfläche "Fonts" ist nicht immer aktiv
+- Fix: Die Auswahl des Kalenders im Widget-Element verursacht einen Fehler
+- Fix: Dem Beitrag hinzugefügtes Menüelement wird im Frontend nicht angezeigt
+- Fix: Das Kontaktformular sendet E-Mails in einigen Fällen nicht richtig
+- Fix: Kartenelementkarte bricht aus Elementgrenzen heraus
+- Fix: Checkbox fehlt im "This is Editor Interface..."-Dialog
+- Fix: Optionsfelder für Seiteneinstellungen sind abgeschnitten
+- Fix: Schaltflächenelement-Einstellungen runden Ecken gesperrtes Symbol ist nicht ausgerichtet
+- Fix: Schaltflächen für die Seiteneinstellungen sind falsch ausgerichtet
+- Fix: Das Kontaktformular-Element zeigt die Absender-E-Mail nicht an
+- Fix: Formularvalidierungsoptionen für Kontaktformularelemente sind nicht ausgerichtet
+- Fix: Filteroptionen der Mediengalerie überlappen sich
+- Fix: Die Optionen für die Show-Steuerelemente des Slider-Elements sind nicht ausgerichtet
+- Fix: Optionsfelder für Post-Einstellungen sind nicht ausgerichtet
+- Fix: Die Hintergrundfarbe des Akkordeon-Elements wurde nicht richtig angewendet
+- Fix: Kontaktformular-Element, das SMTP deaktiviert, blendet zugehörige Einstellungen nicht aus
+- Fix: Betreff und Captcha des Kontaktformular-Elements werden nicht angezeigt, bis die Einstellungen geschlossen sind
+- Fix: Tabulator und Akkordeon-Element wenden Voreinstellungen erst an, wenn sie aktiviert werden
+- Fix: Menüelement bricht aus schmalen Bereichen aus
 
 1.9.1.1 - 2017-07-26
 -------------------------------------------------------------------------------
-- Fix: Setting element padding to 0px in editor defaults to 15px in live
+- Fix: Das Festlegen der Elementauffüllung auf 0 Pixel im Editor ist standardmäßig auf 15 Pixel in Live eingestellt
 
 
 1.9.1 - 2017-07-25
 -------------------------------------------------------------------------------
-- Add: Increase upper limit for gallery thumbnail size
-- Fix: Button font color gets reset on opening color picker
-- Fix: YouTube video continues to play when Lightbox is closed
-- Fix: Posts presets are not loading on frontend
-- Fix: Position of Type element dropdown is not correct in Responsive mode sidebar
-- Fix: In Media Info panel Search button is not clickable
-- Fix: Labels and fields are not properly aligned in Global Background Settings
-- Fix: OK button not properly positioned in Region Background Settings
-- Fix: Map controls field is missing options
-- Fix: Slider controls always visible with show on hover selected
-- Fix: Captcha control is not properly aligned in Contact Element Settings
-- Fix: "Cats/Tags" tab is not styled properly in Post Settings
-- Fix: Resizing image loses text from slide in Slider Element
-- Fix: Slides Order thumbnails are not showing in Slider Element Settings
-- Fix: PHP notice gets logged when Post is deleted
-- Fix: Editor does not load when 3rd party script uses asynchronous module definition
+- Hinzugefügt: Obergrenze für die Größe der Galerie-Thumbnails erhöhen
+- Fix: Die Schriftfarbe der Schaltfläche wird beim Öffnen der Farbauswahl zurückgesetzt
+- Fix: YouTube-Video wird weiter abgespielt, wenn Lightbox geschlossen ist
+- Fix: Voreinstellungen für Beiträge werden im Frontend nicht geladen
+- Fix: Die Position des Dropdown-Menüs für das Typelement ist in der Seitenleiste des Responsive-Modus nicht korrekt
+- Fix: Im Medieninfo-Panel ist die Suchschaltfläche nicht anklickbar
+- Fix: Beschriftungen und Felder werden in den globalen Hintergrundeinstellungen nicht richtig ausgerichtet
+- Fix: OK-Schaltfläche in Regionshintergrundeinstellungen nicht richtig positioniert
+- Fix: Im Kartensteuerfeld fehlen Optionen
+- Fix: Schieberegler immer sichtbar, wenn Show on Hover ausgewählt ist
+- Fix: Die Captcha-Steuerung ist in den Kontaktelementeinstellungen nicht richtig ausgerichtet
+- Fix: Die Registerkarte "Katzen/Tags" ist in den Beitragseinstellungen nicht richtig gestaltet
+- Fix: Beim Ändern der Bildgröße geht Text von der Folie im Slider-Element verloren
+- Fix: Miniaturansichten der Folienreihenfolge werden in den Slider-Elementeinstellungen nicht angezeigt
+- Fix: PHP-Hinweis wird protokolliert, wenn Post gelöscht wird
+- Fix: Der Editor wird nicht geladen, wenn ein Drittanbieter-Skript eine asynchrone Moduldefinition verwendet
 
 1.9 - 2017-07-12
 -------------------------------------------------------------------------------
-- Add: New design for sidebar, element & region settings.
-- Add: New design for Posts / Pages / Comments.
-- Add: Different popup for Builder & Editor.
-- Add: Performance - reduce the number of requests fired by editor (JS/PHP)
-- Add: Better compatibility with Hustle.
-- Add: Better compatibility with Hummingbird.
-- Performance Improvement: Implement more extensive use of object caching.
-- Performance Improvement: Clear markup bloat to speed up visitors’ performance using freeze mode.
-- Performance Improvement: Implement element html caching for loading on boot.
-- Performance Improvement: Implement element html caching for switching layouts in editor.
-- Performance Improvement: Prevent nav element from making multiple requests on any change and on layout load.
+- Hinzugefügt: Neues Design für Seitenleisten-, Element- und Bereichseinstellungen.
+- Hinzugefügt: Neues Design für Beiträge / Seiten / Kommentare.
+- Hinzugefügt: Anderes Popup für Builder & Editor.
+- Add: Performance - Reduzieren Sie die Anzahl der vom Editor ausgelösten Anfragen (JS/PHP)
+- Hinzugefügt: Bessere Kompatibilität mit Hustle.
+- Hinzugefügt: Bessere Kompatibilität mit Hummingbird.
+- Leistungsverbesserung: Implementieren Sie eine umfassendere Nutzung des Objekt-Cachings.
+- Leistungsverbesserung: Beseitigen Sie das aufgeblähte Markup, um die Leistung der Besucher im Einfriermodus zu beschleunigen.
+- Leistungsverbesserung: Implementierung von Element-HTML-Caching zum Laden beim Booten.
+- Leistungsverbesserung: Implementierung von Element-HTML-Caching zum Wechseln von Layouts im Editor.
+- Leistungsverbesserung: Verhindert, dass das Navigationselement bei jeder Änderung und beim Laden des Layouts mehrere Anfragen stellt.
 
-- Fix: Posts element multiple Term fields.
-- Fix: Posts element per category not working.
-- Fix: Lightboxes broken on small resolution.
-- Fix: Floating regions cannot be deleted.
-- Fix: Builder does not save changes.
-- Fix: Redactor bold & italic update only part of selection.
-- Fix: Posts element single posts display multiple posts.
+- Fix: Postet mehrere Begriffsfelder.
+- Fix: Posts-Element pro Kategorie funktioniert nicht.
+- Fix: Leuchtkästen bei kleiner Auflösung kaputt.
+- Fix: Schwebende Regionen können nicht gelöscht werden.
+- Fix: Builder speichert Änderungen nicht.
+- Fix: Redactor fett & kursiv aktualisiert nur einen Teil der Auswahl.
+- Fix: Einzelne Posts des Posts-Elements zeigen mehrere Posts an.
 
 1.8.1 - 2017-05-11
 -------------------------------------------------------------------------------
-- Fix: bug that prevented deleting fixed (floating) regions.
-- Fix: formatting Link in builder
-- Fix: tabs element reverting settings when edited in builder
-- Fix: issue with sticky subregion not working for full screen regions
-- Fix: cannot edit post featured image layout
+- Fix: Fehler, der das Löschen fester (schwebender) Regionen verhinderte.
+- Fix: Link im Builder formatieren
+- Fix: Registerkartenelement, das Einstellungen zurücksetzt, wenn es im Builder bearbeitet wird
+- Fix: Problem mit Sticky-Unterregionen, die nicht für Vollbildregionen funktionieren
+- Fix: Post-Featured-Image-Layout kann nicht bearbeitet werden
 
 1.8 - 2017-03-29
 -------------------------------------------------------------------------------
-- Add: media manager redesign
-- Add: CoursePress compatibility
-- Add: accessibility support options
-- Add: hierarchy data for later indentation
-- Add: option to slide with arrow keys
-- Add: mode context dialog
+- Hinzugefügt: Neugestaltung des Medienmanagers
+- Hinzugefügt: BrainPress-Kompatibilität
+- Hinzugefügt: Optionen zur Unterstützung der Barrierefreiheit
+- Hinzugefügt: Hierarchiedaten zum späteren Einrücken
+- Hinzugefügt: Option zum Schieben mit den Pfeiltasten
+- Hinzugefügt: Moduskontextdialog
 
-- Fix: hide picker alpha for theme color settings
-- Fix: color picker hide when autohide off
-- Fix: assigned color gets re-set when color picker is initiated
-- Fix: prevent gap between responsive body and sidebar for small screen sizes.
-- Fix: prevent tooltip from staying visible after navigation.
-- Fix: save after exiting responsive mode
-- Fix: slider side caption under image
-- Fix: YT video doesn't stop playing when Lightbox closes
-- Fix: issue with chosen select dropdown being partially transparent.
-- Fix: issue with dropdown fields flickering upon hover.
-- Fix: add homepage item to pages list.
-- Fix: show error message when adding label that already existed
-- Fix: media manager search result not displaying number properly
-- Fix: posts/pages popup when linking
-- Fix: notifier z-index behind media popup
-- Fix: contact form not sent on PHP 7
-- Fix: gallery image alt is not displayed
-- Fix: print image element ALT on front-end
-- Fix: image element alt not saved
-- Fix: improve bodyclass for plugins compatibility
-- Fix: burger preset styles for existing presets in DB
-- Fix: selected media item issue after upload
-- Fix: remove compress console.logs
-- Fix: image selection for background image
-- Fix: labels list not hidden when no match
-- Fix: multiple posts generic limit doesn't work
-- Fix: missing l10n labels
-- Fix: prevent navigation menu from getting smaller than nine columns.
-- Fix: menu item loses html tags after change in editor
-- Fix: the list/single numeric tax settings.
-- Fix: show local lightboxes on edit global regions again and allow them to be deleted.
-- Fix: full screen region background glitch when scrolling
-- Fix: Editing removes custom classes from menu
-- Fix: hide region settings upon changing breakpoints.
-- Fix: close settings panel properly when region is deleted.
-- Fix: only show global lightboxes on edit global regions modal.
-- Fix: allow global lightboxes to be deleted.
-- Fix: update slider resize Hint upon Resizing.
-- Fix: update group resize hint upon resizing.
-- Fix: incorrect label for post data elements in groups and width inconsistencies.
-- Fix: issue with slider captions not aligning properly.
-- Fix: select boxes in region settings
-- Fix: issue with overlapping elements with top menu.
+- Fix: Picker-Alpha für Farbeinstellungen des Themas ausblenden
+- Fix: Farbwähler ausblenden, wenn automatisches Ausblenden deaktiviert ist
+- Fix: Die zugewiesene Farbe wird zurückgesetzt, wenn die Farbauswahl gestartet wird
+- Fix: Lücke zwischen Responsive Body und Sidebar bei kleinen Bildschirmgrößen verhindern.
+- Fix: verhindert, dass der Tooltip nach der Navigation sichtbar bleibt.
+- Fix: Speichern nach Verlassen des Responsive-Modus
+- Fix: Seitenbeschriftung des Schiebereglers unter dem Bild
+- Fix: YT-Video hört nicht auf zu spielen, wenn Lightbox geschlossen wird
+- Fix: Problem mit ausgewähltem Auswahl-Dropdown, das teilweise transparent ist.
+- Fix: Problem mit Dropdown-Feldern, die beim Hover flackern.
+- Fix: Startseitenelement zur Seitenliste hinzufügen.
+- Fix: Fehlermeldung beim Hinzufügen eines bereits vorhandenen Labels anzeigen
+- Fix: Das Suchergebnis des Media Managers zeigt die Nummer nicht richtig an
+- Fix: Posts/Seiten-Popup beim Verlinken
+- Fix: Melder-Z-Index hinter Medien-Popup
+- Fix: Kontaktformular wird nicht auf PHP 7 gesendet
+- Fix: Galeriebild alt wird nicht angezeigt
+- Fix: Bildelement ALT im Frontend drucken
+- Fix: Bildelement alt nicht gespeichert
+- Fix: Verbesserung der Bodyclass für Plugin-Kompatibilität
+- Fix: Burger-Voreinstellungsstile für vorhandene Voreinstellungen in DB
+- Fix: Problem mit ausgewählten Medienelementen nach dem Hochladen
+- Fix: Komprimierung von console.logs entfernen
+- Fix: Bildauswahl für Hintergrundbild
+- Fix: Etikettenliste nicht ausgeblendet, wenn keine Übereinstimmung vorhanden ist
+- Fix: Das generische Limit für mehrere Posts funktioniert nicht
+- Fix: fehlende l10n-Labels
+- Fix: Verhindert, dass das Navigationsmenü kleiner als neun Spalten wird.
+- Fix: Menüpunkt verliert HTML-Tags nach Änderung im Editor
+- Fix: die Liste/einzelne numerische Steuereinstellungen.
+- Fix: Lokale Lightboxen beim Bearbeiten globaler Regionen erneut anzeigen und löschen lassen.
+- Fix: Hintergrundfehler im Vollbildbereich beim Scrollen
+- Fix: Beim Bearbeiten werden benutzerdefinierte Klassen aus dem Menü entfernt
+- Fix: Regionseinstellungen beim Ändern von Breakpoints ausblenden.
+- Fix: Schließen Sie das Einstellungsfenster ordnungsgemäß, wenn eine Region gelöscht wird.
+- Fix: Nur globale Lightboxen beim Modal "Globale Regionen bearbeiten" anzeigen.
+- Fix: Löschen globaler Lightboxen zulassen.
+- Fix: Update-Slider-Resize-Tipp bei Größenänderung.
+- Fix: Hinweis zur Größenänderung der Gruppe beim Ändern der Größe aktualisieren.
+- Fix: Falsche Bezeichnung für Post-Datenelemente in Gruppen und Breiteninkonsistenzen.
+- Fix: Problem mit nicht richtig ausgerichteten Slider-Beschriftungen.
+- Fix: Kästchen in Regionseinstellungen auswählen
+- Fix: Problem mit überlappenden Elementen mit dem oberen Menü.
 
 1.7 - 2017-01-10
 -------------------------------------------------------------------------------
-- Add: new design for interaction panels.
-- Add: new design for element state user interface.
-- Add: new design for grouping experience.
-- Add: improved design for redactor toolbar.
-- Add: improved design for color picker.
-- Add: improved and optimized saving behavior.
-- Add: upload video to region background video options.
-- Add: video inserts.
-- Add: region setting is moved to sidebar.
-- Add: new improved way to handle SMTP.
+- Hinzugefügt: Neues Design für Interaktionspanels.
+- Hinzugefügt: neues Design für die Elementstatus-Benutzeroberfläche.
+- Hinzugefügt: Neues Design für die Gruppierungserfahrung.
+- Hinzugefügt: Verbessertes Design für die Editor-Symbolleiste.
+- Hinzugefügt: verbessertes Design für die Farbauswahl.
+- Add: verbessertes und optimiertes Speicherverhalten.
+- Hinzugefügt: Video in Hintergrundvideooptionen der Region hochladen.
+- Hinzugefügt: Video-Einfügungen.
+- Hinzugefügt: Die Regionseinstellung wurde in die Seitenleiste verschoben.
+- Hinzugefügt: neue verbesserte Methode zur Behandlung von SMTP.
 
-- Fix: lightbox creation issues.
-- Fix: update multiple module class elements resize.
-- Fix: escape the thumbnail override URL.
-- Fix: selected image source type check.
-- Fix: author archives with generic queries.
-- Fix: double resize hint for code element.
-- Fix: button link panel icon active state.
-- Fix: new lightbox field position for group element.
-- Fix: tooltip is not closed on ungroup.
-- Fix: slider caption issue with cover placeholder placement.
-- Fix: issue with editing menu items.
-- Fix: ensure the generated virtual links follow SSL convention.
-- Fix: preset class output on post data element.
-- Fix: prevent color picker being overlapped by sidebar scrollbar.
-- Fix: url truncated if more than 25 characters, post/page panel display issue.
-- Fix: redactor blockquote doesn't return to default state.
-- Fix: redactor quote icon not marking active.
-- Fix: redactor adding list loose selection.
-- Fix: group editing styling and other minor element hover styling.
-- Fix: empty image element growing when resizing.
-- Fix: changing product permalink option causes issues with shop page.
-- Fix: global CSS typos.
-- Fix: media manager throws JS errors.
-- Fix: skip updates conflict resolution when Dashboard plugin is present.
-- Fix: apply the posts limit propagated from the query.
-- Fix: interacting with data element could cause freshly-written contents to clear.
+- Fix: Probleme bei der Lightbox-Erstellung.
+- Fix: Aktualisieren Sie die Größe mehrerer Modulklassenelemente.
+- Fix: Escape der Thumbnail-Überschreibungs-URL.
+- Fix: Überprüfung des ausgewählten Bildquellentyps.
+- Fix: Autorenarchive mit generischen Abfragen.
+- Fix: doppelter Größenänderungshinweis für Codeelement.
+- Fix: Button-Link-Panel-Icon im aktiven Zustand.
+- Fix: Neue Lightbox-Feldposition für Gruppenelement.
+- Fix: Tooltip wird beim Aufheben der Gruppierung nicht geschlossen.
+- Fix: Problem mit der Beschriftung des Schiebereglers bei der Platzierung von Cover-Platzhaltern.
+- Fix: Problem beim Bearbeiten von Menüpunkten.
+- Fix: Stellen Sie sicher, dass die generierten virtuellen Links der SSL-Konvention entsprechen.
+- Fix: voreingestellte Klassenausgabe auf Post-Datenelement.
+- Fix: Verhindert, dass die Farbauswahl von der Bildlaufleiste der Seitenleiste überlappt wird.
+- Fix: URL abgeschnitten, wenn mehr als 25 Zeichen, Anzeigeproblem im Beitrags-/Seitenbereich.
+- Fix: Redactor Blockquote kehrt nicht in den Standardzustand zurück.
+- Fix: Redactor-Zitat-Symbol wird nicht als aktiv markiert.
+- Fix: Editor fügt Liste mit loser Auswahl hinzu.
+- Fix: Gruppenbearbeitungsstile und andere kleinere Element-Hover-Stile.
+- Fix: Leeres Bildelement wächst bei Größenänderung.
+- Fix: Das Ändern der Produkt-Permalink-Option verursacht Probleme mit der Shop-Seite.
+- Fix: globale CSS-Tippfehler.
+- Fix: Media Manager gibt JS-Fehler aus.
+- Fix: Konfliktlösung für Aktualisierungen überspringen, wenn Dashboard-Plugin vorhanden ist.
+- Fix: Wenden Sie das von der Abfrage propagierte Beitragslimit an.
+- Fix: Die Interaktion mit dem Datenelement konnte dazu führen, dass frisch geschriebene Inhalte gelöscht wurden.
 
 1.6.1 - 2016-12-01
 -------------------------------------------------------------------------------
-- Fix: region settings bug fixes and improvements
-- Fix: color picker cutoff in sidebar settings
-- Fix: define switches case sensitivity and HHVM issue
-- Fix: refactor shortcode expansion to WordPress codec implementation
-- Fix: drag and drop error when no elements is in layout
-- Fix: MarketPress compatibility issue with third party plugin
+- Fix: Fehlerkorrekturen und Verbesserungen in den Regionseinstellungen
+- Fix: Abschaltung der Farbauswahl in den Seitenleisteneinstellungen
+- Fix: Definieren Sie die Groß- und Kleinschreibung der Schalter und das HHVM-Problem
+– Fix: Shortcode-Erweiterung auf ClassicPress-Codec-Implementierung umgestalten
+- Fix: Drag-and-Drop-Fehler, wenn sich keine Elemente im Layout befinden
+- Fix: MarketPress-Kompatibilitätsproblem mit Plugin von Drittanbietern
 
 1.6 - 2016-11-23
 -------------------------------------------------------------------------------
-- Add: Maintenance mode
-- Add: MarketPress compatibility
-- Add: Region settings moved to sidebars
-- Add: better dynamic scrollbars
+- Hinzugefügt: Wartungsmodus
+- Hinzugefügt: MarketPress-Kompatibilität
+- Hinzugefügt: Regionseinstellungen in Seitenleisten verschoben
+- Hinzugefügt: bessere dynamische Bildlaufleisten
 
-- Fix: tabs element header issue
-- Fix: current menu item issue in editor mode
-- Fix: issue with region background parallax
-- Fix: check for space limiting enabled state before enforcing
-- Fix: issue with incorrect Google Maps API key
-- Fix: image inserts captions issue
-- Fix: code element validity check
-- Fix: issue with fixed position global background image
+- Fix: Problem mit der Kopfzeile des Tab-Elements
+- Fix: aktuelles Menüelementproblem im Editormodus
+- Fix: Problem mit der Hintergrundparallaxe der Region
+- Fix: Prüfen Sie, ob die Speicherplatzbegrenzung aktiviert ist, bevor Sie sie erzwingen
+- Fix: Problem mit falschem Google Maps-API-Schlüssel
+- Fix: Bild fügt Bildunterschriften ein
+- Fix: Code-Element-Gültigkeitsprüfung
+- Fix: Problem mit globalem Hintergrundbild mit fester Position
 
 1.5 - 2016-10-24
 -------------------------------------------------------------------------------
-- Add: WooCommerce support
-- Add: padding setting to individual post part on post data elements
-- Add: region settings moved to the sidebar
-- Add: global region reset toggle to reset options area in admin
+- Hinzugefügt: ClassicCommerce-Unterstützung
+- Hinzugefügt: Polsterungseinstellung für einzelne Post-Teile auf Post-Datenelementen
+- Hinzugefügt: Regionseinstellungen in die Seitenleiste verschoben
+- Hinzugefügt: Umschalten zum Zurücksetzen der globalen Region, um den Optionsbereich im Admin zurückzusetzen
 
-- Fix: prevent double clicking on padding control to open group editing
-- Fix: region bg issue if total grid width is more than the screen width
-- Fix: improve layout rendering by change finite timeouts to pubsub
-- Fix: improve compatibility with anchoring with the Domain Mapping plugin
-- Fix: keyboard controlled padding is broken
-- Fix: slider side caption bug
-- Fix: remove upfront template admin notice on post types
-- Fix: element padding panel gets cut when on bottom of page
-- Fix: Upfront notifier z-index
-- Fix: redactor inline panel over post select popup
-- Fix: accordion editor exit issue
+- Fix: Verhindern Sie das Doppelklicken auf die Polsterungssteuerung, um die Gruppenbearbeitung zu öffnen
+- Fix: Region-BG-Problem, wenn die Gesamtgitterbreite größer als die Bildschirmbreite ist
+- Fix: Verbessern Sie das Layout-Rendering, indem Sie endliche Timeouts auf Pubsub ändern
+- Fix: Verbesserte Kompatibilität mit der Verankerung mit dem Domain Mapping-Plugin
+- Fix: Tastaturgesteuerte Polsterung ist defekt
+- Fix: Fehler bei der Beschriftung der Slider-Seite
+- Fix: Entfernen Sie den Admin-Hinweis der Vorabvorlage zu Beitragstypen
+- Fix: Element-Padding-Panel wird abgeschnitten, wenn es unten auf der Seite ist
+- Fix: Upfront Notifier Z-Index
+- Fix: Editor-Inline-Panel über Post-Select-Popup
+- Fix: Problem beim Beenden des Akkordeon-Editors
 
 1.4.3 - 2016-10-05
 -------------------------------------------------------------------------------
-- Add: compress data when saving
-- Add: loop option for youtube element and video region
-- Add: streamlined group settings to sidebar
-- Add: improved element padding controls
-- Add: improved image insert trigger behavior
+- Hinzugefügt: Daten beim Speichern komprimieren
+- Hinzugefügt: Schleifenoption für YouTube-Element und Videoregion
+- Hinzugefügt: Optimierte Gruppeneinstellungen zur Seitenleiste
+- Hinzugefügt: Verbesserte Steuerelemente zum Füllen von Elementen
+- Hinzugefügt: Verbessertes Auslöseverhalten beim Einfügen von Bildern
 
-- Fix: default bg for triggered menu not rendered
-- Fix: menu element inline link panel hidden when on bottom of page
-- Fix: sidebar more menu overlapped with element settings panel
-- Fix: esc key issue on builder getting started dialog
-- Fix: overlapping issue with the inline image button
-- Fix: only warn users when multiple tabs are open for the current layout
-- Fix: issue with notifications/warnings being hidden behind the media overlay
-- Fix: restyle initial state of the menu element
-- Fix: error when preset is deleted on different breakpoint
-- Fix: slider element with side caption resizing issue
-- Fix: can't delete login element after editing default appearance
-- Fix: post/page setting not displayed first time
-- Fix: parallax background issue on firefox
-- Fix: layout naming issue in admin list
-- Fix: post data meta element issue
-- Fix: rtl position issues
-- Fix: gallery image controls overlapped issue
-- Fix: can't create new menu in menu element
-- Fix: prevent save as draft to include shadow region
+- Fix: Standard-BG für ausgelöstes Menü nicht gerendert
+- Fix: Menüelement-Inline-Link-Panel ausgeblendet, wenn unten auf der Seite
+- Fix: Mehr Menü in der Seitenleiste überlappt mit Elementeinstellungsfenster
+– Fix: Problem mit der Esc-Taste im Dialogfeld „Erste Schritte“ des Builders
+- Fix: Überlappungsproblem mit der Inline-Bildschaltfläche
+- Fix: Benutzer nur warnen, wenn mehrere Registerkarten für das aktuelle Layout geöffnet sind
+- Fix: Problem mit Benachrichtigungen/Warnungen, die hinter dem Medien-Overlay verborgen sind
+- Fix: Anfangszustand des Menüelements neu gestalten
+- Fix: Fehler beim Löschen der Voreinstellung an einem anderen Haltepunkt
+- Fix: Slider-Element mit Größenänderungsproblem der seitlichen Beschriftung
+- Fix: Login-Element kann nicht gelöscht werden, nachdem das Standard-Erscheinungsbild bearbeitet wurde
+- Fix: Beitrags-/Seiteneinstellung wird beim ersten Mal nicht angezeigt
+- Fix: Hintergrundproblem mit Parallaxe in Firefox
+- Fix: Layout-Benennungsproblem in der Admin-Liste
+- Fix: Problem mit Post-Data-Meta-Elementen
+- Fix: Probleme mit der RTL-Position
+- Fix: Überlappendes Problem bei der Steuerung von Galeriebildern
+- Fix: Neues Menü im Menüelement kann nicht erstellt werden
+- Fix: verhindert, dass das Speichern als Entwurf Schattenbereiche enthält
 
 
 1.4.2 - 2016-09-15
 -------------------------------------------------------------------------------
-- Add: ability to switch menus for breakpoints.
-- Add: button to delete a group of elements
-- Add: improved control on different region background per breakpoint
+- Hinzugefügt: Möglichkeit, Menüs für Haltepunkte zu wechseln.
+- Hinzugefügt: Schaltfläche zum Löschen einer Gruppe von Elementen
+- Hinzugefügt: Verbesserte Kontrolle über den Hintergrund verschiedener Regionen pro Haltepunkt
 
-- Fix: image element size when switching to responsive layout
-- Fix: resizing didn't get updated the first time
-- Fix: post content update issues
-- Fix: unable to show the elements when hidden region is toggled in responsive
-- Fix: menu issue after theme reset
-- Fix: undefined error when editing Featured image
-- Fix: menu glitch with repeated responsive change
+- Fix: Bildelementgröße beim Umschalten auf responsives Layout
+- Fix: Die Größenänderung wurde beim ersten Mal nicht aktualisiert
+- Fix: Probleme bei der Inhaltsaktualisierung
+- Fix: Die Elemente können nicht angezeigt werden, wenn der verborgene Bereich in Responsive umgeschaltet wird
+- Fix: Menüproblem nach dem Zurücksetzen des Themas
+- Fix: Undefinierter Fehler beim Bearbeiten des Beitragsbildes
+- Fix: Menüfehler mit wiederholtem Responsive Change
 
 
 1.4.1 - 2016-09-13
 -------------------------------------------------------------------------------
-- Fix: scheduled scans conflict issue.
+- Fix: Konfliktproblem bei geplanten Scans.
 
 
 1.4.0 - 2016-09-07
 -------------------------------------------------------------------------------
-- Add: support for meta description element for pages.
-- Add: empty global regions/lightboxes message.
-- Add: changelog review area.
-- Add: refactored login element.
-- Add: allow different style to be applied on each slide per breakpoint.
-- Add: initial Empty API Message and overlay to Map element.
-- Add: compatibility with Upfront Builder
+- Hinzugefügt: Unterstützung für das Meta-Beschreibungselement für Seiten.
+- Hinzugefügt: Nachricht für leere globale Regionen/Leuchtkästen.
+- Hinzugefügt: Changelog-Review-Bereich.
+- Hinzugefügt: umgestaltetes Anmeldeelement.
+- Hinzugefügt: Zulassen, dass auf jede Folie pro Haltepunkt ein anderer Stil angewendet wird.
+- Hinzugefügt: anfängliche leere API-Nachricht und Überlagerung zum Kartenelement.
+- Hinzugefügt: Kompatibilität mit Upfront Builder
 
-- Fix: parallax with PNG files and transparent backgrounds.
-- Fix: image inserts linking panel.
-- Fix: admin element toggling order issue.
-- Fix: issue in reverting to initial color in color picker.
-- Fix: gallery lightbox options application on frontend.
-- Fix: sync arrows padding with advanced settings.
-- Fix: remove categories data element from pages.
-- Fix: improve widget element error message rendering.
-- Fix: insert font issue in responsive mode editing.
-- Fix: javascript error on submit contact form.
-- Fix: post date PHP format issue.
-- Fix: issues in background image resolution.
-- Fix: consolidate fonts usage.
-- Fix: responsive image variant rendering.
+- Fix: Parallaxe bei PNG-Dateien und transparenten Hintergründen.
+- Fix: Bild fügt Verknüpfungsfeld ein.
+- Fix: Problem beim Umschalten der Reihenfolge des Admin-Elements.
+- Fix: Problem beim Zurücksetzen auf die ursprüngliche Farbe in der Farbauswahl.
+- Fix: Galerie-Lightbox-Optionsanwendung im Frontend.
+- Fix: Pfeilfüllung mit erweiterten Einstellungen synchronisieren.
+- Fix: Kategoriendatenelement von Seiten entfernen.
+- Fix: Renderstatus: Fehlermeldungen bei Widget-Elementen verbessert.
+- Fix: Problem beim Einfügen von Schriftarten in der Bearbeitung im reaktionsschnellen Modus.
+- Fix: Javascript-Fehler beim Senden des Kontaktformulars.
+- Fix: Problem mit dem PHP-Format des Postdatums.
+- Fix: Probleme bei der Auflösung von Hintergrundbildern.
+- Fix: Verwendung von Schriftarten konsolidieren.
+- Fix: Responsives Renderstatus: Bildvarianten.
 
 
 1.3.3 - 2016-07-19
 -------------------------------------------------------------------------------
-- Add: Google Maps API key area in admin
-- Fix: global regions issue.
-- Fix: global theme settings issue.
+- Hinzugefügt: Google Maps API-Schlüsselbereich im Adminbereich
+- Fix: Problem mit globalen Regionen.
+- Fix: Problem mit den globalen Themeneinstellungen.
 
 
 1.3.2 - 2016-06-24
 -------------------------------------------------------------------------------
-- Fix: drag and drop on responsive issue.
-- Fix: burger menu not working in desktop breakpoint.
+- Fix: Ziehen und Ablegen bei reaktionsfähigem Problem.
+- Fix: Burger-Menü funktioniert nicht im Desktop-Haltepunkt.
 
 
 1.3.1 - 2016-06-20
 -------------------------------------------------------------------------------
-- Fix: archive layouts saving issues.
-- Fix: posts element specific post settings issue.
-- Fix: featured image data element edge cases handling.
+- Fix: Probleme beim Speichern von Layouts archivieren.
+- Fix: Post-Element-spezifisches Post-Einstellungsproblem.
+- Fix: Umgang mit Edge-Cases für gekennzeichnete Bilddatenelemente.
 
 
 1.3 - 2016-06-17
 -------------------------------------------------------------------------------
-- Add: reusable custom layout templates.
-- Add: new posts/pages editing experience.
-- Add: dedicated posts and pages settings area.
+- Hinzugefügt: wiederverwendbare benutzerdefinierte Layoutvorlagen.
+- Hinzugefügt: Erfahrung beim Bearbeiten neuer Posts/Seiten.
+- Hinzugefügt: Dedizierter Einstellungsbereich für Posts und Seiten.
 
-- Fix: performance improvements.
-- Fix: show region button position in responsive.
-- Fix: multiple lightboxes conflict.
-- Fix: editor mode navigation in posts element.
-- Fix: padding keyboard controls in inline panels.
-- Fix: top padding change updates element height.
-- Fix: trailing closing comment being stripped from custom CSS.
-- Fix: issue with Pro Sites upload quotas.
+- Fix: Leistungsverbesserungen.
+- Fix: Position der Regionsschaltfläche in Responsive anzeigen.
+- Fix: Konflikt bei mehreren Lightboxen.
+- Fix: Editor-Modus-Navigation im Posts-Element.
+- Fix: Auffüllen von Tastatursteuerungen in Inline-Panels.
+- Fix: Die Änderung der oberen Polsterung aktualisiert die Elementhöhe.
+- Fix: Nachgestellter Schlusskommentar wird aus benutzerdefiniertem CSS entfernt.
+- Fix: Problem mit Pro Sites-Upload-Kontingenten.
 
 
 1.2.2 - 2016-04-29
 -------------------------------------------------------------------------------
-- Fix: store image element_size property per breakpoint.
+- Fix: Eigenschaft image element_size pro Haltepunkt speichern.
 
 1.2.1 - 2016-04-28
 -------------------------------------------------------------------------------
-- Fix: featured image swap button issue.
-- Fix: admin area shared abstraction checks.
-- Fix: make the posts and comments dialog link context-aware.
-- Fix: same ID being used with multiple calendar widgets.
-- Fix: include new strings for l10n.
-- Fix: refactor deprecated jQuery calls.
-- Fix: allow responsive per-preset post data element indents.
+- Fix: Problem mit der angezeigten Schaltfläche zum Austauschen von Bildern.
+- Fix: Gemeinsame Abstraktionsprüfungen im Admin-Bereich.
+- Fix: Machen Sie den Posts- und Kommentardialog kontextsensitiv.
+- Fix: Dieselbe ID wird mit mehreren Kalender-Widgets verwendet.
+- Fix: neue Strings für l10n einfügen.
+– Fix: Refactoring von veralteten jQuery-Aufrufen.
+- Fix: Responsive Per-Preset-Post-Datenelement-Einrückungen zulassen.
 
 1.2 - 2016-04-14
 -------------------------------------------------------------------------------
-- Add: admin interface.
-- Add: general and debug settings in admin interface.
-- Add: user roles restrictions in admin interface.
-- Add: experimental performance optimization in admin interface.
-- Add: image element redesign.
-- Add: ready-made CSS selectors for post data elements.
-- Add: keyboard shortcut for grid toggle (Alt+G)
+- Hinzugefügt: Admin-Oberfläche.
+- Hinzugefügt: Allgemeine und Debug-Einstellungen in der Admin-Oberfläche.
+- Hinzugefügt: Benutzerrolleneinschränkungen in der Admin-Oberfläche.
+- Hinzugefügt: experimentelle Leistungsoptimierung in der Admin-Oberfläche.
+- Hinzugefügt: Neugestaltung von Bildelementen.
+- Hinzugefügt: vorgefertigte CSS-Selektoren für Post-Datenelemente.
+- Hinzugefügt: Tastaturkürzel zum Umschalten des Rasters (Alt+G)
 
-- Fix: text element with image in content options issue.
-- Fix: responsive breakpoint toggling image sizes in editor.
-- Fix: code element resizing/height issue.
-- Fix: post part inputs editing issue.
-- Fix: gallery element caption text options.
-- Fix: responsive bottom padding clearing issue.
-- Fix: responsive performance issue.
-- Fix: background map region controls edit issue.
-- Fix: optimize refresh in rearranging menu element items.
+- Fix: Textelement mit Bild in Inhaltsoptionen.
+- Fix: reaktionsschneller Haltepunkt zum Umschalten der Bildgröße im Editor.
+- Fix: Problem mit der Größen-/Höhenänderung von Codeelementen.
+- Behoben: Bearbeitungsproblem bei Post-Part-Inputs.
+- Fix: Textoptionen für die Beschriftung von Galerieelementen.
+- Fix: Problem beim Löschen der reaktionsschnellen unteren Polsterung.
+- Fix: Reaktionsleistungsproblem.
+- Fix: Bearbeitungsproblem bei der Steuerung der Hintergrundkartenregion.
+- Fix: Optimieren Sie die Aktualisierung bei der Neuanordnung von Menüelementen.
 
 1.1.1 - 2016-03-31
 -------------------------------------------------------------------------------
-- Fix: double enter on list editing should end list behavior.
-- Fix: native WP aligned images style conflict.
-- Fix: code element with pre-existing content editables action.
-- Fix: breakpoints check for IE8.
-- Fix: media queries support for IE8.
-- Fix: featured image wrapper takes space with hide fallback.
-- Fix: element with user set padding resize calculus.
+- Fix: Doppelte Eingabe bei der Listenbearbeitung sollte das Listenverhalten beenden.
+- Fix: Stilkonflikt bei nativen WP-ausgerichteten Bildern.
+- Fix: Codeelement mit bereits vorhandener Inhaltsbearbeitungsaktion.
+- Fix: Haltepunktprüfung für IE8.
+- Fix: Unterstützung für Medienabfragen für IE8.
+- Fix: Featured Image Wrapper nimmt Platz mit Hide-Fallback.
+- Fix: Element mit benutzerdefinierter Padding-Größenänderungsberechnung.
 
 1.1 - 2016-03-23
 -------------------------------------------------------------------------------

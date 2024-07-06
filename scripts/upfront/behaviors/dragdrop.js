@@ -928,7 +928,7 @@ DragDrop.prototype = {
 			ed.lightbox_cols = false;
 			_.each(ed.regions, function(region) {
 				if(region.$el.hasClass('upfront-region-side-lightbox') && region.$el.css('display') == 'block') {
-//				console.log('found active lightbox');
+					//console.log('found active lightbox');
 					lightbox = region;
 					ed.lightbox_cols = region.col;
 				}

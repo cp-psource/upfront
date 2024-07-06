@@ -1,30 +1,4 @@
 <?php
-/*
-Plugin Name: Upfront Slider module
-Plugin URI: http://premium.wpmudev.org/project/upfront
-Description: UpFront Slider Module
-Version: 0.50
-Text Domain: usider
-Author: Paul Menard (Incsub)
-Author URI: http://premium.wpmudev.org
-WDP ID: XXX
-
-Copyright 2009-2011 Incsub (http://incsub.com)
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
-the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-*/
-
 
 /**
  * This is the entity entry point, where we inform Upfront of our existence.

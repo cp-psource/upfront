@@ -59,7 +59,7 @@ $main->add_element("PostData", array (
     'date_posted_format' => 'F j, Y g:i a',
     'content' => 'content',
     'post-part-date_posted' => '<div class="upostdata-part date_posted">
-	Posted on <span class="date">{{date}}</span></div>',
+	Veröffentlicht am <span class="date">{{date}}</span></div>',
     'post-part-title' => '<div class="upostdata-part title">
 	<h1>{{title}}</h1>
 </div>

@@ -17,7 +17,7 @@ class Upfront_Admin_ApiKeys extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Processes POST submissions
+	 * Verarbeitet POST-Übermittlungen
 	 *
 	 * @return bool
 	 */
@@ -46,7 +46,7 @@ class Upfront_Admin_ApiKeys extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Known services getter
+	 * Getter für bekannte Dienste
 	 *
 	 * @return array
 	 */
@@ -55,7 +55,7 @@ class Upfront_Admin_ApiKeys extends Upfront_Admin_Page {
 			Upfront_ApiKeys_Model::SERVICE_GMAPS => array(
 				'label' => __('Google Maps', 'upfront'),
 				'help' => sprintf(
-					__('You can obtain the API key <a href="%s" target="_blank">here</a>', 'upfront'),
+					__('Den API-Schlüssel kannst Du <a href="%s" target="_blank">hier</a> erhalten', 'upfront'),
 					'https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend&keyType=CLIENT_SIDE&reusekey=true'
 				),
 			),
@@ -63,7 +63,7 @@ class Upfront_Admin_ApiKeys extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Access protection abstraction
+	 * Abstraktion des Zugriffsschutzes
 	 *
 	 * @return bool
 	 */
@@ -72,9 +72,9 @@ class Upfront_Admin_ApiKeys extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Renders service key entry box
+	 * Rendert das Eingabefeld für den Dienstschlüssel
 	 *
-	 * @param string $service Known service index key
+	 * @param string $service Bekannter Dienstindexschlüssel
 	 */
 	public function render_key_box ($service=false) {
 		$services = $this->get_services();

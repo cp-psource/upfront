@@ -81,7 +81,7 @@ define([
 			});
 
 			$('body').on( 'keyup', function( event ) {
-				if ( event.keyCode === 27) {
+				if ( event.key === 27) {
 					if('undefined' !== typeof me.element_id) {
 						me.close();
 					}
@@ -186,7 +186,7 @@ define([
 						ratio = size.width / size.height;
 
 					if(sizeButtons.length) {
-						sizeButtons.find('.image-increase-size').on('click', function(e) {
+						sizeButtons.find('.image-increase-size').on("click",function(e) {
 							e.preventDefault();
 							var step = 1;
 
@@ -197,7 +197,7 @@ define([
 							me.buttonIncreaseSize(step, ratio);
 						});
 
-						sizeButtons.find('.image-decrease-size').on('click', function(e) {
+						sizeButtons.find('.image-decrease-size').on("click",function(e) {
 							e.preventDefault();
 							var step = 1;
 

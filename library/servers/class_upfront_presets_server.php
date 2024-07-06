@@ -2,39 +2,39 @@
 
 abstract class Upfront_Presets_Server extends Upfront_Server {
 
-	protected $isPostPartServer = false;
-	protected $isThisPostServer = false;
-	protected $isCommentServer = false;
-	protected $isNavigationServer = false;
+    protected $isPostPartServer = false;
+    protected $isThisPostServer = false;
+    protected $isCommentServer = false;
+    protected $isNavigationServer = false;
+    public $db_key;
 
-	protected function __construct() {
-		parent::__construct();
+    protected function __construct() {
+        parent::__construct();
 
-		add_filter('upfront_l10n', array('Upfront_Presets_Server', 'add_l10n_strings'));
+        add_filter('upfront_l10n', array('Upfront_Presets_Server', 'add_l10n_strings'));
 
-		$this->elementName = $this->get_element_name();
-		$this->db_key = 'upfront_' . get_stylesheet() . '_' . $this->elementName . '_presets';
+        $this->db_key = 'upfront_' . get_stylesheet() . '_' . $this->get_element_name() . '_presets';
 
-		$registry = Upfront_PresetServer_Registry::get_instance();
-		$registry->set($this->elementName, $this);
-	}
+        $registry = Upfront_PresetServer_Registry::get_instance();
+        $registry->set($this->get_element_name(), $this);
+    }
 
-	public abstract function get_element_name();
+    public abstract function get_element_name();
 
-	protected function _add_hooks () {
-		if (Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
-			upfront_add_ajax('upfront_get_' . $this->elementName . '_presets', array($this, 'get'));
-		}
-		if (Upfront_Permissions::current(Upfront_Permissions::SAVE)) {
-			upfront_add_ajax('upfront_save_' . $this->elementName . '_preset', array($this, 'save'));
-			upfront_add_ajax('upfront_delete_' . $this->elementName . '_preset', array($this, 'delete'));
-			upfront_add_ajax('upfront_reset_' . $this->elementName . '_preset', array($this, 'reset'));
-		}
-	}
+    protected function _add_hooks () {
+        if (Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
+            upfront_add_ajax('upfront_get_' . $this->get_element_name() . '_presets', array($this, 'get'));
+        }
+        if (Upfront_Permissions::current(Upfront_Permissions::SAVE)) {
+            upfront_add_ajax('upfront_save_' . $this->get_element_name() . '_preset', array($this, 'save'));
+            upfront_add_ajax('upfront_delete_' . $this->get_element_name() . '_preset', array($this, 'delete'));
+            upfront_add_ajax('upfront_reset_' . $this->get_element_name() . '_preset', array($this, 'reset'));
+        }
+    }
 
-	public function get() {
-		$this->_out(new Upfront_JsonResponse_Success($this->get_presets()));
-	}
+    public function get() {
+        $this->_out(new Upfront_JsonResponse_Success($this->get_presets()));
+    }
 
 	public function delete() {
 		if (!isset($_POST['data'])) {
@@ -46,9 +46,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		}
 
 		$properties = stripslashes_deep($_POST['data']);
-		do_action('upfront_delete_' . $this->elementName . '_preset', $properties, $this->elementName);
+		do_action('upfront_delete_' . $this->get_element_name() . '_preset', $properties, $this->get_element_name());
 
-		if (!has_action('upfront_delete_' . $this->elementName . '_preset')) {
+		if (!has_action('upfront_delete_' . $this->get_element_name() . '_preset')) {
 			$presets = $this->get_presets();
 
 			$result = array();
@@ -63,7 +63,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			$this->update_presets($result);
 		}
 
-		$this->_out(new Upfront_JsonResponse_Success('Deleted ' . $this->elementName . ' preset.'));
+		$this->_out(new Upfront_JsonResponse_Success('Deleted ' . $this->get_element_name() . ' preset.'));
 	}
 
 	public function reset() {
@@ -82,9 +82,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			return $this->_out(new Upfront_JsonResponse_Error("Invalid preset"));
 		}
 
-		do_action('upfront_reset_' . $this->elementName . '_preset', $properties, $this->elementName);
+		do_action('upfront_reset_' . $this->get_element_name() . '_preset', $properties, $this->get_element_name());
 
-		if (!has_action('upfront_reset_' . $this->elementName . '_preset')) {
+		if (!has_action('upfront_reset_' . $this->get_element_name() . '_preset')) {
 			$presets = $this->get_presets();
 			$result = array();
 			$resetpreset = array();
@@ -204,7 +204,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		$presets = json_decode(Upfront_Cache_Utils::get_option($this->db_key, '[]'), true);
 
 		$presets = apply_filters(
-			'upfront_get_' . $this->elementName . '_presets',
+			'upfront_get_' . $this->get_element_name() . '_presets',
 			$presets,
 			array(
 				'json' => false,
@@ -261,9 +261,9 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			}
 		}
 
-		do_action('upfront_save_' . $this->elementName . '_preset', $properties, $this->elementName);
+		do_action('upfront_save_' . $this->get_element_name() . '_preset', $properties, $this->get_element_name());
 
-		if (!has_action('upfront_save_' . $this->elementName . '_preset')) {
+		if (!has_action('upfront_save_' . $this->get_element_name() . '_preset')) {
 			$presets = $this->get_presets();
 
 			$result = array();
@@ -281,7 +281,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			$this->update_presets($result);
 		}
 
-		$this->_out(new Upfront_JsonResponse_Success('Saved ' . $this->elementName . ' preset, yay.'));
+		$this->_out(new Upfront_JsonResponse_Success('Saved ' . $this->get_element_name() . ' preset, yay.'));
 	}
 
 	public function get_presets_styles() {
@@ -361,13 +361,16 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 	 */
 	public function get_theme_presets() {
 		$settings = Upfront_ChildTheme::get_settings();
-		//Get presets distributed with the theme
-		$theme_presets = is_object($settings) && $settings instanceof Upfront_Theme_Settings
-			? json_decode($settings->get($this->elementName . '_presets'), true)
-			: false
-		;
+		// Get presets distributed with the theme
+		$presetData = is_object($settings) && $settings instanceof Upfront_Theme_Settings
+			? $settings->get($this->get_element_name() . '_presets')
+			: null;
 
-		return $theme_presets;
+		if ($presetData === null) {
+			return false;
+		}
+
+		return json_decode($presetData, true);
 	}
 
 	/**
@@ -450,51 +453,43 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 	}
 
 	public function get_presets_javascript_server() {
-		$presets = Upfront_Cache_Utils::get_option('upfront_' . get_stylesheet() . '_' . $this->elementName . '_presets');
+		$presets = Upfront_Cache_Utils::get_option('upfront_' . get_stylesheet() . '_' . $this->get_element_name() . '_presets');
 		$presets = apply_filters(
-			'upfront_get_' . $this->elementName . '_presets',
+			'upfront_get_' . $this->get_element_name() . '_presets',
 			$presets,
 			array(
 				'json' => false,
 				'as_array' => true
 			)
 		);
-
-		if(!is_array($presets)) {
-			$presets = json_decode($presets, true);
+	
+		if (!is_string($presets)) {
+			return json_encode(array());
 		}
-
-		$theme_presets = array();
-		$updatedPresets = array();
-
-		//Get presets distributed with the theme
-		$theme_presets = $this->get_theme_presets_names();
-
-		if(empty($theme_presets)) {
-			return json_encode($this->migrate_presets($presets));
+	
+		$decodedPresets = json_decode($presets, true);
+	
+		if ($decodedPresets === null) {
+			return json_encode(array());
 		}
-
-		//Check if preset is distributed with the theme
-		if (is_array($presets)) foreach($presets as $preset) {
-			if(in_array($preset['id'], $theme_presets)) {
-				$preset['theme_preset'] = true;
-			} else {
-				$preset['theme_preset'] = false;
-			}
-			$updatedPresets[] = $preset;
+	
+		$themePresets = $this->get_theme_presets_names();
+	
+		if (empty($themePresets)) {
+			return json_encode($this->migrate_presets($decodedPresets));
 		}
-
+	
+		foreach ($decodedPresets as &$preset) {
+			$preset['theme_preset'] = in_array($preset['id'], $themePresets);
+		}
+	
 		$updatedPresets = $this->replace_new_lines(
-			$this->migrate_presets($updatedPresets)
+			$this->migrate_presets($decodedPresets)
 		);
 		$updatedPresets = $this->_expand_passive_relative_url($updatedPresets);
 		$updatedPresets = $this->handle_post_parts($updatedPresets);
-
-		$updatedPresets = json_encode($updatedPresets);
-
-		if(empty($updatedPresets)) $updatedPresets = json_encode(array());
-
-		return $updatedPresets;
+	
+		return json_encode($updatedPresets);
 	}
 
 	public function get_typography_values_by_tag($tag) {
@@ -594,62 +589,62 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 
 	private static function _get_l10n ($key=false) {
 		$l10n = array(
-			'select_preset' => __('Select Preset', 'upfront'),
-			'preset' => __('Preset', 'upfront'),
-			'select_preset_label' => __('Choose or Create Preset:', 'upfront'),
-			'delete_label' => __('Delete', 'upfront'),
-			'add_label' => __('Add', 'upfront'),
+			'select_preset' => __('Voreinstellung auswählen', 'upfront'),
+			'preset' => __('Voreinstellung', 'upfront'),
+			'select_preset_label' => __('Voreinstellung auswählen oder erstellen:', 'upfront'),
+			'delete_label' => __('Löschen', 'upfront'),
+			'add_label' => __('Hinzufügen', 'upfront'),
 			'ok_label' => __('OK', 'upfront'),
-			'cancel_label' => __('Cancel', 'upfront'),
-			'apply_label' => __('Apply', 'upfront'),
-			'not_empty_label' => __('Preset name can not be empty.', 'upfront'),
-			'special_character_label' => __('Preset name can contain only numbers, letters and spaces.', 'upfront'),
-			'invalid_preset_label' => __('Invalid preset name. Preset name should start with a letter.', 'upfront'),
-			'default_preset' => __('Default', 'upfront'),
-			'add_preset_label' => __('Add Preset', 'upfront'),
+			'cancel_label' => __('Abbrechen', 'upfront'),
+			'apply_label' => __('Anwenden', 'upfront'),
+			'not_empty_label' => __('Der Name der Voreinstellung darf nicht leer sein.', 'upfront'),
+			'special_character_label' => __('Der voreingestellte Name darf nur Zahlen, Buchstaben und Leerzeichen enthalten.', 'upfront'),
+			'invalid_preset_label' => __('Ungültiger voreingestellter Name. Der Name der Voreinstellung sollte mit einem Buchstaben beginnen.', 'upfront'),
+			'default_preset' => __('Standard', 'upfront'),
+			'add_preset_label' => __('Voreinstellung hinzufügen', 'upfront'),
 			'border' => __('Border', 'upfront'),
-			'none' => __('None', 'upfront'),
+			'none' => __('Keinen', 'upfront'),
 			'solid' => __('Solid', 'upfront'),
 			'dashed' => __('Dashed', 'upfront'),
 			'dotted' => __('Dotted', 'upfront'),
-			'width' => __('Width', 'upfront'),
-			'color' => __('Color', 'upfront'),
-			'bg_color' => __('Background Color', 'upfront'),
-			'edit_text' => __('Edit Text', 'upfront'),
-			'default_preset' => __('Default', 'upfront'),
+			'width' => __('Breite', 'upfront'),
+			'color' => __('Farbe', 'upfront'),
+			'bg_color' => __('Hintergrundfarbe', 'upfront'),
+			'edit_text' => __('Text bearbeiten', 'upfront'),
+			'default_preset' => __('Standard', 'upfront'),
 			'border' => __('Border', 'upfront'),
 			'px' => __('px', 'upfront'),
-			'type_element' => __('Type Element:', 'upfront'),
-			'typeface' => __('Typeface:', 'upfront'),
+			'type_element' => __('Typelement:', 'upfront'),
+			'typeface' => __('Schrift:', 'upfront'),
 			'weight_style' => __('Weight/Style:', 'upfront'),
-			'size' => __('Size:', 'upfront'),
-			'line_height' => __('Line Height: ', 'upfront'),
-			'text_alignment' => __('Text alignment', 'upfront'),
-			'rounded_corners' => __('Round Corners', 'upfront'),
-			'typography' => __('Typography', 'upfront'),
-			'animate_hover_changes' => __('Animate State Changes', 'upfront'),
+			'size' => __('Größe:', 'upfront'),
+			'line_height' => __('Zeilenhöhe:', 'upfront'),
+			'text_alignment' => __('Textausrichtung', 'upfront'),
+			'rounded_corners' => __('Runde Ecken', 'upfront'),
+			'typography' => __('Typografie', 'upfront'),
+			'animate_hover_changes' => __('Zustandsänderungen animieren', 'upfront'),
 			'sec' => __('sec', 'upfront'),
 			'ease' => __('ease', 'upfront'),
 			'linear' => __('linear', 'upfront'),
 			'ease_in' => __('ease-in', 'upfront'),
 			'ease_out' => __('ease-out', 'upfront'),
 			'ease_in_out' => __('ease-in-out', 'upfront'),
-			'accordion' => __('Accordion', 'upfront'),
-			'comments' => __('Comments', 'upfront'),
-			'contact_form' => __('Contact Form', 'upfront'),
-			'gallery' => __('Gallery', 'upfront'),
-			'image' => __('Image', 'upfront'),
+			'accordion' => __('Akkordeon', 'upfront'),
+			'comments' => __('Kommentare', 'upfront'),
+			'contact_form' => __('Kontakt Formular', 'upfront'),
+			'gallery' => __('Galerie', 'upfront'),
+			'image' => __('Bild', 'upfront'),
 			'login' => __('Login', 'upfront'),
 			'like_box' => __('Like Box', 'upfront'),
 			'map' => __('Map', 'upfront'),
 			'navigation' => __('Navigation', 'upfront'),
 			'button' => __('Button', 'upfront'),
 			'posts' => __('Posts', 'upfront'),
-			'search' => __('Search', 'upfront'),
+			'search' => __('Suche', 'upfront'),
 			'slider' => __('Slider', 'upfront'),
 			'social' => __('Social', 'upfront'),
 			'tabs' => __('Tabs', 'upfront'),
-			'page' => __('Page', 'upfront'),
+			'page' => __('Seite', 'upfront'),
 			'post' => __('Post', 'upfront'),
 			'widget' => __('Widget', 'upfront'),
 			'youtube' => __('YouTube', 'upfront'),
@@ -657,21 +652,21 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 			'text' => __('Text', 'upfront'),
 			'code' => __('Code', 'upfront'),
 			'posts_label' => __('Post', 'upfront'),
-			'reset_posts' => __('Reset every', 'upfront'),
-			'default_label' => __('Default', 'upfront'),
-			'edit_preset_css' => __('Edit Preset CSS', 'upfront'),
-			'edit_preset_label' => __('Custom CSS', 'upfront'),
-			'convert_style_to_preset' => __('Save as Preset', 'upfront'),
-			'convert_preset_info' => __('Upfront 1.0 introduces presets, which allow you to save and re-use styling for any element across your website. Before you can edit this element, choose one of the following options:', 'upfront'),
-			'select_preset_info' => __('Select existing preset (<strong>recommended</strong>):', 'upfront'),
-			'save_as_preset_button_info' => __('Or save current style as a new preset:', 'upfront'),
-			'preset_changed' => __('Preset changed to %s', 'upfront'),
-			'preset_already_exist' => __('Preset %s already exist, use another name!', 'upfront'),
-			'preset_created' => __('Preset %s created succesfully!', 'upfront'),
-			'preset_reset' => __('Preset %s was reset!', 'upfront'),
-			'default_overlay_title' => __('Editing Default Preset', 'upfront'),
-			'default_overlay_text' => __('<p>Please beware, this element is using <strong>Default Preset</strong>, Modifying Presets will affect every layout where that Preset is used.</p><p>To modify just this instance of Element, please create a New Preset.</p>', 'upfront'),
-			'default_overlay_button' => __('Edit Default Preset', 'upfront')
+			'reset_posts' => __('Alle zurücksetzen', 'upfront'),
+			'default_label' => __('Standard', 'upfront'),
+			'edit_preset_css' => __('CSS bearbeiten', 'upfront'),
+			'edit_preset_label' => __('Style:', 'upfront'),
+			'convert_style_to_preset' => __('Als Voreinstellung speichern', 'upfront'),
+			'convert_preset_info' => __('Upfront 1.0 führt Voreinstellungen ein, die es Dir ermöglichen, Stile für jedes Element auf Deiner Webseite zu speichern und wiederzuverwenden. Bevor Du dieses Element bearbeiten kannst, wähle eine der folgenden Optionen:', 'upfront'),
+			'select_preset_info' => __('Vorhandene Voreinstellung auswählen (<strong>empfohlen</strong>):', 'upfront'),
+			'save_as_preset_button_info' => __('Oder speichere den aktuellen Stil als neue Voreinstellung:', 'upfront'),
+			'preset_changed' => __('Voreinstellung geändert zu %s', 'upfront'),
+			'preset_already_exist' => __('Preset %s existiert bereits, verwende einen anderen Namen!', 'upfront'),
+			'preset_created' => __('Voreinstellung %s erfolgreich erstellt!', 'upfront'),
+			'preset_reset' => __('Voreinstellung %s wurde zurückgesetzt!', 'upfront'),
+			'default_overlay_title' => __('Bearbeiten der Standardvoreinstellung', 'upfront'),
+			'default_overlay_text' => __('<p>Bitte beachte, dass dieses Element <strong>Standardvoreinstellung</strong> verwendet. Das Ändern von Voreinstellungen wirkt sich auf jedes Layout aus, in dem diese Voreinstellung verwendet wird.</p><p>Um nur diese Instanz von Element zu ändern, erstelle bitte eine neue Voreinstellung.</p>', 'upfront'),
+			'default_overlay_button' => __('Standardvoreinstellung bearbeiten', 'upfront')
 		);
 		return !empty($key)
 			? (!empty($l10n[$key]) ? $l10n[$key] : $key)

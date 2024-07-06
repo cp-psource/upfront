@@ -1534,7 +1534,7 @@ var _alpha = "alpha",
 				this.postId = options.postId;
 		},
 		save: function(){
-			console.error('CommentList save: Use single comment save instead.');
+			console.fail('CommentList save: Use single comment save instead.');
 		}
 
 	}),

@@ -869,10 +869,10 @@
 				var me = this;
 				setTimeout(function () {
 					// overwriting click event on chosen.jquery.min.js
-					me.$el.find('.upfront-field-multiple input').bind('click.chosen', function (e) {
+					me.$el.find('.upfront-field-multiple input').on('click.chosen', function (e) {
 						me.stop_bubble(e);
 					});
-					me.$el.find('.upfront-field-multiple span.upfront-field-label-text').bind('click.chosen', function (e) {
+					me.$el.find('.upfront-field-multiple span.upfront-field-label-text').on('click.chosen', function (e) {
 						me.stop_bubble(e);
 					});
 				}, 300);

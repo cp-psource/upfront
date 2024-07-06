@@ -68,7 +68,7 @@ class Upfront_Editor_Ajax extends Upfront_Server {
 			stripslashes_deep($_POST['data']),
 			array(
 				'post_type' => 'post',
-				'title' => 'Write a title...',
+				'title' => 'Titel schreiben...',
 			)
 		);
 

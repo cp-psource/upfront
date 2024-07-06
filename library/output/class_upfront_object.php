@@ -2,6 +2,9 @@
 
 
 class Upfront_Object extends Upfront_Entity {
+
+	public $_parent_data;
+	
 	protected $_type = 'Object';
 
 	public function __construct ($data, $parent_data = "") {

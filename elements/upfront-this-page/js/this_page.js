@@ -106,7 +106,7 @@ var ThisPageView = (function(){
 					post_id: page_id,
 					post_type: Upfront.Settings.LayoutEditor.newpostType
 				})
-			}).success(function(response){
+			}).done(function(response){
 				if(loading){
 					loading.done();
 					loading = false;

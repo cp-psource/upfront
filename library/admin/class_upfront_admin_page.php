@@ -2,7 +2,7 @@
 
 
 /**
- * Admin page class abstraction
+ * Abstraktion der Admin-Seitenklasse
  */
 abstract class Upfront_Admin_Page {
 
@@ -11,7 +11,7 @@ abstract class Upfront_Admin_Page {
 	abstract public function render_page ();
 
 	/**
-	 * Utility for checking capability on modifying restrictions
+	 * Dienstprogramm zum Überprüfen der Fähigkeit zum Ändern von Einschränkungen
 	 *
 	 * @return bool
 	 */

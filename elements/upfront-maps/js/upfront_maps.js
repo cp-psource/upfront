@@ -318,7 +318,7 @@ define([
 				.find("#upfront_map-location_overlay-location")
 					.off("keydown").on("keydown", function (e) {
 						if (13 === e.which) {
-							$location.find("#upfront_map-location_overlay-use_location").click();
+							$location.find("#upfront_map-location_overlay-use_location").on('click',);
 							Upfront.Events.trigger("upfront:element:edit:stop"); // Trigger this so we can drag maps with enter-submitted locations
 						}
 					})
@@ -572,7 +572,7 @@ define([
 				$('.marker-imgs img', t).on('dblclick', function(){
 					self.setMap(null);
 				});
-				$('.marker-url button', t).on('click', function(){
+				$('.marker-url button', t).on("click",function(){
 					self.setMap(null);
 				});
 
@@ -584,7 +584,7 @@ define([
 				$('img[src="'+src+'"]',t).parent().addClass('ufm-current');
 				url_textarea.val(src);
 
-				url_textarea.on('click', function(){this.focus();});
+				url_textarea.on("click",function(){this.focus();});
 
 				url_textarea.on('input propertychange change', function(){
 					var url = $(this).val();

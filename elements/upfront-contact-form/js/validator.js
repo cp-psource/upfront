@@ -29,16 +29,16 @@ jQuery(function($){
 		;
 		switch(field){
 			case 'sendername':
-				error = $elem.val().trim() ? false : 'You must write your name.';
+				error = $elem.val().trim() ? false : 'Du mussen Deinen Namen angeben.';
 				break;
 			case 'senderemail':
-				error = check_email($elem.val().trim()) ? false : 'The email address is not valid.';
+				error = check_email($elem.val().trim()) ? false : 'Die E-Mail-Adresse ist nicht gültig.';
 				break;
 			case 'subject':
-				error = $elem.val().trim() ? false : 'You must write a subject for the message.';
+				error = $elem.val().trim() ? false : 'Du musst einen Betreff für die Nachricht eingeben.';
 				break;
 			case 'sendermessage':
-				error = $elem.val().trim() ? false : 'You forgot to write a message.';
+				error = $elem.val().trim() ? false : 'Du hast vergessen, eine Nachricht zu schreiben.';
 		}
 		if(error){
 			$elem.addClass('ucontact-field-error');
@@ -59,13 +59,13 @@ jQuery(function($){
 		;
 
 		if(!name.val().trim())
-			add_error('You must write your name.', errors, name);
+			add_error('Du mussen Deinen Namen angeben.', errors, name);
 		if(!check_email(email.val().trim()))
-			add_error('The email address is not valid.', errors, email);
+			add_error('Die E-Mail-Adresse ist nicht gültig.', errors, email);
 		if(subject.length > 0 && !subject.val().trim())
-			add_error('You must write a subject for the message.', errors, subject);
+			add_error('Du musst einen Betreff für die Nachricht eingeben.', errors, subject);
 		if(!message.val().trim())
-			add_error('You forgot to write a message.', errors, message);
+			add_error('Du hast vergessen, eine Nachricht zu schreiben.', errors, message);
 
 		if(errors.length > 0){
 			//Stop sending

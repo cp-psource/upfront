@@ -5,10 +5,6 @@ if (!class_exists('Upfront_Presets_Server')) {
 }
 
 class Upfront_Nav_Presets_Server extends Upfront_Presets_Server {
-
-	public $elementName;
-	public $db_key;
-	
 	protected $isNavigationServer = true;
 	private static $instance;
 

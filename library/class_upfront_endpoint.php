@@ -146,13 +146,33 @@ class Upfront_EditPage_VirtualSubpage extends Upfront_VirtualSubpage {
 		return 'page';
 	}
 
-	public function parse ($request) {
+	/*public function parse ($request) {
 		$post_id = end($request);
 		global $post, $wp_query;
 		$wp_query = new WP_Query(array(
 			'page_id' => $post_id,
 		));
 		add_filter('upfront-data-post_id', create_function('', "return $post_id;"));
+	}*/
+
+	public function parse($request) {
+		// Check if the $request variable is not empty
+		if (!empty($request)) {
+			// Get the last element of the $request array
+			$post_id = end($request);
+			global $post, $wp_query;
+			// Check if the $post_id variable is not empty and is a valid post ID
+			if (!empty($post_id) && is_numeric($post_id)) {
+				// Create a new WP_Query object
+				$wp_query = new WP_Query(array(
+					'page_id' => $post_id,
+				));
+				// Add the post ID filter to the Upfront data
+				add_filter('upfront-data-post_id', function() use ($post_id) {
+					return $post_id;
+				});
+			}
+		}
 	}
 
 	public function render ($request) {
@@ -182,13 +202,32 @@ class Upfront_EditPost_VirtualSubpage extends Upfront_VirtualSubpage {
 		return 'post';
 	}
 
-	public function parse ($request) {
+	/*public function parse ($request) {
 		$post_id = end($request);
 		global $post, $wp_query;
 		$wp_query = new WP_Query(array(
 			'p' => $post_id,
 		));
 		add_filter('upfront-data-post_id', create_function('', "return $post_id;"));
+	}*/
+	public function parse($request) {
+		// Check if the $request variable is not empty
+		if (!empty($request)) {
+			// Get the last element of the $request array
+			$post_id = end($request);
+			global $post, $wp_query;
+			// Check if the $post_id variable is not empty and is a valid post ID
+			if (!empty($post_id) && is_numeric($post_id)) {
+				// Create a new WP_Query object
+				$wp_query = new WP_Query(array(
+					'p' => $post_id,
+				));
+				// Add the post ID filter to the Upfront data
+				add_filter('upfront-data-post_id', function() use ($post_id) {
+					return $post_id;
+				});
+			}
+		}
 	}
 
 	public function render ($request) {

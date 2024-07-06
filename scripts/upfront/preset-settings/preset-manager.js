@@ -113,39 +113,44 @@ define([
 		defaultOverlay: function() {
 			var me = this,
 				preset = this.property('preset') ? this.clear_preset_name(this.property('preset')) : 'default';
-
-			if(preset === "default") {
-				setTimeout( function() {
+		
+			if (preset === "default") {
+				setTimeout(function() {
 					//Wrap settings and preset styles
-					me.$el.find('.preset_specific').next().andSelf().wrapAll('<div class="default-overlay-wrapper" />');
-
+					me.$el.find('.preset_specific').next().addBack().wrapAll('<div class="default-overlay-wrapper" />');
+		
 					//Append overlay div
 					me.$el.find('.default-overlay-wrapper').append('<div class="default-overlay">' +
-					'<div class="overlay-title">' + l10n.default_overlay_title + '</div>' +
-					'<div class="overlay-text">' + l10n.default_overlay_text + '</div>' +
-					'<div class="overlay-button"><button type="button" class="overlay-button-input">'+ l10n.default_overlay_button +'</button></div>' +
-					'</div>');
-
+						'<div class="overlay-title">' + l10n.default_overlay_title + '</div>' +
+						'<div class="overlay-text">' + l10n.default_overlay_text + '</div>' +
+						'<div class="overlay-button"><button type="button" class="overlay-button-input">' + l10n.default_overlay_button + '</button></div>' +
+						'</div>');
+		
 					//Disable preset reset button
 					me.$el.find('.delete_preset input').prop('disabled', true);
-					me.$el.find('.delete_preset input').css({ opacity: 0.6 });
+					me.$el.find('.delete_preset input').css({
+						opacity: 0.6
+					});
 				}, 100);
 			}
-
+		
 			this.$el.on('click', '.overlay-button-input', function(event) {
 				event.preventDefault();
-
+		
 				//Remove overlay div
 				me.$el.find('.default-overlay').remove();
-
+		
 				//Update wrapper min-height
 				me.$el.find('.default-overlay-wrapper').css('min-height', '30px');
-
+		
 				//Enable preset reset button
 				me.$el.find('.delete_preset input').prop('disabled', false);
-				me.$el.find('.delete_preset input').css({ opacity: 1 });
+				me.$el.find('.delete_preset input').css({
+					opacity: 1
+				});
 			});
 		},
+		
 
 		updateMainDataCollectionPreset: function(properties) {
 			var index;
@@ -524,7 +529,7 @@ define([
 			Upfront.Util.post({
 				data: preset.toJSON(),
 				action: 'upfront_reset_' + this.ajaxActionSlug + '_preset'
-			}).success(function (ret) {
+			}).done(function (ret) {
 				var resetPreset = ret.data;
 				if(_.isEmpty(ret.data) || ret.data === false) {
 					resetPreset = me.getPresetDefaults('default');
@@ -543,7 +548,7 @@ define([
 				me.$el.empty();
 				me.render();
 				Upfront.Events.trigger('element:preset:updated');
-			}).error(function (ret) {
+			}).fail(function (ret) {
 				//Notify error
 				Upfront.Views.Editor.notify(ret);
 			});

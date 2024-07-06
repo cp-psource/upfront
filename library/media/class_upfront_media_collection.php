@@ -90,10 +90,19 @@ class Upfront_MediaCollection extends Upfront_Media {
 			$collection->_args['order'] = strtoupper($order);
 		}
 
-		if (!empty($filters['recent'])) {
+		/*if (!empty($filters['recent'])) {
 			$recent = end($filters['recent']);
 			$time = date('Y-m-d', strtotime("-{$recent} days"));
 			$recent_callback = create_function('$where', 'global $wpdb; return $where .= " AND {$wpdb->posts}.post_date > \'' . $time . '\'";');
+			add_filter('posts_where', $recent_callback);
+		}*/
+		if (isset($filters['recent']) && is_array($filters['recent']) && !empty($filters['recent'])) {
+			$recent = end($filters['recent']);
+			$time = date('Y-m-d', strtotime("-{$recent} days"));
+			$recent_callback = function($where) use ($wpdb, $time) {
+				global $wpdb;
+				return $where .= " AND {$wpdb->posts}.post_date > '" . $time . "'";
+			};
 			add_filter('posts_where', $recent_callback);
 		}
 

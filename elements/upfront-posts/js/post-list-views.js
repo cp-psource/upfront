@@ -75,7 +75,7 @@ var Views = {
 						query: query
 					}
 				})
-				.success(function (response) {
+				.done(function (response) {
 					if (response.data && response.data.posts) {
 						var posts = '';
 						_.each(response.data.posts, function (post) {
@@ -115,10 +115,10 @@ var Views = {
 							})
 						;
 					}
-					else me.$el.empty().append(me.tpl.error({l10n: l10n}));
+					else me.$el.empty().append(me.tpl.fail({l10n: l10n}));
 				})
-				.error(function () {
-					me.$el.empty().append(me.tpl.error({l10n: l10n}));
+				.fail(function () {
+					me.$el.empty().append(me.tpl.fail({l10n: l10n}));
 				})
 			;
 			this.$el.empty().append(this.tpl.load({l10n: l10n}));

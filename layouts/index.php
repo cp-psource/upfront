@@ -97,9 +97,9 @@ $main->add_element("Posts", array (
     'gravatar_size' => 200,
     'preset' => 'default',
     'post-part-date_posted' => '<div class="uposts-part date_posted">
-	Posted on <span class="datetime">{{datetime}}</span></div>',
+	Veröffentlicht am <span class="datetime">{{datetime}}</span></div>',
     'post-part-author' => '<div class="uposts-part author">
-	By <a href="{{url}}">{{name}}</a></div>',
+	Von <a href="{{url}}">{{name}}</a></div>',
     'post-part-gravatar' => '<div class="uposts-part gravatar">
 	{{gravatar}}
 </div>',
@@ -217,7 +217,7 @@ if ( $left_sidebar ){
 if ( $right_sidebar ){
 	$right = upfront_create_region(array(
 		'name' => "right-sidebar",
-		'title' => __("Right Sidebar"),
+		'title' => __("Rechte Seitenleiste", 'upfront'),
 		'scope' => "local",
 	), array(
 		'col' => 6,
@@ -233,7 +233,7 @@ if ( $right_sidebar ){
 		'margin_left' => 1,
 		'new_line' => false,
 		'options' => array(
-			'content' => "Text element on right sidebar",
+			'content' => "Textelement in der rechten Seitenleiste",
 			"class" => "c24 upfront-plain_txt",
 		)
 	));

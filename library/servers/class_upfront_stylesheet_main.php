@@ -217,14 +217,14 @@ class Upfront_StylesheetMain extends Upfront_Server {
 		return $out;
 	}
 
-	function prepare_typography_styles ($layout, $grid) {
+	function prepare_typography_styles($layout, $grid) {
 		$typography = $layout->get_property_value('typography');
 		$out = '';
 		$faces = array();
 		if (is_object($typography)) $typography = (array)$typography;
-
+	
 		if (is_array($typography)) {
-			foreach ( $typography as $element=>$properties ) {
+			foreach ($typography as $element => $properties) {
 				$properties = wp_parse_args((array)$properties, array(
 					'font_face' => false,
 					'weight' => false,
@@ -247,66 +247,66 @@ class Upfront_StylesheetMain extends Upfront_Server {
 				} else {
 					$font = $properties['font_face'] ? "{$face}" : "inherit";
 				}
-
+	
 				$selector = $this->_typography_element_to_output_selector($element);
 				if (empty($selector)) continue;
-
+	
 				$out .= "{$selector} {\n" .
 						"font-family: {$font};\n" .
-						( $properties['weight'] ? "font-weight: {$properties['weight']};\n" : "" ) .
-						( $properties['style'] ? "font-style: {$properties['style']};\n" : "" ) .
-						( $properties['size'] ? "font-size: {$properties['size']}px;\n" : "" ) .
-						( $properties['line_height'] ? "line-height: {$properties['line_height']}em;\n" : "" ) .
+						($properties['weight'] ? "font-weight: {$properties['weight']};\n" : "") .
+						($properties['style'] ? "font-style: {$properties['style']};\n" : "") .
+						($properties['size'] ? "font-size: {$properties['size']}px;\n" : "") .
+						($properties['line_height'] ? "line-height: {$properties['line_height']}em;\n" : "") .
 						"color: {$properties['color']};\n" .
 						"}\n";
 			}
 		}
-
+	
 		// Responsive/breakpoint typography
 		$breakpoints = $grid->get_breakpoints();
 		$tablet_typography;
 		foreach ($breakpoints as $breakpoint) {
 			// Ignore default/desktop breakpoint as we store it separately
-			if ( $breakpoint->is_default() ) {
+			if ($breakpoint->is_default()) {
 				continue;
 			}
-
+	
 			$breakpoint_css = '';
 			// Breakpoint's typography should load (inherit) like this:
-			// - if there is no typography for current breakpoint it should inherit settings from
-			//   wider one, if wider one is not defined inherit from one above, last one is default
+			// - if there is no typography for the current breakpoint it should inherit settings from
+			//   a wider one, if a wider one is not defined inherit from one above, last one is the default
 			//   typography
-			// - in case of widest (tablet for now) it should inherit from default typography
+			// - in the case of the widest (tablet for now), it should inherit from default typography
 			$breakpoint_id = $breakpoint->get_id();
 			$typography = $breakpoint->get_typography();
-
+	
 			if ($breakpoint_id === 'tablet') {
-				$tablet_typography = $typography;// needed for mobile
+				$tablet_typography = $typography; // needed for mobile
 			}
-
+	
 			if (empty($typography)) {
 				switch ($breakpoint_id) {
-				case 'tablet':
-					$child = Upfront_ChildTheme::get_instance();
-					$layout_properties = $child? $child->getLayoutProperties() : array();
-					$value = upfront_get_property_value('typography', array('properties'=>$layout_properties));
-					$typography = $value;
-					break;
-				case 'mobile':
-					if (empty($tablet_typography)) {
+					case 'tablet':
 						$child = Upfront_ChildTheme::get_instance();
-						$layout_properties = $child? $child->getLayoutProperties() : array();
-						$value = upfront_get_property_value('typography', array('properties'=>$layout_properties));
+						$layout_properties = $child ? $child->getLayoutProperties() : array();
+						$value = upfront_get_property_value('typography', array('properties' => $layout_properties));
 						$typography = $value;
-					} else {
-						$typography = $tablet_typography;
-					}
-					break;
+						break;
+					case 'mobile':
+						if (empty($tablet_typography)) {
+							$child = Upfront_ChildTheme::get_instance();
+							$layout_properties = $child ? $child->getLayoutProperties() : array();
+							$value = upfront_get_property_value('typography', array('properties' => $layout_properties));
+							$typography = $value;
+						} else {
+							$typography = $tablet_typography;
+						}
+						break;
 				}
 			}
-
-			if (is_array($typography)) foreach ( $typography as $element=>$properties ){
-
+	
+			if (is_array($typography)) foreach ($typography as $element => $properties) {
+	
 				$properties = wp_parse_args($properties, array(
 					'font_face' => 'Arial',
 					'weight' => '400',
@@ -321,28 +321,28 @@ class Upfront_StylesheetMain extends Upfront_Server {
 					'weight' => $properties['weight']
 				);
 				$font = $properties['font_face'] ? "{$properties['font_face']}, {$properties['font_family']}" : "inherit";
-
+	
 				$selector = $this->_typography_element_to_output_selector($element);
 				if (empty($selector)) continue;
-
+	
 				$breakpoint_css .= "{$selector} {\n" .
 						"font-family: {$font};\n" .
-						( $properties['weight'] ? "font-weight: {$properties['weight']};\n" : "" ) .
-						( $properties['style'] ? "font-style: {$properties['style']};\n" : "" ) .
-						( $properties['size'] ? "font-size: {$properties['size']}px;\n" : "" ) .
-						( $properties['line_height'] ? "line-height: {$properties['line_height']}em;\n" : "" ) .
+						($properties['weight'] ? "font-weight: {$properties['weight']};\n" : "") .
+						($properties['style'] ? "font-style: {$properties['style']};\n" : "") .
+						($properties['size'] ? "font-size: {$properties['size']}px;\n" : "") .
+						($properties['line_height'] ? "line-height: {$properties['line_height']}em;\n" : "") .
 						"color: {$properties['color']};\n" .
 						"}\n";
 			}
 			$out .= $breakpoint->wrap($breakpoint_css, $breakpoints);
 		}
-
+	
 		// Include Google fonts
 		$faces = array_values(array_filter(array_unique($faces, SORT_REGULAR)));
 		$google_fonts = new Upfront_Model_GoogleFonts;
-
+	
 		$deps = Upfront_CoreDependencies_Registry::get_instance();
-
+	
 		foreach ($faces as $face) {
 			if (!$google_fonts->is_from_google($face['face'])) continue;
 			$variant = 400 !== (int)$face['weight'] && 'inherit' !== $face['weight']
@@ -351,9 +351,9 @@ class Upfront_StylesheetMain extends Upfront_Server {
 			;
 			$deps->add_font($face['face'], $variant);
 		}
-
+	
 		$out = apply_filters('upfront_prepare_typography_styles', $out);
-
+	
 		return $out;
 	}
 

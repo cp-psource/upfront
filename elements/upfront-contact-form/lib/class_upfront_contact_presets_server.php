@@ -5,10 +5,6 @@ if (!class_exists('Upfront_Presets_Server')) {
 }
 
 class Upfront_Contact_Presets_Server extends Upfront_Presets_Server {
-
-	public $elementName;
-	public $db_key;
-	
 	private static $instance;
 
 	public function get_element_name() {

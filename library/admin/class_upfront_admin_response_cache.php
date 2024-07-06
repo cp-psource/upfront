@@ -10,7 +10,7 @@ class Upfront_Admin_ResponseCache extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Processes POST submissions
+	 * Verarbeitet POST-Übermittlungen
 	 *
 	 * @return bool
 	 */
@@ -42,30 +42,30 @@ class Upfront_Admin_ResponseCache extends Upfront_Admin_Page {
 	 public function get_levels () {
 		return array(
 			'' => array(
-				'label' => __('None', 'upfront'),
-				'help' => __('Legacy upfront behavior. Any and all request queueing and caching will be bypassed.', 'upfront'),
+				'label' => __('Keine', 'upfront'),
+				'help' => __('Legacy-Verhalten im Voraus. Alle Warteschlangen und Zwischenspeicherungen für Anfragen werden umgangen.', 'upfront'),
 			),
 			'stub' => array(
-				'label' => __('Queue only', 'upfront'),
-				'help' => __('Request queueing only, no response caching. Multiple requests will be collapsed into one.', 'upfront'),
+				'label' => __('Nur Warteschlange', 'upfront'),
+				'help' => __('Nur Anforderungswarteschlange, kein Zwischenspeichern von Antworten. Mehrere Anfragen werden zu einer zusammengefasst.', 'upfront'),
 			),
 			'memory' => array(
-				'label' => __('Memory', 'upfront'),
-				'help' => __('Request queueing with response caching in memory. Cached responses will not survive page reload.', 'upfront'),
+				'label' => __('Speicher', 'upfront'),
+				'help' => __('Anforderungswarteschlange mit Zwischenspeicherung der Antwort im Arbeitsspeicher. Zwischengespeicherte Antworten überleben das Neuladen der Seite nicht.', 'upfront'),
 			),
 			'persistent' => array(
-				'label' => __('Session', 'upfront'),
-				'help' => __('Request queueing with response caching in session storage. Cached responses will persist across page reloads, but will not survive closing the window/tab.', 'upfront'),
+				'label' => __('Sitzung', 'upfront'),
+				'help' => __('Anforderungswarteschlange mit Zwischenspeicherung der Antwort im Sitzungsspeicher. Zwischengespeicherte Antworten bleiben beim Neuladen der Seite bestehen, überleben jedoch nicht das Schließen des Fensters/Tabs.', 'upfront'),
 			),
 			'permanent' => array(
-				'label' => __('Permanent', 'upfront'),
-				'help' => __('Request queueing with response caching in local storage. Cached responses will remain cached until cleaned up.', 'upfront'),
+				'label' => __('Dauerhaft', 'upfront'),
+				'help' => __('Anforderungswarteschlange mit Zwischenspeicherung der Antwort im lokalen Speicher. Zwischengespeicherte Antworten bleiben zwischengespeichert, bis sie bereinigt werden.', 'upfront'),
 			),
 		);
 	}
 
 	/**
-	 * Access protection abstraction
+	 * Abstraktion des Zugriffsschutzes
 	 *
 	 * @return bool
 	 */
@@ -74,9 +74,9 @@ class Upfront_Admin_ResponseCache extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Renders level key entry box
+	 * Schlüsseleingabefeld für Renderebene
 	 *
-	 * @param string $level Known service index key
+	 * @param string $level Bekannter Dienstindexschlüssel
 	 */
 	public function render_level_box ($level=false) {
 		$levels = $this->get_levels();

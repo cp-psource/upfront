@@ -7,7 +7,7 @@ abstract class  Upfront_PostModel {
 	public static function create ($post_type, $title='', $content='') {
 		if (!Upfront_Permissions::current(Upfront_Permissions::CREATE_POST_PAGE)) return false;
 		
-		$title = (!empty($title) ? $title : 'Write a title...');
+		$title = (!empty($title) ? $title : 'Titel schreiben...');
 		$post_data = apply_filters(
 			'upfront-post_model-create-defaults',
 			array(

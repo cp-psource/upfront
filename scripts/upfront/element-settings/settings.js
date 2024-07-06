@@ -59,7 +59,7 @@ define([
 					panels.Appearance = this.appearancePanel;
 					return;
 				}
-				if(_.isFunction(panel)) {
+				if (typeof panel === 'function') {
 					panels[index] = new panel({ model: this.model });
 				}
 			}, this);

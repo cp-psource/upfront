@@ -109,39 +109,37 @@ jQuery(document).ready(function($) {
 		};
 	};
 
-	function floatInit() {
+	function floatInit () {
 		//lets do the clean up first
 		$(".upfront-navigation").each(function () {
 			var $me = $(this);
-	
-			if ($me.data('style') === 'burger') {
-				var $toggler = $me.children('.responsive_nav_toggler');
-				$toggler.attr('id', $me.attr('id') + '-toggler');
+
+			if ($me.data('style') === 'burger' || $me.data('style') === 'burger') {
+				$toggler = $me.children('.responsive_nav_toggler');
+				$toggler.attr('id', $me.attr('id')+'-toggler');
 				if (_cache[$toggler.attr("id")]) _cache[$toggler.attr("id")].destroy();
 			} else {
 				if (_cache[$me.attr("id")]) _cache[$me.attr("id")].destroy();
 			}
 		});
-	
+
 		$(".upfront-navigation.upfront-navigation-float").each(function () {
 			var $me = $(this);
-	
-			if ($me.data('style') === 'burger') {
-				var $toggler = $me.children('.responsive_nav_toggler');
-				$toggler.attr('id', $me.attr('id') + '-toggler');
+
+			if($me.data('style') === 'burger' || $me.data('style') == 'burger') {
+				$toggler = $me.children('.responsive_nav_toggler');
+				$toggler.attr('id', $me.attr('id')+'-toggler');
+				//if (_cache[$toggler.attr("id")]) _cache[$toggler.attr("id")].destroy();
 				_cache[$toggler.attr("id")] = new FloatNav($toggler);
-			} else {
+			}
+			else {
+				//if (_cache[$me.attr("id")]) _cache[$me.attr("id")].destroy();
 				_cache[$me.attr("id")] = new FloatNav($me);
 			}
 		});
 	}
-	
-	// Prüfen, ob das Fenster bereits geladen ist
-	if (document.readyState === "complete") {
-		floatInit();
-	} else {
-		$win.on('load', floatInit);
-	}	
+
+	$win.on('load', floatInit);
 	
 	function hasNavInit() {
 		//Work around for having the region container have a higher z-index if it contains the nav, so that the dropdowns, if overlapping to the following regions should not loose "hover" when the mouse travels down to the next region.

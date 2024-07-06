@@ -1,10 +1,22 @@
 <?php
+require 'psource/psource-plugin-update/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/cp-psource/upfront',
+	__FILE__,
+	'upfront'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
 
 /**
- * Main entry point for Upfront core
+ * Haupteinstiegspunkt für den Upfront-Core
  *
- * This is where we set up Upfront main class
- * which handles core bootstrap and execution context.
+ * Hier richten wir die Upfront-Hauptklasse ein
+ * der Kern-Bootstrap und Ausführungskontext behandelt.
  */
 
 require_once(dirname(__FILE__) . '/library/upfront_functions.php');
@@ -36,28 +48,28 @@ require_once(dirname(__FILE__) . '/library/class_upfront_compression.php');
 Upfront_Behavior::debug()->set_baseline();
 
 /**
- * Main class
+ * Hauptklasse
  */
 class Upfront {
 
 	/**
-	 * Theme text domain
+	 * Textdomäne des Themes
 	 *
 	 * @var string
 	 */
 	const TextDomain = "upfront";
 
 	/**
-	 * List of files to exclude in scanning
+	 * Liste der Dateien, die beim Scannen ausgeschlossen werden sollen
 	 *
-	 * @TODO refactor var name and location
+	 * @TODO-Variablennamen und -speicherort umgestalten
 	 *
 	 * @var array
 	 */
 	public static $Excluded_Files = array(".", "..", ".DS_Store");
 
 	/**
-	 * Servers to load automatically
+	 * Server, die automatisch geladen werden
 	 *
 	 * @var array
 	 */
@@ -70,14 +82,14 @@ class Upfront {
 	);
 
 	/**
-	 * Debugger instance
+	 * Debugger-Instanz
 	 *
 	 * @var object
 	 */
 	private $_debugger;
 
 	/**
-	 * Instantiate class - never to the outsiders
+	 * Klasse instanziieren – niemals an Außenstehende
 	 */
 	private function __construct () {
 		$this->_debugger = Upfront_Debug::get_debugger();
@@ -88,7 +100,7 @@ class Upfront {
 	}
 
 	/**
-	 * Public spawning interface
+	 * Öffentliche Spawning-Schnittstelle
 	 */
 	public static function serve () {
 		$me = new self;
@@ -97,7 +109,7 @@ class Upfront {
 	}
 
 	/**
-	 * Add basic set of hooks
+	 * Die Basis Hooks
 	 */
 	private function _add_hooks () {
 		if (Upfront_Behavior::compression()->get_option('freeze')) {
@@ -123,18 +135,18 @@ class Upfront {
 	}
 
 	/**
-	 * Set up parent and child theme text domains
+	 * Richtet Textdomänen für übergeordnete und untergeordnete Themen ein
 	 */
 	public static function load_textdomain () {
 		$path = untrailingslashit(self::get_root_dir()) . '/languages';
 
 		load_theme_textdomain('upfront', $path);
 
-		// Now let's try the child theme...
+		// Versuchen wir es jetzt mit dem Child-Theme ...
 		$current = wp_get_theme();
 		$parent = $current->parent();
-		if (empty($parent)) return false; // Current theme is not a child theme, carry on...
-		if ('upfront' !== $parent->get_template()) return false; // Not an Upfront child, carry on...
+		if (empty($parent)) return false; // Das aktuelle Theme ist kein Child-Theme, mache weiter ...
+		if ('upfront' !== $parent->get_template()) return false; // Kein Upfront-Child-Theme, weitermachen...
 		$child_domain = $current->get('TextDomain');
 		if (!empty($child_domain) && 'upfront' !== $child_domain) {
 			load_child_theme_textdomain($child_domain, get_stylesheet_directory() . '/languages');
@@ -143,13 +155,13 @@ class Upfront {
 	}
 
 	/**
-	 * Add theme extra features
+	 * Fügt Design-Zusatzfunktionen hinzu
 	 */
 	private function _add_supports () {
 		add_theme_support('post-thumbnails');
-		add_theme_support('title-tag'); // Let WP deal with our theme titles
-		register_nav_menu('default', __('Default', 'upfront'));
-		// Do widget text
+		add_theme_support('title-tag'); // Lasse WP mit unseren Thementiteln umgehen
+		register_nav_menu('default', __('Standard', 'upfront'));
+		// Erstelle Widget-Text
 		$do_widget_text = apply_filters(
 			'upfront-shortcode-enable_in_widgets',
 			(defined('UPFRONT_DISABLE_WIDGET_TEXT_SHORTCODES') && UPFRONT_DISABLE_WIDGET_TEXT_SHORTCODES ? false : true)
@@ -160,9 +172,9 @@ class Upfront {
 	}
 
 	/**
-	 * Instantiate auto-bootable server
+	 * Automatisch bootfähigen Server instanziieren
 	 *
-	 * @param string $comp Server to boot
+	 * @param string $comp Server zu booten
 	 */
 	private function _run_server ($comp) {
 		$class = Upfront_Server::name_to_class($comp);
@@ -171,7 +183,7 @@ class Upfront {
 	}
 
 	/**
-	 * Gets parent theme root URL
+	 * Ruft die Stamm-URL des übergeordneten Designs ab
 	 *
 	 * @return string
 	 */
@@ -180,7 +192,7 @@ class Upfront {
 	}
 
 	/**
-	 * Gets parent theme root path
+	 * Ruft den Stammpfad des übergeordneten Designs ab
 	 *
 	 * @return string
 	 */
@@ -189,7 +201,7 @@ class Upfront {
 	}
 
 	/**
-	 * Inject admin toolbar menu entry
+	 * Menüeintrag der Admin-Toolbar einfügen
 	 *
 	 * @param object $wp_admin_bar Toolbar
 	 */
@@ -197,22 +209,22 @@ class Upfront {
 		if (!Upfront_Permissions::current(Upfront_Permissions::BOOT)) return false;
 
 		$item = array(
-			'id' => 'upfront-edit_layout',
-			'title' => '<span class="ab-icon"></span><span class="ab-label">' . __('Upfront', 'upfront') . '</span>',
-			'href' => (is_admin() ? home_url('/?editmode=true', is_ssl() ? "https" : null) : '#'),
-			'meta' => array(
+			'id'    => 'upfront-edit_layout',
+			'title' => '<span class="ab-icon"></span><span class="ab-label">' . __('UpFront', 'upfront') . '</span>',
+			'href'  => (is_admin() ? home_url('/?editmode=true', is_ssl() ? "https" : null) : '#'),
+			'meta'  => array(
 				'class' => 'upfront-edit_layout upfront-editable_trigger',
 			),
 		);
 		$permalinks_on = get_option('permalink_structure');
 
 		if (!$permalinks_on) {
-			// We're checking WP priv directly because we need an admin for this
+			// Wir prüfen WP priv direkt, weil wir dafür einen Admin brauchen
 			if (current_user_can('manage_options')) {
 				$item['href'] = admin_url('/options-permalink.php');
 				unset($item['meta']);
 			} else {
-				$item = array(); // No such thing for non-admins
+				$item = array(); // Nichts dergleichen für Nicht-Administratoren
 			}
 		}
 
@@ -220,13 +232,13 @@ class Upfront {
 			$wp_admin_bar->add_menu($item);
 		}
 
-		// Change the existing nodes
+		// Änder die vorhandenen Nodes
 		$nodes = $wp_admin_bar->get_nodes();
 		if (!empty($nodes) && is_array($nodes)) {
 			foreach ($nodes as $node) {
 				if (!empty($node->href) && preg_match('/customize\.php/', $node->href)) {
-					$node->href = !empty($node->id) && 'customize-themes' === $node->id // WordPress doubles down on customizer endpoint for themes list too...
-						? admin_url('themes.php') // ... not gonna happen
+					$node->href = !empty($node->id) && 'customize-themes' === $node->id // ClassicPress verdoppelt auch den Customizer-Endpunkt für die Themenliste ...
+						? admin_url('themes.php') // ... wird nicht passieren
 						: home_url('?editmode=true')
 					;
 				}
@@ -234,15 +246,15 @@ class Upfront {
 			}
 		}
 
-		// Action hook here, so other stuff can add its bar items
-		// (most notably, the exporter)
+		// Action Hook hier, damit andere Dinge ihre Bar-Elemente hinzufügen können
+		// (vor allem der Exporteur)
 		do_action('upfront-admin_bar-process', $wp_admin_bar, $item);
 	}
 
 	/**
-	 * Appends grid scope class to the classes array
+	 * Hängt die Grid-Scope-Klasse an das Klassen-Array an
 	 *
-	 * @param array $cls Classes up to here
+	 * @param array $cls Klassen bis hierher
 	 *
 	 * @return array
 	 */
@@ -253,7 +265,7 @@ class Upfront {
 	}
 
 	/**
-	 * Handles core WP front-end dependencies injection
+	 * Verarbeitet die Kern-WP-Front-End-Abhängigkeitsinjektion
 	 */
 	public function inject_core_wp_dependencies () {
 		$deps = Upfront_CoreDependencies_Registry::get_instance();
@@ -290,19 +302,19 @@ class Upfront {
 		}
 
 		/**
-		 * Todo Sam: make it cleaner
+		 * Todo: Macht es sauberer
 		 */
 		wp_enqueue_script("wp_shortcode", "/wp-includes/js/shortcode.js", array("underscore"));
 	}
 
 	/**
-	 * Handles global FE dependencies injection
+	 * Behandelt die globale FE-Abhängigkeitsinjektion
 	 */
 	function inject_global_dependencies () {
 		$deps = Upfront_CoreDependencies_Registry::get_instance();
 		wp_enqueue_script('jquery');
 
-		// Basic styles for upfront to work are always loaded.
+		// Grundlegende Stile für die Arbeit im Voraus werden immer geladen.
 		$global_style = Upfront_Behavior::compression()->has_experiments()
 			? '/styles/global.min.css'
 			: '/styles/global.css'
@@ -311,7 +323,7 @@ class Upfront {
 		$deps->add_header_style(self::get_root_url() . $global_style);
 
 		if (!Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
-			// Don't queue the front grid if has permission to boot Upfront, queue editor grid instead
+			// Stelle das Front-Grid nicht in die Warteschlange, wenn die Berechtigung zum Booten von Upfront haben, sondern Warteschlangen-Editor-Grid
 			//wp_enqueue_style('upfront-front-grid', admin_url('admin-ajax.php?action=upfront_load_grid'), array(), Upfront_ChildTheme::get_version());
 			$deps->add_header_style(admin_url('admin-ajax.php?action=upfront_load_grid'));
 		}
@@ -344,18 +356,18 @@ class Upfront {
 	}
 
 	/**
-	 * Handles Upfront editor-specific FE dependencies injection
+	 * Behandelt die Editor-spezifische FE-Abhängigkeitsinjektion von Upfront
 	 */
 	function inject_upfront_dependencies () {
 
 		if (!Upfront_Permissions::current(Upfront_Permissions::BOOT)) {
-			do_action('upfront-core-inject_dependencies'); // Also trigger the dependencies injection hook
-			return false; // Do not inject for users that can't use this
+			do_action('upfront-core-inject_dependencies'); // Löst auch den Hook für die Abhängigkeitsinjektion aus
+			return false; // Injiziere nicht für Benutzer, die dies nicht verwenden können
 		}
 
 		$url = self::get_root_url();
 
-		// Boot Edit Mode if the querystring contains the editmode param
+		// Boot-Bearbeitungsmodus, wenn die Abfragezeichenfolge den Parameter editmode enthält
 		if (isset($_GET['editmode'])) echo upfront_boot_editor_trigger();
 
 		$storage_key = apply_filters('upfront-data-storage-key', Upfront_Layout::STORAGE_KEY);
@@ -371,7 +383,7 @@ class Upfront {
 		$main_source = $is_dev ? "scripts/setup.js" : "build/main-$upfront->version.js";
 		$script_urls = array();
 
-		// We only need require.js on dev, for build it gets baked into main.js now
+		// Wir brauchen nur require.js auf dev, für build wird es jetzt in main.js gebacken
 		if ($is_dev) {
 			$script_urls[] = "{$url}/scripts/require.js";
 		}
@@ -393,7 +405,7 @@ class Upfront {
 			var _upfront_save_storage_key = "' . esc_js($save_storage_key) . '";
 			var _upfront_stylesheet = "' . esc_js(get_stylesheet()) . '";
 			var _upfront_debug_mode = ' . (int)Upfront_Behavior::debug()->is_debug() . ';
-			var _upfront_please_hold_on = ' . json_encode(__('Please, hold on for just a little bit more', 'upfront')) . ';
+			var _upfront_please_hold_on = ' . json_encode(__('Bitte halte noch ein bisschen durch', 'upfront')) . ';
 		</script>';
 		echo <<<EOAdditivemarkup
 	<div id="sidebar-ui" class="upfront-ui"></div>
@@ -405,14 +417,14 @@ EOAdditivemarkup;
 	}
 
 	/**
-	 * Injects responsive CSS
+	 * Fügt responsives CSS ein
 	 */
 	function add_responsive_css () {
 		include(self::get_root_dir() . '/styles/editor-interface-responsive.html');
 	}
 
 	/**
-	 * Injects dependencies for rtl languages
+	 * Fügt Abhängigkeiten für RTL-Sprachen ein
 	 */
 	function inject_rtl_dependencies () {
 
@@ -423,16 +435,16 @@ add_action('init', array('Upfront', 'serve'), 0);
 add_action('after_setup_theme', array('Upfront', "load_textdomain"));
 
 /**
- * Filters wp caption atts to hide the caption in case show_caption is equal  to "0"
+ * Filtert wp caption atts, um die Beschriftung auszublenden, falls show_caption gleich "0" ist
  */
 add_filter("shortcode_atts_caption", 'uf_shortcode_atts_caption', 10, 3);
 
 /**
- * Filters wp captions atts to remove the caption in case show_caption is equal to "0"
+ * Filtert wp captions atts, um die Beschriftung zu entfernen, falls show_caption gleich "0" ist
  *
- * @param array $out The output array of shortcode attributes.
- * @param array $pairs The supported attributes and their defaults.
- * @param array $atts The user defined shortcode attributes.
+ * @param array $out Das Ausgabearray von Shortcode-Attributen.
+ * @param array $pairs Die unterstützten Attribute und ihre Standardwerte.
+ * @param array $atts Die benutzerdefinierten Shortcode-Attribute.
  * @return mixed
  */
 function uf_shortcode_atts_caption ($out, $pairs, $atts) {
@@ -446,15 +458,15 @@ function uf_shortcode_atts_caption ($out, $pairs, $atts) {
 
 
 /**
- * Filters image caption shortcode to generate uf caption specific markup
+ * Filtert Bildunterschrift-Shortcode, um uf-Unterschrift-spezifisches Markup zu generieren
  */
 add_filter("img_caption_shortcode", "uf_image_caption_shortcode", 10, 3);
 /**
  * Uses img_caption_shortcode to add support for UF image variants
  *
  * @param string $out Out
- * @param array $attr Attributes attributed to the shortcode.
- * @param string $content Shortcode content.
+ * @param array $attr Dem Shortcode zugeordnete Attribute.
+ * @param string $content Shortcode Content.
  *
  * @return string|void
  */
@@ -462,7 +474,7 @@ function uf_image_caption_shortcode ($out, $attr, $content) {
 
 	$is_wp_cation = strpos($attr["id"], "uinsert-" ) === false;
 
-	if ($is_wp_cation) return; // returning null let's wp do it's own logic and rendering for caption shortcode
+	if ($is_wp_cation) return; // Wenn wir null zurückgeben, lasse uns wp seine eigene Logik und das Rendering für den Untertitel-Shortcode ausführen
 
 	$image_reg = preg_match('/src="([^"]+)"/', $content, $image_arr);
 	$href_reg = preg_match('/href="([^"]+)"/', $content, $anchor_arr);
@@ -484,7 +496,7 @@ function uf_image_caption_shortcode ($out, $attr, $content) {
 }
 
 /**
- * Loads iconfont in admin to display toolbar icon.
+ * Lädt Iconfont in Admin, um Symbolleistensymbol anzuzeigen.
  */
 function uf_admin_bar_styles() {
 	wp_enqueue_style( 'uf-font-icons', get_template_directory_uri() . '/styles/font-icons.css');
@@ -492,9 +504,21 @@ function uf_admin_bar_styles() {
 add_action( 'admin_enqueue_scripts', 'uf_admin_bar_styles' );
 
 /**
- * Gets rid of the admin notice and declares support for Woo
+ * Beseitigt den Admin-Hinweis und erklärt Unterstützung für Woo
  */
 function uf_add_woocommerce_support() {
 	add_theme_support('woocommerce');
 }
 add_action('after_setup_theme', 'uf_add_woocommerce_support');
+
+/**
+ * Abhängigkeiten von Terminmanager laden
+ * Wenn PS-Terminmanager aktiv
+ */
+function upfront_force_load_deps_ap () {
+	if ( class_exists( 'Appointments' ) ) {
+		global $appointments;
+		$appointments->load_scripts_styles();
+	}
+}
+add_action('wp_footer', 'upfront_force_load_deps_ap', 1);

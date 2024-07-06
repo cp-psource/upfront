@@ -151,9 +151,9 @@
             dragHelperHeight = 0,
             slideHeight = 0,
             slideWidth = 0,
-            //alphaWidth = 0,
+        //alphaWidth = 0,
             alphaHeight = 0,
-            //alphaSlideHelperWidth = 0,
+        //alphaSlideHelperWidth = 0,
             alphaSlideHelperHeight = 0,
             slideHelperHeight = 0,
             currentHue = 0,
@@ -161,7 +161,7 @@
             currentValue = 0,
             currentAlpha = 1,
             palette = opts.palette.slice(0),
-            paletteArray = Array.isArray(palette[0]) ? palette : [palette],
+            paletteArray = $.isArray(palette[0]) ? palette : [palette],
             selectionPalette = opts.selectionPalette.slice(0),
             maxSelectionSize = opts.maxSelectionSize,
             draggingClass = "sp-dragging",
@@ -274,18 +274,14 @@
             }
 
             // Prevent clicks from bubbling up to document.  This would cause it to be hidden.
-            container.on('click', stopPropagation);
+            container.on('click',stopPropagation);
 
             // Handle user typed input
-            textInput.on('change', setFromTextInput);
+            textInput.on('change',setFromTextInput);
             textInput.on("paste", function () {
                 setTimeout(setFromTextInput, 1);
             });
-            textInput.on('keydown', function (e) {
-                if (e.key === 'Enter') {
-                    setFromTextInput();
-                }
-            });
+            textInput.on('keydown', function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
 
             cancelButton.text(opts.cancelText);
             cancelButton.on("click.spectrum", function (e) {
@@ -390,7 +386,6 @@
             var paletteEvent = IE ? "mousedown.spectrum" : "click.spectrum touchstart.spectrum";
             paletteContainer.on(paletteEvent, ".sp-thumb-el", { ignore: true }, palletElementClick);
             initialColorContainer.on(paletteEvent, ".sp-thumb-el:nth-child(1)", { ignore: true }, palletElementClick);
-            
         }
 
         function addColorToSelectionPalette(color) {
@@ -724,7 +719,7 @@
             // Update the selection palette with the current color
             addColorToSelectionPalette(color);
             // if (hasChanged) {
-            callbacks.change(color);
+            callbacks.on('change',color);
             //}
             if (fireCallback) {
                 boundElement.trigger('change.spectrum', [ color ]);

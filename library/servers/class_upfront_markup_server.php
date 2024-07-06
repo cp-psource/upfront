@@ -82,7 +82,8 @@ class Upfront_Server_MarkupServer extends Upfront_Server {
 
 		if (empty($path_prefix)) return  $this->_get_l10n(self::ORIGIN_INTERNAL); // Not a pugin, mu-plugin or a theme
 
-		$clean_path = explode('/', ltrim(preg_replace('/^' . $path_prefix . '/', '', $file), '/'));
+		//$clean_path = explode('/', ltrim(preg_replace('/^' . $path_prefix . '/', '', $file), '/'));
+		$clean_path = explode('/', trim(preg_replace('/^' . $path_prefix . '/', '', $file), '/'));
 		$basename = !empty($clean_path[0]) ? $clean_path[0] : false;
 		if (empty($basename)) return  $this->_get_l10n(self::ORIGIN_INTERNAL); // We had an issue along the way and can't figure it out further
 
@@ -120,7 +121,7 @@ class Upfront_Server_MarkupServer extends Upfront_Server {
 
 	private function _get_l10n ($key=false) {
 		$l10n = array(
-			self::ORIGIN_INTERNAL => __('WordPress internal', 'upfront'),
+			self::ORIGIN_INTERNAL => __('ClassicPress internal', 'upfront'),
 			self::ORIGIN_PLUGIN => __('Unknown plugin', 'upfront'),
 			self::ORIGIN_THEME => __('Unknown theme', 'upfront'),
 			'done' => __('Done', 'upfront'),

@@ -26,7 +26,7 @@ abstract class Upfront_EntityResolver {
 	}
 
 	/**
-	 * Dispatches resolving the current specific WordPress entity
+	 * Dispatches resolving the current specific ClassicPress entity
 	 * into a common Upfront ID cascade.
 	 * @return array Common Upfront ID cascade
 	 */

@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: samnajian
- * Date: 3/12/16
- * Time: 9:53 PM
- */
 class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 
 	const FORM_NONCE_KEY = "upfront_restrictions_wpnonce";
@@ -16,8 +10,8 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 		if ($this->_can_modify_restrictions()) {
 			$save_restriction = add_submenu_page(
 				"upfront",
-				__("User Restrictions", Upfront::TextDomain),
-				__("User Restrictions", Upfront::TextDomain),
+				__("Benutzerrechte", Upfront::TextDomain),
+				__("Benutzerrechte", Upfront::TextDomain),
 				'manage_options',
 				Upfront_Admin::$menu_slugs['restrictions'],
 				array($this, "render_page")
@@ -28,10 +22,10 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Renders the page
+	 * Rendert die Seite
 	 */
 	public function render_page () {
-		if (!$this->_can_modify_restrictions()) wp_die("Nope.");
+		if (!$this->_can_modify_restrictions()) wp_die("Einfach nur Nein!.", Upfront::TextDomain);
 
 		$roles = $this->_get_roles();
 		$content_restrictions = Upfront_Permissions::boot()->get_content_restrictions();
@@ -42,11 +36,11 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 		$can_edit = ( is_multisite() && is_super_admin() ) || ( current_user_can( 'manage_options' ) && Upfront_Permissions::role( $current_user_role, 'modify_restrictions' ) );
 	?>
 		<div class="wrap upfront_admin upfront_admin_restrictions">
-			<h1><?php esc_html_e("User Restrictions", Upfront::TextDomain); ?><span class="upfront_logo"></span></h1>
+			<h1><?php esc_html_e("Benutzereinschränkungen", Upfront::TextDomain); ?><span class="upfront_logo"></span></h1>
 			<form action="<?php echo esc_url( add_query_arg( array("page" => "upfront_restrictions") ) ) ?>" method="post" id="upfront_restrictions_form">
 				<div id="upfront_user_restrictions_listing">
 					<ul class="upfront_user_restrictions_head">
-						<li class="upfront_restrictions_functionality_name"><?php esc_html_e("Functionality", Upfront::TextDomain); ?></li>
+						<li class="upfront_restrictions_functionality_name"><?php esc_html_e("Funktionalität", Upfront::TextDomain); ?></li>
 						<?php if( is_multisite() && is_super_admin() ) { ?>
 						<li class="upfront_restriction_role_administrator"><?php esc_html_e( 'Super Admin', 'upfront' ); ?></li>
 						<?php } ?>
@@ -59,7 +53,7 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 					<ul class="upfront_restrictions_functionality_row" data-capability_id="<?php echo esc_attr($cap_id); ?>">
 						<li class="upfront_restrictions_functionality_name"><?php _e($this->_get_cap_label( $cap_id )) ?></li>
 						<?php
-						// Only multi-site super_admin can see this
+						// Nur super_admin für Multisite kann dies sehen
 						if ( is_multisite() && is_super_admin() ) {
 						?>
 						<li class="upfront_restrictions_functionality_role">
@@ -71,14 +65,14 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 					?>
 						<li class="upfront_restrictions_functionality_role" data-role_id="<?php echo esc_attr($role_id); ?>">
 							<?php if ( current_user_can( 'manage_options' ) && ! $can_edit ) {
-							// If current admin have no edit access, show UIs only.
+							// Wenn der aktuelle Administrator keinen Bearbeitungszugriff hat, werden nur Benutzeroberflächen angezeigt.
 								if ( $user_role_can ) {
 							?>
 							<span class="role_check_mark"></span>
 								<?php } else { ?>
 							<span class="role_ex_mark"></span>
 							<?php }
-									continue; // No need to go further
+									continue; // Keine Notwendigkeit, weiter zu gehen
 							} ?>
 
 							<?php
@@ -101,12 +95,12 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 								}
 
 								if ( ! $is_editable) {
-									// Stop the user from editing it's own caps.
+									// Verhindert dass der Benutzer seine eigenen Obergrenzen bearbeitet.
 									if ( 'administrator' == $role_id || $current_user_role == $role_id ) { ?>
 										<?php if ( $user_role_can ) { ?>
 							<span class="role_check_mark"></span>
 										<?php } ?>
-										<!-- hidden input for admin and set to always true for single site -->
+										<!-- versteckte Eingabe für den Administrator und für einzelne Sites auf „immer wahr“ gesetzt -->
 							<input value='1' type="checkbox" name="restrictions[<?php echo esc_attr($role_id); ?>][<?php echo esc_attr($cap_id); ?>]" class="upfront_toggle_checkbox" id="restrictions[<?php echo esc_attr($role_id); ?>][<?php echo esc_attr($cap_id); ?>]" <?php checked(true, $user_role_can ); ?> />
 									<?php } ?>
 								<?php } else { ?>
@@ -125,7 +119,7 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 				</div>
 				<?php wp_nonce_field(self::FORM_NONCE_ACTION, self::FORM_NONCE_KEY); ?>
 				<?php if ( $can_edit ) { ?>
-				<button type="submit" name="upront_restrictions_submit" id="upront_restrictions_submit"><?php esc_attr_e("Save Changes", Upfront::TextDomain); ?></button>
+				<button type="submit" name="upront_restrictions_submit" id="upront_restrictions_submit"><?php esc_attr_e("Speichern", Upfront::TextDomain); ?></button>
 				<?php } ?>
 			</form>
 		</div>
@@ -133,7 +127,7 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Saves the User Restrictions set
+	 * Speichert die eingestellten Benutzereinschränkungen
 	 */
 	function save_user_restriction () {
 		if( !isset( $_POST['upront_restrictions_submit'] ) || !wp_verify_nonce( $_POST[self::FORM_NONCE_KEY], self::FORM_NONCE_ACTION ) ) return;
@@ -147,7 +141,7 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Utility for checking capability on modifying restrictions
+	 * Dienstprogramm zum Überprüfen der Fähigkeit zum Ändern von Einschränkungen
 	 *
 	 * @return bool
 	 */
@@ -157,10 +151,10 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 
 
 	/**
-	 * Utility wrapper for WP role capability check
+	 * Dienstprogramm-Wrapper für die Prüfung der WP-Rollenfähigkeit
 	 *
-	 * @param string $role_id WP role ID
-	 * @param string $capability WP capability
+	 * @param string $role_id WP-Rollen-ID
+	 * @param string $capability WP-Fähigkeit
 	 *
 	 * @return bool
 	 */
@@ -172,7 +166,7 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 	}
 
 	/**
-	 * Utility for setting default toggle class
+	 * Dienstprogramm zum Festlegen der Standard-Toggle-Klasse
 	 *
 	 * @return string css classname
 	 */
@@ -193,11 +187,11 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 
 	private function _get_cap_label( $cap_id ){
 		$labels = Upfront_Permissions::boot()->get_capability_labels();
-		return isset( $labels[$cap_id] ) ? $labels[$cap_id] : sprintf(__("No label set for &quot;%s&quot;", Upfront::TextDomain), $cap_id);
+		return isset( $labels[$cap_id] ) ? $labels[$cap_id] : sprintf(__("Kein Label für &quot;%s&quot;", Upfront::TextDomain), $cap_id);
 	}
 
 	/**
-	 * Updates all capabilities of each role
+	 * Aktualisiert alle Funktionen jeder Rolle
 	 * @param array $restrictions saved
 	 */
 	private function _update_capabilities ( $restrictions ) {
@@ -211,12 +205,12 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 
 				$output[$cap][] = $role;
 
-				// If this role needs saving then let's grant the `Upfront_Permissions::SAVE`
+				// Wenn diese Rolle gespeichert werden muss, gewähren wir die `Upfront_Permissions::SAVE`
 				if (in_array($cap, $saveables)) {
 					if (!isset($output[Upfront_Permissions::SAVE])) $output[Upfront_Permissions::SAVE] = array();
 					if (!in_array($role, $output[Upfront_Permissions::SAVE])) $output[Upfront_Permissions::SAVE][] = $role;
 				}
-				// All done
+				// Alles erledigt
 			}
 		}
 
@@ -224,14 +218,14 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 	}
 
 		/**
-		 * If for any reason user role capabilities change we need to reflect that in
-		 * Upfront Permissions. For start handle 'edit_posts' and 'edit_pages' capabilities revocation
-		 * by nuking role capabilites for interacting with posts/pages.
+		 * Wenn sich die Fähigkeiten der Benutzerrolle aus irgendeinem Grund ändern, müssen wir dies berücksichtigen
+		 * Upfront-Berechtigungen. Für Starthandle 'edit_posts' und 'edit_pages' Fähigkeiten Widerruf
+		 * durch Nuking-Rollenfunktionen für die Interaktion mit Posts/Seiten.
 		 */
 		public function update_user_role_capabilities($option_name, $old, $new) {
 			if ($option_name !== 'wp_user_roles') return;
 
-			// Find if any role has lost edit_pages or edit posts capability
+			// Finde heraus, ob eine Rolle edit_pages verloren hat oder die Fähigkeit zum Bearbeiten von Beiträgen verloren hat
 			$revoked_edit_cap_role = false;
 
 			if (is_array($old) === false || is_array($new) === false) return;
@@ -240,11 +234,11 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 				if (isset($old[$role]) === false || isset($old[$role]['capabilities']) === false ||
 					isset($new[$role]) === false || isset($new[$role]['capabilities']) === false) continue;
 
-				// Check if role has lost edit_pages cap
+				// Überprüfe ob die Rolle die Obergrenze für edit_pages verloren hat
 				if (array_key_exists('edit_pages', $old[$role]['capabilities']) && false === array_key_exists('edit_pages', $new[$role]['capabilities'])) {
 					$revoked_edit_cap_role = $role;
 				}
-				// Check if role has lost edit_posts cap
+				// Überprüfe ob die Rolle die Obergrenze für edit_posts verloren hat
 				if (array_key_exists('edit_posts', $old[$role]['capabilities']) && false === array_key_exists('edit_posts', $new[$role]['capabilities'])) {
 					$revoked_edit_cap_role = $role;
 				}
@@ -254,7 +248,7 @@ class Upfront_Admin_Restrictions extends Upfront_Admin_Page {
 
 			$restrictions = Upfront_Permissions::boot()->get_restrictions();
 
-			// Nuke role capabilities for working with posts/pages
+			// Nuke-Rollenfunktionen für die Arbeit mit Beiträgen/Seiten
 			$restrictions['create_post_page'] = array_diff($restrictions['create_post_page'], array($revoked_edit_cap_role));
 			$restrictions['edit_posts'] = array_diff($restrictions['edit_posts'], array($revoked_edit_cap_role));
 			$restrictions['edit_others_posts'] = array_diff($restrictions['edit_others_posts'], array($revoked_edit_cap_role));

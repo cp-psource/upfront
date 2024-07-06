@@ -48,7 +48,7 @@ define([
 ], function ( pako, Cache ){
 
 	var guessLinkType = function(url) {
-		if(!url.trim() || url.trim() == '#' || url.trim() === '') {
+		if (!url.trim() || url.trim() == '#' || url.trim() === '') {
 			return 'unlink';
 		}
 
@@ -387,26 +387,28 @@ define([
 		},
 
 		/**
-		 * For sorted elements, we use this function to perform traversing search (replacement for next, prev, nextAll, prevAll, nextUntil, prevUntil)
+		 * Für sortierte Elemente verwenden wir diese Funktion, um die Suche nach der Durchführung der Suche durchzuführen 
+		 * (Ersatz für Next, Prev, Nextall, Prevall, NextunTil, Prevuntil).
 		 */
 		find_from_elements: function ($els, from, filter, reverse, until) {
 			var index = $els.index($(from)),
 				find_from = reverse ? _.first($els, index).reverse() : _.rest($els, index+1),
 				finish = false,
-				is_filter_cb = filter && _.isFunction(filter),
-				is_until_cb = until && _.isFunction(until)
-			;
-			return $(_.filter(find_from, function(el){
-				if ( finish ) return false;
-				if ( ( is_filter_cb && filter($(el), $els) ) || ( !is_filter_cb && $(el).is(filter) ) ){
+				is_filter_cb = filter && typeof filter === 'function',
+				is_until_cb = until && typeof until === 'function';
+				return $(_.filter(find_from, function(el){
+					if ( finish ) return false;
+					if ( ( is_filter_cb && filter($(el), $els) ) || ( !is_filter_cb && $(el).is(filter) ) ){
 						if ( until && ( ( is_until_cb && until($(el), $els) ) || ( !is_until_cb && $(el).is(until) ) ) ){
 								finish = true;
 								return false;
+							}
+							return true;
 						}
-						return true;
-				}
-				return false;
-			}));
+						return false;
+					}
+				)
+			);
 		},
 
 		// Crossbrowser requestAnimationFrame
@@ -1190,7 +1192,7 @@ define([
 						"compressed_length": _layout_compressed ? _layout_compressed.compressed_length : 0,
 						"compression": Upfront.mainData.save_compression ? 1 : 0
 					})
-					.success(function (response) {
+					.done(function (response) {
 						var data = response.data || {};
 						if ("html" in data && data.html) {
 							_preview_url = data.html;
@@ -1213,7 +1215,7 @@ define([
 							Upfront.Views.Editor.notify(Upfront.Settings.l10n.global.views.multiple_tabs_nag, 'error');
 						}
 					})
-					.error(function () {
+					.fail(function () {
 						Upfront.Util.log("error building layout preview");
 					})
 				;

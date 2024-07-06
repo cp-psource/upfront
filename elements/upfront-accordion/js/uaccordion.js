@@ -28,10 +28,10 @@ define([
 			});
 			this.delegateEvents();
 
-			this.model.get('properties').bind('change', this.render, this);
-			this.model.get('properties').bind('change', this.handle_visual_padding_hint, this);
-			this.model.get('properties').bind('add', this.render, this);
-			this.model.get('properties').bind('remove', this.render, this);
+			this.model.get('properties').on('change', this.render, this);
+			this.model.get('properties').on('change', this.handle_visual_padding_hint, this);
+			this.model.get('properties').on('add', this.render, this);
+			this.model.get('properties').on('remove', this.render, this);
 
 			Upfront.Events.on('entity:deactivated', this.stopEdit, this);
 
@@ -46,7 +46,7 @@ define([
 				props = PresetUtil.getPresetProperties('accordion', preset) || {}
 			;
 			
-			if (_.size(props) <= 0) return false; // No properties, carry on
+			if (Object.keys(props).length <= 0) return false; // No properties, carry on
 
 			PresetUtil.updatePresetStyle('accordion', props, settingsStyleTpl);
 
@@ -73,7 +73,7 @@ define([
 			event.preventDefault();
 			this.property('accordion').push({
 				title: l10n.panel_label + ' ' + (1 + this.property('accordion_count')),
-				content: $.trim(  l10n.content_label.replace("</p>",   ' ' + (1 + this.property('accordion_count') + "</p>" ) ) ) // inject the number into p tag
+				content: l10n.content_label.replace("</p>", ' ' + (1 + this.property('accordion_count')) + "</p>").trim() // inject the number into p tag
 			});
 			this.property('accordion_count', this.property('accordion').length, false);
 		},
