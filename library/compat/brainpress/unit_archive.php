@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<div class="submenu-main-container cp-submenu">
 		<ul id="submenu-main" class="submenu nav-submenu">
 			<li class="submenu-item submenu-units submenu-active"><a href="#" class="course-units-link">Units</a></li>

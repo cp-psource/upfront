@@ -1,9 +1,9 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<div class="course-wrapper" itemscope="" itemtype="http://schema.org/Product">
 		<div class="video_player course-featured-media course-featured-media-376 ">
 			<div style=""><iframe width="500" height="281" src="https://www.youtube.com/embed/SQt_kyh8RgQ?feature=oembed&amp;color=white&amp;rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
 		</div>
-		<div class="coursepress-course-share">
+		<div class="brainpress-course-share">
 			<span class="share-title">Share</span>
 			<a href="#" class="facebook-share" target="_blank"><span class="service-title"><span class="dashicons dashicons-facebook"></span></span></a> <a href="#" class="twitter-share" target="_blank"><span class="service-title"><span class="dashicons dashicons-twitter"></span></span></a> <a href="#" class="google-share" target="_blank"><span class="service-title"><span class="dashicons dashicons-googleplus"></span></span></a> <a href="#" target="_top" class="email-share"><span class="service-title"><span class="dashicons dashicons-email-alt"></span></span></a>
 		</div>

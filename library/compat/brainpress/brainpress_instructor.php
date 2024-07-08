@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<div class="cp-instructor-page">
 		<div class="instructor-wrapper" itemscope="" itemtype="http://schema.org/Person">
 			<div class="instructor-avatar">

@@ -143,8 +143,8 @@ msgstr ""
 msgid "WooCommerce Product Category"
 msgstr ""
 
-#: library/compat/class_upfront_compat_coursepress.php:293
-msgid "This is virtual page handled by CoursePress."
+#: library/compat/class_upfront_compat_brainpress.php:293
+msgid "This is virtual page handled by BrainPress."
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:226

@@ -5276,8 +5276,8 @@ msgstr ""
 msgid "Install Snapshot"
 msgstr ""
 
-#: library/compat/class_upfront_compat_coursepress.php:294
-msgid "This is virtual page handled by CoursePress."
+#: library/compat/class_upfront_compat_brainpress.php:294
+msgid "This is virtual page handled by BrainPress."
 msgstr ""
 
 #: library/compat/class_upfront_compat_marketpress.php:223

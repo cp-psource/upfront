@@ -4,7 +4,7 @@ require_once('compat/class_upfront_compat_converter.php');
 require_once('compat/class_upfront_compat_parser.php');
 require_once('compat/class_upfront_compat_woocommerce.php');
 require_once('compat/class_upfront_compat_marketpress.php');
-require_once('compat/class_upfront_compat_coursepress.php');
+require_once('compat/class_upfront_compat_brainpress.php');
 
 class Upfront_Compat implements IUpfront_Server {
 
@@ -357,11 +357,11 @@ class Upfront_Compat implements IUpfront_Server {
 	}
 
 	/**
-	 * Loads CoursePress compatibility class.
+	 * Loads BrainPress compatibility class.
 	 */
 	private function enable_cp_compat() {
-		if (class_exists('Upfront_Compat_CoursePress')) {
-			new Upfront_Compat_CoursePress();
+		if (class_exists('Upfront_Compat_BrainPress')) {
+			new Upfront_Compat_BrainPress();
 		}
 	}
 }

@@ -7590,10 +7590,10 @@ msgstr ""
 msgid "This archive only"
 msgstr ""
 
-#: library/compat/class_upfront_compat_coursepress.php:294
+#: library/compat/class_upfront_compat_brainpress.php:294
 #, fuzzy
 #| msgid "This is virtual page handled by BrainPress."
-msgid "This is virtual page handled by CoursePress."
+msgid "This is virtual page handled by BrainPress."
 msgstr ""
 "There is no global settings for the social media. Please configure them "
 "pressing the settings button."

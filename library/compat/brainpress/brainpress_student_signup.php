@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<h3>New Signup</h3>
 	<p>Registrations are not allowed.</p>
 	<p>You are already logged in.</p>

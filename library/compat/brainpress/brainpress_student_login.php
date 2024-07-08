@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<h3>Login</h3>
 	<p>You are already logged in.</p>
 	<p class="form-info-red">Invalid login.</p>

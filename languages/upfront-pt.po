@@ -7107,9 +7107,9 @@ msgstr ""
 "Não existem configurações globais para as mídias sociais. Configure-os "
 "premindo o botão de configurações."
 
-#: library/compat/class_upfront_compat_coursepress.php:294
-msgid "This is virtual page handled by CoursePress."
-msgstr "Esta é a página virtual tratada pelo CoursePress."
+#: library/compat/class_upfront_compat_brainpress.php:294
+msgid "This is virtual page handled by BrainPress."
+msgstr "Esta é a página virtual tratada pelo BrainPress."
 
 #: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_comments.php:215
 msgid "This is where the comments go. Please add comments to see their layout."

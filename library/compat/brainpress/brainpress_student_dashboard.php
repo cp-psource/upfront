@@ -1,5 +1,5 @@
-<div class="coursepress-content">
-	<div class="coursepress-dashboard-wrapper">
+<div class="brainpress-content">
+	<div class="brainpress-dashboard-wrapper">
 		<div class="dashboard-course-list manage">
 			<h3 class="section-title">Manage Courses</h3>
 			<div class="course course_list_box_item course_4  course-list-box course-available student-enrolled has-thumbnail" itemscope="" itemtype="http://schema.org/Product">
@@ -22,7 +22,7 @@
 						<div class="course-cost course-cost-4 ">FREE</div>
 						<p></p>
 					</div>
-					<p><button class="coursepress-course-link" data-link="#">Manage Course</button>
+					<p><button class="brainpress-course-link" data-link="#">Manage Course</button>
 					</p>
 				</div>
 				<p></p>
@@ -47,7 +47,7 @@
 						<div class="course-cost course-cost-122 ">FREE</div>
 						<p></p>
 					</div>
-					<p><button class="coursepress-course-link" data-link="#">Manage Course</button>
+					<p><button class="brainpress-course-link" data-link="#">Manage Course</button>
 					</p>
 				</div>
 				<p></p>

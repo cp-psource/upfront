@@ -1,10 +1,10 @@
 <?php
 
-class Upfront_Compat_CoursePress {
+class Upfront_Compat_BrainPress {
 
 	private $cp_layouts = array(
 		'course'                        => array(
-			'display_name' => 'CoursePress Course',
+			'display_name' => 'BrainPress Course',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -13,13 +13,13 @@ class Upfront_Compat_CoursePress {
 			)
 		),
 		'course_archive'                => array(
-			'display_name' => 'CoursePress All Courses',
+			'display_name' => 'BrainPress All Courses',
 			'type' => 'single',
 			'title' => 'All Courses',
 			'forbid_save_as' => true
 		),
 		'unit_archive'                  => array(
-			'display_name' => 'CoursePress Course Units',
+			'display_name' => 'BrainPress Course Units',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -28,7 +28,7 @@ class Upfront_Compat_CoursePress {
 			)
 		),
 		'unit'                          => array(
-			'display_name' => 'CoursePress Course Unit',
+			'display_name' => 'BrainPress Course Unit',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -37,7 +37,7 @@ class Upfront_Compat_CoursePress {
 			)
 		),
 		'course_notifications_archive'  => array(
-			'display_name' => 'CoursePress Course Notifications',
+			'display_name' => 'BrainPress Course Notifications',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -46,7 +46,7 @@ class Upfront_Compat_CoursePress {
 			)
 		),
 		'course_discussion_archive'     => array(
-			'display_name' => 'CoursePress Course All Discussions',
+			'display_name' => 'BrainPress Course All Discussions',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -55,7 +55,7 @@ class Upfront_Compat_CoursePress {
 			)
 		),
 		'course_discussion'             => array(
-			'display_name' => 'CoursePress Course Discussion',
+			'display_name' => 'BrainPress Course Discussion',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -64,7 +64,7 @@ class Upfront_Compat_CoursePress {
 			)
 		),
 		'course_workbook'               => array(
-			'display_name' => 'CoursePress Course Workbook',
+			'display_name' => 'BrainPress Course Workbook',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -73,7 +73,7 @@ class Upfront_Compat_CoursePress {
 			),
 		),
 		'course_grades_archive'         => array(
-			'display_name' => 'CoursePress Course Grades',
+			'display_name' => 'BrainPress Course Grades',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'l10n' => array(
@@ -81,32 +81,32 @@ class Upfront_Compat_CoursePress {
 				'layout_type_plural' => 'Course Grades Pages',
 			),
 		),
-		'coursepress_student_login'     => array(
-			'display_name' => 'CoursePress Student Login',
+		'brainpress_student_login'     => array(
+			'display_name' => 'BrainPress Student Login',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'forbid_save_as' => true
 		),
-		'coursepress_student_signup'    => array(
-			'display_name' => 'CoursePress Student Signup',
+		'brainpress_student_signup'    => array(
+			'display_name' => 'BrainPress Student Signup',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'forbid_save_as' => true
 		),
-		'coursepress_student_dashboard' => array(
-			'display_name' => 'CoursePress Courses Dashboard',
+		'brainpress_student_dashboard' => array(
+			'display_name' => 'BrainPress Courses Dashboard',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'forbid_save_as' => true
 		),
-		'coursepress_student_settings'  => array(
-			'display_name' => 'CoursePress Student Settings',
+		'brainpress_student_settings'  => array(
+			'display_name' => 'BrainPress Student Settings',
 			'type' => 'single',
 			'title' => 'Course Number One',
 			'forbid_save_as' => true
 		),
-		'coursepress_instructor'  => array(
-			'display_name' => 'CoursePress Instructor',
+		'brainpress_instructor'  => array(
+			'display_name' => 'BrainPress Instructor',
 			'type' => 'single',
 			'title' => 'Instructor A',
 			'l10n' => array(
@@ -121,13 +121,13 @@ class Upfront_Compat_CoursePress {
 	}
 
 	public function add_hooks() {
-		if (class_exists('CoursePress') === false) {
+		if (class_exists('BrainPress') === false) {
 			add_filter('upfront-builder_skip_exported_layouts', array($this, 'skip_layouts_when_inactive'), 10, 2);
 		 	return;
 		}
 
 		// Force always loading CP styles in builder
-		if (function_exists('upfront_exporter_is_running') && upfront_exporter_is_running() && class_exists('CoursePress_Core')) CoursePress_Core::$is_cp_page = true;
+		if (function_exists('upfront_exporter_is_running') && upfront_exporter_is_running() && class_exists('BrainPress_Core')) BrainPress_Core::$is_cp_page = true;
 
 		add_filter('upfront-plugins_layouts', array($this, 'add_plugins_layouts'));
 		add_filter('upfront-forbidden_post_data_types', array($this, 'forbidden_post_data_types'));
@@ -136,12 +136,12 @@ class Upfront_Compat_CoursePress {
 		add_filter('upfront-post_data-get_content-before', array($this, 'kill_double_discussion_querying'));
 		add_filter('upfront-post_data-get_content-before', array($this, 'fix_modal_template_not_loading'));
 		add_filter('upfront-post_data-get_content-after', array($this, 'balance_out_tags_in_discussion_content'));
-		add_filter('upfront-post_data-get_content-after', array($this, 'wrap_with_coursepress_css_class'), 99);
+		add_filter('upfront-post_data-get_content-after', array($this, 'wrap_with_brainpress_css_class'), 99);
 		add_filter('body_class', array($this, 'add_cp_class_to_body'));
 	}
 
 	/**
-	 * Adds CoursePress css class to body element on live for easier styling.
+	 * Adds BrainPress css class to body element on live for easier styling.
 	 */
 	public function add_cp_class_to_body($classes) {
 		$layout = Upfront_Layout::get_parsed_cascade();
@@ -151,7 +151,7 @@ class Upfront_Compat_CoursePress {
 
 		if ( empty($this->cp_layouts[$i]) ) return $classes;
 
-		$classes[] = 'coursepress';
+		$classes[] = 'brainpress';
 
 		return $classes;
 	}
@@ -169,8 +169,8 @@ class Upfront_Compat_CoursePress {
 		} else {
 			$post = get_post();
 			if (is_a( $post, 'WP_Post' ) ) {
-				if (isset( $post->coursepress_enrollment_templates_was_already_loaded ))
-					$post->coursepress_enrollment_templates_was_already_loaded = false;
+				if (isset( $post->brainpress_enrollment_templates_was_already_loaded ))
+					$post->brainpress_enrollment_templates_was_already_loaded = false;
 			}
 		}
 
@@ -178,7 +178,7 @@ class Upfront_Compat_CoursePress {
 	}
 
 	/**
-	 * Hides CoursePress layouts in builder exported layouts if "Layouts" popup when CoursePress is not active.
+	 * Hides BrainPress layouts in builder exported layouts if "Layouts" popup when BrainPress is not active.
 	 */
 	public function skip_layouts_when_inactive($skip, $layout) {
 		$s = str_replace('single-', '', $layout['specificity']);
@@ -188,21 +188,21 @@ class Upfront_Compat_CoursePress {
 	}
 
 	/**
-	 * Wrap CoursePress content with css class for easier styling.
+	 * Wrap BrainPress content with css class for easier styling.
 	 */
-	public function wrap_with_coursepress_css_class($content) {
+	public function wrap_with_brainpress_css_class($content) {
 		$layout = Upfront_Layout::get_parsed_cascade();
 
 		$i = str_replace('single-', '', $layout['item']);
 
 		if (empty($this->cp_layouts[$i])) return $content;
 
-		return '<div class="coursepress-content">' . $content . '</div>';
+		return '<div class="brainpress-content">' . $content . '</div>';
 	}
 
 	/**
-	 * CoursePress seems to be missing one closing div tag in generated content for single discussion, so just
-	 * add it here until that is resolved in CoursePress.
+	 * BrainPress seems to be missing one closing div tag in generated content for single discussion, so just
+	 * add it here until that is resolved in BrainPress.
 	 */
 	public function balance_out_tags_in_discussion_content($content) {
 		$layout = Upfront_Layout::get_parsed_cascade();
@@ -238,13 +238,13 @@ class Upfront_Compat_CoursePress {
 	}
 
 	/**
-	 * Checks against post object if current page is CoursePress page.
+	 * Checks against post object if current page is BrainPress page.
 	 *
 	 * @param WP_Post|int $post Post to check
 	 *
 	 * @return bool
 	 */
-	public function is_coursepress_page($post) {
+	public function is_brainpress_page($post) {
 		if (empty($this->cp_layouts[$post->post_type])) return false;
 
 		return true;
@@ -258,7 +258,7 @@ class Upfront_Compat_CoursePress {
 		$post = get_post();
 		if (is_null($post)) return $types;
 
-		if (self::is_coursepress_page($post)) {
+		if (self::is_brainpress_page($post)) {
 			$types = array('date_posted', 'comment_form', 'comment_count', 'comments', 'comments_pagination');
 		}
 		return $types;
@@ -266,13 +266,13 @@ class Upfront_Compat_CoursePress {
 
 	public function get_sample_content($specificity) {
 		ob_start();
-		include(get_theme_root() . DIRECTORY_SEPARATOR . 'upfront'. DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'compat' . DIRECTORY_SEPARATOR . 'coursepress' . DIRECTORY_SEPARATOR . $specificity . '.php');
+		include(get_theme_root() . DIRECTORY_SEPARATOR . 'upfront'. DIRECTORY_SEPARATOR . 'library' . DIRECTORY_SEPARATOR . 'compat' . DIRECTORY_SEPARATOR . 'brainpress' . DIRECTORY_SEPARATOR . $specificity . '.php');
 		return  ob_get_clean();
 	}
 
 
 	/**
-	 * List CoursePress layouts to match againts current layout in editor and builder.
+	 * List BrainPress layouts to match againts current layout in editor and builder.
 	 * This allows editor/builder to hide settings that do not apply and provides sample
 	 * content.
 	 */
@@ -291,17 +291,17 @@ class Upfront_Compat_CoursePress {
 				'content' => $item,
 				'title' => __($info['title'], 'upfront'),
 				'display_name' => __($info['display_name'], 'upfront'),
-				'killPostSettings' => __('This is virtual page handled by CoursePress.', 'upfront'),
+				'killPostSettings' => __('This is virtual page handled by BrainPress.', 'upfront'),
 				'l10n' => empty($info['l10n']) ? false : $info['l10n'],
 				'forbid_save_as' => empty($info['forbid_save_as']) ? false : true,
 			);
 		}
 
 		$layouts['course-press'] = array(
-			'pluginName' => 'CoursePress',
+			'pluginName' => 'BrainPress',
 			'sampleContents' => $sampleContents,
 			'layouts' => $cpLayouts,
-			'bodyclass' => 'coursepress'
+			'bodyclass' => 'brainpress'
 		);
 
 		return $layouts;
@@ -319,7 +319,7 @@ class Upfront_Compat_CoursePress {
 	}
 
 	/**
-	 * Add CoursePress layouts to builder "Layouts" popup.
+	 * Add BrainPress layouts to builder "Layouts" popup.
 	 */
 	public function add_builder_available_layouts($layouts) {
 		foreach( $this->cp_layouts as $item=>$info) {

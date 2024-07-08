@@ -27,7 +27,7 @@ class Upfront_Compat_WooCommerce {
 	}
 
 	/**
-	 * Hides CoursePress layouts in builder exported layouts if "Layouts" popup when CoursePress is not active.
+	 * Hides BrainPress layouts in builder exported layouts if "Layouts" popup when BrainPress is not active.
 	 */
 	public function skip_layouts_when_inactive($skip, $layout) {
 		$woo_layouts = array(

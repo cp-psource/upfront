@@ -7002,8 +7002,8 @@ msgid ""
 "pressing the settings button."
 msgstr ""
 
-#: library/compat/class_upfront_compat_coursepress.php:294
-msgid "This is virtual page handled by CoursePress."
+#: library/compat/class_upfront_compat_brainpress.php:294
+msgid "This is virtual page handled by BrainPress."
 msgstr ""
 
 #: elements/upfront-post-data/lib/parts/class_upfront_post_data_partview_comments.php:215

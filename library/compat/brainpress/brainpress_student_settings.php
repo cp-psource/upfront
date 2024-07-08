@@ -1,4 +1,4 @@
-<div class="coursepress-content">
+<div class="brainpress-content">
 	<p class="form-info-red">Passwords don't match</p>
 	<p class="form-info-regular">Profile has been updated successfully.</p>
 	<form id="student-settings" name="student-settings" method="post" class="student-settings">
