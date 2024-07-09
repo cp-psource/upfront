@@ -11,7 +11,7 @@ realperson/jquery.realperson.css
 ----------------
 realperson/jquery.realperson.css
 
-main-2.0.0.js
+main-2.0.2.js
 ----------------
 require.js
 /home/dernerd/Local Sites/ps-dev/app/public/wp-includes/js/underscore.min.js
