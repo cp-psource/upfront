@@ -281,7 +281,7 @@
             textInput.on("paste", function () {
                 setTimeout(setFromTextInput, 1);
             });
-            textInput.on('keydown', function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
+            textInput.keydown(function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
 
             cancelButton.text(opts.cancelText);
             cancelButton.on("click.spectrum", function (e) {

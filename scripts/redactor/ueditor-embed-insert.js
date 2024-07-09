@@ -70,7 +70,7 @@ var EmbedInsert = UeditorInsert.extend({
 			//Show the embed form after clicking on embed element
 			this.controls.$el.show(function(){
 				self.controls.$el.find(".upfront-icon-region-embed").next(".uimage-control-panel").show();
-				self.controls.$el.find(".upfront-icon-region-embed").click();
+				self.controls.$el.find(".upfront-icon-region-embed").on('click',);
 				self.controls.$el.find(".upfront-field-embed_code").focus();
 			});
 		},

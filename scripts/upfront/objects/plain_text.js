@@ -92,7 +92,7 @@ var PlainTxtElement = Upfront.Views.Editor.Sidebar.Element.extend({
 		var object = new PlainTxtModel({
 				"name": "",
 				"properties": [
-					{"name": "content", "value": "<p>My awesome stub content goes here</p>"}
+					{"name": "content", "value": "<p>Meine großartigen Inhalte kommen hierher</p>"}
 				]
 			}),
 			module = new Upfront.Models.Module({
@@ -263,30 +263,55 @@ var AppearancePanel = Upfront.Views.Editor.Settings.Panel.extend({
 	},
 	property: function(name, value, silent) {
 		if(typeof value != "undefined"){
-			if(typeof silent == "undefined")
+		  if(typeof silent == "undefined")
 			silent = true;
-		  	return this.model.set_property(name, value, silent);
+		  return this.model.set_property(name, value, silent);
 		}
 		return this.model.get_property_value_by_name(name);
-	},
-	get_label: function () {
+	  },
+	  get_label: function () {
 		return 'Appearance';
-	},
-	render: function() {
-		// Render as usual
-		this.constructor.__super__.render.apply(this, arguments);
-		// Remove panel tabs
-		var me = this;
+	  },
+	  render: function() {
+			// Render as usual
+			this.constructor.__super__.render.apply(this, arguments);
+			// Remove panel tabs
+			var me = this;
 
-		if(this.property('border_style') != 'none') {
-			this.$el.find('div.inline-color.plaintext-settings.border-color, div.inline-number.plaintext-settings').css('display', 'inline-block');
-		}
-		else {
-			this.$el.find('div.inline-color.plaintext-settings.border-color, div.inline-number.plaintext-settings').css('display', 'none');
-		}
-		this.$el.find('.upfront-settings_label').remove();
-		this.$el.find('.upfront-settings_panel').css('left', 0);
-	}
+			if(this.property('border_style') != 'none') {
+
+						this.$el.find('div.inline-color.plaintext-settings.border-color, div.inline-number.plaintext-settings').css('display', 'inline-block');
+					}
+					else {
+
+						this.$el.find('div.inline-color.plaintext-settings.border-color, div.inline-number.plaintext-settings').css('display', 'none');
+					}
+
+/*
+			if(this.property('bg_color_enabled') === true) {
+				this.$el.find('.bg-color-enabled input').attr('checked', true);
+			}
+			else
+				this.$el.find('.bg-color-enabled input').removeAttr('checked');
+
+			if(this.property('border_enabled') === true)
+				this.$el.find('.border-enabled input').attr('checked', true);
+			else
+				this.$el.find('.border-enabled input').removeAttr('checked');
+
+			if(!this.$el.find('.border-enabled input').prop('checked'))
+				me.$el.find('.upfront-field-number').prop('disabled', true);
+
+			this.$el.find('.border-enabled input').on('change', function() {
+				if($(this).prop('checked'))
+					me.$el.find('.upfront-field-number').prop('disabled', false);
+				else
+					me.$el.find('.upfront-field-number').prop('disabled', true);
+			});
+*/
+			this.$el.find('.upfront-settings_label').remove();
+			this.$el.find('.upfront-settings_panel').css('left', 0);
+	  }
 });
 
 

@@ -59,7 +59,7 @@ define([
 				props = PresetUtil.getPresetProperties('tab', preset) || {}
 			;
 
-			if (Object.keys(props).length <= 0) return false; // No properties, carry on
+			if (_.size(props) <= 0) return false; // No properties, carry on
 
 			PresetUtil.updatePresetStyle('tab', props, settingsStyleTpl);
 
@@ -157,13 +157,13 @@ define([
 
 		onTabKeydown: function(event) {
 			var id;
-			if (event.key === 13) {
+			if (event.keyCode === 13) {
 				event.preventDefault();
 				$(event.currentTarget).removeAttr('contenteditable');
 				id = $(event.currentTarget).data('content-id').split('-').pop();
 				this.property('tabs')[id].title = $(event.currentTarget).text();
 				this.addTooltips();
-				if ($(event.currentTarget).find('i').length < 1) {
+				if ($(event.currentTarget).find('i').size() < 1) {
 					$(event.currentTarget).append('<i></i>');
 				}
 			}

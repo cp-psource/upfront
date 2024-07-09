@@ -476,25 +476,24 @@
                 this.$('#sidebar-ui-toggler').height(height);
             },
 
-            addHoverSidebarClasses: function() {
-                // Mouse Enter Event
-                $('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').on('mouseenter', function() {
-                    $('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').addClass('upfront-sidebar-hover');
-                });
-            
-                // Mouse Leave Event
-                $('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').on('mouseleave', function() {
-                    $('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').removeClass('upfront-sidebar-hover');
-                });
-            },
+						// On hover, add classes allowing sidebar to shrink on low resolutions.
+						addHoverSidebarClasses: function() {
+							// On Mouse Enter.
+							$('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').on('mouseenter',function() {
+								$('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').addClass('upfront-sidebar-hover');
+							// On Mouse Leave.
+							}, function() {
+								$('#sidebar-ui, #element-settings-sidebar, #region-settings-sidebar').removeClass('upfront-sidebar-hover');
+							});
+						},
 
             toggleSidebar: function(instant){
                 var me = this,
-				// Use adjusted sidebar width for margins on small screens.
-                sidebar_margin = (window.innerWidth < 1366 ? '130px' : '260px'),
-                margined_css = {marginLeft: sidebar_margin};
-                unmargined_css = {marginLeft: "0px"};
-                _margin = Upfront.Util.isRTL() ? "marginRight" : "marginLeft";
+									// Use adjusted sidebar width for margins on small screens.
+                	sidebar_margin = (window.innerWidth < 1366 ? '130px' : '260px'),
+                  margined_css = {marginLeft: sidebar_margin};
+                	unmargined_css = {marginLeft: "0px"};
+                	_margin = Upfront.Util.isRTL() ? "marginRight" : "marginLeft";
 
                 if(!this.visible){
                     if( Upfront.Util.isRTL())

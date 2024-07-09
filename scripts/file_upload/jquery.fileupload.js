@@ -195,6 +195,59 @@
                 }
             },
 
+            // Other callbacks:
+
+            // Callback for the submit event of each file upload:
+            // submit: function (e, data) {}, // .on('fileuploadsubmit', func);
+
+            // Callback for the start of each file upload request:
+            // send: function (e, data) {}, // .on('fileuploadsend', func);
+
+            // Callback for successful uploads:
+            // done: function (e, data) {}, // .on('fileuploaddone', func);
+
+            // Callback for failed (abort or error) uploads:
+            // fail: function (e, data) {}, // .on('fileuploadfail', func);
+
+            // Callback for completed (success, abort or error) requests:
+            // always: function (e, data) {}, // .on('fileuploadalways', func);
+
+            // Callback for upload progress events:
+            // progress: function (e, data) {}, // .on('fileuploadprogress', func);
+
+            // Callback for global upload progress events:
+            // progressall: function (e, data) {}, // .on('fileuploadprogressall', func);
+
+            // Callback for uploads start, equivalent to the global ajaxStart event:
+            // start: function (e) {}, // .on('fileuploadstart', func);
+
+            // Callback for uploads stop, equivalent to the global ajaxStop event:
+            // stop: function (e) {}, // .on('fileuploadstop', func);
+
+            // Callback for change events of the fileInput(s):
+            // change: function (e, data) {}, // .on('fileuploadchange', func);
+
+            // Callback for paste events to the pasteZone(s):
+            // paste: function (e, data) {}, // .on('fileuploadpaste', func);
+
+            // Callback for drop events of the dropZone(s):
+            // drop: function (e, data) {}, // .on('fileuploaddrop', func);
+
+            // Callback for dragover events of the dropZone(s):
+            // dragover: function (e) {}, // .on('fileuploaddragover', func);
+
+            // Callback for the start of each chunk upload request:
+            // chunksend: function (e, data) {}, // .on('fileuploadchunksend', func);
+
+            // Callback for successful chunk uploads:
+            // chunkdone: function (e, data) {}, // .on('fileuploadchunkdone', func);
+
+            // Callback for failed (abort or error) chunk uploads:
+            // chunkfail: function (e, data) {}, // .on('fileuploadchunkfail', func);
+
+            // Callback for completed (success, abort or error) chunk upload requests:
+            // chunkalways: function (e, data) {}, // .on('fileuploadchunkalways', func);
+
             // The plugin options are used as settings object for the ajax calls.
             // The following are jQuery ajax settings required for the file uploads:
             processData: false,
@@ -243,7 +296,7 @@
             if ($.type(options.formData) === 'function') {
                 return options.formData(options.form);
             }
-            if (Array.isArray(options.formData)) {
+            if ($.isArray(options.formData)) {
                 return options.formData;
             }
             if ($.type(options.formData) === 'object') {
@@ -483,7 +536,7 @@
                 if (!paramName.length) {
                     paramName = [fileInput.prop('name') || 'files[]'];
                 }
-            } else if (!Array.isArray(paramName)) {
+            } else if (!$.isArray(paramName)) {
                 paramName = [paramName];
             }
             return paramName;
@@ -972,7 +1025,7 @@
             // without loosing the file input value:
             input.after(inputClone).detach();
             // Avoid memory leaks with the detached file input:
-            $.cleanData(input.unbind('remove'));
+            $.cleanData(input.off('remove'));
             // Replace the original file input element in the fileInput
             // elements set with the clone, which has been copied including
             // event handlers:

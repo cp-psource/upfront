@@ -113,44 +113,39 @@ define([
 		defaultOverlay: function() {
 			var me = this,
 				preset = this.property('preset') ? this.clear_preset_name(this.property('preset')) : 'default';
-		
-			if (preset === "default") {
-				setTimeout(function() {
+
+			if(preset === "default") {
+				setTimeout( function() {
 					//Wrap settings and preset styles
 					me.$el.find('.preset_specific').next().addBack().wrapAll('<div class="default-overlay-wrapper" />');
-		
+
 					//Append overlay div
 					me.$el.find('.default-overlay-wrapper').append('<div class="default-overlay">' +
-						'<div class="overlay-title">' + l10n.default_overlay_title + '</div>' +
-						'<div class="overlay-text">' + l10n.default_overlay_text + '</div>' +
-						'<div class="overlay-button"><button type="button" class="overlay-button-input">' + l10n.default_overlay_button + '</button></div>' +
-						'</div>');
-		
+					'<div class="overlay-title">' + l10n.default_overlay_title + '</div>' +
+					'<div class="overlay-text">' + l10n.default_overlay_text + '</div>' +
+					'<div class="overlay-button"><button type="button" class="overlay-button-input">'+ l10n.default_overlay_button +'</button></div>' +
+					'</div>');
+
 					//Disable preset reset button
 					me.$el.find('.delete_preset input').prop('disabled', true);
-					me.$el.find('.delete_preset input').css({
-						opacity: 0.6
-					});
+					me.$el.find('.delete_preset input').css({ opacity: 0.6 });
 				}, 100);
 			}
-		
+
 			this.$el.on('click', '.overlay-button-input', function(event) {
 				event.preventDefault();
-		
+
 				//Remove overlay div
 				me.$el.find('.default-overlay').remove();
-		
+
 				//Update wrapper min-height
 				me.$el.find('.default-overlay-wrapper').css('min-height', '30px');
-		
+
 				//Enable preset reset button
 				me.$el.find('.delete_preset input').prop('disabled', false);
-				me.$el.find('.delete_preset input').css({
-					opacity: 1
-				});
+				me.$el.find('.delete_preset input').css({ opacity: 1 });
 			});
 		},
-		
 
 		updateMainDataCollectionPreset: function(properties) {
 			var index;
@@ -384,7 +379,7 @@ define([
 			if (!elementStyleName) elementStyleName = '_default';
 
 			// If element style is not default we should add _default too
-			if(elementStyleName !== '_default') {
+			if (elementStyleName !== '_default') {
 				// We need to initialize cssEditor to get element styles
 				Upfront.Application.cssEditor.init({
 					model: this.model,
@@ -392,17 +387,17 @@ define([
 					no_render: true
 				});
 
-				//Get _default styles
-				default_style = $.trim(Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
+				// Get _default styles
+				default_style = Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page').trim();
 
-				//Make sure we remove #page from default classes
+				// Make sure we remove #page from default classes
 				default_style = default_style.replace(/#page/g, '');
 
-				//Normalize styles
+				// Normalize styles
 				default_style = this.migrateDefaultStyle(default_style);
 
-				//Prepend styles with preset
-				default_style = Upfront.Application.stylesAddSelectorMigration($.trim(default_style), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
+				// Prepend styles with preset
+				default_style = Upfront.Application.stylesAddSelectorMigration(default_style.trim(), '#page .' + presetName.toLowerCase().replace(/ /g, '-').trim());
 			}
 
 			// We need to initialize cssEditor to get element styles
@@ -412,17 +407,17 @@ define([
 				no_render: true
 			});
 
-			var style = $.trim(Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page'));
+			var style = Upfront.Application.cssEditor.get_style_element().html().replace(/div#page.upfront-layout-view .upfront-editable_entity.upfront-module/g, '#page').trim();
 
-			//Apply style only for the current preset
+			// Apply style only for the current preset
 			style = style.replace(new RegExp(elementStyleName, 'g'), presetName.toLowerCase().replace(/ /g, '-'));
 
-			if(elementStyleName !== '_default') {
-				style = default_style + style;
+			if (elementStyleName !== '_default') {
+				style = default_style.trim() + style;
 			} else {
-				//Normalize styles
+				// Normalize styles
 				style = this.migrateDefaultStyle(style);
-				style = Upfront.Application.stylesAddSelectorMigration($.trim(style), '#page .' + presetName.toLowerCase().replace(/ /g, '-'));
+				style = Upfront.Application.stylesAddSelectorMigration(style.trim(), '#page .' + presetName.toLowerCase().replace(/ /g, '-').trim());
 			}
 
 			//Migrate element styles
@@ -529,7 +524,7 @@ define([
 			Upfront.Util.post({
 				data: preset.toJSON(),
 				action: 'upfront_reset_' + this.ajaxActionSlug + '_preset'
-			}).done(function (ret) {
+			}).success(function (ret) {
 				var resetPreset = ret.data;
 				if(_.isEmpty(ret.data) || ret.data === false) {
 					resetPreset = me.getPresetDefaults('default');
@@ -548,7 +543,7 @@ define([
 				me.$el.empty();
 				me.render();
 				Upfront.Events.trigger('element:preset:updated');
-			}).fail(function (ret) {
+			}).error(function (ret) {
 				//Notify error
 				Upfront.Views.Editor.notify(ret);
 			});

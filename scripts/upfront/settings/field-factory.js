@@ -1,30 +1,30 @@
 define([
-	'scripts/upfront/settings/fields/slides'
-], function(SlidesField) {
-	var FieldFactory = function() {
-		var fieldClasses = {
-			'SlidesField': SlidesField
-		};
+    'scripts/upfront/settings/fields/slides'
+], function (SlidesField) {
+    var FieldFactory = function () {
+        var fieldClasses = {
+            'SlidesField': SlidesField
+        };
 
-		this.createField = function(type, options) {
-			var fieldClass = Upfront.Views.Editor.Field[type];
+        this.createField = function (type, options) {
+            var fieldClass = Upfront.Views.Editor.Field[type];
 
-			if (_.isUndefined(fieldClass)) {
-				fieldClass = fieldClasses[type];
-			}
+            if (_.isUndefined(fieldClass)) {
+                fieldClass = fieldClasses[type];
+            }
 
-			if (type === 'Settings_CSS') fieldClass = Upfront.Views.Editor.Settings.Settings_CSS;
-			if (_.isUndefined(fieldClass)) throw 'There is no \'' + type + '\' field class defined.';
+            if (type === 'Settings_CSS') fieldClass = Upfront.Views.Editor.Settings.Settings_CSS;
+            if (_.isUndefined(fieldClass)) throw 'There is no \'' + type + '\' field class defined.';
 
-			if (typeof options.values === 'function') {
-				options.values = options.values();
-			}
+            if (typeof options.values === 'function') {
+                options.values = options.values();
+            }
 
-			return new fieldClass(options);
-		};
-	};
+            return new fieldClass(options);
+        };
+    };
 
-	fieldFactory = new FieldFactory();
+    fieldFactory = new FieldFactory();
 
-	return fieldFactory;
+    return fieldFactory;
 });

@@ -20,7 +20,7 @@
 				command.remove();
 				command.render();
 				this.$el.append(command.el);
-				this.listenTo(command, "upfront:command:remove", this.remove_command);
+				command.on("upfront:command:remove", this.remove_command, this);
 				command.delegateEvents();
 			},
 

@@ -139,7 +139,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 
 			ugalleries[elementId] = {};
 
-			raw_labels = ['Alle'];
+			raw_labels = ['All'];
 			_.each(this.images.models, function(image) {
 				raw_labels = _.union(raw_labels, image.get('tags'));
 			});
@@ -271,7 +271,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 
 		var props = this.get_preset_properties();
 
-		if (Object.keys(props).length <= 0) return false; // No properties, carry on
+		if (_.size(props) <= 0) return false; // No properties, carry on
 
 		PresetUtil.updatePresetStyle('gallery', props, settingsStyleTpl);
 	},
@@ -1079,7 +1079,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 	},
 
 	getLabelSelector: function(imageId){
-		var tpl = $(this.labelsTpl({labels: this.extractImageLabels(imageId), l10n: l10n.template}).trim());
+		var tpl = $($.trim(this.labelsTpl({labels: this.extractImageLabels(imageId), l10n: l10n.template})));
 		return tpl;
 	},
 
@@ -1573,7 +1573,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 
 		var deferred = $.Deferred();
 		Upfront.Util.post(data)
-		.done(function (response) {
+		.success(function (response) {
 			//Replace the temp label
 			var thisLabels = response.data[imageId],
 			imageLabels = [],
@@ -1647,7 +1647,7 @@ var UgalleryView = Upfront.Views.ObjectView.extend({
 			//Remove labels
 			var labels = me.imageLabels[imageId].split(',');
 			_.each(labels, function(label){
-				var labelId = label.replace('"label_', '').replace('"', '').trim();
+				var labelId = $.trim(label.replace('"label_', '').replace('"', ''));
 				me.deleteLabel(labelId, imageId);
 			});
 			me.imageLabels[imageId] = '';

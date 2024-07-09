@@ -47,7 +47,7 @@ define([
 								query: query
 							}
 						})
-						.done(function (response) {
+						.success(function (response) {
 							if (response && response.data && response.data.fields) me.meta_fields = response.data.fields;
 							me.pop_fields_box(bar);
 						})

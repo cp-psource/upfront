@@ -1236,7 +1236,7 @@ msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:351
 #: elements/upfront-image/lib/uimage.php:216
-msgid "Bild-Container"
+msgid "Bild-Wrapper"
 msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:352
@@ -1661,11 +1661,11 @@ msgid "Meine tolle Bildbeschriftung"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:212
-msgid "Bild-Element"
+msgid "Bildelement"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:213
-msgid "Das gesamte Bild-Element"
+msgid "Das gesamte Bildelement"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:214
@@ -1816,7 +1816,7 @@ msgid "Bildstil"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:259
-msgid "Form des Bild-Elements:"
+msgid "Form des Bildelements:"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:261
@@ -3741,7 +3741,7 @@ msgid "Thumbnail"
 msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:206
-msgid "Ausgewähltes Bild-Element"
+msgid "Ausgewähltes Bildelement"
 msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:215
@@ -3907,7 +3907,7 @@ msgid "Beschriftungselement"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:168
-msgid "Die Bild-Container-Ebene"
+msgid "Die Bild-Wrapper-Ebene"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:169
@@ -6014,7 +6014,7 @@ msgid "Alles gespeichert!"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:39
-msgid "Renderstatus: %s%"
+msgid "Rendern von %s%"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:40
@@ -7280,7 +7280,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:417
 #: library/servers/class_upfront_presets_server.php:663
-msgid "Style:"
+msgid "Benutzerdefinierte CSS"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:420
@@ -7389,7 +7389,7 @@ msgid "Layouts"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:451
-msgid "Basis-Raster"
+msgid "Raster bearbeiten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:452
@@ -7402,7 +7402,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:455
 #: library/servers/class_upfront_editor_l10n_server.php:473
-msgid "Fonts"
+msgid "Schriftarten verwalten"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:456
@@ -7419,7 +7419,7 @@ msgid "Responsiv"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:461
-msgid "Normalmodus"
+msgid "Verlasse Responsiv"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:462
@@ -8793,7 +8793,7 @@ msgid "Alle zurücksetzen"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "CSS bearbeiten"
+msgid "Voreingestelltes CSS bearbeiten"
 msgstr ""
 
 #: library/servers/class_upfront_presets_server.php:664

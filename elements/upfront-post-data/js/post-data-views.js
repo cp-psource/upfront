@@ -105,7 +105,7 @@ var Views = {
 					action: "upfront_post-data-load",
 					data: data
 				})
-				.done(function (response) {
+				.success(function (response) {
 					if (response.data && response.data.post_data) {
 						me.render_object_view(response.data.post_data, only_objects);
 						if ( me._do_cache ) {
@@ -118,16 +118,16 @@ var Views = {
 					else {
 						me.$el
 							.empty()
-							.append(me.tpl.fail({l10n: l10n}))
+							.append(me.tpl.error({l10n: l10n}))
 							.removeClass('upfront_post-data-loading');
 					}
 					// Notify all part views that we have finished loading
 					me.element.toggle_child_objects_loading(false);                    
 				})
-				.fail(function () {
+				.error(function () {
 					me.$el
 						.empty()
-						.append(me.tpl.fail({l10n: l10n}))
+						.append(me.tpl.error({l10n: l10n}))
 						.removeClass('upfront_post-data-loading');
 					// Notify all part views that we have finished loading
 					me.element.toggle_child_objects_loading(false);

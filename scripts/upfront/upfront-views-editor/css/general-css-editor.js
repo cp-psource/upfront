@@ -140,7 +140,9 @@
 										var rules = editor.getValue().split('}'),
 												separator = '\n\n.' + me.options.page_class + ' ';
 
-										rules = _.map(rules, function(rule){return $.trim(rule);});
+										rules = _.map(rules, function(rule){
+											return rule.trim();
+										});
 										rules.pop();
 
 										styles_with_selector = rules.length ?  separator + rules.join('\n}' + separator) + '\n}' : "";
@@ -158,7 +160,7 @@
 								} else {
 										styles = this.model.get('styles') ?  this.model.get('styles').replace(scope, '') : "";
 								}
-								editor.setValue($.trim(styles), -1);
+								editor.setValue(styles.trim(), -1);
 
 								// Set up the proper vscroller width to go along with new change.
 								editor.renderer.scrollBar.width = 5;

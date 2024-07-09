@@ -588,7 +588,7 @@ var YoutubeSettings = ElementSettings.extend({
 		var data = {'video_id': changed_url};
 
 		Upfront.Util.post({"action": me.actions.single, "data": data})
-			.done(function (response) {
+			.success(function (response) {
 				me.video_data[changed_index] = {
 					order: changed_index + 1,
 					title: response.data.video.title,
@@ -600,7 +600,7 @@ var YoutubeSettings = ElementSettings.extend({
 				me.for_view.model.get('properties').trigger('change');
 				Upfront.Events.trigger("upfront:youtube:added:done");
 			})
-			.fail(function () {
+			.error(function () {
 				Upfront.Util.log("error single video");
 			});
 	},

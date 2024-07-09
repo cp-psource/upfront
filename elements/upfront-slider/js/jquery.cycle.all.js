@@ -100,8 +100,8 @@
 			var opts = this.opts();
 			opts.API.trigger('cycle-pre-initialize', [ opts ]);
 			var tx = $.fn.cycle.transitions[opts.fx];
-			if (tx && typeof tx.preInit === 'function')
-			tx.preInit( opts );
+			if (tx && $.isFunction(tx.preInit))
+				tx.preInit( opts );
 			opts._preInitialized = true;
 		},
 	
@@ -109,8 +109,8 @@
 			var opts = this.opts();
 			opts.API.trigger('cycle-post-initialize', [ opts ]);
 			var tx = $.fn.cycle.transitions[opts.fx];
-			if (tx && typeof tx.postInit === 'function')
-			tx.postInit( opts );
+			if (tx && $.isFunction(tx.postInit))
+				tx.postInit( opts );
 		},
 	
 		initSlideshow: function() {
@@ -413,7 +413,8 @@
 				return;
 			}
 			if ( opts.continueAuto !== undefined ) {
-				if (opts.continueAuto === false || (typeof opts.continueAuto === 'function' && opts.continueAuto() === false)) {
+				if ( opts.continueAuto === false || 
+					($.isFunction(opts.continueAuto) && opts.continueAuto() === false )) {
 					opts.API.log('terminating automatic transitions');
 					opts.timeout = 0;
 					if ( opts.timeoutId )
@@ -889,7 +890,7 @@
 				else {
 					cmd = cmd == 'goto' ? 'jump' : cmd; // issue #3; change 'goto' to 'jump' internally
 					cmdFn = opts.API[ cmd ];
-					if (typeof cmdFn === 'function') {
+					if ( $.isFunction( cmdFn )) {
 						cmdArgs = $.makeArray( args );
 						cmdArgs.shift();
 						return cmdFn.apply( opts.API, cmdArgs );
@@ -938,7 +939,7 @@
 			this.stop(); //#204
 	
 			var opts = this.opts();
-			var clean = typeof $._data === 'function' ? $._data : $.noop;  // hack for #184 and #201
+			var clean = $.isFunction( $._data ) ? $._data : $.noop;  // hack for #184 and #201
 			clearTimeout(opts.timeoutId);
 			opts.timeoutId = 0;
 			opts.API.stop();
@@ -1394,7 +1395,7 @@
 		if ( type == 'array' ) {
 			slides = opts.progressive;
 		}
-		else if (typeof opts.progressive === 'function') {
+		else if ($.isFunction( opts.progressive ) ) {
 			slides = opts.progressive( opts );
 		}
 		else if ( type == 'string' ) {
@@ -1533,7 +1534,7 @@
 						prop = obj[str];
 					}
 	
-					if (typeof prop === 'function')
+					if ($.isFunction(prop))
 						return prop.apply(obj, args);
 					if (prop !== undefined && prop !== null && prop != str)
 						return prop;
@@ -1545,7 +1546,8 @@
 	
 	})(jQuery);
 		return;
-	
+	}
+
 
 	// stop cycling if we have an outstanding stop request
 	if (p.cycleStop != opts.stopCount || p.cycleTimeout === 0 && !manual)
@@ -1614,7 +1616,7 @@
 		opts.busy = 1;
 		if (opts.fxFn) // fx function provided?
 			opts.fxFn(curr, next, opts, after, fwd, manual && opts.fastOnEvent);
-			else if (typeof $.fn.cycle[opts.fx] === 'function') // fx plugin ?
+		else if ($.isFunction($.fn.cycle[opts.fx])) // fx plugin ?
 			$.fn.cycle[opts.fx](curr, next, opts, after, fwd, manual && opts.fastOnEvent);
 		else
 			$.fn.cycle.custom(curr, next, opts, after, fwd, manual && opts.fastOnEvent);
@@ -1739,7 +1741,7 @@ function advance(opts, moveForward) {
 	}
 
 	var cb = opts.onPrevNextEvent || opts.prevNextClick; // prevNextClick is deprecated
-	if (typeof cb === 'function')
+	if ($.isFunction(cb))
 		cb(val > 0, opts.nextSlide, els[opts.nextSlide]);
 	go(els, opts, 1, moveForward);
 	return false;
@@ -1755,7 +1757,7 @@ function buildPager(els, opts) {
 
 $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 	var a;
-	if (typeof opts.pagerAnchorBuilder === 'function') {
+	if ($.isFunction(opts.pagerAnchorBuilder)) {
 		a = opts.pagerAnchorBuilder(i,el);
 		debug('pagerAnchorBuilder('+i+', el) returned: ' + a);
 	}
@@ -1793,7 +1795,7 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 			p.cycleTimeout = 0;
 		}
 		var cb = opts.onPagerEvent || opts.pagerClick; // pagerClick is deprecated
-		if (typeof cb === 'function')
+		if ($.isFunction(cb))
 			cb(opts.nextSlide, els[opts.nextSlide]);
 		go(els,opts,1,opts.currSlide < i); // trigger the trans
 //		return false; // <== allow bubble

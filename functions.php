@@ -1,4 +1,5 @@
 <?php
+
 require 'psource/psource-plugin-update/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
@@ -10,7 +11,6 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 
 //Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
-
 
 /**
  * Haupteinstiegspunkt für den Upfront-Core

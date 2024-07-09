@@ -10,7 +10,7 @@ var $template = $(tpl);
 
 Upfront.Util.post({
 	"action": "upfront_posts-data"
-}).done(function (initialData) {
+}).success(function (initialData) {
 	Panels._initial = initialData.data;
 }); // End response wrap
 
@@ -460,7 +460,7 @@ var QuerySettings = Upfront.Views.Editor.Settings.Item.extend({
 		Upfront.Util.post({
 			"action": "upfront_posts-terms",
 			"taxonomy": taxonomy}
-		).done(function (terms) {
+		).success(function (terms) {
 			var term_values = [];
 			_(terms.data).each(function (label, id) {
 				term_values.push({label: label, value: id});

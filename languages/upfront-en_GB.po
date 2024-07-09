@@ -846,7 +846,7 @@ msgid "Ausgewähltes Bild-Element"
 msgstr "Selected image element"
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:206
-msgid "Ausgewähltes Bild-Element"
+msgid "Ausgewähltes Bildelement"
 msgstr "Selected image element"
 
 #: library/servers/class_upfront_editor_l10n_server.php:83
@@ -1278,7 +1278,7 @@ msgstr "Custom width in px"
 
 #: library/servers/class_upfront_editor_l10n_server.php:417
 #: library/servers/class_upfront_presets_server.php:663
-msgid "Style:"
+msgid "Benutzerdefinierte CSS"
 msgstr "Custom CSS"
 
 #: library/servers/class_upfront_editor_l10n_server.php:92
@@ -1513,7 +1513,7 @@ msgstr "Image Slider"
 
 #: elements/upfront-gallery/lib/ugallery.php:351
 #: elements/upfront-image/lib/uimage.php:216
-msgid "Bild-Container"
+msgid "Bild-Wrapper"
 msgstr "image wrapper"
 
 #: elements/upfront-gallery/lib/ugallery.php:450
@@ -1581,7 +1581,7 @@ msgid "Bildeinsätze"
 msgstr "image inserts"
 
 #: elements/upfront-image/lib/uimage.php:212
-msgid "Bild-Element"
+msgid "Bildelement"
 msgstr "picture element"
 
 #: elements/upfront-slider/lib/upfront_slider.php:161
@@ -2131,7 +2131,7 @@ msgid "Das CAPTCHA-Feld ist ungültig."
 msgstr "The CAPTCHA field is invalid."
 
 #: elements/upfront-image/lib/uimage.php:213
-msgid "Das gesamte Bild-Element"
+msgid "Das gesamte Bildelement"
 msgstr "The entire picture element"
 
 #: library/servers/class_upfront_editor_l10n_server.php:46
@@ -2447,7 +2447,7 @@ msgid "Die ausgewählte Mediendatei wird bereits verwendet. Bist du sicher?"
 msgstr "The selected media file is already in use. Are you sure?"
 
 #: elements/upfront-slider/lib/upfront_slider.php:168
-msgid "Die Bild-Container-Ebene"
+msgid "Die Bild-Wrapper-Ebene"
 msgstr "The image wrapper layer"
 
 #: elements/upfront-image/lib/uimage.php:244
@@ -3566,7 +3566,7 @@ msgid "Footer Area"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:259
-msgid "Form des Bild-Elements:"
+msgid "Form des Bildelements:"
 msgstr "Form of the picture element:"
 
 #: elements/upfront-login/lib/upfront_login.php:170
@@ -6443,7 +6443,7 @@ msgid "Raster ausblenden"
 msgstr "Hide grid"
 
 #: library/servers/class_upfront_editor_l10n_server.php:451
-msgid "Basis-Raster"
+msgid "Raster bearbeiten"
 msgstr "Edit grid"
 
 #: library/servers/class_upfront_editor_l10n_server.php:376
@@ -6571,7 +6571,7 @@ msgid "Reihenfolge der Folien"
 msgstr "order of the slides"
 
 #: library/servers/class_upfront_editor_l10n_server.php:39
-msgid "Renderstatus: %s%"
+msgid "Rendern von %s%"
 msgstr "render %s%"
 
 #: library/servers/class_upfront_editor_l10n_server.php:459
@@ -6771,7 +6771,7 @@ msgstr "choose font"
 
 #: library/servers/class_upfront_editor_l10n_server.php:455
 #: library/servers/class_upfront_editor_l10n_server.php:473
-msgid "Fonts"
+msgid "Schriftarten verwalten"
 msgstr "Manage Fonts"
 
 #: library/servers/class_upfront_editor_l10n_server.php:212
@@ -8045,7 +8045,7 @@ msgid "Ratio halten"
 msgstr "maintain relationship"
 
 #: library/servers/class_upfront_editor_l10n_server.php:461
-msgid "Normalmodus"
+msgid "Verlasse Responsiv"
 msgstr "Exit Responsive"
 
 #: library/servers/class_upfront_editor_l10n_server.php:413
@@ -8273,7 +8273,7 @@ msgid "Vor dem Senden"
 msgstr "Before sending"
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "CSS bearbeiten"
+msgid "Voreingestelltes CSS bearbeiten"
 msgstr "Edit default CSS"
 
 #: library/servers/class_upfront_presets_server.php:598

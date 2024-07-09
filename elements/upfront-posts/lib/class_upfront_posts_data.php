@@ -203,7 +203,7 @@ class Upfront_Posts_PostsData {
 				'post_tags_label' => __('Tags', 'upfront'),
 				'post_tags_info' => __('Beitrags-Tags Element', 'upfront'),
 				'thumbnail_label' => __('Thumbnail', 'upfront'),
-				'thumbnail_info' => __('Ausgewähltes Bild-Element', 'upfront'),
+				'thumbnail_info' => __('Ausgewähltes Bildelement', 'upfront'),
 				'title_label' => __('Titel', 'upfront'),
 				'title_info' => __('Beitragstitel-Element', 'upfront'),
 			),

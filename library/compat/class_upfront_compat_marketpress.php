@@ -135,7 +135,7 @@ class Upfront_Compat_MarketPress {
 			mp_get_setting('pages->cart'),
 			mp_get_setting('pages->store'),
 			mp_get_setting('pages->checkout'),
-			mp_get_setting('pages->order_status')
+			mp_get_setting('pages->order-status')
 		);
 	}
 

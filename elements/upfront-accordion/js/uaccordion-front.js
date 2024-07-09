@@ -16,7 +16,7 @@
 		/**
 		 * Activate focused panel with Enter keydown
 		 */
-		$('.accordion-panel-title').on('keydown', function(e) {
+		$('.accordion-panel-title').keydown(function(e) {
 			if (e.which == 13) {
 				$(this).on('click',);
 			}

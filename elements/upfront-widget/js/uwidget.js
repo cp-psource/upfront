@@ -100,7 +100,7 @@ define([
 
 			Upfront.Events.trigger('entity:object:refresh:start', me);
 			Upfront.Util.post({"action": "uwidget_get_widget_markup", "data": JSON.stringify({"widget": widget, "instance": instance})})
-				.done(function (ret) {
+				.success(function (ret) {
 
 					Upfront.data.uwidget.widgets_cache[widget+me.cid] = ret.data;
 					if ( me.loading ){
@@ -112,7 +112,7 @@ define([
 					}
 					Upfront.Events.trigger('entity:object:refresh', me);
 				})
-				.fail(function (ret) {
+				.error(function (ret) {
 					Upfront.Util.log("Error loading widget");
 
 			});

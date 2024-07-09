@@ -33,11 +33,6 @@ class Upfront_Image_Presets_Server extends Upfront_Presets_Server {
 	public static function get_preset_properties($preset) {
 		$properties = self::$instance->get_preset_by_id($preset);
 
-		// Sicherstellen, dass $properties ein Array ist
-		if (!is_array($properties)) {
-			$properties = [];
-		}
-
 		return $properties;
 	}
 	
@@ -59,8 +54,8 @@ class Upfront_Image_Presets_Server extends Upfront_Presets_Server {
 			'use_captions' => '',
 			'caption-position-value' => 'bottomOver',
 			'caption-trigger' => 'hover_show',
-			'caption-position' => isset($properties['caption-position']) ? $properties['caption-position'] : 'over_image', // Überprüfen Sie, ob der Schlüssel vorhanden ist, andernfalls verwenden Sie 'over_image' als Standardwert
-			'caption-alignment' => isset($properties['caption-alignment']) ? $properties['caption-alignment'] : 'bottom', // Überprüfen Sie, ob der Schlüssel vorhanden ist, andernfalls verwenden Sie 'bottom' als Standardwert
+			'caption-position' => 'over_image',
+			'caption-alignment' => 'bottom',
 			'id' => 'default',
 			'name' => self::$instance->get_l10n('default_preset')
 		);

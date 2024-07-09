@@ -29,11 +29,11 @@
 					if(isMethod)
 						result = ueditor.callMethod(options);
 					else
-						$.fail('Ueditor is already instantiated');
+						$.error('Ueditor is already instantiated');
 				}
 				else{
 					if(isMethod)
-						$.fail('Can\'t call the ueditor method ' + options + '. Ueditor not initialized');
+						$.error('Can\'t call the ueditor method ' + options + '. Ueditor not initialized');
 					else {
 						// Initialize editor
 						$el.data('ueditor', new Ueditor($el, options));
@@ -697,24 +697,21 @@
 
 						if (this.utils.browser('msie')) e.returnValue = false;
 
-						if (type == 'command')
-						{
+						if (type == 'command') {
 							this.inline.format(callback);
 						}
-						else if (type == 'dropdown')
-						{
+						else if (type == 'dropdown') {
 							this.dropdown.show(e, btnName);
 						}
-						else
-						{
+						else {
 							var func;
-
+						
 							if (typeof callback === 'function') {
 								callback.call(this, btnName);
 								this.observe.buttons(e, btnName);
-							} else if (callback.includes('.')) {
-								const func = callback.split('.');
-								if (typeof this[func[0]] !== 'undefined' && typeof this[func[0]][func[1]] === 'function') {
+							} else if (callback.indexOf('.') !== -1) {
+								func = callback.split('.');
+								if (typeof this[func[0]] !== 'undefined') {
 									this[func[0]][func[1]](btnName);
 									this.observe.buttons(e, btnName);
 								}
@@ -726,31 +723,24 @@
 							}
 						}
 					},
-					get: function(key)
-					{
+					get: function(key) {
 						return this.$toolbar.find('a.re-' + key);
 					},
-					setActive: function(key)
-					{
+					setActive: function(key) {
 						this.button.get(key).addClass('redactor-act');
 					},
-					setInactive: function(key)
-					{
+					setInactive: function(key) {
 						this.button.get(key).removeClass('redactor-act');
 					},
-					setInactiveAll: function(key)
-					{
-						if (typeof key == 'undefined')
-						{
+					setInactiveAll: function(key) {
+						if (typeof key == 'undefined') {
 							this.$toolbar.find('a.re-icon').removeClass('redactor-act');
 						}
-						else
-						{
+						else {
 							this.$toolbar.find('a.re-icon').not('.re-' + key).removeClass('redactor-act');
 						}
 					},
-					setActiveInVisual: function()
-					{
+					setActiveInVisual: function() {
 						this.$toolbar.find('a.re-icon').not('a.re-html').removeClass('redactor-button-disabled');
 					},
 					setInactiveInCode: function()
@@ -867,7 +857,7 @@
 					if( Overriden_Methods[module] && Overriden_Methods[module][methods[z]] )
 						method =  Overriden_Methods[module][methods[z]];
 
-					this[module][methods[z]] = method.bind(this);
+					this[module][methods[z]] = method.on(this);
 				}
 			};
 
@@ -1551,7 +1541,8 @@
 				var placeholder = this.options.placeholder;
 				if (this.$el.attr('placeholder')) placeholder = this.$el.attr('placeholder');
 				if (placeholder === '') placeholder = false;
-				if (placeholder !== false && this.$el.text().trim().length === 0) {
+				if (placeholder !== false && $.trim(this.$el.text()).length === 0)
+				{
 					//remove existing placeholder
 					this.$el.parent().children('.ueditor-placeholder').remove();
 					this.$placeholder = this.$el.clone(false);
@@ -1838,7 +1829,7 @@
 				this.inserts = opts.inserts || {};
 				this._inserts = {};
 				this.ueditor = opts.ueditor;
-				this.onRemoveInsert = _.bind(this.removeInsert, this);
+				this.onRemoveInsert = _.on(this.removeInsert, this);
 				this.insertsData = opts.insertsData || {};
 				this.deletedInserts = {};
 				this.$el.children().addClass('nosortable');
@@ -2078,32 +2069,29 @@
 					$block = $( current ),
 					$prevBlock = $block.parent().prev(),
 					indexPosition = redactor.range.startOffset;
-			
+
 				if( !current || _.isEmpty( $block ) ) return false;
-			
+
+
 				var $image_embed_insert_wrappers = $(".upfront-inserted_image-wrapper, .upfront-inserted_embed-wrapper"),
+					block_top = $block.offset().top,
 					block_html = $.trim( $block.html() ) || '',
 					prevblock_html = $.trim( $prevBlock.html() ) || '',
 					show_tooltip = true;
-			
+
 				$image_embed_insert_wrappers.each(function(){
 					var $this = $(this),
 						height = $this.find(".ueditor-insert-variant-group").height(),
-						offset = $this.offset(),
-						top;
-					
-					if(offset) {
-						top = offset.top;
-						if( top !== undefined && block_top <= ( height + top + 20) && block_top >= ( top - 5)  ){
-							show_tooltip = false;
-						}
+						top = $this.offset().top;
+					if( block_top <= ( height + top + 20) && block_top >= ( top - 5)  ){
+						show_tooltip = false;
 					}
 				});
-			
-				return  show_tooltip
-					&&  $block.closest(".ueditor-insert").length === 0
+
+				return 	show_tooltip
+					&& 	$block.closest(".ueditor-insert").length === 0
 					&&  ( block_html.match(/<br>/g) || ( indexPosition < 1 && prevblock_html.match(/<br>/g) ) || ( typeof $block.closest("p.nosortable").html() !== "undefined" &&  $.trim( $block.closest("p.nosortable").html() ) === "" ) ) ;
-			}			
+			}
 		});
 
 		var ImagesHelper = {

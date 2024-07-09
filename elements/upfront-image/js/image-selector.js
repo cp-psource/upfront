@@ -23,7 +23,7 @@ define([
 				$('body').append(me.formTpl({url: Upfront.Settings.ajax_url, l10n: l10n.template}));
 				
 				$('body').on( 'keyup', function( event ) {
-					if ( event.key === 27 )
+					if ( event.keyCode === 27 )
 						me.closeOverlay();
 				});
 				
@@ -54,7 +54,7 @@ define([
 								.done(function(response){
 									me.deferred.resolve(response.data.images, response);
 								})
-								.fail(function(){
+								.error(function(){
 									Upfront.Views.Editor.notify(l10n.sel.upload_error, 'error');
 									me.openSelector();
 								});

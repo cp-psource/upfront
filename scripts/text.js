@@ -167,7 +167,7 @@ define(['module'], function (module) {
                     text.finishLoad(name, parsed.strip, content, onLoad);
                 }, function (err) {
                     if (onLoad.error) {
-                        onLoad.fail(err);
+                        onLoad.error(err);
                     }
                 });
             } else {

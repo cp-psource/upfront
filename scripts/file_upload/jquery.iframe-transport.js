@@ -70,7 +70,7 @@
                             counter + '"></iframe>'
                     ).on('load', function () {
                         var fileInputClones,
-                            paramNames = Array.isArray(options.paramName) ?
+                            paramNames = $.isArray(options.paramName) ?
                                     options.paramName : [options.paramName];
                         iframe
                             .off('load')

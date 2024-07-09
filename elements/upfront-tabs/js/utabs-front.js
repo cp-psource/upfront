@@ -19,7 +19,7 @@
 		/**
 		 * Activate focused tab with Enter keydown
 		 */
-		$('.tabs-tab').on('keydown', function(e) {
+		$('.tabs-tab').keydown(function(e) {
 			if (e.which == 13) {
 				$(this).on('click',);
 			}

@@ -59,21 +59,17 @@
 
                 if (typeof instance !== 'undefined' && typeof func === 'function') {
                     var methodVal = func.apply(instance, args);
-                    if (methodVal !== undefined && methodVal !== instance)
-                    {
+                    if (methodVal !== undefined && methodVal !== instance) {
                         val.push(methodVal);
                     }
                 }
-                else
-                {
-                    $.fail('No such method "' + options + '" for Redactor');
+                else {
+                    $.error('No such method "' + options + '" for Redactor');
                 }
             });
         }
-        else
-        {
-            this.each(function()
-            {
+        else {
+            this.each(function() {
                 $.data(this, 'redactor', {});
                 $.data(this, 'redactor', Redactor(this, options));
             });
@@ -421,7 +417,8 @@
                 this.bindModuleMethods($.Redactor.modules[i]);
             }
         },
-        bindModuleMethods: function(module) {
+        bindModuleMethods: function(module)
+        {
             if (typeof this[module] == 'undefined') return;
 
             // init module
@@ -433,11 +430,12 @@
             // bind methods
             for (var z = 0; z < len; z++)
             {
-                this[module][methods[z]] = this[module][methods[z]].bind(this);
+                this[module][methods[z]] = this[module][methods[z]].on(this);
             }
         },
 
-        alignment: function() {
+        alignment: function()
+        {
             return {
                 left: function()
                 {
@@ -1371,14 +1369,12 @@
                     $(document).on('mousedown', function(e) { clickedElement = e.target; });
 
                     // blur
-                    this.$editor.on('blur.redactor', $.proxy(function(e)
-                    {
+                    this.$editor.on('blur.redactor', $.proxy(function(e) {
                         if (this.rtePaste) return;
                         if (!this.build.isBlured(clickedElement)) return;
 
                         this.utils.disableSelectAll();
                         if (typeof this.opts.blurCallback === 'function') this.core.setCallback('blur', e);
-
                     }, this));
                 },
                 isBlured: function(clickedElement)
@@ -1405,33 +1401,32 @@
                     if (!this.opts.plugins) return;
                     if (!RedactorPlugins) return;
 
-                    $.each(this.opts.plugins, $.proxy(function(i, s)
-                    {
+                    $.each(this.opts.plugins, $.proxy(function(i, s) {
                         if (typeof RedactorPlugins[s] === 'undefined') return;
-
-                        if ($.inArray(s, $.Redactor.modules) !== -1)
-                        {
-                            $.fail('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
+                    
+                        if ($.inArray(s, $.Redactor.modules) !== -1) {
+                            $.error('Plugin name "' + s + '" matches the name of the Redactor\'s module.');
                             return;
                         }
-
+                    
                         if (typeof RedactorPlugins[s] !== 'function') return;
-
+                    
                         this[s] = RedactorPlugins[s]();
-
+                    
                         // get methods
                         var methods = this.getModuleMethods(this[s]);
                         var len = methods.length;
-
+                    
                         // bind methods
-                        for (var z = 0; z < len; z++)
-                        {
-                            this[s][methods[z]] = this[s][methods[z]].bind(this);
+                        for (var z = 0; z < len; z++) {
+                            if (typeof this[s][methods[z]] === 'function') {
+                                this[s][methods[z]] = this[s][methods[z]].on(this);
+                            }
                         }
-
-                        if (typeof this[s].init === 'function') this[s].init();
-
-
+                    
+                        if (typeof this[s].init === 'function') {
+                            this[s].init();
+                        }
                     }, this));
 
                 },
@@ -1536,21 +1531,22 @@
                     else if (type == 'dropdown') this.dropdown.show(e, btnName);
                     else this.button.onClickCallback(e, callback, btnName);
                 },
-                onClickCallback: function(e, callback, btnName)
-                {
+                onClickCallback: function(e, callback, btnName) {
                     var func;
-
+                
                     if (typeof callback === 'function') {
                         callback.call(this, btnName);
-                    } else if (callback.search(/\./) != '-1')
-                    {
+                    } else if (callback.indexOf('.') !== -1) {
                         func = callback.split('.');
-                        if (typeof this[func[0]] == 'undefined') return;
-
-                        this[func[0]][func[1]](btnName);
+                        if (typeof this[func[0]] === 'undefined') return;
+                
+                        if (typeof this[func[0]][func[1]] === 'function') {
+                            this[func[0]][func[1]](btnName);
+                        }
+                    } else if (typeof this[callback] === 'function') {
+                        this[callback](btnName);
                     }
-                    else this[callback](btnName);
-
+                
                     this.observe.buttons(e, btnName);
                 },
                 get: function(key)
@@ -2806,10 +2802,13 @@
                 setCallback: function(type, e, data) {
                     var callback = this.opts[type + 'Callback'];
                     if (typeof callback === 'function') {
-                        return (typeof data === 'undefined') ? callback.call(this, e) : callback.call(this, e, data);
-                    }
-                    else {
-                        return (typeof data == 'undefined') ? e : data;
+                        if (typeof data === 'undefined') {
+                            return callback.call(this, e);
+                        } else {
+                            return callback.call(this, e, data);
+                        }
+                    } else {
+                        return (typeof data === 'undefined') ? e : data;
                     }
                 },
                 destroy: function()
@@ -5935,7 +5934,7 @@
                     if (e.which != 13) return;
 
                     e.preventDefault();
-                    this.$modal.find('button.redactor-modal-action-btn').click();
+                    this.$modal.find('button.redactor-modal-action-btn').on('click',);
                 },
                 createCancelButton: function()
                 {
@@ -7376,7 +7375,7 @@
                         for (var i = 0; i < len; i++)
                         {
                             var attrs = this.tidy.settings.removeAttr[i][1];
-                            if (Array.isArray(attrs)) attrs = attrs.join(' ');
+                            if ($.isArray(attrs)) attrs = attrs.join(' ');
 
                             this.tidy.$div.find(this.tidy.settings.removeAttr[i][0]).removeAttr(attrs);
                         }
@@ -7406,7 +7405,7 @@
                     {
                         $.each($el[0].attributes, function(i, item)
                         {
-                            if (Array.isArray(allowed[pos]))
+                            if ($.isArray(allowed[pos]))
                             {
                                 if ($.inArray(item.name, allowed[pos]) == -1)
                                 {
@@ -7467,7 +7466,7 @@
                     if (!this.tidy.settings.removeDataAttr) return;
 
                     var tags = this.tidy.settings.removeDataAttr;
-                    if (Array.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
+                    if ($.isArray(this.tidy.settings.removeDataAttr)) tags = this.tidy.settings.removeDataAttr.join(',');
 
                     this.tidy.removeAttrs(this.tidy.$div.find(tags), '^(data-)');
 
@@ -8446,7 +8445,7 @@
                     var parent = this.selection.getParent();
                     var current = this.selection.getCurrent();
 
-                    if (Array.isArray(tagName))
+                    if ($.isArray(tagName))
                     {
                         var matched = 0;
                         $.each(tagName, $.proxy(function(i, s)

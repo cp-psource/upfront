@@ -99,7 +99,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.done(function (response) {
+				.success(function (response) {
 					me.each(function (model) {
 						var labels = response.data[model.get("ID")];
 						if (labels) model.set({labels: labels}, {silent: true});
@@ -117,7 +117,7 @@ define([
 				}
 			;
 			return Upfront.Util.post(data)
-				.done(function (response) {
+				.success(function (response) {
 					me.each(function (model) {
 						var labels = response.data[model.get("ID")];
 						if (labels) model.set({labels: labels}, {silent: true});
@@ -135,7 +135,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.done(function (response) {
+				.success(function (response) {
 					me.reset([]);
 					Upfront.Events.trigger("media_manager:media:list", ActiveFilters);
 				})
@@ -151,7 +151,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.done(function (response) {
+				.success(function (response) {
 					me.reset([]);
 					Upfront.Events.trigger("media_manager:media:list", ActiveFilters);
 				})
@@ -264,7 +264,7 @@ define([
 		reload_labels: function () {
 			var me = this;
 			Upfront.Util.post({action: "upfront-media-get_labels"})
-				.done(function (response) {
+				.success(function (response) {
 					var arr = [];
 					if (response.data) {
 						me.labels_cache = response.data;
@@ -2577,7 +2577,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.done(function (response) {
+				.success(function (response) {
 					Upfront.Events.trigger("media_manager:media:labels_updated");
 				})
 			;
@@ -2606,7 +2606,7 @@ define([
 				}
 			;
 			Upfront.Util.post(data)
-				.done(function (response) {
+				.success(function (response) {
 					var id = me.model.get("ID"),
 						data = response.data || {},
 						labels = data[id] || data
@@ -2748,7 +2748,7 @@ define([
 				me.load(options);
 			}, {width: 800, hold_editor: options.hold_editor}, 'media-manager');
 
-			popup.always(_.bind(this.cleanup_active_filters, this));
+			popup.always(_.on(this.cleanup_active_filters, this));
 			popup.progress($.proxy(this.clean_up, this));
 
 			Upfront.Events.trigger('upfront:element:edit:start', 'media-upload');

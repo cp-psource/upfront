@@ -58,7 +58,7 @@ class Upfront_Admin_General extends Upfront_Admin_Page {
 								<h4><?php esc_html_e("Online Articles", Upfront::TextDomain) ?></h4>
 								<ul>
 
-									<li><a href='https://premium.wpmudev.org/blog/upfront-1-0/' target="_blank"><?php esc_html_e("Upfront 1.0", Upfront::TextDomain) ?></a></li>
+									<li><a href='https://cp-psource.github.io/upfront' target="_blank"><?php esc_html_e("Upfront 1.0", Upfront::TextDomain) ?></a></li>
 									<li><a href='https://cp-psource.github.io/upfront/tutorial-basics.html' target="_blank"><?php esc_html_e("Upfront Part 1: The Basics, Theme Colors and Typography", Upfront::TextDomain) ?></a></li>
 									<li><a href='https://cp-psource.github.io/upfront/tutorial-regions.html' target="_blank"><?php esc_html_e("Upfront Part 2: Structuring Your Site with Regions", Upfront::TextDomain) ?></a></li>
 									<li><a href='https://cp-psource.github.io/upfront/tutorial-elements.html' target="_blank"><?php esc_html_e("Upfront Part 3: Laying Out Your Site with Elements", Upfront::TextDomain) ?></a></li>

@@ -111,7 +111,7 @@
 
 				var props = this.get_preset_properties();
 
-				if (Object.keys(props).length <= 0) return false; // No properties, carry on
+				if (_.size(props) <= 0) return false; // No properties, carry on
 
 				PresetUtil.updatePresetStyle('nav', props, settingsStyleTpl);
 
@@ -305,7 +305,7 @@
 
 				if(this.$el.find('li.edit_mode').data('backboneview'))
 					this.$el.find('li.edit_mode').data('backboneview').model['being-edited']= false;
-				this.$el.find('li.edit_mode a.menu_item .menu_item-ueditor').trigger('blur');
+				this.$el.find('li.edit_mode a.menu_item .menu_item-ueditor').blur();
 				this.editModeOff();
 				if(!$('#upfront-popup').hasClass('upfront-postselector-popup') || $('#upfront-popup').css('display') !== 'block')
 					this.$el.find('.time_being_display').removeClass('time_being_display');
@@ -344,7 +344,7 @@
 					Upfront.data.navigation.auto_add['auto_add'] = nav_menu_option;
 				}
 				Upfront.Util.post({"action": "upfront_new_update_auto_add_pages", "nav_menu_option": JSON.stringify(Upfront.data.navigation.auto_add)})
-					.fail(function(res){
+					.error(function(res){
 						Upfront.Util.log("Cannot update auto add pages!");
 					})
 				;
@@ -483,13 +483,13 @@
 				var me = this;
 				// Ajax call for creating menu
 				var newMenu = Upfront.Util.post({"action": "upfront_new_create_menu", "menu_name": menu_name})
-					.done(function (ret) {
+					.success(function (ret) {
 						me.property('menu_slug', ret.data.slug, true);
 						me.property('menu_id', ret.data.term_id);
 						me.save_breakpoint_menu(ret.data.term_id);
 						Upfront.Events.trigger("menu_element:menu_created", ret.data);
 					})
-					.fail(function (ret) {
+					.error(function (ret) {
 						Upfront.Util.log("Error creating menu");
 					})
 				;
@@ -498,10 +498,10 @@
 				var me = this;
 				// Ajax call for delete menu by ID
 				var newMenu = Upfront.Util.post({"action": "upfront_new_delete_menu", "menu_id": menu_id})
-					.done(function (ret) {
+					.success(function (ret) {
 						Upfront.Events.trigger("menu_element:menu_deleted", ret.data);
 					})
-					.fail(function (ret) {
+					.error(function (ret) {
 						Upfront.Util.log("Error deleting menu");
 					})
 				;
@@ -550,7 +550,7 @@
 				}
 
 				Upfront.Util.post({"action": "upfront_new_load_menu_array", "data": menu_id})
-					.done(function (ret) {
+					.success(function (ret) {
 						if(!ret.data){
 							me.$el.find('.upfront-object-content').html('Please add menu items');
 							return;
@@ -564,7 +564,7 @@
 							me.fallback_content_markup(menu_slug);
 						}
 					})
-					.fail(function (ret) {
+					.error(function (ret) {
 						Upfront.Util.log("Error loading menu");
 					})
 				;
@@ -576,7 +576,7 @@
 			fallback_content_markup: function(menu_id) {
 				var me = this;
 				Upfront.Util.post({"action": "upfront_new_load_menu_array", "data": menu_id})
-					.done(function (ret) {
+					.success(function (ret) {
 						if(!ret.data){
 							me.$el.find('.upfront-object-content').html('Please add menu items');
 							return;
@@ -584,7 +584,7 @@
 						me.property('menu_items', ret.data, true);
 						me.generate_menu();
 					})
-					.fail(function (ret) {
+					.error(function (ret) {
 						Upfront.Util.log("Error loading menu");
 					})
 				;
@@ -596,7 +596,7 @@
 				;
 				if (!silent) silent = false;
 				Upfront.Util.post({"action": "upfront_new_menu_from_slug", "data": slug})
-					.done(function (ret) {
+					.success(function (ret) {
 						// we have to correct breakpoint_menu_id first
 						if ( typeof breakpointMenuData !== 'undefined' && typeof currentBreakpoint.id !== 'undefined' && typeof breakpointMenuData[currentBreakpoint.id] !== 'undefined' ) {
 							breakpointMenuData[currentBreakpoint.id] = {
@@ -608,7 +608,7 @@
 						// setting up menu_id
 						me.property('menu_id', ret.data, silent);
 					})
-					.fail(function (ret) {
+					.error(function (ret) {
 						Upfront.Util.log("Error loading menu from slug");
 					})
 				;
@@ -1175,10 +1175,10 @@
 			saveMenuOrder: function() {
 				var me = this;
 				Upfront.Util.post({"action": "upfront_new_update_menu_order", "menu_items": me.new_menu_order()})
-					.done(function (ret) {
+					.success(function (ret) {
 						Upfront.Events.trigger("menu_element:edit");
 					})
-					.fail(function (ret) {
+					.error(function (ret) {
 						Upfront.Util.log("Error updating menu");
 					})
 				;

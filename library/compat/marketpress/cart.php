@@ -41,16 +41,16 @@
 		<!-- MP Cart Resume -->
 		<div id="mp-cart-resume" class="mp_cart_resume">
 			<div class="mp_cart_resume_head">
-				<h3 class="mp_sub_title">Estimated Total</h3>
+				<h3 class="mp_sub_title">Gesamtbetrag</h3>
 			</div>
-			<div class="mp_cart_resume_item mp_cart_resume_item-product-total"> <span class="mp_cart_resume_item_label">Product Total</span> <span class="mp_cart_resume_item_amount">$192.00</span> </div>
+			<div class="mp_cart_resume_item mp_cart_resume_item-product-total"> <span class="mp_cart_resume_item_label">Artikel Gesamt</span> <span class="mp_cart_resume_item_amount">$192.00</span> </div>
 			<!-- end mp_cart_resume_item_product-total -->
-			<div class="mp_cart_resume_item mp_cart_resume_item-order-total"> <span class="mp_cart_resume_item_label">Estimated Total</span> <span class="mp_cart_resume_item_amount">$192.00</span> </div>
+			<div class="mp_cart_resume_item mp_cart_resume_item-order-total"> <span class="mp_cart_resume_item_label">Gesamtbetrag</span> <span class="mp_cart_resume_item_amount">$192.00</span> </div>
 			<!-- end mp_cart_resume_item-order-total -->
 		</div>
-		<!-- end mp_cart-resume --> <a href="#" class="mp_button mp_button-continue-shopping mp_button-large">Continue Shopping?</a> <a class="mp_button mp_button-checkout mp_button-padlock mp_button-large mp_tooltip" href="#">Checkout</a>
+		<!-- end mp_cart-resume --> <a href="#" class="mp_button mp_button-continue-shopping mp_button-large">Mit dem Einkaufen fortfahren?</a> <a class="mp_button mp_button-checkout mp_button-padlock mp_button-large mp_tooltip" href="#">Kasse</a>
 		<div class="mp_tooltip_content">
-			<p class="mp-secure-checkout-tooltip-text"><strong>Secure Checkout</strong><br>Shopping is always safe and secure.</p>
+			<p class="mp-secure-checkout-tooltip-text"><strong>Sichere Kasse</strong><br>Shopping ist immer sicher und geschützte.</p>
 		</div>
 	</section>
 	<!-- end mp_cart_meta -->

@@ -164,11 +164,11 @@ PostContentEditor.prototype = {
 					this.$title
 							.attr('contenteditable', true)
 							.off('blur')
-							.on('blur', _.bind(this.blur, this))
+							.on('blur', _.on(this.blur, this))
 							.off('keyup')
-							.on('keyup', _.bind(this.keyup, this))
+							.on('keyup', _.on(this.keyup, this))
 							.off('keypress')
-							.on('keypress', _.bind(this.keypress, this));
+							.on('keypress', _.on(this.keypress, this));
 
 					this.focus();
 					$("html").on('mousedown', {$title: this.$title, $partView: this }, this.mousedown );
@@ -188,7 +188,7 @@ PostContentEditor.prototype = {
 						.off('keyup')
 						.off('keypress')
 						.off('dblclick')
-						.on('dblclick', _.bind(this.editContent, this))
+						.on('dblclick', _.on(this.editContent, this))
 				;
 				this.parent.editorStop();
 			},
@@ -286,10 +286,10 @@ PostContentEditor.prototype = {
 
 					this.$content
 						.off('blur')
-						.on('blur', _.bind(this.blur, this))
-						.on('keyup', _.bind(this.keyup, this))
+						.on('blur', _.on(this.blur, this))
+						.on('keyup', _.on(this.keyup, this))
 						.off('stop')
-						.on("stop", _.bind(this.stopEditContent, this))
+						.on("stop", _.on(this.stopEditContent, this))
 					;
 					this.parent.editorStart(); // Set necessary classes, trigger events, etc
 
@@ -996,7 +996,7 @@ PostContentEditor.prototype = {
 			.listenTo(me.box.visibilitySection , 'visibility:change', me.updateVisibility)
 		;
 
-		//Upfront.Events.on("editor:post:tax:updated", _.bind(me.refreshTaxonomies, me));
+		//Upfront.Events.on("editor:post:tax:updated", _.on(me.refreshTaxonomies, me));
 	},
 
 	updateStatus: function(status){
@@ -1184,12 +1184,12 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 			if (parent.is("a")) {
 				parent.replaceWith(this.parts.titles);
 			}
-			this.onTitleEdited = _.bind(this.titleEdited, this);
+			this.onTitleEdited = _.on(this.titleEdited, this);
 
 			this.parts.titles
 				.attr('contenteditable', true)
                 .off("blur")
-                .on("blur", _.bind(me.title_blurred, me) )
+                .on("blur", _.on(me.title_blurred, me) )
 				/*.on('keyup', this.onTitleEdited)
 				.on('keydown', function(e){
 					if(e.which != 9) //TAB
@@ -1226,7 +1226,7 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
             //});
 
 
-			this.onContentsEdited = _.bind(this.contentEdited, this);
+			this.onContentsEdited = _.on(this.contentEdited, this);
 			this.editors = [];
 			this.parts.contents.html(content).ueditor(editorOptions);
 			this.parts.contents.on('keyup', this.onContentsEdited);
@@ -1686,7 +1686,7 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 		this.bindBarEvents();
 		this.box.render();
         this.$el.append(this.box.$el);
-        _.delay(  _.bind(this.box.setPosition, this.box), 10 );
+        _.delay(  _.on(this.box.setPosition, this.box), 10 );
         this.box.toggleRegionClass(true);
 		return this;
 	},
@@ -1749,7 +1749,7 @@ var PostContentEditorLegacy = Backbone.View.extend(_.extend({}, PostContentEdito
 			.listenTo(me.box.visibilitySection , 'visibility:change', me.updateVisibility)
 		;
 
-        Upfront.Events.on("editor:post:tax:updated", _.bind(me.refreshTaxonomies, me));
+        Upfront.Events.on("editor:post:tax:updated", _.on(me.refreshTaxonomies, me));
 	},
 
 	refreshTaxonomies: function(){

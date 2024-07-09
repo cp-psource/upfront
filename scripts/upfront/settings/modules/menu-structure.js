@@ -103,7 +103,7 @@
 				this._add_promise(args, promise); // So, stack up this promise
 
 				promise
-					.done(function (response) {
+					.success(function (response) {
 						me.menuItems = response.data || [];
 						_.each(me.menuItems, function(itemOptions, index) {
 							var menuStructureItem = new MenuStructureItem({
@@ -123,7 +123,7 @@
 						me.render();
 						me._drop_promise(args); // And pop it off the stack once we're done
 					})
-					.fail(function (response) {
+					.error(function (response) {
 						Upfront.Util.log("Error loading menu items");
 					})
 				;
