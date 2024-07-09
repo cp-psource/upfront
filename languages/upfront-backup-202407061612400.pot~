@@ -1233,7 +1233,7 @@ msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:351
 #: elements/upfront-image/lib/uimage.php:216
-msgid "Bild-Wrapper"
+msgid "Bild-Container"
 msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:352
@@ -1658,11 +1658,11 @@ msgid "Meine tolle Bildbeschriftung"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:212
-msgid "Bildelement"
+msgid "Bild-Element"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:213
-msgid "Das gesamte Bildelement"
+msgid "Das gesamte Bild-Element"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:214
@@ -1813,7 +1813,7 @@ msgid "Bildstil"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:259
-msgid "Form des Bildelements:"
+msgid "Form des Bild-Elements:"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:261
@@ -3738,7 +3738,7 @@ msgid "Thumbnail"
 msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:206
-msgid "Ausgewähltes Bildelement"
+msgid "Ausgewähltes Bild-Element"
 msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:215
@@ -3904,7 +3904,7 @@ msgid "Beschriftungselement"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:168
-msgid "Die Bild-Wrapper-Ebene"
+msgid "Die Bild-Container-Ebene"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:169

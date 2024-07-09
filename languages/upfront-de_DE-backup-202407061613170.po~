@@ -1610,7 +1610,7 @@ msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:213
 msgid "Image element"
-msgstr "Bildelement"
+msgstr "Bild-Element"
 
 #: elements/upfront-image/lib/uimage.php:214
 msgid "The whole image element"

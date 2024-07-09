@@ -165,7 +165,7 @@ class Upfront_UsliderView extends Upfront_Object {
 				'caption_label' => __('Bildunterschriftenfeld', 'upfront'),
 				'caption_info' => __('Beschriftungselement', 'upfront'),
 				'img_containers_label' => __('Bildcontainer', 'upfront'),
-				'img_containers_info' => __('Die Bild-Wrapper-Ebene', 'upfront'),
+				'img_containers_info' => __('Die Bild-Container-Ebene', 'upfront'),
 				'dots_wrapper_label' => __('Wrapper für Navigationspunkte', 'upfront'),
 				'dots_wrapper_info' => __('Container der Navigationspunkte', 'upfront'),
 				'dots_label' => __('Navigationspunkte', 'upfront'),

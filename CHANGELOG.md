@@ -209,8 +209,8 @@ Change Log
 - Fix: Melder-Z-Index hinter Medien-Popup
 - Fix: Kontaktformular wird nicht auf PHP 7 gesendet
 - Fix: Galeriebild alt wird nicht angezeigt
-- Fix: Bildelement ALT im Frontend drucken
-- Fix: Bildelement alt nicht gespeichert
+- Fix: Bild-Element ALT im Frontend drucken
+- Fix: Bild-Element alt nicht gespeichert
 - Fix: Verbesserung der Bodyclass für Plugin-Kompatibilität
 - Fix: Burger-Voreinstellungsstile für vorhandene Voreinstellungen in DB
 - Fix: Problem mit ausgewählten Medienelementen nach dem Hochladen
@@ -268,7 +268,7 @@ Change Log
 - Fix: Redactor-Zitat-Symbol wird nicht als aktiv markiert.
 - Fix: Editor fügt Liste mit loser Auswahl hinzu.
 - Fix: Gruppenbearbeitungsstile und andere kleinere Element-Hover-Stile.
-- Fix: Leeres Bildelement wächst bei Größenänderung.
+- Fix: Leeres Bild-Element wächst bei Größenänderung.
 - Fix: Das Ändern der Produkt-Permalink-Option verursacht Probleme mit der Shop-Seite.
 - Fix: globale CSS-Tippfehler.
 - Fix: Media Manager gibt JS-Fehler aus.
@@ -355,7 +355,7 @@ Change Log
 - Hinzugefügt: Schaltfläche zum Löschen einer Gruppe von Elementen
 - Hinzugefügt: Verbesserte Kontrolle über den Hintergrund verschiedener Regionen pro Haltepunkt
 
-- Fix: Bildelementgröße beim Umschalten auf responsives Layout
+- Fix: Bild-Elementgröße beim Umschalten auf responsives Layout
 - Fix: Die Größenänderung wurde beim ersten Mal nicht aktualisiert
 - Fix: Probleme bei der Inhaltsaktualisierung
 - Fix: Die Elemente können nicht angezeigt werden, wenn der verborgene Bereich in Responsive umgeschaltet wird
@@ -451,7 +451,7 @@ Change Log
 - Hinzugefügt: Allgemeine und Debug-Einstellungen in der Admin-Oberfläche.
 - Hinzugefügt: Benutzerrolleneinschränkungen in der Admin-Oberfläche.
 - Hinzugefügt: experimentelle Leistungsoptimierung in der Admin-Oberfläche.
-- Hinzugefügt: Neugestaltung von Bildelementen.
+- Hinzugefügt: Neugestaltung von Bild-Elementen.
 - Hinzugefügt: vorgefertigte CSS-Selektoren für Post-Datenelemente.
 - Hinzugefügt: Tastaturkürzel zum Umschalten des Rasters (Alt+G)
 

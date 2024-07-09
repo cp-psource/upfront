@@ -669,7 +669,7 @@ msgid "Ausgewähltes Bild-Element"
 msgstr ""
 
 #: elements/upfront-posts/lib/class_upfront_posts_data.php:206
-msgid "Ausgewähltes Bildelement"
+msgid "Ausgewähltes Bild-Element"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:83
@@ -1312,7 +1312,7 @@ msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:351
 #: elements/upfront-image/lib/uimage.php:200
-msgid "Bild-Wrapper"
+msgid "Bild-Container"
 msgstr ""
 
 #: elements/upfront-gallery/lib/ugallery.php:450
@@ -1380,7 +1380,7 @@ msgid "Bildeinsätze"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:196
-msgid "Bildelement"
+msgid "Bild-Element"
 msgstr ""
 
 #: library/media/class_upfront_media_server.php:149
@@ -1851,7 +1851,7 @@ msgid "Das CAPTCHA-Feld ist ungültig."
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:197
-msgid "Das gesamte Bildelement"
+msgid "Das gesamte Bild-Element"
 msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:46
@@ -2124,7 +2124,7 @@ msgid "Die ausgewählte Mediendatei wird bereits verwendet. Bist du sicher?"
 msgstr ""
 
 #: elements/upfront-slider/lib/upfront_slider.php:168
-msgid "Die Bild-Wrapper-Ebene"
+msgid "Die Bild-Container-Ebene"
 msgstr ""
 
 #: elements/upfront-image/lib/uimage.php:228
@@ -3173,7 +3173,7 @@ msgid "Footer"
 msgstr "Stopka"
 
 #: elements/upfront-image/lib/uimage.php:243
-msgid "Form des Bildelements:"
+msgid "Form des Bild-Elements:"
 msgstr ""
 
 #: elements/upfront-login/lib/upfront_login.php:170

@@ -348,7 +348,7 @@ class Upfront_UgalleryView extends Upfront_Object {
 				'lightbox_close' => __('Schließen-Schaltfläche', 'upfront'),
 				'lightbox_content_wrapper' => __('Inhaltswrapper', 'upfront'),
 				'lightbox_content_wrapper_info' => __('Container, der Bild und Beschriftung umschließt.', 'upfront'),
-				'lightbox_image_wrapper' => __('Bild-Wrapper', 'upfront'),
+				'lightbox_image_wrapper' => __('Bild-Container', 'upfront'),
 				'lightbox_caption_wrapper' => __('Untertitel-Wrapper', 'upfront'),
 				'lightbox_caption' => __('Bildbeschriftung', 'upfront'),
 				'lightbox_arrow_left' => __('Pfeil links', 'upfront'),

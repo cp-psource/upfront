@@ -193,11 +193,11 @@ class Upfront_UimageView extends Upfront_Object {
 			'process_error' 	=> __('Bild konnte nicht verarbeitet werden.', 'upfront'),
 			'image_caption' 	=> __('Meine tolle Bildbeschriftung', 'upfront'),
 			'css' => array(
-				'image_label' 	=> __('Bildelement', 'upfront'),
-				'image_info' 	=> __('Das gesamte Bildelement', 'upfront'),
+				'image_label' 	=> __('Bild-Element', 'upfront'),
+				'image_info' 	=> __('Das gesamte Bild-Element', 'upfront'),
 				'caption_label' => __('Beschriftungsfeld', 'upfront'),
 				'caption_info' 	=> __('Beschriftungsebene', 'upfront'),
-				'wrapper_label' => __('Bild-Wrapper', 'upfront'),
+				'wrapper_label' => __('Bild-Container', 'upfront'),
 				'wrapper_info' 	=> __('Bildcontainer', 'upfront'),
 			),
 			'ctrl' => array(
@@ -240,7 +240,7 @@ class Upfront_UimageView extends Upfront_Object {
 				'padding' => __('Padding Einstellungen:', 'upfront'),
 				'no_padding' => __('Verwende kein Theme-Padding', 'upfront'),
 				'image_style_label' => __('Bildstil', 'upfront'),
-				'image_style_info' => __('Form des Bildelements:', 'upfront'),
+				'image_style_info' => __('Form des Bild-Elements:', 'upfront'),
 				'content_area_colors_label' => __('Farben', 'upfront'),
 				'caption_text_label' => __('Bildbeschriftung Text', 'upfront'),
 				'caption_bg_label' => __('Bildbeschriftung BG', 'upfront'),
