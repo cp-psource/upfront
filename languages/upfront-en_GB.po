@@ -1278,7 +1278,7 @@ msgstr "Custom width in px"
 
 #: library/servers/class_upfront_editor_l10n_server.php:417
 #: library/servers/class_upfront_presets_server.php:663
-msgid "Benutzerdefinierte CSS"
+msgid "Stylesheet"
 msgstr "Custom CSS"
 
 #: library/servers/class_upfront_editor_l10n_server.php:92
@@ -6762,7 +6762,7 @@ msgstr ""
 
 #: library/servers/class_upfront_editor_l10n_server.php:206
 #: library/servers/class_upfront_editor_l10n_server.php:549
-msgid "Schriftart einfügen"
+msgid "Font wählen"
 msgstr "Insert font"
 
 #: library/servers/class_upfront_editor_l10n_server.php:539
@@ -8273,7 +8273,7 @@ msgid "Vor dem Senden"
 msgstr "Before sending"
 
 #: library/servers/class_upfront_presets_server.php:662
-msgid "Voreingestelltes CSS bearbeiten"
+msgid "CSS EDITOR"
 msgstr "Edit default CSS"
 
 #: library/servers/class_upfront_presets_server.php:598
