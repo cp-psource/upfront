@@ -471,19 +471,24 @@ EOMainJs;
 		return $a['display_name'] > $b['display_name'] ? 1 : -1;
 	}
 
-	private function get_authors(){
-		$data = get_users(array('who' => 'authors'));
+	private function get_authors() {
+		$data = get_users(array(
+			'capability' => 'edit_posts',
+			'orderby' => 'display_name',
+			'order' => 'ASC'
+		));
+		
 		$authors = array();
-		foreach($data as $a){
+		foreach ( $data as $a ) {
 			$authors[] = array(
-				'ID' => $a->ID,
-				'login' => $a->user_login,
+				'ID'           => $a->ID,
+				'login'        => $a->user_login,
 				'display_name' => $a->display_name,
-				'url' => $a->user_url,
-				'posts_url' => get_author_posts_url($a->ID)
+				'url'          => $a->user_url,
+				'posts_url'    => get_author_posts_url( $a->ID )
 			);
 		}
-
+	
 		usort($authors, array($this, 'sort_authors'));
 		return $authors;
 	}
