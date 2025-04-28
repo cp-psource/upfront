@@ -100,7 +100,7 @@
 			var opts = this.opts();
 			opts.API.trigger('cycle-pre-initialize', [ opts ]);
 			var tx = $.fn.cycle.transitions[opts.fx];
-			if (tx && $.isFunction(tx.preInit))
+			if (tx && typeof tx.preInit === 'function')
 				tx.preInit( opts );
 			opts._preInitialized = true;
 		},

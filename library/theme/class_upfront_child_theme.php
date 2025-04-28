@@ -23,6 +23,13 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 	protected static $instance;
 
+	/**
+	 * Tracks whether theme styles have been called.
+	 *
+	 * @var bool
+	 */
+	private $_theme_styles_called = false;
+
 	public static function get_instance () {
 		return self::$instance;
 	}
@@ -389,7 +396,8 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 	private function getActiveIconFont() {
 		//error_log('getting active icon font' . $this->get_theme_settings()->get('icon_fonts'));
-		$fonts = json_decode($this->get_theme_settings()->get('icon_fonts'), true);
+		$icon_fonts = $this->get_theme_settings()->get('icon_fonts');
+		$fonts = !empty($icon_fonts) ? json_decode($icon_fonts, true) : [];
 		$active_font = false;
 		if(empty($fonts)) return false;
 		foreach($fonts as $font) {
@@ -610,7 +618,7 @@ abstract class Upfront_ChildTheme implements IUpfront_Server {
 
 		$icon_fonts = $this->get_theme_settings()->get('icon_fonts');
 		// Always add icomoon which is always available from Upfront theme
-		$icon_fonts_array = is_array( $icon_fonts ) ? $icon_fonts : json_decode($icon_fonts);
+		$icon_fonts_array = is_array( $icon_fonts ) ? $icon_fonts : (is_string($icon_fonts) ? json_decode($icon_fonts) : []);
 		$icon_fonts_array = is_array( $icon_fonts_array ) ? $icon_fonts_array : array(); // doublecheck we have something useful
 
 		array_unshift($icon_fonts_array, array(

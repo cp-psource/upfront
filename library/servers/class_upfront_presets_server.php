@@ -461,7 +461,7 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		);
 
 		if(!is_array($presets)) {
-			$presets = json_decode($presets, true);
+			$presets = is_string($presets) ? json_decode($presets, true) : [];
 		}
 
 		$theme_presets = array();
