@@ -363,8 +363,8 @@ abstract class Upfront_Presets_Server extends Upfront_Server {
 		$settings = Upfront_ChildTheme::get_settings();
 		//Get presets distributed with the theme
 		$theme_presets = is_object($settings) && $settings instanceof Upfront_Theme_Settings
-			? json_decode($settings->get($this->get_element_name() . '_presets'), true)
-			: false
+		? json_decode($settings->get($this->get_element_name() . '_presets') ?? '[]', true)
+		: false;
 		;
 
 		return $theme_presets;
