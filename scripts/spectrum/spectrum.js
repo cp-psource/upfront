@@ -219,7 +219,7 @@
 
             if (opts.palette) {
                 palette = opts.palette.slice(0);
-                paletteArray = $.isArray(palette[0]) ? palette : [palette];
+                paletteArray = Array.isArray(palette[0]) ? palette : [palette];
                 paletteLookup = {};
                 for (var i = 0; i < paletteArray.length; i++) {
                     for (var j = 0; j < paletteArray[i].length; j++) {
@@ -297,7 +297,7 @@
             textInput.on("paste", function () {
                 setTimeout(setFromTextInput, 1);
             });
-            textInput.keydown(function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
+            textInput.on("keydown", function (e) { if (e.key === "Enter") { setFromTextInput(); } });
 
             cancelButton.text(opts.cancelText);
             cancelButton.on("click.spectrum", function (e) {
@@ -1340,7 +1340,7 @@
                 if (color.hasOwnProperty("r") && color.hasOwnProperty("g") && color.hasOwnProperty("b")) {
                     rgb = rgbToRgb(color.r, color.g, color.b);
                     ok = true;
-                    format = String(color.r).substr(-1) === "%" ? "prgb" : "rgb";
+                    format = String(color.r).slice(-1) === "%" ? "prgb" : "rgb";
                 }
                 else if (color.hasOwnProperty("h") && color.hasOwnProperty("s") && color.hasOwnProperty("v")) {
                     color.s = convertToPercentage(color.s);

@@ -127,13 +127,16 @@ function upfront_get_breakpoint_property_value ($prop, $data, $breakpoint, $retu
  * @return array
  */
 function upfront_set_breakpoint_property_value ($prop, $value, &$data, $breakpoint) {
-	$model_breakpoint = upfront_get_property_value('breakpoint', $data);
-	$breakpoint_id = is_string($breakpoint) ? $breakpoint : $breakpoint->get_id();
-	$breakpoint_data = $model_breakpoint && !empty($model_breakpoint[$breakpoint_id]) ? $model_breakpoint[$breakpoint_id] : array();
-	$breakpoint_data[$prop] = $value;
-	$model_breakpoint[$breakpoint_id] = $breakpoint_data;
-	upfront_set_property_value('breakpoint', $model_breakpoint, $data);
-	return $data;
+    $model_breakpoint = upfront_get_property_value('breakpoint', $data);
+    if (!is_array($model_breakpoint)) {
+        $model_breakpoint = []; // Stelle sicher, dass es ein Array ist
+    }
+    $breakpoint_id = is_string($breakpoint) ? $breakpoint : $breakpoint->get_id();
+    $breakpoint_data = $model_breakpoint && !empty($model_breakpoint[$breakpoint_id]) ? $model_breakpoint[$breakpoint_id] : [];
+    $breakpoint_data[$prop] = $value;
+    $model_breakpoint[$breakpoint_id] = $breakpoint_data;
+    upfront_set_property_value('breakpoint', $model_breakpoint, $data);
+    return $data;
 }
 
 /**

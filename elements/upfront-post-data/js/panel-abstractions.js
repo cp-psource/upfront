@@ -125,7 +125,7 @@ define([
 				}
 			;
 
-			jQuery(window).on('resize', resize_cbk);
+			window.addEventListener('resize', resize_cbk);
 
 			editor
 				.start()

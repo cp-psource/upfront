@@ -109,7 +109,7 @@
 			var opts = this.opts();
 			opts.API.trigger('cycle-post-initialize', [ opts ]);
 			var tx = $.fn.cycle.transitions[opts.fx];
-			if (tx && $.isFunction(tx.postInit))
+			if (tx && typeof tx.postInit === "function")
 				tx.postInit( opts );
 		},
 	
@@ -206,7 +206,7 @@
 			var len;
 	
 			if ( $.type(slides) == 'string')
-				slides = $.trim( slides );
+				slides = slides.trim();
 	
 			$( slides ).each(function(i) {
 				var slideOpts;
@@ -414,7 +414,7 @@
 			}
 			if ( opts.continueAuto !== undefined ) {
 				if ( opts.continueAuto === false || 
-					($.isFunction(opts.continueAuto) && opts.continueAuto() === false )) {
+					(typeof opts.continueAuto === "function" && opts.continueAuto() === false )) {
 					opts.API.log('terminating automatic transitions');
 					opts.timeout = 0;
 					if ( opts.timeoutId )
@@ -682,7 +682,7 @@
 	};
 	
 	// automatically find and run slideshows
-	$(document).ready(function() {
+	jQuery(function() {
 		$( $.fn.cycle.defaults.autoSelector ).cycle();
 	});
 	
@@ -700,7 +700,7 @@
 	
 	$(document).on( 'cycle-initialized', function( e, opts ) {
 		var autoHeight = opts.autoHeight;
-		var t = $.type( autoHeight );
+		var t = typeof autoHeight;
 		var resizeThrottle = null;
 		var ratio;
 	
@@ -751,7 +751,7 @@
 		else if ( opts._autoHeightRatio ) { 
 			opts.container.height( opts.container.width() / opts._autoHeightRatio );
 		}
-		else if ( autoHeight === 'calc' || ( $.type( autoHeight ) == 'number' && autoHeight >= 0 ) ) {
+		else if ( autoHeight === 'calc' || ( typeof autoHeight === 'number' && autoHeight >= 0 ) ) {
 			if ( autoHeight === 'calc' )
 				sentinelIndex = calcSentinelIndex( e, opts );
 			else if ( autoHeight >= opts.slides.length )
@@ -890,7 +890,7 @@
 				else {
 					cmd = cmd == 'goto' ? 'jump' : cmd; // issue #3; change 'goto' to 'jump' internally
 					cmdFn = opts.API[ cmd ];
-					if ( $.isFunction( cmdFn )) {
+					if ( typeof cmdFn === "function" ) {
 						cmdArgs = $.makeArray( args );
 						cmdArgs.shift();
 						return cmdFn.apply( opts.API, cmdArgs );
@@ -939,7 +939,7 @@
 			this.stop(); //#204
 	
 			var opts = this.opts();
-			var clean = $.isFunction( $._data ) ? $._data : $.noop;  // hack for #184 and #201
+			var clean = typeof $._data === "function" ? $._data : $.noop;  // hack for #184 and #201
 			clearTimeout(opts.timeoutId);
 			opts.timeoutId = 0;
 			opts.API.stop();
@@ -1123,9 +1123,9 @@
 	
 		function add( slides, prepend ) {
 			var slideArr = [];
-			if ( $.type( slides ) == 'string' )
-				slides = $.trim( slides );
-			else if ( $.type( slides) === 'array' ) {
+			if ( typeof slides === 'string' )
+				slides = slides.trim();
+			else if ( Array.isArray(slides) ) {
 				for (var i=0; i < slides.length; i++ )
 					slides[i] = $(slides[i])[0];
 			}
@@ -1389,18 +1389,18 @@
 		var nextFn = API.next;
 		var prevFn = API.prev;
 		var prepareTxFn = API.prepareTx;
-		var type = $.type( opts.progressive );
+		var type = typeof opts.progressive;
 		var slides, scriptEl;
 	
 		if ( type == 'array' ) {
 			slides = opts.progressive;
 		}
-		else if ($.isFunction( opts.progressive ) ) {
+		else if (typeof opts.progressive === "function") {
 			slides = opts.progressive( opts );
 		}
 		else if ( type == 'string' ) {
 			scriptEl = $( opts.progressive );
-			slides = $.trim( scriptEl.html() );
+			slides = scriptEl.html().trim();
 			if ( !slides )
 				return;
 			// is it json array?
@@ -1534,7 +1534,7 @@
 						prop = obj[str];
 					}
 	
-					if ($.isFunction(prop))
+					if (typeof prop === "function")
 						return prop.apply(obj, args);
 					if (prop !== undefined && prop !== null && prop != str)
 						return prop;
@@ -1616,7 +1616,7 @@
 		opts.busy = 1;
 		if (opts.fxFn) // fx function provided?
 			opts.fxFn(curr, next, opts, after, fwd, manual && opts.fastOnEvent);
-		else if ($.isFunction($.fn.cycle[opts.fx])) // fx plugin ?
+		else if (typeof $.fn.cycle[opts.fx] === "function") // fx plugin ?
 			$.fn.cycle[opts.fx](curr, next, opts, after, fwd, manual && opts.fastOnEvent);
 		else
 			$.fn.cycle.custom(curr, next, opts, after, fwd, manual && opts.fastOnEvent);
@@ -1741,7 +1741,7 @@ function advance(opts, moveForward) {
 	}
 
 	var cb = opts.onPrevNextEvent || opts.prevNextClick; // prevNextClick is deprecated
-	if ($.isFunction(cb))
+	if (typeof cb === "function")
 		cb(val > 0, opts.nextSlide, els[opts.nextSlide]);
 	go(els, opts, 1, moveForward);
 	return false;
@@ -1757,7 +1757,7 @@ function buildPager(els, opts) {
 
 $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 	var a;
-	if ($.isFunction(opts.pagerAnchorBuilder)) {
+	if (typeof opts.pagerAnchorBuilder === "function") {
 		a = opts.pagerAnchorBuilder(i,el);
 		debug('pagerAnchorBuilder('+i+', el) returned: ' + a);
 	}
@@ -1795,7 +1795,7 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 			p.cycleTimeout = 0;
 		}
 		var cb = opts.onPagerEvent || opts.pagerClick; // pagerClick is deprecated
-		if ($.isFunction(cb))
+		if (typeof cb === "function")
 			cb(opts.nextSlide, els[opts.nextSlide]);
 		go(els,opts,1,opts.currSlide < i); // trigger the trans
 //		return false; // <== allow bubble
@@ -1931,7 +1931,7 @@ $.fn.cycle.defaults = {
     backwards:        false,    // true to start slideshow at last slide and move backwards through the stack
     before:           null,     // transition callback (scope set to element to be shown):     function(currSlideElement, nextSlideElement, options, forwardFlag)
     center:           null,     // set to true to have cycle add top/left margin to each slide (use with width and height options)
-    cleartype:        !$.support.opacity,  // true if clearType corrections should be applied (for IE)
+	cleartype:        !(typeof document.createElement('div').style.opacity !== 'undefined'),  // true if clearType corrections should be applied (for IE)
     cleartypeNoBg:    false,    // set to true to disable extra cleartype fixing (leave false to force background color setting on slides)
     containerResize:  1,        // resize container to fit largest slide
     containerResizeHeight:  0,  // resize containers height to fit the largest slide but leave the width dynamic

@@ -161,7 +161,7 @@
             currentValue = 0,
             currentAlpha = 1,
             palette = opts.palette.slice(0),
-            paletteArray = $.isArray(palette[0]) ? palette : [palette],
+            paletteArray = Array.isArray(palette[0]) ? palette : [palette],
             selectionPalette = opts.selectionPalette.slice(0),
             maxSelectionSize = opts.maxSelectionSize,
             draggingClass = "sp-dragging",
